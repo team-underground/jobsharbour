@@ -8,41 +8,32 @@
 						<heading size="display" class="mb-5">Find your job better &amp; faster.</heading>-->
 						<!-- <heading size="small-caps" class="mb-2 text-gray-600">Start Finding Jobs By Title:</heading> -->
 
-						<!-- <div>
-							<badge class="mr-2 mb-1">Web Developer</badge>
-							<badge class="mr-2 mb-1">Graphic Designer</badge>
-							<badge class="mr-2 mb-1">Accounting</badge>
-							<badge class="mr-2 mb-1">Finance</badge>
-							<link-to to="#">See all</link-to>
-						</div>-->
-
 						<heading size="heading2" class="mb-1">Looking for jobs in Northeast?</heading>
 						<heading size="display" class="mb-5">Find your dream job here.</heading>
 						<search-input placeholder="Search your job title..." class="md:w-2/3" rounded="large"></search-input>
 					</div>
 				</div>
 				<div class="lg:w-2/5 relative">
-					<!-- <svg
-						class="hidden md:block absolute inset-y-0 h-full w-24 fill-current text-white -ml-12"
-						viewBox="0 0 100 100"
-						preserveAspectRatio="none"
-					>
-						<polygon points="50,0 100,0 50,100 0,100" />
-					</svg>-->
-					<!-- <img src="/duotone.jpg" alt="bg-image" class="object-contain object-center w-full h-full" /> -->
-					<!-- <img
-						src="/designer.svg"
-						alt="bg-image"
-						class="absolute object-fit bottom-0 w-64 md:w-2/3 -mb-10 md:-mb-24 mt-10 left-0 right-0 mx-auto"
-					/>-->
-
-					<!-- <img src="/Consultation.png" alt="bg-image" class="object-contain object-center w-full" /> -->
-					<div class="">
-						<lottie-player 
-    src="/lf30_editor_wJXeMM.json"  background="transparent"  speed="1"  class="object-contain object-center" style="width:20rem;" loop  autoplay >
-</lottie-player>
+					<div class="md:pt-10">
+						<lottie-player
+							src="/lf30_editor_wJXeMM.json"
+							background="transparent"
+							speed="1"
+							loop
+							style="width: 400px; height: 200px;"
+							class="mx-auto md:hidden"
+							autoplay
+						></lottie-player>
+						<lottie-player
+							src="/lf30_editor_wJXeMM.json"
+							background="transparent"
+							speed="1"
+							loop
+							style="width: 360px; height: 360px;"
+							class="mx-auto hidden md:block"
+							autoplay
+						></lottie-player>
 					</div>
-					
 				</div>
 			</div>
 		</div>
@@ -162,7 +153,7 @@
 			<div class="md:flex relative max-w-6xl mx-auto">
 				<div class="lg:w-3/5 md:flex items-center">
 					<div class="py-6 md:py-16">
-						<heading size="display" class="mb-4">Make Recruiting Your Competitive Advantage</heading>
+						<heading size="heading2" class="mb-4">Make Recruiting Your Competitive Advantage</heading>
 						<heading
 							class="mb-5 md:pr-10"
 						>Talent is a top priority for all startup founders and executives. MCL offers a way to completely optimize your entire recruiting process. Find better candidates, conduct more focused interviews, and make data-driven hiring decisions.</heading>

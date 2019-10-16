@@ -132,7 +132,7 @@ export default {
 
 						this.emailSent = true;
 
-						this.$snack.success("Password changed");
+						this.$snack.success("Password successfully changed");
 					}
 				});
 		}
