@@ -213,10 +213,11 @@ export default {
 				job_position: this.post.job_position,
 				job_type: this.post.job_type,
 				job_salary: this.post.job_salary,
-				job_skills: this.post.job_skills.split(" "),
+				job_skills: this.post.job_skills,
 				job_email: this.post.job_email,
 				job_description: this.post.job_description,
-				job_published_at: this.post.job_published_at
+				job_published_at: this.post.job_published_at,
+				job_closing_date: this.post.job_closing_date
 			},
 			salaries: {
 				"5K-10K": "5K-10K",

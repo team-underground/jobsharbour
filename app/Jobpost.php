@@ -69,6 +69,11 @@ class Jobpost extends Model
         return Carbon::parse($value)->format('d-m-Y');
     }
 
+    public function getJobClosingDateAttribute($value)
+    {
+        return Carbon::parse($value)->format('d-m-Y');
+    }
+
     public function getJobPublishedAtFormattedAttribute()
     {
         // return (Carbon::today() == $value) ? Carbon::parse($value)->diffForHumans() : Carbon::parse($value)->format('j M, Y');

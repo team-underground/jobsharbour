@@ -51,25 +51,26 @@ class CompaniesController extends Controller
         ]);
 
         // Start a try/catch block
-        DB::transaction(function () use ($input, $request) {
+        // DB::transaction(function () use ($input, $request) {
 
-            $companyCreated = Company::create($request->only([
-                'company_name',
-                'company_website',
-                'company_description',
-                'company_industry',
-                'company_no_of_employees',
-                'company_benefits'
-            ]) + [
-                'user_id' => auth()->user()->id,
-                'company_logo' => $request->file('company_logo') ? $request->file('company_logo')->store('company') : null
-            ]);
-        });
+        $companyCreated = Company::create($request->only([
+            'company_name',
+            'company_website',
+            'company_description',
+            'company_industry',
+            'company_no_of_employees',
+            'company_benefits'
+        ]) + [
+            'user_id' => auth()->user()->id,
+            'company_logo' => $request->file('company_logo') ? $request->file('company_logo')->store('company') : null
+        ]);
+
+        // });
         // End
 
         session()->flash('success', 'Company details successfully saved.');
 
-        return redirect()->route('admin.companies');
+        return redirect()->route('admin.companies.all');
     }
 
     public function edit($uuid, Request $request)

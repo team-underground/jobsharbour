@@ -8,6 +8,7 @@ use App\Enums\CategoryType;
 use App\Enums\JobType;
 use App\Enums\IndustryType;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
@@ -50,7 +51,7 @@ class JobpostsController extends Controller
 			'company_id' => ['required'],
 			'job_title' => ['required'],
 			'job_location' => ['required'],
-			// 'job_position' => ['required'],
+			'job_position' => ['required'],
 			'job_type' => ['required'],
 			'job_salary' => ['required'],
 			'job_description' => ['required'],
@@ -63,6 +64,8 @@ class JobpostsController extends Controller
 		]);
 
 		// dd($input);
+		$input['job_published_at'] = Carbon::createFromFormat('d/m/Y', $input['job_published_at'])->format('Y-m-d');
+		$input['job_closing_date'] = Carbon::createFromFormat('d/m/Y', $input['job_closing_date'])->format('Y-m-d');
 
 		Jobpost::create($input + [
 			'job_position' => 1,
