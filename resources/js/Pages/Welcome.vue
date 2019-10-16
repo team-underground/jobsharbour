@@ -36,7 +36,13 @@
 						class="absolute object-fit bottom-0 w-64 md:w-2/3 -mb-10 md:-mb-24 mt-10 left-0 right-0 mx-auto"
 					/>-->
 
-					<img src="/Consultation.png" alt="bg-image" class="object-contain object-center w-full" />
+					<!-- <img src="/Consultation.png" alt="bg-image" class="object-contain object-center w-full" /> -->
+					<div class="">
+						<lottie-player 
+    src="/lf30_editor_wJXeMM.json"  background="transparent"  speed="1"  class="object-contain object-center" style="width:20rem;" loop  autoplay >
+</lottie-player>
+					</div>
+					
 				</div>
 			</div>
 		</div>
