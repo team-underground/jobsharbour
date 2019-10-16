@@ -1,10 +1,11 @@
 <template>
 	<main class="flex w-100 flex-col min-h-screen">
-		<div class="bg-white shadow-sm px-4 relative z-20">
-			<div class="md:flex items-center justify-between mx-auto container">
+		<div class="bg-white shadow-sm px-4 relative z-30">
+			<div class="md:flex items-center justify-between mx-auto max-w-6xl">
 				<div class="flex justify-between md:flex-none items-center">
 					<a href="/" class="flex items-center py-2">
 						<img src="/mcl-logo.svg" alt="mcl" class="object-fit h-8" />
+						<!-- <img src="/logo.jpg" alt="mcl" width="150" /> -->
 					</a>
 
 					<div
@@ -25,34 +26,86 @@
 
 				<div class="hidden md:block">
 					<a
-						href="/"
-						:class="isUrl('') ? 'active text-blue-600' : 'text-gray-500'"
-						class="px-2 mr-3 py-6 inline-block font-medium hover:text-blue-600"
-					>Home</a>
+						v-if="$page.auth.user"
+						href="/dashboard"
+						:class="isUrl('dashboard') ? 'active text-blue-600' : 'text-gray-500'"
+						class="mr-6 py-6 inline-block font-medium hover:text-blue-600"
+					>Dashboard</a>
 					<a
 						href="/jobs"
 						:class="isUrl('jobs') ? 'active text-blue-600' : 'text-gray-500'"
-						class="px-2 mr-3 py-6 inline-block font-medium hover:text-blue-600"
+						class="mr-6 py-6 inline-block font-medium hover:text-blue-600"
 					>Job Listings</a>
 					<a
 						href="/tickets"
-						class="px-2 mr-3 py-6 inline-block font-medium text-gray-500 hover:text-blue-600"
-					>Contact</a>
+						class="mr-6 py-6 inline-block font-medium text-gray-500 hover:text-blue-600"
+					>Companies</a>
 
 					<a
 						href="#"
-						class="px-2 py-6 inline-block font-medium text-gray-500 hover:text-blue-600"
+						class="py-6 mr-6 inline-block font-medium text-gray-500 hover:text-blue-600"
 					>For Employers</a>
+
+					<a
+						href="/tickets"
+						class="py-6 inline-block font-medium text-gray-500 hover:text-blue-600"
+					>About</a>
 				</div>
 
 				<div class="hidden md:block">
-					<a
-						href="/login"
-						class="px-4 py-5 mr-3 inline-block font-medium text-gray-500 hover:text-blue-600"
-					>Login</a>
-					<loading-button tag="a" to="/register" size="small" rounded="large">
-						<icon name="edit" class="mr-1"></icon>Post a Job
-					</loading-button>
+					<template v-if="$page.auth.user">
+						<dropdown>
+							<template #trigger>
+								<div class="flex items-center">
+									<div
+										class="outline-none block inline-flex items-center justify-center h-10 w-10 overflow-hidden rounded-full shadow-inner bg-blue-600 text-white font-bold text-xl"
+									>{{ $page.auth.user.name.charAt(0) }}</div>
+									<div class="text-left ml-2">
+										<span class="text-sm leading-tight block w-32 truncate">{{ $page.auth.user.name }}</span>
+										<span
+											class="leading-tight text-gray-400 block text-xs uppercase tracking-wider font-semibold"
+										>{{ $page.auth.user.type }}</span>
+									</div>
+								</div>
+							</template>
+							<template #dropdown>
+								<div class="mt-2 bg-white rounded-lg border w-48 py-1 shadow-dropdown">
+									<a
+										class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600"
+										href="#"
+									>Notifications</a>
+									<a
+										class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600"
+										href="#"
+									>Settings</a>
+									<a
+										class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600"
+										href="#"
+									>Help & Feedback</a>
+									<div class="border-t my-1"></div>
+									<!-- <a
+										class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600"
+										href="#"
+									>Admin Panel</a>-->
+
+									<inertia-link
+										class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600"
+										:href="route('logout')"
+										method="post"
+									>Logout</inertia-link>
+								</div>
+							</template>
+						</dropdown>
+					</template>
+					<template v-else>
+						<a
+							href="/login"
+							class="px-4 py-5 mr-3 inline-block font-medium text-gray-500 hover:text-blue-600"
+						>Login</a>
+						<loading-button tag="a" to="/register" size="small" rounded="large">
+							<icon name="edit" class="mr-1"></icon>Post a Job
+						</loading-button>
+					</template>
 				</div>
 			</div>
 
@@ -70,14 +123,6 @@
 					href="#"
 					class="border-t px-2 py-3 block font-medium text-gray-600 hover:text-blue-500"
 				>Events</a>
-				<a
-					href="/register"
-					class="border-t px-2 py-3 block font-medium text-gray-600 hover:text-blue-500"
-				>Sign up</a>
-				<a
-					href="/login"
-					class="border-t px-2 py-3 block font-medium text-gray-600 hover:text-blue-500"
-				>Login</a>
 			</div>
 		</div>
 
@@ -86,7 +131,7 @@
 		</article>
 
 		<div class="px-4 lg:px-6 py-10 bg-white border-b-8 border-blue-600">
-			<div class="container mx-auto">
+			<div class="max-w-6xl mx-auto">
 				<div class="flex flex-wrap md:flex-1 -mx-4">
 					<div class="md:w-2/4 px-4 mb-6">
 						<img src="/mcl-logo.svg" alt="mcl" class="object-fit h-10" />
@@ -109,7 +154,7 @@
 					</div>
 				</div>
 
-				<div class="pt-8 border-t text-sm md:flex md:justify-between">
+				<div class="pt-8 border-t border-gray-200 text-sm md:flex md:justify-between">
 					<div>&copy; 2019 mycareerlist. All rights reserved.</div>
 					<div>
 						Made with

@@ -11,21 +11,34 @@ use BenSampo\Enum\Enum;
  */
 final class CategoryType extends Enum
 {
-    const WebDeveloper = 0;
+    const SoftwareDeveloper = 0;
     const Finance = 1;
     const Accountant = 2;
     const HumanResourcesManager = 3;
-    const FrontendDeveloper = 4;
-    const BackendDeveloper = 5;
+    const OfficeAdmin = 4;
+    const MobileAppDeveloper = 5;
+    const Healthcare = 6;
+    const Marketing = 7;
 
-    // public static function getDescription(int $value): string
-    // {
-    //     switch ($value) {
-    //         case self::HumanResourcesManager:
-    //             return 'HR Manager';
-    //             break;
-    //         default:
-    //             return self::getKey($value);
-    //     }
-    // }
+
+    public static function getDescription($value): string
+    {
+        if ($value === self::HumanResourcesManager) {
+            return 'HR Manager';
+        }
+
+        if ($value === self::SoftwareDeveloper) {
+            return 'Software Developer';
+        }
+
+        if ($value === self::MobileAppDeveloper) {
+            return 'Mobile App Developer';
+        }
+
+        if ($value === self::OfficeAdmin) {
+            return 'Office Admin';
+        }
+
+        return parent::getDescription($value);
+    }
 }

@@ -71,7 +71,7 @@ export default {
 		},
 		format: {
 			type: String,
-			default: "MMMM D, YYYY"
+			default: "D/M/YYYY"
 		},
 		minYear: {
 			type: Number,
@@ -233,7 +233,7 @@ export default {
 	padding: 2px;
 }
 .date-input table td button {
-	border: 1px solid #e2e8f0;
+	/* border: 1px solid #e2e8f0; */
 	width: 2em;
 	height: 2em;
 	text-align: center;
@@ -244,7 +244,7 @@ export default {
 	background-color: #bee3f8;
 }
 .date-input table td.is-today button {
-	background-color: #ebf8ff;
+	background-color: #90cdf4;
 }
 .date-input table td.is-selected button {
 	background-color: #3182ce;

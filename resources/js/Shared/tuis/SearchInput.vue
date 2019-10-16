@@ -50,10 +50,10 @@ export default {
 				"rounded-full": this.rounded === "large",
 
 				"border-2 focus:border-blue-600": this.bordered === true,
-				"border bg-gray-200 focus:bg-white": this.bordered === false,
+				"border bg-gray-200 focus:bg-white": this.bordered === false
 
-				"h-10": this.size === "small",
-				"h-12 ": this.size === "normal"
+				// "h-10": this.size === "small",
+				// "h-12 ": this.size === "normal"
 			};
 		}
 	}

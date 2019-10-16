@@ -31,7 +31,7 @@ export default {
 					this.variant === "success",
 				"bg-red-100 border-red-200 text-red-500":
 					this.variant === "danger",
-				"bg-yellow-100 border-yellow-200 text-yellow-600":
+				"bg-orange-100 border-orange-200 text-orange-500":
 					this.variant === "warning",
 
 				"border-2": this.bordered == true,
@@ -41,7 +41,7 @@ export default {
 					this.variant === "success" && this.bordered == true,
 				"border-red-200":
 					this.variant === "danger" && this.bordered == true,
-				"border-yellow-200":
+				"border-orange-200":
 					this.variant === "warning" && this.bordered == true
 			};
 		}

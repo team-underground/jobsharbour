@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Enums\UserType;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -38,8 +39,31 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function getTypeAttribute($value)
+    {
+        return UserType::getDescription($value);
+    }
+
     public function companies()
     {
         return $this->hasMany(Company::class);
+    }
+
+    public function isAdmin()
+    {
+        return UserType::getKey($this->type) == 'Administrator';
+    }
+
+    public function isEmployer()
+    {
+        return UserType::getKey($this->type) == 'Employer';
+    }
+
+    public function scopeFilter($query, array $filters)
+    {
+        $query->when($filters['search'] ?? null, function ($query, $search) {
+            $query->where('name', 'like', '%' . $search . '%')
+                ->orWhere('email', 'like', '%' . $search . '%');
+        });
     }
 }

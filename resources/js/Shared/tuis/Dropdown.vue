@@ -1,6 +1,6 @@
 <template>
 	<div class="relative">
-		<button type="button" @click="toggle" class="inline-block">
+		<button type="button" @click="toggle" class="inline-block outline-none">
 			<slot name="trigger"></slot>
 		</button>
 
@@ -12,7 +12,7 @@
 						type="button"
 						class="z-30 block fixed inset-0 w-full h-full cursor-default"
 					></button>
-					<div class="absolute z-40 right-0">
+					<div class="absolute z-50 right-0">
 						<slot name="dropdown"></slot>
 					</div>
 				</div>

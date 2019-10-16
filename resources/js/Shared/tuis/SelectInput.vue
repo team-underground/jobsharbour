@@ -16,7 +16,12 @@
 				:class="{ 'border-red-400': errors.length }"
 			>
 				<slot></slot>
-				<option v-for="(option, key) in options" :value="key" :key="key">{{ option }}</option>
+				<template v-if="selectValue == 'value'">
+					<option v-for="option in options" :value="option.value">{{ option.label }}</option>
+				</template>
+				<template v-else>
+					<option v-for="(option, key) in options" :value="key">{{ option }}</option>
+				</template>
 			</select>
 			<div v-if="errors.length" class="text-red-600 mt-1 text-sm">{{ errors[0] }}</div>
 			<svg
@@ -57,7 +62,8 @@ export default {
 		errors: {
 			type: Array,
 			default: () => []
-		}
+		},
+		selectValue: String
 	},
 
 	data() {

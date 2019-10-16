@@ -1,7 +1,7 @@
 <template>
 	<layout>
 		<div class="py-10 px-4">
-			<div class="container mx-auto">
+			<div class="max-w-6xl mx-auto">
 				<div class="md:flex -mx-4">
 					<div class="hidden md:block md:w-1/5 px-4">
 						<heading size="large" class="mb-4">Filter By</heading>
@@ -32,23 +32,45 @@
 					</div>
 					<div class="md:w-3/5 px-4">
 						<div class="flex items-center mb-5">
-							<search-input placeholder="Search by job title ..." class="flex-1" v-model="form.search"></search-input>
+							<search-input placeholder="Search by job title..." class="flex-1" v-model="form.search"></search-input>
 							<div class="ml-4">
-								<loading-button type="button" size="small" @click="$modal.show('filter-modal')">
+								<loading-button
+									class="bg-white"
+									variant="secondary"
+									variant-type="outline"
+									type="button"
+									size="small"
+									@click="$modal.show('filter-modal')"
+								>
 									<icon name="filter"></icon>
 									<span class="ml-1">Filters</span>
 								</loading-button>
+								<span>
+									<loading-button
+										class="bg-white"
+										size="small"
+										variant="secondary"
+										variant-type="outline"
+										@click="reset"
+									>
+										<icon name="refresh" class="mr-2"></icon>Reset
+									</loading-button>
+								</span>
 							</div>
 						</div>
 
-						<card v-for="(post, idx) in jobposts.data" :key="idx" class="mb-4">
+						<card v-for="(post, idx) in jobposts.data" :key="idx" class="mb-4 relative">
+							<div
+								v-if="post.job_new === 'yes'"
+								class="bg-red-500 text-white uppercase tracking-wide text-xs font-semibold rounded-bl-full absolute top-0 right-0 pl-4 pr-2 py-2"
+							>New</div>
 							<div class="flex">
 								<div v-if="post.company.company_logo == null" class="mr-5 flex-shrink-0 w-16 h-16">
 									<avatar :name="post.company.company_name" color="blue" shape="rounded" size="xlarge"></avatar>
 								</div>
 								<div v-else class="flex-shrink-0 w-16 h-16 rounded-lg bg-gray-100 border block mr-5">
 									<img
-										src="/zd.png"
+										:src="post.company.company_logo"
 										alt="company-logo"
 										class="object-fit object-center w-full h-full rounded-lg"
 									/>
@@ -61,10 +83,10 @@
 												<!-- <badge class="mr-1" variant="danger">New</badge> -->
 												<heading size="large" class="inline-block">{{ post.job_title }}</heading>
 											</div>
-											<heading size="small" class="mb-1">at {{ post.company.company_name }}</heading>
+											<heading size="small" class="mb-1">{{ post.company.company_name }}</heading>
 											<heading size="small" class="mb-1">{{ post.company.company_industry }}</heading>
 										</div>
-										<div class="md:w-48 flex-col justify-between">
+										<div class="md:w-48 flex-col justify-between mt-1">
 											<div class="md:mb-1 md:flex-1 flex items-center">
 												<icon class="mr-2 text-gray-400" :width="20" :height="20" name="map-pin"></icon>
 												<heading size="small">{{ post.job_location }}</heading>
@@ -81,7 +103,7 @@
 									</div>
 
 									<div class="flex justify-between">
-										<heading size="small">posted on {{ post.job_published_at }}</heading>
+										<heading size="small">{{ post.job_published_at_formatted }}</heading>
 										<link-to :to="`/jobs/${post.uuid}`" class="text-sm">View Details</link-to>
 									</div>
 								</div>
@@ -144,8 +166,18 @@
 									variant="secondary"
 									variant-type="outline"
 									class="cursor-not-allowed"
-								>Previous</loading-button>
-								<loading-button v-else tag="a" :to="jobposts.prev_page_url" size="small">Previous</loading-button>
+								>
+									<icon name="chevron-left"></icon>Previous
+								</loading-button>
+								<loading-button
+									class="bg-secondary-400 border-secondary-400 hover:bg-secondary-500 hover:border-secondary-500"
+									v-else
+									tag="a"
+									:to="jobposts.prev_page_url"
+									size="small"
+								>
+									<icon name="chevron-left"></icon>Previous
+								</loading-button>
 							</div>
 							<div>
 								<heading size="small">
@@ -162,14 +194,21 @@
 									variant="secondary"
 									variant-type="outline"
 									class="cursor-not-allowed"
-								>Next</loading-button>
+								>
+									Next
+									<icon name="chevron-right"></icon>
+								</loading-button>
 								<loading-button
+									class="bg-secondary-400 border-secondary-400 hover:bg-secondary-500 hover:border-secondary-500"
 									v-else
 									tag="a"
 									:to="jobposts.next_page_url"
 									:disabled=" jobposts.next_page_url == null"
 									size="small"
-								>Next</loading-button>
+								>
+									Next
+									<icon name="chevron-right"></icon>
+								</loading-button>
 							</div>
 						</div>
 					</div>
@@ -297,23 +336,25 @@ export default {
 		return {
 			form: {
 				search: this.filters.search,
-				jobtype:
-					this.filters.jobtype == null ? [] : this.filters.jobtype,
-				salary: this.filters.salary == null ? [] : this.filters.salary
+				jobtype: this.filters.jobtype || [],
+				salary: this.filters.salary || []
 			},
 			salaries: {
-				"50K-100K": "50K-100K",
-				"100K-150K": "100K-150K",
-				"150K-200K": "150K-200K",
-				"200K-400K": "200K-400K",
-				"400K+": "400K+"
+				"5K-10K": "5K-10K",
+				"10K-15K": "10K-15K",
+				"15K-20K": "15K-20K",
+				"20K-40K": "20K-40K",
+				"40K+": "40K+"
 			}
 		};
 	},
 
 	methods: {
 		reset() {
-			this.form = _.mapValues(this.form, () => null);
+			// this.form = _.mapValues(this.form, () => null);
+			this.form.search = null;
+			this.form.jobtype = [];
+			this.form.salary = [];
 		}
 	}
 };

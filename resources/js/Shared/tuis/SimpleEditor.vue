@@ -39,6 +39,10 @@ export default {
 		errors: {
 			type: Array,
 			default: () => []
+		},
+		height: {
+			type: String,
+			default: "140px"
 		}
 	},
 
@@ -123,6 +127,9 @@ export default {
 .ql-toolbar.ql-snow {
 	border-top-left-radius: 0.5rem;
 	border-top-right-radius: 0.5rem;
+	background-color: #e2e8f0;
+	padding-top: 2px;
+	padding-bottom: 2px;
 }
 .ql-toolbar.ql-snow,
 .ql-container.ql-snow {
@@ -137,6 +144,6 @@ export default {
 
 .simple-editor.error .ql-toolbar.ql-snow,
 .simple-editor.error .ql-container.ql-snow {
-	border-color: #e53e3e;
+	border-color: #fc8181;
 }
 </style>

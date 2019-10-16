@@ -83,7 +83,7 @@ export default {
 			}
 		},
 		modelValue: {
-			type: String,
+			type: [String, Number],
 			default: ""
 		},
 		name: {
@@ -133,7 +133,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style>
 /* Styles for hiding the native radio button */
 input[type="radio"].check-custom {
 	position: absolute;
@@ -168,7 +168,7 @@ input[type="radio"].check-custom:focus ~ .check-toggle {
 
 /* Styles for the checked state appearance of the custom radio button */
 input[type="radio"].check-custom:checked ~ .check-toggle {
-	border: 2px solid #4299e1;
+	border: 2px solid #29a9c9;
 }
 
 /* Styles for the checked state appearance of the custom radio button */
@@ -183,7 +183,7 @@ input[type="radio"].check-custom:checked ~ .check-toggle::after {
 	margin: auto;
 	position: absolute;
 	border-radius: 50%;
-	background: #4299e1;
+	background: #29a9c9;
 }
 
 /* Size */

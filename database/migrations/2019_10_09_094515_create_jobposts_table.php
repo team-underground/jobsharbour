@@ -34,7 +34,8 @@ class CreateJobpostsTable extends Migration
             $table->tinyInteger('job_type')->unsigned();
             $table->tinyInteger('job_position')->unsigned();
             $table->tinyInteger('job_status')->unsigned()->default(JobStatusType::Moderation);
-            $table->timestamp('job_published_at');
+            $table->timestamp('job_published_at')->nullable();
+            $table->timestamp('job_closing_date')->nullable();
 
             $table->timestamps();
         });

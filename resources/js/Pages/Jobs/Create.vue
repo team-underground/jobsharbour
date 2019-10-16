@@ -1,26 +1,71 @@
 <template>
 	<layout>
-		<div class="bg-white px-4 py-10">
-			<div class="container mx-auto">
-				<link-to to="/jobs" class="mb-4">
+		<div class="bg-white px-4 pt-6 pb-4 relative shadow-sm z-20">
+			<div class="max-w-6xl mx-auto">
+				<link-to to="/admin/jobs" class="mb-2">
 					<icon name="chevron-left" class="-ml-2"></icon>Back to Jobs
 				</link-to>
-
-				<heading size="heading">Create New Job Posts</heading>
+				<div class="flex w-full justify-between items-center">
+					<div class="flex-1">
+						<heading size="heading">Create New Job Posts</heading>
+					</div>
+					<div>
+						<loading-button
+							v-if="companies.length > 0"
+							size="small"
+							ref="jobSaveButton"
+							class="mt-2 md:mt-0"
+							@click="saveJobPost"
+						>Save Job Post</loading-button>
+					</div>
+				</div>
 			</div>
 		</div>
 
 		<div class="py-10">
-			<div class="container mx-auto">
+			<div class="max-w-6xl mx-auto" v-if="companies.length <= 0">
+				<empty-state class="lg:py-32">
+					<div
+						class="w-24 h-24 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-center mx-auto"
+					>
+						<icon name="search" class="w-8 h-8"></icon>
+					</div>
+
+					<heading class="mt-5 mb-1" size="heading">No Companies found</heading>
+					<p>Please create atleast one company/organization details to add a job post.</p>
+
+					<loading-button tag="a" to="/admin/companies/create" size="small" class="mt-6">
+						<icon name="plus" class="mr-1"></icon>Create Company
+					</loading-button>
+				</empty-state>
+			</div>
+			<div class="max-w-6xl mx-auto" v-else>
 				<div class="md:flex -mx-4">
-					<div class="md:w-3/4 px-4">
-						<card>
-							<alert class="mb-4">
-								<strong>Note:</strong> Job postings once created will go to the admin first for moderation and then only will be published on the website. It will take 1-2 days for the moderation process to get completed.
-							</alert>
-							<div class="md:flex mb-10">
-								<heading size="large" class="md:w-1/3 mb-3">Job Details</heading>
-								<div class="md:w-2/3">
+					<div class="px-4">
+						<alert class="mb-4">
+							<strong>Note:</strong> Job postings once created will go to the admin first for moderation and then only will be published on the website. It will take 24hrs for the moderation process to get completed.
+						</alert>
+						<div class="md:flex mb-10 -mx-4">
+							<div class="md:w-1/3 mb-3 px-4">
+								<heading size="large" class="mb-1">Job Details</heading>
+								<heading
+									class="mb-4"
+								>Introduce job seekers to the role by describing responsibilities, skills and technologies...</heading>
+							</div>
+							<div class="md:w-2/3 px-4">
+								<card>
+									<select-input
+										v-model="job.company_id"
+										label="Company"
+										class="mb-4"
+										:options="companies"
+										select-value="value"
+										:errors="errors['company_id']"
+										@keydown="delete errors['company_id']"
+									>
+										<option value="null" disabled>Select company</option>
+									</select-input>
+
 									<text-input
 										v-model="job.job_title"
 										label="Title"
@@ -37,20 +82,7 @@
 										:errors="errors['job_location']"
 										@keydown="delete errors['job_location']"
 									></text-input>
-
 									<div class="flex -mx-4">
-										<!-- <div class="w-1/3 px-4">
-											<select-input
-												v-model="job.job_position"
-												label="Position"
-												class="mb-4"
-												:options="positions"
-												:errors="errors['job_position']"
-												@keydown="delete errors['job_position']"
-											>
-												<option value="null" disabled>Select position</option>
-											</select-input>
-										</div>-->
 										<div class="w-1/2 px-4">
 											<select-input
 												v-model="job.job_type"
@@ -77,6 +109,43 @@
 										</div>
 									</div>
 
+									<div class="flex -mx-4">
+										<div class="w-1/2 px-4">
+											<text-input
+												v-model="job.job_email"
+												type="email"
+												label="Email for candidate"
+												placeholder="Email to send resume/cv"
+												class="mb-4"
+												:errors="errors['job_email']"
+												@keydown="delete errors['job_email']"
+											></text-input>
+										</div>
+										<div class="w-1/2 px-4">
+											<select-input
+												v-model="job.job_position"
+												label="Category"
+												class="mb-4"
+												:options="positions"
+												:errors="errors['job_position']"
+												@keydown="delete errors['job_position']"
+											>
+												<option value="null" disabled>Select job category</option>
+											</select-input>
+										</div>
+									</div>
+
+									<!-- <text-input
+										v-model="job.job_skills"
+										label="Skills"
+										placeholder="eg. Laravel, MySQL, Angular..."
+										class="mb-4"
+										:errors="errors['job_skills']"
+										@keydown="delete errors['job_skills']"
+									></text-input>-->
+
+									<tags-input label="Skills" v-model="job.job_skills" class="mb-4"></tags-input>
+
 									<simple-editor
 										label="Description"
 										v-model="job.job_description"
@@ -84,115 +153,35 @@
 										:errors="errors['job_description']"
 										@keydown="delete errors['job_description']"
 									></simple-editor>
-
-									<text-input
-										v-model="job.job_skills"
-										label="Skills"
-										placeholder="eg. Laravel, MySQL, Angular..."
-										class="mb-4"
-										:errors="errors['job_skills']"
-										@keydown="delete errors['job_skills']"
-									></text-input>
-
-									<text-input
-										v-model="job.job_email"
-										type="email"
-										label="Email for candidate"
-										placeholder="Email address where job seekers send their resume..."
-										class="mb-4"
-										:errors="errors['job_email']"
-										@keydown="delete errors['job_email']"
-									></text-input>
-								</div>
+								</card>
 							</div>
+						</div>
 
-							<div class="md:flex">
-								<heading size="large" class="mb-3 md:w-1/3">Company Details</heading>
-								<div class="md:w-2/3">
-									<text-input
-										v-model="job.company_name"
-										label="Name"
-										placeholder="eg. ABC Company"
-										class="mb-4"
-										:errors="errors['company_name']"
-										@keydown="delete errors['company_name']"
-									></text-input>
-									<text-input
-										v-model="job.company_website"
-										label="Website"
-										placeholder="eg. http://google.com"
-										class="mb-4"
-										:errors="errors['company_website']"
-										@keydown="delete errors['company_website']"
-									></text-input>
-
-									<div class="flex -mx-4">
-										<div class="w-1/2 px-4">
-											<select-input
-												v-model="job.company_industry"
-												label="Industry"
-												class="mb-4"
-												:options="industries"
-												:errors="errors['company_industry']"
-												@keydown="delete errors['company_industry']"
-											>
-												<option value="null" disabled>Select your industry</option>
-											</select-input>
-										</div>
-										<div class="w-1/2 px-4">
-											<select-input
-												v-model="job.company_no_of_employees"
-												label="No. of employees"
-												class="mb-4"
-												:options="companySize"
-												:errors="errors['company_no_of_employees']"
-												@keydown="delete errors['company_no_of_employees']"
-											>
-												<option value="null" disabled>Select company size</option>
-											</select-input>
-										</div>
-									</div>
-									<textarea-input
-										label="Description"
-										v-model="job.company_description"
-										placeholder="Brief description of the company..."
-										class="mb-4"
-										:errors="errors['company_description']"
-										@keydown="delete errors['company_description']"
-									></textarea-input>
-
-									<text-input
-										v-model="job.company_benefits"
-										label="Benefits"
-										placeholder="eg. Laptop, Free Lunch, Flexible holidays..."
-										class="mb-4"
-										:errors="errors['company_benefits']"
-										@keydown="delete errors['company_benefits']"
-									></text-input>
-								</div>
+						<div class="md:flex -mx-4">
+							<div class="md:w-1/3 px-4">
+								<heading size="large" class="mb-1">Job Post Date</heading>
+								<heading class="mb-4">The date when the job post has been published & closed.</heading>
 							</div>
-						</card>
-					</div>
-					<div class="md:w-1/4 px-4">
-						<card>
-							<date-input
-								label="Published Date"
-								format="YYYY-MM-DD"
-								class="w-50"
-								placeholder="Select date"
-								v-model="job.job_published_at"
-								readonly
-							></date-input>
+							<div class="md:w-2/3 px-4">
+								<card>
+									<date-input
+										label="Published Date"
+										class="w-48 mb-4"
+										placeholder="Select date"
+										v-model="job.job_published_at"
+										readonly
+									></date-input>
 
-							<loading-button
-								ref="jobSaveButton"
-								class="w-full mt-5 mb-2"
-								@click="saveJobPost"
-							>Save Job Post</loading-button>
-							<div>
-								<loading-button class="w-full bg-gray-100" variant-type="outline">Save as Draft</loading-button>
+									<date-input
+										label="Job Closing Date"
+										class="w-48"
+										placeholder="Select date"
+										v-model="job.job_closing_date"
+										readonly
+									></date-input>
+								</card>
 							</div>
-						</card>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -214,6 +203,15 @@ import SwitchInput from "@/Shared/tuis/SwitchInput";
 import DateInput from "@/Shared/tuis/DateInput";
 import Alert from "@/Shared/tuis/Alert";
 import TextareaInput from "@/Shared/tuis/TextareaInput";
+import FileInput from "@/Shared/tuis/FileInput";
+import EmptyState from "@/Shared/tuis/EmptyState";
+import TagsInput from "@/Shared/tuis/TagsInput";
+
+const date = new Date();
+const day = date.getDate();
+const month = date.getMonth() + 1;
+const year = date.getFullYear();
+const currentDate = `${day}/${month}/${year}`;
 
 export default {
 	components: {
@@ -229,11 +227,12 @@ export default {
 		SwitchInput,
 		DateInput,
 		Alert,
-		TextareaInput
+		TextareaInput,
+		FileInput,
+		EmptyState,
+		TagsInput
 	},
-
-	props: ["jobtypes", "positions", "industries", "errors"],
-
+	props: ["jobtypes", "positions", "industries", "errors", "companies"],
 	data() {
 		return {
 			job: {
@@ -242,20 +241,13 @@ export default {
 				job_position: null,
 				job_type: null,
 				job_salary: null,
-				job_skills: null,
+				job_skills: ["Laravel", "React"],
 				job_email: null,
-				job_description: `Introduce job seekers to the role by describing responsibilities, skills and technologies...`,
-				job_published_at: "2019-10-9",
-
-				company_logo: null,
-				company_name: null,
-				company_website: null,
-				company_no_of_employees: null,
-				company_industry: null,
-				company_description: null,
-				company_benefits: null
+				job_description: `<p><strong>Required Knowledge, Skills, and Abilities</strong></p><p>Ability to write code – HTML & CSS (SCSS flavor of SASS preferred when writing CSS)Proficient in Photoshop, Illustrator, bonus points for familiarity with Sketch (Sketch is our preferred concepting)Cross-browser and platform testing as standard practiceExperience using Invision a plusExperience in video production a plus or, at a minimum, a willingness to learn</p><br> <p><strong>Education + Experience</strong></p><p>Advanced degree or equivalent experience in graphic and web design3 or more years of professional design experience</p>`,
+				job_published_at: currentDate,
+				job_closing_date: currentDate,
+				company_id: null
 			},
-
 			companySize: {
 				"0-25": "0-25",
 				"25-50": "25-50",
@@ -263,20 +255,20 @@ export default {
 				"100+": "100+"
 			},
 			salaries: {
-				"5000-10,000": "5000-10,000",
-				"10,000-15,000": "10,000-15,000",
-				"15,000-20,000": "15,000-20,000",
-				"20,000-40,000": "20,000-40,000",
-				"40,000+": "40,000+"
+				"5K-10K": "5K-10K",
+				"10K-15K": "10K-15K",
+				"15K-20K": "15K-20K",
+				"20K-40K": "20K-40K",
+				"40K+": "40K+"
 			}
 		};
 	},
-
 	methods: {
 		saveJobPost() {
 			this.$refs.jobSaveButton.startLoading();
+
 			this.$inertia
-				.post("/jobs/create", this.job)
+				.post(this.route("admin.jobs.store"), this.job)
 				.then(() => {
 					this.$refs.jobSaveButton.stopLoading();
 				})
@@ -288,5 +280,35 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style>
+.vue-file-agent .file-preview-wrapper:before {
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+#profile-pic-demo .drop-help-text {
+	display: none;
+}
+#profile-pic-demo .is-drag-over .drop-help-text {
+	display: block;
+}
+#profile-pic-demo .profile-pic-upload-block {
+	border: 2px dashed transparent;
+	padding: 20px;
+	padding-top: 0;
+}
+
+#profile-pic-demo .is-drag-over.profile-pic-upload-block {
+	border-color: #aaa;
+}
+#profile-pic-demo .vue-file-agent {
+	width: 180px;
+	float: left;
+	margin: 0 15px 5px 0;
+	border: 0;
+	box-shadow: none;
+}
 </style>

@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Enums\UserType;
 use Illuminate\Support\ServiceProvider;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Auth;
@@ -42,6 +43,7 @@ class AppServiceProvider extends ServiceProvider
                         'uuid' => Auth::user()->uuid,
                         'name' => Auth::user()->name,
                         'email' => Auth::user()->email,
+                        'type' => Auth::user()->type,
                     ] : null,
                 ];
             },
