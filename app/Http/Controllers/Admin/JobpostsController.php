@@ -4,9 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Jobpost;
 use Inertia\Inertia;
-use App\Enums\CategoryType;
-use App\Enums\JobType;
-use App\Enums\IndustryType;
+use App\Enums\{CategoryType, JobType, IndustryType};
+use App\Events\JobPostEvent;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -41,7 +40,6 @@ class JobpostsController extends Controller
 			];
 		});
 		// return $companies;
-
 		return Inertia::render('Jobs/Create', compact('jobtypes', 'positions', 'industries', 'companies'));
 	}
 
@@ -67,14 +65,16 @@ class JobpostsController extends Controller
 		$input['job_published_at'] = Carbon::createFromFormat('d/m/Y', $input['job_published_at'])->format('Y-m-d');
 		$input['job_closing_date'] = Carbon::createFromFormat('d/m/Y', $input['job_closing_date'])->format('Y-m-d');
 
-		Jobpost::create($input + [
+
+		$jobpost_created = Jobpost::create($input + [
 			'job_position' => 1,
 			'user_id' => auth()->user()->id,
 			'job_slug' => Str::slug($input['job_title'])
 		]);
 
+		$jobpost_created['user_name'] = auth()->user()->name;
 		session()->flash('success', 'Job Post Created.');
-
+		event(new JobPostEvent($jobpost_created));
 		return redirect()->route('admin.jobs.all');
 	}
 
