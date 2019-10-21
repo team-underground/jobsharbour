@@ -55,8 +55,14 @@
 						<div class="text-right">
 							<link-to to="/password/reset" class="mb-4 text-sm">Forgot Password?</link-to>
 						</div>
-
 						<loading-button ref="submitButton" class="w-full" type="submit">Sign in</loading-button>
+						<div class="mt-2">
+							<loading-button
+								ref="submitButton"
+								class="w-full ButtonLinkedIn"
+								type="submit"
+							>Sign in with LinkedIn</loading-button>
+						</div>
 					</form>
 				</card>
 			</div>
@@ -109,4 +115,13 @@ export default {
 };
 </script>
 
+<style>
+.ButtonLinkedIn {
+	background-color: #0073b0;
+	border: none;
+}
+.ButtonLinkedIn:hover {
+	background-color: #026097 !important;
+}
+</style>
  
