@@ -2,15 +2,16 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
-use JamesMills\Uuid\HasUuidTrait;
-use App\Enums\JobStatusType;
-use Illuminate\Support\Str;
-use App\Enums\CategoryType;
-use App\Enums\UserType;
-use App\Enums\JobType;
+use App\Tag;
 use Carbon\Carbon;
+use App\Enums\JobType;
+use App\Enums\UserType;
+use App\Enums\CategoryType;
+use Illuminate\Support\Str;
+use App\Enums\JobStatusType;
+use JamesMills\Uuid\HasUuidTrait;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 class Jobpost extends Model
 {
@@ -30,6 +31,24 @@ class Jobpost extends Model
     protected $casts = [
         'job_skills' => 'array',
     ];
+
+    public function attachTags($tags)
+    {
+        // detach all tags if we have earlier
+        $this->tags()->detach();
+        // attaching all the tags that is requested
+        foreach ($tags as $key => $tag) {
+            // dd($tag);
+            $tagFound = Tag::where('name', 'like', '%' . $tag . '%')->first();
+            if ($tagFound) {
+                $this->tags()->attach($tagFound->id);
+            } else {
+                $this->tags()->create([
+                    'name' => $tag
+                ]);
+            }
+        }
+    }
 
     /**
      * The "booting" method of the model.
@@ -117,6 +136,11 @@ class Jobpost extends Model
         return $this->belongsTo(Company::class);
     }
 
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'taggable');
+    }
+
     public function scopeFilter($query, array $filters)
     {
         $query->when($filters['search'] ?? null, function ($query, $search) {
@@ -147,7 +171,7 @@ class Jobpost extends Model
     public function scopeRole($query)
     {
         if (auth()->check()) {
-            if (auth()->user()->type == 'Employer') {
+            if (auth()->user()->type == 'Employer' || auth()->user()->type == 'Consultancy') {
                 $query->where('user_id', auth()->user()->id);
             }
         }

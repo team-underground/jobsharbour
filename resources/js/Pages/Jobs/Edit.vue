@@ -211,7 +211,7 @@ export default {
 				job_title: this.post.job_title,
 				job_location: this.post.job_location,
 				job_position: this.post.job_position,
-				job_type: this.post.job_type,
+				job_type: this.getKeyByValue(this.jobtypes, this.post.job_type),
 				job_salary: this.post.job_salary,
 				job_skills: this.post.job_skills,
 				job_email: this.post.job_email,
@@ -229,6 +229,9 @@ export default {
 		};
 	},
 	methods: {
+		getKeyByValue(obj, value) {
+			return Object.keys(obj).find(key => obj[key] == value);
+		},
 		submit() {
 			this.$refs.jobSaveButton.startLoading();
 

@@ -29,7 +29,7 @@ final class IndustryType extends Enum
     public static function getDescription($value): string
     {
         if ($value === self::InformationTechnology) {
-            return 'IT/Sofware';
+            return 'It/Software';
         }
 
         if ($value === self::DesignAndMultimedia) {

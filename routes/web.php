@@ -89,14 +89,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/users', 'Admin\UsersController@index')->name('admin.users.all');
 
     // Admin / Employer Job
-    Route::get('/admin/jobs/', 'Admin\JobpostsController@index')->name('admin.jobs.all');
+    Route::get('/admin/jobs', 'Admin\JobpostsController@index')->name('admin.jobs.all');
     Route::get('/admin/jobs/create', 'Admin\JobpostsController@create')->name('admin.jobs.create');
     Route::post('/admin/jobs/create', 'Admin\JobpostsController@store')->name('admin.jobs.store');
     Route::get('/admin/jobs/{uuid}/edit', 'Admin\JobpostsController@edit')->name('admin.jobs.edit');
     Route::put('/admin/jobs/{uuid}/update', 'Admin\JobpostsController@update')->name('admin.jobs.update');
 
     // Admin / Employer Company
-    Route::get('/admin/companies/', 'Admin\CompaniesController@index')->name('admin.companies.all');
+    Route::get('/admin/companies', 'Admin\CompaniesController@index')->name('admin.companies.all');
     Route::get('/admin/companies/create', 'Admin\CompaniesController@create')->name('admin.companies.create');
     Route::post('/admin/companies/create', 'Admin\CompaniesController@store')->name('admin.companies.store');
     Route::get('/admin/companies/{uuid}/edit', 'Admin\CompaniesController@edit')->name('admin.companies.edit');

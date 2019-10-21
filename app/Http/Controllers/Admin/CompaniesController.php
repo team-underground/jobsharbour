@@ -62,7 +62,7 @@ class CompaniesController extends Controller
             'company_benefits'
         ]) + [
             'user_id' => auth()->user()->id,
-            'company_logo' => $request->file('company_logo') ? $request->file('company_logo')->store('company') : null
+            'company_logo' => $request->file('company_logo') ? $request->file('company_logo')->store('company', 'public') : null
         ]);
 
         // });
@@ -108,7 +108,7 @@ class CompaniesController extends Controller
 
         if ($input['company_industry'] != null && $request->file('company_logo')) {
             $company->update([
-                'company_logo' => $request->file('company_logo')->store('company')
+                'company_logo' => $request->file('company_logo')->store('company', 'public')
             ]);
         }
 

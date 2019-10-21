@@ -9,7 +9,11 @@
 					<heading size="heading">All Companies</heading>
 
 					<div class="flex">
-						<search-input v-model="form.search" placeholder="Search by job title..." class="mr-2"></search-input>
+						<search-input
+							v-model="form.search"
+							placeholder="Search by company name, email..."
+							class="mr-2"
+						></search-input>
 
 						<loading-button size="small" to="/admin/companies/create" tag="a">
 							<icon name="plus"></icon>
@@ -22,10 +26,13 @@
 
 		<div class="py-10">
 			<div class="max-w-6xl mx-auto">
-				<flash-message />
+				<alert class="my-6" v-if="$page.auth.user.type == 'Consultancy'">
+					You could list upto maximum of 5 companies in your free period. For further information contact our
+					<link-to to="#">sales team</link-to>&nbsp;.
+				</alert>
 				<div class="relative">
 					<div class="absolute fixed top-0 bottom-0 right-0 w-6 bg-white-linear rounded-r-lg opacity-75"></div>
-					<basic-table :headings="headings" v-if="companies.data.length > 0">
+					<basic-table :headings="headings" v-if="!companies.data.length > 0">
 						<tr
 							v-for="(data, dataIndex) in companies.data"
 							:key="dataIndex"

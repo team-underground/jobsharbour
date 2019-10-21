@@ -65,16 +65,23 @@ class JobpostsController extends Controller
 		$input['job_published_at'] = Carbon::createFromFormat('d/m/Y', $input['job_published_at'])->format('Y-m-d');
 		$input['job_closing_date'] = Carbon::createFromFormat('d/m/Y', $input['job_closing_date'])->format('Y-m-d');
 
+		DB::transaction(function () use ($input) {
+			$jobpost_created = Jobpost::create($input + [
+				'job_position' => 1,
+				'user_id' => auth()->user()->id,
+				'job_slug' => Str::slug($input['job_title'])
+			]);
+			// dd($jobpost_created);
 
-		$jobpost_created = Jobpost::create($input + [
-			'job_position' => 1,
-			'user_id' => auth()->user()->id,
-			'job_slug' => Str::slug($input['job_title'])
-		]);
+			if ($jobpost_created) {
+				$jobpost_created->attachTags($input['job_skills']);
+			}
 
-		$jobpost_created['user_name'] = auth()->user()->name;
+			$jobpost_created['user_name'] = auth()->user()->name;
+			event(new JobPostEvent($jobpost_created));
+		});
+
 		session()->flash('success', 'Job Post Created.');
-		event(new JobPostEvent($jobpost_created));
 		return redirect()->route('admin.jobs.all');
 	}
 
@@ -82,6 +89,7 @@ class JobpostsController extends Controller
 	{
 		$jobpost = Jobpost::findByUuidOrFail($uuid);
 		$post = $jobpost->load('company');
+		$post->job_skills = $jobpost->tags->pluck('name')->toArray();
 
 		$positions = CategoryType::toSelectArray();
 		$jobtypes = JobType::toSelectArray();
@@ -99,8 +107,6 @@ class JobpostsController extends Controller
 
 	public function update($uuid, Request $request)
 	{
-		$jobpost = Jobpost::findByUuidOrFail($uuid);
-
 		$input = $this->validate($request, [
 			'company_id' => ['required'],
 			'job_title' => ['required'],
@@ -117,14 +123,30 @@ class JobpostsController extends Controller
 			'company_id.required' => 'Please select a company'
 		]);
 
-		$jobpost->update($request->except([
-			'job_type',
-			'job_position',
-		]) + [
-			'job_slug' => Str::slug($input['job_title']),
-			'job_type' => (int) $input['job_type'],
-			'job_position' => (int) $input['job_position'],
-		]);
+		$input['job_published_at'] = Carbon::createFromFormat('d/m/Y', $input['job_published_at'])->format('Y-m-d');
+		$input['job_closing_date'] = Carbon::createFromFormat('d/m/Y', $input['job_closing_date'])->format('Y-m-d');
+
+		$jobpost = Jobpost::findByUuidOrFail($uuid);
+		// dd($input);
+		DB::transaction(function () use ($jobpost, $input, $request) {
+			$jobpost->update($request->except([
+				'job_type',
+				'job_position',
+				'job_published_at',
+				'job_closing_date'
+			]) + [
+				'job_slug' => Str::slug($input['job_title']),
+				'job_type' => (int) $input['job_type'],
+				'job_position' => (int) $input['job_position'],
+				'job_published_at' => $input['job_published_at'],
+				'job_closing_date' => $input['job_closing_date'],
+			]);
+
+			if ($jobpost) {
+				$jobpost->attachTags($input['job_skills']);
+			}
+		});
+
 
 		session()->flash('success', 'Job Post Updated.');
 

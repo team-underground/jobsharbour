@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'phone', 'photo', 'type'
     ];
 
     /**
@@ -57,6 +57,11 @@ class User extends Authenticatable
     public function isEmployer()
     {
         return UserType::getKey($this->type) == 'Employer';
+    }
+
+    public function isConsultancy()
+    {
+        return UserType::getKey($this->type) == 'Consultancy';
     }
 
     public function scopeFilter($query, array $filters)
