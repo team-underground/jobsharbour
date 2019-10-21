@@ -19,11 +19,12 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="py-10">
 			<div class="max-w-6xl mx-auto">
 				<div class="relative">
 					<div class="absolute fixed top-0 bottom-0 right-0 w-6 bg-white-linear rounded-r-lg opacity-75"></div>
-					<basic-table :headings="headings">
+					<basic-table :headings="headings" v-if="jobposts.data.length">
 						<tr
 							v-for="(data, dataIndex) in jobposts.data"
 							:key="dataIndex"
@@ -65,6 +66,20 @@
 							</td>
 						</tr>
 					</basic-table>
+					<empty-state class="lg:py-32" v-else>
+						<div
+							class="w-24 h-24 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-center mx-auto"
+						>
+							<icon name="search" class="w-8 h-8"></icon>
+						</div>
+
+						<heading class="mt-5 mb-1" size="heading">No Job posts created by you</heading>
+						<p>Please create atleast one company/organization details to add a job post.</p>
+
+						<loading-button tag="a" to="/admin/jobs/create" size="small" class="mt-6">
+							<icon name="plus" class="mr-1"></icon>Create Job
+						</loading-button>
+					</empty-state>
 				</div>
 
 				<div
@@ -143,6 +158,7 @@ import DateInput from "@/Shared/tuis/DateInput";
 import Alert from "@/Shared/tuis/Alert";
 import BasicTable from "@/Shared/tuis/BasicTable";
 import Badge from "@/Shared/tuis/Badge";
+import EmptyState from "@/Shared/tuis/EmptyState";
 
 import _ from "lodash";
 
@@ -159,7 +175,8 @@ export default {
 		DateInput,
 		Alert,
 		BasicTable,
-		Badge
+		Badge,
+		EmptyState
 	},
 	props: ["jobposts", "filters"],
 

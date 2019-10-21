@@ -12,7 +12,7 @@
 							<heading size="heading">Edit Company Details</heading>
 						</div>
 						<div class="flex">
-							<loading-button type="submit" size="small" ref="jobSaveButton">Update Post</loading-button>
+							<loading-button type="submit" size="small" ref="jobSaveButton">Update Company</loading-button>
 
 							<loading-button type="button" size="small" variant="danger" variant-type="outline">
 								<icon name="trash"></icon>
@@ -172,7 +172,10 @@ export default {
 				company_name: this.company.company_name,
 				company_website: this.company.company_website,
 				company_no_of_employees: this.company.company_no_of_employees,
-				company_industry: this.company.company_industry,
+				company_industry: this.getKeyByValue(
+					this.industries,
+					this.company.company_industry
+				),
 				company_description: this.company.company_description,
 				company_benefits: this.company.company_benefits
 			},
@@ -185,6 +188,9 @@ export default {
 		};
 	},
 	methods: {
+		getKeyByValue(obj, value) {
+			return Object.keys(obj).find(key => obj[key] === value);
+		},
 		submit() {
 			this.$refs.jobSaveButton.startLoading();
 
