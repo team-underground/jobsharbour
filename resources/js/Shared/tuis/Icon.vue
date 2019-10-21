@@ -17,6 +17,88 @@
 	</svg>
 
 	<svg
+		v-else-if="name === 'edit2'"
+		xmlns="http://www.w3.org/2000/svg"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		stroke-width="2"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		class="feather feather-edit-3"
+	>
+		<path d="M12 20h9" />
+		<path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+	</svg>
+
+	<svg
+		v-else-if="name === 'tennis-ball'"
+		class="fill-current"
+		xmlns="http://www.w3.org/2000/svg"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+	>
+		<path
+			d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zM4 12a7.95 7.95 0 0 1 1.285-4.333C6.365 8.778 7 10.355 7 12c0 1.561-.667 3.068-1.8 4.193A7.934 7.934 0 0 1 4 12zm8 8a7.97 7.97 0 0 1-5.549-2.25C8.047 16.24 9 14.164 9 12c0-2.23-.902-4.373-2.426-5.862C8.002 4.815 9.905 4 12 4s3.998.815 5.426 2.138C15.902 7.627 15 9.77 15 12c0 2.164.953 4.24 2.549 5.75A7.97 7.97 0 0 1 12 20zm6.8-3.807C17.667 15.068 17 13.561 17 12c0-1.645.635-3.222 1.715-4.333a7.934 7.934 0 0 1 .085 8.526z"
+		/>
+	</svg>
+
+	<svg
+		v-else-if="name === 'palette'"
+		class="fill-current"
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 24 24"
+	>
+		<path
+			d="M7.42,15.54a1,1,0,0,0,0,1.41,1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.41A1,1,0,0,0,7.42,15.54Zm0-8.49a1,1,0,0,0,0,1.41,1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.41A1,1,0,0,0,7.42,7.05Zm4.95,10a1,1,0,1,0,1,1A1,1,0,0,0,12.37,17Zm-6-6a1,1,0,1,0,1,1A1,1,0,0,0,6.37,11Zm6-6a1,1,0,1,0,1,1A1,1,0,0,0,12.37,5Zm3.54,2.05a1,1,0,1,0,1.41,0A1,1,0,0,0,15.91,7.05Zm6.3,0a11,11,0,1,0-7.85,15.74,3.87,3.87,0,0,0,2.5-1.65A4.2,4.2,0,0,0,17.47,18a5.65,5.65,0,0,1-.1-1,5,5,0,0,1,3-4.56,3.84,3.84,0,0,0,2.06-2.25A4,4,0,0,0,22.21,7.08Zm-1.7,2.44a1.9,1.9,0,0,1-1,1.09A7,7,0,0,0,15.37,17a7.3,7.3,0,0,0,.14,1.4,2.16,2.16,0,0,1-.31,1.65,1.79,1.79,0,0,1-1.21.8,8.72,8.72,0,0,1-1.62.15,9,9,0,0,1-9-9.28A9.05,9.05,0,0,1,11.85,3h.51a9,9,0,0,1,8.06,5A2,2,0,0,1,20.51,9.52ZM12.37,11a1,1,0,1,0,1,1A1,1,0,0,0,12.37,11Z"
+		/>
+	</svg>
+
+	<svg
+		v-else-if="name === 'bulb'"
+		class="fill-current"
+		xmlns="http://www.w3.org/2000/svg"
+		data-name="Layer 1"
+		viewBox="0 0 24 24"
+	>
+		<path
+			d="M17.09,2.82a8,8,0,0,0-6.68-1.66A8,8,0,0,0,4.14,7.48a8.07,8.07,0,0,0,1.72,6.65A4.54,4.54,0,0,1,7,17v3a3,3,0,0,0,3,3h4a3,3,0,0,0,3-3V17.19A5.17,5.17,0,0,1,18.22,14a8,8,0,0,0-1.13-11.2ZM15,20a1,1,0,0,1-1,1H10a1,1,0,0,1-1-1V19h6Zm1.67-7.24A7.13,7.13,0,0,0,15,17H13V14a1,1,0,0,0-2,0v3H9a6.5,6.5,0,0,0-1.6-4.16,6,6,0,0,1,3.39-9.72A6,6,0,0,1,18,9,5.89,5.89,0,0,1,16.67,12.76Z"
+		/>
+	</svg>
+
+	<svg
+		v-else-if="name === 'construction'"
+		class="fill-current"
+		xmlns="http://www.w3.org/2000/svg"
+		data-name="Layer 1"
+		viewBox="0 0 24 24"
+	>
+		<path
+			d="M20,9.67V9.5a7.95,7.95,0,0,0-5.59-7.62l-.06,0a8.32,8.32,0,0,0-2.59-.36A8.21,8.21,0,0,0,4,9.67a3,3,0,0,0,0,5.66,8,8,0,0,0,8,7.17h.23a8.13,8.13,0,0,0,7.68-7.16A3,3,0,0,0,20,9.67ZM12.18,20.5a6,6,0,0,1-6.09-5H17.86A6.09,6.09,0,0,1,12.18,20.5Zm6.82-7H5a1,1,0,0,1,0-2H7a1,1,0,0,0,0-2H6A6.4,6.4,0,0,1,9,4.35V7.5a1,1,0,0,0,2,0V3.59a7.34,7.34,0,0,1,.82-.09H12a6.64,6.64,0,0,1,1,.09V7.5a1,1,0,0,0,2,0V4.32a6.65,6.65,0,0,1,1.18.87A6,6,0,0,1,18,9.5H17a1,1,0,0,0,0,2h2a1,1,0,0,1,0,2Z"
+		/>
+	</svg>
+
+	<svg
+		v-else-if="name === 'tag'"
+		xmlns="http://www.w3.org/2000/svg"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		stroke-width="2"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		class="feather feather-tag"
+	>
+		<path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+		<line x1="7" y1="7" x2="7" y2="7" />
+	</svg>
+
+	<svg
 		v-else-if="name === 'mail'"
 		:width="width"
 		:height="height"
@@ -101,6 +183,26 @@
 	</svg>
 
 	<svg
+		v-else-if="name === 'coffee'"
+		xmlns="http://www.w3.org/2000/svg"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		stroke-width="2"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		class="feather feather-coffee"
+	>
+		<path d="M18 8h1a4 4 0 0 1 0 8h-1" />
+		<path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
+		<line x1="6" y1="1" x2="6" y2="4" />
+		<line x1="10" y1="1" x2="10" y2="4" />
+		<line x1="14" y1="1" x2="14" y2="4" />
+	</svg>
+
+	<svg
 		v-else-if="name === 'map-pin'"
 		xmlns="http://www.w3.org/2000/svg"
 		:width="width"
@@ -151,6 +253,147 @@
 		<path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
 		<line x1="10" y1="11" x2="10" y2="17" />
 		<line x1="14" y1="11" x2="14" y2="17" />
+	</svg>
+
+	<svg
+		v-else-if="name === 'award'"
+		xmlns="http://www.w3.org/2000/svg"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		stroke-width="2"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		class="feather feather-award"
+	>
+		<circle cx="12" cy="8" r="7" />
+		<polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+	</svg>
+
+	<svg
+		v-else-if="name === 'tv'"
+		xmlns="http://www.w3.org/2000/svg"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		stroke-width="2"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		class="feather feather-tv"
+	>
+		<rect x="2" y="7" width="20" height="15" rx="2" ry="2" />
+		<polyline points="17 2 12 7 7 2" />
+	</svg>
+
+	<svg
+		v-else-if="name === 'monitor'"
+		xmlns="http://www.w3.org/2000/svg"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		stroke-width="2"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		class="feather feather-monitor"
+	>
+		<rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+		<line x1="8" y1="21" x2="16" y2="21" />
+		<line x1="12" y1="17" x2="12" y2="21" />
+	</svg>
+
+	<svg
+		v-else-if="name === 'trending'"
+		xmlns="http://www.w3.org/2000/svg"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		stroke-width="2"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		class="feather feather-trending-up"
+	>
+		<polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+		<polyline points="17 6 23 6 23 12" />
+	</svg>
+
+	<svg
+		v-else-if="name === 'headphones'"
+		xmlns="http://www.w3.org/2000/svg"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		stroke-width="2"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		class="feather feather-headphones"
+	>
+		<path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+		<path
+			d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"
+		/>
+	</svg>
+
+	<svg
+		v-else-if="name === 'heart'"
+		xmlns="http://www.w3.org/2000/svg"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		stroke-width="2"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		class="feather feather-heart"
+	>
+		<path
+			d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+		/>
+	</svg>
+
+	<svg
+		v-else-if="name === 'clipboard'"
+		xmlns="http://www.w3.org/2000/svg"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		stroke-width="2"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		class="feather feather-clipboard"
+	>
+		<path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+		<rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
+	</svg>
+
+	<svg
+		v-else-if="name === 'paper-clip'"
+		xmlns="http://www.w3.org/2000/svg"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		stroke-width="2"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		class="feather feather-paperclip"
+	>
+		<path
+			d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"
+		/>
 	</svg>
 
 	<svg

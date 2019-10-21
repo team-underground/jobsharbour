@@ -153,16 +153,16 @@
 			<div class="md:flex relative max-w-6xl mx-auto">
 				<div class="lg:w-3/5 md:flex items-center">
 					<div class="py-6 md:py-16">
-						<heading size="heading2" class="mb-4">Make Recruiting Your Competitive Advantage</heading>
+						<heading size="heading2" class="mb-4">Hello Employers. Start hiring with us?</heading>
 						<heading
 							class="mb-5 md:pr-10"
-						>Talent is a top priority for all startup founders and executives. MCL offers a way to completely optimize your entire recruiting process. Find better candidates, conduct more focused interviews, and make data-driven hiring decisions.</heading>
+						>Jobs Harbour is the best place to post your jobs. We will help you find the right candidates for your next projects. Whether you're looking for full-time, part-time, freelance, or internship opportunities, we've got you covered.</heading>
 
-						<loading-button>Get started now!</loading-button>
+						<loading-button to="/for-employers" tag="a">Get started now!</loading-button>
 					</div>
 				</div>
 				<div class="lg:w-2/5 relative">
-					<img src="/Consultation.png" alt="bg-image" class="object-contain object-center w-full mt-4" />
+					<img src="/Consultation.png" alt="bg-image" class="object-contain object-center w-full" />
 				</div>
 			</div>
 		</div>

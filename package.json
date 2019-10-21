@@ -31,6 +31,7 @@
         "vue-custom-google-autocomplete": "^0.1.3",
         "vue-file-agent": "^1.3.1",
         "vue-js-modal": "^1.3.31",
-        "vue-snack": "^0.1.4"
+        "vue-snack": "^0.1.4",
+        "vuejs-toggle-switch": "^1.3.0"
     }
 }

@@ -4,7 +4,10 @@
 			<div class="md:flex items-center justify-between mx-auto max-w-6xl">
 				<div class="flex justify-between md:flex-none items-center">
 					<a href="/" class="flex items-center py-2">
-						<img src="/mcl-logo.svg" alt="mcl" class="object-fit h-8" />
+						<span class="font-bold text-xl text-blue-600">
+							Jobs
+							<span class="text-gray-800">Harbour</span>
+						</span>
 						<!-- <img src="/logo.jpg" alt="mcl" width="150" /> -->
 					</a>
 
@@ -28,26 +31,29 @@
 					<a
 						v-if="$page.auth.user"
 						href="/dashboard"
-						:class="isUrl('dashboard') ? 'active text-blue-600' : 'text-gray-500'"
+						:class="isUrl('dashboard') ? 'menu-active text-blue-600' : 'text-gray-500'"
 						class="mr-6 py-6 inline-block font-medium hover:text-blue-600"
 					>Dashboard</a>
 					<a
 						href="/jobs"
-						:class="isUrl('jobs') ? 'active text-blue-600' : 'text-gray-500'"
+						:class="isUrl('jobs') ? 'menu-active text-blue-600' : 'text-gray-500'"
 						class="mr-6 py-6 inline-block font-medium hover:text-blue-600"
 					>Job Listings</a>
 					<a
-						href="/tickets"
+						href="/categories"
+						:class="isUrl('categories') ? 'menu-active text-blue-600' : 'text-gray-500'"
 						class="mr-6 py-6 inline-block font-medium text-gray-500 hover:text-blue-600"
-					>Companies</a>
+					>Categories</a>
 
 					<a
-						href="#"
+						href="/for-employers"
+						:class="isUrl('for-employers') ? 'menu-active text-blue-600' : 'text-gray-500'"
 						class="py-6 mr-6 inline-block font-medium text-gray-500 hover:text-blue-600"
 					>For Employers</a>
 
 					<a
-						href="/tickets"
+						href="/about"
+						:class="isUrl('about') ? 'menu-active text-blue-600' : 'text-gray-500'"
 						class="py-6 inline-block font-medium text-gray-500 hover:text-blue-600"
 					>About</a>
 				</div>
@@ -69,7 +75,9 @@
 								</div>
 							</template>
 							<template #dropdown>
-								<div class="mt-2 bg-white rounded-lg border w-48 py-1 shadow-dropdown">
+								<div
+									class="mt-2 bg-white rounded-lg border-t border-gray-100 w-48 py-1 shadow-lg overflow-hidden"
+								>
 									<a
 										class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600"
 										href="#"
@@ -82,7 +90,7 @@
 										class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600"
 										href="#"
 									>Help & Feedback</a>
-									<div class="border-t my-1"></div>
+									<div class="border-t my-1 border-gray-200"></div>
 									<!-- <a
 										class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600"
 										href="#"
@@ -102,27 +110,84 @@
 							href="/login"
 							class="px-4 py-5 mr-3 inline-block font-medium text-gray-500 hover:text-blue-600"
 						>Login</a>
-						<loading-button tag="a" to="/register" size="small" rounded="large">
-							<icon name="edit" class="mr-1"></icon>Post a Job
-						</loading-button>
+						<loading-button tag="a" to="/register" size="small" rounded="large">Post a Job</loading-button>
 					</template>
 				</div>
 			</div>
 
 			<div class="md:hidden" v-if="showNavbar">
-				<a href="#" class="border-t px-2 py-3 block font-medium text-gray-600 hover:text-blue-500">Home</a>
 				<a
-					href="#"
-					class="border-t px-2 py-3 block font-medium text-gray-600 hover:text-blue-500"
-				>Search</a>
+					href="/"
+					:class="isUrl('/') ? 'text-blue-600' : 'text-gray-600'"
+					class="border-t px-2 py-3 block font-medium"
+				>Home</a>
 				<a
-					href="#"
-					class="border-t px-2 py-3 block font-medium text-gray-600 hover:text-blue-500"
-				>Schedule</a>
+					href="/dashboard"
+					:class="isUrl('dashboard') ? 'text-blue-600' : 'text-gray-600'"
+					class="border-t px-2 py-3 block font-medium hover:text-blue-600"
+				>Dashboard</a>
+
 				<a
-					href="#"
-					class="border-t px-2 py-3 block font-medium text-gray-600 hover:text-blue-500"
-				>Events</a>
+					href="/jobs"
+					:class="isUrl('jobs') ? 'text-blue-600' : 'text-gray-600'"
+					class="border-t px-2 py-3 block font-medium hover:text-blue-600"
+				>Jobs Listing</a>
+
+				<a
+					href="/categories"
+					:class="isUrl('about') ? 'text-blue-600' : 'text-gray-600'"
+					class="border-t px-2 py-3 block font-medium hover:text-blue-600"
+				>Categories</a>
+
+				<a
+					href="/for-employers"
+					:class="isUrl('for-employers') ? 'text-blue-600' : 'text-gray-600'"
+					class="border-t px-2 py-3 block font-medium hover:text-blue-600"
+				>For Employers</a>
+
+				<a
+					href="/about"
+					:class="isUrl('about') ? 'text-blue-600' : 'text-gray-600'"
+					class="border-t px-2 py-3 block font-medium hover:text-blue-600"
+				>About Jobs Harbour</a>
+
+				<div class="flex items-center py-2" v-if="$page.auth.user">
+					<div class="flex flex-1">
+						<div
+							class="outline-none block inline-flex items-center justify-center h-10 w-10 overflow-hidden rounded-full shadow-inner bg-blue-600 text-white font-bold text-xl"
+						>{{ $page.auth.user.name.charAt(0) }}</div>
+						<div class="text-left ml-2">
+							<span class="text-sm leading-tight block w-32 truncate">{{ $page.auth.user.name }}</span>
+							<span
+								class="leading-tight text-gray-400 block text-xs uppercase tracking-wider font-semibold"
+							>{{ $page.auth.user.type }}</span>
+						</div>
+					</div>
+					<div class="w-24 px-4">
+						<inertia-link
+							class="block px-4 py-2 text-gray-600 hover:text-blue-600"
+							:href="route('logout')"
+							method="post"
+						>Logout</inertia-link>
+					</div>
+				</div>
+
+				<div class="border-t flex" v-else>
+					<div class="flex-1 border-r text-center">
+						<a
+							href="/login"
+							:class="isUrl('login') ? 'text-blue-600' : 'text-gray-600'"
+							class="px-2 py-3 block font-medium"
+						>Login</a>
+					</div>
+					<div class="flex-1 text-center">
+						<a
+							href="/register"
+							:class="isUrl('register') ? 'text-blue-600' : 'text-gray-600'"
+							class="px-2 py-3 block font-medium"
+						>Create free account</a>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -134,7 +199,10 @@
 			<div class="max-w-6xl mx-auto">
 				<div class="flex flex-wrap md:flex-1 -mx-4">
 					<div class="md:w-2/4 px-4 mb-6">
-						<img src="/mcl-logo.svg" alt="mcl" class="object-fit h-10" />
+						<span class="font-bold text-xl text-blue-600">
+							Jobs
+							<span class="text-gray-800">Harbour</span>
+						</span>
 					</div>
 
 					<div class="w-1/2 md:w-1/4 px-4 mb-6">
@@ -155,7 +223,7 @@
 				</div>
 
 				<div class="pt-8 border-t border-gray-200 text-sm md:flex md:justify-between">
-					<div>&copy; 2019 mycareerlist. All rights reserved.</div>
+					<div>&copy; 2019 Jobs Harbour. All rights reserved.</div>
 					<div>
 						Made with
 						<span class="text-red-600">&hearts;</span> in Guwahati
@@ -226,10 +294,10 @@ export default {
 </script>
 
 <style>
-.active {
+.menu-active {
 	position: relative;
 }
-.active:after {
+.menu-active:after {
 	bottom: 0;
 	position: absolute;
 	left: 0;

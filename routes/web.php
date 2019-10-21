@@ -21,9 +21,14 @@ Route::get('/', 'JobpostsController@index');
 Route::get('/about', function () {
     return Inertia::render('About');
 });
-Route::get('/contact', function () {
-    return Inertia::render('Contact');
+Route::get('/categories', function () {
+    return Inertia::render('Categories');
 });
+
+Route::get('/for-employers', function () {
+    return Inertia::render('ForEmployers');
+});
+
 
 // Auth::routes();
 // Route::get('/home', 'HomeController@index')->name('home');

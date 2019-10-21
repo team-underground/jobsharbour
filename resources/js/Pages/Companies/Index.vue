@@ -22,6 +22,7 @@
 
 		<div class="py-10">
 			<div class="max-w-6xl mx-auto">
+				<flash-message />
 				<div class="relative">
 					<div class="absolute fixed top-0 bottom-0 right-0 w-6 bg-white-linear rounded-r-lg opacity-75"></div>
 					<basic-table :headings="headings" v-if="companies.data.length > 0">
@@ -138,6 +139,7 @@ import Alert from "@/Shared/tuis/Alert";
 import BasicTable from "@/Shared/tuis/BasicTable";
 import Badge from "@/Shared/tuis/Badge";
 import EmptyState from "@/Shared/tuis/EmptyState";
+import FlashMessage from "@/Shared/tuis/FlashMessage";
 
 import _ from "lodash";
 
@@ -155,7 +157,8 @@ export default {
 		Alert,
 		BasicTable,
 		Badge,
-		EmptyState
+		EmptyState,
+		FlashMessage
 	},
 	props: ["companies", "filters"],
 
