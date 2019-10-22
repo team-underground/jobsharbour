@@ -2,12 +2,10 @@
 	<layout>
 		<div class="px-4 py-6 md:py-16 relative">
 			<div class="max-w-3xl mx-auto text-center">
-				<heading size="display" class="mb-4">Your New Hire is Here</heading>
-				<heading class="mb-1">
-					Are you still figuring out where to post your next job post? Don't worry we are here to help you.
-					We will make sure your job listing reaches to large number of potentials candidates, so that you can pick the best out of them. Try
-					<strong>Jobs Harbour</strong> today.
-				</heading>
+				<heading size="display" class="mb-4">Hello Employers</heading>
+				<heading
+					class="mb-1"
+				>Still struggling to communicate with job seekers? Your quest is over. Here we come with the best platform where you can showcase your job lists, communicate with a mass of potential candidates in no time and also pick up the best out of them.</heading>
 			</div>
 		</div>
 
@@ -18,10 +16,23 @@
 					<toggle-switch :options="myOptions" v-model="plan" />
 				</div>
 
+				<alert class="mb-10" v-if="plan === 'Company'">
+					As
+					<strong>Company</strong> we refer to an individual organization HR/Admin registering in our portal for job posting.
+				</alert>
+
+				<alert class="mb-10" v-if="plan === 'Recruiting Firm'">
+					As
+					<strong>Recruiting Firm</strong> we refer to a consultancy HR/Representative registering in our portal for job posting for the concerned company.
+				</alert>
+
 				<div class="flex -mx-4" v-if="plan === 'Company'">
 					<div class="w-1/2 px-4 flex">
 						<card class="mb-8 shadow-lg flex-1 relative">
-							<heading size="large" class="mb-2 text-blue-600 text-center">Basic</heading>
+							<heading
+								size="large"
+								class="mb-2 text-blue-600 text-center"
+							>{{pricing['company-basic'].display_name}}</heading>
 
 							<heading size="heading" class="mb-5 text-center">Free Forever</heading>
 
@@ -37,9 +48,15 @@
 					</div>
 					<div class="w-1/2 px-4 flex">
 						<card class="mb-8 shadow-lg flex-1">
-							<heading size="large" class="mb-2 text-orange-600 text-center">Pro</heading>
+							<heading
+								size="large"
+								class="mb-2 text-orange-600 text-center"
+							>{{pricing['company-pro'].display_name}}</heading>
 
-							<heading size="heading" class="mb-5 text-center">Rs. 299 /month</heading>
+							<heading
+								size="heading"
+								class="mb-5 text-center"
+							>Rs. {{pricing['company-pro'].package_price}} /month</heading>
 
 							<list
 								:lists="['Add 1 company', 'Unlimited job posts', 'Email Support', 'Analytics', 'Advance Promotion', 'Ads on Social Sites', 'Many more...']"
@@ -59,7 +76,10 @@
 				<div class="flex -mx-4" v-if="plan === 'Recruiting Firm'">
 					<div class="w-1/2 px-4 flex">
 						<card class="mb-8 shadow-lg flex-1 relative">
-							<heading size="large" class="mb-2 text-blue-600 text-center">Basic</heading>
+							<heading
+								size="large"
+								class="mb-2 text-blue-600 text-center"
+							>{{pricing['consultancy-basic'].display_name}}</heading>
 
 							<heading size="heading" class="mb-5 text-center">Free Forever</heading>
 
@@ -75,9 +95,15 @@
 					</div>
 					<div class="w-1/2 px-4 flex">
 						<card class="mb-8 shadow-lg flex-1">
-							<heading size="large" class="mb-2 text-orange-600 text-center">Pro</heading>
+							<heading
+								size="large"
+								class="mb-2 text-orange-600 text-center"
+							>{{pricing['consultancy-pro'].display_name}}</heading>
 
-							<heading size="heading" class="mb-5 text-center">Rs. 399 /month</heading>
+							<heading
+								size="heading"
+								class="mb-5 text-center"
+							>Rs. {{pricing['consultancy-pro'].package_price}} /month</heading>
 
 							<list
 								:lists="['Add unlimited company', 'Unlimited job posts', 'Email Support', 'Analytics', 'Advance Promotion', 'Ads on Social Sites', 'Many more...']"
@@ -114,6 +140,7 @@ import LinkTo from "@/Shared/tuis/LinkTo";
 import Card from "@/Shared/tuis/Card";
 import List from "@/Shared/tuis/List";
 import LoadingButton from "@/Shared/tuis/LoadingButton";
+import Alert from "@/Shared/tuis/Alert";
 
 export default {
 	components: {
@@ -124,7 +151,11 @@ export default {
 		Card,
 		List,
 		ToggleSwitch,
-		LoadingButton
+		LoadingButton,
+		Alert
+	},
+	props: {
+		pricing: Object
 	},
 	data() {
 		return {

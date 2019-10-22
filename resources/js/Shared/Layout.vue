@@ -31,30 +31,30 @@
 					<a
 						v-if="$page.auth.user"
 						href="/dashboard"
-						:class="isUrl('dashboard') ? 'menu-active text-blue-600' : 'text-gray-500'"
+						:class="isUrl('dashboard') ? 'menu-active text-blue-600' : 'text-gray-600'"
 						class="mr-6 py-6 inline-block font-medium hover:text-blue-600"
 					>Dashboard</a>
 					<a
 						href="/jobs"
-						:class="isUrl('jobs') ? 'menu-active text-blue-600' : 'text-gray-500'"
+						:class="isUrl('jobs') ? 'menu-active text-blue-600' : 'text-gray-600'"
 						class="mr-6 py-6 inline-block font-medium hover:text-blue-600"
 					>Job Listings</a>
 					<a
 						href="/categories"
-						:class="isUrl('categories') ? 'menu-active text-blue-600' : 'text-gray-500'"
-						class="mr-6 py-6 inline-block font-medium text-gray-500 hover:text-blue-600"
+						:class="isUrl('categories') ? 'menu-active text-blue-600' : 'text-gray-600'"
+						class="mr-6 py-6 inline-block font-medium hover:text-blue-600"
 					>Categories</a>
 
 					<a
 						href="/for-employers"
-						:class="isUrl('for-employers') ? 'menu-active text-blue-600' : 'text-gray-500'"
-						class="py-6 mr-6 inline-block font-medium text-gray-500 hover:text-blue-600"
+						:class="isUrl('for-employers') ? 'menu-active text-blue-600' : 'text-gray-600'"
+						class="py-6 mr-6 inline-block font-medium hover:text-blue-600"
 					>For Employers</a>
 
 					<a
 						href="/about"
-						:class="isUrl('about') ? 'menu-active text-blue-600' : 'text-gray-500'"
-						class="py-6 inline-block font-medium text-gray-500 hover:text-blue-600"
+						:class="isUrl('about') ? 'menu-active text-blue-600' : 'text-gray-600'"
+						class="py-6 inline-block font-medium hover:text-blue-600"
 					>About</a>
 				</div>
 
@@ -108,7 +108,7 @@
 					<template v-else>
 						<a
 							href="/login"
-							class="px-4 py-5 mr-3 inline-block font-medium text-gray-500 hover:text-blue-600"
+							class="px-4 py-5 mr-3 inline-block font-medium text-gray-600 hover:text-blue-600"
 						>Login</a>
 						<loading-button tag="a" to="/register" size="small" rounded="large">Post a Job</loading-button>
 					</template>

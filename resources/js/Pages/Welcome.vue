@@ -1,8 +1,16 @@
 <template>
 	<layout>
-		<div class="bg-white overflow-hidden px-4 relative z-20">
+		<div class="bg-white overflow-hidden px-4 relative z-20 py-5">
+			<div class="-mb-10 h-16 w-32 bg-blue-600 absolute left-0 bottom-0 skew_aa"></div>
+			<div class="mb-4 h-12 w-32 bg-gray-400 absolute left-0 bottom-0 ml-10 skew_aa"></div>
+			<div class="-mb-16 h-20 w-32 bg-orange-400 absolute left-0 bottom-0 ml-16 skew_aa"></div>
+
+			<div class="-mb-10 h-16 w-48 bg-blue-600 absolute right-0 top-0 mr-6 skew_bb"></div>
+			<div class="mb-4 h-16 w-32 bg-gray-400 absolute right-0 top-0 mr-10 skew_bb"></div>
+			<div class="-mb-16 h-20 w-32 bg-orange-400 absolute right-0 top-0 skew_bb"></div>
+
 			<div class="md:flex relative max-w-6xl mx-auto">
-				<div class="lg:w-3/5 md:flex items-center">
+				<div class="lg:w-3/5 md:flex">
 					<div class="py-8 md:py-16">
 						<!-- <heading size="display" class="mb-1">Your passion begins here.</heading>
 						<heading size="display" class="mb-5">Find your job better &amp; faster.</heading>-->
@@ -10,11 +18,16 @@
 
 						<heading size="heading2" class="mb-1">Looking for jobs in Northeast?</heading>
 						<heading size="display" class="mb-5">Find your dream job here.</heading>
-						<search-input placeholder="Search your job title..." class="md:w-2/3" rounded="large"></search-input>
+						<!-- <search-input placeholder="Search your job title..." class="md:w-2/3" rounded="large"></search-input> -->
+
+						<loading-button tag="a" to="/jobs">Explore Jobs</loading-button>
+						<span class="mx-4">or</span>
+						<!-- <link-to to="/categories">Browse Categories</link-to> -->
+						<loading-button tag="a" to="/categories" variant-type="outline">Browse Categories</loading-button>
 					</div>
 				</div>
 				<div class="lg:w-2/5 relative">
-					<div class="md:pt-10">
+					<div class="md:mt-6">
 						<lottie-player
 							src="/lf30_editor_wJXeMM.json"
 							background="transparent"
@@ -153,10 +166,10 @@
 			<div class="md:flex relative max-w-6xl mx-auto">
 				<div class="lg:w-3/5 md:flex items-center">
 					<div class="py-6 md:py-16">
-						<heading size="heading2" class="mb-4">Hello Employers. Start hiring with us?</heading>
+						<heading size="heading2" class="mb-4">Employers. Start hiring with us?</heading>
 						<heading
 							class="mb-5 md:pr-10"
-						>Jobs Harbour is the best place to post your jobs. We will help you find the right candidates for your next projects. Whether you're looking for full-time, part-time, freelance, or internship opportunities, we've got you covered.</heading>
+						>Are you still searching for a platform connecting with job seekers? Your quest is over. Here we come with the best platform where you can showcase your job lists. Whether you're looking for full-time, part-time, freelance, or internship opportunities, we've got you covered. Try Job Harbour today and pick the best of the candidates.</heading>
 
 						<loading-button to="/for-employers" tag="a">Get started now!</loading-button>
 					</div>
@@ -245,3 +258,23 @@ export default {
 	}
 };
 </script>
+
+
+<style>
+.skew_aa {
+	-webkit-transform: skew(0deg, -20deg);
+	-moz-transform: skew(0deg, -20deg);
+	-ms-transform: skew(0deg, -20deg);
+	-o-transform: skew(0deg, -20deg);
+	transform: skew(0deg, -20deg);
+	transform-origin: 0;
+}
+.skew_bb {
+	-webkit-transform: skew(20deg, -20deg);
+	-moz-transform: skew(20deg, -20deg);
+	-ms-transform: skew(20deg, -20deg);
+	-o-transform: skew(20deg, -20deg);
+	transform: skew(20deg, -20deg);
+	transform-origin: 0;
+}
+</style>
