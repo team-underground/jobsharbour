@@ -1,8 +1,11 @@
 <?php
 
+use App\Enums\CategoryType;
+use App\Jobpost;
+use App\Package;
+use Inertia\Inertia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
-use Inertia\Inertia;
 
 
 /*
@@ -22,11 +25,20 @@ Route::get('/about', function () {
     return Inertia::render('About');
 });
 Route::get('/categories', function () {
-    return Inertia::render('Categories');
+    $categories = CategoryType::toSelectArray();
+
+    return Inertia::render('Categories', [
+        'categories' => $categories
+    ]);
 });
 
 Route::get('/for-employers', function () {
-    return Inertia::render('ForEmployers');
+    $pricings = Package::select('package_name', 'display_name', 'package_price')->get()->groupBy('package_name')->transform(function ($package) {
+        return $package->first();
+    })->toArray();
+    return Inertia::render('ForEmployers', [
+        'pricing' => $pricings
+    ]);
 });
 
 
@@ -78,7 +90,18 @@ Route::get('/jobs/{uuid}', 'JobpostsController@show')->name('jobs.show');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
+        $posts = Jobpost::with('company')->orderByViews()->closed(false)->limit(10)->get()->transform(function ($post) {
+            return [
+                'uuid' => $post->uuid,
+                'job_title' => $post->job_title,
+                'job_published_at_formatted' => $post->job_published_at_formatted,
+                'total_page_views' => views($post)->count(),
+                'unique_page_views' => views($post)->unique()->count()
+            ];
+        });
+        return Inertia::render('Dashboard', [
+            'posts' => $posts
+        ]);
     });
 
     Route::get('/settings', function () {

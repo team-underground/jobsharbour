@@ -146,7 +146,7 @@
 								</div>
 								<div v-else class="mt-2 flex-shrink-0 w-16 h-16 rounded-lg bg-gray-100 border block ml-5">
 									<img
-										:src="post.company.company_logo"
+										:src="post.company.company_logo_path"
 										alt="company-logo"
 										class="object-fit object-center w-full h-full rounded-lg"
 									/>

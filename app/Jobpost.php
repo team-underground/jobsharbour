@@ -11,11 +11,12 @@ use Illuminate\Support\Str;
 use App\Enums\JobStatusType;
 use JamesMills\Uuid\HasUuidTrait;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Builder;
+use CyrildeWit\EloquentViewable\Viewable;
+use CyrildeWit\EloquentViewable\Contracts\Viewable as ViewableContract;
 
-class Jobpost extends Model
+class Jobpost extends Model implements ViewableContract
 {
-    use HasUuidTrait;
+    use HasUuidTrait, Viewable;
 
     protected $guarded = [];
 
@@ -144,9 +145,20 @@ class Jobpost extends Model
     public function scopeFilter($query, array $filters)
     {
         $query->when($filters['search'] ?? null, function ($query, $search) {
-            $query->where('job_title', 'like', '%' . $search . '%')
-                ->orWhere('job_salary', 'like', '%' . $search . '%')
-                ->orWhere('job_location', 'like', '%' . $search . '%');
+            $query->where(function ($query) use ($search) {
+                $query->where('job_title', 'like', '%' . $search . '%')
+                    ->orWhere('job_salary', 'like', '%' . $search . '%')
+                    ->orWhere('job_location', 'like', '%' . $search . '%')
+                    ->orWhere('job_category', 'like', '%' . $search . '%');
+            });
+        })->when($filters['category'] ?? null, function ($query, $jobCategory) {
+            $jobCategoryArray = explode(',', $jobCategory);
+
+            $jobCategoryIds = collect($jobCategoryArray)->map(function ($j) {
+                return CategoryType::getValue(Str::studly($j, ' '));
+            });
+
+            $query->whereIn('job_category', $jobCategoryIds);
         })->when($filters['jobtype'] ?? null, function ($query, $jobtype) {
             $jobtypeArray = explode(',', $jobtype);
 
@@ -174,6 +186,15 @@ class Jobpost extends Model
             if (auth()->user()->type == 'Employer' || auth()->user()->type == 'Consultancy') {
                 $query->where('user_id', auth()->user()->id);
             }
+        }
+    }
+
+    public function scopeClosed($query, $booleanValue = true)
+    {
+        if ($booleanValue === false) {
+            $query->whereDate('job_closing_date', '>=', Carbon::now()->format('Y-m-d'));
+        } else {
+            $query->whereDate('job_closing_date', '<', Carbon::now()->format('Y-m-d'));
         }
     }
 }

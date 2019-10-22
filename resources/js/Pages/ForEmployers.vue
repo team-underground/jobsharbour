@@ -157,6 +157,9 @@ export default {
 	props: {
 		pricing: Object
 	},
+	props: {
+		pricing: Object
+	},
 	data() {
 		return {
 			plan: "Company",

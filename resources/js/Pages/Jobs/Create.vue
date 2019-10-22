@@ -123,12 +123,12 @@
 										</div>
 										<div class="w-1/2 px-4">
 											<select-input
-												v-model="job.job_position"
+												v-model="job.job_category"
 												label="Category"
 												class="mb-4"
-												:options="positions"
-												:errors="errors['job_position']"
-												@keydown="delete errors['job_position']"
+												:options="categories"
+												:errors="errors['job_category']"
+												@keydown="delete errors['job_category']"
 											>
 												<option value="null" disabled>Select job category</option>
 											</select-input>
@@ -232,7 +232,7 @@ export default {
 		EmptyState,
 		TagsInput
 	},
-	props: ["jobtypes", "positions", "industries", "errors", "companies"],
+	props: ["jobtypes", "categories", "industries", "errors", "companies"],
 	data() {
 		return {
 			job: {

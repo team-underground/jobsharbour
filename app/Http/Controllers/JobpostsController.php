@@ -33,14 +33,16 @@ class JobpostsController extends Controller
                 $jobpost->industry(request('industry'));
             }
 
-            $jobposts = $jobpost->filter(request()->only(['search', 'jobtype', 'salary']))
+            $jobposts = $jobpost->filter(request()->only(['search', 'jobtype', 'salary', 'category']))
                 ->orderByDesc('job_published_at')
                 ->simplePaginate(6);
 
-            $filters = request()->all('search', 'jobtype', 'salary');
+            $filters = request()->all('search', 'jobtype', 'salary', 'category');
             $jobtypes = JobType::toSelectArray();
 
-            return Inertia::render('Jobs', compact('jobposts', 'filters', 'jobtypes'));
+            $categories = CategoryType::toSelectArray();
+
+            return Inertia::render('Jobs', compact('jobposts', 'filters', 'jobtypes', 'categories'));
         } else {
             $jobposts = Jobpost::with('company')->orderByDesc('job_published_at')->simplePaginate(6);
 
@@ -55,6 +57,8 @@ class JobpostsController extends Controller
         // $post = Jobpost::with('company')->findOrFail($id);
         $jobpost = Jobpost::findByUuidOrFail($uuid);
         $post = $jobpost->load('company');
+        // record page views
+        views($post)->record();
 
         return Inertia::render('JobDetails', compact('post'));
     }

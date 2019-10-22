@@ -101,7 +101,7 @@ input[type="checkbox"].check-custom {
 
 /* Styles for the basic appearance of the custom checkbox */
 input[type="checkbox"].check-custom ~ .check-toggle {
-	width: 1.25rem;
+	min-width: 1.25rem;
 	height: 1.25rem;
 	position: relative;
 	display: inline-block;

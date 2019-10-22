@@ -28,12 +28,13 @@ final class IndustryType extends Enum
 
     public static function getDescription($value): string
     {
+        // do not write symbols like &,. etc in return values
         if ($value === self::InformationTechnology) {
             return 'It/Software';
         }
 
         if ($value === self::DesignAndMultimedia) {
-            return 'Design & Multimedia';
+            return 'Design and Multimedia';
         }
 
         if ($value === self::BankingAndFinance) {
@@ -41,7 +42,7 @@ final class IndustryType extends Enum
         }
 
         if ($value === self::NonProfitOrganization) {
-            return 'NGO & NPO';
+            return 'NGO and NPO';
         }
 
         return parent::getDescription($value);

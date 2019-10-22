@@ -29,6 +29,18 @@
 								class
 							>{{ option }}</checkbox-input>
 						</div>
+
+						<heading class="mb-2 text-gray-700" size="small-caps">Category</heading>
+						<div class="mb-5">
+							<checkbox-input
+								v-model="form.category"
+								v-for="option in categories"
+								:key="option"
+								:model-value="option"
+								:value="option"
+								class
+							>{{ option }}</checkbox-input>
+						</div>
 					</div>
 					<div class="md:w-3/5 px-4">
 						<div class="flex items-center mb-5">
@@ -84,7 +96,7 @@
 												<heading size="large" class="inline-block">{{ post.job_title }}</heading>
 											</div>
 											<heading size="small" class="mb-1">{{ post.company.company_name }}</heading>
-											<heading size="small" class="mb-1">{{ post.company.company_industry }}</heading>
+											<heading size="small" class="mb-1">{{categories[post.job_category]}}</heading>
 										</div>
 										<div class="md:w-48 flex-col justify-between mt-1">
 											<div class="md:mb-1 md:flex-1 flex items-center">
@@ -228,11 +240,17 @@
 			</div>
 		</div>
 
-		<modal name="filter-modal" height="auto" :scrollable="true" classes="rounded-lg bg-white">
+		<modal
+			name="filter-modal"
+			height="auto"
+			:scrollable="true"
+			classes="rounded-lg bg-white"
+			:adaptive="true"
+		>
 			<div class="px-8 py-5">
 				<heading size="heading" class="mb-4">Filters</heading>
-				<div class="flex">
-					<div class="w-1/2">
+				<div class="flex flex-wrap">
+					<div class="w-1/2 mb-4">
 						<heading class="mb-2 text-gray-700" size="small-caps">Job Type</heading>
 
 						<ul class="no-bullet">
@@ -249,7 +267,7 @@
 							</li>
 						</ul>
 					</div>
-					<div class="w-1/2">
+					<div class="w-1/2 mb-4">
 						<heading class="mb-2 text-gray-700" size="small-caps">Salary</heading>
 
 						<ul class="no-bullet">
@@ -262,6 +280,23 @@
 										:value="key"
 									/>
 									<span class="ml-2">Rs. {{ salary }}</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+					<div class="w-full">
+						<heading class="mb-2 text-gray-700" size="small-caps">Job Categories</heading>
+
+						<ul class="no-bullet column-count-2">
+							<li class="mb-1" v-for="(category, index) in categories" :key="index">
+								<label class="inline-flex items-center">
+									<input
+										type="checkbox"
+										class="form-checkbox text-blue-500 h-4 w-4"
+										v-model="form.category"
+										:value="category"
+									/>
+									<span class="ml-2">{{ category }}</span>
 								</label>
 							</li>
 						</ul>
@@ -312,7 +347,8 @@ export default {
 	props: {
 		jobposts: Object,
 		filters: Object,
-		jobtypes: Array
+		jobtypes: Array,
+		categories: Array
 	},
 
 	watch: {
@@ -337,7 +373,8 @@ export default {
 			form: {
 				search: this.filters.search,
 				jobtype: this.filters.jobtype || [],
-				salary: this.filters.salary || []
+				salary: this.filters.salary || [],
+				category: this.getCategoryParam()
 			},
 			salaries: {
 				"5K-10K": "5K-10K",
@@ -347,7 +384,7 @@ export default {
 				"40K+": "40K+"
 			}
 		};
-	},
+	}, 
 
 	methods: {
 		reset() {
@@ -355,7 +392,28 @@ export default {
 			this.form.search = null;
 			this.form.jobtype = [];
 			this.form.salary = [];
+			this.form.category = [];
+		},
+		getCategoryParam() {
+			let params = window.location.search;
+			if (params) {
+				let searchParams = new URLSearchParams(params);
+				if (searchParams.has("category")) {
+					let array = [];
+					array.push(searchParams.get("category"));
+					return array;
+				}
+			} else {
+				return this.filters.category || [];
+			}
 		}
 	}
 };
 </script>
+
+<style>
+.column-count-2 {
+	column-count: 2;
+	column-gap: 40px;
+}
+</style>

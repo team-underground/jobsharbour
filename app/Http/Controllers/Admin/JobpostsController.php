@@ -29,7 +29,7 @@ class JobpostsController extends Controller
 
 	public function create()
 	{
-		$positions = CategoryType::toSelectArray();
+		$categories = CategoryType::toSelectArray();
 		$jobtypes = JobType::toSelectArray();
 		$industries = IndustryType::toSelectArray();
 
@@ -40,7 +40,7 @@ class JobpostsController extends Controller
 			];
 		});
 		// return $companies;
-		return Inertia::render('Jobs/Create', compact('jobtypes', 'positions', 'industries', 'companies'));
+		return Inertia::render('Jobs/Create', compact('jobtypes', 'categories', 'industries', 'companies'));
 	}
 
 	public function store(Request $request)
@@ -49,7 +49,7 @@ class JobpostsController extends Controller
 			'company_id' => ['required'],
 			'job_title' => ['required'],
 			'job_location' => ['required'],
-			'job_position' => ['required'],
+			'job_category' => ['required'],
 			'job_type' => ['required'],
 			'job_salary' => ['required'],
 			'job_description' => ['required'],
@@ -67,7 +67,6 @@ class JobpostsController extends Controller
 
 		DB::transaction(function () use ($input) {
 			$jobpost_created = Jobpost::create($input + [
-				'job_position' => 1,
 				'user_id' => auth()->user()->id,
 				'job_slug' => Str::slug($input['job_title'])
 			]);

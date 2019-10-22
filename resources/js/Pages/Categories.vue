@@ -5,241 +5,23 @@
 				<heading size="display" class="mb-8 text-center">Find Jobs by Category</heading>
 
 				<div class="flex flex-wrap -mx-2 md:-mx-4 text-center">
-					<div class="w-1/3 md:w-1/4 lg:w-1/5 px-2 py-2 md:px-4 md:py-4">
-						<card class="h-40 flex flex-col items-center justify-center hover:shadow-lg rounded-large">
-							<div
-								class="w-12 h-12 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
+					<template v-for="category in categories">
+						<div class="w-1/2 md:w-1/4 lg:w-1/5 px-2 py-2 md:px-4 md:py-4" :key="category">
+							<card
+								class="h-40 flex flex-col items-center justify-center hover:shadow-lg rounded-large"
+								:to="`/jobs?category=${category}`"
+								tag="a"
 							>
-								<icon name="users" class="w-6 h-6"></icon>
-							</div>
+								<div
+									class="w-12 h-12 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
+								>
+									<icon name="users" class="w-6 h-6"></icon>
+								</div>
 
-							<heading size="small-caps" class="text-gray-700">Human Resources</heading>
-						</card>
-					</div>
-					<div class="w-1/3 md:w-1/4 lg:w-1/5 px-2 py-2 md:px-4 md:py-4">
-						<card class="h-40 flex flex-col items-center justify-center hover:shadow-lg rounded-large">
-							<div
-								class="w-12 h-12 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
-							>
-								<icon name="edit2" class="w-6 h-6"></icon>
-							</div>
-
-							<heading size="small-caps" class="text-gray-700">Media Comm. & Writing</heading>
-						</card>
-					</div>
-					<div class="w-1/3 md:w-1/4 lg:w-1/5 px-2 py-2 md:px-4 md:py-4">
-						<card class="h-40 flex flex-col items-center justify-center hover:shadow-lg rounded-large">
-							<div
-								class="w-12 h-12 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
-							>
-								<icon name="briefcase" class="w-6 h-6"></icon>
-							</div>
-
-							<heading size="small-caps" class="text-gray-700">Business</heading>
-						</card>
-					</div>
-					<div class="w-1/3 md:w-1/4 lg:w-1/5 px-2 py-2 md:px-4 md:py-4">
-						<card class="h-40 flex flex-col items-center justify-center hover:shadow-lg rounded-large">
-							<div
-								class="w-12 h-12 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
-							>
-								<icon name="paper-clip" class="w-6 h-6"></icon>
-							</div>
-
-							<heading size="small-caps" class="text-gray-700">Admin & Office</heading>
-						</card>
-					</div>
-					<div class="w-1/3 md:w-1/4 lg:w-1/5 px-2 py-2 md:px-4 md:py-4">
-						<card class="h-40 flex flex-col items-center justify-center hover:shadow-lg rounded-large">
-							<div
-								class="w-12 h-12 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
-							>
-								<icon name="clipboard" class="w-6 h-6"></icon>
-							</div>
-
-							<heading size="small-caps" class="text-gray-700">Management</heading>
-						</card>
-					</div>
-
-					<div class="w-1/3 md:w-1/4 lg:w-1/5 px-2 py-2 md:px-4 md:py-4">
-						<card class="h-40 flex flex-col items-center justify-center hover:shadow-lg rounded-large">
-							<div
-								class="w-12 h-12 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
-							>
-								<icon name="heart" class="w-6 h-6"></icon>
-							</div>
-
-							<heading size="small-caps" class="text-gray-700">Healthcare</heading>
-						</card>
-					</div>
-
-					<div class="w-1/3 md:w-1/4 lg:w-1/5 px-2 py-2 md:px-4 md:py-4">
-						<card class="h-40 flex flex-col items-center justify-center hover:shadow-lg rounded-large">
-							<div
-								class="w-12 h-12 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
-							>
-								<icon name="headphones" class="w-6 h-6"></icon>
-							</div>
-
-							<heading size="small-caps" class="text-gray-700">Customer Service</heading>
-						</card>
-					</div>
-
-					<div class="w-1/3 md:w-1/4 lg:w-1/5 px-2 py-2 md:px-4 md:py-4">
-						<card class="h-40 flex flex-col items-center justify-center hover:shadow-lg rounded-large">
-							<div
-								class="w-12 h-12 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
-							>
-								<icon name="trending" class="w-6 h-6"></icon>
-							</div>
-
-							<heading size="small-caps" class="text-gray-700">Accounting & Finance</heading>
-						</card>
-					</div>
-
-					<div class="w-1/3 md:w-1/4 lg:w-1/5 px-2 py-2 md:px-4 md:py-4">
-						<card class="h-40 flex flex-col items-center justify-center hover:shadow-lg rounded-large">
-							<div
-								class="w-12 h-12 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
-							>
-								<icon name="monitor" class="w-6 h-6"></icon>
-							</div>
-
-							<heading size="small-caps" class="text-gray-700">Computer & IT</heading>
-						</card>
-					</div>
-
-					<div class="w-1/3 md:w-1/4 lg:w-1/5 px-2 py-2 md:px-4 md:py-4">
-						<card class="h-40 flex flex-col items-center justify-center hover:shadow-lg rounded-large">
-							<div
-								class="w-12 h-12 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
-							>
-								<icon name="tv" class="w-6 h-6"></icon>
-							</div>
-
-							<heading size="small-caps" class="text-gray-700">Advertising & Marketing</heading>
-						</card>
-					</div>
-
-					<div class="w-1/3 md:w-1/4 lg:w-1/5 px-2 py-2 md:px-4 md:py-4">
-						<card class="h-40 flex flex-col items-center justify-center hover:shadow-lg rounded-large">
-							<div
-								class="w-12 h-12 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
-							>
-								<icon name="award" class="w-6 h-6"></icon>
-							</div>
-
-							<heading size="small-caps" class="text-gray-700">Education</heading>
-						</card>
-					</div>
-
-					<div class="w-1/3 md:w-1/4 lg:w-1/5 px-2 py-2 md:px-4 md:py-4">
-						<card class="h-40 flex flex-col items-center justify-center hover:shadow-lg rounded-large">
-							<div
-								class="w-12 h-12 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
-							>
-								<icon name="map-pin" class="w-6 h-6"></icon>
-							</div>
-
-							<heading size="small-caps" class="text-gray-700">Travel/Tourism</heading>
-						</card>
-					</div>
-
-					<div class="w-1/3 md:w-1/4 lg:w-1/5 px-2 py-2 md:px-4 md:py-4">
-						<card class="h-40 flex flex-col items-center justify-center hover:shadow-lg rounded-large">
-							<div
-								class="w-12 h-12 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
-							>
-								<icon name="coffee" class="w-6 h-6"></icon>
-							</div>
-
-							<heading size="small-caps" class="text-gray-700">Food Services</heading>
-						</card>
-					</div>
-
-					<div class="w-1/3 md:w-1/4 lg:w-1/5 px-2 py-2 md:px-4 md:py-4">
-						<card class="h-40 flex flex-col items-center justify-center hover:shadow-lg rounded-large">
-							<div
-								class="w-12 h-12 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
-							>
-								<icon name="tag" class="w-6 h-6"></icon>
-							</div>
-
-							<heading size="small-caps" class="text-gray-700">Sales & Retail</heading>
-						</card>
-					</div>
-
-					<div class="w-1/3 md:w-1/4 lg:w-1/5 px-2 py-2 md:px-4 md:py-4">
-						<card class="h-40 flex flex-col items-center justify-center hover:shadow-lg rounded-large">
-							<div
-								class="w-12 h-12 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
-							>
-								<icon name="settings" class="w-6 h-6"></icon>
-							</div>
-
-							<heading size="small-caps" class="text-gray-700">Science & Engg.</heading>
-						</card>
-					</div>
-
-					<div class="w-1/3 md:w-1/4 lg:w-1/5 px-2 py-2 md:px-4 md:py-4">
-						<card class="h-40 flex flex-col items-center justify-center hover:shadow-lg rounded-large">
-							<div
-								class="w-12 h-12 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
-							>
-								<icon name="home" class="w-6 h-6"></icon>
-							</div>
-
-							<heading size="small-caps" class="text-gray-700">Property</heading>
-						</card>
-					</div>
-
-					<div class="w-1/3 md:w-1/4 lg:w-1/5 px-2 py-2 md:px-4 md:py-4">
-						<card class="h-40 flex flex-col items-center justify-center hover:shadow-lg rounded-large">
-							<div
-								class="w-12 h-12 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
-							>
-								<icon name="tennis-ball" class="w-6 h-6"></icon>
-							</div>
-
-							<heading size="small-caps" class="text-gray-700">Sports</heading>
-						</card>
-					</div>
-
-					<div class="w-1/3 md:w-1/4 lg:w-1/5 px-2 py-2 md:px-4 md:py-4">
-						<card class="h-40 flex flex-col items-center justify-center hover:shadow-lg rounded-large">
-							<div
-								class="w-12 h-12 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
-							>
-								<icon name="palette" class="w-6 h-6"></icon>
-							</div>
-
-							<heading size="small-caps" class="text-gray-700">Design & UX</heading>
-						</card>
-					</div>
-
-					<div class="w-1/3 md:w-1/4 lg:w-1/5 px-2 py-2 md:px-4 md:py-4">
-						<card class="h-40 flex flex-col items-center justify-center hover:shadow-lg rounded-large">
-							<div
-								class="w-12 h-12 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
-							>
-								<icon name="construction" class="w-6 h-6"></icon>
-							</div>
-
-							<heading size="small-caps" class="text-gray-700">Construction</heading>
-						</card>
-					</div>
-
-					<div class="w-1/3 md:w-1/4 lg:w-1/5 px-2 py-2 md:px-4 md:py-4">
-						<card class="h-40 flex flex-col items-center justify-center hover:shadow-lg rounded-large">
-							<div
-								class="w-12 h-12 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
-							>
-								<icon name="bulb" class="w-6 h-6"></icon>
-							</div>
-
-							<heading size="small-caps" class="text-gray-700">Consultancy</heading>
-						</card>
-					</div>
+								<heading size="small-caps" class="text-gray-700">{{category}}</heading>
+							</card>
+						</div>
+					</template>
 				</div>
 
 				<heading class="text-center mt-10">
@@ -273,6 +55,9 @@ export default {
 	},
 	data() {
 		return {};
+	},
+	props: {
+		categories: Array
 	}
 };
 </script>

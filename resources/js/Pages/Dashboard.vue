@@ -7,7 +7,8 @@
 				</link-to>-->
 
 				<heading size="large">
-					<span class="font-normal">Welcome</span>, John Doe
+					<span class="font-normal">Welcome</span>
+					, {{$page.auth.user.name}}
 				</heading>
 				<!-- <div class="md:flex">
 					<a
@@ -48,9 +49,62 @@
 			</div>
 		</div>
 
+		<div class="py-10">
+			<div class="max-w-6xl mx-auto">
+				<heading size="heading" class="mb-6">Page Views</heading>
+
+				<div class="relative">
+					<div class="absolute fixed top-0 bottom-0 right-0 w-6 bg-white-linear rounded-r-lg opacity-75"></div>
+					<basic-table :headings="headings" v-if="posts.length">
+						<tr
+							v-for="(data, dataIndex) in posts"
+							:key="dataIndex"
+							class="focus-within:bg-gray-200 overflow-hidden"
+						>
+							<td class="border-t">
+								<!-- <span
+										:title="data.job_title"
+										class="text-gray-700 px-6 py-4 items-center block w-64 truncate pr-3"
+								>{{ data.job_title }}</span>-->
+								<link-to
+									:to="`/admin/jobs/${data.uuid}/edit`"
+									class="inline-block truncate mr-2 mx-6"
+								>{{ data.job_title }}</link-to>
+							</td>
+							<td class="border-t">
+								<span
+									class="text-gray-700 px-6 py-4 flex items-center"
+								>{{ data.job_published_at_formatted }}</span>
+							</td>
+							<td class="border-t">
+								<span class="text-gray-700 px-6 py-4 flex items-center">{{ data.total_page_views }}</span>
+							</td>
+							<td class="border-t">
+								<span class="text-gray-700 px-6 py-4 flex items-center">{{ data.unique_page_views }}</span>
+							</td>
+						</tr>
+					</basic-table>
+					<empty-state class="lg:py-32" v-else>
+						<div
+							class="w-24 h-24 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-center mx-auto"
+						>
+							<icon name="search" class="w-8 h-8"></icon>
+						</div>
+
+						<heading class="mt-5 mb-1" size="heading">No Job posts created by you</heading>
+						<p>Please create atleast one company/organization details to add a job post.</p>
+
+						<loading-button tag="a" to="/admin/jobs/create" size="small" class="mt-6">
+							<icon name="plus" class="mr-1"></icon>Create Job
+						</loading-button>
+					</empty-state>
+				</div>
+			</div>
+		</div>
+
 		<div class="py-10 min-h-screen px-4">
 			<div class="max-w-6xl mx-auto">
-				<card class="mb-8">
+				<!-- <card class="mb-8">
 					<heading size="small-caps" class="mb-2">Quote of the day</heading>
 
 					<heading
@@ -58,7 +112,7 @@
 						class="italic mb-2"
 					>Laziness is nothing more than the habit of resting before you get tired.</heading>
 					<div class="italic text-sm">&mdash; Jules Renard</div>
-				</card>
+				</card>-->
 
 				<div class="flex flex-wrap -mx-4">
 					<div class="w-1/2 md:w-1/4 mb-8 px-4 flex flex-col">
@@ -156,14 +210,35 @@ import Heading from "@/Shared/tuis/Heading";
 import Icon from "@/Shared/tuis/Icon";
 import LinkTo from "@/Shared/tuis/LinkTo";
 import Card from "@/Shared/tuis/Card";
+import BasicTable from "@/Shared/tuis/BasicTable";
+import Badge from "@/Shared/tuis/Badge";
+import EmptyState from "@/Shared/tuis/EmptyState";
+import LoadingButton from "@/Shared/tuis/LoadingButton";
 
 export default {
+	props: {
+		posts: Array
+	},
 	components: {
 		Layout,
 		Heading,
 		Icon,
 		LinkTo,
-		Card
+		Card,
+		BasicTable,
+		Badge,
+		EmptyState,
+		LoadingButton
+	},
+	data() {
+		return {
+			headings: [
+				"Job Title",
+				"Published at",
+				"Total Page Views",
+				"Unique Page Views"
+			]
+		};
 	}
 };
 </script>
