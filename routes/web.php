@@ -40,6 +40,15 @@ Route::get('/for-employers', function () {
         'pricing' => $pricings
     ]);
 });
+Route::get('/faq', function () {
+    return Inertia::render('Faq');
+});
+Route::get('/advertise', function () {
+    return Inertia::render('Advertise');
+});
+Route::get('/contact', function () {
+    return Inertia::render('Contact');
+});
 
 
 // Auth::routes();

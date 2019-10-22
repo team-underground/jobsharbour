@@ -115,6 +115,8 @@
 		<polyline points="22,6 12,13 2,6" />
 	</svg>
 
+	<svg v-else-if="name === 'target'" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-target"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+
 	<svg
 		v-else-if="name === 'lock'"
 		:width="width"
@@ -131,6 +133,8 @@
 		<rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
 		<path d="M7 11V7a5 5 0 0 1 10 0v4" />
 	</svg>
+
+	<svg v-else-if="name === 'database'" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-database"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
 
 	<svg
 		v-else-if="name === 'clock'"

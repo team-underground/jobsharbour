@@ -210,6 +210,8 @@
 						<a href="#" class="block text-sm mb-2 hover:text-gray-500">About</a>
 						<a href="#" class="block text-sm mb-2 hover:text-gray-500">For Employers</a>
 						<a href="#" class="block text-sm mb-2 hover:text-gray-500">Support</a>
+						<a href="/faq" class="block text-sm mb-2 hover:text-gray-500">FAQ</a>
+						<a href="/advertise" class="block text-sm mb-2 hover:text-gray-500">Advertise with us</a>
 						<a href="#" class="block text-sm mb-2 hover:text-gray-500">Privacy</a>
 						<a href="#" class="block text-sm mb-2 hover:text-gray-500">Terms of Service</a>
 					</div>
