@@ -84,7 +84,7 @@
 									>Notifications</a>
 									<a
 										class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600"
-										href="#"
+										href="/settings"
 									>Settings</a>
 									<a
 										class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600"

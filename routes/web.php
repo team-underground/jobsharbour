@@ -151,3 +151,6 @@ Route::post('/resume/generated', function () {
 
 Route::get('login/LinkedIn', 'Auth\LoginController@redirectToProvider');
 Route::get('login/linkedIn/callback', 'Auth\LoginController@handleProviderCallback');
+
+Route::post('/changePassword', 'SettingsController@changePassword')->name('settings.changePassword');
+Route::post('/changeEmail', 'SettingsController@changeEmail')->name('settings.changeEmail');
