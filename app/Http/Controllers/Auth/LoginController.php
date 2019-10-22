@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\User;
+use Socialite;
+use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
+
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -35,5 +40,38 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function redirectToProvider()
+    {
+        return Socialite::driver('linkedin')->redirect();
+    }
+
+    /**
+     * Obtain the user information from GitHub.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function handleProviderCallback()
+    {
+        $linkedin = Socialite::driver('linkedin')->user();
+
+        // dd($linkedin);
+        $user = User::updateOrCreate(
+            [
+                'provider_id' => $linkedin->getId(),
+            ],
+            [
+                'name' => $linkedin->getName(),
+                'email' => $linkedin->getEmail(),
+                'password' => bcrypt('password'),
+                'uuid' =>  Str::uuid(),
+                'provider_id' => $linkedin->getId(),
+            ]
+        );
+
+        Auth::login($user, true);
+
+        return redirect($this->redirectTo);
     }
 }

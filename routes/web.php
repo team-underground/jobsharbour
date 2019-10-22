@@ -114,3 +114,8 @@ Route::post('/resume/generated', function () {
     $resumedata = request('resumedata');
     return Inertia::render('ResumeGenerated', compact('resumedata'));
 });
+
+
+
+Route::get('login/LinkedIn', 'Auth\LoginController@redirectToProvider');
+Route::get('login/linkedIn/callback', 'Auth\LoginController@handleProviderCallback');

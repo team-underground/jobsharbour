@@ -13,6 +13,7 @@
         "fideloper/proxy": "^4.0",
         "jamesmills/eloquent-uuid": "^1.2",
         "laravel/framework": "^6.0",
+        "laravel/socialite": "^4.2",
         "laravel/tinker": "^1.0",
         "spatie/laravel-analytics": "^3.8",
         "sumatoglobal/inertia-tailwind-preset": "dev-master",

@@ -56,12 +56,15 @@
 							<link-to to="/password/reset" class="mb-4 text-sm">Forgot Password?</link-to>
 						</div>
 						<loading-button ref="submitButton" class="w-full" type="submit">Sign in</loading-button>
-						<div class="mt-2">
-							<loading-button
-								ref="submitButton"
-								class="w-full ButtonLinkedIn"
-								type="submit"
-							>Sign in with LinkedIn</loading-button>
+						<div class="flex my-5 items-center">
+							<div class="flex-1 h-1 border-b"></div>
+							<div class="w-2 mx-5 text-center">or</div>
+							<div class="flex-1 h-1 border-b"></div>
+						</div>
+						<div class="mt-4">
+							<loading-button tag="a" to="login/LinkedIn" ref="submitButton" class="w-full ButtonLinkedIn">
+								<icon class="mr-2" name="linkedin"></icon>Sign in with LinkedIn
+							</loading-button>
 						</div>
 					</form>
 				</card>
