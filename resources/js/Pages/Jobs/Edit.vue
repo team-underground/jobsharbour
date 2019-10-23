@@ -9,9 +9,23 @@
 
 					<div class="md:flex items-center">
 						<div class="flex-1">
-							<heading size="heading">Edit Job Posts Details</heading>
+							<heading size="heading" class="inline-flex">Edit Job Posts Details</heading>
+							<badge
+								variant="success"
+								v-if="post.job_status === 'Published'"
+								class="ml-3"
+							>{{ post.job_status }}</badge>
 						</div>
 						<div class="flex">
+							<loading-button
+								type="button"
+								size="small"
+								ref="jobPublishButton"
+								variant="success"
+								@click="publishJob"
+								v-if="!post.job_status=='Published'"
+							>Publish Post</loading-button>
+
 							<loading-button type="submit" size="small" ref="jobSaveButton">Update Post</loading-button>
 
 							<loading-button type="button" size="small" variant="danger" variant-type="outline">
@@ -138,14 +152,6 @@
 						<div class="md:w-2/3">
 							<card>
 								<date-input
-									label="Published Date"
-									class="w-48 mb-4"
-									placeholder="Select date"
-									v-model="job.job_published_at"
-									readonly
-								></date-input>
-
-								<date-input
 									label="Job Closing Date"
 									class="w-48"
 									placeholder="Select date"
@@ -177,6 +183,7 @@ import Alert from "@/Shared/tuis/Alert";
 import TextareaInput from "@/Shared/tuis/TextareaInput";
 import FileInput from "@/Shared/tuis/FileInput";
 import TagsInput from "@/Shared/tuis/TagsInput";
+import Badge from "@/Shared/tuis/Badge";
 
 export default {
 	components: {
@@ -194,7 +201,8 @@ export default {
 		Alert,
 		TextareaInput,
 		FileInput,
-		TagsInput
+		TagsInput,
+		Badge
 	},
 	props: [
 		"jobtypes",
@@ -216,7 +224,6 @@ export default {
 				job_skills: this.post.job_skills,
 				job_email: this.post.job_email,
 				job_description: this.post.job_description,
-				job_published_at: this.post.job_published_at,
 				job_closing_date: this.post.job_closing_date
 			},
 			salaries: {
@@ -246,6 +253,21 @@ export default {
 					// 	// this.form.photo = null;
 					// 	// this.form.password = null;
 					// }
+				})
+				.catch(() => {
+					this.$refs.jobSaveButton.stopLoading();
+				});
+		},
+
+		publishJob() {
+			this.$refs.jobPublishButton.startLoading();
+
+			this.$inertia
+				.post(this.route("admin.jobs.publish", this.post.uuid), {
+					_method: "post"
+				})
+				.then(() => {
+					this.$refs.jobPublishButton.stopLoading();
 				})
 				.catch(() => {
 					this.$refs.jobSaveButton.stopLoading();

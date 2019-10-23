@@ -44,6 +44,11 @@ class User extends Authenticatable
         return UserType::getDescription($value);
     }
 
+    public function subscription()
+    {
+        return $this->hasOne(Subscription::class);
+    }
+
     public function companies()
     {
         return $this->hasMany(Company::class);
@@ -51,17 +56,17 @@ class User extends Authenticatable
 
     public function isAdmin()
     {
-        return UserType::getKey($this->type) == 'Administrator';
+        return $this->type == (UserType::getInstance(UserType::Administrator))->key;
     }
 
     public function isEmployer()
     {
-        return UserType::getKey($this->type) == 'Employer';
+        return $this->type == (UserType::getInstance(UserType::Employer))->key;
     }
 
     public function isConsultancy()
     {
-        return UserType::getKey($this->type) == 'Consultancy';
+        return $this->type == (UserType::getInstance(UserType::Consultancy))->key;
     }
 
     public function scopeFilter($query, array $filters)

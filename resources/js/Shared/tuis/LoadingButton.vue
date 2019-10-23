@@ -81,15 +81,23 @@ export default {
 
 				"px-6 py-3": this.size == "normal",
 				"px-4 py-2": this.size == "small",
+				"border-2 border-green-600 bg-green-600 hover:bg-green-700 hover:border-green-700 text-white":
+					this.variant == "success" && this.variantType == "",
 
 				"border-2 border-blue-600 bg-blue-600 hover:bg-blue-700 hover:border-blue-700 text-white":
 					this.variant == "primary" && this.variantType == "",
+
 				"border-2 border-red-600 bg-red-600 hover:bg-red-700 hover:border-red-700 text-white":
 					this.variant == "danger" && this.variantType == "",
-				"border-2 border-orange-600 bg-orange-600 hover:bg-orange-700 hover:border-orange-700 text-white":
+
+				"border border-orange-600 bg-orange-600 hover:bg-orange-700 hover:border-orange-700 text-white":
 					this.variant == "warning" && this.variantType == "",
+
 				"border-2 border-white bg-white bg-white text-blue-600 hover:text-blue-800":
 					this.variant == "white" && this.variantType == "",
+
+				"border-2 border-gray-200 text-green-500 hover:text-green-700":
+					this.variant == "success" && this.variantType == "outline",
 
 				"border-2 border-gray-200 text-blue-500 hover:text-blue-700":
 					this.variant == "primary" && this.variantType == "outline",

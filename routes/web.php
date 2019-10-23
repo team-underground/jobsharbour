@@ -127,7 +127,7 @@ Route::middleware(['auth'])->group(function () {
     });
 
     // Users
-    Route::get('/admin/users', 'Admin\UsersController@index')->name('admin.users.all');
+    Route::get('/admin/users', 'Admin\UsersController@index')->name('admin.users.all')->middleware('can:create-user');
 
     // Admin / Employer Job
     Route::get('/admin/jobs', 'Admin\JobpostsController@index')->name('admin.jobs.all');
@@ -136,10 +136,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/jobs/{uuid}/edit', 'Admin\JobpostsController@edit')->name('admin.jobs.edit');
     Route::put('/admin/jobs/{uuid}/update', 'Admin\JobpostsController@update')->name('admin.jobs.update');
 
+    Route::post('/admin/jobs/{uuid}/publish', 'Admin\JobpostsPublishController@store')->name('admin.jobs.publish')->middleware('can:publish-job');
+
+
     // Admin / Employer Company
     Route::get('/admin/companies', 'Admin\CompaniesController@index')->name('admin.companies.all');
-    Route::get('/admin/companies/create', 'Admin\CompaniesController@create')->name('admin.companies.create');
-    Route::post('/admin/companies/create', 'Admin\CompaniesController@store')->name('admin.companies.store');
+    Route::get('/admin/companies/create', 'Admin\CompaniesController@create')->name('admin.companies.create')->middleware('can:create-company');
+    Route::post('/admin/companies/create', 'Admin\CompaniesController@store')->name('admin.companies.store')->middleware('can:create-company');
     Route::get('/admin/companies/{uuid}/edit', 'Admin\CompaniesController@edit')->name('admin.companies.edit');
     Route::put('/admin/companies/{uuid}/update', 'Admin\CompaniesController@update')->name('admin.companies.update');
     Route::delete('/admin/companies/{uuid}/delete', 'Admin\CompaniesController@deleteLogo')->name('admin.companies.deletelogo');
@@ -158,8 +161,8 @@ Route::post('/resume/generated', function () {
 
 
 
-Route::get('login/LinkedIn', 'Auth\LoginController@redirectToProvider');
-Route::get('login/linkedIn/callback', 'Auth\LoginController@handleProviderCallback');
+// Route::get('login/LinkedIn', 'Auth\LoginController@redirectToProvider');
+// Route::get('login/linkedIn/callback', 'Auth\LoginController@handleProviderCallback');
 
 Route::post('/change-password', 'SettingsController@changePassword')->name('settings.changePassword');
 Route::post('/update-profile', 'SettingsController@updateProfile')->name('settings.updateProfile');

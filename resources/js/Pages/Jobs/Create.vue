@@ -109,7 +109,7 @@
 										</div>
 									</div>
 
-									<div class="flex -mx-4">
+									<div class="flex flex-wrap -mx-4">
 										<div class="w-1/2 px-4">
 											<text-input
 												v-model="job.job_email"
@@ -131,6 +131,18 @@
 												@keydown="delete errors['job_category']"
 											>
 												<option value="null" disabled>Select job category</option>
+											</select-input>
+										</div>
+										<div class="w-1/2 px-4">
+											<select-input
+												v-model="job.job_experience_level"
+												label="Experience Level"
+												class="mb-4"
+												:options="experiencelevels"
+												:errors="errors['job_experience_level']"
+												@keydown="delete errors['job_experience_level']"
+											>
+												<option value="null" disabled>Select experience level</option>
 											</select-input>
 										</div>
 									</div>
@@ -164,14 +176,6 @@
 							</div>
 							<div class="md:w-2/3 px-4">
 								<card>
-									<date-input
-										label="Published Date"
-										class="w-48 mb-4"
-										placeholder="Select date"
-										v-model="job.job_published_at"
-										readonly
-									></date-input>
-
 									<date-input
 										label="Job Closing Date"
 										class="w-48"
@@ -232,19 +236,26 @@ export default {
 		EmptyState,
 		TagsInput
 	},
-	props: ["jobtypes", "categories", "industries", "errors", "companies"],
+	props: [
+		"jobtypes",
+		"categories",
+		"industries",
+		"errors",
+		"companies",
+		"experiencelevels"
+	],
 	data() {
 		return {
 			job: {
 				job_title: null,
 				job_location: null,
-				job_position: null,
+				job_category: null,
+				job_experience_level: null,
 				job_type: null,
 				job_salary: null,
 				job_skills: ["Laravel", "React"],
 				job_email: null,
 				job_description: `<p><strong>Required Knowledge, Skills, and Abilities</strong></p><p>Ability to write code – HTML & CSS (SCSS flavor of SASS preferred when writing CSS)Proficient in Photoshop, Illustrator, bonus points for familiarity with Sketch (Sketch is our preferred concepting)Cross-browser and platform testing as standard practiceExperience using Invision a plusExperience in video production a plus or, at a minimum, a willingness to learn</p><br> <p><strong>Education + Experience</strong></p><p>Advanced degree or equivalent experience in graphic and web design3 or more years of professional design experience</p>`,
-				job_published_at: currentDate,
 				job_closing_date: currentDate,
 				company_id: null
 			},
@@ -255,11 +266,11 @@ export default {
 				"100+": "100+"
 			},
 			salaries: {
-				"5K-10K": "5K-10K",
-				"10K-15K": "10K-15K",
-				"15K-20K": "15K-20K",
-				"20K-40K": "20K-40K",
-				"40K+": "40K+"
+				"5k-10k": "5k-10k",
+				"10k-15k": "10k-15k",
+				"15k-20k": "15k-20k",
+				"20k-40k": "20k-40k",
+				"40k+": "40k+"
 			}
 		};
 	},

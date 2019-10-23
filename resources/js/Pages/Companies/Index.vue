@@ -15,7 +15,7 @@
 							class="mr-2"
 						></search-input>
 
-						<loading-button size="small" to="/admin/companies/create" tag="a">
+						<loading-button size="small" to="/admin/companies/create" tag="a" v-if="can.create">
 							<icon name="plus"></icon>
 							<span class="hidden md:block">New Company</span>
 						</loading-button>
@@ -32,7 +32,7 @@
 				</alert>
 				<div class="relative">
 					<div class="absolute fixed top-0 bottom-0 right-0 w-6 bg-white-linear rounded-r-lg opacity-75"></div>
-					<basic-table :headings="headings" v-if="!companies.data.length > 0">
+					<basic-table :headings="headings" v-if="companies.data.length > 0">
 						<tr
 							v-for="(data, dataIndex) in companies.data"
 							:key="dataIndex"
@@ -167,7 +167,7 @@ export default {
 		EmptyState,
 		FlashMessage
 	},
-	props: ["companies", "filters"],
+	props: ["companies", "filters", "can"],
 
 	watch: {
 		form: {

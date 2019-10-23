@@ -27,7 +27,7 @@ class JobpostsController extends Controller
         // return $jobposts = Jobpost::with('company')->orderByDesc('job_published_at')->simplePaginate(10);
 
         if (request()->path() === 'jobs') {
-            $jobpost = Jobpost::with('company');
+            $jobpost = Jobpost::published()->with('company');
 
             if ($industry = request('industry')) {
                 $jobpost->industry(request('industry'));

@@ -191,7 +191,10 @@
 						</card>
 					</div>
 
-					<div class="w-1/2 md:w-1/4 mb-8 px-4 flex flex-col">
+					<div
+						class="w-1/2 md:w-1/4 mb-8 px-4 flex flex-col"
+						v-if="$page.auth.user.type == 'Consultancy'"
+					>
 						<card class="flex-1 hover:shadow-md" to="/admin/users" tag="a">
 							<div
 								class="mx-auto bg-blue-100 text-blue-600 rounded-full w-16 h-16 flex items-center justify-center"

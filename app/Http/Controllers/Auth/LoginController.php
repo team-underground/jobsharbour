@@ -67,6 +67,7 @@ class LoginController extends Controller
                 'password' => bcrypt('password'),
                 'uuid' =>  Str::uuid(),
                 'provider_id' => $linkedin->getId(),
+                'type' => 3
             ]
         );
 

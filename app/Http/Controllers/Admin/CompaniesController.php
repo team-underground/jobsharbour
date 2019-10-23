@@ -25,14 +25,22 @@ class CompaniesController extends Controller
 
         $filters = request()->all('search');
 
-        return Inertia::render('Companies/Index', compact('companies', 'filters'));
+        return Inertia::render('Companies/Index', [
+            'companies' => $companies,
+            'filters' => $filters,
+            'can' => [
+                'create' => Gate::allows('create-company')
+            ]
+        ]);
     }
 
     public function create()
     {
         $industries = IndustryType::toSelectArray();
 
-        return Inertia::render('Companies/Create', compact('industries'));
+        return Inertia::render('Companies/Create', [
+            'industries' => $industries
+        ]);
     }
 
     public function store(Request $request)

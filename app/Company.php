@@ -61,7 +61,7 @@ class Company extends Model
     public function scopeRole($query)
     {
         if (auth()->check()) {
-            if (auth()->user()->type == 'Employer' || auth()->user()->type == 'Consultancy') {
+            if (auth()->user()->isEmployer() || auth()->user()->isConsultancy()) {
                 $query->where('user_id', auth()->user()->id);
             }
         }

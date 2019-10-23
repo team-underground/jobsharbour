@@ -84,10 +84,10 @@ class Jobpost extends Model implements ViewableContract
         return Str::title(JobStatusType::getDescription($value));
     }
 
-    public function getJobPublishedAtAttribute($value)
-    {
-        return Carbon::parse($value)->format('d-m-Y');
-    }
+    // public function getJobPublishedAtAttribute($value)
+    // {
+    //     return Carbon::parse($value)->format('d-m-Y');
+    // }
 
     public function getJobClosingDateAttribute($value)
     {
@@ -102,7 +102,7 @@ class Jobpost extends Model implements ViewableContract
         $created = new Carbon($this->job_published_at);
         $now = Carbon::now();
 
-        if ($created->diff($now)->days < 1) {
+        if ($created->diff($now)->days <= 1) {
             $difference = $created->diffForHumans(null, null, true);
         } else if ($created->diff($now)->days < 2) {
             $difference = 'Yesterday';
@@ -196,5 +196,10 @@ class Jobpost extends Model implements ViewableContract
         } else {
             $query->whereDate('job_closing_date', '<', Carbon::now()->format('Y-m-d'));
         }
+    }
+
+    public function scopePublished($query)
+    {
+        $query->whereNotNull('job_published_at');
     }
 }

@@ -3,14 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Jobpost;
-use Inertia\Inertia;
-use App\Enums\{CategoryType, JobType, IndustryType};
-use App\Events\JobPostEvent;
-use App\Http\Controllers\Controller;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
+use Inertia\Inertia;
 use Illuminate\Support\Str;
+use App\Events\JobPostEvent;
+use Illuminate\Http\Request;
+use App\Enums\ExperienceLevelType;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use App\Enums\{CategoryType, JobType, IndustryType};
 
 class JobpostsController extends Controller
 {
@@ -32,6 +33,7 @@ class JobpostsController extends Controller
 		$categories = CategoryType::toSelectArray();
 		$jobtypes = JobType::toSelectArray();
 		$industries = IndustryType::toSelectArray();
+		$experiencelevels = ExperienceLevelType::toSelectArray();
 
 		$companies = auth()->user()->companies->map(function ($company) {
 			return [
@@ -40,7 +42,7 @@ class JobpostsController extends Controller
 			];
 		});
 		// return $companies;
-		return Inertia::render('Jobs/Create', compact('jobtypes', 'categories', 'industries', 'companies'));
+		return Inertia::render('Jobs/Create', compact('jobtypes', 'categories', 'industries', 'companies', 'experiencelevels'));
 	}
 
 	public function store(Request $request)
@@ -55,28 +57,25 @@ class JobpostsController extends Controller
 			'job_description' => ['required'],
 			'job_skills' => ['required'],
 			'job_email' => ['required', 'email'],
-			'job_published_at' => ['required'],
 			'job_closing_date' => ['required'],
 		], [
 			'company_id.required' => 'Please select a company',
 		]);
 
-		// dd($input);
-		$input['job_published_at'] = Carbon::createFromFormat('d/m/Y', $input['job_published_at'])->format('Y-m-d');
-		$input['job_closing_date'] = Carbon::createFromFormat('d/m/Y', $input['job_closing_date'])->format('Y-m-d');
+		$input['job_closing_date'] = Carbon::createFromFormat('d/m/Y', $input['job_closing_date'])->format('Y-m-d') . ' 23:59:59';
 
 		DB::transaction(function () use ($input) {
 			$jobpost_created = Jobpost::create($input + [
 				'user_id' => auth()->user()->id,
 				'job_slug' => Str::slug($input['job_title'])
 			]);
-			// dd($jobpost_created);
 
 			if ($jobpost_created) {
 				$jobpost_created->attachTags($input['job_skills']);
 			}
 
 			$jobpost_created['user_name'] = auth()->user()->name;
+			// TODO when a job is posted notify admin about it, and send a mail to the job publisher saying a thank you mail and inform him that post will be published within 24 hours after verification.
 			event(new JobPostEvent($jobpost_created));
 		});
 
@@ -87,6 +86,7 @@ class JobpostsController extends Controller
 	public function edit($uuid, Request $request)
 	{
 		$jobpost = Jobpost::findByUuidOrFail($uuid);
+		// dd($jobpost->job_status);
 		$post = $jobpost->load('company');
 		$post->job_skills = $jobpost->tags->pluck('name')->toArray();
 
@@ -116,14 +116,12 @@ class JobpostsController extends Controller
 			'job_description' => ['required'],
 			'job_skills' => ['required'],
 			'job_email' => ['required', 'email'],
-			'job_published_at' => ['required'],
 			'job_closing_date' => ['required']
 		], [
 			'company_id.required' => 'Please select a company'
 		]);
 
-		$input['job_published_at'] = Carbon::createFromFormat('d/m/Y', $input['job_published_at'])->format('Y-m-d');
-		$input['job_closing_date'] = Carbon::createFromFormat('d/m/Y', $input['job_closing_date'])->format('Y-m-d');
+		$input['job_closing_date'] = Carbon::createFromFormat('d/m/Y', $input['job_closing_date'])->format('Y-m-d') . ' 23:59:59';
 
 		$jobpost = Jobpost::findByUuidOrFail($uuid);
 		// dd($input);
@@ -131,7 +129,6 @@ class JobpostsController extends Controller
 			$jobpost->update($request->except([
 				'job_type',
 				'job_position',
-				'job_published_at',
 				'job_closing_date'
 			]) + [
 				'job_slug' => Str::slug($input['job_title']),
