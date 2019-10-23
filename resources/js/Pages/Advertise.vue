@@ -13,7 +13,7 @@
                     
                     <div class="p-2 md:p-6 m-2">
                         <div class="w-12 h-12 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3">
-                        <icon name="trending-up" class="w-6 h-6"></icon>
+                        <icon name="trending" class="w-6 h-6"></icon>
                     </div>
                         <heading size="large" class="mb-2">Get Quality Traffics</heading>
                         <p>We have a daily traffic of more than 20,000+ users from all over North-East</p>

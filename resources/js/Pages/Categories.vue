@@ -15,7 +15,26 @@
 								<div
 									class="w-12 h-12 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
 								>
-									<icon name="users" class="w-6 h-6"></icon>
+									<icon name="users" class="w-6 h-6" v-if="category === 'Human Resources'"></icon>
+									<icon name="edit2" class="w-6 h-6" v-if="category === 'Media Comm and Writing'"></icon>
+									<icon name="briefcase" class="w-6 h-6" v-if="category === 'Business'"></icon>
+									<icon name="paper-clip" class="w-6 h-6" v-if="category === 'Admin and Office'"></icon>
+									<icon name="clipboard" class="w-6 h-6" v-if="category === 'Management'"></icon>
+									<icon name="heart" class="w-6 h-6" v-if="category === 'Healthcare'"></icon>
+									<icon name="headphones" class="w-6 h-6" v-if="category === 'Customer Service'"></icon>
+									<icon name="trending" class="w-6 h-6" v-if="category === 'Accounting and Finance'"></icon>
+									<icon name="monitor" class="w-6 h-6" v-if="category === 'Computer and IT'"></icon>
+									<icon name="tv" class="w-6 h-6" v-if="category === 'Advertising and Marketing'"></icon>
+									<icon name="award" class="w-6 h-6" v-if="category === 'Education'"></icon>
+									<icon name="map-pin" class="w-6 h-6" v-if="category === 'Travel/Tourism'"></icon>
+									<icon name="coffee" class="w-6 h-6" v-if="category === 'Food Services'"></icon>
+									<icon name="tag" class="w-6 h-6" v-if="category === 'Sales and Retail'"></icon>
+									<icon name="settings" class="w-6 h-6" v-if="category === 'Science and Engg'"></icon>
+									<icon name="home" class="w-6 h-6" v-if="category === 'Property'"></icon>
+									<icon name="tennis-ball" class="w-6 h-6" v-if="category === 'Sports'"></icon>
+									<icon name="palette" class="w-6 h-6" v-if="category === 'Design and UX'"></icon>
+									<icon name="construction" class="w-6 h-6" v-if="category === 'Construction'"></icon>
+									<icon name="bulb" class="w-6 h-6" v-if="category === 'Consultancy'"></icon>
 								</div>
 
 								<heading size="small-caps" class="text-gray-700">{{category}}</heading>

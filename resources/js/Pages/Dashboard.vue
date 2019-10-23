@@ -1,15 +1,65 @@
 <template>
 	<layout>
-		<div class="bg-white px-4 py-6 relative shadow-sm z-20">
-			<div class="max-w-6xl mx-auto">
+		<div class="bg-white px-4 relative shadow-sm z-20">
+			<div class="md:max-w-6xl mx-auto">
+				<div class="flex flex-wrap md:justify-center">
+					<a
+						class="w-1/3 md:w-1/6 border-b md:border-transparent py-4 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
+						href="/admin/companies"
+					>
+						<icon name="briefcase"></icon>
+						<div class="mt-2 mb-1 text-sm">Companies</div>
+					</a>
+
+					<a
+						class="w-1/3 md:w-1/6 border-l border-b md:border-transparent py-4 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
+						href="/admin/jobs"
+					>
+						<icon name="edit2"></icon>
+						<div class="mt-2 mb-1 text-sm">Job Post</div>
+					</a>
+
+					<a
+						class="w-1/3 md:w-1/6 border-l border-b md:border-transparent py-4 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
+						href="/admin/users"
+					>
+						<icon name="users"></icon>
+						<div class="mt-2 mb-1 text-sm">Users</div>
+					</a>
+
+					<a
+						class="w-1/3 md:w-1/6 md:border-transparent py-4 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
+						href="/admin/users"
+					>
+						<icon name="bell"></icon>
+						<div class="mt-2 mb-1 text-sm">Notifications</div>
+					</a>
+
+					<a
+						class="w-1/3 md:w-1/6 border-l md:border-transparent py-4 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
+						href="/admin/users"
+					>
+						<icon name="message"></icon>
+						<div class="mt-2 mb-1 text-sm">Feedback</div>
+					</a>
+
+					<a
+						class="w-1/3 md:w-1/6 border-l md:border-transparent py-4 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
+						href="/settings"
+					>
+						<icon name="settings"></icon>
+						<div class="mt-2 mb-1 text-sm">Settings</div>
+					</a>
+				</div>
+
 				<!-- <link-to to="/jobs" class="mb-4">
 					<icon name="chevron-left" class="-ml-2"></icon>Back Links
 				</link-to>-->
 
-				<heading size="large">
+				<!-- <heading size="large">
 					<span class="font-normal">Welcome</span>
 					, {{$page.auth.user.name}}
-				</heading>
+				</heading>-->
 				<!-- <div class="md:flex">
 					<a
 						href="/dashboard"
@@ -49,9 +99,9 @@
 			</div>
 		</div>
 
-		<div class="py-10">
+		<div class="py-10 px-4">
 			<div class="max-w-6xl mx-auto">
-				<heading size="heading" class="mb-6">Page Views</heading>
+				<heading size="heading" class="mb-6" v-if="posts.length">Page Views</heading>
 
 				<div class="relative">
 					<div class="absolute fixed top-0 bottom-0 right-0 w-6 bg-white-linear rounded-r-lg opacity-75"></div>
@@ -102,9 +152,9 @@
 			</div>
 		</div>
 
-		<div class="py-10 min-h-screen px-4">
-			<div class="max-w-6xl mx-auto">
-				<!-- <card class="mb-8">
+		<!-- <div class="py-10 min-h-screen px-4">
+		<div class="max-w-6xl mx-auto">-->
+		<!-- <card class="mb-8">
 					<heading size="small-caps" class="mb-2">Quote of the day</heading>
 
 					<heading
@@ -112,9 +162,9 @@
 						class="italic mb-2"
 					>Laziness is nothing more than the habit of resting before you get tired.</heading>
 					<div class="italic text-sm">&mdash; Jules Renard</div>
-				</card>-->
+		</card>-->
 
-				<div class="flex flex-wrap -mx-4">
+		<!-- <div class="flex flex-wrap -mx-4">
 					<div class="w-1/2 md:w-1/4 mb-8 px-4 flex flex-col">
 						<card class="flex-1 hover:shadow-md" to="/admin/companies" tag="a">
 							<div
@@ -198,9 +248,9 @@
 							>For changing passwords and notification settings visit here.</heading>
 						</card>
 					</div>
-				</div>
-			</div>
-		</div>
+		</div>-->
+		<!-- </div>
+		</div>-->
 	</layout>
 </template>
 

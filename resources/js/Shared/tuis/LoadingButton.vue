@@ -73,7 +73,7 @@ export default {
 		btnClass() {
 			return {
 				"base-spinner": this.loading == true,
-				"base-button inline-flex align-middle align-items-center justify-center font-medium outline-none": true,
+				"base-button inline-flex align-middle align-items-center justify-center font-medium focus:outline-none": true,
 
 				rounded: this.rounded === "small",
 				"rounded-lg": this.rounded === "medium",
@@ -86,8 +86,10 @@ export default {
 					this.variant == "primary" && this.variantType == "",
 				"border-2 border-red-600 bg-red-600 hover:bg-red-700 hover:border-red-700 text-white":
 					this.variant == "danger" && this.variantType == "",
-				"border border-orange-600 bg-orange-600 hover:bg-orange-700 hover:border-orange-700 text-white":
+				"border-2 border-orange-600 bg-orange-600 hover:bg-orange-700 hover:border-orange-700 text-white":
 					this.variant == "warning" && this.variantType == "",
+				"border-2 border-white bg-white bg-white text-blue-600 hover:text-blue-800":
+					this.variant == "white" && this.variantType == "",
 
 				"border-2 border-gray-200 text-blue-500 hover:text-blue-700":
 					this.variant == "primary" && this.variantType == "outline",

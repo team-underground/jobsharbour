@@ -18,8 +18,9 @@
 			</div>
 
 			<div class="max-w-md mx-auto w-full">
+				<img src="/jh-logo.png" alt="jh" class="mb-6 mx-auto" />
 				<card>
-					<heading size="heading2" class="mb-1 text-center">Employers Login</heading>
+					<heading size="heading" class="mb-1 text-center">Welcome Back</heading>
 					<heading class="mb-6 text-center" size="small">Please enter your email and password to continue</heading>
 
 					<form @submit.prevent="submit">
@@ -56,16 +57,16 @@
 							<link-to to="/password/reset" class="mb-4 text-sm">Forgot Password?</link-to>
 						</div>
 						<loading-button ref="submitButton" class="w-full" type="submit">Sign in</loading-button>
-						<div class="flex my-5 items-center">
+						<!-- <div class="flex my-5 items-center">
 							<div class="flex-1 h-1 border-b"></div>
 							<div class="w-2 mx-5 text-center">or</div>
 							<div class="flex-1 h-1 border-b"></div>
-						</div>
-						<div class="mt-4">
+						</div>-->
+						<!-- <div class="mt-4">
 							<loading-button tag="a" to="login/LinkedIn" ref="submitButton" class="w-full ButtonLinkedIn">
 								<icon class="mr-2" name="linkedin"></icon>Sign in with LinkedIn
 							</loading-button>
-						</div>
+						</div>-->
 					</form>
 				</card>
 			</div>

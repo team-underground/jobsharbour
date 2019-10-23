@@ -1,17 +1,33 @@
 <template>
 	<layout>
 		<div class="bg-white overflow-hidden px-4 relative z-20 py-5">
-			<div class="-mb-10 h-16 w-32 bg-blue-600 absolute left-0 bottom-0 skew_aa"></div>
-			<div class="mb-4 h-12 w-32 bg-gray-400 absolute left-0 bottom-0 ml-10 skew_aa"></div>
-			<div class="-mb-16 h-20 w-32 bg-orange-400 absolute left-0 bottom-0 ml-16 skew_aa"></div>
+			<div class="h-4 w-24 bg-blue-100 absolute left-0 top-0 mt-4 skew_aa"></div>
+			<div class="h-8 w-full bg-gray-100 absolute left-0 top-0 mt-10 skew_aa"></div>
+			<div class="h-4 w-10 bg-gray-100 absolute left-0 top-0 mt-20 skew_aa"></div>
 
-			<div class="-mb-10 h-16 w-48 bg-blue-600 absolute right-0 top-0 mr-6 skew_bb"></div>
+			<div class="-mb-10 h-16 w-32 bg-blue-200 absolute left-0 bottom-0 skew_aa"></div>
+			<div class="mb-4 h-12 w-32 bg-gray-200 absolute left-0 bottom-0 ml-10 skew_aa"></div>
+			<div class="-mb-16 h-20 w-32 bg-orange-200 absolute left-0 bottom-0 ml-16 skew_aa"></div>
+
+			<div class="h-10 w-10 bg-blue-400 absolute right-0 top-0 mt-16 mr-10 skew_aa"></div>
+			<!-- <div class="h-12 w-32 bg-gray-400 absolute right-0 top-0 mt-8 skew_aa"></div> -->
+			<div class="h-10 w-10 bg-orange-200 absolute right-0 top-0 mt-10 mr-16 skew_aa"></div>
+
+			<!-- <div class="-mb-10 h-16 w-48 bg-blue-600 absolute right-0 top-0 mr-6 skew_bb"></div>
 			<div class="mb-4 h-16 w-32 bg-gray-400 absolute right-0 top-0 mr-10 skew_bb"></div>
-			<div class="-mb-16 h-20 w-32 bg-orange-400 absolute right-0 top-0 skew_bb"></div>
+			<div class="-mb-16 h-20 w-32 bg-orange-400 absolute right-0 top-0 skew_bb"></div>-->
+
+			<!-- <div class="h-16 w-64 bg-orange-200 absolute right-0 bottom-0 mb-4 skew_aa"></div>
+			<div class="h-16 w-24 bg-gray-200 absolute right-0 bottom-0 mb-10 skew_aa"></div>
+			<div class="h-16 w-32 bg-blue-200 absolute right-0 bottom-0 skew_aa"></div>-->
+
+			<div class="mb-32 h-16 w-32 bg-blue-200 absolute right-0 bottom-0 skew_aa"></div>
+			<div class="mb-12 h-12 w-48 bg-gray-200 absolute right-0 bottom-0 ml-4 skew_aa"></div>
+			<div class="-mb-16 h-20 w-64 bg-orange-200 absolute right-0 bottom-0 ml-6 skew_aa"></div>
 
 			<div class="md:flex relative max-w-6xl mx-auto">
-				<div class="lg:w-3/5 md:flex">
-					<div class="py-8 md:py-16">
+				<div class="lg:w-3/5 md:flex mx-auto">
+					<div class="pt-8 pb-32 md:pt-16 mb:pb-32">
 						<!-- <heading size="display" class="mb-1">Your passion begins here.</heading>
 						<heading size="display" class="mb-5">Find your job better &amp; faster.</heading>-->
 						<!-- <heading size="small-caps" class="mb-2 text-gray-600">Start Finding Jobs By Title:</heading> -->
@@ -20,10 +36,10 @@
 						<heading size="display" class="mb-5">Find your dream job here.</heading>
 						<!-- <search-input placeholder="Search your job title..." class="md:w-2/3" rounded="large"></search-input> -->
 
-						<loading-button tag="a" to="/jobs">Explore Jobs</loading-button>
-						<span class="mx-4">or</span>
+						<loading-button tag="a" to="/jobs" class="shadow">Explore Jobs</loading-button>
+						<!-- <span class="mx-4">or</span> -->
 						<!-- <link-to to="/categories">Browse Categories</link-to> -->
-						<loading-button tag="a" to="/categories" variant-type="outline">Browse Categories</loading-button>
+						<loading-button tag="a" to="/categories" variant="white" class="shadow">Browse Categories</loading-button>
 					</div>
 				</div>
 				<div class="lg:w-2/5 relative">
@@ -42,7 +58,7 @@
 							background="transparent"
 							speed="1"
 							loop
-							style="width: 360px; height: 360px;"
+							style="width: 320px; height: 320px;"
 							class="mx-auto hidden md:block"
 							autoplay
 						></lottie-player>
@@ -166,10 +182,10 @@
 			<div class="md:flex relative max-w-6xl mx-auto">
 				<div class="lg:w-3/5 md:flex items-center">
 					<div class="py-6 md:py-16">
-						<heading size="heading2" class="mb-4">Employers. Start hiring with us?</heading>
+						<heading size="heading2" class="mb-4">Hello Jobs Seeker</heading>
 						<heading
-							class="mb-5 md:pr-10"
-						>Are you still searching for a platform connecting with job seekers? Your quest is over. Here we come with the best platform where you can showcase your job lists. Whether you're looking for full-time, part-time, freelance, or internship opportunities, we've got you covered. Try Job Harbour today and pick the best of the candidates.</heading>
+							class="mb-5 md:pr-32"
+						>Are you still searching for a platform connecting with job seekers? Your quest is over. Here we come with the best platform where you can showcase your job lists. Whether you're looking for full-time, part-time, freelance, or internship opportunities, we've got you covered. Try Jobs Harbour today and pick the best of the candidates.</heading>
 
 						<loading-button to="/for-employers" tag="a">Get started now!</loading-button>
 					</div>
@@ -178,6 +194,28 @@
 					<img src="/Consultation.png" alt="bg-image" class="object-contain object-center w-full" />
 				</div>
 			</div>
+		</div>
+
+		<div class="overflow-hidden px-4 bg-blue-700 relative">
+			<div class="md:flex relative max-w-5xl mx-auto items-center mb-32 md:mb-0">
+				<div class="lg:w-3/4 md:flex items-center">
+					<div class="py-10 md:py-16 md:pr-32">
+						<h2 class="text-2xl text-white font-semibold tracking-tight">
+							Still struggling to communicate with Job Seekers?
+							<br />Try Jobs Harbour today.
+						</h2>
+					</div>
+				</div>
+				<div class="lg:w-1/4 relative">
+					<loading-button to="/for-employers" tag="a" variant="white" class="shadow-md">Get started now!</loading-button>
+
+					<!-- <img src="/Consultation.png" alt="bg-image" class="object-contain object-center w-full" /> -->
+				</div>
+			</div>
+
+			<div class="mb-32 h-20 w-32 bg-blue-200 absolute right-0 bottom-0 skew_aa"></div>
+			<div class="mb-16 h-12 w-40 bg-gray-200 absolute right-0 bottom-0 ml-4 skew_aa"></div>
+			<div class="-mb-20 h-32 w-48 bg-orange-200 absolute right-0 bottom-0 ml-6 skew_aa"></div>
 		</div>
 
 		<!-- <div class="md:w-1/3 px-4">

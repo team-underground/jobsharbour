@@ -4,11 +4,11 @@
 			<div class="md:flex items-center justify-between mx-auto max-w-6xl">
 				<div class="flex justify-between md:flex-none items-center">
 					<a href="/" class="flex items-center py-2">
-						<span class="font-bold text-xl text-blue-600">
+						<!-- <span class="font-bold text-xl text-blue-600">
 							Jobs
 							<span class="text-gray-800">Harbour</span>
-						</span>
-						<!-- <img src="/logo.jpg" alt="mcl" width="150" /> -->
+						</span>-->
+						<img src="/jh-logo.png" alt="jh" class="object-fit" />
 					</a>
 
 					<div
@@ -64,7 +64,7 @@
 							<template #trigger>
 								<div class="flex items-center">
 									<div
-										class="outline-none block inline-flex items-center justify-center h-10 w-10 overflow-hidden rounded-full shadow-inner bg-blue-600 text-white font-bold text-xl"
+										class="outline-none block inline-flex items-center justify-center h-10 w-10 overflow-hidden rounded-full shadow-inner bg-gray-500 text-white font-bold text-xl"
 									>{{ $page.auth.user.name.charAt(0) }}</div>
 									<div class="text-left ml-2">
 										<span class="text-sm leading-tight block w-32 truncate">{{ $page.auth.user.name }}</span>
@@ -198,25 +198,26 @@
 		<div class="px-4 lg:px-6 py-10 bg-white border-b-8 border-blue-600">
 			<div class="max-w-6xl mx-auto">
 				<div class="flex flex-wrap md:flex-1 -mx-4">
-					<div class="md:w-2/4 px-4 mb-6">
-						<span class="font-bold text-xl text-blue-600">
-							Jobs
-							<span class="text-gray-800">Harbour</span>
-						</span>
+					<div class="md:w-2/5 px-4 mb-6">
+						<img src="/jh-logo.png" alt="jh" />
 					</div>
 
-					<div class="w-1/2 md:w-1/4 px-4 mb-6">
-						<heading class="mb-3" size="small-caps">Help</heading>
-						<a href="#" class="block text-sm mb-2 hover:text-gray-500">About</a>
+					<div class="w-1/2 md:w-1/5 px-4 mb-6">
+						<heading class="mb-3" size="small-caps">About</heading>
+						<a href="#" class="block text-sm mb-2 hover:text-gray-500">About us</a>
 						<a href="#" class="block text-sm mb-2 hover:text-gray-500">For Employers</a>
+						<a href="/advertise" class="block text-sm mb-2 hover:text-gray-500">Advertise with us</a>
+					</div>
+
+					<div class="w-1/2 md:w-1/5 px-4 mb-6">
+						<heading class="mb-3" size="small-caps">Resources</heading>
 						<a href="#" class="block text-sm mb-2 hover:text-gray-500">Support</a>
 						<a href="/faq" class="block text-sm mb-2 hover:text-gray-500">FAQ</a>
-						<a href="/advertise" class="block text-sm mb-2 hover:text-gray-500">Advertise with us</a>
 						<a href="#" class="block text-sm mb-2 hover:text-gray-500">Privacy</a>
 						<a href="#" class="block text-sm mb-2 hover:text-gray-500">Terms of Service</a>
 					</div>
 
-					<div class="w-1/2 md:w-1/4 px-4 mb-6">
+					<div class="w-1/2 md:w-1/5 px-4 mb-6">
 						<heading class="mb-3" size="small-caps">Get Connected</heading>
 						<a href="#" class="block text-sm mb-2 hover:text-gray-500">Facebook</a>
 						<a href="#" class="block text-sm mb-2 hover:text-gray-500">Twitter</a>
