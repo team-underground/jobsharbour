@@ -213,8 +213,10 @@
 						<heading class="mb-3" size="small-caps">Resources</heading>
 						<a href="#" class="block text-sm mb-2 hover:text-gray-500">Support</a>
 						<a href="/faq" class="block text-sm mb-2 hover:text-gray-500">FAQ</a>
-						<a href="#" class="block text-sm mb-2 hover:text-gray-500">Privacy</a>
-						<a href="#" class="block text-sm mb-2 hover:text-gray-500">Terms of Service</a>
+						<a href="/advertise" class="block text-sm mb-2 hover:text-gray-500">Advertise with us</a>
+						<a href="/privacy" class="block text-sm mb-2 hover:text-gray-500">Privacy</a>
+						<a href="/terms" class="block text-sm mb-2 hover:text-gray-500">Terms of Service</a>
+						<a href="/refund" class="block text-sm mb-2 hover:text-gray-500">Refund & Cancellation</a>
 					</div>
 
 					<div class="w-1/2 md:w-1/5 px-4 mb-6">

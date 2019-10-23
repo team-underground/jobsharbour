@@ -49,6 +49,15 @@ Route::get('/advertise', function () {
 Route::get('/contact', function () {
     return Inertia::render('Contact');
 });
+Route::get('/terms', function () {
+    return Inertia::render('Terms');
+});
+Route::get('/privacy', function () {
+    return Inertia::render('Privacy');
+});
+Route::get('/refund', function () {
+    return Inertia::render('Refund');
+});
 
 
 // Auth::routes();
