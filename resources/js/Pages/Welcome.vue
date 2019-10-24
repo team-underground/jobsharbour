@@ -32,8 +32,11 @@
 						<heading size="display" class="mb-5">Find your job better &amp; faster.</heading>-->
 						<!-- <heading size="small-caps" class="mb-2 text-gray-600">Start Finding Jobs By Title:</heading> -->
 
-						<heading size="heading2" class="mb-1">Looking for jobs in Northeast?</heading>
-						<heading size="display" class="mb-5">Find your dream job here.</heading>
+						<heading class="mb-1 text-blue-600 text-2xl">Struggling for jobs?</heading>
+						<heading size="display" class="mb-8">
+							<span class="block">Unveil job opportunities</span> in our harbour right now
+						</heading>
+
 						<!-- <search-input placeholder="Search your job title..." class="md:w-2/3" rounded="large"></search-input> -->
 
 						<loading-button tag="a" to="/jobs" class="shadow">Explore Jobs</loading-button>
@@ -43,7 +46,7 @@
 					</div>
 				</div>
 				<div class="lg:w-2/5 relative">
-					<div class="md:mt-6">
+					<div class="md:mt-6 hidden md:block">
 						<lottie-player
 							src="/lf30_editor_wJXeMM.json"
 							background="transparent"

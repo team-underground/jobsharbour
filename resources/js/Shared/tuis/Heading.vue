@@ -40,7 +40,7 @@ export default {
 						this.size == "heading2",
 					"text-gray-500 text-xs font-bold tracking-wider uppercase":
 						this.size == "small-caps",
-					"text-2xl md:text-5xl text-gray-700 leading-none font-bold tracking-tight font-serif":
+					"text-3xl md:text-5xl text-gray-700 leading-none font-bold tracking-tight font-serif":
 						this.size == "display",
 					"text-4xl md:text-6xl text-gray-700 leading-none font-bold tracking-tight font-serif":
 						this.size == "display2"
