@@ -159,6 +159,11 @@ Route::post('/resume/generated', function () {
     return Inertia::render('ResumeGenerated', compact('resumedata'));
 });
 
+// Subscriber 
+
+Route::post('/subscriber', 'SubscriberController@store');
+Route::post('/subscriber-plan/create', 'SubscriberController@createSubscriptionPlane');
+
 
 
 // Route::get('login/LinkedIn', 'Auth\LoginController@redirectToProvider');
