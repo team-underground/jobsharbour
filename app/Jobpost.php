@@ -77,23 +77,22 @@ class Jobpost extends Model implements ViewableContract
             }
         });
 
-        static::updating(function ($model) {
-            //TODO other slugs rather than the current model slug
-            $model->job_slug = Str::slug($model->job_title); // change the ToBeSluggiefied
+        // static::updating(function ($model) {
+        //     $model->job_slug = Str::slug($model->job_title); // change the ToBeSluggiefied
 
-            $latestSlug =
-                static::whereRaw("job_slug = '$model->job_slug' or job_slug LIKE '$model->job_slug-%'")
-                ->latest('id')
-                ->value('job_slug');
+        //     $latestSlug =
+        //         static::whereRaw("(job_slug = '$model->job_slug' or job_slug LIKE '$model->job_slug-%') and id != '$model->id'")
+        //         ->latest('id')
+        //         ->value('job_slug');
 
-            if ($latestSlug) {
-                $pieces = explode('-', $latestSlug);
+        //     if ($latestSlug) {
+        //         $pieces = explode('-', $latestSlug);
 
-                $number = intval(end($pieces));
+        //         $number = intval(end($pieces));
 
-                $model->job_slug .= '-' . ($number + 1);
-            }
-        });
+        //         $model->job_slug .= '-' . ($number + 1);
+        //     }
+        // });
     }
     // protected static function boot()
     // {
