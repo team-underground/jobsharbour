@@ -40,7 +40,6 @@
 										<div class="flex">
 											<div class="pl-2 w-32">
 												<h5 class="text-gray-700">{{ option.row.label }}</h5>
-												<!-- <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span> -->
 											</div>
 										</div>
 									</template>
@@ -86,7 +85,7 @@
 							<alert :with-icon="false" class="my-6">
 								By creating an account you agree to the
 								<link-to to="#">Terms of Service</link-to>&nbsp;and
-								<link-to to="#">Privacy Policy</link-to>. You also agree to recieve product related emails from MCL, which you can unsubscribe from at any time.
+								<link-to to="#">Privacy Policy</link-to>. You also agree to recieve product related emails from Jobs Harbour, which you can unsubscribe from at any time.
 							</alert>
 
 							<loading-button ref="submitButton" type="submit" class="w-full mb-8">Let's get started</loading-button>

@@ -16,7 +16,7 @@
 						href="/admin/jobs"
 					>
 						<icon name="edit2"></icon>
-						<div class="mt-2 mb-1 text-sm">Job Post</div>
+						<div class="mt-2 mb-1 text-sm">Job Posts</div>
 					</a>
 
 					<a
@@ -141,7 +141,7 @@
 							<icon name="search" class="w-8 h-8"></icon>
 						</div>
 
-						<heading class="mt-5 mb-1" size="heading">No Job posts created by you</heading>
+						<heading class="mt-5 mb-1" size="heading">No Job posts</heading>
 						<p>Please create atleast one company/organization details to add a job post.</p>
 
 						<loading-button tag="a" to="/admin/jobs/create" size="small" class="mt-6">

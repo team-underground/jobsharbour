@@ -1,5 +1,5 @@
 <template>
-	<layout>
+	<layout title="Home">
 		<div class="bg-white overflow-hidden px-4 relative z-20 py-5">
 			<div class="h-4 w-24 bg-blue-100 absolute left-0 top-0 mt-4 skew_aa"></div>
 			<div class="h-8 w-full bg-gray-100 absolute left-0 top-0 mt-10 skew_aa"></div>

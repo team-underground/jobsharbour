@@ -20,7 +20,7 @@ $factory->define(Jobpost::class, function (Faker $faker) {
     //     "Principal Digital Imaging Connector"
     // ]);
 
-    $jobTitle = $faker->sentence(8);
+    $jobTitle = $faker->jobTitle;
 
     return [
         'user_id' => $faker->randomDigitNot(0),
@@ -30,7 +30,7 @@ $factory->define(Jobpost::class, function (Faker $faker) {
         'job_location' => $faker->city,
         'job_category' => $faker->randomElement([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]),
         'job_type' => $faker->randomElement([0, 1, 2, 3, 4]),
-        'job_salary' => $faker->randomElement(["5K-10K", "10K-15K", "15K-20K", "20K-40K", "40K+"]),
+        'job_salary' => $faker->randomElement(["10k-15k", "15k-20k", "20k-40k", "40k+"]),
         'job_description' => $faker->realText(1000, 4),
         'job_skills' => ['Laravel', 'Vuejs', 'PHP', 'MySQL', 'Reactjs'],
         'job_email' => $faker->safeEmail,

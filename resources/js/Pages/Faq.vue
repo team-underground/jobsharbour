@@ -1,10 +1,11 @@
 <template>
 	<layout>
-		<div class="py-10">
+		<div class="py-10 md:py-16">
 			<div class="mb-8 text-center">
 				<heading size="heading2">Frequently Asked Questions</heading>
 			</div>
-			<div class="max-w-5xl mx-auto bg-white rounded shadow px-8">
+
+			<card class="max-w-4xl mx-auto">
 				<tabs>
 					<tab name="About Jobs Harbour" :selected="true">
 						<accordion>
@@ -98,7 +99,7 @@
 						</accordion>
 					</tab>
 				</tabs>
-			</div>
+			</card>
 		</div>
 	</layout>
 </template>
@@ -111,6 +112,7 @@ import Tabs from "@/Shared/tuis/Tabs";
 import Accordion from "@/Shared/tuis/Accordion";
 import List from "@/Shared/tuis/List";
 import LinkTo from "@/Shared/tuis/LinkTo";
+import Card from "@/Shared/tuis/Card";
 
 export default {
 	components: {
@@ -120,7 +122,8 @@ export default {
 		Tab,
 		Accordion,
 		List,
-		LinkTo
+		LinkTo,
+		Card
 	}
 };
 </script>

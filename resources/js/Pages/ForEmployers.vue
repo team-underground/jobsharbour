@@ -1,15 +1,25 @@
 <template>
 	<layout>
-		<div class="px-4 py-6 md:py-16 relative">
-			<div class="max-w-3xl mx-auto text-center">
+		<div class="bg-blue-200 px-4 py-10 md:py-20 relative overflow-hidden">
+			<div class="max-w-2xl mx-auto text-center relative z-10">
 				<heading size="display" class="mb-4">Hello Employers</heading>
 				<heading
-					class="mb-1"
+					class="mb-1 text-blue-800 md:text-xl"
 				>Still struggling to communicate with job seekers? Your quest is over. Here we come with the best platform where you can showcase your job lists, communicate with a mass of potential candidates in no time and also pick up the best out of them.</heading>
+			</div>
+
+			<div class="hidden md:block">
+				<div class="-mb-10 h-16 w-32 bg-blue-300 absolute left-0 bottom-0 skew_aa"></div>
+				<div class="mb-6 h-12 w-48 bg-gray-200 absolute left-0 bottom-0 ml-10 skew_aa"></div>
+				<div class="-mb-16 h-20 w-32 bg-orange-200 absolute left-0 bottom-0 ml-16 skew_aa"></div>
+
+				<div class="mb-6 h-16 w-32 bg-blue-300 absolute right-0 bottom-0 skew_aa"></div>
+				<div class="mb-6 h-12 w-48 bg-gray-200 absolute right-0 bottom-0 mr-10 skew_aa"></div>
+				<div class="-mb-16 h-20 w-32 bg-orange-200 absolute right-0 bottom-0 mr-16 skew_aa"></div>
 			</div>
 		</div>
 
-		<div class="pb-10 min-h-screen px-4 z-30 relative">
+		<div class="py-10 px-4">
 			<div class="max-w-2xl mx-auto">
 				<div class="mb-8 text-center">
 					<heading size="heading2" class="mb-4">Simple. Fair Pricing</heading>
@@ -157,9 +167,7 @@ export default {
 	props: {
 		pricing: Object
 	},
-	props: {
-		pricing: Object
-	},
+
 	data() {
 		return {
 			plan: "Company",
@@ -215,5 +223,14 @@ export default {
 .toggle-switch li:first-child label,
 .toggle-switch li:last-child label {
 	border-radius: 1000px !important;
+}
+
+.skew_aa {
+	-webkit-transform: skew(0deg, -20deg);
+	-moz-transform: skew(0deg, -20deg);
+	-ms-transform: skew(0deg, -20deg);
+	-o-transform: skew(0deg, -20deg);
+	transform: skew(0deg, -20deg);
+	transform-origin: 0;
 }
 </style>

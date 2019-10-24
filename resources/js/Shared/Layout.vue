@@ -80,16 +80,21 @@
 								>
 									<a
 										class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600"
+										href="/admin/jobs"
+									>Job Posts</a>
+
+									<a
+										class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600"
 										href="#"
 									>Notifications</a>
 									<a
 										class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600"
 										href="/settings"
 									>Settings</a>
-									<a
+									<!-- <a
 										class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600"
-										href="#"
-									>Help & Feedback</a>
+										href="/faq"
+									>Help & Feedback</a>-->
 									<div class="border-t my-1 border-gray-200"></div>
 									<!-- <a
 										class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600"
@@ -195,25 +200,24 @@
 			<slot />
 		</article>
 
-		<div class="px-4 lg:px-6 py-10 bg-white border-b-8 border-blue-600">
+		<div class="px-4 py-16 bg-white border-b-8 border-blue-600">
 			<div class="max-w-6xl mx-auto">
 				<div class="flex flex-wrap md:flex-1 -mx-4">
-					<div class="md:w-2/5 px-4 mb-6">
+					<div class="w-1/2 md:w-2/5 px-4 mb-6">
 						<img src="/jh-logo.png" alt="jh" />
 					</div>
 
 					<div class="w-1/2 md:w-1/5 px-4 mb-6">
 						<heading class="mb-3" size="small-caps">About</heading>
-						<a href="#" class="block text-sm mb-2 hover:text-gray-500">About us</a>
-						<a href="#" class="block text-sm mb-2 hover:text-gray-500">For Employers</a>
+						<a href="/about" class="block text-sm mb-2 hover:text-gray-500">About us</a>
+						<a href="/for-employers" class="block text-sm mb-2 hover:text-gray-500">For Employers</a>
 						<a href="/advertise" class="block text-sm mb-2 hover:text-gray-500">Advertise with us</a>
+						<a href="/faq" class="block text-sm mb-2 hover:text-gray-500">FAQ</a>
 					</div>
 
 					<div class="w-1/2 md:w-1/5 px-4 mb-6">
 						<heading class="mb-3" size="small-caps">Resources</heading>
-						<a href="#" class="block text-sm mb-2 hover:text-gray-500">Support</a>
-						<a href="/faq" class="block text-sm mb-2 hover:text-gray-500">FAQ</a>
-						<a href="/advertise" class="block text-sm mb-2 hover:text-gray-500">Advertise with us</a>
+						<a href="/faq" class="block text-sm mb-2 hover:text-gray-500">Support</a>
 						<a href="/privacy" class="block text-sm mb-2 hover:text-gray-500">Privacy</a>
 						<a href="/terms" class="block text-sm mb-2 hover:text-gray-500">Terms of Service</a>
 						<a href="/refund" class="block text-sm mb-2 hover:text-gray-500">Refund & Cancellation</a>
@@ -268,6 +272,10 @@ export default {
 		Icon
 	},
 
+	props: {
+		title: String
+	},
+
 	data() {
 		return {
 			showNav: false,
@@ -281,6 +289,15 @@ export default {
 				this.$snack.success(this.$page.flash.success);
 			},
 			deep: true
+		},
+
+		title: {
+			immediate: true,
+			handler(title) {
+				document.title = title
+					? `${title} - Jobs Harbour`
+					: "Jobs harbour";
+			}
 		}
 	},
 
