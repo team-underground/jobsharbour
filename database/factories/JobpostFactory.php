@@ -15,7 +15,7 @@ $factory->define(Jobpost::class, function (Faker $faker) {
         'user_id' => $faker->randomDigitNot(0),
         'company_id' => $faker->randomDigitNot(0),
         'job_title' => $jobTitle,
-        'job_slug' => Str::slug($jobTitle),
+        'job_slug' => Str::slug($jobTitle) . '-' . rand(1111, 9999),
         'job_location' => $faker->city,
         'job_category' => $faker->randomElement([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]),
         'job_type' => $faker->randomElement([0, 1, 2, 3, 4]),
