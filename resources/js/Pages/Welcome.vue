@@ -43,6 +43,12 @@
 						<!-- <span class="mx-4">or</span> -->
 						<!-- <link-to to="/categories">Browse Categories</link-to> -->
 						<loading-button tag="a" to="/categories" variant="white" class="shadow">Browse Categories</loading-button>
+
+						<form>
+							<input v-model="subscriberName" placeholder="Name" />
+							<input v-model="email" placeholder="Subscriber" />
+							<button @click.prevent="subscribe()">Subscribe</button>
+						</form>
 					</div>
 				</div>
 				<div class="lg:w-2/5 relative">
@@ -261,43 +267,55 @@
 </template>
 
 <script>
-const toCurrency = (n, curr, LanguageFormat = undefined) =>
-	Intl.NumberFormat(LanguageFormat, {
-		style: "currency",
-		currency: curr
-	}).format(n);
+	const toCurrency = (n, curr, LanguageFormat = undefined) =>
+		Intl.NumberFormat(LanguageFormat, {
+			style: "currency",
+			currency: curr
+		}).format(n);
 
-import Layout from "@/Shared/Layout";
-import Card from "@/Shared/tuis/Card";
-import LoadingButton from "@/Shared/tuis/LoadingButton";
-import Heading from "@/Shared/tuis/Heading";
-import Badge from "@/Shared/tuis/Badge";
-import LinkTo from "@/Shared/tuis/LinkTo";
-import Icon from "@/Shared/tuis/Icon";
-import Avatar from "@/Shared/tuis/Avatar";
-import SearchInput from "@/Shared/tuis/SearchInput";
+	import Layout from "@/Shared/Layout";
+	import Card from "@/Shared/tuis/Card";
+	import LoadingButton from "@/Shared/tuis/LoadingButton";
+	import Heading from "@/Shared/tuis/Heading";
+	import Badge from "@/Shared/tuis/Badge";
+	import LinkTo from "@/Shared/tuis/LinkTo";
+	import Icon from "@/Shared/tuis/Icon";
+	import Avatar from "@/Shared/tuis/Avatar";
+	import SearchInput from "@/Shared/tuis/SearchInput";
 
-export default {
-	components: {
-		Layout,
-		Card,
-		LoadingButton,
-		Heading,
-		Badge,
-		LinkTo,
-		Icon,
-		Avatar,
-		SearchInput
-	},
+	export default {
+		components: {
+			Layout,
+			Card,
+			LoadingButton,
+			Heading,
+			Badge,
+			LinkTo,
+			Icon,
+			Avatar,
+			SearchInput
+		},
+		data() {
+			return {
+				subscriberName: "",
+				email: ""
+			};
+		},
+		props: ["jobposts", "pages"],
 
-	props: ["jobposts", "pages"],
-
-	methods: {
-		formatCurrency(amount) {
-			return toCurrency(parseFloat(amount), "INR", "en-us");
+		methods: {
+			subscribe() {
+			
+				this.$inertia.post("/subscriber", {
+					name: this.subscriberName,
+					email: this.email
+				});
+			},
+			formatCurrency(amount) {
+				return toCurrency(parseFloat(amount), "INR", "en-us");
+			}
 		}
-	}
-};
+	};
 </script>
 
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
+​
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
@@ -10,6 +11,7 @@
 		}
 	</style>
 </head>
+​
 
 <body>
 	<table width="100%">
@@ -25,7 +27,7 @@
 											<tbody>
 												<tr>
 													<td class="esd-block-text es-m-txt-c" align="left">
-														<img src="jh-logo.png" alt="jh-logo" style="margin-bottom: 16px;">
+														<img src="{{url('jh-logo.png')}}" alt="jh-logo" style="margin-bottom: 16px;">
 													</td>
 												</tr>
 											</tbody>
@@ -37,9 +39,9 @@
 								<tr>
 									<td class="esd-stripe" align="left">
 										<p>Dear Administrator,</p>
-
+										​
 										<p>New Job Post added by <strong>{{ $userName }}</strong>.</p>
-
+										​
 										<p>Job Details:</p>
 										<table style="border-collapse: collapse; width: 100%;">
 											<tr>
@@ -59,7 +61,7 @@
 												<td style="border: 1px solid #ccc; padding: 8px;">{{ $job_type }}</td>
 											</tr>
 										</table>
-
+										​
 										<p>Regards, <br />
 											<strong>Job Harbour's Team</strong>
 										</p>
@@ -73,8 +75,9 @@
 											<tbody>
 												<tr>
 													<td class="esd-block-text es-p15t es-p10b" align="center">
-														<p style="margin: 0; color: #a0aec0; margin-top: 32px; font-weight: 700; letter-spacing: .025em; font-size: 1rem; line-height: 1.325rem;">&copy; jobsharbour.com</p>
-
+														<p style="margin: 0; color: #a0aec0; margin-top: 32px; font-weight: 700; letter-spacing: .025em; font-size: 1rem; line-height: 1.325rem;">
+															&copy; jobsharbour.com</p>
+														​
 													</td>
 												</tr>
 											</tbody>
