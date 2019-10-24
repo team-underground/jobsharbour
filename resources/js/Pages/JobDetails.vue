@@ -32,7 +32,7 @@
 						<div class="mr-1 flex-1">
 							<loading-button type="button" size="small" class="md:w-64 mb-2" rounded="large">Apply Now</loading-button>
 						</div>
-						<div class="mr-1 flex-1">
+						<!-- <div class="mr-1 flex-1">
 							<loading-button
 								type="button"
 								size="small"
@@ -51,7 +51,40 @@
 								variant-type="outline"
 								rounded="large"
 							>Share on LinkedIn</loading-button>
-						</div>
+						</div> -->
+
+						<social-sharing
+							:url="route('jobs.show', post.job_title)"
+							:title="`${post.job_title}`"
+							description="Intuitive, Fast and Composable MVVM for building interactive interfaces."
+							quote="Vue is a progressive framework for building user interfaces."
+							:hashtags="post.job_skills.join(',')"
+							twitter-user="vuejs"
+							inline-template
+						>
+							<div class="flex flex-col">
+								<network network="facebook">
+									<div class="flex border-2 rounded-full md:w-64 mb-2 px-4 py-2 items-center justify-center cursor-pointer hover:border-blue-400">
+										<div class="p-1 rounded-full bg-blue-600 text-white mr-2">
+										<svg class="w-5 h-5 fill-current flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+											<path
+												d="M13.397,20.997v-8.196h2.765l0.411-3.209h-3.176V7.548c0-0.926,0.258-1.56,1.587-1.56h1.684V3.127	C15.849,3.039,15.025,2.997,14.201,3c-2.444,0-4.122,1.492-4.122,4.231v2.355H7.332v3.209h2.753v8.202H13.397z"
+											/>
+										</svg>
+										</div>Share 
+									</div>
+								</network>
+								<network network="linkedin">
+									<div class="flex border-2 rounded-full md:w-64 mb-2 px-4 py-2 items-center justify-center cursor-pointer hover:border-blue-400">
+										<div class="p-1 rounded-full bg-blue-600 text-white mr-2">
+										<svg class="w-5 h-5 fill-current flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="4.983" cy="5.009" r="2.188"/><path d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zM3.095 8.855H6.87V20.994H3.095z"/></svg>
+										</div>Share 
+									</div>
+								</network>
+								 
+								<network network="whatsapp"></network>
+							</div>
+						</social-sharing>
 					</div>
 				</div>
 			</div>
