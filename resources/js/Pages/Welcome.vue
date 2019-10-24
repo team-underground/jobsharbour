@@ -147,7 +147,7 @@
 												<heading size="large" class="inline-block">{{ post.job_title }}</heading>
 											</div>
 											<heading size="small" class="mb-1">{{ post.company.company_name }}</heading>
-											<heading size="small" class="mb-1">{{ post.company.company_industry }}</heading>
+											<heading size="small" class="mb-1">{{ post.job_category }}</heading>
 										</div>
 										<div class="md:w-48 flex-col justify-between mt-1">
 											<div class="md:mb-1 md:flex-1 flex items-center">
@@ -167,7 +167,7 @@
 
 									<div class="flex justify-between">
 										<heading size="small">{{ post.job_published_at_formatted }}</heading>
-										<link-to :to="`/jobs/${post.uuid}`" class="text-sm">View Details</link-to>
+										<link-to :to="`/jobs/${post.job_slug}`" class="text-sm">View Details</link-to>
 									</div>
 								</div>
 							</div>

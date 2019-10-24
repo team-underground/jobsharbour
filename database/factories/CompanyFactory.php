@@ -14,7 +14,7 @@ $factory->define(Company::class, function (Faker $faker) {
 
     return [
         'user_id' => $faker->randomDigitNot(0),
-        'company_logo' => $faker->image($filepath, 320, 240, null, false),
+        'company_logo' => $faker->image('company/' . $filepath, 320, 240, null, false),
         'company_name' => $faker->company,
         'company_website' => $faker->domainName,
         'company_description' => $faker->realText(200, 2),

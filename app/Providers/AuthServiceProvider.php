@@ -73,8 +73,8 @@ class AuthServiceProvider extends ServiceProvider
             if (auth()->user()->isAdmin()) {
                 return true;
             }
-            if (auth()->user()->isEmployer() && auth()->user()->companies->count() >= 1) {
-                return false;
+            if (auth()->user()->isEmployer() && auth()->user()->companies->count() <= 1) {
+                return true;
             }
             if (auth()->user()->isConsultancy() && auth()->user()->subscribed_to->package_name == PackageType::ConsultancyBasic()->description && auth()->user()->companies->count() <= 5) {
                 return true;

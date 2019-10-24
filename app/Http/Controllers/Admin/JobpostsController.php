@@ -66,16 +66,17 @@ class JobpostsController extends Controller
 			'company_id.required' => 'Please select a company',
 		]);
 
-		$input['job_closing_date'] = Carbon::createFromFormat('d/m/Y', $input['job_closing_date'])->format('Y-m-d') . ' 23:59:59';
-
-		DB::transaction(function () use ($input) {
-			$jobpost_created = Jobpost::create($input + [
+		DB::transaction(function () use ($request) {
+			$jobpost_created = Jobpost::create($request->except([
+				'job_skills',
+				'job_closing_date'
+			]) + [
 				'user_id' => auth()->user()->id,
-				'job_slug' => Str::slug($input['job_title'])
+				'job_closing_date' => Carbon::createFromFormat('d/m/Y', $request->job_closing_date)->format('Y-m-d') . ' 23:59:59'
 			]);
 
 			if ($jobpost_created) {
-				$jobpost_created->attachTags($input['job_skills']);
+				$jobpost_created->attachTags($request->job_skills);
 			}
 
 			$jobpost_created['user_name'] = auth()->user()->name;
@@ -142,7 +143,6 @@ class JobpostsController extends Controller
 				'job_skills',
 				'job_closing_date'
 			]) + [
-				'job_slug' => Str::slug($input['job_title']),
 				'job_type' => (int) $input['job_type'],
 				'job_category' => (int) $input['job_category'],
 				'job_experience_level' => (int) $input['job_experience_level'],

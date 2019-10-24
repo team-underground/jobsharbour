@@ -52,11 +52,9 @@ class JobpostsController extends Controller
         }
     }
 
-    public function show($uuid)
+    public function show($jobSlug)
     {
-        // $post = Jobpost::with('company')->findOrFail($id);
-        $jobpost = Jobpost::findByUuidOrFail($uuid);
-        $post = $jobpost->load('company');
+        $post = Jobpost::with('company')->where('job_slug', $jobSlug)->firstOrFail();
         // record page views
         views($post)->record();
 

@@ -104,11 +104,11 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 
 // Jobs
 Route::get('/jobs', 'JobpostsController@index')->name('jobs');
-Route::get('/jobs/{uuid}', 'JobpostsController@show')->name('jobs.show');
+Route::get('/jobs/{job_slug}', 'JobpostsController@show')->name('jobs.show');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
-        $posts = Jobpost::with('company')->orderByViews()->closed(false)->limit(10)->get()->transform(function ($post) {
+        $posts = Jobpost::published()->with('company')->orderByViews()->closed(false)->role()->limit(10)->get()->transform(function ($post) {
             return [
                 'uuid' => $post->uuid,
                 'job_title' => $post->job_title,
