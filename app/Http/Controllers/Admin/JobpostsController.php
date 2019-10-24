@@ -68,10 +68,16 @@ class JobpostsController extends Controller
 
 		DB::transaction(function () use ($request) {
 			$jobpost_created = Jobpost::create($request->except([
+				'job_type',
+				'job_category',
+				'job_experience_level',
 				'job_skills',
 				'job_closing_date'
 			]) + [
 				'user_id' => auth()->user()->id,
+				'job_type' => (int) $request->job_type,
+				'job_category' => (int) $request->job_category,
+				'job_experience_level' => (int) $request->job_experience_level,
 				'job_closing_date' => Carbon::createFromFormat('d/m/Y', $request->job_closing_date)->format('Y-m-d') . ' 23:59:59'
 			]);
 

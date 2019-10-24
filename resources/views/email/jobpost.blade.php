@@ -8,23 +8,8 @@
 	<title>Job Post Created</title>
 	<style>
 		body {
-			font-family: 'Inter', 'Arial', sans-serif;
-		}
-
-		​ .table {
-			border-collapse: collapse;
-			width: 100%;
-		}
-
-		​ .table th {
-			background: #eee;
-		}
-
-		​ .table th,
-		.table td {
-			border: 1px solid #ccc;
-			padding: 8px;
-		}
+			font-family: 'Arial', sans-serif;
+		} 
 	</style>
 </head>
 ​
@@ -62,22 +47,22 @@
 										<p>New Job Post added by <strong>{{ $userName }}</strong>.</p>
 										​
 										<p>Job Details:</p>
-										<table class="table">
+										<table style="border-collapse: collapse; width: 100%;">
 											<tr>
-												<th align="left" style="width: 140px">Job Title</th>
-												<td>{{ $job_title }}</td>
+												<th align="left" style="width: 140px; background: #eee; border: 1px solid #ccc; padding: 8px;">Job Title</th>
+												<td style="border: 1px solid #ccc; padding: 8px;">{{ $job_title }}</td>
 											</tr>
 											<tr>
-												<th align="left" style="width: 140px">Job Location</th>
-												<td>{{ $job_location }}</td>
+												<th align="left" style="width: 140px; background: #eee; border: 1px solid #ccc; padding: 8px;">Job Location</th>
+												<td style="border: 1px solid #ccc; padding: 8px;">{{ $job_location }}</td>
 											</tr>
 											<tr>
-												<th align="left" style="width: 140px">Job Position</th>
-												<td>{{ $job_position }}</td>
+												<th align="left" style="width: 140px; background: #eee; border: 1px solid #ccc; padding: 8px;">Job Category</th>
+												<td style="border: 1px solid #ccc; padding: 8px;">{{ $job_category }}</td>
 											</tr>
 											<tr>
-												<th align="left" style="width: 140px">Job Type</th>
-												<td>{{ $job_type }}</td>
+												<th align="left" style="width: 140px; background: #eee; border: 1px solid #ccc; padding: 8px;">Job Type</th>
+												<td style="border: 1px solid #ccc; padding: 8px;">{{ $job_type }}</td>
 											</tr>
 										</table>
 										​
