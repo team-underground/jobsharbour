@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Arr;
 
 class JobpostsTableSeeder extends Seeder
 {
@@ -11,6 +12,10 @@ class JobpostsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Jobpost::class, 50)->create();
+        factory(App\Jobpost::class, 50)->create()->each(function ($post) {
+            $array = ['Laravel', 'Vuejs', 'PHP', 'MySQL', 'Reactjs'];
+            $values = Arr::random($array, rand(1, 5));
+            $post->attachTags($values);
+        });
     }
 }

@@ -44,6 +44,7 @@ class AppServiceProvider extends ServiceProvider
                         'name' => Auth::user()->name,
                         'email' => Auth::user()->email,
                         'type' => Auth::user()->type,
+                        'subscribed_to' => Auth::user()->subscribed_to,
                     ] : null,
                 ];
             },

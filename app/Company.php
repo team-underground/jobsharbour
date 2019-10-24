@@ -47,7 +47,7 @@ class Company extends Model
 
     public function getCompanyLogoPathAttribute()
     {
-        return $this->company_logo ? url('/') . '/storage/' . $this->company_logo : null;
+        return $this->company_logo ? url('/') . '/storage/company/' . $this->company_logo : null;
     }
 
     public function scopeFilter($query, array $filters)

@@ -64,7 +64,7 @@ final class CategoryType extends Enum
         }
 
         if ($value === self::TravelTourism) {
-            return 'Travel/Tourism';
+            return 'Travel and Tourism';
         }
 
         if ($value === self::FoodServices) {

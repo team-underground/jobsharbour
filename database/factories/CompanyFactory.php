@@ -6,9 +6,15 @@ use App\Company;
 use Faker\Generator as Faker;
 
 $factory->define(Company::class, function (Faker $faker) {
+    $filepath = storage_path('app/public/company');
+
+    if (!File::exists($filepath)) {
+        File::makeDirectory($filepath);  //follow the declaration to see the complete signature
+    }
+
     return [
         'user_id' => $faker->randomDigitNot(0),
-        'company_logo' => 'https://loremflickr.com/320/240?random=' . $faker->randomDigit,
+        'company_logo' => $faker->image($filepath, 320, 240, null, false),
         'company_name' => $faker->company,
         'company_website' => $faker->domainName,
         'company_description' => $faker->realText(200, 2),

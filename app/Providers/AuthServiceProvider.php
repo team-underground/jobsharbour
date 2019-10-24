@@ -2,10 +2,12 @@
 
 namespace App\Providers;
 
-use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Gate;
 use App\Company;
 use App\Jobpost;
+use App\Enums\PackageType;
+use App\Enums\JobStatusType;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -58,7 +60,7 @@ class AuthServiceProvider extends ServiceProvider
     public function registerJobPolicies()
     {
         Gate::define('publish-job', function ($user, Jobpost $post) {
-            if (auth()->user()->isAdmin() && !$post->job_status == JobStatusType::getInstance(JobStatusType::Published)->key) {
+            if (auth()->user()->isAdmin() && $post->job_status === JobStatusType::getInstance(JobStatusType::Moderation)->key) {
                 return true;
             }
             return false;
@@ -74,11 +76,11 @@ class AuthServiceProvider extends ServiceProvider
             if (auth()->user()->isEmployer() && auth()->user()->companies->count() >= 1) {
                 return false;
             }
-            if (auth()->user()->isConsultancy() && auth()->user()->subsciption()->package_name == 'consultancy-basic' && auth()->user()->companies->count() >= 5) {
-                return false;
+            if (auth()->user()->isConsultancy() && auth()->user()->subscribed_to->package_name == PackageType::ConsultancyBasic()->description && auth()->user()->companies->count() <= 5) {
+                return true;
             }
-            if (auth()->user()->isConsultancy() && auth()->user()->subsciption()->package_name == 'consultancy-pro') {
-                return false;
+            if (auth()->user()->isConsultancy() && auth()->user()->subscribed_to->package_name == PackageType::ConsultancyPro()->description) {
+                return true;
             }
             return false;
         });

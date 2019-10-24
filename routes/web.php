@@ -136,7 +136,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/jobs/{uuid}/edit', 'Admin\JobpostsController@edit')->name('admin.jobs.edit');
     Route::put('/admin/jobs/{uuid}/update', 'Admin\JobpostsController@update')->name('admin.jobs.update');
 
-    Route::post('/admin/jobs/{uuid}/publish', 'Admin\JobpostsPublishController@store')->name('admin.jobs.publish')->middleware('can:publish-job');
+    Route::post('/admin/jobs/{uuid}/publish', 'Admin\JobpostsPublishController@store')->name('admin.jobs.publish');
 
 
     // Admin / Employer Company

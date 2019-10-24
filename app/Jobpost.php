@@ -22,7 +22,7 @@ class Jobpost extends Model implements ViewableContract
 
     protected $dates = ['job_published_at'];
 
-    protected $appends = ['job_new', 'job_published_at_formatted'];
+    protected $appends = ['job_new', 'job_published_at_formatted', 'job_skills'];
 
     /**
      * The attributes that should be cast to native types.
@@ -74,7 +74,7 @@ class Jobpost extends Model implements ViewableContract
         return JobType::getDescription($value);
     }
 
-    public function getJobPositionAttribute($value)
+    public function getJobCategoryAttribute($value)
     {
         return CategoryType::getDescription($value);
     }
@@ -82,6 +82,11 @@ class Jobpost extends Model implements ViewableContract
     public function getJobStatusAttribute($value)
     {
         return Str::title(JobStatusType::getDescription($value));
+    }
+
+    public function getJobSkillsAttribute()
+    {
+        return $this->tags->pluck('name')->toArray();
     }
 
     // public function getJobPublishedAtAttribute($value)
@@ -98,7 +103,9 @@ class Jobpost extends Model implements ViewableContract
     {
         // return (Carbon::today() == $value) ? Carbon::parse($value)->diffForHumans() : Carbon::parse($value)->format('j M, Y');
         // Carbon::parse($value)->toFormattedDateString(); // Dec 19, 2015
-
+        if ($this->job_published_at == null) {
+            return 'Not published yet';
+        }
         $created = new Carbon($this->job_published_at);
         $now = Carbon::now();
 

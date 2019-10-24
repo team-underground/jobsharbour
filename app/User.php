@@ -2,11 +2,12 @@
 
 namespace App;
 
+use App\Subscription;
 use App\Enums\UserType;
+use JamesMills\Uuid\HasUuidTrait;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use JamesMills\Uuid\HasUuidTrait;
 
 class User extends Authenticatable
 {
@@ -39,19 +40,39 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected $appends = ['subscribed_to'];
+
     public function getTypeAttribute($value)
     {
         return UserType::getDescription($value);
     }
 
-    public function subscription()
+    public function getAllCompanies()
     {
-        return $this->hasOne(Subscription::class);
+        if ($this->isAdmin()) {
+            return Company::all();
+        }
+        return $this->companies;
     }
+
+    // public function subscription()
+    // {
+    //     return $this->hasOne(Subscription::class);
+    // }
 
     public function companies()
     {
         return $this->hasMany(Company::class);
+    }
+
+    public function subscriptions()
+    {
+        return $this->hasMany(Subscription::class);
+    }
+
+    public function getSubscribedToAttribute()
+    {
+        return optional($this->subscriptions()->orderByDesc('created_at')->first())->package;
     }
 
     public function isAdmin()

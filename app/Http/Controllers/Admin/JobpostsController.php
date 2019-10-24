@@ -6,11 +6,13 @@ use App\Jobpost;
 use Carbon\Carbon;
 use Inertia\Inertia;
 use Illuminate\Support\Str;
+use App\Enums\JobStatusType;
 use App\Events\JobPostEvent;
 use Illuminate\Http\Request;
 use App\Enums\ExperienceLevelType;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Gate;
 use App\Enums\{CategoryType, JobType, IndustryType};
 
 class JobpostsController extends Controller
@@ -20,7 +22,8 @@ class JobpostsController extends Controller
 		$jobposts = Jobpost::with('company')
 			->filter(request()->only('search'))
 			->role()
-			->orderByDesc('job_published_at')
+			->orderByDesc('created_at')
+			// ->orderByDesc('job_published_at')
 			->simplePaginate(6);
 
 		$filters = request()->all('search');
@@ -35,7 +38,7 @@ class JobpostsController extends Controller
 		$industries = IndustryType::toSelectArray();
 		$experiencelevels = ExperienceLevelType::toSelectArray();
 
-		$companies = auth()->user()->companies->map(function ($company) {
+		$companies = auth()->user()->getAllCompanies()->map(function ($company) {
 			return [
 				"label" => $company->company_name,
 				"value" => $company->id
@@ -53,6 +56,7 @@ class JobpostsController extends Controller
 			'job_location' => ['required'],
 			'job_category' => ['required'],
 			'job_type' => ['required'],
+			'job_experience_level' => ['required'],
 			'job_salary' => ['required'],
 			'job_description' => ['required'],
 			'job_skills' => ['required'],
@@ -86,22 +90,26 @@ class JobpostsController extends Controller
 	public function edit($uuid, Request $request)
 	{
 		$jobpost = Jobpost::findByUuidOrFail($uuid);
-		// dd($jobpost->job_status);
-		$post = $jobpost->load('company');
-		$post->job_skills = $jobpost->tags->pluck('name')->toArray();
 
-		$positions = CategoryType::toSelectArray();
+		$post = $jobpost->load('company');
+
+		$categories = CategoryType::toSelectArray();
 		$jobtypes = JobType::toSelectArray();
 		$industries = IndustryType::toSelectArray();
+		$experiencelevels = ExperienceLevelType::toSelectArray();
 
-		$companies = auth()->user()->companies->map(function ($company) {
+		$companies = auth()->user()->getAllCompanies()->map(function ($company) {
 			return [
 				"label" => $company->company_name,
 				"value" => $company->id
 			];
 		});
 
-		return Inertia::render('Jobs/Edit', compact('post', 'positions', 'jobtypes', 'industries', 'companies'));
+		$can = [
+			'publish-job' => Gate::allows('publish-job', $jobpost),
+		];
+
+		return Inertia::render('Jobs/Edit', compact('post', 'categories', 'jobtypes', 'industries', 'companies', 'can', 'experiencelevels'));
 	}
 
 	public function update($uuid, Request $request)
@@ -110,8 +118,9 @@ class JobpostsController extends Controller
 			'company_id' => ['required'],
 			'job_title' => ['required'],
 			'job_location' => ['required'],
-			'job_position' => ['required'],
+			'job_category' => ['required'],
 			'job_type' => ['required'],
+			'job_experience_level' => ['required'],
 			'job_salary' => ['required'],
 			'job_description' => ['required'],
 			'job_skills' => ['required'],
@@ -128,13 +137,15 @@ class JobpostsController extends Controller
 		DB::transaction(function () use ($jobpost, $input, $request) {
 			$jobpost->update($request->except([
 				'job_type',
-				'job_position',
+				'job_category',
+				'job_experience_level',
+				'job_skills',
 				'job_closing_date'
 			]) + [
 				'job_slug' => Str::slug($input['job_title']),
 				'job_type' => (int) $input['job_type'],
-				'job_position' => (int) $input['job_position'],
-				'job_published_at' => $input['job_published_at'],
+				'job_category' => (int) $input['job_category'],
+				'job_experience_level' => (int) $input['job_experience_level'],
 				'job_closing_date' => $input['job_closing_date'],
 			]);
 

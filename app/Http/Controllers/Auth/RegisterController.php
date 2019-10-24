@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Enums\UserType;
-use App\Http\Controllers\Controller;
 use App\User;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Subscription;
+use App\Enums\UserType;
+use App\Enums\PackageType;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
@@ -64,11 +67,27 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'type' => $data['type']
-        ]);
+        $user = DB::transaction(function () use ($data) {
+            $user = User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'type' => $data['type']
+            ]);
+            if ($user->type == UserType::Consultancy()->key) {
+                Subscription::create([
+                    'user_id' => $user->id,
+                    'package_id' => PackageType::ConsultancyBasic()->value
+                ]);
+            }
+            if ($user->type == UserType::Employer()->key) {
+                Subscription::create([
+                    'user_id' => $user->id,
+                    'package_id' => PackageType::CompanyBasic()->value
+                ]);
+            }
+            return $user;
+        });
+        return $user;
     }
 }

@@ -9,7 +9,7 @@
 				<div class="md:flex -mx-4">
 					<div class="md:w-2/3 px-4">
 						<heading size="heading2" class="inline-block mb-2">{{ post.job_title}}</heading>
-						<heading class="mb-4">{{ post.company.company_name }} / {{ post.job_position }}</heading>
+						<heading class="mb-4">{{ post.company.company_name }} / {{ post.job_category }}</heading>
 
 						<div class="flex justify-between mb-4">
 							<div class="md:flex-1 flex items-center">

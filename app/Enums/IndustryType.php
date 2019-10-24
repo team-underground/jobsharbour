@@ -30,7 +30,7 @@ final class IndustryType extends Enum
     {
         // do not write symbols like &,. etc in return values
         if ($value === self::InformationTechnology) {
-            return 'It/Software';
+            return 'It and Software';
         }
 
         if ($value === self::DesignAndMultimedia) {
@@ -38,7 +38,7 @@ final class IndustryType extends Enum
         }
 
         if ($value === self::BankingAndFinance) {
-            return 'Banking/Finance';
+            return 'Banking and Finance';
         }
 
         if ($value === self::NonProfitOrganization) {

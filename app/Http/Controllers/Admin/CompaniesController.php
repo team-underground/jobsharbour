@@ -58,9 +58,6 @@ class CompaniesController extends Controller
             'company_logo.dimensions' => 'Image must be atleast 200x200px as a png or jpeg file'
         ]);
 
-        // Start a try/catch block
-        // DB::transaction(function () use ($input, $request) {
-
         $companyCreated = Company::create($request->only([
             'company_name',
             'company_website',
@@ -72,9 +69,6 @@ class CompaniesController extends Controller
             'user_id' => auth()->user()->id,
             'company_logo' => $request->file('company_logo') ? $request->file('company_logo')->store('company', 'public') : null
         ]);
-
-        // });
-        // End
 
         session()->flash('success', 'Company details successfully saved.');
 

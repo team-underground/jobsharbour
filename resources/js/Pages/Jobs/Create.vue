@@ -111,17 +111,6 @@
 
 									<div class="flex flex-wrap -mx-4">
 										<div class="w-1/2 px-4">
-											<text-input
-												v-model="job.job_email"
-												type="email"
-												label="Email for candidate"
-												placeholder="Email to send resume/cv"
-												class="mb-4"
-												:errors="errors['job_email']"
-												@keydown="delete errors['job_email']"
-											></text-input>
-										</div>
-										<div class="w-1/2 px-4">
 											<select-input
 												v-model="job.job_category"
 												label="Category"
@@ -147,14 +136,15 @@
 										</div>
 									</div>
 
-									<!-- <text-input
-										v-model="job.job_skills"
-										label="Skills"
-										placeholder="eg. Laravel, MySQL, Angular..."
+									<text-input
+										v-model="job.job_email"
+										type="email"
+										label="Email for candidate"
+										placeholder="Email to send resume/cv"
 										class="mb-4"
-										:errors="errors['job_skills']"
-										@keydown="delete errors['job_skills']"
-									></text-input>-->
+										:errors="errors['job_email']"
+										@keydown="delete errors['job_email']"
+									></text-input>
 
 									<tags-input label="Skills" v-model="job.job_skills" class="mb-4"></tags-input>
 
@@ -266,7 +256,6 @@ export default {
 				"100+": "100+"
 			},
 			salaries: {
-				"5k-10k": "5k-10k",
 				"10k-15k": "10k-15k",
 				"15k-20k": "15k-20k",
 				"20k-40k": "20k-40k",

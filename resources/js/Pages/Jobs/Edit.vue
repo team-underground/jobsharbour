@@ -15,6 +15,7 @@
 								v-if="post.job_status === 'Published'"
 								class="ml-3"
 							>{{ post.job_status }}</badge>
+							<badge variant="warning" v-if="post.job_status === 'Moderation'">{{ post.job_status }}</badge>
 						</div>
 						<div class="flex">
 							<loading-button
@@ -23,7 +24,7 @@
 								ref="jobPublishButton"
 								variant="success"
 								@click="publishJob"
-								v-if="!post.job_status=='Published'"
+								v-if="can['publish-job']"
 							>Publish Post</loading-button>
 
 							<loading-button type="submit" size="small" ref="jobSaveButton">Update Post</loading-button>
@@ -74,19 +75,7 @@
 									:errors="errors['job_location']"
 									@keydown="delete errors['job_location']"
 								></text-input>
-								<div class="flex -mx-4">
-									<!-- <div class="w-1/3 px-4">
-                                            <select-input
-                                                v-model="job.job_position"
-                                                label="Position"
-                                                class="mb-4"
-                                                :options="positions"
-                                                :errors="errors['job_position']"
-                                                @keydown="delete errors['job_position']"
-                                            >
-                                                <option value="null" disabled>Select position</option>
-                                            </select-input>
-									</div>-->
+								<div class="flex flex-wrap -mx-4">
 									<div class="w-1/2 px-4">
 										<select-input
 											v-model="job.job_type"
@@ -111,17 +100,31 @@
 											<option value="null" disabled>Select salary</option>
 										</select-input>
 									</div>
+									<div class="w-1/2 px-4">
+										<select-input
+											v-model="job.job_category"
+											label="Category"
+											class="mb-4"
+											:options="categories"
+											:errors="errors['job_category']"
+											@keydown="delete errors['job_category']"
+										>
+											<option value="null" disabled>Select job category</option>
+										</select-input>
+									</div>
+									<div class="w-1/2 px-4">
+										<select-input
+											v-model="job.job_experience_level"
+											label="Experience Level"
+											class="mb-4"
+											:options="experiencelevels"
+											:errors="errors['job_experience_level']"
+											@keydown="delete errors['job_experience_level']"
+										>
+											<option value="null" disabled>Select experience level</option>
+										</select-input>
+									</div>
 								</div>
-
-								<!-- <text-input
-									v-model="job.job_skills"
-									label="Skills"
-									placeholder="eg. Laravel, MySQL, Angular..."
-									class="mb-4"
-									:errors="errors['job_skills']"
-									@keydown="delete errors['job_skills']"
-								></text-input>-->
-								<tags-input label="Skills" v-model="job.job_skills" class="mb-4"></tags-input>
 
 								<text-input
 									v-model="job.job_email"
@@ -132,6 +135,8 @@
 									:errors="errors['job_email']"
 									@keydown="delete errors['job_email']"
 								></text-input>
+
+								<tags-input label="Skills" v-model="job.job_skills" class="mb-4"></tags-input>
 
 								<simple-editor
 									label="Description"
@@ -206,11 +211,13 @@ export default {
 	},
 	props: [
 		"jobtypes",
-		"positions",
+		"categories",
 		"industries",
 		"errors",
 		"post",
-		"companies"
+		"companies",
+		"can",
+		"experiencelevels"
 	],
 	data() {
 		return {
@@ -218,7 +225,11 @@ export default {
 				company_id: this.post.company_id,
 				job_title: this.post.job_title,
 				job_location: this.post.job_location,
-				job_position: this.post.job_position,
+				job_category: this.getKeyByValue(
+					this.categories,
+					this.post.job_category
+				),
+				job_experience_level: this.post.job_experience_level,
 				job_type: this.getKeyByValue(this.jobtypes, this.post.job_type),
 				job_salary: this.post.job_salary,
 				job_skills: this.post.job_skills,
@@ -227,11 +238,10 @@ export default {
 				job_closing_date: this.post.job_closing_date
 			},
 			salaries: {
-				"5K-10K": "5K-10K",
-				"10K-15K": "10K-15K",
-				"15K-20K": "15K-20K",
-				"20K-40K": "20K-40K",
-				"40K+": "40K+"
+				"10k-15k": "10k-15k",
+				"15k-20k": "15k-20k",
+				"20k-40k": "20k-40k",
+				"40k+": "40k+"
 			}
 		};
 	},
