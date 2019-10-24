@@ -41,9 +41,8 @@ class SendEmailToAdmin
             'userName' => $event->jobpost->user_name,
             'job_title' => $event->jobpost->job_title,
             'job_location' => $event->jobpost->job_location,
-            'job_position' => $event->jobpost->job_position,
+            'job_category' => $event->jobpost->job_category,
             'job_type' => $event->jobpost->job_type,
-            // 'job_published_at' => $event->job_published_at,
         ];
         Mail::send('email.jobpost', $data, function ($msg) use ($data) {
             $msg->to($data['admin_email'])
