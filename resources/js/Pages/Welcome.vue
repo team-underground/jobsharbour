@@ -366,8 +366,7 @@ export default {
 		formatCurrency(amount) {
 			return toCurrency(parseFloat(amount), "INR", "en-us");
 		}
-	}
-};
+	};
 </script>
 
 
