@@ -11,10 +11,9 @@ $factory->define(Company::class, function (Faker $faker) {
     if (!File::exists($filepath)) {
         File::makeDirectory($filepath);  //follow the declaration to see the complete signature
     }
-
     return [
         'user_id' => $faker->randomDigitNot(0),
-        'company_logo' => $faker->image('company/' . $filepath, 320, 240, null, false),
+        'company_logo' => 'company/' . $faker->image($filepath, 320, 240, null, false),
         'company_name' => $faker->company,
         'company_website' => $faker->domainName,
         'company_description' => $faker->realText(200, 2),
