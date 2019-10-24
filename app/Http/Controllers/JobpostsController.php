@@ -44,7 +44,7 @@ class JobpostsController extends Controller
 
             return Inertia::render('Jobs', compact('jobposts', 'filters', 'jobtypes', 'categories'));
         } else {
-            $jobposts = Jobpost::with('company')->orderByDesc('job_published_at')->simplePaginate(6);
+            $jobposts = Jobpost::published()->with('company')->orderByDesc('job_published_at')->simplePaginate(6);
 
             // $pages = Analytics::fetchVisitorsAndPageViews(Period::days(7));
 
