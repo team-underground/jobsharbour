@@ -1,7 +1,7 @@
 <template>
 	<layout>
 		<div class="px-4 py-6 md:py-16 relative">
-			<div class="max-w-3xl mx-auto">
+			<div class="max-w-5xl mx-auto">
 				<heading size="display" class="mb-12 text-center">Cancellation & Refund Policy</heading>
 				<p class="mb-3">You can cancel your payment only if it has not been posted to the the website, and your order is in pending status. Once your order is completed, and the listings are approved, you will not be able to cancel the same order  anyways.  You can cancel the same order within 24 hours, provided your listings are not approved or live.</p>
 				<p class="mb-3">In case, you have sent a request for a cancellation, and if your cancellation request is denied, then you will get a confirmation email from us regarding this. For cancellation of an order, you will need to send the Order Number, listing name, date or time of placing the order to <link-to to="mailto:hello@jobsharbour.com">hello@jobsharbour.com</link-to>.</p>
