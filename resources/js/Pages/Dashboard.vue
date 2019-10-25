@@ -22,6 +22,7 @@
 					<a
 						class="w-1/3 md:w-1/6 border-l border-b md:border-transparent py-4 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
 						href="/admin/users"
+						v-if="can['modify-user']"
 					>
 						<icon name="users"></icon>
 						<div class="mt-2 mb-1 text-sm">Users</div>
@@ -51,60 +52,17 @@
 						<div class="mt-2 mb-1 text-sm">Settings</div>
 					</a>
 				</div>
-
-				<!-- <link-to to="/jobs" class="mb-4">
-					<icon name="chevron-left" class="-ml-2"></icon>Back Links
-				</link-to>-->
-
-				<!-- <heading size="large">
-					<span class="font-normal">Welcome</span>
-					, {{$page.auth.user.name}}
-				</heading>-->
-				<!-- <div class="md:flex">
-					<a
-						href="/dashboard"
-						class="py-3 flex items-center mr-8 md:mr-12 text-blue-600 active"
-					>Dashboard</a>
-
-					<a
-						href="/admin/jobs"
-						class="py-3 flex items-center mr-8 md:mr-12 text-gray-500 hover:text-blue-600"
-					>Jobs</a>
-
-					<a
-						href="/jobs"
-						class="py-3 flex items-center mr-8 md:mr-12 text-gray-500 hover:text-blue-600"
-					>Users</a>
-
-					<a
-						href="/jobs"
-						class="py-3 flex items-center mr-8 md:mr-12 text-gray-500 hover:text-blue-600"
-					>Notifications</a>
-
-					<a
-						href="/jobs"
-						class="py-3 flex items-center mr-8 md:mr-12 text-gray-500 hover:text-blue-600"
-					>Emails</a>
-
-					<a
-						href="/jobs"
-						class="py-3 flex items-center mr-8 md:mr-12 text-gray-500 hover:text-blue-600"
-					>Feedback</a>
-
-					<a
-						href="/settings"
-						class="py-3 flex items-center mr-8 md:mr-12 text-gray-500 hover:text-blue-600"
-					>Settings</a>
-				</div>-->
 			</div>
 		</div>
 
 		<div class="py-10 px-4">
 			<div class="max-w-6xl mx-auto">
-				<heading size="heading" class="mb-6" v-if="posts.length">Unique views Analytics</heading>
-				<card class="mb-10">
-					<page-views :total="total_counts" :unique="unique_counts"></page-views>
-				</card>
+				<template v-if="Object.keys(total_counts).length > 0">
+					<heading size="heading" class="mb-6">Page views Analytics</heading>
+					<card class="mb-10">
+						<page-views :total="total_counts" :unique="unique_counts"></page-views>
+					</card>
+				</template>
 
 				<heading size="heading" class="mb-6" v-if="posts.length">Page Views</heading>
 
@@ -146,7 +104,7 @@
 							<icon name="search" class="w-8 h-8"></icon>
 						</div>
 
-						<heading class="mt-5 mb-1" size="heading">No Job posts</heading>
+						<heading class="mt-5 mb-1" size="heading">No Open Job posts</heading>
 						<p>Please create atleast one company/organization details to add a job post.</p>
 
 						<loading-button tag="a" to="/admin/jobs/create" size="small" class="mt-6">
@@ -156,109 +114,6 @@
 				</div>
 			</div>
 		</div>
-
-		<!-- <div class="py-10 min-h-screen px-4">
-		<div class="max-w-6xl mx-auto">-->
-		<!-- <card class="mb-8">
-					<heading size="small-caps" class="mb-2">Quote of the day</heading>
-
-					<heading
-						size="large"
-						class="italic mb-2"
-					>Laziness is nothing more than the habit of resting before you get tired.</heading>
-					<div class="italic text-sm">&mdash; Jules Renard</div>
-		</card>-->
-
-		<!-- <div class="flex flex-wrap -mx-4">
-					<div class="w-1/2 md:w-1/4 mb-8 px-4 flex flex-col">
-						<card class="flex-1 hover:shadow-md" to="/admin/companies" tag="a">
-							<div
-								class="mx-auto bg-blue-100 text-blue-600 rounded-full w-16 h-16 flex items-center justify-center"
-							>
-								<icon name="briefcase" class="text-blue-600"></icon>
-							</div>
-
-							<heading size="large" class="text-center mt-5 mb-1">Companies</heading>
-							<heading class="text-center hidden">For Job Posting related stuffs visit here.</heading>
-						</card>
-					</div>
-
-					<div class="w-1/2 md:w-1/4 mb-8 px-4 flex flex-col">
-						<card class="flex-1 hover:shadow-md" to="/admin/jobs" tag="a">
-							<div
-								class="mx-auto bg-blue-100 text-blue-600 rounded-full w-16 h-16 flex items-center justify-center"
-							>
-								<icon name="edit" class="text-blue-600"></icon>
-							</div>
-
-							<heading size="large" class="text-center mt-5 mb-1">Job Post</heading>
-							<heading class="text-center hidden">For Job Posting related stuffs visit here.</heading>
-						</card>
-					</div>
-
-					<div
-						class="w-1/2 md:w-1/4 mb-8 px-4 flex flex-col"
-						v-if="$page.auth.user.type == 'Consultancy'"
-					>
-						<card class="flex-1 hover:shadow-md" to="/admin/users" tag="a">
-							<div
-								class="mx-auto bg-blue-100 text-blue-600 rounded-full w-16 h-16 flex items-center justify-center"
-							>
-								<icon name="users" class="text-blue-600"></icon>
-							</div>
-
-							<heading size="large" class="text-center mt-5 mb-1">Users</heading>
-							<heading class="text-center hidden">List of all users registered in your portals.</heading>
-						</card>
-					</div>
-
-					<div class="w-1/2 md:w-1/4 mb-8 px-4 flex flex-col">
-						<card class="flex-1 hover:shadow-md" to="/admin/jobs" tag="a">
-							<div
-								class="mx-auto bg-blue-100 text-blue-600 rounded-full w-16 h-16 flex items-center justify-center"
-							>
-								<icon name="bell" class="text-blue-600"></icon>
-							</div>
-
-							<heading size="large" class="text-center mt-5 mb-1">Notifications</heading>
-							<heading
-								class="text-center hidden"
-							>For changing passwords and notification settings visit here.</heading>
-						</card>
-					</div>
-
-					<div class="w-1/2 md:w-1/4 mb-8 px-4 flex flex-col">
-						<card class="flex-1 hover:shadow-md" to="/admin/jobs" tag="a">
-							<div
-								class="mx-auto bg-blue-100 text-blue-600 rounded-full w-16 h-16 flex items-center justify-center"
-							>
-								<icon name="message" class="text-blue-600"></icon>
-							</div>
-
-							<heading size="large" class="text-center mt-5 mb-1">Feedback</heading>
-							<heading
-								class="hidden"
-							>If you came across any issue or bug in our system kindly send us a feedback.</heading>
-						</card>
-					</div>
-
-					<div class="w-1/2 md:w-1/4 mb-8 px-4 flex flex-col">
-						<card class="flex-1 hover:shadow-md" to="/settings" tag="a">
-							<div
-								class="mx-auto bg-blue-100 text-blue-600 rounded-full w-16 h-16 flex items-center justify-center"
-							>
-								<icon name="settings" class="text-blue-600"></icon>
-							</div>
-
-							<heading size="large" class="text-center mt-5 mb-1">Settings</heading>
-							<heading
-								class="text-center hidden"
-							>For changing passwords and notification settings visit here.</heading>
-						</card>
-					</div>
-		</div>-->
-		<!-- </div>
-		</div>-->
 	</layout>
 </template>
 
@@ -275,11 +130,7 @@ import LoadingButton from "@/Shared/tuis/LoadingButton";
 import PageViews from "@/Pages/Charts/PageViews";
 
 export default {
-	props: {
-		posts: Array,
-		unique_counts: Object,
-		total_counts: Object
-	},
+	props: ["can", "posts", "unique_counts", "total_counts"],
 	components: {
 		Layout,
 		Heading,

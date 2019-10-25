@@ -1,12 +1,8 @@
 <?php
 
-use App\Enums\CategoryType;
-use App\Jobpost;
 use App\Package;
-use CyrildeWit\EloquentViewable\View;
 use Inertia\Inertia;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\URL;
+use App\Enums\CategoryType;
 
 
 /*
@@ -107,55 +103,14 @@ Route::get('/jobs', 'JobpostsController@index')->name('jobs');
 Route::get('/jobs/{job_slug}', 'JobpostsController@show')->name('jobs.show');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', function () {
-        $posts = Jobpost::published()->with('company')->orderByViews()->closed(false)->role()->limit(10)->get()->transform(function ($post) {
-            // dd("unique page views day wise", View::select([
-            //     \DB::raw('count(DISTINCT visitor, viewable_id) as `total`'),
-            //     \DB::raw("DATE_FORMAT(viewed_at, '%e-%m-%Y') as day")
-            // ])->groupBy('day')->pluck('total', 'day')->all(), "total page views day wise", View::select([
-            //     \DB::raw('count(id) as `total`'),
-            //     \DB::raw("DATE_FORMAT(viewed_at, '%e-%m-%Y') as day")
-            // ])->groupBy('day')->pluck('total', 'day')->all());
-            return [
-                'uuid' => $post->uuid,
-                'job_title' => $post->job_title,
-                'job_published_at_formatted' => $post->job_published_at_formatted,
-                'total_page_views' => views($post)->count(),
-                'unique_page_views' => views($post)->unique()->count()
-            ];
-        });
-        return Inertia::render('Dashboard', [
-            'posts' => $posts,
-            'unique_counts' => View::select([
-                \DB::raw('count(DISTINCT visitor, viewable_id) as `total`'),
-                \DB::raw("DATE_FORMAT(viewed_at, '%Y-%m-%e') as day")
-            ])->groupBy('day')->pluck('total', 'day')->toArray(),
-            'total_counts' => View::select([
-                \DB::raw('count(id) as `total`'),
-                \DB::raw("DATE_FORMAT(viewed_at, '%Y-%m-%e') as day")
-            ])->groupBy('day')->pluck('total', 'day')->toArray()
-        ]);
-    });
-
-    Route::get('/dashboard-counts', function () {
-        return response([
-            'unique_counts' => View::select([
-                \DB::raw('count(DISTINCT visitor, viewable_id) as `total`'),
-                \DB::raw("DATE_FORMAT(viewed_at, '%Y-%m-%e') as day")
-            ])->groupBy('day')->pluck('total', 'day')->all(),
-            'total_counts' => View::select([
-                \DB::raw('count(id) as `total`'),
-                \DB::raw("DATE_FORMAT(viewed_at, '%Y-%m-%e') as day")
-            ])->groupBy('day')->pluck('total', 'day')->all()
-        ]);
-    });
+    Route::get('/dashboard', 'DashboardController');
 
     Route::get('/settings', function () {
         return Inertia::render('Settings');
     });
 
     // Users
-    Route::get('/admin/users', 'Admin\UsersController@index')->name('admin.users.all')->middleware('can:create-user');
+    Route::get('/admin/users', 'Admin\UsersController@index')->name('admin.users.all')->middleware('can:modify-user');
 
     // Admin / Employer Job
     Route::get('/admin/jobs', 'Admin\JobpostsController@index')->name('admin.jobs.all');

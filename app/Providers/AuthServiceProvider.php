@@ -35,21 +35,7 @@ class AuthServiceProvider extends ServiceProvider
 
     public function registerUserPolicies()
     {
-        Gate::define('create-user', function ($user) {
-            if (auth()->user()->isAdmin()) {
-                return true;
-            }
-            return false;
-        });
-
-        Gate::define('update-user', function ($user) {
-            if (auth()->user()->isAdmin()) {
-                return true;
-            }
-            return false;
-        });
-
-        Gate::define('delete-user', function ($user) {
+        Gate::define('modify-user', function ($user) {
             if (auth()->user()->isAdmin()) {
                 return true;
             }
