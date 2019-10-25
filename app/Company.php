@@ -42,7 +42,7 @@ class Company extends Model
 
     public function getCompanyIndustryAttribute($value)
     {
-        return Str::title(IndustryType::getDescription($value));
+        return IndustryType::getDescription($value);
     }
 
     public function getCompanyLogoPathAttribute()

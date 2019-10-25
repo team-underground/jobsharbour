@@ -1,48 +1,11 @@
 <template>
 	<div id="app">
-		<!-- <div class="bitcoin-price">
-			<svg style="width:0; height:0; position:absolute;" aria-hidden="true" focusable="false">
-				<defs>
-					<linearGradient id="curve1Fill" x1="1" x2="1" y1="0" y2="1">
-						<stop offset="0%" stop-color="#f69119" />
-						<stop offset="100%" stop-color="#ffffff" />
-					</linearGradient>
-					<linearGradient id="curve2Fill" x1="1" x2="1" y1="0" y2="1">
-						<stop offset="0%" stop-color="#259dff" />
-						<stop offset="100%" stop-color="#ffffff" />
-					</linearGradient>
-				</defs>
-			</svg>
-			<trend-chart
-				v-if="dataset.length"
-				:datasets="[{data: dataset, className: 'curve-1', fill:true},{data: [3, 2, 1], className: 'curve-2', fill:true}]"
-				:labels="labels"
-				:min="0"
-				:grid="grid"
-				:interactive="true"
-				@mouseMove="onMouseMove"
-				class="random-chart"
-				ref="randomChart"
-			/>
-			<div id="pop" role="tooltip" ref="tooltip" class="tooltip" :class="{'is-active': tooltipData}">
-				<div class="tooltip-container" v-if="tooltipData">
-					<strong>{{labels.xLabels[tooltipData.index]}}</strong>
-					<div class="tooltip-data">
-						<div class="tooltip-data-item tooltip-data-item--1">{{tooltipData.data[0]}}</div>
-						<div class="tooltip-data-item tooltip-data-item--2">{{tooltipData.data[1]}}</div>
-						<div class="tooltip-data-item tooltip-data-item--3">{{tooltipData.data[2]}}</div>
-					</div>
-				</div>
-			</div>
-		</div>-->
-		{{ total }}
 		<div class="random">
 			<trend-chart
 				:datasets="datasets"
 				:grid="grid"
 				:labels="labels"
 				:min="0"
-				:max="10"
 				:interactive="true"
 				@mouseMove="onMouseMove"
 				class="random-chart"
@@ -51,8 +14,8 @@
 				<div class="tooltip-container" v-if="tooltipData">
 					<strong>{{labels.xLabels[tooltipData.index]}}</strong>
 					<div class="tooltip-data">
-						<div class="tooltip-data-item tooltip-data-item--1">{{tooltipData.data[0]}}</div>
-						<div class="tooltip-data-item tooltip-data-item--2">{{tooltipData.data[1]}}</div>
+						<div class="tooltip-data-item tooltip-data-item--1">Total views {{tooltipData.data[0]}}</div>
+						<div class="tooltip-data-item tooltip-data-item--2">Unique views {{tooltipData.data[1]}}</div>
 					</div>
 				</div>
 			</div>
@@ -77,14 +40,14 @@ export default {
 		return {
 			datasets: [
 				{
-					data: [],
+					data: Object.values(this.total),
 					smooth: true,
 					showPoints: true,
 					fill: true,
 					className: "curve1"
 				},
 				{
-					data: [],
+					data: Object.values(this.unique),
 					smooth: true,
 					showPoints: true,
 					className: "curve2"
@@ -95,9 +58,12 @@ export default {
 				horizontalLines: true
 			},
 			labels: {
-				xLabels: [],
-				yLabels: 5
-				// yLabelsTextFormatter: val => Math.round(val * 100) / 100
+				xLabels: Object.keys(this.total).map(value =>
+					moment(value).format("DD, MMM")
+				),
+				yLabels: 2,
+				yLabelsTextFormatter: val =>
+					Math.round(val * 100) / 100 + " views"
 			},
 			tooltipData: null,
 			popper: null,
@@ -105,21 +71,6 @@ export default {
 		};
 	},
 	methods: {
-		fetchData() {
-			axios.get("dashboard-counts").then(response => {
-				const { unique_counts, total_counts } = response.data;
-				console.log(
-					Object.values(total_counts),
-					Object.values(unique_counts),
-					Object.keys(total_counts)
-				);
-				this.datasets[0].data = Object.values(total_counts);
-				this.datasets[1].data = Object.values(unique_counts);
-				this.labels.xLabels = Object.keys(total_counts).map(value =>
-					moment(value).format("DD")
-				);
-			});
-		},
 		initPopper() {
 			const chart = document.querySelector(".random-chart");
 			const ref = chart.querySelector(".active-line");
@@ -141,70 +92,11 @@ export default {
 		}
 	},
 	mounted() {
-		this.fetchData();
 		this.initPopper();
 	}
 };
 </script>    
 <style lang="scss">
-// * {
-// 	box-sizing: border-box;
-// }
-
-// .bitcoin-price {
-// 	.vtc {
-// 		height: 250px;
-// 		font-size: 12px;
-// 		@media (min-width: 699px) {
-// 			height: 350px;
-// 		}
-// 	}
-// 	.grid,
-// 	.labels {
-// 		line {
-// 			stroke: rgba(#aaa, 0.5);
-// 		}
-// 	}
-// 	.x-labels {
-// 		.label {
-// 			text {
-// 				display: none;
-// 			}
-// 			line {
-// 				opacity: 0.3;
-// 			}
-// 			&:nth-child(6n + 1),
-// 			&:first-child {
-// 				text {
-// 					display: block;
-// 				}
-// 				line {
-// 					opacity: 1;
-// 				}
-// 			}
-// 		}
-// 	}
-// 	.curve-1 {
-// 		.stroke {
-// 			stroke: #f69119;
-// 			stroke-width: 2;
-// 		}
-// 		.fill {
-// 			fill: url(#curve1Fill);
-// 			fill-opacity: 0.5;
-// 		}
-// 	}
-// 	.curve-2 {
-// 		.stroke {
-// 			stroke: #259dff;
-// 			stroke-width: 2;
-// 		}
-// 		.fill {
-// 			fill: url(#curve2Fill);
-// 			fill-opacity: 0.5;
-// 		}
-// 	}
-// }
 * {
 	box-sizing: border-box;
 }
