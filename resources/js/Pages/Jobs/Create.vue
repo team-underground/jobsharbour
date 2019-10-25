@@ -162,24 +162,32 @@
 						<div class="md:flex mb-10 -mx-4">
 							<div class="md:w-1/3 px-4">
 								<heading size="large" class="mb-1">Job Post Date</heading>
-								<heading class="mb-4">The date when the job post has been published & closed.</heading>
+								<heading
+									class="mb-4"
+								>The date when the job post will start appear in the site & closed for applying.</heading>
 							</div>
 							<div class="md:w-2/3 px-4">
 								<card>
-									<date-input
-										label="Job Opening Date"
-										class="w-48 mb-4"
-										placeholder="Select date"
-										v-model="job.job_starting_date"
-										readonly
-									></date-input>
-									<date-input
-										label="Job Closing Date"
-										class="w-48"
-										placeholder="Select date"
-										v-model="job.job_closing_date"
-										readonly
-									></date-input>
+									<div class="flex flex-wrap -mx-4">
+										<div class="w-1/2 px-4">
+											<date-input
+												label="Job Opening Date"
+												class="w-48 mb-4"
+												placeholder="Select date"
+												v-model="job.job_starting_date"
+												readonly
+											></date-input>
+										</div>
+										<div class="w-1/2 px-4">
+											<date-input
+												label="Job Closing Date"
+												class="w-48"
+												placeholder="Select date"
+												v-model="job.job_closing_date"
+												readonly
+											></date-input>
+										</div>
+									</div>
 								</card>
 							</div>
 						</div>
@@ -197,12 +205,7 @@
 										placeholder="eg. Ability to write code – HTML & CSS (SCSS flavor of SASS preferred when writing CSS)Proficient in Photoshop, Illustrator, bonus points for familiarity with Sketch (Sketch is our preferred concepting)Cross-browser and platform testing as standard practiceExperience using Invision a plusExperience in video production a plus or, at a minimum, a willingness to learn"
 										v-model="job.meta_description"
 									></textarea-input>
-									<textarea-input
-										label="Meta Keywords"
-										class="mb-4"
-										placeholder="eg. Laravel, React, Vue"
-										v-model="job.meta_keywords"
-									></textarea-input>
+									<tags-input label="Meta Keywords" v-model="job.meta_keywords" class="mb-4"></tags-input>
 									<text-input
 										label="SEO Title"
 										class="mb-4"
@@ -286,7 +289,7 @@ export default {
 				job_closing_date: currentDate,
 				company_id: null,
 				meta_description: null,
-				meta_keywords: null,
+				meta_keywords: [],
 				seo_title: null
 			},
 			companySize: {

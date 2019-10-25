@@ -8,13 +8,19 @@
 		<div class="tags-input">
 			<span v-for="(tag, idx) in value" class="tags-input-tag" :key="idx">
 				<span>{{ tag }}</span>
-				<button type="button" class="tags-input-remove" @click="removeTag(tag)">&times;</button>
+				<button
+					type="button"
+					class="tags-input-remove"
+					@click="removeTag(tag)"
+					:disabled="disabled"
+				>&times;</button>
 			</span>
 			<input
 				class="tags-input-text"
 				placeholder="Add tag..."
 				@keydown.enter.prevent="addTag"
 				v-model="newTag"
+				:readonly="disabled"
 			/>
 		</div>
 	</div>
@@ -28,6 +34,10 @@ export default {
 			default() {
 				return `text-input-${this._uid}`;
 			}
+		},
+		disabled: {
+			type: Boolean,
+			default: false
 		},
 		value: Array,
 		label: String

@@ -51,6 +51,16 @@ class AuthServiceProvider extends ServiceProvider
             }
             return false;
         });
+
+        Gate::define('update-job-seo', function ($user, Jobpost $post) {
+            if ((auth()->user()->isEmployer() || auth()->user()->isConsultancy()) && $post->job_status === JobStatusType::getInstance(JobStatusType::Published)->key) {
+                return false;
+            }
+            if (auth()->user()->isEmployer() || auth()->user()->isConsultancy() || auth()->user()->isAdmin()) {
+                return true;
+            }
+            return false;
+        });
     }
 
     public function registerCompanyPolicies()
