@@ -38,7 +38,7 @@
 								:key="option"
 								:model-value="option"
 								:value="option"
-								class
+								class="truncate inline-block"
 							>{{ option }}</checkbox-input>
 						</div>
 					</div>
@@ -47,7 +47,7 @@
 							<search-input placeholder="Search by job title..." class="flex-1" v-model="form.search"></search-input>
 							<div class="ml-4">
 								<loading-button
-									class="bg-white"
+									class="bg-white md:hidden"
 									variant="secondary"
 									variant-type="outline"
 									type="button"
@@ -55,7 +55,7 @@
 									@click="$modal.show('filter-modal')"
 								>
 									<icon name="filter"></icon>
-									<span class="ml-1">Filters</span>
+									<span class="ml-1 hidden md:block">Filters</span>
 								</loading-button>
 								<span>
 									<loading-button
@@ -65,7 +65,8 @@
 										variant-type="outline"
 										@click="reset"
 									>
-										<icon name="refresh" class="mr-2"></icon>Reset
+										<icon name="refresh"></icon>
+										<span class="ml-1 hidden md:block">Reset</span>
 									</loading-button>
 								</span>
 							</div>
@@ -227,14 +228,20 @@
 
 					<div class="md:w-1/5 px-4 md:pt-20">
 						<card class="mb-5 relative" :is-padding="false">
-							<img src="/ad3.png" alt="ad" class="object-fit w-full" />
-							<badge variant="warning" class="absolute top-0 right-0 mt-2 mr-4 shadow-md">Ad</badge>
+							<div class="h-64 bg-orange-100 px-4 py-4">
+								<heading class="text-gray-700 tracking-tight text-xl">Advertise with us</heading>
+							</div>
+							<!-- <img src="/ad3.png" alt="ad" class="object-fit w-full" /> -->
+							<!-- <badge variant="warning" class="absolute top-0 right-0 mt-2 mr-4 shadow-md">Ad</badge> -->
 						</card>
 
-						<card class="mb-5 relative" :is-padding="false">
+						<!-- <card class="mb-5 relative" :is-padding="false">
 							<img src="/ad2.png" alt="ad" class="object-fit w-full" />
+							<div class="h-32 bg-blue-100 flex items-center justify-center px-4">
+								<heading class="text-blue-600 font-semibold tracking-tight text-xl">Advertise with us</heading>
+							</div>
 							<badge variant="warning" class="absolute top-0 right-0 mt-2 mr-4 shadow-md">Ad</badge>
-						</card>
+						</card>-->
 					</div>
 				</div>
 			</div>
@@ -242,18 +249,18 @@
 
 		<modal
 			name="filter-modal"
-			height="auto"
+			:height="480"
 			:scrollable="true"
 			classes="rounded-lg bg-white"
 			:adaptive="true"
 		>
-			<div class="px-8 py-5">
-				<heading size="heading" class="mb-4">Filters</heading>
+			<div class="px-8 pt-5 pb-8" style="height: 480px; overflow-y: auto">
+				<heading size="heading" class="mb-4">Filter By</heading>
 				<div class="flex flex-wrap">
 					<div class="w-1/2 mb-4">
 						<heading class="mb-2 text-gray-700" size="small-caps">Job Type</heading>
 
-						<ul class="no-bullet">
+						<!-- <ul class="no-bullet">
 							<li class="mb-1" v-for="(jobtype, index) in jobtypes" :key="index">
 								<label class="inline-flex items-center">
 									<input
@@ -265,12 +272,20 @@
 									<span class="ml-2">{{ jobtype }}</span>
 								</label>
 							</li>
-						</ul>
+						</ul>-->
+						<checkbox-input
+							v-model="form.jobtype"
+							v-for="option in jobtypes"
+							:key="option"
+							:model-value="option"
+							:value="option"
+							class
+						>{{ option }}</checkbox-input>
 					</div>
-					<div class="w-1/2 mb-4">
+					<div class="w-1/2 mb-4 pl-5">
 						<heading class="mb-2 text-gray-700" size="small-caps">Salary</heading>
 
-						<ul class="no-bullet">
+						<!-- <ul class="no-bullet">
 							<li class="mb-1" v-for="(salary, key) in salaries" :key="key">
 								<label class="inline-flex items-center">
 									<input
@@ -282,36 +297,41 @@
 									<span class="ml-2">Rs. {{ salary }}</span>
 								</label>
 							</li>
-						</ul>
+						</ul>-->
+
+						<checkbox-input
+							v-model="form.salary"
+							v-for="(option, key) in salaries"
+							:key="key"
+							:model-value="key"
+							:value="key"
+							class
+						>{{ option }}</checkbox-input>
 					</div>
 					<div class="w-full">
 						<heading class="mb-2 text-gray-700" size="small-caps">Job Categories</heading>
 
-						<ul class="no-bullet column-count-2">
-							<li class="mb-1" v-for="(category, index) in categories" :key="index">
-								<label class="inline-flex items-center">
-									<input
-										type="checkbox"
-										class="form-checkbox text-blue-500 h-4 w-4"
-										v-model="form.category"
-										:value="category"
-									/>
-									<span class="ml-2">{{ category }}</span>
-								</label>
-							</li>
-						</ul>
+						<div class="column-count-2">
+							<checkbox-input
+								v-model="form.category"
+								v-for="option in categories"
+								:key="option"
+								:model-value="option"
+								:value="option"
+								class="truncate"
+							>{{ option }}</checkbox-input>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="bg-gray-100 px-8 py-4 flex justify-between">
+			<!-- <div class="bg-gray-100 px-8 py-4 flex justify-between">
 				<loading-button
 					variant="secondary"
 					variant-type="outline"
 					size="small"
 					@click="$modal.hide('filter-modal')"
 				>Close</loading-button>
-				<!-- <loading-button size="small">Apply Filter</loading-button> -->
-			</div>
+			</div>-->
 		</modal>
 	</layout>
 </template>
@@ -377,11 +397,10 @@ export default {
 				category: this.getCategoryParam()
 			},
 			salaries: {
-				"5K-10K": "5K-10K",
-				"10K-15K": "10K-15K",
-				"15K-20K": "15K-20K",
-				"20K-40K": "20K-40K",
-				"40K+": "40K+"
+				"10k-15k": "10k-15k",
+				"15k-20k": "15k-20k",
+				"20k-40k": "20k-40k",
+				"40k+": "40k+"
 			}
 		};
 	},

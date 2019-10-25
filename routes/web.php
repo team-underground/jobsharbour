@@ -16,7 +16,7 @@ use App\Enums\CategoryType;
 |
 */
 
-Route::get('/', 'JobpostsController@index');
+Route::get('/', 'JobpostsController@index')->name('welcome');
 
 Route::get('/about', function () {
     return Inertia::render('About');

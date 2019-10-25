@@ -39,16 +39,10 @@
 
 						<!-- <search-input placeholder="Search your job title..." class="md:w-2/3" rounded="large"></search-input> -->
 
-						<loading-button tag="a" to="/jobs" class="shadow">Explore Jobs</loading-button>
+						<loading-button tag="a" to="/jobs" class="shadow-md">Explore Jobs</loading-button>
 						<!-- <span class="mx-4">or</span> -->
 						<!-- <link-to to="/categories">Browse Categories</link-to> -->
-						<loading-button tag="a" to="/categories" variant="white" class="shadow">Browse Categories</loading-button>
-
-						<form>
-							<input v-model="subscriberName" placeholder="Name" />
-							<input v-model="email" placeholder="Subscriber" />
-							<button @click.prevent="subscribe()">Subscribe</button>
-						</form>
+						<loading-button tag="a" to="/categories" variant="white" class="shadow-md">Browse Categories</loading-button>
 					</div>
 				</div>
 				<div class="lg:w-2/5 relative">
@@ -187,26 +181,71 @@
 			</div>
 		</div>
 
-		<div class="bg-white overflow-hidden px-4 border-b border-gray-200">
-			<div class="md:flex relative max-w-6xl mx-auto">
-				<div class="lg:w-3/5 md:flex items-center">
-					<div class="py-6 md:py-16">
-						<heading size="heading2" class="mb-4">Hello Jobs Seeker</heading>
-						<heading
-							class="mb-5 md:pr-32"
-						>Are you still searching for a platform connecting with job seekers? Your quest is over. Here we come with the best platform where you can showcase your job lists. Whether you're looking for full-time, part-time, freelance, or internship opportunities, we've got you covered. Try Jobs Harbour today and pick the best of the candidates.</heading>
+		<div class="bg-blue-800 px-4 pt-10 md:pt-16 border-b border-gray-200 relative">
+			<div class="max-w-3xl mx-auto mb-10">
+				<h2
+					class="md:text-center mb-4 text-3xl md:text-4xl font-bold tracking-tight text-white leading-tight"
+				>Job seekers! sign up for our newsletter</h2>
+				<p
+					class="md:text-center mb-5 text-blue-300 md:text-lg"
+				>Subscribe to our newsletter and get information related to jobs, careers, job resources and many more straight in your inbox. Whether you're looking for full-time, part-time, freelance, or internship opportunities, we've got you covered. No spam, guaranteed.</p>
+			</div>
 
-						<loading-button to="/for-employers" tag="a">Get started now!</loading-button>
+			<card class="max-w-4xl mx-auto bg-white shadow-md z-20 relative -mb-20">
+				<div class="md:flex -mx-2">
+					<div class="flex-1 px-2">
+						<text-input
+							label="Name"
+							class="mb-4 md:mb-0"
+							v-model="name"
+							placeholder="eg. Iron Man"
+							:errors="errors.name"
+							@keydown="delete errors.name"
+						></text-input>
+					</div>
+					<div class="flex-1 px-2">
+						<text-input
+							type="email"
+							label="Email"
+							class="mb-4 md:mb-0"
+							v-model="email"
+							placeholder="eg. ironman@marvel.comics"
+							:errors="errors.email"
+							@keydown="delete errors.email"
+						></text-input>
+					</div>
+					<div class="px-2">
+						<div class="mb-1 hidden md:block">&nbsp;</div>
+						<loading-button
+							ref="subscribeButton"
+							class="shadow-md w-full md:w-auto md:-mt-1"
+							@click.prevent="subscribe()"
+						>Subscribe Now</loading-button>
 					</div>
 				</div>
-				<div class="lg:w-2/5 relative">
-					<img src="/Consultation.png" alt="bg-image" class="object-contain object-center w-full" />
-				</div>
+				<p
+					class="md:w-2/3 text-xs mt-4 text-gray-500"
+				>By subscribing you agree to the Terms of Service and Privacy Policy. You also agree to recieve product related emails from Jobs Harbour, which you can unsubscribe from at any time.</p>
+
+				<alert v-if="isSubscribed" variant="success" class="mt-4">
+					<strong>Thank You!</strong> Now stay tuned for all the good things in your inbox.
+				</alert>
+			</card>
+
+			<div class="hidden md:block">
+				<div style="bottom: 55%" class="-mb-10 h-16 w-32 bg-blue-300 absolute left-0 skew_aa"></div>
+				<div style="bottom: 55%" class="mb-6 h-12 w-48 bg-gray-200 absolute left-0 ml-10 skew_aa"></div>
+				<div style="bottom: 55%" class="-mb-16 h-20 w-32 bg-orange-200 absolute left-0 ml-16 skew_aa"></div>
+
+				<div style="bottom: 10%" class="mb-6 h-16 w-32 bg-blue-300 absolute right-0 skew_aa"></div>
+				<div style="bottom: 10%" class="mb-6 h-12 w-48 bg-gray-200 absolute right-0 mr-10 skew_aa"></div>
+				<div style="bottom: 10%" class="-mb-16 h-20 w-32 bg-orange-200 absolute right-0 mr-16 skew_aa"></div>
 			</div>
 		</div>
+		<div class="h-24 bg-white"></div>
 
-		<div class="overflow-hidden px-4 bg-blue-700 relative">
-			<div class="md:flex relative max-w-5xl mx-auto items-center mb-32 md:mb-0">
+		<!-- <div class="overflow-hidden px-4 bg-blue-700 relative">
+			<div class="md:flex relative max-w-5xl mx-auto items-center mb-32 md:mb-0 z-10">
 				<div class="lg:w-3/4 md:flex items-center">
 					<div class="py-10 md:py-16 md:pr-32">
 						<h2 class="text-2xl text-white font-semibold tracking-tight">
@@ -217,15 +256,13 @@
 				</div>
 				<div class="lg:w-1/4 relative">
 					<loading-button to="/for-employers" tag="a" variant="white" class="shadow-md">Get started now!</loading-button>
-
-					<!-- <img src="/Consultation.png" alt="bg-image" class="object-contain object-center w-full" /> -->
 				</div>
 			</div>
 
-			<div class="mb-32 h-20 w-32 bg-blue-200 absolute right-0 bottom-0 skew_aa"></div>
-			<div class="mb-16 h-12 w-40 bg-gray-200 absolute right-0 bottom-0 ml-4 skew_aa"></div>
-			<div class="-mb-20 h-32 w-48 bg-orange-200 absolute right-0 bottom-0 ml-6 skew_aa"></div>
-		</div>
+			<div class="mb-24 h-10 w-32 bg-blue-200 absolute right-0 bottom-0 skew_aa"></div>
+			<div class="mb-8 h-12 w-40 bg-gray-200 absolute right-0 bottom-0 ml-4 skew_aa"></div>
+			<div class="-mb-20 h-24 w-48 bg-orange-200 absolute right-0 bottom-0 ml-6 skew_aa"></div>
+		</div>-->
 
 		<!-- <div class="md:w-1/3 px-4">
 			<card class="text-center mt-12 mb-5">
@@ -267,55 +304,70 @@
 </template>
 
 <script>
-	const toCurrency = (n, curr, LanguageFormat = undefined) =>
-		Intl.NumberFormat(LanguageFormat, {
-			style: "currency",
-			currency: curr
-		}).format(n);
+const toCurrency = (n, curr, LanguageFormat = undefined) =>
+	Intl.NumberFormat(LanguageFormat, {
+		style: "currency",
+		currency: curr
+	}).format(n);
 
-	import Layout from "@/Shared/Layout";
-	import Card from "@/Shared/tuis/Card";
-	import LoadingButton from "@/Shared/tuis/LoadingButton";
-	import Heading from "@/Shared/tuis/Heading";
-	import Badge from "@/Shared/tuis/Badge";
-	import LinkTo from "@/Shared/tuis/LinkTo";
-	import Icon from "@/Shared/tuis/Icon";
-	import Avatar from "@/Shared/tuis/Avatar";
-	import SearchInput from "@/Shared/tuis/SearchInput";
+import Layout from "@/Shared/Layout";
+import Card from "@/Shared/tuis/Card";
+import LoadingButton from "@/Shared/tuis/LoadingButton";
+import Heading from "@/Shared/tuis/Heading";
+import Badge from "@/Shared/tuis/Badge";
+import LinkTo from "@/Shared/tuis/LinkTo";
+import Icon from "@/Shared/tuis/Icon";
+import Avatar from "@/Shared/tuis/Avatar";
+import SearchInput from "@/Shared/tuis/SearchInput";
+import TextInput from "@/Shared/tuis/TextInput";
+import Alert from "@/Shared/tuis/Alert";
 
-	export default {
-		components: {
-			Layout,
-			Card,
-			LoadingButton,
-			Heading,
-			Badge,
-			LinkTo,
-			Icon,
-			Avatar,
-			SearchInput
-		},
-		data() {
-			return {
-				subscriberName: "",
-				email: ""
-			};
-		},
-		props: ["jobposts", "pages"],
+export default {
+	components: {
+		Layout,
+		Card,
+		LoadingButton,
+		Heading,
+		Badge,
+		LinkTo,
+		Icon,
+		Avatar,
+		SearchInput,
+		TextInput,
+		Alert
+	},
+	data() {
+		return {
+			name: "",
+			email: "",
+			isSubscribed: false
+		};
+	},
+	props: ["jobposts", "pages", "errors"],
 
-		methods: {
-			subscribe() {
-			
-				this.$inertia.post("/subscriber", {
-					name: this.subscriberName,
+	methods: {
+		subscribe() {
+			this.$refs.subscribeButton.startLoading();
+			this.$inertia
+				.post("/subscriber", {
+					name: this.name,
 					email: this.email
+				})
+				.then(() => {
+					this.$refs.subscribeButton.stopLoading();
+
+					if (Object.keys(this.$page.errors).length === 0) {
+						this.name = "";
+						this.email = "";
+						this.isSubscribed = true;
+					}
 				});
-			},
-			formatCurrency(amount) {
-				return toCurrency(parseFloat(amount), "INR", "en-us");
-			}
+		},
+		formatCurrency(amount) {
+			return toCurrency(parseFloat(amount), "INR", "en-us");
 		}
-	};
+	}
+};
 </script>
 
 
