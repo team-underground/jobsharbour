@@ -36,8 +36,8 @@ class DashboardController extends Controller
 
         return Inertia::render('Dashboard', [
             'posts' => $posts,
-            'unique_counts' => $uniqueCounts,
-            'total_counts' => $totalCounts,
+            'unique_counts' => count($uniqueCounts) > 1 ? $uniqueCounts : [],
+            'total_counts' => count($totalCounts) > 1 ? $totalCounts : [],
             'can' => [
                 'modify-user' => Gate::allows('modify-user')
             ]
