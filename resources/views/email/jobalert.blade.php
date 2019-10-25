@@ -3,6 +3,6 @@ hi {{$name}},
 <p>You get job alert relevant to your requirement you let us know.</p>
 <p>Have a good day.</p>
 <p>Welcome to Job Harbour !!!!</p>
-
 <p>Regards,</p>
 <p>Job Harbour Team</p>
+<small><a href="{{$unsubscribeUrl}}">unsubscribe here</a></small>

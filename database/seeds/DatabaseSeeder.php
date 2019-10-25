@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             CompaniesTableSeeder::class,
             PackagesTableSeeder::class,
+            PlansTableSeeder::class,
             JobpostsTableSeeder::class
         ]);
     }

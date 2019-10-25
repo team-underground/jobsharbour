@@ -60,7 +60,6 @@ Route::get('/refund', function () {
 });
 
 
-// Auth::routes();
 // Route::get('/home', 'HomeController@index')->name('home');
 
 
@@ -160,9 +159,12 @@ Route::post('/resume/generated', function () {
 });
 
 // Subscriber 
-
-Route::post('/subscriber', 'SubscriberController@store');
 Route::post('/subscriber-plan/create', 'SubscriberController@createSubscriptionPlane');
+Route::post('/subscriber', 'SubscriberController@store');
+Route::get('/subscriber/cancel', 'SubscriberController@cancelSubscription');
+Route::get('/subscriber/cancel-page', function () {
+    return  Inertia::render('Unsubscribe');
+});
 
 
 
@@ -171,3 +173,5 @@ Route::post('/subscriber-plan/create', 'SubscriberController@createSubscriptionP
 
 Route::post('/change-password', 'SettingsController@changePassword')->name('settings.changePassword');
 Route::post('/update-profile', 'SettingsController@updateProfile')->name('settings.updateProfile');
+
+Auth::routes(['verify' => true]);

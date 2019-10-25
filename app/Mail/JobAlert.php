@@ -13,9 +13,11 @@ class JobAlert extends Mailable
     use Queueable, SerializesModels;
 
     public $name;
-    public function __construct($name)
+    public $unsubscribeUrl;
+    public function __construct($subscriber)
     {
-        $this->name = $name;
+        $this->name = $subscriber->name;
+        $this->unsubscribeUrl = $subscriber->unsubscribeUrl;
     }
 
 
