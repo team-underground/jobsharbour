@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\URL;
 |
 */
 
-Route::get('/', 'JobpostsController@index');
+Route::get('/', 'JobpostsController@index')->name('welcome');
 
 Route::get('/about', function () {
     return Inertia::render('About');

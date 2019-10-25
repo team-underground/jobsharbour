@@ -8,7 +8,7 @@
 							Jobs
 							<span class="text-gray-800">Harbour</span>
 						</span>-->
-						<img src="/jh-logo.png" alt="jh" class="object-fit" />
+						<img src="/jh-logo.png" alt="jh" class="h-10" />
 					</a>
 
 					<div
@@ -209,25 +209,42 @@
 
 					<div class="w-1/2 md:w-1/5 px-4 mb-6">
 						<heading class="mb-3" size="small-caps">About</heading>
-						<a href="/about" class="block text-sm mb-2 hover:text-gray-500">About us</a>
-						<a href="/for-employers" class="block text-sm mb-2 hover:text-gray-500">For Employers</a>
-						<a href="/advertise" class="block text-sm mb-2 hover:text-gray-500">Advertise with us</a>
-						<a href="/faq" class="block text-sm mb-2 hover:text-gray-500">FAQ</a>
+						<a href="/about" class="block text-sm mb-2 hover:text-blue-600">About us</a>
+						<a href="/for-employers" class="block text-sm mb-2 hover:text-blue-600">For Employers</a>
+						<a href="/advertise" class="block text-sm mb-2 hover:text-blue-600">Advertise with us</a>
+						<a href="/faq" class="block text-sm mb-2 hover:text-blue-600">FAQ</a>
 					</div>
 
 					<div class="w-1/2 md:w-1/5 px-4 mb-6">
 						<heading class="mb-3" size="small-caps">Resources</heading>
-						<a href="/faq" class="block text-sm mb-2 hover:text-gray-500">Support</a>
-						<a href="/privacy" class="block text-sm mb-2 hover:text-gray-500">Privacy</a>
-						<a href="/terms" class="block text-sm mb-2 hover:text-gray-500">Terms of Service</a>
-						<a href="/refund" class="block text-sm mb-2 hover:text-gray-500">Refund & Cancellation</a>
+						<a href="/faq" class="block text-sm mb-2 hover:text-blue-600">Support</a>
+						<a href="/privacy" class="block text-sm mb-2 hover:text-blue-600">Privacy</a>
+						<a href="/terms" class="block text-sm mb-2 hover:text-blue-600">Terms of Service</a>
+						<a href="/refund" class="block text-sm mb-2 hover:text-blue-600">Refund & Cancellation</a>
 					</div>
 
 					<div class="w-1/2 md:w-1/5 px-4 mb-6">
 						<heading class="mb-3" size="small-caps">Get Connected</heading>
-						<a href="#" class="block text-sm mb-2 hover:text-gray-500">Facebook</a>
-						<a href="#" class="block text-sm mb-2 hover:text-gray-500">Twitter</a>
-						<a href="#" class="block text-sm mb-2 hover:text-gray-500">Instagram</a>
+						<a href="#" class="block text-sm mb-2 hover:text-blue-600 flex">
+							<div class="p-1 rounded-full bg-gray-400 hover:bg-blue-600 text-white mr-2">
+								<icon name="facebook" class="w-4 h-4"></icon>
+							</div>Facebook
+						</a>
+						<a href="#" class="block text-sm mb-2 hover:text-blue-600 flex">
+							<div class="p-1 rounded-full bg-gray-400 hover:bg-blue-600 text-white mr-2">
+								<icon name="linkedin" class="w-4 h-4"></icon>
+							</div>LinkedIn
+						</a>
+						<a href="#" class="block text-sm mb-2 hover:text-blue-600 flex">
+							<div class="p-1 rounded-full bg-gray-400 hover:bg-blue-600 text-white mr-2">
+								<icon name="instagram" class="w-4 h-4"></icon>
+							</div>Instagram
+						</a>
+						<a href="#" class="block text-sm mb-2 hover:text-blue-600 flex">
+							<div class="p-1 rounded-full bg-gray-400 hover:bg-blue-600 text-white mr-2">
+								<icon name="twitter" class="w-4 h-4"></icon>
+							</div>Twitter
+						</a>
 					</div>
 				</div>
 

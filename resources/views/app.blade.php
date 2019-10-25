@@ -15,10 +15,12 @@
     @routes
 </head>
 
-<body class="bg-gray-200 antialiased text-gray-600 font-sans">
+<body class="bg-gray-100 antialiased text-gray-600 font-sans">
     @inertia
 
+    @if (\Request::is('/'))
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    @endif
 </body>
 
 </html>

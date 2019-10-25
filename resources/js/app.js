@@ -3,6 +3,7 @@ import Vue from "vue";
 import VueSnackbar from "vue-snack";
 import VModal from "vue-js-modal";
 import SocialSharing from "vue-social-sharing";
+import VueClipboard from "vue-clipboard2";
 
 // import VueFileAgent from "vue-file-agent";
 // import VueFileAgentStyles from "vue-file-agent/dist/vue-file-agent.css";
@@ -14,6 +15,8 @@ Vue.use(VModal);
 var VueScrollTo = require("vue-scrollto");
 Vue.use(VueScrollTo);
 Vue.use(SocialSharing);
+Vue.use(VueClipboard);
+
 // Vue.use(VueFileAgent);
 
 const app = document.getElementById("app");
