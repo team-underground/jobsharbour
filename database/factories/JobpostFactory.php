@@ -10,6 +10,8 @@ use Illuminate\Support\Str;
 $factory->define(Jobpost::class, function (Faker $faker) {
 
     $jobTitle = $faker->jobTitle;
+    $array = ['Laravel', 'Vuejs', 'PHP', 'MySQL', 'Reactjs'];
+    $values = Arr::random($array, rand(1, 5));
 
     return [
         'user_id' => $faker->randomDigitNot(0),
@@ -23,7 +25,10 @@ $factory->define(Jobpost::class, function (Faker $faker) {
         'job_salary' => $faker->randomElement(["10k-15k", "15k-20k", "20k-40k", "40k+"]),
         'job_description' => $faker->realText(1000, 4),
         'job_email' => $faker->safeEmail,
-        // 'job_published_at' => $faker->date('Y-m-d', 'now'),
-        'job_closing_date' => $faker->date('Y-m-d', 'now')
+        'seo_title' => $jobTitle,
+        'meta_description' => $faker->sentence(rand(10, 20)),
+        'meta_keywords' => $values,
+        'job_starting_date' => $faker->date('Y-m-d', 'now'),
+        'job_closing_date' => $faker->date('Y-m-d', 'now') . ' 23:59:59'
     ];
 });

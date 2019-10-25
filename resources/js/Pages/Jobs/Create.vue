@@ -159,7 +159,7 @@
 							</div>
 						</div>
 
-						<div class="md:flex -mx-4">
+						<div class="md:flex mb-10 -mx-4">
 							<div class="md:w-1/3 px-4">
 								<heading size="large" class="mb-1">Job Post Date</heading>
 								<heading class="mb-4">The date when the job post has been published & closed.</heading>
@@ -167,12 +167,48 @@
 							<div class="md:w-2/3 px-4">
 								<card>
 									<date-input
+										label="Job Opening Date"
+										class="w-48 mb-4"
+										placeholder="Select date"
+										v-model="job.job_starting_date"
+										readonly
+									></date-input>
+									<date-input
 										label="Job Closing Date"
 										class="w-48"
 										placeholder="Select date"
 										v-model="job.job_closing_date"
 										readonly
 									></date-input>
+								</card>
+							</div>
+						</div>
+
+						<div class="md:flex -mx-4">
+							<div class="md:w-1/3 px-4">
+								<heading size="large" class="mb-1">SEO Content</heading>
+								<heading class="mb-4">Write great content optimized for SEO</heading>
+							</div>
+							<div class="md:w-2/3 px-4">
+								<card>
+									<textarea-input
+										label="Meta Description"
+										class="mb-4"
+										placeholder="eg. Ability to write code – HTML & CSS (SCSS flavor of SASS preferred when writing CSS)Proficient in Photoshop, Illustrator, bonus points for familiarity with Sketch (Sketch is our preferred concepting)Cross-browser and platform testing as standard practiceExperience using Invision a plusExperience in video production a plus or, at a minimum, a willingness to learn"
+										v-model="job.meta_description"
+									></textarea-input>
+									<textarea-input
+										label="Meta Keywords"
+										class="mb-4"
+										placeholder="eg. Laravel, React, Vue"
+										v-model="job.meta_keywords"
+									></textarea-input>
+									<text-input
+										label="SEO Title"
+										class="mb-4"
+										placeholder="eg. Senior web developer in guwahati"
+										v-model="job.seo_title"
+									></text-input>
 								</card>
 							</div>
 						</div>
@@ -246,8 +282,12 @@ export default {
 				job_skills: ["Laravel", "React"],
 				job_email: null,
 				job_description: `<p><strong>Required Knowledge, Skills, and Abilities</strong></p><p>Ability to write code – HTML & CSS (SCSS flavor of SASS preferred when writing CSS)Proficient in Photoshop, Illustrator, bonus points for familiarity with Sketch (Sketch is our preferred concepting)Cross-browser and platform testing as standard practiceExperience using Invision a plusExperience in video production a plus or, at a minimum, a willingness to learn</p><br> <p><strong>Education + Experience</strong></p><p>Advanced degree or equivalent experience in graphic and web design3 or more years of professional design experience</p>`,
+				job_starting_date: currentDate,
 				job_closing_date: currentDate,
-				company_id: null
+				company_id: null,
+				meta_description: null,
+				meta_keywords: null,
+				seo_title: null
 			},
 			companySize: {
 				"0-25": "0-25",

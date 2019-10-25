@@ -101,9 +101,14 @@
 
 		<div class="py-10 px-4">
 			<div class="max-w-6xl mx-auto">
+				<heading size="heading" class="mb-6" v-if="posts.length">Unique views Analytics</heading>
+				<card class="mb-10">
+					<page-views :total="total_counts" :unique="unique_counts"></page-views>
+				</card>
+
 				<heading size="heading" class="mb-6" v-if="posts.length">Page Views</heading>
 
-				<div class="relative">
+				<div class="relative mb-10">
 					<div class="absolute fixed top-0 bottom-0 right-0 w-6 bg-white-linear rounded-r-lg opacity-75"></div>
 					<basic-table :headings="headings" v-if="posts.length">
 						<tr
@@ -267,10 +272,13 @@ import BasicTable from "@/Shared/tuis/BasicTable";
 import Badge from "@/Shared/tuis/Badge";
 import EmptyState from "@/Shared/tuis/EmptyState";
 import LoadingButton from "@/Shared/tuis/LoadingButton";
+import PageViews from "@/Pages/Charts/PageViews";
 
 export default {
 	props: {
-		posts: Array
+		posts: Array,
+		unique_counts: Object,
+		total_counts: Object
 	},
 	components: {
 		Layout,
@@ -281,7 +289,8 @@ export default {
 		BasicTable,
 		Badge,
 		EmptyState,
-		LoadingButton
+		LoadingButton,
+		PageViews
 	},
 	data() {
 		return {
