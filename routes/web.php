@@ -3,6 +3,7 @@
 use App\Enums\CategoryType;
 use App\Jobpost;
 use App\Package;
+use CyrildeWit\EloquentViewable\View;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
@@ -108,6 +109,13 @@ Route::get('/jobs/{job_slug}', 'JobpostsController@show')->name('jobs.show');
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
         $posts = Jobpost::published()->with('company')->orderByViews()->closed(false)->role()->limit(10)->get()->transform(function ($post) {
+            // dd("unique page views day wise", View::select([
+            //     \DB::raw('count(DISTINCT visitor, viewable_id) as `total`'),
+            //     \DB::raw("DATE_FORMAT(viewed_at, '%e-%m-%Y') as day")
+            // ])->groupBy('day')->pluck('total', 'day')->all(), "total page views day wise", View::select([
+            //     \DB::raw('count(id) as `total`'),
+            //     \DB::raw("DATE_FORMAT(viewed_at, '%e-%m-%Y') as day")
+            // ])->groupBy('day')->pluck('total', 'day')->all());
             return [
                 'uuid' => $post->uuid,
                 'job_title' => $post->job_title,
@@ -117,7 +125,28 @@ Route::middleware(['auth'])->group(function () {
             ];
         });
         return Inertia::render('Dashboard', [
-            'posts' => $posts
+            'posts' => $posts,
+            'unique_counts' => View::select([
+                \DB::raw('count(DISTINCT visitor, viewable_id) as `total`'),
+                \DB::raw("DATE_FORMAT(viewed_at, '%Y-%m-%e') as day")
+            ])->groupBy('day')->pluck('total', 'day')->toArray(),
+            'total_counts' => View::select([
+                \DB::raw('count(id) as `total`'),
+                \DB::raw("DATE_FORMAT(viewed_at, '%Y-%m-%e') as day")
+            ])->groupBy('day')->pluck('total', 'day')->toArray()
+        ]);
+    });
+
+    Route::get('/dashboard-counts', function () {
+        return response([
+            'unique_counts' => View::select([
+                \DB::raw('count(DISTINCT visitor, viewable_id) as `total`'),
+                \DB::raw("DATE_FORMAT(viewed_at, '%Y-%m-%e') as day")
+            ])->groupBy('day')->pluck('total', 'day')->all(),
+            'total_counts' => View::select([
+                \DB::raw('count(id) as `total`'),
+                \DB::raw("DATE_FORMAT(viewed_at, '%Y-%m-%e') as day")
+            ])->groupBy('day')->pluck('total', 'day')->all()
         ]);
     });
 

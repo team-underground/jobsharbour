@@ -32,10 +32,18 @@ class CreateJobpostsTable extends Migration
             $table->text('job_email');
             $table->tinyInteger('job_category')->unsigned();
             $table->tinyInteger('job_type')->unsigned();
-            $table->tinyInteger('job_status')->unsigned()->default(JobStatusType::Moderation);
             $table->tinyInteger('job_experience_level')->unsigned();
-            $table->timestamp('job_published_at')->nullable();
+
+            $table->timestamp('job_starting_date')->nullable();
             $table->timestamp('job_closing_date')->nullable();
+            $table->tinyInteger('job_status')->unsigned()->default(JobStatusType::Moderation);
+            $table->timestamp('job_published_at')->nullable();
+
+            $table->string('seo_title')->nullable();
+            $table->text('meta_description');
+            $table->text('meta_keywords');
+
+            $table->boolean('featured')->default(0);
 
             $table->timestamps();
         });

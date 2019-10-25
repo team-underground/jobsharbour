@@ -30,7 +30,7 @@ class Jobpost extends Model implements ViewableContract
      * @var array
      */
     protected $casts = [
-        'job_skills' => 'array',
+        'meta_keywords' => 'array'
     ];
 
     public function attachTags($tags)
