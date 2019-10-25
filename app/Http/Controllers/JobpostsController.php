@@ -27,7 +27,7 @@ class JobpostsController extends Controller
         // return $jobposts = Jobpost::with('company')->orderByDesc('job_published_at')->simplePaginate(10);
 
         if (request()->path() === 'jobs') {
-            $jobpost = Jobpost::published()->with('company');
+            $jobpost = Jobpost::published()->closed(false)->with('company');
 
             if ($industry = request('industry')) {
                 $jobpost->industry(request('industry'));
@@ -44,7 +44,7 @@ class JobpostsController extends Controller
 
             return Inertia::render('Jobs', compact('jobposts', 'filters', 'jobtypes', 'categories'));
         } else {
-            $jobposts = Jobpost::published()->with('company')->orderByDesc('job_published_at')->simplePaginate(6);
+            $jobposts = Jobpost::published()->closed(false)->with('company')->orderByDesc('job_published_at')->simplePaginate(6);
 
             // $pages = Analytics::fetchVisitorsAndPageViews(Period::days(7));
 

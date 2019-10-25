@@ -38,14 +38,14 @@
 			</div>
 			<div class="py-10">
 				<div class="max-w-6xl mx-auto">
-					<div class="md:flex mb-10">
+					<div class="md:flex mb-10 -mx-4">
 						<div class="md:w-1/3 mb-3 px-4 md:px-0">
 							<heading size="large" class="mb-1">Job Details</heading>
 							<heading
 								class="mb-4"
 							>Introduce job seekers to the role by describing responsibilities, skills and technologies...</heading>
 						</div>
-						<div class="md:w-2/3">
+						<div class="md:w-2/3 px-4">
 							<card>
 								<select-input
 									v-model="job.company_id"
@@ -149,20 +149,70 @@
 						</div>
 					</div>
 
-					<div class="md:flex">
-						<div class="md:w-1/3 px-4 md:px-0">
+					<div class="md:flex mb-10 -mx-4">
+						<div class="md:w-1/3 px-4">
 							<heading size="large" class="mb-1">Job Post Dates</heading>
-							<heading class="mb-4">The date when the job post has been published & closed.</heading>
+							<heading
+								class="mb-4"
+							>The date when the job post will start appear in the site & closed for applying.</heading>
 						</div>
-						<div class="md:w-2/3">
+						<div class="md:w-2/3 px-4">
 							<card>
-								<date-input
-									label="Job Closing Date"
-									class="w-48"
-									placeholder="Select date"
-									v-model="job.job_closing_date"
-									readonly
-								></date-input>
+								<div class="flex flex-wrap -mx-4">
+									<div class="w-1/2 px-4">
+										<date-input
+											label="Job Opening Date"
+											class="w-48 mb-4"
+											placeholder="Select date"
+											v-model="job.job_starting_date"
+											readonly
+										></date-input>
+									</div>
+									<div class="w-1/2 px-4">
+										<date-input
+											label="Job Closing Date"
+											class="w-48"
+											placeholder="Select date"
+											v-model="job.job_closing_date"
+											readonly
+										></date-input>
+									</div>
+								</div>
+							</card>
+						</div>
+					</div>
+
+					<div class="md:flex -mx-4">
+						<div class="md:w-1/3 px-4">
+							<heading size="large" class="mb-1">SEO Content</heading>
+							<heading class="mb-4">Write great content optimized for SEO</heading>
+							<alert class="my-6" v-if="!can['update-job-seo']" :with-icon="false">
+								You can not update your seo content when the jobpost is published. For further information contact our
+								<link-to to="#">support team</link-to>&nbsp;.
+							</alert>
+						</div>
+						<div class="md:w-2/3 px-4">
+							<card>
+								<textarea-input
+									label="Meta Description"
+									class="mb-4"
+									placeholder="eg. Ability to write code – HTML & CSS (SCSS flavor of SASS preferred when writing CSS)Proficient in Photoshop, Illustrator, bonus points for familiarity with Sketch (Sketch is our preferred concepting)Cross-browser and platform testing as standard practiceExperience using Invision a plusExperience in video production a plus or, at a minimum, a willingness to learn"
+									v-model="job.meta_description"
+									:readonly="!can['update-job-seo']"
+								></textarea-input>
+								<tags-input
+									label="Meta Keywords"
+									v-model="job.meta_keywords"
+									class="mb-4"
+									:disabled="!can['update-job-seo']"
+								></tags-input>
+								<text-input
+									label="SEO Title"
+									class="mb-4"
+									placeholder="eg. Senior web developer in guwahati"
+									v-model="job.seo_title"
+									:readonly="!can['update-job-seo']"
+								></text-input>
 							</card>
 						</div>
 					</div>
@@ -235,7 +285,11 @@ export default {
 				job_skills: this.post.job_skills,
 				job_email: this.post.job_email,
 				job_description: this.post.job_description,
-				job_closing_date: this.post.job_closing_date
+				job_starting_date: this.post.job_starting_date,
+				job_closing_date: this.post.job_closing_date,
+				seo_title: this.post.seo_title,
+				meta_description: this.post.meta_description,
+				meta_keywords: this.post.meta_keywords
 			},
 			salaries: {
 				"10k-15k": "10k-15k",
@@ -250,12 +304,24 @@ export default {
 			return Object.keys(obj).find(key => obj[key] == value);
 		},
 		submit() {
+			let data = {};
+			if (!this.can["update-job-seo"]) {
+				let {
+					meta_keywords,
+					seo_title,
+					meta_description,
+					...updatedJobPost
+				} = this.job;
+				data = updatedJobPost;
+			} else {
+				data = this.job;
+			}
 			this.$refs.jobSaveButton.startLoading();
 
-			this.job._method = "put";
+			data._method = "put";
 
 			this.$inertia
-				.post(this.route("admin.jobs.update", this.post.uuid), this.job)
+				.post(this.route("admin.jobs.update", this.post.uuid), data)
 				.then(() => {
 					this.$refs.jobSaveButton.stopLoading();
 

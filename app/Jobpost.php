@@ -131,6 +131,10 @@ class Jobpost extends Model implements ViewableContract
     // {
     //     return Carbon::parse($value)->format('d-m-Y');
     // }
+    public function getJobStartingDateAttribute($value)
+    {
+        return Carbon::parse($value)->format('d-m-Y');
+    }
 
     public function getJobClosingDateAttribute($value)
     {
