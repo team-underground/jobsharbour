@@ -6,18 +6,20 @@ use App\Mail\JobAlert;
 use App\Subscriber;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Foundation\Auth\VerifiesEmails;
 use Illuminate\Support\Facades\Mail;
+
 
 class SubscriberController extends Controller
 {
+    use VerifiesEmails;
+    protected $redirectTo = '/';
 
     public function __construct()
     {
-        // $this->middleware('signed')->only('verify');
-        // $this->middleware('throttle:6,1')->only('verify', 'resend');
+        $this->middleware('signed')->only('verify');
+        $this->middleware('throttle:6,1')->only('verify', 'resend');
     }
-
-
     public function createSubscriptionPlane()
     {
         $plan = app('rinvex.subscriptions.plan')->create([
@@ -39,44 +41,84 @@ class SubscriberController extends Controller
     {
         $this->validate($request, [
             'name' => ['required'],
-            'email' => ['required'],
+            'email' => ['required', 'email'],
         ]);
         $subscriber =  Subscriber::create([
             'name' => $request->name,
             'email' => $request->email
         ]);
         $plan = app('rinvex.subscriptions.plan')->find(1);
-        $subscriber->newSubscription('main', $plan);
+        $subscriber->newSubscription('Pro', $plan);
         $when = Carbon::now()->addMinutes(1);
-        Mail::to($subscriber->email)->later($when, new JobAlert($subscriber->name));
+        $subscriber->unsubscribeUrl = url('subscriber/cancel?email=') . $subscriber->email;
+        Mail::to($subscriber->email)->later($when, new JobAlert($subscriber));
         session()->flash('success', 'You are subscribed to our job alert');
         return redirect()->back();
     }
 
     public function cancelSubscription(Request $request)
     {
+
         $this->validate($request, [
             'email' => 'required'
         ]);
+        $plan = app('rinvex.subscriptions.plan')->find(1);
         $subscriber = Subscriber::where('email', $request->email)->first();
-        $subscriber->subscription('main')->cancel();
-        session()->flash('success', 'We are sorry to see you go');
-        return redirect()->back();
+        $plan = $plan->subscriptions()->where('user_id', $subscriber->id)->first();
+        $plan->cancel();
+        session()->flash('success', 'You are unsubscribed to our Job Alert');
+        return redirect('/subscriber/cancel-page');
     }
 
-    public function update(Request $request, Subscriber $subscriber)
+    public function show(Request $request)
     {
-        //
+        return $request->user()->hasVerifiedEmail()
+            ? redirect($this->redirectPath())
+            : view('auth.verify');
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Mark the authenticated user's email address as verified.
      *
-     * @param  \App\Subscriber  $subscriber
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
+    public function verify(Request $request)
+    {
+        if (!hash_equals((string) $request->route('id'), (string) $request->user()->getKey())) {
+            throw new AuthorizationException;
+        }
+
+        if (!hash_equals((string) $request->route('hash'), sha1($request->user()->getEmailForVerification()))) {
+            throw new AuthorizationException;
+        }
+
+        if ($request->user()->hasVerifiedEmail()) {
+            return redirect($this->redirectPath());
+        }
+
+        if ($request->user()->markEmailAsVerified()) {
+            event(new Verified($request->user()));
+        }
+
+        return redirect($this->redirectPath())->with('verified', true);
+    }
+
+    /**
+     * Resend the email verification notification.
+     *
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Subscriber $subscriber)
+    public function resend(Request $request)
     {
-        //
+        if ($request->user()->hasVerifiedEmail()) {
+            return redirect($this->redirectPath());
+        }
+
+        $request->user()->sendEmailVerificationNotification();
+
+        return back()->with('resent', true);
     }
 }

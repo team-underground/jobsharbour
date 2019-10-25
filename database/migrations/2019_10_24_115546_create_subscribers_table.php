@@ -18,7 +18,7 @@ class CreateSubscribersTable extends Migration
             $table->unsignedBigInteger('user_id')->nullable(); //if login user do
             $table->string('name')->nullable();
             $table->string('email');
-            $table->timestamp('varified_at')->nullable(); // when verify the mail outsider not yet register
+            $table->timestamp('email_verified_at')->nullable(); // when verify the mail outsider not yet register
             $table->string('subscribe')->default('verify'); //verify, subscribe, unsubscribe
             $table->timestamps();
         });
