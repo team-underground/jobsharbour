@@ -8,7 +8,7 @@
 							Jobs
 							<span class="text-gray-800">Harbour</span>
 						</span>-->
-						<img src="/jh-logo.png" alt="jh" class="h-10" />
+						<img src="/jh-logo.svg" alt="jh" class="h-10" />
 					</a>
 
 					<div
@@ -204,7 +204,7 @@
 			<div class="max-w-6xl mx-auto">
 				<div class="flex flex-wrap md:flex-1 -mx-4">
 					<div class="w-1/2 md:w-2/5 px-4 mb-6">
-						<img src="/jh-logo.png" alt="jh" />
+						<img src="/jh-logo.svg" alt="jh" />
 					</div>
 
 					<div class="w-1/2 md:w-1/5 px-4 mb-6">
