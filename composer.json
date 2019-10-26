@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.2",
         "bensampo/laravel-enum": "^1.26",
+        "cyrildewit/eloquent-viewable": "^4.1",
         "fideloper/proxy": "^4.0",
         "jamesmills/eloquent-uuid": "^1.2",
         "laravel/framework": "^6.0",
