@@ -72,56 +72,72 @@
 							</div>
 						</div>
 
-						<card v-for="(post, idx) in jobposts.data" :key="idx" class="mb-4 relative">
-							<div
-								v-if="post.job_new === 'yes'"
-								class="bg-red-500 text-white uppercase tracking-wide text-xs font-semibold rounded-bl-full absolute top-0 right-0 pl-4 pr-2 py-2"
-							>New</div>
-							<div class="flex">
-								<div v-if="post.company.company_logo == null" class="mr-5 flex-shrink-0 w-16 h-16">
-									<avatar :name="post.company.company_name" color="blue" shape="rounded" size="xlarge"></avatar>
-								</div>
-								<div v-else class="flex-shrink-0 w-16 h-16 rounded-lg bg-gray-100 border block mr-5">
-									<img
-										:src="post.company.company_logo_path"
-										alt="company-logo"
-										class="object-fit object-center w-full h-full rounded-lg"
-									/>
-								</div>
-
-								<div class="flex-1">
-									<div class="flex mb-4">
-										<div class="flex-1">
-											<div class="mb-1 pr-3">
-												<!-- <badge class="mr-1" variant="danger">New</badge> -->
-												<heading size="large" class="inline-block">{{ post.job_title }}</heading>
-											</div>
-											<heading size="small" class="mb-1">{{ post.company.company_name }}</heading>
-											<heading size="small" class="mb-1">{{post.job_category}}</heading>
-										</div>
-										<div class="md:w-48 flex-col justify-between mt-1">
-											<div class="md:mb-1 md:flex-1 flex items-center">
-												<icon class="mr-2 text-gray-400" :width="20" :height="20" name="map-pin"></icon>
-												<heading size="small">{{ post.job_location }}</heading>
-											</div>
-											<div class="md:mb-1 md:flex-1 flex items-center">
-												<icon class="mr-2 text-gray-400" name="wallet" :width="20" :height="20"></icon>
-												<heading size="small">Rs. {{ post.job_salary }}/m</heading>
-											</div>
-											<div class="md:mb-1 md:flex-1 flex items-center">
-												<icon class="mr-2 text-gray-400" name="clock" :width="20" :height="20"></icon>
-												<heading size="small">{{ post.job_type }}</heading>
-											</div>
-										</div>
+						<template v-if="jobposts.data.length > 0">
+							<card v-for="(post, idx) in jobposts.data" :key="idx" class="mb-4 relative">
+								<div
+									v-if="post.job_new === 'yes'"
+									class="bg-red-500 text-white uppercase tracking-wide text-xs font-semibold rounded-bl-full absolute top-0 right-0 pl-4 pr-2 py-2"
+								>New</div>
+								<div class="flex">
+									<div v-if="post.company.company_logo == null" class="mr-5 flex-shrink-0 w-16 h-16">
+										<avatar :name="post.company.company_name" color="blue" shape="rounded" size="xlarge"></avatar>
+									</div>
+									<div v-else class="flex-shrink-0 w-16 h-16 rounded-lg bg-gray-100 border block mr-5">
+										<img
+											:src="post.company.company_logo_path"
+											alt="company-logo"
+											class="object-fit object-center w-full h-full rounded-lg"
+										/>
 									</div>
 
-									<div class="flex justify-between">
-										<heading size="small">{{ post.job_published_at_formatted }}</heading>
-										<link-to :to="`/jobs/${post.job_slug}`" class="text-sm">View Details</link-to>
+									<div class="flex-1">
+										<div class="flex mb-4">
+											<div class="flex-1">
+												<div class="mb-1 pr-3">
+													<!-- <badge class="mr-1" variant="danger">New</badge> -->
+													<heading size="large" class="inline-block">{{ post.job_title }}</heading>
+												</div>
+												<heading size="small" class="mb-1">{{ post.company.company_name }}</heading>
+												<heading size="small" class="mb-1">{{post.job_category}}</heading>
+											</div>
+											<div class="md:w-48 flex-col justify-between mt-1">
+												<div class="md:mb-1 md:flex-1 flex items-center">
+													<icon class="mr-2 text-gray-400" :width="20" :height="20" name="map-pin"></icon>
+													<heading size="small">{{ post.job_location }}</heading>
+												</div>
+												<div class="md:mb-1 md:flex-1 flex items-center">
+													<icon class="mr-2 text-gray-400" name="wallet" :width="20" :height="20"></icon>
+													<heading size="small">Rs. {{ post.job_salary }}/m</heading>
+												</div>
+												<div class="md:mb-1 md:flex-1 flex items-center">
+													<icon class="mr-2 text-gray-400" name="clock" :width="20" :height="20"></icon>
+													<heading size="small">{{ post.job_type }}</heading>
+												</div>
+											</div>
+										</div>
+
+										<div class="flex justify-between">
+											<heading size="small">{{ post.job_published_at_formatted }}</heading>
+											<link-to :to="`/jobs/${post.job_slug}`" class="text-sm">View Details</link-to>
+										</div>
 									</div>
 								</div>
-							</div>
-						</card>
+							</card>
+						</template>
+
+						<template v-else>
+							<empty-state height="330px">
+								<div
+									class="p-4 inline-flex justify-center items-center bg-blue-100 text-blue-600 rounded-full mb-3"
+								>
+									<icon name="search" class="w-6 h-6"></icon>
+								</div>
+								<heading size="large" class="mb-1">No job posts found.</heading>
+								<heading
+									class="md:w-2/3 mx-auto"
+								>We could not find any job posts. Please search again with different keywords.</heading>
+							</empty-state>
+						</template>
 
 						<!-- <card v-for="(post, idx) in jobposts.data" :key="idx" class="mb-4">
 							<div class="flex">
@@ -226,11 +242,53 @@
 						</div>
 					</div>
 
-					<div class="md:w-1/5 px-4 md:pt-20">
-						<card class="mb-5 relative" :is-padding="false">
-							<div class="h-64 bg-orange-100 px-4 py-4">
-								<heading class="text-gray-700 tracking-tight text-xl">Advertise with us</heading>
+					<div class="md:w-1/5 px-4 pt-5 md:pt-16">
+						<card class="mb-5 relative bg-orange-100 px-5 py-5" :is-padding="false">
+							<div
+								class="p-3 inline-flex justify-center items-center bg-orange-200 text-orange-800 rounded-full mb-3"
+							>
+								<icon name="briefcase" class="w-6 h-6"></icon>
 							</div>
+							<heading
+								class="mb-2 leading-tight text-gray-700 tracking-tight text-xl font-semibold"
+							>Employers?</heading>
+
+							<heading class="mb-2">Still struggling to communicate with job seekers?</heading>
+
+							<heading class="mb-5">Your quest is over.</heading>
+
+							<loading-button
+								to="/register"
+								tag="a"
+								variant="secondary"
+								size="small"
+								class="shadow bg-white hover:shadow-md text-gray-700"
+							>Join us now!</loading-button>
+
+							<!-- <img src="/ad3.png" alt="ad" class="object-fit w-full" /> -->
+							<!-- <badge variant="warning" class="absolute top-0 right-0 mt-2 mr-4 shadow-md">Ad</badge> -->
+						</card>
+
+						<card class="mb-5 relative bg-blue-100 px-5 py-5" :is-padding="false">
+							<div
+								class="p-3 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
+							>
+								<icon name="bulb" class="w-6 h-6"></icon>
+							</div>
+							<heading
+								class="mb-2 leading-tight text-gray-700 tracking-tight text-xl font-semibold"
+							>Advertise with us</heading>
+
+							<heading
+								class="mb-5"
+							>Connect with the largest audience of active, influencial job creators, job seekers and workaholics</heading>
+
+							<loading-button
+								variant="secondary"
+								size="small"
+								class="shadow bg-white hover:shadow-md text-gray-700"
+							>Get in touch</loading-button>
+
 							<!-- <img src="/ad3.png" alt="ad" class="object-fit w-full" /> -->
 							<!-- <badge variant="warning" class="absolute top-0 right-0 mt-2 mr-4 shadow-md">Ad</badge> -->
 						</card>
@@ -347,6 +405,7 @@ import SearchInput from "@/Shared/tuis/SearchInput";
 import Icon from "@/Shared/tuis/Icon";
 import Avatar from "@/Shared/tuis/Avatar";
 import CheckboxInput from "@/Shared/tuis/CheckboxInput";
+import EmptyState from "@/Shared/tuis/EmptyState";
 
 import _ from "lodash";
 
@@ -361,7 +420,8 @@ export default {
 		Icon,
 		SearchInput,
 		Avatar,
-		CheckboxInput
+		CheckboxInput,
+		EmptyState
 	},
 
 	props: {

@@ -174,4 +174,4 @@ Route::get('/subscriber/cancel-page', function () {
 Route::post('/change-password', 'SettingsController@changePassword')->name('settings.changePassword');
 Route::post('/update-profile', 'SettingsController@updateProfile')->name('settings.updateProfile');
 
-Auth::routes(['verify' => true]);
+// Auth::routes(['verify' => true]);
