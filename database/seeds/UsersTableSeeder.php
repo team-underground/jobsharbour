@@ -30,7 +30,7 @@ class UsersTableSeeder extends Seeder
             'type' => 2
         ]);
 
-        factory(App\User::class, 47)->create();
+        factory(User::class, 47)->create();
         // factory(App\User::class, 50)->create()->each(function($u) {
         //     $u->posts()->save(factory(App\Post::class)->make());
         // });
