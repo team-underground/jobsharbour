@@ -30,7 +30,7 @@ $factory->define(Jobpost::class, function (Faker $faker) {
         'meta_description' => $faker->sentence(rand(10, 20)),
         'meta_keywords' => $values,
         'job_starting_date' => $faker->date('Y-m-d', 'now'),
-        'job_closing_date' => $faker->date('Y-m-d', 'now') . ' 23:59:59',
+        'job_closing_date' => $faker->dateTimeBetween('+1 week', '+2 month'),
         'job_status' => $value = rand(1, 2),
         'job_published_at' => $value == 2 ? (string) Carbon::now() : null
     ];

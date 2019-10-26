@@ -18,7 +18,7 @@
 			</div>
 
 			<div class="max-w-md mx-auto w-full">
-				<img src="/jh-logo.png" alt="jh" class="mb-6 mx-auto" />
+				<img src="/jh-logo.svg" alt="jh" class="mb-6 mx-auto" />
 				<card>
 					<heading size="heading" class="mb-1 text-center">Welcome Back</heading>
 					<heading class="mb-6 text-center" size="small">Please enter your email and password to continue</heading>
