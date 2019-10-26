@@ -1,5 +1,4 @@
-<!DOCTYPE html
-	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 ​
 
@@ -9,7 +8,7 @@
 	<style>
 		body {
 			font-family: 'Arial', sans-serif;
-		} 
+		}
 	</style>
 </head>
 ​
@@ -18,8 +17,7 @@
 	<table width="100%">
 		<tr>
 			<td class="esd-stripe" align="center">
-				<table width="700" cellspacing="0" cellpadding="0"
-					style="background-color: #edf2f7; padding: 22px; border-radius: 16px;">
+				<table width="700" cellspacing="0" cellpadding="0" style="background-color: #edf2f7; padding: 22px; border-radius: 16px;">
 					<tr>
 						<td class="esd-stripe" align="left">
 							<table>
@@ -29,8 +27,7 @@
 											<tbody>
 												<tr>
 													<td class="esd-block-text es-m-txt-c" align="left">
-														<img src="{{url('jh-logo.png')}}" alt="jh-logo"
-															style="margin-bottom: 16px;">
+														<img src="{{url('jh-logo.png')}}" alt="jh-logo" style="margin-bottom: 16px;">
 													</td>
 												</tr>
 											</tbody>
@@ -38,8 +35,7 @@
 									</td>
 								</tr>
 							</table>
-							<table style="background-color: #ffffff; padding: 18px; border-radius: 16px;" width="700"
-								align="center">
+							<table style="background-color: #ffffff; padding: 18px; border-radius: 16px;" width="700" align="center">
 								<tr>
 									<td class="esd-stripe" align="left">
 										<p>Dear Administrator,</p>
@@ -80,8 +76,7 @@
 											<tbody>
 												<tr>
 													<td class="esd-block-text es-p15t es-p10b" align="center">
-														<p
-															style="margin: 0; color: #a0aec0; margin-top: 32px; font-weight: 700; letter-spacing: .025em; font-size: 1rem; line-height: 1.325rem;">
+														<p style="margin: 0; color: #a0aec0; margin-top: 32px; font-weight: 700; letter-spacing: .025em; font-size: 1rem; line-height: 1.325rem;">
 															&copy; jobsharbour.com</p>
 														​
 													</td>
