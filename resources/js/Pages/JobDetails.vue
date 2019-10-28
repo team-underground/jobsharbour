@@ -31,7 +31,8 @@
 
 						<heading size="small">{{ post.job_published_at_formatted }}</heading>
 					</div>
-					<div class="md:w-1/3 px-4 px-4 md:flex md:flex-col mt-4 md:mt-0">
+					<div class="md:w-1/3 px-4 px-4 flex md:flex-col mt-4 md:mt-0">
+						<div class="flex-1 mr-4 md:mr-0">
 						<loading-button
 							tag="a"
 							:to="`mailto:hello@jobsharbour.com?subject=Apply for the post of ${post.job_title}`"
@@ -54,6 +55,10 @@
 							>Copy URL</loading-button>
 						</div>
 
+						</div>
+
+						<div>
+
 						<div class="flex md:w-64 items-center mt-2 -mb-3 justify-center">
 							<div
 								class="relative w-32 text-center uppercase bg-white text-xs tracking-wider font-semibold text-gray-500"
@@ -61,8 +66,7 @@
 						</div>
 
 						<div
-							class="flex items-center justify-center md:w-64 border-2 border-gray-300 px-2 pt-4 pb-3 rounded-full"
-						>
+							class="flex items-center justify-center md:w-64 border-2 border-gray-300 px-4 pt-4 pb-5 md:pb-4 rounded-full">
 							<social-sharing
 								:url="route('jobs.show', post.job_slug)"
 								:title="`${post.job_title}`"
@@ -141,6 +145,7 @@
 								</div>
 							</social-sharing>
 						</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -169,60 +174,6 @@
 							<heading size="large" class="mb-1">Skills</heading>
 							<badge v-for="(skill, idx) in post.job_skills" :key="idx" class="mr-2">{{ skill }}</badge>
 						</card>
-
-						<!-- <card class="mb-10">
-							<heading size="large" class="mb-1">About Zendesk</heading>
-							<div class="flex">
-								<heading>
-									A working atmosphere that enables you to shape a growing e-commerce business - Dreamlines will continue its successful growth and you can be a critical part of it!
-									Responsibility from Day One, flat hierarchies and quick decision-making
-								</heading>
-								<div class="flex-shrink-0 w-16 h-16 rounded-lg bg-gray-100 border block ml-5">
-									<img
-										src="/zd.png"
-										alt="company-logo"
-										class="object-fit object-center w-full h-full rounded-lg"
-									/>
-								</div>
-							</div>
-
-							<div class="md:flex justify-between my-5">
-								<div class="md:flex-1 flex items-center mb-4 md:mb-0">
-									<div class="p-4 rounded-full mr-2 flex-shrink-0 bg-gray-100">
-										<icon class="text-blue-500" name="info"></icon>
-									</div>
-									<div>
-										<heading size="small-caps">Industry</heading>
-										<heading size="small">IT/Software</heading>
-									</div>
-								</div>
-								<div class="md:flex-1 flex items-center mb-4 md:mb-0">
-									<div class="p-4 rounded-full mr-2 flex-shrink-0 bg-gray-100">
-										<icon class="text-blue-500" name="users"></icon>
-									</div>
-									<div>
-										<heading size="small-caps">No. of Employees</heading>
-										<heading size="small">50+</heading>
-									</div>
-								</div>
-								<div class="md:flex-1 flex items-center">
-									<div class="p-4 rounded-full mr-2 flex-shrink-0 bg-gray-100">
-										<icon class="text-blue-500" name="globe"></icon>
-									</div>
-									<div>
-										<heading size="small-caps">Website</heading>
-										<heading size="small">http://zendesk.com</heading>
-									</div>
-								</div>
-							</div>
-
-							<heading size="large" class="mb-1">Benefits</heading>
-							<list
-								class="mb-4"
-								unordered-list-color="text-blue-400"
-								:lists="['Free Lunch', 'Health Care', 'Laptop', 'Career Growth', 'Flexible Holidays']"
-							></list>
-						</card>-->
 					</div>
 
 					<div class="md:w-1/3 px-4 flex flex-col">
@@ -232,7 +183,7 @@
 							<div v-if="post.company.company_logo == null" class="mb-4 flex-shrink-0 w-20 h-20 mx-auto">
 								<avatar :name="post.company.company_name" color="blue" shape="circle" size="xlarge"></avatar>
 							</div>
-							<div v-else class="mb-4 flex-shrink-0 w-20 h-20 rounded-lg bg-gray-100 border block mx-auto">
+							<div v-else class="mb-4 flex-shrink-0 w-20 h-20 rounded-full bg-gray-100 border block mx-auto">
 								<img
 									:src="post.company.company_logo_path"
 									alt="company-logo"

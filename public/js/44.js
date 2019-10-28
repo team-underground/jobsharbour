@@ -389,35 +389,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -500,6 +471,15 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         return this.filters.category || [];
       }
+    }
+  },
+  filters: {
+    truncate: function truncate(value, limit) {
+      if (value.length > limit) {
+        value = value.substring(0, limit - 3) + '...';
+      }
+
+      return value;
     }
   }
 });
@@ -914,7 +894,11 @@ var render = function() {
                       {
                         key: option,
                         staticClass: "truncate inline-block",
-                        attrs: { "model-value": option, value: option },
+                        attrs: {
+                          title: option,
+                          "model-value": option,
+                          value: option
+                        },
                         model: {
                           value: _vm.form.category,
                           callback: function($$v) {
@@ -923,7 +907,7 @@ var render = function() {
                           expression: "form.category"
                         }
                       },
-                      [_vm._v(_vm._s(option))]
+                      [_vm._v(_vm._s(_vm._f("truncate")(option, 20)))]
                     )
                   }),
                   1
@@ -1525,7 +1509,7 @@ var render = function() {
         {
           attrs: {
             name: "filter-modal",
-            height: 480,
+            height: "auto",
             scrollable: true,
             classes: "rounded-lg bg-white",
             adaptive: true
@@ -1535,7 +1519,7 @@ var render = function() {
           _c(
             "div",
             {
-              staticClass: "px-8 pt-5 pb-8",
+              staticClass: "px-8 pt-5 pb-8 relative",
               staticStyle: { height: "480px", "overflow-y": "auto" }
             },
             [
@@ -1636,7 +1620,11 @@ var render = function() {
                           {
                             key: option,
                             staticClass: "truncate",
-                            attrs: { "model-value": option, value: option },
+                            attrs: {
+                              title: option,
+                              "model-value": option,
+                              value: option
+                            },
                             model: {
                               value: _vm.form.category,
                               callback: function($$v) {
@@ -1645,7 +1633,7 @@ var render = function() {
                               expression: "form.category"
                             }
                           },
-                          [_vm._v(_vm._s(option))]
+                          [_vm._v(_vm._s(_vm._f("truncate")(option, 20)))]
                         )
                       }),
                       1
@@ -1656,6 +1644,20 @@ var render = function() {
               ])
             ],
             1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "bg-gray-200 text-gray-600 px-8 py-4 font-semibold cursor-pointer text-center",
+              on: {
+                click: function($event) {
+                  return _vm.$modal.hide("filter-modal")
+                }
+              }
+            },
+            [_vm._v("\n\t\t\tClick to Close \n\t\t")]
           )
         ]
       )

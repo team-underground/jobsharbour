@@ -37,6 +37,7 @@
 								<span class="text-gray-700 px-6 py-4 flex items-center">
 									<badge variant="warning" v-if="data.type === 'Administrator'">{{ data.type }}</badge>
 									<badge v-if="data.type === 'Employer'">{{ data.type }}</badge>
+									<badge variant="success" v-if="data.type === 'Consultancy'">{{ data.type }}</badge>
 								</span>
 							</td>
 						</tr>

@@ -9,7 +9,7 @@
 								<icon name="chevron-left" class="-ml-1"></icon>Back to Website
 							</link-to>
 						</div>
-						<div>
+						<div class="hidden md:block">
 							Don't have an account?
 							<link-to to="/register">Create Account</link-to>
 						</div>
@@ -68,7 +68,14 @@
 							</loading-button>
 						</div>-->
 					</form>
+
+					<div class="mt-5 text-center md:hidden">
+						Don't have an account?
+						<link-to to="/register">Create Account</link-to>
+					</div>
 				</card>
+
+			 
 			</div>
 		</div>
 	</div>

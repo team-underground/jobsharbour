@@ -1,6 +1,6 @@
 <template>
 	<main class="flex w-100 flex-col min-h-screen">
-		<div class="bg-white shadow-sm px-4 relative z-30">
+		<div class="bg-white px-4 relative z-30">
 			<div class="md:flex items-center justify-between mx-auto max-w-6xl">
 				<div class="flex justify-between md:flex-none items-center">
 					<a href="/" class="flex items-center py-2">
@@ -127,6 +127,7 @@
 					class="border-t px-2 py-3 block font-medium"
 				>Home</a>
 				<a
+					v-if="$page.auth.user"
 					href="/dashboard"
 					:class="isUrl('dashboard') ? 'text-blue-600' : 'text-gray-600'"
 					class="border-t px-2 py-3 block font-medium hover:text-blue-600"
@@ -156,7 +157,7 @@
 					class="border-t px-2 py-3 block font-medium hover:text-blue-600"
 				>About Jobs Harbour</a>
 
-				<div class="flex items-center py-2" v-if="$page.auth.user">
+				<div class="flex items-center py-2 border-t" v-if="$page.auth.user">
 					<div class="flex flex-1">
 						<div
 							class="outline-none block inline-flex items-center justify-center h-10 w-10 overflow-hidden rounded-full shadow-inner bg-blue-600 text-white font-bold text-xl"
@@ -249,9 +250,8 @@
 				</div>
 
 				<div class="pt-8 border-t border-gray-200 text-sm md:flex md:justify-between">
-					<div>&copy; 2019 Jobs Harbour. All rights reserved.</div>
 					<div>
-						Made with
+						&copy; 2019 Jobs Harbour. All rights reserved. Made with
 						<span class="text-red-600">&hearts;</span> in Guwahati
 					</div>
 				</div>

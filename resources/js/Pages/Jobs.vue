@@ -33,13 +33,14 @@
 						<heading class="mb-2 text-gray-700" size="small-caps">Category</heading>
 						<div class="mb-5">
 							<checkbox-input
+								:title="option"
 								v-model="form.category"
 								v-for="option in categories"
 								:key="option"
 								:model-value="option"
 								:value="option"
 								class="truncate inline-block"
-							>{{ option }}</checkbox-input>
+							>{{ option | truncate(20) }}</checkbox-input>
 						</div>
 					</div>
 					<div class="md:w-3/5 px-4">
@@ -307,30 +308,18 @@
 
 		<modal
 			name="filter-modal"
-			:height="480"
+			height="auto"
 			:scrollable="true"
 			classes="rounded-lg bg-white"
 			:adaptive="true"
 		>
-			<div class="px-8 pt-5 pb-8" style="height: 480px; overflow-y: auto">
+				
+			<div class="px-8 pt-5 pb-8 relative" style="height: 480px; overflow-y: auto">
 				<heading size="heading" class="mb-4">Filter By</heading>
 				<div class="flex flex-wrap">
 					<div class="w-1/2 mb-4">
 						<heading class="mb-2 text-gray-700" size="small-caps">Job Type</heading>
 
-						<!-- <ul class="no-bullet">
-							<li class="mb-1" v-for="(jobtype, index) in jobtypes" :key="index">
-								<label class="inline-flex items-center">
-									<input
-										type="checkbox"
-										class="form-checkbox text-blue-500 h-4 w-4"
-										v-model="form.jobtype"
-										:value="jobtype"
-									/>
-									<span class="ml-2">{{ jobtype }}</span>
-								</label>
-							</li>
-						</ul>-->
 						<checkbox-input
 							v-model="form.jobtype"
 							v-for="option in jobtypes"
@@ -342,20 +331,6 @@
 					</div>
 					<div class="w-1/2 mb-4 pl-5">
 						<heading class="mb-2 text-gray-700" size="small-caps">Salary</heading>
-
-						<!-- <ul class="no-bullet">
-							<li class="mb-1" v-for="(salary, key) in salaries" :key="key">
-								<label class="inline-flex items-center">
-									<input
-										type="checkbox"
-										class="form-checkbox text-blue-500 h-4 w-4"
-										v-model="form.salary"
-										:value="key"
-									/>
-									<span class="ml-2">Rs. {{ salary }}</span>
-								</label>
-							</li>
-						</ul>-->
 
 						<checkbox-input
 							v-model="form.salary"
@@ -371,25 +346,21 @@
 
 						<div class="column-count-2">
 							<checkbox-input
+								:title="option"
 								v-model="form.category"
 								v-for="option in categories"
 								:key="option"
 								:model-value="option"
 								:value="option"
 								class="truncate"
-							>{{ option }}</checkbox-input>
+							>{{ option | truncate(20) }}</checkbox-input>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- <div class="bg-gray-100 px-8 py-4 flex justify-between">
-				<loading-button
-					variant="secondary"
-					variant-type="outline"
-					size="small"
-					@click="$modal.hide('filter-modal')"
-				>Close</loading-button>
-			</div>-->
+			<div class="bg-gray-200 text-gray-600 px-8 py-4 font-semibold cursor-pointer text-center" @click="$modal.hide('filter-modal')">
+				Click to Close 
+			</div>
 		</modal>
 	</layout>
 </template>
@@ -485,6 +456,15 @@ export default {
 			} else {
 				return this.filters.category || [];
 			}
+		}
+	},
+
+	filters: {
+		truncate: function(value, limit) {
+			if (value.length > limit) {
+				value = value.substring(0, (limit - 3)) + '...';
+			}
+			return value
 		}
 	}
 };

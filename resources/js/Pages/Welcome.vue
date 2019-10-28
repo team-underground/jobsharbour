@@ -1,71 +1,79 @@
 <template>
 	<layout title="Home">
-		<div class="bg-white overflow-hidden px-4 relative z-20 py-5">
-			<div class="h-4 w-24 bg-blue-100 absolute left-0 top-0 mt-4 skew_aa"></div>
-			<div class="h-8 w-full bg-gray-100 absolute left-0 top-0 mt-10 skew_aa"></div>
-			<div class="h-4 w-10 bg-gray-100 absolute left-0 top-0 mt-20 skew_aa"></div>
+		<div class="bg-blue-200 md:bg-white overflow-hidden px-4 relative z-20 pt-5">
+			<div class="hidden">
+				<div class="h-4 w-24 bg-blue-100 absolute left-0 top-0 mt-4 skew_aa"></div>
+				<div class="h-8 w-full bg-gray-100 absolute left-0 top-0 mt-10 skew_aa"></div>
+				<div class="h-4 w-10 bg-gray-100 absolute left-0 top-0 mt-20 skew_aa"></div>
 
-			<div class="-mb-10 h-16 w-32 bg-blue-200 absolute left-0 bottom-0 skew_aa"></div>
-			<div class="mb-4 h-12 w-32 bg-gray-200 absolute left-0 bottom-0 ml-10 skew_aa"></div>
-			<div class="-mb-16 h-20 w-32 bg-orange-200 absolute left-0 bottom-0 ml-16 skew_aa"></div>
+				<div class="-mb-10 h-16 w-32 bg-blue-200 absolute left-0 bottom-0 skew_aa"></div>
+				<div class="mb-4 h-12 w-32 bg-gray-100 absolute left-0 bottom-0 ml-10 skew_aa"></div>
+				<div class="-mb-16 h-20 w-32 bg-orange-200 absolute left-0 bottom-0 ml-16 skew_aa"></div>
 
-			<div class="h-10 w-10 bg-blue-400 absolute right-0 top-0 mt-16 mr-10 skew_aa"></div>
-			<!-- <div class="h-12 w-32 bg-gray-400 absolute right-0 top-0 mt-8 skew_aa"></div> -->
-			<div class="h-10 w-10 bg-orange-200 absolute right-0 top-0 mt-10 mr-16 skew_aa"></div>
+				<div class="h-10 w-10 bg-blue-400 absolute right-0 top-0 mt-16 mr-6 skew_aa"></div>
+				<div class="h-10 w-10 bg-orange-200 absolute right-0 top-0 mt-10 mr-10 skew_aa"></div>
 
-			<!-- <div class="-mb-10 h-16 w-48 bg-blue-600 absolute right-0 top-0 mr-6 skew_bb"></div>
-			<div class="mb-4 h-16 w-32 bg-gray-400 absolute right-0 top-0 mr-10 skew_bb"></div>
-			<div class="-mb-16 h-20 w-32 bg-orange-400 absolute right-0 top-0 skew_bb"></div>-->
+				<div class="mb-32 h-16 w-32 bg-blue-200 absolute right-0 bottom-0 skew_aa"></div>
+				<div class="mb-12 h-12 w-48 bg-gray-100 absolute right-0 bottom-0 ml-4 skew_aa"></div>
+				<div class="-mb-16 h-20 w-64 bg-orange-200 absolute right-0 bottom-0 ml-6 skew_aa"></div>
+			</div>
 
-			<!-- <div class="h-16 w-64 bg-orange-200 absolute right-0 bottom-0 mb-4 skew_aa"></div>
-			<div class="h-16 w-24 bg-gray-200 absolute right-0 bottom-0 mb-10 skew_aa"></div>
-			<div class="h-16 w-32 bg-blue-200 absolute right-0 bottom-0 skew_aa"></div>-->
+			<!-- <div
+				class="hidden md:block absolute -mt-48 -mr-10 top-0 right-0 rotate-10"
+				style="height: 840px; width: 50%; background: rgb(238, 248, 244);"
+			></div>-->
 
-			<div class="mb-32 h-16 w-32 bg-blue-200 absolute right-0 bottom-0 skew_aa"></div>
-			<div class="mb-12 h-12 w-48 bg-gray-200 absolute right-0 bottom-0 ml-4 skew_aa"></div>
-			<div class="-mb-16 h-20 w-64 bg-orange-200 absolute right-0 bottom-0 ml-6 skew_aa"></div>
+			<div
+				class="hidden md:block absolute top-0 right-0 mt-6"
+				style="height: 100%; width: 45%; background: rgb(238, 248, 244); border-top-left-radius: 150px;"
+			></div>
 
 			<div class="md:flex relative max-w-6xl mx-auto">
 				<div class="lg:w-3/5 md:flex mx-auto">
-					<div class="pt-8 pb-32 md:pt-16 mb:pb-32">
-						<!-- <heading size="display" class="mb-1">Your passion begins here.</heading>
-						<heading size="display" class="mb-5">Find your job better &amp; faster.</heading>-->
-						<!-- <heading size="small-caps" class="mb-2 text-gray-600">Start Finding Jobs By Title:</heading> -->
-
+					<div class="py-12 md:pt-16 mb:pb-32 text-center md:text-left">
 						<heading class="mb-1 text-blue-600 text-2xl">Struggling for jobs?</heading>
 						<heading size="display" class="mb-8">
 							<span class="block">Unveil job opportunities</span> in our harbour right now
 						</heading>
-
-						<!-- <search-input placeholder="Search your job title..." class="md:w-2/3" rounded="large"></search-input> -->
-
-						<loading-button tag="a" to="/jobs" class="shadow-md">Explore Jobs</loading-button>
-						<!-- <span class="mx-4">or</span> -->
-						<!-- <link-to to="/categories">Browse Categories</link-to> -->
-						<loading-button tag="a" to="/categories" variant="white" class="shadow-md">Browse Categories</loading-button>
+						<div class="mt-4 md:mt-0 w-64 md:w-auto mx-auto">
+							<loading-button
+								tag="a"
+								to="/jobs"
+								class="block w-full md:w-auto mx-auto shadow-dropdown"
+							>Explore Jobs</loading-button>
+							<div class="mt-4 md:inline-block md:ml-4">
+								<loading-button
+									tag="a"
+									to="/categories"
+									variant="white"
+									class="block w-full md:w-auto shadow-dropdown"
+								>Browse Categories</loading-button>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="lg:w-2/5 relative">
-					<div class="md:mt-6 hidden md:block">
-						<lottie-player
-							src="/lf30_editor_wJXeMM.json"
-							background="transparent"
-							speed="1"
-							loop
-							style="width: 400px; height: 200px;"
-							class="mx-auto md:hidden"
-							autoplay
-						></lottie-player>
-						<lottie-player
-							src="/lf30_editor_wJXeMM.json"
-							background="transparent"
-							speed="1"
-							loop
-							style="width: 320px; height: 320px;"
-							class="mx-auto hidden md:block"
-							autoplay
-						></lottie-player>
+					<div class="md:hidden rounded-t-full" style="background: rgb(238, 248, 244);">
+						<div class="mx-auto md:hidden text-center" style="width: 200px">
+							<lottie-player
+								src="/lf30_editor_wJXeMM.json"
+								background="transparent"
+								speed="1"
+								loop
+								style="width: 200px; height: 200px;"
+								autoplay
+							></lottie-player>
+						</div>
 					</div>
+					<lottie-player
+						src="/lf30_editor_wJXeMM.json"
+						background="transparent"
+						speed="1"
+						loop
+						style="width: 420px; height: 420px;"
+						class="mx-auto hidden md:block"
+						autoplay
+					></lottie-player>
 				</div>
 			</div>
 		</div>
@@ -386,6 +394,11 @@ export default {
 	-ms-transform: skew(20deg, -20deg);
 	-o-transform: skew(20deg, -20deg);
 	transform: skew(20deg, -20deg);
+	transform-origin: 0;
+}
+
+.rotate-10 {
+	transform: rotate(10deg);
 	transform-origin: 0;
 }
 </style>

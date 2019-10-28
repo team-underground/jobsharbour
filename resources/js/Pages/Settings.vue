@@ -21,7 +21,13 @@
 					</div>
 					<div class="md:w-2/3 px-4">
 						<card with-footer>
-							<text-input class="mb-4" label="Name" v-model="user.name" :errors="errors.name"></text-input>
+							<text-input
+								class="mb-4"
+								label="Name"
+								v-model="user.name"
+								:errors="errors.name"
+								@keydown="delete errors.name"
+							></text-input>
 							<div class="mb-2">
 								<text-input label="Email" disabled v-model="user.email" :bordered="false"></text-input>
 								<p class="text-sm mb-0 mt-2">

@@ -4,52 +4,52 @@
 			<div class="md:max-w-6xl mx-auto">
 				<div class="flex flex-wrap md:justify-center">
 					<a
-						class="w-1/3 md:w-1/6 border-b md:border-transparent py-4 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
+						class="w-1/3 md:w-1/6 border-b md:border-transparent py-5 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
 						href="/admin/companies"
 					>
 						<icon name="briefcase"></icon>
-						<div class="mt-2 mb-1 text-sm">Companies</div>
+						<div class="mt-2 text-sm">Companies</div>
 					</a>
 
 					<a
-						class="w-1/3 md:w-1/6 border-l border-b md:border-transparent py-4 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
+						class="w-1/3 md:w-1/6 border-l border-b md:border-transparent py-5 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
 						href="/admin/jobs"
 					>
 						<icon name="edit2"></icon>
-						<div class="mt-2 mb-1 text-sm">Job Posts</div>
+						<div class="mt-2 text-sm">Job Posts</div>
 					</a>
 
 					<a
-						class="w-1/3 md:w-1/6 border-l border-b md:border-transparent py-4 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
+						class="w-1/3 md:w-1/6 border-l border-b md:border-transparent py-5 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
 						href="/admin/users"
 						v-if="can['modify-user']"
 					>
 						<icon name="users"></icon>
-						<div class="mt-2 mb-1 text-sm">Users</div>
+						<div class="mt-2 text-sm">Users</div>
 					</a>
 
 					<a
-						class="w-1/3 md:w-1/6 md:border-transparent py-4 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
+						class="w-1/3 md:w-1/6 md:border-transparent py-5 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
 						href="/admin/users"
 					>
 						<icon name="bell"></icon>
-						<div class="mt-2 mb-1 text-sm">Notifications</div>
+						<div class="mt-2 text-sm">Notifications</div>
 					</a>
 
 					<a
-						class="w-1/3 md:w-1/6 border-l md:border-transparent py-4 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
+						class="w-1/3 md:w-1/6 border-l md:border-transparent py-5 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
 						href="/admin/users"
 					>
 						<icon name="message"></icon>
-						<div class="mt-2 mb-1 text-sm">Feedback</div>
+						<div class="mt-2 text-sm">Feedback</div>
 					</a>
 
 					<a
-						class="w-1/3 md:w-1/6 border-l md:border-transparent py-4 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
+						class="w-1/3 md:w-1/6 border-l md:border-transparent py-5 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
 						href="/settings"
 					>
 						<icon name="settings"></icon>
-						<div class="mt-2 mb-1 text-sm">Settings</div>
+						<div class="mt-2 text-sm">Settings</div>
 					</a>
 				</div>
 			</div>
@@ -68,7 +68,7 @@
 
 				<div class="relative mb-10">
 					<div class="absolute fixed top-0 bottom-0 right-0 w-6 bg-white-linear rounded-r-lg opacity-75"></div>
-					<basic-table :headings="headings" v-if="posts.length">
+					<basic-table :headings="headings" v-if="posts.length" theme="striped">
 						<tr
 							v-for="(data, dataIndex) in posts"
 							:key="dataIndex"
@@ -90,10 +90,14 @@
 								>{{ data.job_published_at_formatted }}</span>
 							</td>
 							<td class="border-t">
-								<span class="text-gray-700 px-6 py-4 flex items-center">{{ data.total_page_views }}</span>
+								<span
+									class="text-gray-700 px-6 py-4 flex items-center justify-end"
+								>{{ data.total_page_views }}</span>
 							</td>
 							<td class="border-t">
-								<span class="text-gray-700 px-6 py-4 flex items-center">{{ data.unique_page_views }}</span>
+								<span
+									class="text-gray-700 px-6 py-4 flex items-center justify-end"
+								>{{ data.unique_page_views }}</span>
 							</td>
 						</tr>
 					</basic-table>
@@ -148,8 +152,16 @@ export default {
 			headings: [
 				"Job Title",
 				"Published at",
-				"Total Page Views",
-				"Unique Page Views"
+				{
+					title: "Total Page Views",
+					type: "number",
+					align: "right"
+				},
+				{
+					title: "Unique Page Views",
+					type: "number",
+					align: "right"
+				}
 			]
 		};
 	}

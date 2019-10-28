@@ -14,8 +14,8 @@
 				<div class="tooltip-container" v-if="tooltipData">
 					<strong>{{labels.xLabels[tooltipData.index]}}</strong>
 					<div class="tooltip-data">
-						<div class="tooltip-data-item tooltip-data-item--1">Total views {{tooltipData.data[0]}}</div>
-						<div class="tooltip-data-item tooltip-data-item--2">Unique views {{tooltipData.data[1]}}</div>
+						<div class="tooltip-data-item tooltip-data-item--1">Total views:&nbsp;<strong>{{tooltipData.data[0]}}</strong></div>
+						<div class="tooltip-data-item tooltip-data-item--2">Unique views:&nbsp;<strong>{{tooltipData.data[1]}}</strong></div>
 					</div>
 				</div>
 			</div>
@@ -96,6 +96,7 @@ export default {
 	}
 };
 </script>    
+
 <style lang="scss">
 * {
 	box-sizing: border-box;
@@ -156,17 +157,18 @@ strong {
 		&:not(.is-active) {
 			display: none;
 		}
+		border-radius: 10px;
 		padding: 10px;
 		background: #fff;
 		box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 		pointer-events: none;
 		&-data {
-			display: flex;
+			display: flex-col;
 			&-item {
 				display: flex;
 				align-items: center;
 				&:not(:first-child) {
-					margin-left: 20px;
+					// margin-left: 20px;
 				}
 				&:before {
 					content: "";
@@ -174,6 +176,7 @@ strong {
 					width: 15px;
 					height: 15px;
 					margin-right: 5px;
+					border-radius: 10px;
 				}
 				&--1:before {
 					background: #fbac91;

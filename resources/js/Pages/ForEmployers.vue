@@ -36,8 +36,8 @@
 					<strong>Recruiting Firm</strong> we refer to a consultancy HR/Representative registering in our portal for job posting for the concerned company.
 				</alert>
 
-				<div class="flex -mx-4" v-if="plan === 'Company'">
-					<div class="w-1/2 px-4 flex">
+				<div class="md:flex -mx-4" v-if="plan === 'Company'">
+					<div class="md:w-1/2 px-4 flex">
 						<card class="mb-8 shadow-lg flex-1 relative">
 							<heading
 								size="large"
@@ -51,12 +51,12 @@
 								unorderedListColor="text-blue-400"
 							></list>
 
-							<div class="absolute left-0 right-0 block bottom-0 mx-8 mb-6">
+							<div class="mt-5 md:mt-0 relative md:absolute left-0 right-0 block bottom-0 mx-8 mb-6">
 								<loading-button size="small" rounded="large" class="w-full">Try for Free, Forever</loading-button>
 							</div>
 						</card>
 					</div>
-					<div class="w-1/2 px-4 flex">
+					<div class="md:w-1/2 px-4 flex">
 						<card class="mb-8 shadow-lg flex-1">
 							<heading
 								size="large"
@@ -83,8 +83,8 @@
 					</div>
 				</div>
 
-				<div class="flex -mx-4" v-if="plan === 'Recruiting Firm'">
-					<div class="w-1/2 px-4 flex">
+				<div class="md:flex -mx-4" v-if="plan === 'Recruiting Firm'">
+					<div class="md:w-1/2 px-4 flex">
 						<card class="mb-8 shadow-lg flex-1 relative">
 							<heading
 								size="large"
@@ -98,12 +98,12 @@
 								unorderedListColor="text-blue-400"
 							></list>
 
-							<div class="absolute left-0 right-0 block bottom-0 mx-8 mb-6">
+							<div class="mt-5 md:mt-0 relative md:absolute left-0 right-0 block bottom-0 mx-8 mb-6">
 								<loading-button size="small" rounded="large" class="w-full">Try for Free, Forever</loading-button>
 							</div>
 						</card>
 					</div>
-					<div class="w-1/2 px-4 flex">
+					<div class="md:w-1/2 px-4 flex">
 						<card class="mb-8 shadow-lg flex-1">
 							<heading
 								size="large"

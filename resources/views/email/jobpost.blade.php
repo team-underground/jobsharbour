@@ -27,7 +27,7 @@
 											<tbody>
 												<tr>
 													<td class="esd-block-text es-m-txt-c" align="left">
-														<img src="{{url('jh-logo.png')}}" alt="jh-logo" style="margin-bottom: 16px;">
+														<img src="{{url('jh-logo.svg')}}" alt="jh-logo" style="margin-bottom: 16px;">
 													</td>
 												</tr>
 											</tbody>
@@ -71,8 +71,7 @@
 							<table>
 								<tr>
 									<td class="esd-stripe" esd-custom-block-id="7684" align="center">
-										<table class="es-footer-body" width="700" cellspacing="0" cellpadding="0"
-											align="center">
+										<table class="es-footer-body" width="700" cellspacing="0" cellpadding="0" align="center">
 											<tbody>
 												<tr>
 													<td class="esd-block-text es-p15t es-p10b" align="center">

@@ -1,7 +1,7 @@
 <template>
 	<a
 		:href="`mailto:${to}?subject=${subject || ''}`"
-		class="inline-flex text-blue-600 border-b-2 border-blue-200 hover:text-blue-700 hover:border-blue-400"
+		class="mailtoui inline-flex text-blue-600 border-b-2 border-blue-200 hover:text-blue-700 hover:border-blue-400"
 	>
 		<slot></slot>
 	</a>
@@ -11,10 +11,12 @@
 export default {
 	props: {
 		to: {
-			type: String
+			type: String,
+			default: "hello@jobsharbour.com"
 		},
 		subject: {
-			type: String
+			type: String,
+			default: "Subject goes here"
 		}
 	}
 };

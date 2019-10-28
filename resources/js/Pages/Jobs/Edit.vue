@@ -37,7 +37,7 @@
 				</div>
 			</div>
 			<div class="py-10">
-				<div class="max-w-6xl mx-auto">
+				<div class="max-w-6xl mx-auto px-4">
 					<div class="md:flex mb-10 -mx-4">
 						<div class="md:w-1/3 mb-3 px-4 md:px-0">
 							<heading size="large" class="mb-1">Job Details</heading>
@@ -188,7 +188,7 @@
 							<heading class="mb-4">Write great content optimized for SEO</heading>
 							<alert class="my-6" v-if="!can['update-job-seo']" :with-icon="false">
 								You can not update your seo content when the jobpost is published. For further information contact our
-								<link-to to="#">support team</link-to>&nbsp;.
+								<mail-to>support team</mail-to>.
 							</alert>
 						</div>
 						<div class="md:w-2/3 px-4">
@@ -223,10 +223,13 @@
 </template>
 
 <script>
+const MailtoUI = require("mailtoui/dist/mailtoui-min.js");
+
 import Layout from "@/Shared/Layout";
 import Heading from "@/Shared/tuis/Heading";
 import Icon from "@/Shared/tuis/Icon";
 import LinkTo from "@/Shared/tuis/LinkTo";
+import MailTo from "@/Shared/tuis/MailTo";
 import Card from "@/Shared/tuis/Card";
 import TextInput from "@/Shared/tuis/TextInput";
 import SelectInput from "@/Shared/tuis/SelectInput";
@@ -257,7 +260,8 @@ export default {
 		TextareaInput,
 		FileInput,
 		TagsInput,
-		Badge
+		Badge,
+		MailTo
 	},
 	props: [
 		"jobtypes",
@@ -269,6 +273,11 @@ export default {
 		"can",
 		"experiencelevels"
 	],
+
+	mounted() {
+		MailtoUI.run();
+	},
+
 	data() {
 		return {
 			job: {
