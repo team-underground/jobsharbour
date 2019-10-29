@@ -49,7 +49,7 @@ class SubscriberController extends Controller
         ]);
         $plan = app('rinvex.subscriptions.plan')->find(1);
         $subscriber->newSubscription('Pro', $plan);
-        $when = Carbon::now()->addMinutes(1);
+        $when = Carbon::now()->addMinutes(10);
         $subscriber->unsubscribeUrl = url('subscriber/cancel?email=') . $subscriber->email;
         Mail::to($subscriber->email)->later($when, new JobAlert($subscriber));
         session()->flash('success', 'You are subscribed to our job alert');

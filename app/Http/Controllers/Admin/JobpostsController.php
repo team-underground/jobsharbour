@@ -93,6 +93,7 @@ class JobpostsController extends Controller
 			$jobpost_created['user_name'] = auth()->user()->name;
 			// TODO 1. when a job is posted notify admin about it, and send a mail to the job publisher saying a thank you mail and inform him that post will be published within 24 hours after verification.
 			//TODO 2. write a cronjob where the server notifies admin, before 2 days of job starting date about the unpublished job posts.
+
 			event(new JobPostEvent($jobpost_created));
 		});
 
