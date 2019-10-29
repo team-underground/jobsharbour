@@ -2,6 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
+use App\User;
 use App\Company;
 use Faker\Generator as Faker;
 
@@ -11,8 +12,9 @@ $factory->define(Company::class, function (Faker $faker) {
     if (!File::exists($filepath)) {
         File::makeDirectory($filepath);  //follow the declaration to see the complete signature
     }
+
     return [
-        'user_id' => $faker->randomDigitNot(0),
+        'user_id' => rand(1, 3),
         'company_logo' => 'company/' . $faker->image($filepath, 320, 240, null, false),
         'company_name' => $faker->company,
         'company_website' => $faker->domainName,

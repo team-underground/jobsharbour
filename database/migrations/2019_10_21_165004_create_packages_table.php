@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreatePackagesTable extends Migration
 {
@@ -21,6 +22,10 @@ class CreatePackagesTable extends Migration
             $table->boolean('is_expired')->default(0);
             $table->timestamps();
         });
+
+        Artisan::call('db:seed', [
+            '--class' => PackagesTableSeeder::class
+        ]);
     }
 
     /**
