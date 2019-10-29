@@ -26,7 +26,7 @@
 									<icon name="monitor" class="w-6 h-6" v-if="category === 'Computer and IT'"></icon>
 									<icon name="tv" class="w-6 h-6" v-if="category === 'Advertising and Marketing'"></icon>
 									<icon name="award" class="w-6 h-6" v-if="category === 'Education'"></icon>
-									<icon name="map-pin" class="w-6 h-6" v-if="category === 'Travel/Tourism'"></icon>
+									<icon name="map-pin" class="w-6 h-6" v-if="category === 'Travel and Tourism'"></icon>
 									<icon name="coffee" class="w-6 h-6" v-if="category === 'Food Services'"></icon>
 									<icon name="tag" class="w-6 h-6" v-if="category === 'Sales and Retail'"></icon>
 									<icon name="settings" class="w-6 h-6" v-if="category === 'Science and Engg'"></icon>
