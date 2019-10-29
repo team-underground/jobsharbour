@@ -18,13 +18,6 @@ class JobpostsController extends Controller
 {
     public function index()
     {
-        // $jobtypeArray = explode(',', 'Freelance,Internship,Part Time, Full Time');
-
-        // return $jobtypeIds = collect($jobtypeArray)->map(function ($j) {
-        //     return \App\Enums\JobType::getValue(Str::studly($j, ' '));
-        // });
-
-        // return $jobposts = Jobpost::with('company')->orderByDesc('job_published_at')->simplePaginate(10);
 
         if (request()->path() === 'jobs') {
             $jobpost = Jobpost::published()->closed(false)->with('company');
@@ -35,7 +28,7 @@ class JobpostsController extends Controller
 
             $jobposts = $jobpost->filter(request()->only(['search', 'jobtype', 'salary', 'category']))
                 ->orderByDesc('job_published_at')
-                ->simplePaginate(6);
+                ->simplePaginate(10);
 
             $filters = request()->all('search', 'jobtype', 'salary', 'category');
             $jobtypes = JobType::toSelectArray();
@@ -44,9 +37,7 @@ class JobpostsController extends Controller
 
             return Inertia::render('Jobs', compact('jobposts', 'filters', 'jobtypes', 'categories'));
         } else {
-            $jobposts = Jobpost::published()->closed(false)->with('company')->orderByDesc('job_published_at')->simplePaginate(6);
-
-            // $pages = Analytics::fetchVisitorsAndPageViews(Period::days(7));
+            $jobposts = Jobpost::published()->closed(false)->with('company')->orderByDesc('job_published_at')->simplePaginate(8);
 
             return Inertia::render('Welcome', compact('jobposts'));
         }

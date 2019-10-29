@@ -23,7 +23,7 @@ class JobpostsController extends Controller
 			->filter(request()->only('search'))
 			->role()
 			->orderByDesc('created_at')
-			->simplePaginate(6);
+			->simplePaginate(10);
 
 		$filters = request()->all('search');
 
