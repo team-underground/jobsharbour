@@ -25,8 +25,13 @@
 					<div class="w-1/2 px-4 flex">
 						<card class="flex-1">
 							<heading size="large" class="mb-2">For Job Seekers</heading>
-							<heading class="mb-6">This is all job hunters accurate point to find jobs of their preferred kind. Find job openings by job title, salary, job type and category. Provide all the details of your credentials, CV and pull employers' interest.</heading>
-							<list unordered-list-color="text-blue-600" :lists="['Subscribe to get notify','Register and apply (comming soon)','Feel free to share your credentials/CV.']"></list>
+							<heading
+								class="mb-6"
+							>This is all job hunters accurate point to find jobs of their preferred kind. Find job openings by job title, salary, job type and category. Provide all the details of your credentials, CV and pull employers' interest.</heading>
+							<list
+								unordered-list-color="text-blue-600"
+								:lists="['Subscribe to get notify','Register and apply (comming soon)','Feel free to share your credentials/CV.']"
+							></list>
 						</card>
 					</div>
 					<div class="w-1/2 px-4 flex">
@@ -43,16 +48,12 @@
 				</div>
 
 				<contact-us />
-
 			</div>
 		</div>
 	</layout>
 </template>
 
 <script>
-
-
-
 import Layout from "@/Shared/Layout";
 import Heading from "@/Shared/tuis/Heading";
 import Icon from "@/Shared/tuis/Icon";
@@ -61,7 +62,6 @@ import Card from "@/Shared/tuis/Card";
 import List from "@/Shared/tuis/List";
 import LoadingButton from "@/Shared/tuis/LoadingButton";
 import ContactUs from "@/Pages/ContactUs";
-
 
 export default {
 	components: {
@@ -113,7 +113,6 @@ export default {
 			}
 		};
 	}
-	
 };
 </script>
 

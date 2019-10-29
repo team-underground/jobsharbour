@@ -16,7 +16,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Shared_tuis_Accordion__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Shared/tuis/Accordion */ "./resources/js/Shared/tuis/Accordion.vue");
 /* harmony import */ var _Shared_tuis_List__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Shared/tuis/List */ "./resources/js/Shared/tuis/List.vue");
 /* harmony import */ var _Shared_tuis_LinkTo__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Shared/tuis/LinkTo */ "./resources/js/Shared/tuis/LinkTo.vue");
-/* harmony import */ var _Shared_tuis_Card__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Shared/tuis/Card */ "./resources/js/Shared/tuis/Card.vue");
+/* harmony import */ var _Shared_tuis_MailTo__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Shared/tuis/MailTo */ "./resources/js/Shared/tuis/MailTo.vue");
+/* harmony import */ var _Shared_tuis_Card__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Shared/tuis/Card */ "./resources/js/Shared/tuis/Card.vue");
 //
 //
 //
@@ -123,6 +124,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -140,7 +148,8 @@ __webpack_require__.r(__webpack_exports__);
     Accordion: _Shared_tuis_Accordion__WEBPACK_IMPORTED_MODULE_4__["default"],
     List: _Shared_tuis_List__WEBPACK_IMPORTED_MODULE_5__["default"],
     LinkTo: _Shared_tuis_LinkTo__WEBPACK_IMPORTED_MODULE_6__["default"],
-    Card: _Shared_tuis_Card__WEBPACK_IMPORTED_MODULE_7__["default"]
+    Card: _Shared_tuis_Card__WEBPACK_IMPORTED_MODULE_8__["default"],
+    MailTo: _Shared_tuis_MailTo__WEBPACK_IMPORTED_MODULE_7__["default"]
   }
 });
 
@@ -254,6 +263,39 @@ __webpack_require__.r(__webpack_exports__);
       return [{
         "list-none list-style-ul": this.theme === "ul"
       }];
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Shared/tuis/MailTo.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Shared/tuis/MailTo.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    to: {
+      type: String,
+      "default": "hello@jobsharbour.com"
+    },
+    subject: {
+      type: String,
+      "default": "Subject goes here"
     }
   }
 });
@@ -498,9 +540,11 @@ var render = function() {
                         },
                         [_vm._v("Why jobs harbour?")]
                       ),
-                      _vm._v(
-                        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore neque, dolore omnis deleniti, illo dolores unde veniam, in voluptate quasi consequuntur libero sint. Accusantium obcaecati dignissimos velit aliquam consectetur veniam consequuntur unde numquam ipsum eius? Autem cumque nesciunt, ratione vitae consectetur laborum porro nihil dolor magnam a, placeat hic illo?\n\t\t\t\t\t"
-                      )
+                      _c("p", [
+                        _vm._v(
+                          "Here we come with the best platform where you can showcase your job lists, communicate with a mass of potential candidates in no time and also pick up the best out of them."
+                        )
+                      ])
                     ]),
                     _vm._v(" "),
                     _c("accordion", [
@@ -511,10 +555,19 @@ var render = function() {
                           attrs: { slot: "title" },
                           slot: "title"
                         },
-                        [_vm._v("Who we are?")]
+                        [_vm._v("Is registration on the Jobs Harbour free?")]
                       ),
-                      _vm._v(
-                        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore neque, dolore omnis deleniti, illo dolores unde veniam, in voluptate quasi consequuntur libero sint. Accusantium obcaecati dignissimos velit aliquam consectetur veniam consequuntur unde numquam ipsum eius? Autem cumque nesciunt, ratione vitae consectetur laborum porro nihil dolor magnam a, placeat hic illo?\n\t\t\t\t\t"
+                      _c(
+                        "p",
+                        [
+                          _vm._v(
+                            "Yes. Registration is free for job seekers and job creators. "
+                          ),
+                          _c("link-to", { attrs: { to: "/register" } }, [
+                            _vm._v("Register here")
+                          ])
+                        ],
+                        1
                       )
                     ]),
                     _vm._v(" "),
@@ -528,12 +581,23 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore itaque aperiam quis. Obcaecati in quas deserunt doloremque est."
+                            "Who should I get in touch with in case of any issues/clarifications?"
                           )
                         ]
                       ),
-                      _vm._v(
-                        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore neque, dolore omnis deleniti, illo dolores unde veniam, in voluptate quasi consequuntur libero sint. Accusantium obcaecati dignissimos velit aliquam consectetur veniam consequuntur unde numquam ipsum eius? Autem cumque nesciunt, ratione vitae consectetur laborum porro nihil dolor magnam a, placeat hic illo?\n\t\t\t\t\t"
+                      _c(
+                        "p",
+                        [
+                          _vm._v(
+                            "You can contact our customer support team at "
+                          ),
+                          _c(
+                            "mail-to",
+                            { attrs: { to: "hello@jobsharbour.com" } },
+                            [_vm._v("hello@jobsharbour.com")]
+                          )
+                        ],
+                        1
                       )
                     ]),
                     _vm._v(" "),
@@ -545,15 +609,13 @@ var render = function() {
                           attrs: { slot: "title" },
                           slot: "title"
                         },
-                        [
-                          _vm._v(
-                            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis, mollitia?"
-                          )
-                        ]
+                        [_vm._v("What types of Profiles do you have?")]
                       ),
-                      _vm._v(
-                        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore neque, dolore omnis deleniti, illo dolores unde veniam, in voluptate quasi consequuntur libero sint. Accusantium obcaecati dignissimos velit aliquam consectetur veniam consequuntur unde numquam ipsum eius? Autem cumque nesciunt, ratione vitae consectetur laborum porro nihil dolor magnam a, placeat hic illo?\n\t\t\t\t\t"
-                      )
+                      _c("p", [
+                        _vm._v(
+                          "At Jobs Harbour you will find a wide range of Profiles in terms of educational qualifications, functional area, years of professional experience, preferences, locations etc."
+                        )
+                      ])
                     ])
                   ],
                   1
@@ -769,10 +831,39 @@ var render = function() {
                           attrs: { slot: "title" },
                           slot: "title"
                         },
-                        [_vm._v("How you get the best Employee?")]
+                        [_vm._v("How to post a job?")]
                       ),
-                      _vm._v(
-                        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore neque, dolore omnis deleniti, illo dolores unde veniam, in voluptate quasi consequuntur libero sint. Accusantium obcaecati dignissimos velit aliquam consectetur veniam consequuntur unde numquam ipsum eius? Autem cumque nesciunt, ratione vitae consectetur laborum porro nihil dolor magnam a, placeat hic illo?\n\t\t\t\t\t"
+                      _c("p", [
+                        _vm._v(
+                          "It is easy! All you need to do is enter the job information on the Portal and it will be posted."
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("accordion", [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "text-lg text-gray-800 font-medium",
+                          attrs: { slot: "title" },
+                          slot: "title"
+                        },
+                        [_vm._v("Do you charge anything for posting jobs?")]
+                      ),
+                      _c(
+                        "p",
+                        [
+                          _vm._v(
+                            "No, this is not paid service for Employers but yes, for Consultancy. One consultancy can add 5 companys' at a time. If they want to add more jobs you need to buy our "
+                          ),
+                          _c("link-to", { attrs: { to: "/for-employers" } }, [
+                            _vm._v("premium version")
+                          ]),
+                          _vm._v(
+                            ". Once you post the opening, you will start receiving relevant applications in your inbox."
+                          )
+                        ],
+                        1
                       )
                     ]),
                     _vm._v(" "),
@@ -784,10 +875,46 @@ var render = function() {
                           attrs: { slot: "title" },
                           slot: "title"
                         },
-                        [_vm._v("How to create Job?")]
+                        [
+                          _vm._v(
+                            "How the Profiles of the candidates are listed?"
+                          )
+                        ]
                       ),
-                      _vm._v(
-                        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore neque, dolore omnis deleniti, illo dolores unde veniam, in voluptate quasi consequuntur libero sint. Accusantium obcaecati dignissimos velit aliquam consectetur veniam consequuntur unde numquam ipsum eius? Autem cumque nesciunt, ratione vitae consectetur laborum porro nihil dolor magnam a, placeat hic illo?\n\t\t\t\t\t"
+                      _c("p", [
+                        _vm._v(
+                          "You can filter for a specific category and view Profile listing corresponding to that category. The resumes are listed generally in the reverse chronological order. It means the latest addition would be on the top."
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("accordion", [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "text-lg text-gray-800 font-medium",
+                          attrs: { slot: "title" },
+                          slot: "title"
+                        },
+                        [
+                          _vm._v(
+                            "I am not able to sign-in into my account. What do I need to do?"
+                          )
+                        ]
+                      ),
+                      _c(
+                        "p",
+                        [
+                          _vm._v(
+                            "Please check your user id and password , Sign-in details are case-sensitive. Delete cookies and disable JavaScript from your web browser. If issues persist, send us mail at "
+                          ),
+                          _c(
+                            "mail-to",
+                            { attrs: { to: "hello@jobsharbour.com" } },
+                            [_vm._v("hello@jobsharbour.com")]
+                          )
+                        ],
+                        1
                       )
                     ])
                   ],
@@ -992,11 +1119,47 @@ var render = function() {
               ])
             : _vm._e(),
           _vm._v(" "),
-          _c("div", { staticClass: "flex-1" }, [_vm._v(_vm._s(list))])
+          _c("div", {
+            staticClass: "flex-1",
+            domProps: { innerHTML: _vm._s(list) }
+          })
         ]
       )
     }),
     0
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Shared/tuis/MailTo.vue?vue&type=template&id=415b104a&":
+/*!**********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Shared/tuis/MailTo.vue?vue&type=template&id=415b104a& ***!
+  \**********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "a",
+    {
+      staticClass:
+        "mailtoui inline-flex text-blue-600 border-b-2 border-blue-200 hover:text-blue-700 hover:border-blue-400",
+      attrs: { href: "mailto:" + _vm.to + "?subject=" + (_vm.subject || "") }
+    },
+    [_vm._t("default")],
+    2
   )
 }
 var staticRenderFns = []
@@ -1447,6 +1610,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_List_vue_vue_type_template_id_1af63754___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_List_vue_vue_type_template_id_1af63754___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Shared/tuis/MailTo.vue":
+/*!*********************************************!*\
+  !*** ./resources/js/Shared/tuis/MailTo.vue ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _MailTo_vue_vue_type_template_id_415b104a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MailTo.vue?vue&type=template&id=415b104a& */ "./resources/js/Shared/tuis/MailTo.vue?vue&type=template&id=415b104a&");
+/* harmony import */ var _MailTo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MailTo.vue?vue&type=script&lang=js& */ "./resources/js/Shared/tuis/MailTo.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _MailTo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _MailTo_vue_vue_type_template_id_415b104a___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _MailTo_vue_vue_type_template_id_415b104a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Shared/tuis/MailTo.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Shared/tuis/MailTo.vue?vue&type=script&lang=js&":
+/*!**********************************************************************!*\
+  !*** ./resources/js/Shared/tuis/MailTo.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_MailTo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./MailTo.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Shared/tuis/MailTo.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_MailTo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Shared/tuis/MailTo.vue?vue&type=template&id=415b104a&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/Shared/tuis/MailTo.vue?vue&type=template&id=415b104a& ***!
+  \****************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MailTo_vue_vue_type_template_id_415b104a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./MailTo.vue?vue&type=template&id=415b104a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Shared/tuis/MailTo.vue?vue&type=template&id=415b104a&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MailTo_vue_vue_type_template_id_415b104a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MailTo_vue_vue_type_template_id_415b104a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

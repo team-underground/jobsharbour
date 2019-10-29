@@ -18,7 +18,10 @@
 <body class="bg-gray-100 antialiased text-gray-600 font-sans">
     @inertia
 
+    @if(env('APP_ENV') == 'production' || env('APP_ENV') == 'staging')
     <script src="//code.tidio.co/9hms3zkeyei88oiswndv5qiuve4deoou.js"></script>
+    @endif
+
     @if (\Request::is('/'))
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     @endif
