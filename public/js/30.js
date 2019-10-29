@@ -1,1 +1,654 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[30],{0:function(t,e,n){"use strict";function a(t,e,n,a,s,r,i,o){var l,u="function"==typeof t?t.options:t;if(e&&(u.render=e,u.staticRenderFns=n,u._compiled=!0),a&&(u.functional=!0),r&&(u._scopeId="data-v-"+r),i?(l=function(t){(t=t||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext)||"undefined"==typeof __VUE_SSR_CONTEXT__||(t=__VUE_SSR_CONTEXT__),s&&s.call(this,t),t&&t._registeredComponents&&t._registeredComponents.add(i)},u._ssrRegister=l):s&&(l=o?function(){s.call(this,this.$root.$options.shadowRoot)}:s),l)if(u.functional){u._injectStyles=l;var c=u.render;u.render=function(t,e){return l.call(e),c(t,e)}}else{var d=u.beforeCreate;u.beforeCreate=d?[].concat(d,l):[l]}return{exports:t,options:u}}n.d(e,"a",(function(){return a}))},22:function(t,e,n){"use strict";var a=n(60),s=n.n(a),r={inheritAttrs:!1,props:{id:{type:String,default:function(){return"textarea-input-".concat(this._uid)}},label:{type:String},value:{type:String},disabled:{type:Boolean,default:!1},helpText:{type:String},stats:{type:Boolean,default:!1},rows:{type:Number,default:4},errors:{type:Array,default:function(){return[]}},autosize:{type:Boolean,default:!0}},data:function(){return{textareaValue:""}},mounted:function(){var t=this;this.autosize&&s()(this.$refs.input),this.$on("input",(function(e){t.textareaValue=e})),setTimeout((function(){s()(t.$refs.textarea)}),0)},watch:{textareaValue:function(){}},computed:{linesCount:function(){return this.textareaValue?this.textareaValue.split(/\r\n|\r|\n/).length:0},wordsCount:function(){if(this.textareaValue){var t=this.textareaValue;return(t=(t=(t=t.replace(/\n/g," ")).replace(/(^\s*)|(\s*$)/gi,"")).replace(/\s\s+/gi," ")).split(" ").length}return 0},charactersCount:function(){return this.textareaValue?this.textareaValue.split("").length:0}}},i=n(0),o=Object(i.a)(r,(function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",[t.label?n("label",{staticClass:"form-label block mb-1 font-semibold text-gray-700",attrs:{for:t.id}},[t._v(t._s(t.label))]):t._e(),t._v(" "),n("div",{staticClass:"relative"},[n("textarea",t._b({ref:"input",staticClass:"px-2 py-2 leading-normal block w-full border-2 text-gray-800 bg-white font-sans rounded-lg text-left appearance-none focus:border-blue-600 outline-none",class:{"border-red-400":t.errors.length},attrs:{id:t.id,rows:t.rows,disabled:t.disabled},domProps:{value:t.value},on:{input:function(e){return t.$emit("input",e.target.value)},keydown:function(e){return t.$emit("keydown",e)},blur:function(e){return t.$emit("blur",e)},keyup:function(e){return t.$emit("keyup",e)}}},"textarea",t.$attrs,!1)),t._v(" "),t.stats?n("div",{staticClass:"textarea-stats my-1"},[n("ul",{staticClass:"no-bullet flex text-muted mb-0"},[n("li",{staticClass:"mr-2"},[t._v("Lines: "+t._s(t.linesCount||0))]),t._v(" "),n("li",{staticClass:"mr-2"},[t._v("Words: "+t._s(t.wordsCount||0))]),t._v(" "),n("li",{staticClass:"mr-2"},[t._v("Characters: "+t._s(t.charactersCount||0))])])]):t._e(),t._v(" "),t.helpText?n("small",{staticClass:"d-block form-text text-muted"},[t._v(t._s(t.helpText))]):t._e(),t._v(" "),t.errors.length?n("div",{staticClass:"text-red-600 mt-1 text-sm"},[t._v(t._s(t.errors[0]))]):t._e(),t._v(" "),t.errors.length?n("svg",{staticClass:"absolute text-red-600 fill-current",staticStyle:{top:"12px",right:"12px"},attrs:{xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",viewBox:"0 0 24 24"}},[n("path",{attrs:{d:"M11.953,2C6.465,2,2,6.486,2,12s4.486,10,10,10s10-4.486,10-10S17.493,2,11.953,2z M13,17h-2v-2h2V17z M13,13h-2V7h2V13z"}})]):t._e()])])}),[],!1,null,null,null);e.a=o.exports},60:function(t,e,n){var a,s,r;s=[t,e],void 0===(r="function"==typeof(a=function(t,e){"use strict";var n,a,s="function"==typeof Map?new Map:(n=[],a=[],{has:function(t){return n.indexOf(t)>-1},get:function(t){return a[n.indexOf(t)]},set:function(t,e){-1===n.indexOf(t)&&(n.push(t),a.push(e))},delete:function(t){var e=n.indexOf(t);e>-1&&(n.splice(e,1),a.splice(e,1))}}),r=function(t){return new Event(t,{bubbles:!0})};try{new Event("test")}catch(t){r=function(t){var e=document.createEvent("Event");return e.initEvent(t,!0,!1),e}}function i(t){if(t&&t.nodeName&&"TEXTAREA"===t.nodeName&&!s.has(t)){var e,n=null,a=null,i=null,o=function(){t.clientWidth!==a&&d()},l=function(e){window.removeEventListener("resize",o,!1),t.removeEventListener("input",d,!1),t.removeEventListener("keyup",d,!1),t.removeEventListener("autosize:destroy",l,!1),t.removeEventListener("autosize:update",d,!1),Object.keys(e).forEach((function(n){t.style[n]=e[n]})),s.delete(t)}.bind(t,{height:t.style.height,resize:t.style.resize,overflowY:t.style.overflowY,overflowX:t.style.overflowX,wordWrap:t.style.wordWrap});t.addEventListener("autosize:destroy",l,!1),"onpropertychange"in t&&"oninput"in t&&t.addEventListener("keyup",d,!1),window.addEventListener("resize",o,!1),t.addEventListener("input",d,!1),t.addEventListener("autosize:update",d,!1),t.style.overflowX="hidden",t.style.wordWrap="break-word",s.set(t,{destroy:l,update:d}),"vertical"===(e=window.getComputedStyle(t,null)).resize?t.style.resize="none":"both"===e.resize&&(t.style.resize="horizontal"),n="content-box"===e.boxSizing?-(parseFloat(e.paddingTop)+parseFloat(e.paddingBottom)):parseFloat(e.borderTopWidth)+parseFloat(e.borderBottomWidth),isNaN(n)&&(n=0),d()}function u(e){var n=t.style.width;t.style.width="0px",t.offsetWidth,t.style.width=n,t.style.overflowY=e}function c(){if(0!==t.scrollHeight){var e=function(t){for(var e=[];t&&t.parentNode&&t.parentNode instanceof Element;)t.parentNode.scrollTop&&e.push({node:t.parentNode,scrollTop:t.parentNode.scrollTop}),t=t.parentNode;return e}(t),s=document.documentElement&&document.documentElement.scrollTop;t.style.height="",t.style.height=t.scrollHeight+n+"px",a=t.clientWidth,e.forEach((function(t){t.node.scrollTop=t.scrollTop})),s&&(document.documentElement.scrollTop=s)}}function d(){c();var e=Math.round(parseFloat(t.style.height)),n=window.getComputedStyle(t,null),a="content-box"===n.boxSizing?Math.round(parseFloat(n.height)):t.offsetHeight;if(a<e?"hidden"===n.overflowY&&(u("scroll"),c(),a="content-box"===n.boxSizing?Math.round(parseFloat(window.getComputedStyle(t,null).height)):t.offsetHeight):"hidden"!==n.overflowY&&(u("hidden"),c(),a="content-box"===n.boxSizing?Math.round(parseFloat(window.getComputedStyle(t,null).height)):t.offsetHeight),i!==a){i=a;var s=r("autosize:resized");try{t.dispatchEvent(s)}catch(t){}}}}function o(t){var e=s.get(t);e&&e.destroy()}function l(t){var e=s.get(t);e&&e.update()}var u=null;"undefined"==typeof window||"function"!=typeof window.getComputedStyle?((u=function(t){return t}).destroy=function(t){return t},u.update=function(t){return t}):((u=function(t,e){return t&&Array.prototype.forEach.call(t.length?t:[t],(function(t){return i(t)})),t}).destroy=function(t){return t&&Array.prototype.forEach.call(t.length?t:[t],o),t},u.update=function(t){return t&&Array.prototype.forEach.call(t.length?t:[t],l),t}),e.default=u,t.exports=e.default})?a.apply(e,s):a)||(t.exports=r)},91:function(t,e,n){"use strict";n.r(e);var a=n(6),s=n(1),r=n(2),i=n(10),o=n(22),l=n(5),u=n(3),c={components:{Layout:a.a,Heading:s.a,Card:r.a,TextInput:i.a,TextareaInput:o.a,LoadingButton:l.a,Icon:u.a}},d=n(0),p=Object(d.a)(c,(function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("layout",[n("div",{staticClass:"bg-blue-600 flex items-center justify-center bg-cover bg-center",staticStyle:{"background-image":"url('/duotone.png')",height:"400px"}},[n("div",{staticClass:"text-center"},[n("h2",{staticClass:"text-5xl text-white font-bold tracking-tight"},[t._v("Advertise With Us")]),t._v(" "),n("p",{staticClass:"text-white text-lg mb-8"},[t._v("connect with the largest audience of active.")]),t._v(" "),n("loading-button",{directives:[{name:"scroll-to",rawName:"v-scroll-to",value:"#contactform",expression:"'#contactform'"}],staticClass:"shadow-md",attrs:{variant:"white",tag:"a",to:"#"}},[t._v("Get Started")])],1)]),t._v(" "),n("div",{staticClass:"py-10"},[n("div",{staticClass:"max-w-5xl mx-auto flex flex-wrap"},[n("div",{staticClass:"w-full md:w-1/3"},[n("div",{staticClass:"p-2 md:p-6 m-2"},[n("div",{staticClass:"w-12 h-12 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"},[n("icon",{staticClass:"w-6 h-6",attrs:{name:"trending"}})],1),t._v(" "),n("heading",{staticClass:"mb-2",attrs:{size:"large"}},[t._v("Get Quality Traffics")]),t._v(" "),n("p",[t._v("We have a daily traffic of more than 20,000+ users from all over North-East")])],1)]),t._v(" "),n("div",{staticClass:"w-full md:w-1/3"},[n("div",{staticClass:"p-2 md:p-6 m-2"},[n("div",{staticClass:"w-12 h-12 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"},[n("icon",{staticClass:"w-6 h-6",attrs:{name:"target"}})],1),t._v(" "),n("heading",{staticClass:"mb-2",attrs:{size:"large"}},[t._v("Target Audience")]),t._v(" "),n("p",[t._v("Connect with the largest audience of active, influencial job creators, job seekers and workaholics")])],1)]),t._v(" "),n("div",{staticClass:"w-full md:w-1/3"},[n("div",{staticClass:"p-2 md:p-6 m-2"},[n("div",{staticClass:"w-12 h-12 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"},[n("icon",{staticClass:"w-6 h-6",attrs:{name:"database"}})],1),t._v(" "),n("heading",{staticClass:"mb-2",attrs:{size:"large"}},[t._v("Drive Conversions")]),t._v(" "),n("p",[t._v("Put up the right deal & make it viral among our users, gain exceptional traffic leading to high conversions")])],1)])]),t._v(" "),n("div",{staticClass:"max-w-2xl mx-auto py-8",attrs:{id:"contactform"}},[n("heading",{staticClass:"mb-8 text-center",attrs:{size:"heading"}},[t._v("Ready to reach our Audience? Get in Touch")]),t._v(" "),n("card",[n("text-input",{staticClass:"mb-4",attrs:{label:"Name"}}),t._v(" "),n("text-input",{staticClass:"mb-4",attrs:{label:"E-mail"}}),t._v(" "),n("text-input",{staticClass:"mb-4",attrs:{label:"Phone"}}),t._v(" "),n("text-input",{staticClass:"mb-4",attrs:{label:"Company"}}),t._v(" "),n("textarea-input",{staticClass:"mb-4",attrs:{label:"How can we help?"}}),t._v(" "),n("loading-button",[t._v("submit")])],1)],1)])])}),[],!1,null,null,null);e.default=p.exports}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[30],{
+
+/***/ "./node_modules/autosize/dist/autosize.js":
+/*!************************************************!*\
+  !*** ./node_modules/autosize/dist/autosize.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	autosize 4.0.2
+	license: MIT
+	http://www.jacklmoore.com/autosize
+*/
+(function (global, factory) {
+	if (true) {
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, exports], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else { var mod; }
+})(this, function (module, exports) {
+	'use strict';
+
+	var map = typeof Map === "function" ? new Map() : function () {
+		var keys = [];
+		var values = [];
+
+		return {
+			has: function has(key) {
+				return keys.indexOf(key) > -1;
+			},
+			get: function get(key) {
+				return values[keys.indexOf(key)];
+			},
+			set: function set(key, value) {
+				if (keys.indexOf(key) === -1) {
+					keys.push(key);
+					values.push(value);
+				}
+			},
+			delete: function _delete(key) {
+				var index = keys.indexOf(key);
+				if (index > -1) {
+					keys.splice(index, 1);
+					values.splice(index, 1);
+				}
+			}
+		};
+	}();
+
+	var createEvent = function createEvent(name) {
+		return new Event(name, { bubbles: true });
+	};
+	try {
+		new Event('test');
+	} catch (e) {
+		// IE does not support `new Event()`
+		createEvent = function createEvent(name) {
+			var evt = document.createEvent('Event');
+			evt.initEvent(name, true, false);
+			return evt;
+		};
+	}
+
+	function assign(ta) {
+		if (!ta || !ta.nodeName || ta.nodeName !== 'TEXTAREA' || map.has(ta)) return;
+
+		var heightOffset = null;
+		var clientWidth = null;
+		var cachedHeight = null;
+
+		function init() {
+			var style = window.getComputedStyle(ta, null);
+
+			if (style.resize === 'vertical') {
+				ta.style.resize = 'none';
+			} else if (style.resize === 'both') {
+				ta.style.resize = 'horizontal';
+			}
+
+			if (style.boxSizing === 'content-box') {
+				heightOffset = -(parseFloat(style.paddingTop) + parseFloat(style.paddingBottom));
+			} else {
+				heightOffset = parseFloat(style.borderTopWidth) + parseFloat(style.borderBottomWidth);
+			}
+			// Fix when a textarea is not on document body and heightOffset is Not a Number
+			if (isNaN(heightOffset)) {
+				heightOffset = 0;
+			}
+
+			update();
+		}
+
+		function changeOverflow(value) {
+			{
+				// Chrome/Safari-specific fix:
+				// When the textarea y-overflow is hidden, Chrome/Safari do not reflow the text to account for the space
+				// made available by removing the scrollbar. The following forces the necessary text reflow.
+				var width = ta.style.width;
+				ta.style.width = '0px';
+				// Force reflow:
+				/* jshint ignore:start */
+				ta.offsetWidth;
+				/* jshint ignore:end */
+				ta.style.width = width;
+			}
+
+			ta.style.overflowY = value;
+		}
+
+		function getParentOverflows(el) {
+			var arr = [];
+
+			while (el && el.parentNode && el.parentNode instanceof Element) {
+				if (el.parentNode.scrollTop) {
+					arr.push({
+						node: el.parentNode,
+						scrollTop: el.parentNode.scrollTop
+					});
+				}
+				el = el.parentNode;
+			}
+
+			return arr;
+		}
+
+		function resize() {
+			if (ta.scrollHeight === 0) {
+				// If the scrollHeight is 0, then the element probably has display:none or is detached from the DOM.
+				return;
+			}
+
+			var overflows = getParentOverflows(ta);
+			var docTop = document.documentElement && document.documentElement.scrollTop; // Needed for Mobile IE (ticket #240)
+
+			ta.style.height = '';
+			ta.style.height = ta.scrollHeight + heightOffset + 'px';
+
+			// used to check if an update is actually necessary on window.resize
+			clientWidth = ta.clientWidth;
+
+			// prevents scroll-position jumping
+			overflows.forEach(function (el) {
+				el.node.scrollTop = el.scrollTop;
+			});
+
+			if (docTop) {
+				document.documentElement.scrollTop = docTop;
+			}
+		}
+
+		function update() {
+			resize();
+
+			var styleHeight = Math.round(parseFloat(ta.style.height));
+			var computed = window.getComputedStyle(ta, null);
+
+			// Using offsetHeight as a replacement for computed.height in IE, because IE does not account use of border-box
+			var actualHeight = computed.boxSizing === 'content-box' ? Math.round(parseFloat(computed.height)) : ta.offsetHeight;
+
+			// The actual height not matching the style height (set via the resize method) indicates that 
+			// the max-height has been exceeded, in which case the overflow should be allowed.
+			if (actualHeight < styleHeight) {
+				if (computed.overflowY === 'hidden') {
+					changeOverflow('scroll');
+					resize();
+					actualHeight = computed.boxSizing === 'content-box' ? Math.round(parseFloat(window.getComputedStyle(ta, null).height)) : ta.offsetHeight;
+				}
+			} else {
+				// Normally keep overflow set to hidden, to avoid flash of scrollbar as the textarea expands.
+				if (computed.overflowY !== 'hidden') {
+					changeOverflow('hidden');
+					resize();
+					actualHeight = computed.boxSizing === 'content-box' ? Math.round(parseFloat(window.getComputedStyle(ta, null).height)) : ta.offsetHeight;
+				}
+			}
+
+			if (cachedHeight !== actualHeight) {
+				cachedHeight = actualHeight;
+				var evt = createEvent('autosize:resized');
+				try {
+					ta.dispatchEvent(evt);
+				} catch (err) {
+					// Firefox will throw an error on dispatchEvent for a detached element
+					// https://bugzilla.mozilla.org/show_bug.cgi?id=889376
+				}
+			}
+		}
+
+		var pageResize = function pageResize() {
+			if (ta.clientWidth !== clientWidth) {
+				update();
+			}
+		};
+
+		var destroy = function (style) {
+			window.removeEventListener('resize', pageResize, false);
+			ta.removeEventListener('input', update, false);
+			ta.removeEventListener('keyup', update, false);
+			ta.removeEventListener('autosize:destroy', destroy, false);
+			ta.removeEventListener('autosize:update', update, false);
+
+			Object.keys(style).forEach(function (key) {
+				ta.style[key] = style[key];
+			});
+
+			map.delete(ta);
+		}.bind(ta, {
+			height: ta.style.height,
+			resize: ta.style.resize,
+			overflowY: ta.style.overflowY,
+			overflowX: ta.style.overflowX,
+			wordWrap: ta.style.wordWrap
+		});
+
+		ta.addEventListener('autosize:destroy', destroy, false);
+
+		// IE9 does not fire onpropertychange or oninput for deletions,
+		// so binding to onkeyup to catch most of those events.
+		// There is no way that I know of to detect something like 'cut' in IE9.
+		if ('onpropertychange' in ta && 'oninput' in ta) {
+			ta.addEventListener('keyup', update, false);
+		}
+
+		window.addEventListener('resize', pageResize, false);
+		ta.addEventListener('input', update, false);
+		ta.addEventListener('autosize:update', update, false);
+		ta.style.overflowX = 'hidden';
+		ta.style.wordWrap = 'break-word';
+
+		map.set(ta, {
+			destroy: destroy,
+			update: update
+		});
+
+		init();
+	}
+
+	function destroy(ta) {
+		var methods = map.get(ta);
+		if (methods) {
+			methods.destroy();
+		}
+	}
+
+	function update(ta) {
+		var methods = map.get(ta);
+		if (methods) {
+			methods.update();
+		}
+	}
+
+	var autosize = null;
+
+	// Do nothing in Node.js environment and IE8 (or lower)
+	if (typeof window === 'undefined' || typeof window.getComputedStyle !== 'function') {
+		autosize = function autosize(el) {
+			return el;
+		};
+		autosize.destroy = function (el) {
+			return el;
+		};
+		autosize.update = function (el) {
+			return el;
+		};
+	} else {
+		autosize = function autosize(el, options) {
+			if (el) {
+				Array.prototype.forEach.call(el.length ? el : [el], function (x) {
+					return assign(x, options);
+				});
+			}
+			return el;
+		};
+		autosize.destroy = function (el) {
+			if (el) {
+				Array.prototype.forEach.call(el.length ? el : [el], destroy);
+			}
+			return el;
+		};
+		autosize.update = function (el) {
+			if (el) {
+				Array.prototype.forEach.call(el.length ? el : [el], update);
+			}
+			return el;
+		};
+	}
+
+	exports.default = autosize;
+	module.exports = exports['default'];
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Shared/tuis/TextareaInput.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Shared/tuis/TextareaInput.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var autosize__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! autosize */ "./node_modules/autosize/dist/autosize.js");
+/* harmony import */ var autosize__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(autosize__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  inheritAttrs: false,
+  props: {
+    id: {
+      type: String,
+      "default": function _default() {
+        return "textarea-input-".concat(this._uid);
+      }
+    },
+    label: {
+      type: String
+    },
+    value: {
+      type: String
+    },
+    disabled: {
+      type: Boolean,
+      "default": false
+    },
+    helpText: {
+      type: String
+    },
+    stats: {
+      type: Boolean,
+      "default": false
+    },
+    rows: {
+      type: Number,
+      "default": 4
+    },
+    errors: {
+      type: Array,
+      "default": function _default() {
+        return [];
+      }
+    },
+    autosize: {
+      type: Boolean,
+      "default": true
+    }
+  },
+  data: function data() {
+    return {
+      textareaValue: ""
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    if (this.autosize) {
+      autosize__WEBPACK_IMPORTED_MODULE_0___default()(this.$refs.input);
+    }
+
+    this.$on("input", function (e) {
+      _this.textareaValue = e;
+    });
+    setTimeout(function () {
+      autosize__WEBPACK_IMPORTED_MODULE_0___default()(_this.$refs.textarea);
+    }, 0); // on update
+    // setTimeout(() => {
+    // 	autosize.update(this.$refs.textarea);
+    // }, 0);
+  },
+  watch: {
+    textareaValue: function textareaValue() {}
+  },
+  computed: {
+    linesCount: function linesCount() {
+      if (this.textareaValue) {
+        // Count the number of new line characters
+        return this.textareaValue.split(/\r\n|\r|\n/).length;
+      } else {
+        return 0;
+      }
+    },
+    wordsCount: function wordsCount() {
+      if (this.textareaValue) {
+        var s = this.textareaValue; // Turn new line cahracters into white-spaces
+
+        s = s.replace(/\n/g, " "); // Exclude start and end white-spaces
+
+        s = s.replace(/(^\s*)|(\s*$)/gi, ""); // Turn 2 or more duplicate white-spaces into 1
+
+        s = s.replace(/\s\s+/gi, " "); // Return the number of spaces
+
+        return s.split(" ").length;
+      } else {
+        return 0;
+      }
+    },
+    charactersCount: function charactersCount() {
+      if (this.textareaValue) {
+        return this.textareaValue.split("").length;
+      } else {
+        return 0;
+      }
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Shared/tuis/TextareaInput.vue?vue&type=template&id=028bb9b0&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Shared/tuis/TextareaInput.vue?vue&type=template&id=028bb9b0& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _vm.label
+      ? _c(
+          "label",
+          {
+            staticClass: "form-label block mb-1 font-semibold text-gray-700",
+            attrs: { for: _vm.id }
+          },
+          [_vm._v(_vm._s(_vm.label))]
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    _c("div", { staticClass: "relative" }, [
+      _c(
+        "textarea",
+        _vm._b(
+          {
+            ref: "input",
+            staticClass:
+              "px-2 py-2 leading-normal block w-full border-2 text-gray-800 bg-white font-sans rounded-lg text-left appearance-none focus:border-blue-600 outline-none",
+            class: { "border-red-400": _vm.errors.length },
+            attrs: { id: _vm.id, rows: _vm.rows, disabled: _vm.disabled },
+            domProps: { value: _vm.value },
+            on: {
+              input: function($event) {
+                return _vm.$emit("input", $event.target.value)
+              },
+              keydown: function($event) {
+                return _vm.$emit("keydown", $event)
+              },
+              blur: function($event) {
+                return _vm.$emit("blur", $event)
+              },
+              keyup: function($event) {
+                return _vm.$emit("keyup", $event)
+              }
+            }
+          },
+          "textarea",
+          _vm.$attrs,
+          false
+        )
+      ),
+      _vm._v(" "),
+      _vm.stats
+        ? _c("div", { staticClass: "textarea-stats my-1" }, [
+            _c("ul", { staticClass: "no-bullet flex text-muted mb-0" }, [
+              _c("li", { staticClass: "mr-2" }, [
+                _vm._v("Lines: " + _vm._s(_vm.linesCount || 0))
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "mr-2" }, [
+                _vm._v("Words: " + _vm._s(_vm.wordsCount || 0))
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "mr-2" }, [
+                _vm._v("Characters: " + _vm._s(_vm.charactersCount || 0))
+              ])
+            ])
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.helpText
+        ? _c("small", { staticClass: "d-block form-text text-muted" }, [
+            _vm._v(_vm._s(_vm.helpText))
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.errors.length
+        ? _c("div", { staticClass: "text-red-600 mt-1 text-sm" }, [
+            _vm._v(_vm._s(_vm.errors[0]))
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.errors.length
+        ? _c(
+            "svg",
+            {
+              staticClass: "absolute text-red-600 fill-current",
+              staticStyle: { top: "12px", right: "12px" },
+              attrs: {
+                xmlns: "http://www.w3.org/2000/svg",
+                width: "24",
+                height: "24",
+                viewBox: "0 0 24 24"
+              }
+            },
+            [
+              _c("path", {
+                attrs: {
+                  d:
+                    "M11.953,2C6.465,2,2,6.486,2,12s4.486,10,10,10s10-4.486,10-10S17.493,2,11.953,2z M13,17h-2v-2h2V17z M13,13h-2V7h2V13z"
+                }
+              })
+            ]
+          )
+        : _vm._e()
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Shared/tuis/TextareaInput.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/Shared/tuis/TextareaInput.vue ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TextareaInput_vue_vue_type_template_id_028bb9b0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TextareaInput.vue?vue&type=template&id=028bb9b0& */ "./resources/js/Shared/tuis/TextareaInput.vue?vue&type=template&id=028bb9b0&");
+/* harmony import */ var _TextareaInput_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TextareaInput.vue?vue&type=script&lang=js& */ "./resources/js/Shared/tuis/TextareaInput.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _TextareaInput_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TextareaInput_vue_vue_type_template_id_028bb9b0___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TextareaInput_vue_vue_type_template_id_028bb9b0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Shared/tuis/TextareaInput.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Shared/tuis/TextareaInput.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/Shared/tuis/TextareaInput.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TextareaInput_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./TextareaInput.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Shared/tuis/TextareaInput.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TextareaInput_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Shared/tuis/TextareaInput.vue?vue&type=template&id=028bb9b0&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/Shared/tuis/TextareaInput.vue?vue&type=template&id=028bb9b0& ***!
+  \***********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TextareaInput_vue_vue_type_template_id_028bb9b0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./TextareaInput.vue?vue&type=template&id=028bb9b0& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Shared/tuis/TextareaInput.vue?vue&type=template&id=028bb9b0&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TextareaInput_vue_vue_type_template_id_028bb9b0___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TextareaInput_vue_vue_type_template_id_028bb9b0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ })
+
+}]);

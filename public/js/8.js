@@ -1,1 +1,3456 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[8,1],[,,,,,,function(t,e,n){"use strict";var a=n(2),s=n(1),r={data:function(){return{isOpen:!1}},mounted:function(){var t=this,e=function(e){t.isOpen&&"Escape"===e.key&&(t.isOpen=!1)};document.addEventListener("keydown",e),this.$on("hook:destroyed",(function(){document.removeEventListener("keydown",e)}))},methods:{toggle:function(){this.isOpen=!this.isOpen}}},i=n(0),o=Object(i.a)(r,(function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",{staticClass:"relative"},[n("button",{staticClass:"inline-flex focus:outline-none",attrs:{type:"button"},on:{click:t.toggle}},[t._t("trigger")],2),t._v(" "),n("transition",{attrs:{"enter-class":"opacity-0 scale-90","enter-active-class":"ease-out transition-fastest","enter-to-class":"opacity-100 scale-100","leave-class":"opacity-100 scale-100","leave-active-class":"ease-in transition-fastest","leave-to-class":"opacity-0 scale-90"}},[t.isOpen?n("div",[n("button",{staticClass:"z-30 block fixed inset-0 w-full h-full cursor-default",attrs:{type:"button"},on:{click:function(e){t.isOpen=!1}}}),t._v(" "),n("div",{staticClass:"absolute z-50 right-0 origin-top-right"},[t._t("dropdown")],2)]):t._e()])],1)}),[],!1,null,null,null).exports,l=n(21),c=n(11),d=n(9),u=n(13),p=n(5),b=n(4),h=n(10),v=n(3),f={components:{Card:a.a,Heading:s.a,Dropdown:o,BasicTable:l.a,Badge:c.a,Alert:d.a,SearchInput:u.a,TextInput:h.a,LoadingButton:p.a,LinkTo:b.a,Icon:v.a},props:{title:String},data:function(){return{showNav:!1,showNavbar:!1}},watch:{"$page.flash":{handler:function(){this.$snack.success(this.$page.flash.success)},deep:!0},title:{immediate:!0,handler:function(t){document.title=t?"".concat(t," - Jobs Harbour"):"Jobs harbour"}}},methods:{isUrl:function(){for(var t=arguments.length,e=new Array(t),n=0;n<t;n++)e[n]=arguments[n];return""===e[0]?""===location.pathname.substr(1):e.filter((function(t){return location.pathname.substr(1).startsWith(t)})).length}}},m=(n(119),Object(i.a)(f,(function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("main",{staticClass:"flex w-100 flex-col min-h-screen"},[n("div",{staticClass:"bg-white px-4 relative z-30"},[n("div",{staticClass:"md:flex items-center justify-between mx-auto max-w-6xl"},[n("div",{staticClass:"flex justify-between md:flex-none items-center"},[t._m(0),t._v(" "),n("div",{staticClass:"inline-block inline-flex items-center justify-center w-8 h-8 rounded-full mr-2 cursor-pointer md:hidden",on:{click:function(e){t.showNavbar=!t.showNavbar}}},[n("svg",{staticClass:"fill-current text-gray-600",attrs:{xmlns:"http://www.w3.org/2000/svg",width:"30",height:"30",viewBox:"0 0 24 24"}},[n("path",{attrs:{d:"M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z"}})])])]),t._v(" "),n("div",{staticClass:"hidden md:block"},[t.$page.auth.user?n("a",{staticClass:"mr-6 py-6 inline-block font-medium hover:text-blue-600",class:t.isUrl("dashboard")?"menu-active text-blue-600":"text-gray-600",attrs:{href:"/dashboard"}},[t._v("Dashboard")]):t._e(),t._v(" "),n("a",{staticClass:"mr-6 py-6 inline-block font-medium hover:text-blue-600",class:t.isUrl("jobs")?"menu-active text-blue-600":"text-gray-600",attrs:{href:"/jobs"}},[t._v("Job Listings")]),t._v(" "),n("a",{staticClass:"mr-6 py-6 inline-block font-medium hover:text-blue-600",class:t.isUrl("categories")?"menu-active text-blue-600":"text-gray-600",attrs:{href:"/categories"}},[t._v("Categories")]),t._v(" "),n("a",{staticClass:"py-6 mr-6 inline-block font-medium hover:text-blue-600",class:t.isUrl("for-employers")?"menu-active text-blue-600":"text-gray-600",attrs:{href:"/for-employers"}},[t._v("For Employers")]),t._v(" "),n("a",{staticClass:"py-6 inline-block font-medium hover:text-blue-600",class:t.isUrl("about")?"menu-active text-blue-600":"text-gray-600",attrs:{href:"/about"}},[t._v("About")])]),t._v(" "),n("div",{staticClass:"hidden md:block"},[t.$page.auth.user?[n("dropdown",{scopedSlots:t._u([{key:"trigger",fn:function(){return[n("div",{staticClass:"flex items-center"},[n("div",{staticClass:"outline-none block inline-flex items-center justify-center h-10 w-10 overflow-hidden rounded-full shadow-inner bg-gray-500 text-white font-bold text-xl"},[t._v(t._s(t.$page.auth.user.name.charAt(0)))]),t._v(" "),n("div",{staticClass:"text-left ml-2"},[n("span",{staticClass:"text-sm leading-tight block w-32 truncate"},[t._v(t._s(t.$page.auth.user.name))]),t._v(" "),n("span",{staticClass:"leading-tight text-gray-400 block text-xs uppercase tracking-wider font-semibold"},[t._v(t._s(t.$page.auth.user.type))])])])]},proxy:!0},{key:"dropdown",fn:function(){return[n("div",{staticClass:"mt-2 bg-white rounded-lg border-t border-gray-100 w-48 py-1 shadow-lg overflow-hidden"},[n("a",{staticClass:"block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600",attrs:{href:"/admin/jobs"}},[t._v("Job Posts")]),t._v(" "),n("a",{staticClass:"block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600",attrs:{href:"#"}},[t._v("Notifications")]),t._v(" "),n("a",{staticClass:"block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600",attrs:{href:"/settings"}},[t._v("Settings")]),t._v(" "),n("div",{staticClass:"border-t my-1 border-gray-200"}),t._v(" "),n("inertia-link",{staticClass:"block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600",attrs:{href:t.route("logout"),method:"post"}},[t._v("Logout")])],1)]},proxy:!0}],null,!1,468365969)})]:[n("a",{staticClass:"px-4 py-5 mr-3 inline-block font-medium text-gray-600 hover:text-blue-600",attrs:{href:"/login"}},[t._v("Login")]),t._v(" "),n("loading-button",{attrs:{tag:"a",to:"/register",size:"small",rounded:"large"}},[t._v("Post a Job")])]],2)]),t._v(" "),t.showNavbar?n("div",{staticClass:"md:hidden"},[n("a",{staticClass:"border-t px-2 py-3 block font-medium",class:t.isUrl("/")?"text-blue-600":"text-gray-600",attrs:{href:"/"}},[t._v("Home")]),t._v(" "),t.$page.auth.user?n("a",{staticClass:"border-t px-2 py-3 block font-medium hover:text-blue-600",class:t.isUrl("dashboard")?"text-blue-600":"text-gray-600",attrs:{href:"/dashboard"}},[t._v("Dashboard")]):t._e(),t._v(" "),n("a",{staticClass:"border-t px-2 py-3 block font-medium hover:text-blue-600",class:t.isUrl("jobs")?"text-blue-600":"text-gray-600",attrs:{href:"/jobs"}},[t._v("Jobs Listing")]),t._v(" "),n("a",{staticClass:"border-t px-2 py-3 block font-medium hover:text-blue-600",class:t.isUrl("about")?"text-blue-600":"text-gray-600",attrs:{href:"/categories"}},[t._v("Categories")]),t._v(" "),n("a",{staticClass:"border-t px-2 py-3 block font-medium hover:text-blue-600",class:t.isUrl("for-employers")?"text-blue-600":"text-gray-600",attrs:{href:"/for-employers"}},[t._v("For Employers")]),t._v(" "),n("a",{staticClass:"border-t px-2 py-3 block font-medium hover:text-blue-600",class:t.isUrl("about")?"text-blue-600":"text-gray-600",attrs:{href:"/about"}},[t._v("About Jobs Harbour")]),t._v(" "),t.$page.auth.user?n("div",{staticClass:"flex items-center py-2 border-t"},[n("div",{staticClass:"flex flex-1"},[n("div",{staticClass:"outline-none block inline-flex items-center justify-center h-10 w-10 overflow-hidden rounded-full shadow-inner bg-blue-600 text-white font-bold text-xl"},[t._v(t._s(t.$page.auth.user.name.charAt(0)))]),t._v(" "),n("div",{staticClass:"text-left ml-2"},[n("span",{staticClass:"text-sm leading-tight block w-32 truncate"},[t._v(t._s(t.$page.auth.user.name))]),t._v(" "),n("span",{staticClass:"leading-tight text-gray-400 block text-xs uppercase tracking-wider font-semibold"},[t._v(t._s(t.$page.auth.user.type))])])]),t._v(" "),n("div",{staticClass:"w-24 px-4"},[n("inertia-link",{staticClass:"block px-4 py-2 text-gray-600 hover:text-blue-600",attrs:{href:t.route("logout"),method:"post"}},[t._v("Logout")])],1)]):n("div",{staticClass:"border-t flex"},[n("div",{staticClass:"flex-1 border-r text-center"},[n("a",{staticClass:"px-2 py-3 block font-medium",class:t.isUrl("login")?"text-blue-600":"text-gray-600",attrs:{href:"/login"}},[t._v("Login")])]),t._v(" "),n("div",{staticClass:"flex-1 text-center"},[n("a",{staticClass:"px-2 py-3 block font-medium",class:t.isUrl("register")?"text-blue-600":"text-gray-600",attrs:{href:"/register"}},[t._v("Create free account")])])])]):t._e()]),t._v(" "),n("article",{staticClass:"flex-1"},[t._t("default")],2),t._v(" "),n("div",{staticClass:"px-4 py-16 bg-white border-b-8 border-blue-600"},[n("div",{staticClass:"max-w-6xl mx-auto"},[n("div",{staticClass:"flex flex-wrap md:flex-1 -mx-4"},[t._m(1),t._v(" "),n("div",{staticClass:"w-1/2 md:w-1/5 px-4 mb-6"},[n("heading",{staticClass:"mb-3",attrs:{size:"small-caps"}},[t._v("About")]),t._v(" "),n("a",{staticClass:"block text-sm mb-2 hover:text-blue-600",attrs:{href:"/about"}},[t._v("About us")]),t._v(" "),n("a",{staticClass:"block text-sm mb-2 hover:text-blue-600",attrs:{href:"/for-employers"}},[t._v("For Employers")]),t._v(" "),n("a",{staticClass:"block text-sm mb-2 hover:text-blue-600",attrs:{href:"/advertise"}},[t._v("Advertise with us")]),t._v(" "),n("a",{staticClass:"block text-sm mb-2 hover:text-blue-600",attrs:{href:"/faq"}},[t._v("FAQ")])],1),t._v(" "),n("div",{staticClass:"w-1/2 md:w-1/5 px-4 mb-6"},[n("heading",{staticClass:"mb-3",attrs:{size:"small-caps"}},[t._v("Resources")]),t._v(" "),n("a",{staticClass:"block text-sm mb-2 hover:text-blue-600",attrs:{href:"/faq"}},[t._v("Support")]),t._v(" "),n("a",{staticClass:"block text-sm mb-2 hover:text-blue-600",attrs:{href:"/privacy"}},[t._v("Privacy")]),t._v(" "),n("a",{staticClass:"block text-sm mb-2 hover:text-blue-600",attrs:{href:"/terms"}},[t._v("Terms of Service")]),t._v(" "),n("a",{staticClass:"block text-sm mb-2 hover:text-blue-600",attrs:{href:"/refund"}},[t._v("Refund & Cancellation")])],1),t._v(" "),n("div",{staticClass:"w-1/2 md:w-1/5 px-4 mb-6"},[n("heading",{staticClass:"mb-3",attrs:{size:"small-caps"}},[t._v("Get Connected")]),t._v(" "),n("a",{staticClass:"block text-sm mb-2 hover:text-blue-600 flex",attrs:{href:"#"}},[n("div",{staticClass:"p-1 rounded-full bg-gray-400 hover:bg-blue-600 text-white mr-2"},[n("icon",{staticClass:"w-4 h-4",attrs:{name:"facebook"}})],1),t._v("Facebook\n\t\t\t\t\t")]),t._v(" "),n("a",{staticClass:"block text-sm mb-2 hover:text-blue-600 flex",attrs:{href:"#"}},[n("div",{staticClass:"p-1 rounded-full bg-gray-400 hover:bg-blue-600 text-white mr-2"},[n("icon",{staticClass:"w-4 h-4",attrs:{name:"linkedin"}})],1),t._v("LinkedIn\n\t\t\t\t\t")]),t._v(" "),n("a",{staticClass:"block text-sm mb-2 hover:text-blue-600 flex",attrs:{href:"#"}},[n("div",{staticClass:"p-1 rounded-full bg-gray-400 hover:bg-blue-600 text-white mr-2"},[n("icon",{staticClass:"w-4 h-4",attrs:{name:"instagram"}})],1),t._v("Instagram\n\t\t\t\t\t")]),t._v(" "),n("a",{staticClass:"block text-sm mb-2 hover:text-blue-600 flex",attrs:{href:"#"}},[n("div",{staticClass:"p-1 rounded-full bg-gray-400 hover:bg-blue-600 text-white mr-2"},[n("icon",{staticClass:"w-4 h-4",attrs:{name:"twitter"}})],1),t._v("Twitter\n\t\t\t\t\t")])],1)]),t._v(" "),t._m(2)])])])}),[function(){var t=this.$createElement,e=this._self._c||t;return e("a",{staticClass:"flex items-center py-2",attrs:{href:"/"}},[e("img",{staticClass:"h-10",attrs:{src:"/jh-logo.svg",alt:"jh"}})])},function(){var t=this.$createElement,e=this._self._c||t;return e("div",{staticClass:"w-1/2 md:w-2/5 px-4 mb-6"},[e("img",{attrs:{src:"/jh-logo.svg",alt:"jh"}})])},function(){var t=this.$createElement,e=this._self._c||t;return e("div",{staticClass:"pt-8 border-t border-gray-200 text-sm md:flex md:justify-between"},[e("div",[this._v("\n\t\t\t\t\t© 2019 Jobs Harbour. All rights reserved. Made with\n\t\t\t\t\t"),e("span",{staticClass:"text-red-600"},[this._v("♥")]),this._v(" in Guwahati\n\t\t\t\t")])])}],!1,null,null,null));e.a=m.exports},,,function(t,e,n){"use strict";var a={name:"Alert",props:{variant:{type:String,default:"info"},withIcon:{type:Boolean,default:!0}},computed:{getAlertClass:function(){return{"bg-blue-100 text-blue-800 border-blue-200":"info"==this.variant,"bg-red-100 text-red-800 border-red-200":"danger"==this.variant,"bg-green-100 text-green-800 border-green-200":"success"==this.variant,"bg-orange-100 text-gray-600 border-orange-200":"warning"==this.variant}}}},s=(n(117),n(0)),r=Object(s.a)(a,(function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",{staticClass:"flex p-4 rounded-lg border-2",class:t.getAlertClass,attrs:{role:"alert"}},[t.withIcon?t._t("icon",["info"==t.variant?n("svg",{staticClass:"flex-shrink-0 fill-current text-blue-500 mr-3",attrs:{width:"32",height:"32",xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24"}},[n("path",{attrs:{d:"M0 0h24v24H0z",fill:"none"}}),t._v(" "),n("path",{attrs:{d:"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"}})]):t._e(),t._v(" "),"danger"==t.variant?n("svg",{staticClass:"flex-shrink-0 fill-current text-red-500 mr-3",attrs:{width:"32",height:"32",xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24"}},[n("path",{attrs:{d:"M0 0h24v24H0z",fill:"none"}}),t._v(" "),n("path",{attrs:{d:"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"}})]):t._e(),t._v(" "),"success"==t.variant?n("svg",{staticClass:"flex-shrink-0 fill-current text-green-500 mr-3",attrs:{width:"32",height:"32",xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24"}},[n("path",{attrs:{d:"M0 0h24v24H0z",fill:"none"}}),t._v(" "),n("path",{attrs:{d:"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"}})]):t._e()]):t._e(),t._v(" "),n("div",{staticClass:"pt-1"},[t._t("default")],2)],2)}),[],!1,null,"4611a825",null);e.a=r.exports},,,,,function(t,e,n){"use strict";var a={name:"SwitchInput",model:{prop:"isEnabled",event:"toggle"},props:{isEnabled:{type:Boolean,default:!0},color:{type:String,required:!1,default:"#4D4D4D"}},methods:{toggle:function(){this.$emit("toggle",!this.isEnabled)}}},s=(n(121),n(0)),r=Object(s.a)(a,(function(){var t=this.$createElement,e=this._self._c||t;return e("div",{staticClass:"switch-button-control"},[e("div",{staticClass:"switch-button",class:{enabled:this.isEnabled},style:{"--color":this.color},on:{click:this.toggle}},[e("div",{staticClass:"button"})]),this._v(" "),e("div",{staticClass:"switch-button-label"},[this._t("default")],2)])}),[],!1,null,null,null);e.a=r.exports},function(t,e,n){"use strict";var a=n(64),s=n.n(a),r={name:"DateInput",props:{id:{type:String,default:function(){return"text-input-".concat(this._uid)}},value:String,label:String,errors:{type:Array,default:function(){return[]}},format:{type:String,default:"D/M/YYYY"},minYear:{type:Number,default:2019},maxYear:{type:Number,default:(new Date).getFullYear()},defaultYear:{type:Number,default:null},defaultMonth:{type:Number,default:null}},mounted:function(){var t=new s.a({format:this.format,reposition:!1,position:"bottom left",field:this.$refs.input,yearRange:[this.minYear,this.maxYear],theme:"date-input",keyboardInput:!1,i18n:{previousMonth:"Prev",nextMonth:"Next",months:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],weekdays:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],weekdaysShort:["Su","Mo","Tu","We","Th","Fr","Sa"]}});this.defaultYear&&t.gotoYear(this.defaultYear),this.defaultMonth&&t.gotoMonth(this.defaultMonth-1)},methods:{focus:function(){this.$refs.input.focus()},select:function(){this.$refs.input.select()},change:function(t){this.$emit("input",t.target.value)}}},i=(n(123),n(0)),o=Object(i.a)(r,(function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",[t.label?n("label",{staticClass:"form-label block mb-1 font-semibold text-gray-700",attrs:{for:t.id}},[t._v(t._s(t.label))]):t._e(),t._v(" "),n("div",{staticClass:"relative"},[n("input",t._b({ref:"input",staticClass:"pl-10 pr-2 py-2 h-12 leading-normal block w-full border-2 text-gray-800 bg-white font-sans rounded-lg text-left appearance-none focus:border-blue-600 outline-none",class:{"border-red-400":t.errors.length},attrs:{id:"date-input-"+t._uid,type:"text"},domProps:{value:t.value},on:{change:t.change,keyup:t.change}},"input",t.$attrs,!1)),t._v(" "),t.errors.length?n("div",{staticClass:"text-red-600 mt-1 text-sm"},[t._v(t._s(t.errors[0]))]):t._e(),t._v(" "),t.errors.length?n("svg",{staticClass:"absolute text-red-600 fill-current",staticStyle:{top:"12px",right:"12px"},attrs:{xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",viewBox:"0 0 24 24"}},[n("path",{attrs:{d:"M11.953,2C6.465,2,2,6.486,2,12s4.486,10,10,10s10-4.486,10-10S17.493,2,11.953,2z M13,17h-2v-2h2V17z M13,13h-2V7h2V13z"}})]):t._e(),t._v(" "),n("svg",{staticClass:"absolute text-gray-400 fill-current",staticStyle:{top:"14px",left:"12px"},attrs:{width:"20",height:"20",xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 20 20"}},[n("path",{attrs:{d:"M1 4c0-1.1.9-2 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4zm2 2v12h14V6H3zm2-6h2v2H5V0zm8 0h2v2h-2V0zM5 9h2v2H5V9zm0 4h2v2H5v-2zm4-4h2v2H9V9zm0 4h2v2H9v-2zm4-4h2v2h-2V9zm0 4h2v2h-2v-2z"}})])])])}),[],!1,null,null,null);e.a=o.exports},,function(t,e,n){"use strict";var a=n(65),s=n.n(a),r=(n(129),{props:{value:{default:"",type:String},label:String,errors:{type:Array,default:function(){return[]}},height:{type:String,default:"140px"}},data:function(){return{editorContent:null,editorInstance:null,editorOpts:{modules:{toolbar:[[{header:[2,3,4,5,6,!1]}],["bold","italic","underline","strike"],["blockquote","code-block"],[{list:"ordered"},{list:"bullet"},{align:[]}],["clean"],["link"]]},theme:"snow"}}},watch:{value:function(t){t!==this.editorContent&&this.editorInstance.pasteHTML(t)}},mounted:function(){this.initializeEditor()},beforeDestroy:function(){this.editorInstance.off("text-change")},methods:{initializeEditor:function(){this.$refs.editorNode.innerHTML=this.value,this.editorInstance=new s.a(this.$refs.editorNode,this.editorOpts),this.editorInstance.on("text-change",this.onEditorContentChange),this.setEditorContent()},onEditorContentChange:function(){this.setEditorContent(),this.$emit("input",this.editorContent)},setEditorContent:function(){this.editorContent=this.editorInstance.getText().trim()?this.editorInstance.root.innerHTML:""}}}),i=(n(125),n(0)),o=Object(i.a)(r,(function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",[t.label?n("label",{staticClass:"form-label block mb-1 font-semibold text-gray-700"},[t._v(t._s(t.label))]):t._e(),t._v(" "),n("div",{staticClass:"relative"},[n("div",{staticClass:"simple-editor",class:{error:t.errors.length}},[n("div",{ref:"editorNode",staticClass:"editor-node rounded-b-lg"})]),t._v(" "),t.errors.length?n("div",{staticClass:"text-red-600 mt-1 text-sm"},[t._v(t._s(t.errors[0]))]):t._e(),t._v(" "),t.errors.length?n("svg",{staticClass:"absolute text-red-600 fill-current",staticStyle:{top:"52px",right:"12px"},attrs:{xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",viewBox:"0 0 24 24"}},[n("path",{attrs:{d:"M11.953,2C6.465,2,2,6.486,2,12s4.486,10,10,10s10-4.486,10-10S17.493,2,11.953,2z M13,17h-2v-2h2V17z M13,13h-2V7h2V13z"}})]):t._e()])])}),[],!1,null,null,null);e.a=o.exports},function(t,e,n){"use strict";var a={props:{noShadow:{type:Boolean,default:!1},height:{type:String,default:"400px"}}},s=n(0),r=Object(s.a)(a,(function(){var t=this.$createElement,e=this._self._c||t;return e("div",{staticClass:"text-center bg-white py-6 flex w-full items-center justify-center flex-row shadow rounded-lg",class:{"shadow-none":1==this.noShadow},style:{"min-height":this.height}},[e("div",{staticClass:"w-100"},[this._t("default")],2)])}),[],!1,null,"3a4ba9db",null);e.a=r.exports},,,function(t,e,n){"use strict";var a={props:{datas:{type:Array,default:function(){return[]}},headings:{type:Array,default:function(){return[]}},theme:{type:String,default:"normal"}},computed:{classes:function(){return{"table-striped":"striped"===this.theme}}}},s=(n(115),n(0)),r=Object(s.a)(a,(function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",{staticClass:"overflow-x-auto bg-white rounded-lg shadow"},[n("table",{staticClass:"w-full whitespace-no-wrap bg-white overflow-hidden",class:t.classes},[n("thead",[n("tr",{staticClass:"text-left"},t._l(t.headings,(function(e,a){return n("th",{key:a,staticClass:"px-6 py-3 text-gray-500 font-bold tracking-wider uppercase text-xs",class:{"text-right":"right"===e.align&&void 0!==e.align,"text-center":"center"===e.align&&void 0!==e.align}},[void 0!==e.title?[t._v("\n\t\t\t\t\t\t\t"+t._s(e.title)+"\n\t\t\t\t\t\t")]:[t._v(t._s(e))]],2)})),0)]),t._v(" "),n("tbody",[t._t("default")],2)])])}),[],!1,null,null,null);e.a=r.exports},function(t,e,n){"use strict";var a=n(60),s=n.n(a),r={inheritAttrs:!1,props:{id:{type:String,default:function(){return"textarea-input-".concat(this._uid)}},label:{type:String},value:{type:String},disabled:{type:Boolean,default:!1},helpText:{type:String},stats:{type:Boolean,default:!1},rows:{type:Number,default:4},errors:{type:Array,default:function(){return[]}},autosize:{type:Boolean,default:!0}},data:function(){return{textareaValue:""}},mounted:function(){var t=this;this.autosize&&s()(this.$refs.input),this.$on("input",(function(e){t.textareaValue=e})),setTimeout((function(){s()(t.$refs.textarea)}),0)},watch:{textareaValue:function(){}},computed:{linesCount:function(){return this.textareaValue?this.textareaValue.split(/\r\n|\r|\n/).length:0},wordsCount:function(){if(this.textareaValue){var t=this.textareaValue;return(t=(t=(t=t.replace(/\n/g," ")).replace(/(^\s*)|(\s*$)/gi,"")).replace(/\s\s+/gi," ")).split(" ").length}return 0},charactersCount:function(){return this.textareaValue?this.textareaValue.split("").length:0}}},i=n(0),o=Object(i.a)(r,(function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",[t.label?n("label",{staticClass:"form-label block mb-1 font-semibold text-gray-700",attrs:{for:t.id}},[t._v(t._s(t.label))]):t._e(),t._v(" "),n("div",{staticClass:"relative"},[n("textarea",t._b({ref:"input",staticClass:"px-2 py-2 leading-normal block w-full border-2 text-gray-800 bg-white font-sans rounded-lg text-left appearance-none focus:border-blue-600 outline-none",class:{"border-red-400":t.errors.length},attrs:{id:t.id,rows:t.rows,disabled:t.disabled},domProps:{value:t.value},on:{input:function(e){return t.$emit("input",e.target.value)},keydown:function(e){return t.$emit("keydown",e)},blur:function(e){return t.$emit("blur",e)},keyup:function(e){return t.$emit("keyup",e)}}},"textarea",t.$attrs,!1)),t._v(" "),t.stats?n("div",{staticClass:"textarea-stats my-1"},[n("ul",{staticClass:"no-bullet flex text-muted mb-0"},[n("li",{staticClass:"mr-2"},[t._v("Lines: "+t._s(t.linesCount||0))]),t._v(" "),n("li",{staticClass:"mr-2"},[t._v("Words: "+t._s(t.wordsCount||0))]),t._v(" "),n("li",{staticClass:"mr-2"},[t._v("Characters: "+t._s(t.charactersCount||0))])])]):t._e(),t._v(" "),t.helpText?n("small",{staticClass:"d-block form-text text-muted"},[t._v(t._s(t.helpText))]):t._e(),t._v(" "),t.errors.length?n("div",{staticClass:"text-red-600 mt-1 text-sm"},[t._v(t._s(t.errors[0]))]):t._e(),t._v(" "),t.errors.length?n("svg",{staticClass:"absolute text-red-600 fill-current",staticStyle:{top:"12px",right:"12px"},attrs:{xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",viewBox:"0 0 24 24"}},[n("path",{attrs:{d:"M11.953,2C6.465,2,2,6.486,2,12s4.486,10,10,10s10-4.486,10-10S17.493,2,11.953,2z M13,17h-2v-2h2V17z M13,13h-2V7h2V13z"}})]):t._e()])])}),[],!1,null,null,null);e.a=o.exports},function(t,e,n){"use strict";var a={inheritAttrs:!1,props:{id:{type:String,default:function(){return"select-input-".concat(this._uid)}},value:null,options:{type:[Object,Array],required:!0},label:String,errors:{type:Array,default:function(){return[]}},selectValue:String},data:function(){return{selectedOption:null}},mounted:function(){this.selectedOption=this.value},watch:{value:function(t){this.selectedOption=t}},methods:{focus:function(){this.$refs.input.focus()},select:function(){this.$refs.input.select()}}},s=(n(127),n(0)),r=Object(s.a)(a,(function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",[t.label?n("label",{staticClass:"form-label block mb-1 font-semibold text-gray-700",attrs:{for:t.id}},[t._v(t._s(t.label))]):t._e(),t._v(" "),n("div",{staticClass:"relative"},[n("select",t._b({directives:[{name:"model",rawName:"v-model",value:t.selectedOption,expression:"selectedOption"}],ref:"input",staticClass:"form-select px-2 py-2 h-12 leading-normal block w-full border-2 text-gray-800 bg-white font-sans rounded-lg text-left appearance-none focus:border-blue-600 outline-none relative pr-6 font-normal",class:{"border-red-400":t.errors.length},attrs:{id:t.id},on:{input:function(e){t.$emit("input",e.target.value)},change:function(e){var n=Array.prototype.filter.call(e.target.options,(function(t){return t.selected})).map((function(t){return"_value"in t?t._value:t.value}));t.selectedOption=e.target.multiple?n:n[0]}}},"select",t.$attrs,!1),[t._t("default"),t._v(" "),"value"==t.selectValue?t._l(t.options,(function(e){return n("option",{domProps:{value:e.value}},[t._v(t._s(e.label))])})):t._l(t.options,(function(e,a){return n("option",{domProps:{value:a}},[t._v(t._s(e))])}))],2),t._v(" "),t.errors.length?n("div",{staticClass:"text-red-600 mt-1 text-sm"},[t._v(t._s(t.errors[0]))]):t._e(),t._v(" "),t.errors.length?n("svg",{staticClass:"absolute text-red-600 fill-current",staticStyle:{top:"12px",right:"30px"},attrs:{xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",viewBox:"0 0 24 24"}},[n("path",{attrs:{d:"M11.953,2C6.465,2,2,6.486,2,12s4.486,10,10,10s10-4.486,10-10S17.493,2,11.953,2z M13,17h-2v-2h2V17z M13,13h-2V7h2V13z"}})]):t._e()])])}),[],!1,null,null,null);e.a=r.exports},function(t,e,n){"use strict";var a={props:{value:File,label:String,accept:String,errors:{type:Array,default:function(){return[]}}},watch:{value:function(t){t||(this.$refs.file.value="")}},data:function(){return{imageData:""}},methods:{filesize:function(t){var e=Math.floor(Math.log(t)/Math.log(1024));return 1*(t/Math.pow(1024,e)).toFixed(2)+" "+["B","kB","MB","GB","TB"][e]},browse:function(){this.$refs.file.click()},change:function(t){this.$emit("input",t.target.files[0]),this.previewImage(t)},remove:function(){this.$emit("input",null),this.errors=[]},previewImage:function(t){var e=this,n=t.target;if(n.files&&n.files[0]){var a=new FileReader;a.onload=function(t){e.imageData=t.target.result},a.readAsDataURL(n.files[0])}}}},s=n(0),r=Object(s.a)(a,(function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",[t.label?n("label",{staticClass:"form-label block mb-1 font-semibold text-gray-700"},[t._v(t._s(t.label))]):t._e(),t._v(" "),n("div",{staticClass:"form-input p-0",class:{error:t.errors.length}},[n("input",{ref:"file",staticClass:"hidden",attrs:{type:"file",accept:t.accept},on:{change:t.change}}),t._v(" "),t.value?n("div",[n("div",{staticClass:"flex"},[t.imageData.length>0?n("div",{staticClass:"shadow-inner image-preview mb-2 bg-gray-100 rounded-full bg-gray-100 h-24 w-24 overflow-hidden"},[n("img",{staticClass:"shadow-inner preview rounded-full h-24 w-24 object-contain",attrs:{src:t.imageData}})]):t._e(),t._v(" "),n("div",{staticClass:"flex flex-1 items-center justify-between ml-4"},[n("div",{staticClass:"pr-4"},[n("span",{staticClass:"block text-gray-700 w-32 truncate",attrs:{title:t.value.name}},[t._v(t._s(t.value.name))]),t._v(" "),n("span",{staticClass:"block text-gray-500 text-xs"},[t._v("("+t._s(t.filesize(t.value.size))+")")])]),t._v(" "),n("button",{staticClass:"inline-flex justify-center w-10 h-10 rounded-lg bg-red-100 hover:bg-red-200 text-sm",attrs:{type:"button"},on:{click:t.remove}},[n("svg",{staticClass:"fill-current text-red-600",attrs:{xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",viewBox:"0 0 24 24"}},[n("path",{attrs:{fill:"none",d:"M17.004 20L17.003 8h-1-8-1v12H17.004zM13.003 10h2v8h-2V10zM9.003 10h2v8h-2V10zM9.003 4H15.003V6H9.003z"}}),t._v(" "),n("path",{attrs:{d:"M5.003,20c0,1.103,0.897,2,2,2h10c1.103,0,2-0.897,2-2V8h2V6h-3h-1V4c0-1.103-0.897-2-2-2h-6c-1.103,0-2,0.897-2,2v2h-1h-3 v2h2V20z M9.003,4h6v2h-6V4z M8.003,8h8h1l0.001,12H7.003V8H8.003z"}}),t._v(" "),n("path",{attrs:{d:"M9.003 10H11.003V18H9.003zM13.003 10H15.003V18H13.003z"}})])])])])]):n("div",{staticClass:"flex items-center"},[n("div",{staticClass:"w-24 h-24 items-center justify-center rounded-full inline-flex bg-gray-100 mr-5 text-gray-400 shadow-inner"},[n("svg",{staticClass:"feather feather-image",attrs:{xmlns:"http://www.w3.org/2000/svg",width:"40",height:"40",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor","stroke-width":"2","stroke-linecap":"round","stroke-linejoin":"round"}},[n("rect",{attrs:{x:"3",y:"3",width:"18",height:"18",rx:"2",ry:"2"}}),t._v(" "),n("circle",{attrs:{cx:"8.5",cy:"8.5",r:"1.5"}}),t._v(" "),n("polyline",{attrs:{points:"21 15 16 10 5 21"}})])]),t._v(" "),n("div",[n("button",{staticClass:"rounded-lg px-5 py-2 bg-gray-500 hover:bg-gray-600 text-sm font-medium text-white",attrs:{type:"button"},on:{click:t.browse}},[t._v("Browse")]),t._v(" "),n("p",{staticClass:"mt-1 text-gray-500 mb-0 text-sm"},[t._v("Image must be atleast 200x200px as a png or jpeg file")])])])]),t._v(" "),t.errors.length?n("div",{staticClass:"form-error text-red-600 mt-2 text-sm"},[t._v(t._s(t.errors[0]))]):t._e()])}),[],!1,null,null,null);e.a=r.exports},,,,function(t,e,n){var a=n(116);"string"==typeof a&&(a=[[t.i,a,""]]);var s={hmr:!0,transform:void 0,insertInto:void 0};n(8)(a,s);a.locals&&(t.exports=a.locals)},function(t,e,n){var a=n(118);"string"==typeof a&&(a=[[t.i,a,""]]);var s={hmr:!0,transform:void 0,insertInto:void 0};n(8)(a,s);a.locals&&(t.exports=a.locals)},function(t,e,n){var a=n(120);"string"==typeof a&&(a=[[t.i,a,""]]);var s={hmr:!0,transform:void 0,insertInto:void 0};n(8)(a,s);a.locals&&(t.exports=a.locals)},function(t,e,n){var a=n(122);"string"==typeof a&&(a=[[t.i,a,""]]);var s={hmr:!0,transform:void 0,insertInto:void 0};n(8)(a,s);a.locals&&(t.exports=a.locals)},function(t,e,n){var a=n(124);"string"==typeof a&&(a=[[t.i,a,""]]);var s={hmr:!0,transform:void 0,insertInto:void 0};n(8)(a,s);a.locals&&(t.exports=a.locals)},function(t,e,n){var a=n(126);"string"==typeof a&&(a=[[t.i,a,""]]);var s={hmr:!0,transform:void 0,insertInto:void 0};n(8)(a,s);a.locals&&(t.exports=a.locals)},function(t,e,n){var a=n(128);"string"==typeof a&&(a=[[t.i,a,""]]);var s={hmr:!0,transform:void 0,insertInto:void 0};n(8)(a,s);a.locals&&(t.exports=a.locals)},,function(t,e,n){var a=n(133);"string"==typeof a&&(a=[[t.i,a,""]]);var s={hmr:!0,transform:void 0,insertInto:void 0};n(8)(a,s);a.locals&&(t.exports=a.locals)},,,,,,,,,,,,,function(t,e,n){var a=n(164);"string"==typeof a&&(a=[[t.i,a,""]]);var s={hmr:!0,transform:void 0,insertInto:void 0};n(8)(a,s);a.locals&&(t.exports=a.locals)},,,,,,,,,function(t,e,n){"use strict";function a(t){return function(t){if(Array.isArray(t)){for(var e=0,n=new Array(t.length);e<t.length;e++)n[e]=t[e];return n}}(t)||function(t){if(Symbol.iterator in Object(t)||"[object Arguments]"===Object.prototype.toString.call(t))return Array.from(t)}(t)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance")}()}var s={props:{id:{type:String,default:function(){return"text-input-".concat(this._uid)}},disabled:{type:Boolean,default:!1},value:Array,label:String},data:function(){return{newTag:""}},methods:{addTag:function(){0===this.newTag.trim().length||this.value.includes(this.newTag.trim())||(this.$emit("input",[].concat(a(this.value),[this.newTag.trim()])),this.newTag="")},removeTag:function(t){this.$emit("input",this.value.filter((function(e){return e!==t})))}}},r=(n(132),n(0)),i=Object(r.a)(s,(function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",[t.label?n("label",{staticClass:"form-label block mb-1 font-semibold text-gray-700",attrs:{for:t.id}},[t._v(t._s(t.label))]):t._e(),t._v(" "),n("div",{staticClass:"tags-input"},[t._l(t.value,(function(e,a){return n("span",{key:a,staticClass:"tags-input-tag"},[n("span",[t._v(t._s(e))]),t._v(" "),n("button",{staticClass:"tags-input-remove",attrs:{type:"button",disabled:t.disabled},on:{click:function(n){return t.removeTag(e)}}},[t._v("×")])])})),t._v(" "),n("input",{directives:[{name:"model",rawName:"v-model",value:t.newTag,expression:"newTag"}],staticClass:"tags-input-text",attrs:{placeholder:"Add tag...",readonly:t.disabled},domProps:{value:t.newTag},on:{keydown:function(e){return!e.type.indexOf("key")&&t._k(e.keyCode,"enter",13,e.key,"Enter")?null:(e.preventDefault(),t.addTag(e))},input:function(e){e.target.composing||(t.newTag=e.target.value)}}})],2)])}),[],!1,null,null,null);e.a=i.exports},,function(t,e,n){var a,s,r;s=[t,e],void 0===(r="function"==typeof(a=function(t,e){"use strict";var n,a,s="function"==typeof Map?new Map:(n=[],a=[],{has:function(t){return n.indexOf(t)>-1},get:function(t){return a[n.indexOf(t)]},set:function(t,e){-1===n.indexOf(t)&&(n.push(t),a.push(e))},delete:function(t){var e=n.indexOf(t);e>-1&&(n.splice(e,1),a.splice(e,1))}}),r=function(t){return new Event(t,{bubbles:!0})};try{new Event("test")}catch(t){r=function(t){var e=document.createEvent("Event");return e.initEvent(t,!0,!1),e}}function i(t){if(t&&t.nodeName&&"TEXTAREA"===t.nodeName&&!s.has(t)){var e,n=null,a=null,i=null,o=function(){t.clientWidth!==a&&u()},l=function(e){window.removeEventListener("resize",o,!1),t.removeEventListener("input",u,!1),t.removeEventListener("keyup",u,!1),t.removeEventListener("autosize:destroy",l,!1),t.removeEventListener("autosize:update",u,!1),Object.keys(e).forEach((function(n){t.style[n]=e[n]})),s.delete(t)}.bind(t,{height:t.style.height,resize:t.style.resize,overflowY:t.style.overflowY,overflowX:t.style.overflowX,wordWrap:t.style.wordWrap});t.addEventListener("autosize:destroy",l,!1),"onpropertychange"in t&&"oninput"in t&&t.addEventListener("keyup",u,!1),window.addEventListener("resize",o,!1),t.addEventListener("input",u,!1),t.addEventListener("autosize:update",u,!1),t.style.overflowX="hidden",t.style.wordWrap="break-word",s.set(t,{destroy:l,update:u}),"vertical"===(e=window.getComputedStyle(t,null)).resize?t.style.resize="none":"both"===e.resize&&(t.style.resize="horizontal"),n="content-box"===e.boxSizing?-(parseFloat(e.paddingTop)+parseFloat(e.paddingBottom)):parseFloat(e.borderTopWidth)+parseFloat(e.borderBottomWidth),isNaN(n)&&(n=0),u()}function c(e){var n=t.style.width;t.style.width="0px",t.offsetWidth,t.style.width=n,t.style.overflowY=e}function d(){if(0!==t.scrollHeight){var e=function(t){for(var e=[];t&&t.parentNode&&t.parentNode instanceof Element;)t.parentNode.scrollTop&&e.push({node:t.parentNode,scrollTop:t.parentNode.scrollTop}),t=t.parentNode;return e}(t),s=document.documentElement&&document.documentElement.scrollTop;t.style.height="",t.style.height=t.scrollHeight+n+"px",a=t.clientWidth,e.forEach((function(t){t.node.scrollTop=t.scrollTop})),s&&(document.documentElement.scrollTop=s)}}function u(){d();var e=Math.round(parseFloat(t.style.height)),n=window.getComputedStyle(t,null),a="content-box"===n.boxSizing?Math.round(parseFloat(n.height)):t.offsetHeight;if(a<e?"hidden"===n.overflowY&&(c("scroll"),d(),a="content-box"===n.boxSizing?Math.round(parseFloat(window.getComputedStyle(t,null).height)):t.offsetHeight):"hidden"!==n.overflowY&&(c("hidden"),d(),a="content-box"===n.boxSizing?Math.round(parseFloat(window.getComputedStyle(t,null).height)):t.offsetHeight),i!==a){i=a;var s=r("autosize:resized");try{t.dispatchEvent(s)}catch(t){}}}}function o(t){var e=s.get(t);e&&e.destroy()}function l(t){var e=s.get(t);e&&e.update()}var c=null;"undefined"==typeof window||"function"!=typeof window.getComputedStyle?((c=function(t){return t}).destroy=function(t){return t},c.update=function(t){return t}):((c=function(t,e){return t&&Array.prototype.forEach.call(t.length?t:[t],(function(t){return i(t)})),t}).destroy=function(t){return t&&Array.prototype.forEach.call(t.length?t:[t],o),t},c.update=function(t){return t&&Array.prototype.forEach.call(t.length?t:[t],l),t}),e.default=c,t.exports=e.default})?a.apply(e,s):a)||(t.exports=r)},,,,,,,,,,,,,,,,,,,,,,,,,,,,,function(t,e,n){"use strict";n.r(e);var a=n(6),s=n(1),r=n(3),i=n(4),o=n(2),l=n(10),c=n(23),d=n(5),u=n(17),p=n(14),b=n(15),h=n(9),v=n(22),f=n(24),m=n(18),g=n(58),x=new Date,_=x.getDate(),y=x.getMonth()+1,w=x.getFullYear(),C="".concat(_,"/").concat(y,"/").concat(w),k={components:{Layout:a.a,Heading:s.a,Icon:r.a,LinkTo:i.a,Card:o.a,TextInput:l.a,SelectInput:c.a,SimpleEditor:u.a,LoadingButton:d.a,SwitchInput:p.a,DateInput:b.a,Alert:h.a,TextareaInput:v.a,FileInput:f.a,EmptyState:m.a,TagsInput:g.a},props:["jobtypes","categories","industries","errors","companies","experiencelevels"],data:function(){return{job:{job_title:null,job_location:null,job_category:null,job_experience_level:null,job_type:null,job_salary:null,job_skills:["Laravel","React"],job_email:null,job_description:"<p><strong>Required Knowledge, Skills, and Abilities</strong></p><p>Ability to write code – HTML & CSS (SCSS flavor of SASS preferred when writing CSS)Proficient in Photoshop, Illustrator, bonus points for familiarity with Sketch (Sketch is our preferred concepting)Cross-browser and platform testing as standard practiceExperience using Invision a plusExperience in video production a plus or, at a minimum, a willingness to learn</p><br> <p><strong>Education + Experience</strong></p><p>Advanced degree or equivalent experience in graphic and web design3 or more years of professional design experience</p>",job_starting_date:C,job_closing_date:C,company_id:null,meta_description:null,meta_keywords:[],seo_title:null},companySize:{"0-25":"0-25","25-50":"25-50","50-100":"50-100","100+":"100+"},salaries:{"10k-15k":"10k-15k","15k-20k":"15k-20k","20k-40k":"20k-40k","40k+":"40k+"}}},methods:{saveJobPost:function(){var t=this;this.$refs.jobSaveButton.startLoading(),this.$inertia.post(this.route("admin.jobs.store"),this.job).then((function(){t.$refs.jobSaveButton.stopLoading()})).catch((function(){t.$refs.jobSaveButton.stopLoading()}))}}},j=(n(163),n(0)),S=Object(j.a)(k,(function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("layout",[n("div",{staticClass:"bg-white px-4 pt-6 pb-4 relative shadow-sm z-20"},[n("div",{staticClass:"max-w-6xl mx-auto"},[n("link-to",{staticClass:"mb-2",attrs:{to:"/admin/jobs"}},[n("icon",{staticClass:"-ml-2",attrs:{name:"chevron-left"}}),t._v("Back to Jobs\n\t\t\t")],1),t._v(" "),n("div",{staticClass:"flex w-full justify-between items-center"},[n("div",{staticClass:"flex-1"},[n("heading",{attrs:{size:"heading"}},[t._v("Create New Job Posts")])],1),t._v(" "),n("div",[t.companies.length>0?n("loading-button",{ref:"jobSaveButton",staticClass:"mt-2 md:mt-0",attrs:{size:"small"},on:{click:t.saveJobPost}},[t._v("Save Job Post")]):t._e()],1)])],1)]),t._v(" "),n("div",{staticClass:"py-10"},[t.companies.length<=0?n("div",{staticClass:"max-w-6xl mx-auto"},[n("empty-state",{staticClass:"lg:py-32"},[n("div",{staticClass:"w-24 h-24 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-center mx-auto"},[n("icon",{staticClass:"w-8 h-8",attrs:{name:"search"}})],1),t._v(" "),n("heading",{staticClass:"mt-5 mb-1",attrs:{size:"heading"}},[t._v("No Companies found")]),t._v(" "),n("p",[t._v("Please create atleast one company/organization details to add a job post.")]),t._v(" "),n("loading-button",{staticClass:"mt-6",attrs:{tag:"a",to:"/admin/companies/create",size:"small"}},[n("icon",{staticClass:"mr-1",attrs:{name:"plus"}}),t._v("Create Company\n\t\t\t\t")],1)],1)],1):n("div",{staticClass:"max-w-6xl mx-auto"},[n("div",{staticClass:"md:flex -mx-4"},[n("div",{staticClass:"px-4"},[n("alert",{staticClass:"mb-4"},[n("strong",[t._v("Note:")]),t._v(" Job postings once created will go to the admin first for moderation and then only will be published on the website. It will take 24hrs for the moderation process to get completed.\n\t\t\t\t\t")]),t._v(" "),n("div",{staticClass:"md:flex mb-10 -mx-4"},[n("div",{staticClass:"md:w-1/3 mb-3 px-4"},[n("heading",{staticClass:"mb-1",attrs:{size:"large"}},[t._v("Job Details")]),t._v(" "),n("heading",{staticClass:"mb-4"},[t._v("Introduce job seekers to the role by describing responsibilities, skills and technologies...")])],1),t._v(" "),n("div",{staticClass:"md:w-2/3 px-4"},[n("card",[n("select-input",{staticClass:"mb-4",attrs:{label:"Company",options:t.companies,"select-value":"value",errors:t.errors.company_id},on:{keydown:function(e){delete t.errors.company_id}},model:{value:t.job.company_id,callback:function(e){t.$set(t.job,"company_id",e)},expression:"job.company_id"}},[n("option",{attrs:{value:"null",disabled:""}},[t._v("Select company")])]),t._v(" "),n("text-input",{staticClass:"mb-4",attrs:{label:"Title",placeholder:"eg. Senior Web Developer",errors:t.errors.job_title},on:{keydown:function(e){delete t.errors.job_title}},model:{value:t.job.job_title,callback:function(e){t.$set(t.job,"job_title",e)},expression:"job.job_title"}}),t._v(" "),n("text-input",{staticClass:"mb-4",attrs:{label:"Location",placeholder:"City or Town/Place name",errors:t.errors.job_location},on:{keydown:function(e){delete t.errors.job_location}},model:{value:t.job.job_location,callback:function(e){t.$set(t.job,"job_location",e)},expression:"job.job_location"}}),t._v(" "),n("div",{staticClass:"flex -mx-4"},[n("div",{staticClass:"w-1/2 px-4"},[n("select-input",{staticClass:"mb-4",attrs:{label:"Type",options:t.jobtypes,errors:t.errors.job_type},on:{keydown:function(e){delete t.errors.job_type}},model:{value:t.job.job_type,callback:function(e){t.$set(t.job,"job_type",e)},expression:"job.job_type"}},[n("option",{attrs:{value:"null",disabled:""}},[t._v("Select job type")])])],1),t._v(" "),n("div",{staticClass:"w-1/2 px-4"},[n("select-input",{staticClass:"mb-4",attrs:{label:"Salary (monthly)",options:t.salaries,errors:t.errors.job_salary},on:{keydown:function(e){delete t.errors.job_salary}},model:{value:t.job.job_salary,callback:function(e){t.$set(t.job,"job_salary",e)},expression:"job.job_salary"}},[n("option",{attrs:{value:"null",disabled:""}},[t._v("Select salary")])])],1)]),t._v(" "),n("div",{staticClass:"flex flex-wrap -mx-4"},[n("div",{staticClass:"w-1/2 px-4"},[n("select-input",{staticClass:"mb-4",attrs:{label:"Category",options:t.categories,errors:t.errors.job_category},on:{keydown:function(e){delete t.errors.job_category}},model:{value:t.job.job_category,callback:function(e){t.$set(t.job,"job_category",e)},expression:"job.job_category"}},[n("option",{attrs:{value:"null",disabled:""}},[t._v("Select job category")])])],1),t._v(" "),n("div",{staticClass:"w-1/2 px-4"},[n("select-input",{staticClass:"mb-4",attrs:{label:"Experience Level",options:t.experiencelevels,errors:t.errors.job_experience_level},on:{keydown:function(e){delete t.errors.job_experience_level}},model:{value:t.job.job_experience_level,callback:function(e){t.$set(t.job,"job_experience_level",e)},expression:"job.job_experience_level"}},[n("option",{attrs:{value:"null",disabled:""}},[t._v("Select experience level")])])],1)]),t._v(" "),n("text-input",{staticClass:"mb-4",attrs:{type:"email",label:"Email for candidate",placeholder:"Email to send resume/cv",errors:t.errors.job_email},on:{keydown:function(e){delete t.errors.job_email}},model:{value:t.job.job_email,callback:function(e){t.$set(t.job,"job_email",e)},expression:"job.job_email"}}),t._v(" "),n("tags-input",{staticClass:"mb-4",attrs:{label:"Skills"},model:{value:t.job.job_skills,callback:function(e){t.$set(t.job,"job_skills",e)},expression:"job.job_skills"}}),t._v(" "),n("simple-editor",{staticClass:"mb-4",attrs:{label:"Description",errors:t.errors.job_description},on:{keydown:function(e){delete t.errors.job_description}},model:{value:t.job.job_description,callback:function(e){t.$set(t.job,"job_description",e)},expression:"job.job_description"}})],1)],1)]),t._v(" "),n("div",{staticClass:"md:flex mb-10 -mx-4"},[n("div",{staticClass:"md:w-1/3 px-4"},[n("heading",{staticClass:"mb-1",attrs:{size:"large"}},[t._v("Job Post Date")]),t._v(" "),n("heading",{staticClass:"mb-4"},[t._v("The date when the job post will start appear in the site & closed for applying.")])],1),t._v(" "),n("div",{staticClass:"md:w-2/3 px-4"},[n("card",[n("div",{staticClass:"flex flex-wrap -mx-4"},[n("div",{staticClass:"w-1/2 px-4"},[n("date-input",{staticClass:"w-48 mb-4",attrs:{label:"Job Opening Date",placeholder:"Select date",readonly:""},model:{value:t.job.job_starting_date,callback:function(e){t.$set(t.job,"job_starting_date",e)},expression:"job.job_starting_date"}})],1),t._v(" "),n("div",{staticClass:"w-1/2 px-4"},[n("date-input",{staticClass:"w-48",attrs:{label:"Job Closing Date",placeholder:"Select date",readonly:""},model:{value:t.job.job_closing_date,callback:function(e){t.$set(t.job,"job_closing_date",e)},expression:"job.job_closing_date"}})],1)])])],1)]),t._v(" "),n("div",{staticClass:"md:flex -mx-4"},[n("div",{staticClass:"md:w-1/3 px-4"},[n("heading",{staticClass:"mb-1",attrs:{size:"large"}},[t._v("SEO Content")]),t._v(" "),n("heading",{staticClass:"mb-4"},[t._v("Write great content optimized for SEO")])],1),t._v(" "),n("div",{staticClass:"md:w-2/3 px-4"},[n("card",[n("textarea-input",{staticClass:"mb-4",attrs:{label:"Meta Description",placeholder:"eg. Ability to write code – HTML & CSS (SCSS flavor of SASS preferred when writing CSS)Proficient in Photoshop, Illustrator, bonus points for familiarity with Sketch (Sketch is our preferred concepting)Cross-browser and platform testing as standard practiceExperience using Invision a plusExperience in video production a plus or, at a minimum, a willingness to learn"},model:{value:t.job.meta_description,callback:function(e){t.$set(t.job,"meta_description",e)},expression:"job.meta_description"}}),t._v(" "),n("tags-input",{staticClass:"mb-4",attrs:{label:"Meta Keywords"},model:{value:t.job.meta_keywords,callback:function(e){t.$set(t.job,"meta_keywords",e)},expression:"job.meta_keywords"}}),t._v(" "),n("text-input",{staticClass:"mb-4",attrs:{label:"SEO Title",placeholder:"eg. Senior web developer in guwahati"},model:{value:t.job.seo_title,callback:function(e){t.$set(t.job,"seo_title",e)},expression:"job.seo_title"}})],1)],1)])],1)])])])])}),[],!1,null,null,null);e.default=S.exports},,,,,,,,,,,,,,,,,,,,,,,,,,function(t,e,n){"use strict";var a=n(28);n.n(a).a},function(t,e,n){(t.exports=n(7)(!1)).push([t.i,".table-striped tbody tr:nth-child(even) {\n  background-color: #f7fafc;\n}\n",""])},function(t,e,n){"use strict";var a=n(29);n.n(a).a},function(t,e,n){(t.exports=n(7)(!1)).push([t.i,".alert-custom[data-v-4611a825] {\n  border-radius: 10px;\n}\n.fill-current[data-v-4611a825] {\n  fill: currentColor;\n}\n.text-alert-danger[data-v-4611a825] {\n  color: #dc3545;\n}",""])},function(t,e,n){"use strict";var a=n(30);n.n(a).a},function(t,e,n){(t.exports=n(7)(!1)).push([t.i,'.menu-active {\n  position: relative;\n}\n.menu-active:after {\n  bottom: 0;\n  position: absolute;\n  left: 0;\n  right: 0;\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  content: "";\n  height: 3px;\n  width: 100%;\n  border-radius: 1000px;\n  border-bottom-left-radius: 0px;\n  border-bottom-right-radius: 0px;\n  background-color: #29a7c9;\n}\n.overlay-black {\n  position: relative;\n}\n.overlay-black:after {\n  position: absolute;\n  content: "";\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  width: 100%;\n  display: block;\n  height: 100%;\n  background-image: linear-gradient(\n\t\trgba(0, 0, 0, 0.01) 0%,\n\t\trgba(0, 0, 0, 0.1) 45%,\n\t\trgba(0, 0, 0, 0.75) 100%\n\t);\n  z-index: 1;\n}\n',""])},function(t,e,n){"use strict";var a=n(31);n.n(a).a},function(t,e,n){(t.exports=n(7)(!1)).push([t.i,".switch-button-control {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n}\n.switch-button-control .switch-button {\n  height: 1.6em;\n  width: calc(1.6em * 2);\n  /* border: 2px solid #ddd; */\n  /* box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0.33); */\n  border-radius: 1.6em;\n  transition: all 0.3s ease-in-out;\n  cursor: pointer;\n  background: #ddd;\n  box-sizing: border-box;\n}\n.switch-button-control .switch-button .button {\n  height: 1.6em;\n  width: 1.6em;\n  border: 2px solid #ddd;\n  border-radius: 1.6em;\n  background-color: #fff;\n  transition: all 0.3s ease-in-out;\n  box-sizing: border-box;\n}\n.switch-button-control .switch-button.enabled {\n  background-color: var(--color);\n  box-shadow: none;\n}\n.switch-button-control .switch-button.enabled .button {\n  background: white;\n  border: 2px solid var(--color);\n  transform: translateX(calc(calc(1.6em - (2 * 2px)) + (2 * 2px)));\n}\n.switch-button-control .switch-button-label {\n  margin-left: 10px;\n}\n",""])},function(t,e,n){"use strict";var a=n(32);n.n(a).a},function(t,e,n){(t.exports=n(7)(!1)).push([t.i,".date-input {\n  background-color: #fff;\n  border-radius: 10px;\n  padding: 1rem;\n  z-index: 2000;\n  margin: 3px 0 0 0;\n  border-top: 1px solid #eee;\n  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),\n\t\t0 4px 6px -2px rgba(0, 0, 0, 0.05);\n}\n.date-input.is-hidden {\n  display: none;\n}\n.date-input .pika-title {\n  padding: 0.5rem;\n  width: 100%;\n  text-align: center;\n}\n.date-input .pika-prev,\n.date-input .pika-next {\n  margin-top: 0;\n  /* margin-top: 0.5rem; */\n  padding: 0.25rem 0;\n  cursor: pointer;\n  color: #4299e1;\n}\n.date-input .pika-prev:hover,\n.date-input .pika-next:hover {\n  text-decoration: underline;\n}\n.date-input .pika-prev {\n  float: left;\n}\n.date-input .pika-next {\n  float: right;\n}\n.date-input .pika-label {\n  display: inline-block;\n  font-size: 0;\n}\n.date-input .pika-select-month,\n.date-input .pika-select-year {\n  display: inline-block;\n  border: 1px solid #ddd;\n  color: #444;\n  background-color: #fff;\n  border-radius: 10px;\n  font-size: 0.9rem;\n  padding-left: 0.5em;\n  padding-right: 0.5em;\n  padding-top: 0.25em;\n  padding-bottom: 0.25em;\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n}\n.date-input .pika-select-month:focus,\n.date-input .pika-select-year:focus {\n  border-color: #cbd5e0;\n  outline: none;\n}\n.date-input .pika-select-month {\n  margin-right: 0.25em;\n}\n.date-input table {\n  width: 100%;\n  border-collapse: collapse;\n}\n.date-input table th {\n  width: 2em;\n  height: 2em;\n  font-weight: normal;\n  color: #718096;\n  text-align: center;\n}\n.date-input table th abbr {\n  text-decoration: none;\n}\n.date-input table td {\n  padding: 2px;\n}\n.date-input table td button {\n  /* border: 1px solid #e2e8f0; */\n  width: 2em;\n  height: 2em;\n  text-align: center;\n  color: #555;\n  border-radius: 10px;\n}\n.date-input table td button:hover {\n  background-color: #bee3f8;\n}\n.date-input table td.is-today button {\n  background-color: #90cdf4;\n}\n.date-input table td.is-selected button {\n  background-color: #3182ce;\n}\n.date-input table td.is-selected button {\n  color: white;\n}\n.date-input table td.is-selected button:hover {\n  color: white;\n}\n",""])},function(t,e,n){"use strict";var a=n(33);n.n(a).a},function(t,e,n){(t.exports=n(7)(!1)).push([t.i,".ql-toolbar.ql-snow {\n  border-top-left-radius: 0.5rem;\n  border-top-right-radius: 0.5rem;\n  background-color: #e2e8f0;\n  padding-top: 2px;\n  padding-bottom: 2px;\n}\n.ql-toolbar.ql-snow,\n.ql-container.ql-snow {\n  border: 2px solid #e2e8f0;\n}\n.ql-container,\n.ql-editor {\n  font-size: 1rem;\n  font-family: inherit;\n}\n.simple-editor.error .ql-toolbar.ql-snow,\n.simple-editor.error .ql-container.ql-snow {\n  border-color: #fc8181;\n}\n",""])},function(t,e,n){"use strict";var a=n(34);n.n(a).a},function(t,e,n){(t.exports=n(7)(!1)).push([t.i,'.form-select {\n  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAQCAYAAAAMJL+VAAAABGdBTUEAALGPC/xhBQAAAQtJREFUOBG1lEEOgjAQRalbGj2OG9caOACn4ALGtfEuHACiazceR1PWOH/CNA3aMiTaBDpt/7zPdBKy7M/DCL9pGkvxxVp7KsvyJftL5rZt1865M+Ucq6pyyF3hNcI7Cuu+728QYn/JQA5yKaempxuZmQngOwEaYx55nu+1lQh8GIatMGi+01NwBcEmhxBqK4nAPZJ78K0KKFAJmR3oPp8+Iwgob0Oa6+TLoeCvRx+mTUYf/FVBGTPRwDkfLxnaSrRwcH0FWhNOmrkWYbE2XEicqgSa1J0LQ+aPCuQgZiLnwewbGuz5MGoAhcIkCQcjaTBjMgtXGURMVHC1wcQEy0J+Zlj8bKAnY1/UzDe2dbAVqfXn6wAAAABJRU5ErkJggg==");\n  background-size: 0.7rem;\n  background-repeat: no-repeat;\n  background-position: right 0.75rem center;\n}\n',""])},,,,function(t,e,n){"use strict";var a=n(36);n.n(a).a},function(t,e,n){(t.exports=n(7)(!1)).push([t.i,".tags-input {\n  display: flex;\n  flex-wrap: wrap;\n  background-color: #fff;\n  border-width: 2px;\n  border-radius: 0.625rem;\n  padding-left: 0.5rem;\n  padding-right: 1rem;\n  padding-top: 0.5rem;\n  padding-bottom: 0.25rem;\n}\n.tags-input-tag {\n  display: inline-flex;\n  line-height: 1;\n  align-items: center;\n  font-size: 0.875rem;\n  background-color: #e5f4f8;\n  color: #2598b5;\n  border-radius: 0.625rem;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  padding: 0.25rem 0.35rem;\n  margin-right: 0.5rem;\n  margin-bottom: 0.25rem;\n}\n.tags-input-tag:last-of-type {\n  margin-right: 0;\n}\n.tags-input-remove {\n  color: #2598b5;\n  font-size: 1.125rem;\n  line-height: 1;\n}\n.tags-input-remove:first-child {\n  margin-right: 0.25rem;\n}\n.tags-input-remove:last-child {\n  margin-left: 0.25rem;\n}\n.tags-input-remove:focus {\n  outline: 0;\n}\n.tags-input-text {\n  flex: 1;\n  outline: 0;\n  padding-top: 0.25rem;\n  padding-bottom: 0.25rem;\n  margin-left: 0.5rem;\n  margin-bottom: 0.25rem;\n  min-width: 10rem;\n}\n.py-16 {\n  padding-top: 4rem;\n  padding-bottom: 4rem;\n}\n",""])},,,,,,,,,,,,,,,,,,,,,,,,,,,,,,function(t,e,n){"use strict";var a=n(49);n.n(a).a},function(t,e,n){(t.exports=n(7)(!1)).push([t.i,".vue-file-agent .file-preview-wrapper:before {\n  border-radius: 10px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  text-align: center;\n}\n#profile-pic-demo .drop-help-text {\n  display: none;\n}\n#profile-pic-demo .is-drag-over .drop-help-text {\n  display: block;\n}\n#profile-pic-demo .profile-pic-upload-block {\n  border: 2px dashed transparent;\n  padding: 20px;\n  padding-top: 0;\n}\n#profile-pic-demo .is-drag-over.profile-pic-upload-block {\n  border-color: #aaa;\n}\n#profile-pic-demo .vue-file-agent {\n  width: 180px;\n  float: left;\n  margin: 0 15px 5px 0;\n  border: 0;\n  box-shadow: none;\n}\n",""])}]]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[8],{
+
+/***/ "./node_modules/popper.js/dist/esm/popper.js":
+/*!***************************************************!*\
+  !*** ./node_modules/popper.js/dist/esm/popper.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(global) {/**!
+ * @fileOverview Kickass library to create and place poppers near their reference elements.
+ * @version 1.16.0
+ * @license
+ * Copyright (c) 2016 Federico Zivolo and contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+var isBrowser = typeof window !== 'undefined' && typeof document !== 'undefined' && typeof navigator !== 'undefined';
+
+var timeoutDuration = function () {
+  var longerTimeoutBrowsers = ['Edge', 'Trident', 'Firefox'];
+  for (var i = 0; i < longerTimeoutBrowsers.length; i += 1) {
+    if (isBrowser && navigator.userAgent.indexOf(longerTimeoutBrowsers[i]) >= 0) {
+      return 1;
+    }
+  }
+  return 0;
+}();
+
+function microtaskDebounce(fn) {
+  var called = false;
+  return function () {
+    if (called) {
+      return;
+    }
+    called = true;
+    window.Promise.resolve().then(function () {
+      called = false;
+      fn();
+    });
+  };
+}
+
+function taskDebounce(fn) {
+  var scheduled = false;
+  return function () {
+    if (!scheduled) {
+      scheduled = true;
+      setTimeout(function () {
+        scheduled = false;
+        fn();
+      }, timeoutDuration);
+    }
+  };
+}
+
+var supportsMicroTasks = isBrowser && window.Promise;
+
+/**
+* Create a debounced version of a method, that's asynchronously deferred
+* but called in the minimum time possible.
+*
+* @method
+* @memberof Popper.Utils
+* @argument {Function} fn
+* @returns {Function}
+*/
+var debounce = supportsMicroTasks ? microtaskDebounce : taskDebounce;
+
+/**
+ * Check if the given variable is a function
+ * @method
+ * @memberof Popper.Utils
+ * @argument {Any} functionToCheck - variable to check
+ * @returns {Boolean} answer to: is a function?
+ */
+function isFunction(functionToCheck) {
+  var getType = {};
+  return functionToCheck && getType.toString.call(functionToCheck) === '[object Function]';
+}
+
+/**
+ * Get CSS computed property of the given element
+ * @method
+ * @memberof Popper.Utils
+ * @argument {Eement} element
+ * @argument {String} property
+ */
+function getStyleComputedProperty(element, property) {
+  if (element.nodeType !== 1) {
+    return [];
+  }
+  // NOTE: 1 DOM access here
+  var window = element.ownerDocument.defaultView;
+  var css = window.getComputedStyle(element, null);
+  return property ? css[property] : css;
+}
+
+/**
+ * Returns the parentNode or the host of the element
+ * @method
+ * @memberof Popper.Utils
+ * @argument {Element} element
+ * @returns {Element} parent
+ */
+function getParentNode(element) {
+  if (element.nodeName === 'HTML') {
+    return element;
+  }
+  return element.parentNode || element.host;
+}
+
+/**
+ * Returns the scrolling parent of the given element
+ * @method
+ * @memberof Popper.Utils
+ * @argument {Element} element
+ * @returns {Element} scroll parent
+ */
+function getScrollParent(element) {
+  // Return body, `getScroll` will take care to get the correct `scrollTop` from it
+  if (!element) {
+    return document.body;
+  }
+
+  switch (element.nodeName) {
+    case 'HTML':
+    case 'BODY':
+      return element.ownerDocument.body;
+    case '#document':
+      return element.body;
+  }
+
+  // Firefox want us to check `-x` and `-y` variations as well
+
+  var _getStyleComputedProp = getStyleComputedProperty(element),
+      overflow = _getStyleComputedProp.overflow,
+      overflowX = _getStyleComputedProp.overflowX,
+      overflowY = _getStyleComputedProp.overflowY;
+
+  if (/(auto|scroll|overlay)/.test(overflow + overflowY + overflowX)) {
+    return element;
+  }
+
+  return getScrollParent(getParentNode(element));
+}
+
+/**
+ * Returns the reference node of the reference object, or the reference object itself.
+ * @method
+ * @memberof Popper.Utils
+ * @param {Element|Object} reference - the reference element (the popper will be relative to this)
+ * @returns {Element} parent
+ */
+function getReferenceNode(reference) {
+  return reference && reference.referenceNode ? reference.referenceNode : reference;
+}
+
+var isIE11 = isBrowser && !!(window.MSInputMethodContext && document.documentMode);
+var isIE10 = isBrowser && /MSIE 10/.test(navigator.userAgent);
+
+/**
+ * Determines if the browser is Internet Explorer
+ * @method
+ * @memberof Popper.Utils
+ * @param {Number} version to check
+ * @returns {Boolean} isIE
+ */
+function isIE(version) {
+  if (version === 11) {
+    return isIE11;
+  }
+  if (version === 10) {
+    return isIE10;
+  }
+  return isIE11 || isIE10;
+}
+
+/**
+ * Returns the offset parent of the given element
+ * @method
+ * @memberof Popper.Utils
+ * @argument {Element} element
+ * @returns {Element} offset parent
+ */
+function getOffsetParent(element) {
+  if (!element) {
+    return document.documentElement;
+  }
+
+  var noOffsetParent = isIE(10) ? document.body : null;
+
+  // NOTE: 1 DOM access here
+  var offsetParent = element.offsetParent || null;
+  // Skip hidden elements which don't have an offsetParent
+  while (offsetParent === noOffsetParent && element.nextElementSibling) {
+    offsetParent = (element = element.nextElementSibling).offsetParent;
+  }
+
+  var nodeName = offsetParent && offsetParent.nodeName;
+
+  if (!nodeName || nodeName === 'BODY' || nodeName === 'HTML') {
+    return element ? element.ownerDocument.documentElement : document.documentElement;
+  }
+
+  // .offsetParent will return the closest TH, TD or TABLE in case
+  // no offsetParent is present, I hate this job...
+  if (['TH', 'TD', 'TABLE'].indexOf(offsetParent.nodeName) !== -1 && getStyleComputedProperty(offsetParent, 'position') === 'static') {
+    return getOffsetParent(offsetParent);
+  }
+
+  return offsetParent;
+}
+
+function isOffsetContainer(element) {
+  var nodeName = element.nodeName;
+
+  if (nodeName === 'BODY') {
+    return false;
+  }
+  return nodeName === 'HTML' || getOffsetParent(element.firstElementChild) === element;
+}
+
+/**
+ * Finds the root node (document, shadowDOM root) of the given element
+ * @method
+ * @memberof Popper.Utils
+ * @argument {Element} node
+ * @returns {Element} root node
+ */
+function getRoot(node) {
+  if (node.parentNode !== null) {
+    return getRoot(node.parentNode);
+  }
+
+  return node;
+}
+
+/**
+ * Finds the offset parent common to the two provided nodes
+ * @method
+ * @memberof Popper.Utils
+ * @argument {Element} element1
+ * @argument {Element} element2
+ * @returns {Element} common offset parent
+ */
+function findCommonOffsetParent(element1, element2) {
+  // This check is needed to avoid errors in case one of the elements isn't defined for any reason
+  if (!element1 || !element1.nodeType || !element2 || !element2.nodeType) {
+    return document.documentElement;
+  }
+
+  // Here we make sure to give as "start" the element that comes first in the DOM
+  var order = element1.compareDocumentPosition(element2) & Node.DOCUMENT_POSITION_FOLLOWING;
+  var start = order ? element1 : element2;
+  var end = order ? element2 : element1;
+
+  // Get common ancestor container
+  var range = document.createRange();
+  range.setStart(start, 0);
+  range.setEnd(end, 0);
+  var commonAncestorContainer = range.commonAncestorContainer;
+
+  // Both nodes are inside #document
+
+  if (element1 !== commonAncestorContainer && element2 !== commonAncestorContainer || start.contains(end)) {
+    if (isOffsetContainer(commonAncestorContainer)) {
+      return commonAncestorContainer;
+    }
+
+    return getOffsetParent(commonAncestorContainer);
+  }
+
+  // one of the nodes is inside shadowDOM, find which one
+  var element1root = getRoot(element1);
+  if (element1root.host) {
+    return findCommonOffsetParent(element1root.host, element2);
+  } else {
+    return findCommonOffsetParent(element1, getRoot(element2).host);
+  }
+}
+
+/**
+ * Gets the scroll value of the given element in the given side (top and left)
+ * @method
+ * @memberof Popper.Utils
+ * @argument {Element} element
+ * @argument {String} side `top` or `left`
+ * @returns {number} amount of scrolled pixels
+ */
+function getScroll(element) {
+  var side = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'top';
+
+  var upperSide = side === 'top' ? 'scrollTop' : 'scrollLeft';
+  var nodeName = element.nodeName;
+
+  if (nodeName === 'BODY' || nodeName === 'HTML') {
+    var html = element.ownerDocument.documentElement;
+    var scrollingElement = element.ownerDocument.scrollingElement || html;
+    return scrollingElement[upperSide];
+  }
+
+  return element[upperSide];
+}
+
+/*
+ * Sum or subtract the element scroll values (left and top) from a given rect object
+ * @method
+ * @memberof Popper.Utils
+ * @param {Object} rect - Rect object you want to change
+ * @param {HTMLElement} element - The element from the function reads the scroll values
+ * @param {Boolean} subtract - set to true if you want to subtract the scroll values
+ * @return {Object} rect - The modifier rect object
+ */
+function includeScroll(rect, element) {
+  var subtract = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+  var scrollTop = getScroll(element, 'top');
+  var scrollLeft = getScroll(element, 'left');
+  var modifier = subtract ? -1 : 1;
+  rect.top += scrollTop * modifier;
+  rect.bottom += scrollTop * modifier;
+  rect.left += scrollLeft * modifier;
+  rect.right += scrollLeft * modifier;
+  return rect;
+}
+
+/*
+ * Helper to detect borders of a given element
+ * @method
+ * @memberof Popper.Utils
+ * @param {CSSStyleDeclaration} styles
+ * Result of `getStyleComputedProperty` on the given element
+ * @param {String} axis - `x` or `y`
+ * @return {number} borders - The borders size of the given axis
+ */
+
+function getBordersSize(styles, axis) {
+  var sideA = axis === 'x' ? 'Left' : 'Top';
+  var sideB = sideA === 'Left' ? 'Right' : 'Bottom';
+
+  return parseFloat(styles['border' + sideA + 'Width'], 10) + parseFloat(styles['border' + sideB + 'Width'], 10);
+}
+
+function getSize(axis, body, html, computedStyle) {
+  return Math.max(body['offset' + axis], body['scroll' + axis], html['client' + axis], html['offset' + axis], html['scroll' + axis], isIE(10) ? parseInt(html['offset' + axis]) + parseInt(computedStyle['margin' + (axis === 'Height' ? 'Top' : 'Left')]) + parseInt(computedStyle['margin' + (axis === 'Height' ? 'Bottom' : 'Right')]) : 0);
+}
+
+function getWindowSizes(document) {
+  var body = document.body;
+  var html = document.documentElement;
+  var computedStyle = isIE(10) && getComputedStyle(html);
+
+  return {
+    height: getSize('Height', body, html, computedStyle),
+    width: getSize('Width', body, html, computedStyle)
+  };
+}
+
+var classCallCheck = function (instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+};
+
+var createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+
+
+
+
+var defineProperty = function (obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+};
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+
+    for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }
+
+  return target;
+};
+
+/**
+ * Given element offsets, generate an output similar to getBoundingClientRect
+ * @method
+ * @memberof Popper.Utils
+ * @argument {Object} offsets
+ * @returns {Object} ClientRect like output
+ */
+function getClientRect(offsets) {
+  return _extends({}, offsets, {
+    right: offsets.left + offsets.width,
+    bottom: offsets.top + offsets.height
+  });
+}
+
+/**
+ * Get bounding client rect of given element
+ * @method
+ * @memberof Popper.Utils
+ * @param {HTMLElement} element
+ * @return {Object} client rect
+ */
+function getBoundingClientRect(element) {
+  var rect = {};
+
+  // IE10 10 FIX: Please, don't ask, the element isn't
+  // considered in DOM in some circumstances...
+  // This isn't reproducible in IE10 compatibility mode of IE11
+  try {
+    if (isIE(10)) {
+      rect = element.getBoundingClientRect();
+      var scrollTop = getScroll(element, 'top');
+      var scrollLeft = getScroll(element, 'left');
+      rect.top += scrollTop;
+      rect.left += scrollLeft;
+      rect.bottom += scrollTop;
+      rect.right += scrollLeft;
+    } else {
+      rect = element.getBoundingClientRect();
+    }
+  } catch (e) {}
+
+  var result = {
+    left: rect.left,
+    top: rect.top,
+    width: rect.right - rect.left,
+    height: rect.bottom - rect.top
+  };
+
+  // subtract scrollbar size from sizes
+  var sizes = element.nodeName === 'HTML' ? getWindowSizes(element.ownerDocument) : {};
+  var width = sizes.width || element.clientWidth || result.width;
+  var height = sizes.height || element.clientHeight || result.height;
+
+  var horizScrollbar = element.offsetWidth - width;
+  var vertScrollbar = element.offsetHeight - height;
+
+  // if an hypothetical scrollbar is detected, we must be sure it's not a `border`
+  // we make this check conditional for performance reasons
+  if (horizScrollbar || vertScrollbar) {
+    var styles = getStyleComputedProperty(element);
+    horizScrollbar -= getBordersSize(styles, 'x');
+    vertScrollbar -= getBordersSize(styles, 'y');
+
+    result.width -= horizScrollbar;
+    result.height -= vertScrollbar;
+  }
+
+  return getClientRect(result);
+}
+
+function getOffsetRectRelativeToArbitraryNode(children, parent) {
+  var fixedPosition = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+  var isIE10 = isIE(10);
+  var isHTML = parent.nodeName === 'HTML';
+  var childrenRect = getBoundingClientRect(children);
+  var parentRect = getBoundingClientRect(parent);
+  var scrollParent = getScrollParent(children);
+
+  var styles = getStyleComputedProperty(parent);
+  var borderTopWidth = parseFloat(styles.borderTopWidth, 10);
+  var borderLeftWidth = parseFloat(styles.borderLeftWidth, 10);
+
+  // In cases where the parent is fixed, we must ignore negative scroll in offset calc
+  if (fixedPosition && isHTML) {
+    parentRect.top = Math.max(parentRect.top, 0);
+    parentRect.left = Math.max(parentRect.left, 0);
+  }
+  var offsets = getClientRect({
+    top: childrenRect.top - parentRect.top - borderTopWidth,
+    left: childrenRect.left - parentRect.left - borderLeftWidth,
+    width: childrenRect.width,
+    height: childrenRect.height
+  });
+  offsets.marginTop = 0;
+  offsets.marginLeft = 0;
+
+  // Subtract margins of documentElement in case it's being used as parent
+  // we do this only on HTML because it's the only element that behaves
+  // differently when margins are applied to it. The margins are included in
+  // the box of the documentElement, in the other cases not.
+  if (!isIE10 && isHTML) {
+    var marginTop = parseFloat(styles.marginTop, 10);
+    var marginLeft = parseFloat(styles.marginLeft, 10);
+
+    offsets.top -= borderTopWidth - marginTop;
+    offsets.bottom -= borderTopWidth - marginTop;
+    offsets.left -= borderLeftWidth - marginLeft;
+    offsets.right -= borderLeftWidth - marginLeft;
+
+    // Attach marginTop and marginLeft because in some circumstances we may need them
+    offsets.marginTop = marginTop;
+    offsets.marginLeft = marginLeft;
+  }
+
+  if (isIE10 && !fixedPosition ? parent.contains(scrollParent) : parent === scrollParent && scrollParent.nodeName !== 'BODY') {
+    offsets = includeScroll(offsets, parent);
+  }
+
+  return offsets;
+}
+
+function getViewportOffsetRectRelativeToArtbitraryNode(element) {
+  var excludeScroll = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+  var html = element.ownerDocument.documentElement;
+  var relativeOffset = getOffsetRectRelativeToArbitraryNode(element, html);
+  var width = Math.max(html.clientWidth, window.innerWidth || 0);
+  var height = Math.max(html.clientHeight, window.innerHeight || 0);
+
+  var scrollTop = !excludeScroll ? getScroll(html) : 0;
+  var scrollLeft = !excludeScroll ? getScroll(html, 'left') : 0;
+
+  var offset = {
+    top: scrollTop - relativeOffset.top + relativeOffset.marginTop,
+    left: scrollLeft - relativeOffset.left + relativeOffset.marginLeft,
+    width: width,
+    height: height
+  };
+
+  return getClientRect(offset);
+}
+
+/**
+ * Check if the given element is fixed or is inside a fixed parent
+ * @method
+ * @memberof Popper.Utils
+ * @argument {Element} element
+ * @argument {Element} customContainer
+ * @returns {Boolean} answer to "isFixed?"
+ */
+function isFixed(element) {
+  var nodeName = element.nodeName;
+  if (nodeName === 'BODY' || nodeName === 'HTML') {
+    return false;
+  }
+  if (getStyleComputedProperty(element, 'position') === 'fixed') {
+    return true;
+  }
+  var parentNode = getParentNode(element);
+  if (!parentNode) {
+    return false;
+  }
+  return isFixed(parentNode);
+}
+
+/**
+ * Finds the first parent of an element that has a transformed property defined
+ * @method
+ * @memberof Popper.Utils
+ * @argument {Element} element
+ * @returns {Element} first transformed parent or documentElement
+ */
+
+function getFixedPositionOffsetParent(element) {
+  // This check is needed to avoid errors in case one of the elements isn't defined for any reason
+  if (!element || !element.parentElement || isIE()) {
+    return document.documentElement;
+  }
+  var el = element.parentElement;
+  while (el && getStyleComputedProperty(el, 'transform') === 'none') {
+    el = el.parentElement;
+  }
+  return el || document.documentElement;
+}
+
+/**
+ * Computed the boundaries limits and return them
+ * @method
+ * @memberof Popper.Utils
+ * @param {HTMLElement} popper
+ * @param {HTMLElement} reference
+ * @param {number} padding
+ * @param {HTMLElement} boundariesElement - Element used to define the boundaries
+ * @param {Boolean} fixedPosition - Is in fixed position mode
+ * @returns {Object} Coordinates of the boundaries
+ */
+function getBoundaries(popper, reference, padding, boundariesElement) {
+  var fixedPosition = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : false;
+
+  // NOTE: 1 DOM access here
+
+  var boundaries = { top: 0, left: 0 };
+  var offsetParent = fixedPosition ? getFixedPositionOffsetParent(popper) : findCommonOffsetParent(popper, getReferenceNode(reference));
+
+  // Handle viewport case
+  if (boundariesElement === 'viewport') {
+    boundaries = getViewportOffsetRectRelativeToArtbitraryNode(offsetParent, fixedPosition);
+  } else {
+    // Handle other cases based on DOM element used as boundaries
+    var boundariesNode = void 0;
+    if (boundariesElement === 'scrollParent') {
+      boundariesNode = getScrollParent(getParentNode(reference));
+      if (boundariesNode.nodeName === 'BODY') {
+        boundariesNode = popper.ownerDocument.documentElement;
+      }
+    } else if (boundariesElement === 'window') {
+      boundariesNode = popper.ownerDocument.documentElement;
+    } else {
+      boundariesNode = boundariesElement;
+    }
+
+    var offsets = getOffsetRectRelativeToArbitraryNode(boundariesNode, offsetParent, fixedPosition);
+
+    // In case of HTML, we need a different computation
+    if (boundariesNode.nodeName === 'HTML' && !isFixed(offsetParent)) {
+      var _getWindowSizes = getWindowSizes(popper.ownerDocument),
+          height = _getWindowSizes.height,
+          width = _getWindowSizes.width;
+
+      boundaries.top += offsets.top - offsets.marginTop;
+      boundaries.bottom = height + offsets.top;
+      boundaries.left += offsets.left - offsets.marginLeft;
+      boundaries.right = width + offsets.left;
+    } else {
+      // for all the other DOM elements, this one is good
+      boundaries = offsets;
+    }
+  }
+
+  // Add paddings
+  padding = padding || 0;
+  var isPaddingNumber = typeof padding === 'number';
+  boundaries.left += isPaddingNumber ? padding : padding.left || 0;
+  boundaries.top += isPaddingNumber ? padding : padding.top || 0;
+  boundaries.right -= isPaddingNumber ? padding : padding.right || 0;
+  boundaries.bottom -= isPaddingNumber ? padding : padding.bottom || 0;
+
+  return boundaries;
+}
+
+function getArea(_ref) {
+  var width = _ref.width,
+      height = _ref.height;
+
+  return width * height;
+}
+
+/**
+ * Utility used to transform the `auto` placement to the placement with more
+ * available space.
+ * @method
+ * @memberof Popper.Utils
+ * @argument {Object} data - The data object generated by update method
+ * @argument {Object} options - Modifiers configuration and options
+ * @returns {Object} The data object, properly modified
+ */
+function computeAutoPlacement(placement, refRect, popper, reference, boundariesElement) {
+  var padding = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 0;
+
+  if (placement.indexOf('auto') === -1) {
+    return placement;
+  }
+
+  var boundaries = getBoundaries(popper, reference, padding, boundariesElement);
+
+  var rects = {
+    top: {
+      width: boundaries.width,
+      height: refRect.top - boundaries.top
+    },
+    right: {
+      width: boundaries.right - refRect.right,
+      height: boundaries.height
+    },
+    bottom: {
+      width: boundaries.width,
+      height: boundaries.bottom - refRect.bottom
+    },
+    left: {
+      width: refRect.left - boundaries.left,
+      height: boundaries.height
+    }
+  };
+
+  var sortedAreas = Object.keys(rects).map(function (key) {
+    return _extends({
+      key: key
+    }, rects[key], {
+      area: getArea(rects[key])
+    });
+  }).sort(function (a, b) {
+    return b.area - a.area;
+  });
+
+  var filteredAreas = sortedAreas.filter(function (_ref2) {
+    var width = _ref2.width,
+        height = _ref2.height;
+    return width >= popper.clientWidth && height >= popper.clientHeight;
+  });
+
+  var computedPlacement = filteredAreas.length > 0 ? filteredAreas[0].key : sortedAreas[0].key;
+
+  var variation = placement.split('-')[1];
+
+  return computedPlacement + (variation ? '-' + variation : '');
+}
+
+/**
+ * Get offsets to the reference element
+ * @method
+ * @memberof Popper.Utils
+ * @param {Object} state
+ * @param {Element} popper - the popper element
+ * @param {Element} reference - the reference element (the popper will be relative to this)
+ * @param {Element} fixedPosition - is in fixed position mode
+ * @returns {Object} An object containing the offsets which will be applied to the popper
+ */
+function getReferenceOffsets(state, popper, reference) {
+  var fixedPosition = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
+
+  var commonOffsetParent = fixedPosition ? getFixedPositionOffsetParent(popper) : findCommonOffsetParent(popper, getReferenceNode(reference));
+  return getOffsetRectRelativeToArbitraryNode(reference, commonOffsetParent, fixedPosition);
+}
+
+/**
+ * Get the outer sizes of the given element (offset size + margins)
+ * @method
+ * @memberof Popper.Utils
+ * @argument {Element} element
+ * @returns {Object} object containing width and height properties
+ */
+function getOuterSizes(element) {
+  var window = element.ownerDocument.defaultView;
+  var styles = window.getComputedStyle(element);
+  var x = parseFloat(styles.marginTop || 0) + parseFloat(styles.marginBottom || 0);
+  var y = parseFloat(styles.marginLeft || 0) + parseFloat(styles.marginRight || 0);
+  var result = {
+    width: element.offsetWidth + y,
+    height: element.offsetHeight + x
+  };
+  return result;
+}
+
+/**
+ * Get the opposite placement of the given one
+ * @method
+ * @memberof Popper.Utils
+ * @argument {String} placement
+ * @returns {String} flipped placement
+ */
+function getOppositePlacement(placement) {
+  var hash = { left: 'right', right: 'left', bottom: 'top', top: 'bottom' };
+  return placement.replace(/left|right|bottom|top/g, function (matched) {
+    return hash[matched];
+  });
+}
+
+/**
+ * Get offsets to the popper
+ * @method
+ * @memberof Popper.Utils
+ * @param {Object} position - CSS position the Popper will get applied
+ * @param {HTMLElement} popper - the popper element
+ * @param {Object} referenceOffsets - the reference offsets (the popper will be relative to this)
+ * @param {String} placement - one of the valid placement options
+ * @returns {Object} popperOffsets - An object containing the offsets which will be applied to the popper
+ */
+function getPopperOffsets(popper, referenceOffsets, placement) {
+  placement = placement.split('-')[0];
+
+  // Get popper node sizes
+  var popperRect = getOuterSizes(popper);
+
+  // Add position, width and height to our offsets object
+  var popperOffsets = {
+    width: popperRect.width,
+    height: popperRect.height
+  };
+
+  // depending by the popper placement we have to compute its offsets slightly differently
+  var isHoriz = ['right', 'left'].indexOf(placement) !== -1;
+  var mainSide = isHoriz ? 'top' : 'left';
+  var secondarySide = isHoriz ? 'left' : 'top';
+  var measurement = isHoriz ? 'height' : 'width';
+  var secondaryMeasurement = !isHoriz ? 'height' : 'width';
+
+  popperOffsets[mainSide] = referenceOffsets[mainSide] + referenceOffsets[measurement] / 2 - popperRect[measurement] / 2;
+  if (placement === secondarySide) {
+    popperOffsets[secondarySide] = referenceOffsets[secondarySide] - popperRect[secondaryMeasurement];
+  } else {
+    popperOffsets[secondarySide] = referenceOffsets[getOppositePlacement(secondarySide)];
+  }
+
+  return popperOffsets;
+}
+
+/**
+ * Mimics the `find` method of Array
+ * @method
+ * @memberof Popper.Utils
+ * @argument {Array} arr
+ * @argument prop
+ * @argument value
+ * @returns index or -1
+ */
+function find(arr, check) {
+  // use native find if supported
+  if (Array.prototype.find) {
+    return arr.find(check);
+  }
+
+  // use `filter` to obtain the same behavior of `find`
+  return arr.filter(check)[0];
+}
+
+/**
+ * Return the index of the matching object
+ * @method
+ * @memberof Popper.Utils
+ * @argument {Array} arr
+ * @argument prop
+ * @argument value
+ * @returns index or -1
+ */
+function findIndex(arr, prop, value) {
+  // use native findIndex if supported
+  if (Array.prototype.findIndex) {
+    return arr.findIndex(function (cur) {
+      return cur[prop] === value;
+    });
+  }
+
+  // use `find` + `indexOf` if `findIndex` isn't supported
+  var match = find(arr, function (obj) {
+    return obj[prop] === value;
+  });
+  return arr.indexOf(match);
+}
+
+/**
+ * Loop trough the list of modifiers and run them in order,
+ * each of them will then edit the data object.
+ * @method
+ * @memberof Popper.Utils
+ * @param {dataObject} data
+ * @param {Array} modifiers
+ * @param {String} ends - Optional modifier name used as stopper
+ * @returns {dataObject}
+ */
+function runModifiers(modifiers, data, ends) {
+  var modifiersToRun = ends === undefined ? modifiers : modifiers.slice(0, findIndex(modifiers, 'name', ends));
+
+  modifiersToRun.forEach(function (modifier) {
+    if (modifier['function']) {
+      // eslint-disable-line dot-notation
+      console.warn('`modifier.function` is deprecated, use `modifier.fn`!');
+    }
+    var fn = modifier['function'] || modifier.fn; // eslint-disable-line dot-notation
+    if (modifier.enabled && isFunction(fn)) {
+      // Add properties to offsets to make them a complete clientRect object
+      // we do this before each modifier to make sure the previous one doesn't
+      // mess with these values
+      data.offsets.popper = getClientRect(data.offsets.popper);
+      data.offsets.reference = getClientRect(data.offsets.reference);
+
+      data = fn(data, modifier);
+    }
+  });
+
+  return data;
+}
+
+/**
+ * Updates the position of the popper, computing the new offsets and applying
+ * the new style.<br />
+ * Prefer `scheduleUpdate` over `update` because of performance reasons.
+ * @method
+ * @memberof Popper
+ */
+function update() {
+  // if popper is destroyed, don't perform any further update
+  if (this.state.isDestroyed) {
+    return;
+  }
+
+  var data = {
+    instance: this,
+    styles: {},
+    arrowStyles: {},
+    attributes: {},
+    flipped: false,
+    offsets: {}
+  };
+
+  // compute reference element offsets
+  data.offsets.reference = getReferenceOffsets(this.state, this.popper, this.reference, this.options.positionFixed);
+
+  // compute auto placement, store placement inside the data object,
+  // modifiers will be able to edit `placement` if needed
+  // and refer to originalPlacement to know the original value
+  data.placement = computeAutoPlacement(this.options.placement, data.offsets.reference, this.popper, this.reference, this.options.modifiers.flip.boundariesElement, this.options.modifiers.flip.padding);
+
+  // store the computed placement inside `originalPlacement`
+  data.originalPlacement = data.placement;
+
+  data.positionFixed = this.options.positionFixed;
+
+  // compute the popper offsets
+  data.offsets.popper = getPopperOffsets(this.popper, data.offsets.reference, data.placement);
+
+  data.offsets.popper.position = this.options.positionFixed ? 'fixed' : 'absolute';
+
+  // run the modifiers
+  data = runModifiers(this.modifiers, data);
+
+  // the first `update` will call `onCreate` callback
+  // the other ones will call `onUpdate` callback
+  if (!this.state.isCreated) {
+    this.state.isCreated = true;
+    this.options.onCreate(data);
+  } else {
+    this.options.onUpdate(data);
+  }
+}
+
+/**
+ * Helper used to know if the given modifier is enabled.
+ * @method
+ * @memberof Popper.Utils
+ * @returns {Boolean}
+ */
+function isModifierEnabled(modifiers, modifierName) {
+  return modifiers.some(function (_ref) {
+    var name = _ref.name,
+        enabled = _ref.enabled;
+    return enabled && name === modifierName;
+  });
+}
+
+/**
+ * Get the prefixed supported property name
+ * @method
+ * @memberof Popper.Utils
+ * @argument {String} property (camelCase)
+ * @returns {String} prefixed property (camelCase or PascalCase, depending on the vendor prefix)
+ */
+function getSupportedPropertyName(property) {
+  var prefixes = [false, 'ms', 'Webkit', 'Moz', 'O'];
+  var upperProp = property.charAt(0).toUpperCase() + property.slice(1);
+
+  for (var i = 0; i < prefixes.length; i++) {
+    var prefix = prefixes[i];
+    var toCheck = prefix ? '' + prefix + upperProp : property;
+    if (typeof document.body.style[toCheck] !== 'undefined') {
+      return toCheck;
+    }
+  }
+  return null;
+}
+
+/**
+ * Destroys the popper.
+ * @method
+ * @memberof Popper
+ */
+function destroy() {
+  this.state.isDestroyed = true;
+
+  // touch DOM only if `applyStyle` modifier is enabled
+  if (isModifierEnabled(this.modifiers, 'applyStyle')) {
+    this.popper.removeAttribute('x-placement');
+    this.popper.style.position = '';
+    this.popper.style.top = '';
+    this.popper.style.left = '';
+    this.popper.style.right = '';
+    this.popper.style.bottom = '';
+    this.popper.style.willChange = '';
+    this.popper.style[getSupportedPropertyName('transform')] = '';
+  }
+
+  this.disableEventListeners();
+
+  // remove the popper if user explicitly asked for the deletion on destroy
+  // do not use `remove` because IE11 doesn't support it
+  if (this.options.removeOnDestroy) {
+    this.popper.parentNode.removeChild(this.popper);
+  }
+  return this;
+}
+
+/**
+ * Get the window associated with the element
+ * @argument {Element} element
+ * @returns {Window}
+ */
+function getWindow(element) {
+  var ownerDocument = element.ownerDocument;
+  return ownerDocument ? ownerDocument.defaultView : window;
+}
+
+function attachToScrollParents(scrollParent, event, callback, scrollParents) {
+  var isBody = scrollParent.nodeName === 'BODY';
+  var target = isBody ? scrollParent.ownerDocument.defaultView : scrollParent;
+  target.addEventListener(event, callback, { passive: true });
+
+  if (!isBody) {
+    attachToScrollParents(getScrollParent(target.parentNode), event, callback, scrollParents);
+  }
+  scrollParents.push(target);
+}
+
+/**
+ * Setup needed event listeners used to update the popper position
+ * @method
+ * @memberof Popper.Utils
+ * @private
+ */
+function setupEventListeners(reference, options, state, updateBound) {
+  // Resize event listener on window
+  state.updateBound = updateBound;
+  getWindow(reference).addEventListener('resize', state.updateBound, { passive: true });
+
+  // Scroll event listener on scroll parents
+  var scrollElement = getScrollParent(reference);
+  attachToScrollParents(scrollElement, 'scroll', state.updateBound, state.scrollParents);
+  state.scrollElement = scrollElement;
+  state.eventsEnabled = true;
+
+  return state;
+}
+
+/**
+ * It will add resize/scroll events and start recalculating
+ * position of the popper element when they are triggered.
+ * @method
+ * @memberof Popper
+ */
+function enableEventListeners() {
+  if (!this.state.eventsEnabled) {
+    this.state = setupEventListeners(this.reference, this.options, this.state, this.scheduleUpdate);
+  }
+}
+
+/**
+ * Remove event listeners used to update the popper position
+ * @method
+ * @memberof Popper.Utils
+ * @private
+ */
+function removeEventListeners(reference, state) {
+  // Remove resize event listener on window
+  getWindow(reference).removeEventListener('resize', state.updateBound);
+
+  // Remove scroll event listener on scroll parents
+  state.scrollParents.forEach(function (target) {
+    target.removeEventListener('scroll', state.updateBound);
+  });
+
+  // Reset state
+  state.updateBound = null;
+  state.scrollParents = [];
+  state.scrollElement = null;
+  state.eventsEnabled = false;
+  return state;
+}
+
+/**
+ * It will remove resize/scroll events and won't recalculate popper position
+ * when they are triggered. It also won't trigger `onUpdate` callback anymore,
+ * unless you call `update` method manually.
+ * @method
+ * @memberof Popper
+ */
+function disableEventListeners() {
+  if (this.state.eventsEnabled) {
+    cancelAnimationFrame(this.scheduleUpdate);
+    this.state = removeEventListeners(this.reference, this.state);
+  }
+}
+
+/**
+ * Tells if a given input is a number
+ * @method
+ * @memberof Popper.Utils
+ * @param {*} input to check
+ * @return {Boolean}
+ */
+function isNumeric(n) {
+  return n !== '' && !isNaN(parseFloat(n)) && isFinite(n);
+}
+
+/**
+ * Set the style to the given popper
+ * @method
+ * @memberof Popper.Utils
+ * @argument {Element} element - Element to apply the style to
+ * @argument {Object} styles
+ * Object with a list of properties and values which will be applied to the element
+ */
+function setStyles(element, styles) {
+  Object.keys(styles).forEach(function (prop) {
+    var unit = '';
+    // add unit if the value is numeric and is one of the following
+    if (['width', 'height', 'top', 'right', 'bottom', 'left'].indexOf(prop) !== -1 && isNumeric(styles[prop])) {
+      unit = 'px';
+    }
+    element.style[prop] = styles[prop] + unit;
+  });
+}
+
+/**
+ * Set the attributes to the given popper
+ * @method
+ * @memberof Popper.Utils
+ * @argument {Element} element - Element to apply the attributes to
+ * @argument {Object} styles
+ * Object with a list of properties and values which will be applied to the element
+ */
+function setAttributes(element, attributes) {
+  Object.keys(attributes).forEach(function (prop) {
+    var value = attributes[prop];
+    if (value !== false) {
+      element.setAttribute(prop, attributes[prop]);
+    } else {
+      element.removeAttribute(prop);
+    }
+  });
+}
+
+/**
+ * @function
+ * @memberof Modifiers
+ * @argument {Object} data - The data object generated by `update` method
+ * @argument {Object} data.styles - List of style properties - values to apply to popper element
+ * @argument {Object} data.attributes - List of attribute properties - values to apply to popper element
+ * @argument {Object} options - Modifiers configuration and options
+ * @returns {Object} The same data object
+ */
+function applyStyle(data) {
+  // any property present in `data.styles` will be applied to the popper,
+  // in this way we can make the 3rd party modifiers add custom styles to it
+  // Be aware, modifiers could override the properties defined in the previous
+  // lines of this modifier!
+  setStyles(data.instance.popper, data.styles);
+
+  // any property present in `data.attributes` will be applied to the popper,
+  // they will be set as HTML attributes of the element
+  setAttributes(data.instance.popper, data.attributes);
+
+  // if arrowElement is defined and arrowStyles has some properties
+  if (data.arrowElement && Object.keys(data.arrowStyles).length) {
+    setStyles(data.arrowElement, data.arrowStyles);
+  }
+
+  return data;
+}
+
+/**
+ * Set the x-placement attribute before everything else because it could be used
+ * to add margins to the popper margins needs to be calculated to get the
+ * correct popper offsets.
+ * @method
+ * @memberof Popper.modifiers
+ * @param {HTMLElement} reference - The reference element used to position the popper
+ * @param {HTMLElement} popper - The HTML element used as popper
+ * @param {Object} options - Popper.js options
+ */
+function applyStyleOnLoad(reference, popper, options, modifierOptions, state) {
+  // compute reference element offsets
+  var referenceOffsets = getReferenceOffsets(state, popper, reference, options.positionFixed);
+
+  // compute auto placement, store placement inside the data object,
+  // modifiers will be able to edit `placement` if needed
+  // and refer to originalPlacement to know the original value
+  var placement = computeAutoPlacement(options.placement, referenceOffsets, popper, reference, options.modifiers.flip.boundariesElement, options.modifiers.flip.padding);
+
+  popper.setAttribute('x-placement', placement);
+
+  // Apply `position` to popper before anything else because
+  // without the position applied we can't guarantee correct computations
+  setStyles(popper, { position: options.positionFixed ? 'fixed' : 'absolute' });
+
+  return options;
+}
+
+/**
+ * @function
+ * @memberof Popper.Utils
+ * @argument {Object} data - The data object generated by `update` method
+ * @argument {Boolean} shouldRound - If the offsets should be rounded at all
+ * @returns {Object} The popper's position offsets rounded
+ *
+ * The tale of pixel-perfect positioning. It's still not 100% perfect, but as
+ * good as it can be within reason.
+ * Discussion here: https://github.com/FezVrasta/popper.js/pull/715
+ *
+ * Low DPI screens cause a popper to be blurry if not using full pixels (Safari
+ * as well on High DPI screens).
+ *
+ * Firefox prefers no rounding for positioning and does not have blurriness on
+ * high DPI screens.
+ *
+ * Only horizontal placement and left/right values need to be considered.
+ */
+function getRoundedOffsets(data, shouldRound) {
+  var _data$offsets = data.offsets,
+      popper = _data$offsets.popper,
+      reference = _data$offsets.reference;
+  var round = Math.round,
+      floor = Math.floor;
+
+  var noRound = function noRound(v) {
+    return v;
+  };
+
+  var referenceWidth = round(reference.width);
+  var popperWidth = round(popper.width);
+
+  var isVertical = ['left', 'right'].indexOf(data.placement) !== -1;
+  var isVariation = data.placement.indexOf('-') !== -1;
+  var sameWidthParity = referenceWidth % 2 === popperWidth % 2;
+  var bothOddWidth = referenceWidth % 2 === 1 && popperWidth % 2 === 1;
+
+  var horizontalToInteger = !shouldRound ? noRound : isVertical || isVariation || sameWidthParity ? round : floor;
+  var verticalToInteger = !shouldRound ? noRound : round;
+
+  return {
+    left: horizontalToInteger(bothOddWidth && !isVariation && shouldRound ? popper.left - 1 : popper.left),
+    top: verticalToInteger(popper.top),
+    bottom: verticalToInteger(popper.bottom),
+    right: horizontalToInteger(popper.right)
+  };
+}
+
+var isFirefox = isBrowser && /Firefox/i.test(navigator.userAgent);
+
+/**
+ * @function
+ * @memberof Modifiers
+ * @argument {Object} data - The data object generated by `update` method
+ * @argument {Object} options - Modifiers configuration and options
+ * @returns {Object} The data object, properly modified
+ */
+function computeStyle(data, options) {
+  var x = options.x,
+      y = options.y;
+  var popper = data.offsets.popper;
+
+  // Remove this legacy support in Popper.js v2
+
+  var legacyGpuAccelerationOption = find(data.instance.modifiers, function (modifier) {
+    return modifier.name === 'applyStyle';
+  }).gpuAcceleration;
+  if (legacyGpuAccelerationOption !== undefined) {
+    console.warn('WARNING: `gpuAcceleration` option moved to `computeStyle` modifier and will not be supported in future versions of Popper.js!');
+  }
+  var gpuAcceleration = legacyGpuAccelerationOption !== undefined ? legacyGpuAccelerationOption : options.gpuAcceleration;
+
+  var offsetParent = getOffsetParent(data.instance.popper);
+  var offsetParentRect = getBoundingClientRect(offsetParent);
+
+  // Styles
+  var styles = {
+    position: popper.position
+  };
+
+  var offsets = getRoundedOffsets(data, window.devicePixelRatio < 2 || !isFirefox);
+
+  var sideA = x === 'bottom' ? 'top' : 'bottom';
+  var sideB = y === 'right' ? 'left' : 'right';
+
+  // if gpuAcceleration is set to `true` and transform is supported,
+  //  we use `translate3d` to apply the position to the popper we
+  // automatically use the supported prefixed version if needed
+  var prefixedProperty = getSupportedPropertyName('transform');
+
+  // now, let's make a step back and look at this code closely (wtf?)
+  // If the content of the popper grows once it's been positioned, it
+  // may happen that the popper gets misplaced because of the new content
+  // overflowing its reference element
+  // To avoid this problem, we provide two options (x and y), which allow
+  // the consumer to define the offset origin.
+  // If we position a popper on top of a reference element, we can set
+  // `x` to `top` to make the popper grow towards its top instead of
+  // its bottom.
+  var left = void 0,
+      top = void 0;
+  if (sideA === 'bottom') {
+    // when offsetParent is <html> the positioning is relative to the bottom of the screen (excluding the scrollbar)
+    // and not the bottom of the html element
+    if (offsetParent.nodeName === 'HTML') {
+      top = -offsetParent.clientHeight + offsets.bottom;
+    } else {
+      top = -offsetParentRect.height + offsets.bottom;
+    }
+  } else {
+    top = offsets.top;
+  }
+  if (sideB === 'right') {
+    if (offsetParent.nodeName === 'HTML') {
+      left = -offsetParent.clientWidth + offsets.right;
+    } else {
+      left = -offsetParentRect.width + offsets.right;
+    }
+  } else {
+    left = offsets.left;
+  }
+  if (gpuAcceleration && prefixedProperty) {
+    styles[prefixedProperty] = 'translate3d(' + left + 'px, ' + top + 'px, 0)';
+    styles[sideA] = 0;
+    styles[sideB] = 0;
+    styles.willChange = 'transform';
+  } else {
+    // othwerise, we use the standard `top`, `left`, `bottom` and `right` properties
+    var invertTop = sideA === 'bottom' ? -1 : 1;
+    var invertLeft = sideB === 'right' ? -1 : 1;
+    styles[sideA] = top * invertTop;
+    styles[sideB] = left * invertLeft;
+    styles.willChange = sideA + ', ' + sideB;
+  }
+
+  // Attributes
+  var attributes = {
+    'x-placement': data.placement
+  };
+
+  // Update `data` attributes, styles and arrowStyles
+  data.attributes = _extends({}, attributes, data.attributes);
+  data.styles = _extends({}, styles, data.styles);
+  data.arrowStyles = _extends({}, data.offsets.arrow, data.arrowStyles);
+
+  return data;
+}
+
+/**
+ * Helper used to know if the given modifier depends from another one.<br />
+ * It checks if the needed modifier is listed and enabled.
+ * @method
+ * @memberof Popper.Utils
+ * @param {Array} modifiers - list of modifiers
+ * @param {String} requestingName - name of requesting modifier
+ * @param {String} requestedName - name of requested modifier
+ * @returns {Boolean}
+ */
+function isModifierRequired(modifiers, requestingName, requestedName) {
+  var requesting = find(modifiers, function (_ref) {
+    var name = _ref.name;
+    return name === requestingName;
+  });
+
+  var isRequired = !!requesting && modifiers.some(function (modifier) {
+    return modifier.name === requestedName && modifier.enabled && modifier.order < requesting.order;
+  });
+
+  if (!isRequired) {
+    var _requesting = '`' + requestingName + '`';
+    var requested = '`' + requestedName + '`';
+    console.warn(requested + ' modifier is required by ' + _requesting + ' modifier in order to work, be sure to include it before ' + _requesting + '!');
+  }
+  return isRequired;
+}
+
+/**
+ * @function
+ * @memberof Modifiers
+ * @argument {Object} data - The data object generated by update method
+ * @argument {Object} options - Modifiers configuration and options
+ * @returns {Object} The data object, properly modified
+ */
+function arrow(data, options) {
+  var _data$offsets$arrow;
+
+  // arrow depends on keepTogether in order to work
+  if (!isModifierRequired(data.instance.modifiers, 'arrow', 'keepTogether')) {
+    return data;
+  }
+
+  var arrowElement = options.element;
+
+  // if arrowElement is a string, suppose it's a CSS selector
+  if (typeof arrowElement === 'string') {
+    arrowElement = data.instance.popper.querySelector(arrowElement);
+
+    // if arrowElement is not found, don't run the modifier
+    if (!arrowElement) {
+      return data;
+    }
+  } else {
+    // if the arrowElement isn't a query selector we must check that the
+    // provided DOM node is child of its popper node
+    if (!data.instance.popper.contains(arrowElement)) {
+      console.warn('WARNING: `arrow.element` must be child of its popper element!');
+      return data;
+    }
+  }
+
+  var placement = data.placement.split('-')[0];
+  var _data$offsets = data.offsets,
+      popper = _data$offsets.popper,
+      reference = _data$offsets.reference;
+
+  var isVertical = ['left', 'right'].indexOf(placement) !== -1;
+
+  var len = isVertical ? 'height' : 'width';
+  var sideCapitalized = isVertical ? 'Top' : 'Left';
+  var side = sideCapitalized.toLowerCase();
+  var altSide = isVertical ? 'left' : 'top';
+  var opSide = isVertical ? 'bottom' : 'right';
+  var arrowElementSize = getOuterSizes(arrowElement)[len];
+
+  //
+  // extends keepTogether behavior making sure the popper and its
+  // reference have enough pixels in conjunction
+  //
+
+  // top/left side
+  if (reference[opSide] - arrowElementSize < popper[side]) {
+    data.offsets.popper[side] -= popper[side] - (reference[opSide] - arrowElementSize);
+  }
+  // bottom/right side
+  if (reference[side] + arrowElementSize > popper[opSide]) {
+    data.offsets.popper[side] += reference[side] + arrowElementSize - popper[opSide];
+  }
+  data.offsets.popper = getClientRect(data.offsets.popper);
+
+  // compute center of the popper
+  var center = reference[side] + reference[len] / 2 - arrowElementSize / 2;
+
+  // Compute the sideValue using the updated popper offsets
+  // take popper margin in account because we don't have this info available
+  var css = getStyleComputedProperty(data.instance.popper);
+  var popperMarginSide = parseFloat(css['margin' + sideCapitalized], 10);
+  var popperBorderSide = parseFloat(css['border' + sideCapitalized + 'Width'], 10);
+  var sideValue = center - data.offsets.popper[side] - popperMarginSide - popperBorderSide;
+
+  // prevent arrowElement from being placed not contiguously to its popper
+  sideValue = Math.max(Math.min(popper[len] - arrowElementSize, sideValue), 0);
+
+  data.arrowElement = arrowElement;
+  data.offsets.arrow = (_data$offsets$arrow = {}, defineProperty(_data$offsets$arrow, side, Math.round(sideValue)), defineProperty(_data$offsets$arrow, altSide, ''), _data$offsets$arrow);
+
+  return data;
+}
+
+/**
+ * Get the opposite placement variation of the given one
+ * @method
+ * @memberof Popper.Utils
+ * @argument {String} placement variation
+ * @returns {String} flipped placement variation
+ */
+function getOppositeVariation(variation) {
+  if (variation === 'end') {
+    return 'start';
+  } else if (variation === 'start') {
+    return 'end';
+  }
+  return variation;
+}
+
+/**
+ * List of accepted placements to use as values of the `placement` option.<br />
+ * Valid placements are:
+ * - `auto`
+ * - `top`
+ * - `right`
+ * - `bottom`
+ * - `left`
+ *
+ * Each placement can have a variation from this list:
+ * - `-start`
+ * - `-end`
+ *
+ * Variations are interpreted easily if you think of them as the left to right
+ * written languages. Horizontally (`top` and `bottom`), `start` is left and `end`
+ * is right.<br />
+ * Vertically (`left` and `right`), `start` is top and `end` is bottom.
+ *
+ * Some valid examples are:
+ * - `top-end` (on top of reference, right aligned)
+ * - `right-start` (on right of reference, top aligned)
+ * - `bottom` (on bottom, centered)
+ * - `auto-end` (on the side with more space available, alignment depends by placement)
+ *
+ * @static
+ * @type {Array}
+ * @enum {String}
+ * @readonly
+ * @method placements
+ * @memberof Popper
+ */
+var placements = ['auto-start', 'auto', 'auto-end', 'top-start', 'top', 'top-end', 'right-start', 'right', 'right-end', 'bottom-end', 'bottom', 'bottom-start', 'left-end', 'left', 'left-start'];
+
+// Get rid of `auto` `auto-start` and `auto-end`
+var validPlacements = placements.slice(3);
+
+/**
+ * Given an initial placement, returns all the subsequent placements
+ * clockwise (or counter-clockwise).
+ *
+ * @method
+ * @memberof Popper.Utils
+ * @argument {String} placement - A valid placement (it accepts variations)
+ * @argument {Boolean} counter - Set to true to walk the placements counterclockwise
+ * @returns {Array} placements including their variations
+ */
+function clockwise(placement) {
+  var counter = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+  var index = validPlacements.indexOf(placement);
+  var arr = validPlacements.slice(index + 1).concat(validPlacements.slice(0, index));
+  return counter ? arr.reverse() : arr;
+}
+
+var BEHAVIORS = {
+  FLIP: 'flip',
+  CLOCKWISE: 'clockwise',
+  COUNTERCLOCKWISE: 'counterclockwise'
+};
+
+/**
+ * @function
+ * @memberof Modifiers
+ * @argument {Object} data - The data object generated by update method
+ * @argument {Object} options - Modifiers configuration and options
+ * @returns {Object} The data object, properly modified
+ */
+function flip(data, options) {
+  // if `inner` modifier is enabled, we can't use the `flip` modifier
+  if (isModifierEnabled(data.instance.modifiers, 'inner')) {
+    return data;
+  }
+
+  if (data.flipped && data.placement === data.originalPlacement) {
+    // seems like flip is trying to loop, probably there's not enough space on any of the flippable sides
+    return data;
+  }
+
+  var boundaries = getBoundaries(data.instance.popper, data.instance.reference, options.padding, options.boundariesElement, data.positionFixed);
+
+  var placement = data.placement.split('-')[0];
+  var placementOpposite = getOppositePlacement(placement);
+  var variation = data.placement.split('-')[1] || '';
+
+  var flipOrder = [];
+
+  switch (options.behavior) {
+    case BEHAVIORS.FLIP:
+      flipOrder = [placement, placementOpposite];
+      break;
+    case BEHAVIORS.CLOCKWISE:
+      flipOrder = clockwise(placement);
+      break;
+    case BEHAVIORS.COUNTERCLOCKWISE:
+      flipOrder = clockwise(placement, true);
+      break;
+    default:
+      flipOrder = options.behavior;
+  }
+
+  flipOrder.forEach(function (step, index) {
+    if (placement !== step || flipOrder.length === index + 1) {
+      return data;
+    }
+
+    placement = data.placement.split('-')[0];
+    placementOpposite = getOppositePlacement(placement);
+
+    var popperOffsets = data.offsets.popper;
+    var refOffsets = data.offsets.reference;
+
+    // using floor because the reference offsets may contain decimals we are not going to consider here
+    var floor = Math.floor;
+    var overlapsRef = placement === 'left' && floor(popperOffsets.right) > floor(refOffsets.left) || placement === 'right' && floor(popperOffsets.left) < floor(refOffsets.right) || placement === 'top' && floor(popperOffsets.bottom) > floor(refOffsets.top) || placement === 'bottom' && floor(popperOffsets.top) < floor(refOffsets.bottom);
+
+    var overflowsLeft = floor(popperOffsets.left) < floor(boundaries.left);
+    var overflowsRight = floor(popperOffsets.right) > floor(boundaries.right);
+    var overflowsTop = floor(popperOffsets.top) < floor(boundaries.top);
+    var overflowsBottom = floor(popperOffsets.bottom) > floor(boundaries.bottom);
+
+    var overflowsBoundaries = placement === 'left' && overflowsLeft || placement === 'right' && overflowsRight || placement === 'top' && overflowsTop || placement === 'bottom' && overflowsBottom;
+
+    // flip the variation if required
+    var isVertical = ['top', 'bottom'].indexOf(placement) !== -1;
+
+    // flips variation if reference element overflows boundaries
+    var flippedVariationByRef = !!options.flipVariations && (isVertical && variation === 'start' && overflowsLeft || isVertical && variation === 'end' && overflowsRight || !isVertical && variation === 'start' && overflowsTop || !isVertical && variation === 'end' && overflowsBottom);
+
+    // flips variation if popper content overflows boundaries
+    var flippedVariationByContent = !!options.flipVariationsByContent && (isVertical && variation === 'start' && overflowsRight || isVertical && variation === 'end' && overflowsLeft || !isVertical && variation === 'start' && overflowsBottom || !isVertical && variation === 'end' && overflowsTop);
+
+    var flippedVariation = flippedVariationByRef || flippedVariationByContent;
+
+    if (overlapsRef || overflowsBoundaries || flippedVariation) {
+      // this boolean to detect any flip loop
+      data.flipped = true;
+
+      if (overlapsRef || overflowsBoundaries) {
+        placement = flipOrder[index + 1];
+      }
+
+      if (flippedVariation) {
+        variation = getOppositeVariation(variation);
+      }
+
+      data.placement = placement + (variation ? '-' + variation : '');
+
+      // this object contains `position`, we want to preserve it along with
+      // any additional property we may add in the future
+      data.offsets.popper = _extends({}, data.offsets.popper, getPopperOffsets(data.instance.popper, data.offsets.reference, data.placement));
+
+      data = runModifiers(data.instance.modifiers, data, 'flip');
+    }
+  });
+  return data;
+}
+
+/**
+ * @function
+ * @memberof Modifiers
+ * @argument {Object} data - The data object generated by update method
+ * @argument {Object} options - Modifiers configuration and options
+ * @returns {Object} The data object, properly modified
+ */
+function keepTogether(data) {
+  var _data$offsets = data.offsets,
+      popper = _data$offsets.popper,
+      reference = _data$offsets.reference;
+
+  var placement = data.placement.split('-')[0];
+  var floor = Math.floor;
+  var isVertical = ['top', 'bottom'].indexOf(placement) !== -1;
+  var side = isVertical ? 'right' : 'bottom';
+  var opSide = isVertical ? 'left' : 'top';
+  var measurement = isVertical ? 'width' : 'height';
+
+  if (popper[side] < floor(reference[opSide])) {
+    data.offsets.popper[opSide] = floor(reference[opSide]) - popper[measurement];
+  }
+  if (popper[opSide] > floor(reference[side])) {
+    data.offsets.popper[opSide] = floor(reference[side]);
+  }
+
+  return data;
+}
+
+/**
+ * Converts a string containing value + unit into a px value number
+ * @function
+ * @memberof {modifiers~offset}
+ * @private
+ * @argument {String} str - Value + unit string
+ * @argument {String} measurement - `height` or `width`
+ * @argument {Object} popperOffsets
+ * @argument {Object} referenceOffsets
+ * @returns {Number|String}
+ * Value in pixels, or original string if no values were extracted
+ */
+function toValue(str, measurement, popperOffsets, referenceOffsets) {
+  // separate value from unit
+  var split = str.match(/((?:\-|\+)?\d*\.?\d*)(.*)/);
+  var value = +split[1];
+  var unit = split[2];
+
+  // If it's not a number it's an operator, I guess
+  if (!value) {
+    return str;
+  }
+
+  if (unit.indexOf('%') === 0) {
+    var element = void 0;
+    switch (unit) {
+      case '%p':
+        element = popperOffsets;
+        break;
+      case '%':
+      case '%r':
+      default:
+        element = referenceOffsets;
+    }
+
+    var rect = getClientRect(element);
+    return rect[measurement] / 100 * value;
+  } else if (unit === 'vh' || unit === 'vw') {
+    // if is a vh or vw, we calculate the size based on the viewport
+    var size = void 0;
+    if (unit === 'vh') {
+      size = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    } else {
+      size = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    }
+    return size / 100 * value;
+  } else {
+    // if is an explicit pixel unit, we get rid of the unit and keep the value
+    // if is an implicit unit, it's px, and we return just the value
+    return value;
+  }
+}
+
+/**
+ * Parse an `offset` string to extrapolate `x` and `y` numeric offsets.
+ * @function
+ * @memberof {modifiers~offset}
+ * @private
+ * @argument {String} offset
+ * @argument {Object} popperOffsets
+ * @argument {Object} referenceOffsets
+ * @argument {String} basePlacement
+ * @returns {Array} a two cells array with x and y offsets in numbers
+ */
+function parseOffset(offset, popperOffsets, referenceOffsets, basePlacement) {
+  var offsets = [0, 0];
+
+  // Use height if placement is left or right and index is 0 otherwise use width
+  // in this way the first offset will use an axis and the second one
+  // will use the other one
+  var useHeight = ['right', 'left'].indexOf(basePlacement) !== -1;
+
+  // Split the offset string to obtain a list of values and operands
+  // The regex addresses values with the plus or minus sign in front (+10, -20, etc)
+  var fragments = offset.split(/(\+|\-)/).map(function (frag) {
+    return frag.trim();
+  });
+
+  // Detect if the offset string contains a pair of values or a single one
+  // they could be separated by comma or space
+  var divider = fragments.indexOf(find(fragments, function (frag) {
+    return frag.search(/,|\s/) !== -1;
+  }));
+
+  if (fragments[divider] && fragments[divider].indexOf(',') === -1) {
+    console.warn('Offsets separated by white space(s) are deprecated, use a comma (,) instead.');
+  }
+
+  // If divider is found, we divide the list of values and operands to divide
+  // them by ofset X and Y.
+  var splitRegex = /\s*,\s*|\s+/;
+  var ops = divider !== -1 ? [fragments.slice(0, divider).concat([fragments[divider].split(splitRegex)[0]]), [fragments[divider].split(splitRegex)[1]].concat(fragments.slice(divider + 1))] : [fragments];
+
+  // Convert the values with units to absolute pixels to allow our computations
+  ops = ops.map(function (op, index) {
+    // Most of the units rely on the orientation of the popper
+    var measurement = (index === 1 ? !useHeight : useHeight) ? 'height' : 'width';
+    var mergeWithPrevious = false;
+    return op
+    // This aggregates any `+` or `-` sign that aren't considered operators
+    // e.g.: 10 + +5 => [10, +, +5]
+    .reduce(function (a, b) {
+      if (a[a.length - 1] === '' && ['+', '-'].indexOf(b) !== -1) {
+        a[a.length - 1] = b;
+        mergeWithPrevious = true;
+        return a;
+      } else if (mergeWithPrevious) {
+        a[a.length - 1] += b;
+        mergeWithPrevious = false;
+        return a;
+      } else {
+        return a.concat(b);
+      }
+    }, [])
+    // Here we convert the string values into number values (in px)
+    .map(function (str) {
+      return toValue(str, measurement, popperOffsets, referenceOffsets);
+    });
+  });
+
+  // Loop trough the offsets arrays and execute the operations
+  ops.forEach(function (op, index) {
+    op.forEach(function (frag, index2) {
+      if (isNumeric(frag)) {
+        offsets[index] += frag * (op[index2 - 1] === '-' ? -1 : 1);
+      }
+    });
+  });
+  return offsets;
+}
+
+/**
+ * @function
+ * @memberof Modifiers
+ * @argument {Object} data - The data object generated by update method
+ * @argument {Object} options - Modifiers configuration and options
+ * @argument {Number|String} options.offset=0
+ * The offset value as described in the modifier description
+ * @returns {Object} The data object, properly modified
+ */
+function offset(data, _ref) {
+  var offset = _ref.offset;
+  var placement = data.placement,
+      _data$offsets = data.offsets,
+      popper = _data$offsets.popper,
+      reference = _data$offsets.reference;
+
+  var basePlacement = placement.split('-')[0];
+
+  var offsets = void 0;
+  if (isNumeric(+offset)) {
+    offsets = [+offset, 0];
+  } else {
+    offsets = parseOffset(offset, popper, reference, basePlacement);
+  }
+
+  if (basePlacement === 'left') {
+    popper.top += offsets[0];
+    popper.left -= offsets[1];
+  } else if (basePlacement === 'right') {
+    popper.top += offsets[0];
+    popper.left += offsets[1];
+  } else if (basePlacement === 'top') {
+    popper.left += offsets[0];
+    popper.top -= offsets[1];
+  } else if (basePlacement === 'bottom') {
+    popper.left += offsets[0];
+    popper.top += offsets[1];
+  }
+
+  data.popper = popper;
+  return data;
+}
+
+/**
+ * @function
+ * @memberof Modifiers
+ * @argument {Object} data - The data object generated by `update` method
+ * @argument {Object} options - Modifiers configuration and options
+ * @returns {Object} The data object, properly modified
+ */
+function preventOverflow(data, options) {
+  var boundariesElement = options.boundariesElement || getOffsetParent(data.instance.popper);
+
+  // If offsetParent is the reference element, we really want to
+  // go one step up and use the next offsetParent as reference to
+  // avoid to make this modifier completely useless and look like broken
+  if (data.instance.reference === boundariesElement) {
+    boundariesElement = getOffsetParent(boundariesElement);
+  }
+
+  // NOTE: DOM access here
+  // resets the popper's position so that the document size can be calculated excluding
+  // the size of the popper element itself
+  var transformProp = getSupportedPropertyName('transform');
+  var popperStyles = data.instance.popper.style; // assignment to help minification
+  var top = popperStyles.top,
+      left = popperStyles.left,
+      transform = popperStyles[transformProp];
+
+  popperStyles.top = '';
+  popperStyles.left = '';
+  popperStyles[transformProp] = '';
+
+  var boundaries = getBoundaries(data.instance.popper, data.instance.reference, options.padding, boundariesElement, data.positionFixed);
+
+  // NOTE: DOM access here
+  // restores the original style properties after the offsets have been computed
+  popperStyles.top = top;
+  popperStyles.left = left;
+  popperStyles[transformProp] = transform;
+
+  options.boundaries = boundaries;
+
+  var order = options.priority;
+  var popper = data.offsets.popper;
+
+  var check = {
+    primary: function primary(placement) {
+      var value = popper[placement];
+      if (popper[placement] < boundaries[placement] && !options.escapeWithReference) {
+        value = Math.max(popper[placement], boundaries[placement]);
+      }
+      return defineProperty({}, placement, value);
+    },
+    secondary: function secondary(placement) {
+      var mainSide = placement === 'right' ? 'left' : 'top';
+      var value = popper[mainSide];
+      if (popper[placement] > boundaries[placement] && !options.escapeWithReference) {
+        value = Math.min(popper[mainSide], boundaries[placement] - (placement === 'right' ? popper.width : popper.height));
+      }
+      return defineProperty({}, mainSide, value);
+    }
+  };
+
+  order.forEach(function (placement) {
+    var side = ['left', 'top'].indexOf(placement) !== -1 ? 'primary' : 'secondary';
+    popper = _extends({}, popper, check[side](placement));
+  });
+
+  data.offsets.popper = popper;
+
+  return data;
+}
+
+/**
+ * @function
+ * @memberof Modifiers
+ * @argument {Object} data - The data object generated by `update` method
+ * @argument {Object} options - Modifiers configuration and options
+ * @returns {Object} The data object, properly modified
+ */
+function shift(data) {
+  var placement = data.placement;
+  var basePlacement = placement.split('-')[0];
+  var shiftvariation = placement.split('-')[1];
+
+  // if shift shiftvariation is specified, run the modifier
+  if (shiftvariation) {
+    var _data$offsets = data.offsets,
+        reference = _data$offsets.reference,
+        popper = _data$offsets.popper;
+
+    var isVertical = ['bottom', 'top'].indexOf(basePlacement) !== -1;
+    var side = isVertical ? 'left' : 'top';
+    var measurement = isVertical ? 'width' : 'height';
+
+    var shiftOffsets = {
+      start: defineProperty({}, side, reference[side]),
+      end: defineProperty({}, side, reference[side] + reference[measurement] - popper[measurement])
+    };
+
+    data.offsets.popper = _extends({}, popper, shiftOffsets[shiftvariation]);
+  }
+
+  return data;
+}
+
+/**
+ * @function
+ * @memberof Modifiers
+ * @argument {Object} data - The data object generated by update method
+ * @argument {Object} options - Modifiers configuration and options
+ * @returns {Object} The data object, properly modified
+ */
+function hide(data) {
+  if (!isModifierRequired(data.instance.modifiers, 'hide', 'preventOverflow')) {
+    return data;
+  }
+
+  var refRect = data.offsets.reference;
+  var bound = find(data.instance.modifiers, function (modifier) {
+    return modifier.name === 'preventOverflow';
+  }).boundaries;
+
+  if (refRect.bottom < bound.top || refRect.left > bound.right || refRect.top > bound.bottom || refRect.right < bound.left) {
+    // Avoid unnecessary DOM access if visibility hasn't changed
+    if (data.hide === true) {
+      return data;
+    }
+
+    data.hide = true;
+    data.attributes['x-out-of-boundaries'] = '';
+  } else {
+    // Avoid unnecessary DOM access if visibility hasn't changed
+    if (data.hide === false) {
+      return data;
+    }
+
+    data.hide = false;
+    data.attributes['x-out-of-boundaries'] = false;
+  }
+
+  return data;
+}
+
+/**
+ * @function
+ * @memberof Modifiers
+ * @argument {Object} data - The data object generated by `update` method
+ * @argument {Object} options - Modifiers configuration and options
+ * @returns {Object} The data object, properly modified
+ */
+function inner(data) {
+  var placement = data.placement;
+  var basePlacement = placement.split('-')[0];
+  var _data$offsets = data.offsets,
+      popper = _data$offsets.popper,
+      reference = _data$offsets.reference;
+
+  var isHoriz = ['left', 'right'].indexOf(basePlacement) !== -1;
+
+  var subtractLength = ['top', 'left'].indexOf(basePlacement) === -1;
+
+  popper[isHoriz ? 'left' : 'top'] = reference[basePlacement] - (subtractLength ? popper[isHoriz ? 'width' : 'height'] : 0);
+
+  data.placement = getOppositePlacement(placement);
+  data.offsets.popper = getClientRect(popper);
+
+  return data;
+}
+
+/**
+ * Modifier function, each modifier can have a function of this type assigned
+ * to its `fn` property.<br />
+ * These functions will be called on each update, this means that you must
+ * make sure they are performant enough to avoid performance bottlenecks.
+ *
+ * @function ModifierFn
+ * @argument {dataObject} data - The data object generated by `update` method
+ * @argument {Object} options - Modifiers configuration and options
+ * @returns {dataObject} The data object, properly modified
+ */
+
+/**
+ * Modifiers are plugins used to alter the behavior of your poppers.<br />
+ * Popper.js uses a set of 9 modifiers to provide all the basic functionalities
+ * needed by the library.
+ *
+ * Usually you don't want to override the `order`, `fn` and `onLoad` props.
+ * All the other properties are configurations that could be tweaked.
+ * @namespace modifiers
+ */
+var modifiers = {
+  /**
+   * Modifier used to shift the popper on the start or end of its reference
+   * element.<br />
+   * It will read the variation of the `placement` property.<br />
+   * It can be one either `-end` or `-start`.
+   * @memberof modifiers
+   * @inner
+   */
+  shift: {
+    /** @prop {number} order=100 - Index used to define the order of execution */
+    order: 100,
+    /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
+    enabled: true,
+    /** @prop {ModifierFn} */
+    fn: shift
+  },
+
+  /**
+   * The `offset` modifier can shift your popper on both its axis.
+   *
+   * It accepts the following units:
+   * - `px` or unit-less, interpreted as pixels
+   * - `%` or `%r`, percentage relative to the length of the reference element
+   * - `%p`, percentage relative to the length of the popper element
+   * - `vw`, CSS viewport width unit
+   * - `vh`, CSS viewport height unit
+   *
+   * For length is intended the main axis relative to the placement of the popper.<br />
+   * This means that if the placement is `top` or `bottom`, the length will be the
+   * `width`. In case of `left` or `right`, it will be the `height`.
+   *
+   * You can provide a single value (as `Number` or `String`), or a pair of values
+   * as `String` divided by a comma or one (or more) white spaces.<br />
+   * The latter is a deprecated method because it leads to confusion and will be
+   * removed in v2.<br />
+   * Additionally, it accepts additions and subtractions between different units.
+   * Note that multiplications and divisions aren't supported.
+   *
+   * Valid examples are:
+   * ```
+   * 10
+   * '10%'
+   * '10, 10'
+   * '10%, 10'
+   * '10 + 10%'
+   * '10 - 5vh + 3%'
+   * '-10px + 5vh, 5px - 6%'
+   * ```
+   * > **NB**: If you desire to apply offsets to your poppers in a way that may make them overlap
+   * > with their reference element, unfortunately, you will have to disable the `flip` modifier.
+   * > You can read more on this at this [issue](https://github.com/FezVrasta/popper.js/issues/373).
+   *
+   * @memberof modifiers
+   * @inner
+   */
+  offset: {
+    /** @prop {number} order=200 - Index used to define the order of execution */
+    order: 200,
+    /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
+    enabled: true,
+    /** @prop {ModifierFn} */
+    fn: offset,
+    /** @prop {Number|String} offset=0
+     * The offset value as described in the modifier description
+     */
+    offset: 0
+  },
+
+  /**
+   * Modifier used to prevent the popper from being positioned outside the boundary.
+   *
+   * A scenario exists where the reference itself is not within the boundaries.<br />
+   * We can say it has "escaped the boundaries" — or just "escaped".<br />
+   * In this case we need to decide whether the popper should either:
+   *
+   * - detach from the reference and remain "trapped" in the boundaries, or
+   * - if it should ignore the boundary and "escape with its reference"
+   *
+   * When `escapeWithReference` is set to`true` and reference is completely
+   * outside its boundaries, the popper will overflow (or completely leave)
+   * the boundaries in order to remain attached to the edge of the reference.
+   *
+   * @memberof modifiers
+   * @inner
+   */
+  preventOverflow: {
+    /** @prop {number} order=300 - Index used to define the order of execution */
+    order: 300,
+    /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
+    enabled: true,
+    /** @prop {ModifierFn} */
+    fn: preventOverflow,
+    /**
+     * @prop {Array} [priority=['left','right','top','bottom']]
+     * Popper will try to prevent overflow following these priorities by default,
+     * then, it could overflow on the left and on top of the `boundariesElement`
+     */
+    priority: ['left', 'right', 'top', 'bottom'],
+    /**
+     * @prop {number} padding=5
+     * Amount of pixel used to define a minimum distance between the boundaries
+     * and the popper. This makes sure the popper always has a little padding
+     * between the edges of its container
+     */
+    padding: 5,
+    /**
+     * @prop {String|HTMLElement} boundariesElement='scrollParent'
+     * Boundaries used by the modifier. Can be `scrollParent`, `window`,
+     * `viewport` or any DOM element.
+     */
+    boundariesElement: 'scrollParent'
+  },
+
+  /**
+   * Modifier used to make sure the reference and its popper stay near each other
+   * without leaving any gap between the two. Especially useful when the arrow is
+   * enabled and you want to ensure that it points to its reference element.
+   * It cares only about the first axis. You can still have poppers with margin
+   * between the popper and its reference element.
+   * @memberof modifiers
+   * @inner
+   */
+  keepTogether: {
+    /** @prop {number} order=400 - Index used to define the order of execution */
+    order: 400,
+    /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
+    enabled: true,
+    /** @prop {ModifierFn} */
+    fn: keepTogether
+  },
+
+  /**
+   * This modifier is used to move the `arrowElement` of the popper to make
+   * sure it is positioned between the reference element and its popper element.
+   * It will read the outer size of the `arrowElement` node to detect how many
+   * pixels of conjunction are needed.
+   *
+   * It has no effect if no `arrowElement` is provided.
+   * @memberof modifiers
+   * @inner
+   */
+  arrow: {
+    /** @prop {number} order=500 - Index used to define the order of execution */
+    order: 500,
+    /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
+    enabled: true,
+    /** @prop {ModifierFn} */
+    fn: arrow,
+    /** @prop {String|HTMLElement} element='[x-arrow]' - Selector or node used as arrow */
+    element: '[x-arrow]'
+  },
+
+  /**
+   * Modifier used to flip the popper's placement when it starts to overlap its
+   * reference element.
+   *
+   * Requires the `preventOverflow` modifier before it in order to work.
+   *
+   * **NOTE:** this modifier will interrupt the current update cycle and will
+   * restart it if it detects the need to flip the placement.
+   * @memberof modifiers
+   * @inner
+   */
+  flip: {
+    /** @prop {number} order=600 - Index used to define the order of execution */
+    order: 600,
+    /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
+    enabled: true,
+    /** @prop {ModifierFn} */
+    fn: flip,
+    /**
+     * @prop {String|Array} behavior='flip'
+     * The behavior used to change the popper's placement. It can be one of
+     * `flip`, `clockwise`, `counterclockwise` or an array with a list of valid
+     * placements (with optional variations)
+     */
+    behavior: 'flip',
+    /**
+     * @prop {number} padding=5
+     * The popper will flip if it hits the edges of the `boundariesElement`
+     */
+    padding: 5,
+    /**
+     * @prop {String|HTMLElement} boundariesElement='viewport'
+     * The element which will define the boundaries of the popper position.
+     * The popper will never be placed outside of the defined boundaries
+     * (except if `keepTogether` is enabled)
+     */
+    boundariesElement: 'viewport',
+    /**
+     * @prop {Boolean} flipVariations=false
+     * The popper will switch placement variation between `-start` and `-end` when
+     * the reference element overlaps its boundaries.
+     *
+     * The original placement should have a set variation.
+     */
+    flipVariations: false,
+    /**
+     * @prop {Boolean} flipVariationsByContent=false
+     * The popper will switch placement variation between `-start` and `-end` when
+     * the popper element overlaps its reference boundaries.
+     *
+     * The original placement should have a set variation.
+     */
+    flipVariationsByContent: false
+  },
+
+  /**
+   * Modifier used to make the popper flow toward the inner of the reference element.
+   * By default, when this modifier is disabled, the popper will be placed outside
+   * the reference element.
+   * @memberof modifiers
+   * @inner
+   */
+  inner: {
+    /** @prop {number} order=700 - Index used to define the order of execution */
+    order: 700,
+    /** @prop {Boolean} enabled=false - Whether the modifier is enabled or not */
+    enabled: false,
+    /** @prop {ModifierFn} */
+    fn: inner
+  },
+
+  /**
+   * Modifier used to hide the popper when its reference element is outside of the
+   * popper boundaries. It will set a `x-out-of-boundaries` attribute which can
+   * be used to hide with a CSS selector the popper when its reference is
+   * out of boundaries.
+   *
+   * Requires the `preventOverflow` modifier before it in order to work.
+   * @memberof modifiers
+   * @inner
+   */
+  hide: {
+    /** @prop {number} order=800 - Index used to define the order of execution */
+    order: 800,
+    /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
+    enabled: true,
+    /** @prop {ModifierFn} */
+    fn: hide
+  },
+
+  /**
+   * Computes the style that will be applied to the popper element to gets
+   * properly positioned.
+   *
+   * Note that this modifier will not touch the DOM, it just prepares the styles
+   * so that `applyStyle` modifier can apply it. This separation is useful
+   * in case you need to replace `applyStyle` with a custom implementation.
+   *
+   * This modifier has `850` as `order` value to maintain backward compatibility
+   * with previous versions of Popper.js. Expect the modifiers ordering method
+   * to change in future major versions of the library.
+   *
+   * @memberof modifiers
+   * @inner
+   */
+  computeStyle: {
+    /** @prop {number} order=850 - Index used to define the order of execution */
+    order: 850,
+    /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
+    enabled: true,
+    /** @prop {ModifierFn} */
+    fn: computeStyle,
+    /**
+     * @prop {Boolean} gpuAcceleration=true
+     * If true, it uses the CSS 3D transformation to position the popper.
+     * Otherwise, it will use the `top` and `left` properties
+     */
+    gpuAcceleration: true,
+    /**
+     * @prop {string} [x='bottom']
+     * Where to anchor the X axis (`bottom` or `top`). AKA X offset origin.
+     * Change this if your popper should grow in a direction different from `bottom`
+     */
+    x: 'bottom',
+    /**
+     * @prop {string} [x='left']
+     * Where to anchor the Y axis (`left` or `right`). AKA Y offset origin.
+     * Change this if your popper should grow in a direction different from `right`
+     */
+    y: 'right'
+  },
+
+  /**
+   * Applies the computed styles to the popper element.
+   *
+   * All the DOM manipulations are limited to this modifier. This is useful in case
+   * you want to integrate Popper.js inside a framework or view library and you
+   * want to delegate all the DOM manipulations to it.
+   *
+   * Note that if you disable this modifier, you must make sure the popper element
+   * has its position set to `absolute` before Popper.js can do its work!
+   *
+   * Just disable this modifier and define your own to achieve the desired effect.
+   *
+   * @memberof modifiers
+   * @inner
+   */
+  applyStyle: {
+    /** @prop {number} order=900 - Index used to define the order of execution */
+    order: 900,
+    /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
+    enabled: true,
+    /** @prop {ModifierFn} */
+    fn: applyStyle,
+    /** @prop {Function} */
+    onLoad: applyStyleOnLoad,
+    /**
+     * @deprecated since version 1.10.0, the property moved to `computeStyle` modifier
+     * @prop {Boolean} gpuAcceleration=true
+     * If true, it uses the CSS 3D transformation to position the popper.
+     * Otherwise, it will use the `top` and `left` properties
+     */
+    gpuAcceleration: undefined
+  }
+};
+
+/**
+ * The `dataObject` is an object containing all the information used by Popper.js.
+ * This object is passed to modifiers and to the `onCreate` and `onUpdate` callbacks.
+ * @name dataObject
+ * @property {Object} data.instance The Popper.js instance
+ * @property {String} data.placement Placement applied to popper
+ * @property {String} data.originalPlacement Placement originally defined on init
+ * @property {Boolean} data.flipped True if popper has been flipped by flip modifier
+ * @property {Boolean} data.hide True if the reference element is out of boundaries, useful to know when to hide the popper
+ * @property {HTMLElement} data.arrowElement Node used as arrow by arrow modifier
+ * @property {Object} data.styles Any CSS property defined here will be applied to the popper. It expects the JavaScript nomenclature (eg. `marginBottom`)
+ * @property {Object} data.arrowStyles Any CSS property defined here will be applied to the popper arrow. It expects the JavaScript nomenclature (eg. `marginBottom`)
+ * @property {Object} data.boundaries Offsets of the popper boundaries
+ * @property {Object} data.offsets The measurements of popper, reference and arrow elements
+ * @property {Object} data.offsets.popper `top`, `left`, `width`, `height` values
+ * @property {Object} data.offsets.reference `top`, `left`, `width`, `height` values
+ * @property {Object} data.offsets.arrow] `top` and `left` offsets, only one of them will be different from 0
+ */
+
+/**
+ * Default options provided to Popper.js constructor.<br />
+ * These can be overridden using the `options` argument of Popper.js.<br />
+ * To override an option, simply pass an object with the same
+ * structure of the `options` object, as the 3rd argument. For example:
+ * ```
+ * new Popper(ref, pop, {
+ *   modifiers: {
+ *     preventOverflow: { enabled: false }
+ *   }
+ * })
+ * ```
+ * @type {Object}
+ * @static
+ * @memberof Popper
+ */
+var Defaults = {
+  /**
+   * Popper's placement.
+   * @prop {Popper.placements} placement='bottom'
+   */
+  placement: 'bottom',
+
+  /**
+   * Set this to true if you want popper to position it self in 'fixed' mode
+   * @prop {Boolean} positionFixed=false
+   */
+  positionFixed: false,
+
+  /**
+   * Whether events (resize, scroll) are initially enabled.
+   * @prop {Boolean} eventsEnabled=true
+   */
+  eventsEnabled: true,
+
+  /**
+   * Set to true if you want to automatically remove the popper when
+   * you call the `destroy` method.
+   * @prop {Boolean} removeOnDestroy=false
+   */
+  removeOnDestroy: false,
+
+  /**
+   * Callback called when the popper is created.<br />
+   * By default, it is set to no-op.<br />
+   * Access Popper.js instance with `data.instance`.
+   * @prop {onCreate}
+   */
+  onCreate: function onCreate() {},
+
+  /**
+   * Callback called when the popper is updated. This callback is not called
+   * on the initialization/creation of the popper, but only on subsequent
+   * updates.<br />
+   * By default, it is set to no-op.<br />
+   * Access Popper.js instance with `data.instance`.
+   * @prop {onUpdate}
+   */
+  onUpdate: function onUpdate() {},
+
+  /**
+   * List of modifiers used to modify the offsets before they are applied to the popper.
+   * They provide most of the functionalities of Popper.js.
+   * @prop {modifiers}
+   */
+  modifiers: modifiers
+};
+
+/**
+ * @callback onCreate
+ * @param {dataObject} data
+ */
+
+/**
+ * @callback onUpdate
+ * @param {dataObject} data
+ */
+
+// Utils
+// Methods
+var Popper = function () {
+  /**
+   * Creates a new Popper.js instance.
+   * @class Popper
+   * @param {Element|referenceObject} reference - The reference element used to position the popper
+   * @param {Element} popper - The HTML / XML element used as the popper
+   * @param {Object} options - Your custom options to override the ones defined in [Defaults](#defaults)
+   * @return {Object} instance - The generated Popper.js instance
+   */
+  function Popper(reference, popper) {
+    var _this = this;
+
+    var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+    classCallCheck(this, Popper);
+
+    this.scheduleUpdate = function () {
+      return requestAnimationFrame(_this.update);
+    };
+
+    // make update() debounced, so that it only runs at most once-per-tick
+    this.update = debounce(this.update.bind(this));
+
+    // with {} we create a new object with the options inside it
+    this.options = _extends({}, Popper.Defaults, options);
+
+    // init state
+    this.state = {
+      isDestroyed: false,
+      isCreated: false,
+      scrollParents: []
+    };
+
+    // get reference and popper elements (allow jQuery wrappers)
+    this.reference = reference && reference.jquery ? reference[0] : reference;
+    this.popper = popper && popper.jquery ? popper[0] : popper;
+
+    // Deep merge modifiers options
+    this.options.modifiers = {};
+    Object.keys(_extends({}, Popper.Defaults.modifiers, options.modifiers)).forEach(function (name) {
+      _this.options.modifiers[name] = _extends({}, Popper.Defaults.modifiers[name] || {}, options.modifiers ? options.modifiers[name] : {});
+    });
+
+    // Refactoring modifiers' list (Object => Array)
+    this.modifiers = Object.keys(this.options.modifiers).map(function (name) {
+      return _extends({
+        name: name
+      }, _this.options.modifiers[name]);
+    })
+    // sort the modifiers by order
+    .sort(function (a, b) {
+      return a.order - b.order;
+    });
+
+    // modifiers have the ability to execute arbitrary code when Popper.js get inited
+    // such code is executed in the same order of its modifier
+    // they could add new properties to their options configuration
+    // BE AWARE: don't add options to `options.modifiers.name` but to `modifierOptions`!
+    this.modifiers.forEach(function (modifierOptions) {
+      if (modifierOptions.enabled && isFunction(modifierOptions.onLoad)) {
+        modifierOptions.onLoad(_this.reference, _this.popper, _this.options, modifierOptions, _this.state);
+      }
+    });
+
+    // fire the first update to position the popper in the right place
+    this.update();
+
+    var eventsEnabled = this.options.eventsEnabled;
+    if (eventsEnabled) {
+      // setup event listeners, they will take care of update the position in specific situations
+      this.enableEventListeners();
+    }
+
+    this.state.eventsEnabled = eventsEnabled;
+  }
+
+  // We can't use class properties because they don't get listed in the
+  // class prototype and break stuff like Sinon stubs
+
+
+  createClass(Popper, [{
+    key: 'update',
+    value: function update$$1() {
+      return update.call(this);
+    }
+  }, {
+    key: 'destroy',
+    value: function destroy$$1() {
+      return destroy.call(this);
+    }
+  }, {
+    key: 'enableEventListeners',
+    value: function enableEventListeners$$1() {
+      return enableEventListeners.call(this);
+    }
+  }, {
+    key: 'disableEventListeners',
+    value: function disableEventListeners$$1() {
+      return disableEventListeners.call(this);
+    }
+
+    /**
+     * Schedules an update. It will run on the next UI update available.
+     * @method scheduleUpdate
+     * @memberof Popper
+     */
+
+
+    /**
+     * Collection of utilities useful when writing custom modifiers.
+     * Starting from version 1.7, this method is available only if you
+     * include `popper-utils.js` before `popper.js`.
+     *
+     * **DEPRECATION**: This way to access PopperUtils is deprecated
+     * and will be removed in v2! Use the PopperUtils module directly instead.
+     * Due to the high instability of the methods contained in Utils, we can't
+     * guarantee them to follow semver. Use them at your own risk!
+     * @static
+     * @private
+     * @type {Object}
+     * @deprecated since version 1.8
+     * @member Utils
+     * @memberof Popper
+     */
+
+  }]);
+  return Popper;
+}();
+
+/**
+ * The `referenceObject` is an object that provides an interface compatible with Popper.js
+ * and lets you use it as replacement of a real DOM node.<br />
+ * You can use this method to position a popper relatively to a set of coordinates
+ * in case you don't have a DOM node to use as reference.
+ *
+ * ```
+ * new Popper(referenceObject, popperNode);
+ * ```
+ *
+ * NB: This feature isn't supported in Internet Explorer 10.
+ * @name referenceObject
+ * @property {Function} data.getBoundingClientRect
+ * A function that returns a set of coordinates compatible with the native `getBoundingClientRect` method.
+ * @property {number} data.clientWidth
+ * An ES6 getter that will return the width of the virtual reference element.
+ * @property {number} data.clientHeight
+ * An ES6 getter that will return the height of the virtual reference element.
+ */
+
+
+Popper.Utils = (typeof window !== 'undefined' ? window : global).PopperUtils;
+Popper.placements = placements;
+Popper.Defaults = Defaults;
+
+/* harmony default export */ __webpack_exports__["default"] = (Popper);
+//# sourceMappingURL=popper.js.map
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
+/***/ "./node_modules/vue-trend-chart/dist/vue-trend-chart.esm.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/vue-trend-chart/dist/vue-trend-chart.esm.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function validatePadding (padding) {
+  var arr = padding
+    .split(" ")
+    .filter(function (item) { return item !== ""; })
+    .map(function (item) { return parseInt(item); });
+  if (arr.length < 1 || arr.length > 4) { return false; }
+  return arr.every(function (item) { return typeof item == "number" && item >= 0; });
+}
+
+function getPadding (padding) {
+  var arr = padding
+    .split(" ")
+    .filter(function (item) { return item !== ""; })
+    .map(function (item) { return parseInt(item); });
+  switch (arr.length) {
+    case 4:
+      return { top: arr[0], right: arr[1], bottom: arr[2], left: arr[3] };
+      break;
+    case 3:
+      return { top: arr[0], right: arr[1], bottom: arr[2], left: arr[1] };
+      break;
+    case 2:
+      return { top: arr[0], right: arr[1], bottom: arr[0], left: arr[1] };
+      break;
+    default:
+      return { top: arr[0], right: arr[0], bottom: arr[0], left: arr[0] };
+      break;
+  }
+}
+
+var TrendChartGrid = {
+  name: "TrendChartGrid",
+  props: {
+    boundary: {
+      required: true,
+      type: Object
+    },
+    verticalLines: {
+      default: false,
+      type: Boolean
+    },
+    verticalLinesNumber: {
+      default: 0,
+      type: Number
+    },
+    horizontalLines: {
+      default: false,
+      type: Boolean
+    },
+    horizontalLinesNumber: {
+      default: 0,
+      type: Number
+    }
+  },
+  methods: {
+    setVerticalLinesParams: function setVerticalLinesParams(n) {
+      var ref = this;
+      var boundary = ref.boundary;
+      var verticalLinesNumber = ref.verticalLinesNumber;
+      var step =
+        verticalLinesNumber > 1
+          ? (boundary.maxX - boundary.minX) / (verticalLinesNumber - 1)
+          : 0;
+      var x = boundary.minX + step * (n - 1);
+      var y1 = boundary.minY;
+      var y2 = boundary.maxY;
+      return {
+        x1: x,
+        x2: x,
+        y1: y1,
+        y2: y2,
+        stroke: "rgba(0,0,0,0.1)"
+      };
+    },
+    setHorizontalLinesParams: function setHorizontalLinesParams(n) {
+      var ref = this;
+      var boundary = ref.boundary;
+      var horizontalLinesNumber = ref.horizontalLinesNumber;
+      var step =
+        horizontalLinesNumber > 1
+          ? (boundary.maxY - boundary.minY) / (horizontalLinesNumber - 1)
+          : 0;
+      var y = boundary.maxY - step * (n - 1);
+      var x1 = boundary.minX;
+      var x2 = boundary.maxX;
+      return {
+        x1: x1,
+        x2: x2,
+        y1: y,
+        y2: y,
+        stroke: "rgba(0,0,0,0.1)"
+      };
+    }
+  },
+  render: function render(h) {
+    if (!this.verticalLines && !this.horizontalLines) { return; }
+
+    var children = [];
+
+    // Vertical Lines
+    if (this.verticalLines && this.verticalLinesNumber > 0) {
+      var lines = [];
+      for (var i = 1; i <= this.verticalLinesNumber; i++) {
+        lines.push(
+          h("line", {
+            class: "line",
+            attrs: Object.assign({}, this.setVerticalLinesParams(i))
+          })
+        );
+      }
+      children.push(
+        h(
+          "g",
+          {
+            class: "vertical"
+          },
+          lines
+        )
+      );
+    }
+    // Horizontal Lines
+    if (this.horizontalLines && this.horizontalLinesNumber > 0) {
+      var lines$1 = [];
+      for (var i$1 = 1; i$1 <= this.horizontalLinesNumber; i$1++) {
+        lines$1.push(
+          h("line", {
+            class: "line",
+            attrs: Object.assign({}, this.setHorizontalLinesParams(i$1))
+          })
+        );
+      }
+      children.push(
+        h(
+          "g",
+          {
+            class: "horizontal"
+          },
+          lines$1
+        )
+      );
+    }
+
+    // Render component
+    return h("g", children);
+  }
+};
+
+var TrendChartLabels = {
+  name: "TrendChartLabels",
+  props: {
+    boundary: {
+      required: true,
+      type: Object
+    },
+    minValue: {
+      type: Number
+    },
+    maxValue: {
+      type: Number
+    },
+    xLabels: {
+      type: Array
+    },
+    yLabels: {
+      type: Number
+    },
+    yLabelsTextFormatter: {
+      default: function (value) { return value; },
+      type: Function
+    }
+  },
+  data: function data() {
+    return {
+      xLabelHeight: null,
+      yLabelHeight: null
+    };
+  },
+  methods: {
+    setXLabelsParams: function setXLabelsParams(n) {
+      var ref = this;
+      var boundary = ref.boundary;
+      var xLabels = ref.xLabels;
+      var step = (boundary.maxX - boundary.minX) / (xLabels.length - 1);
+      var x = boundary.minX + step * n;
+      var y = boundary.maxY;
+      return { transform: ("translate(" + x + ", " + y + ")") };
+    },
+    setYLabelsParams: function setYLabelsParams(n) {
+      var ref = this;
+      var boundary = ref.boundary;
+      var yLabels = ref.yLabels;
+      var step = (boundary.maxY - boundary.minY) / (yLabels - 1);
+      var x = boundary.minX;
+      var y = boundary.maxY - step * n;
+      return { transform: ("translate(" + x + ", " + y + ")") };
+    }
+  },
+  mounted: function mounted() {
+    if (this.xLabels && this.xLabels.length) {
+      this.xLabelHeight = this.$refs.xLabels
+        .querySelector("text")
+        .getBoundingClientRect().height;
+    }
+    if (this.yLabels && this.yLabels > 0) {
+      this.yLabelHeight = this.$refs.yLabels
+        .querySelector("text")
+        .getBoundingClientRect().height;
+    }
+  },
+  render: function render(h) {
+    var this$1 = this;
+
+    if (
+      !(this.xLabels && this.xLabels.length) &&
+      !(this.yLabels && this.yLabels > 0)
+    )
+      { return; }
+
+    var children = [];
+
+    // x labels
+    if (this.xLabels && this.xLabels.length) {
+      children.push(
+        h(
+          "g",
+          {
+            class: "x-labels",
+            ref: "xLabels"
+          },
+          this.xLabels.map(function (label, i) {
+            return h(
+              "g",
+              {
+                class: "label",
+                attrs: Object.assign({}, this$1.setXLabelsParams(i))
+              },
+              [
+                h(
+                  "text",
+                  {
+                    attrs: {
+                      dy: this$1.xLabelHeight + 5,
+                      "text-anchor": "middle"
+                    }
+                  },
+                  label
+                ),
+                h("line", { attrs: { stroke: "rgba(0,0,0,0.1)", y2: 5 } })
+              ]
+            );
+          })
+        )
+      );
+    }
+
+    // y labels
+    if (this.yLabels && this.yLabels > 0) {
+      var labels = [];
+      for (var i = 0; i < this.yLabels; i++) {
+        labels.push(
+          h(
+            "g",
+            {
+              class: "label",
+              attrs: Object.assign({}, this.setYLabelsParams(i))
+            },
+            [
+              h(
+                "text",
+                {
+                  attrs: {
+                    dx: -10,
+                    dy: this.yLabelHeight / 4,
+                    "text-anchor": "end"
+                  }
+                },
+                this.yLabelsTextFormatter(
+                  this.minValue +
+                    ((this.maxValue - this.minValue) / (this.yLabels - 1)) * i
+                )
+              ),
+              h("line", { attrs: { stroke: "rgba(0,0,0,0.1)", x1: 0, x2: -5 } })
+            ]
+          )
+        );
+      }
+      children.push(
+        h(
+          "g",
+          {
+            class: "y-labels",
+            ref: "yLabels"
+          },
+          labels
+        )
+      );
+    }
+
+    // Render component
+    return h("g", children);
+  }
+};
+
+function genPoints (arr, ref, max, min, maxAmount) {
+  var minX = ref.minX;
+  var minY = ref.minY;
+  var maxX = ref.maxX;
+  var maxY = ref.maxY;
+
+  arr = arr.map(function (item) { return (typeof item === "number" ? item : item.value); });
+  var minValue = min - 0.001;
+  var gridX = (maxX - minX) / (maxAmount - 1);
+  var gridY = (maxY - minY) / (max + 0.001 - minValue);
+
+  return arr.map(function (value, index) {
+    return {
+      x: index * gridX + minX,
+      y:
+        maxY -
+        (value - minValue) * gridY +
+        +(index === maxAmount - 1) * 0.00001 -
+        +(index === 0) * 0.00001
+    };
+  });
+}
+
+function genPath (pnts, smooth, ref) {
+  var maxY = ref.maxY;
+
+  var points = [].concat( pnts );
+  var start = points.shift();
+  var end = points[points.length - 1];
+  var distance = points[0].x - start.x;
+  var bezierX = distance / 2;
+
+  // Create Line Path
+  var linePath = "M " + (start.x) + "," + (start.y);
+  points.forEach(function (point, index) {
+    if (!smooth) { linePath += " L" + (point.x) + "," + (point.y); }
+    else {
+      var prev = points[index - 1] || start;
+      linePath += " C " + (bezierX + prev.x) + "," + (prev.y) + " " + (bezierX + prev.x) + "," + (point.y) + " " + (point.x) + "," + (point.y);
+    }
+  });
+
+  // Create Fill Path
+  var fillPath = linePath;
+  if (end.Y !== maxY) { fillPath += " L" + (end.x) + "," + maxY; }
+  if (start.Y !== maxY) { fillPath += " L" + (start.x) + "," + maxY; }
+  fillPath += " Z";
+
+  return { linePath: linePath, fillPath: fillPath };
+}
+
+var TrendChartCurve = {
+  name: "TrendChartCurve",
+  props: {
+    boundary: {
+      required: true,
+      type: Object
+    },
+    minValue: {
+      required: true,
+      type: Number
+    },
+    maxValue: {
+      required: true,
+      type: Number
+    },
+    maxAmount: {
+      required: true,
+      type: Number
+    },
+    activeLineParams: {
+      type: Object
+    },
+    data: {
+      required: true,
+      type: Array
+    },
+    className: {
+      type: String
+    },
+    smooth: {
+      default: false,
+      type: Boolean
+    },
+    stroke: {
+      default: true,
+      type: Boolean
+    },
+    fill: {
+      default: false,
+      type: Boolean
+    },
+    showPoints: {
+      default: false,
+      type: Boolean
+    }
+  },
+  computed: {
+    points: function points() {
+      return genPoints(
+        this.data,
+        this.boundary,
+        this.maxValue,
+        this.minValue,
+        this.maxAmount
+      );
+    },
+    paths: function paths() {
+      return genPath(this.points, this.smooth, this.boundary);
+    }
+  },
+  render: function render(h) {
+    var this$1 = this;
+
+    var children = [];
+    // Fill path
+    if (this.fill && this.paths && this.paths.fillPath) {
+      children.push(
+        h("path", {
+          class: "fill",
+          attrs: {
+            d: this.paths.fillPath,
+            fill: "rgba(0,0,0,0.15)"
+          }
+        })
+      );
+    }
+    // Stroke path
+    if (this.stroke && this.paths && this.paths.linePath) {
+      children.push(
+        h("path", {
+          class: "stroke",
+          attrs: {
+            d: this.paths.linePath,
+            fill: "none",
+            stroke: "black"
+          }
+        })
+      );
+    }
+    // Points
+    if (this.showPoints && this.points) {
+      children.push(
+        h(
+          "g",
+          {
+            class: "points"
+          },
+          this.points.map(function (point, i) { return h("circle", {
+              class: {
+                point: true,
+                "is-active":
+                  this$1.activeLineParams && this$1.activeLineParams.index === i
+              },
+              attrs: {
+                cx: point.x,
+                cy: point.y,
+                r: 2,
+                stroke: "#000000",
+                "stroke-width": 1
+              }
+            }); }
+          )
+        )
+      );
+    }
+
+    // Render component
+    return h(
+      "g",
+      {
+        class: this.className
+      },
+      children
+    );
+  }
+};
+
+var TrendChart = {
+  name: "TrendChart",
+  components: { TrendChartGrid: TrendChartGrid, TrendChartLabels: TrendChartLabels, TrendChartCurve: TrendChartCurve },
+  props: {
+    datasets: {
+      required: true,
+      type: Array
+    },
+    grid: {
+      default: null,
+      type: Object
+    },
+    labels: {
+      default: null,
+      type: Object
+    },
+    max: {
+      type: Number
+    },
+    min: {
+      type: Number
+    },
+    padding: {
+      default: "5",
+      type: String,
+      validator: function validator(val) {
+        return validatePadding(val);
+      }
+    },
+    interactive: {
+      default: false,
+      type: Boolean
+    }
+  },
+  data: function data() {
+    return {
+      width: null,
+      height: null,
+      labelsOverflowObject: { top: 0, right: 0, bottom: 0, left: 0 },
+      activeLine: null,
+      activeLineParams: null
+    };
+  },
+  computed: {
+    paddingObject: function paddingObject() {
+      if (!this.padding) { return getPadding("0"); }
+      return getPadding(this.padding);
+    },
+    boundary: function boundary() {
+      var ref = this;
+      var width = ref.width;
+      var height = ref.height;
+      var paddingObject = ref.paddingObject;
+      var labelsOverflowObject = ref.labelsOverflowObject;
+      var boundary = {
+        minX: paddingObject.left + labelsOverflowObject.left,
+        minY: paddingObject.top + labelsOverflowObject.top,
+        maxX: width - paddingObject.right - labelsOverflowObject.right,
+        maxY: height - paddingObject.bottom - labelsOverflowObject.bottom
+      };
+      return boundary;
+    },
+    params: function params() {
+      var maxValue = -Infinity;
+      var minValue = Infinity;
+      var maxAmount = 0;
+      this.datasets.forEach(function (dataset) {
+        var dataArr = dataset.data.map(function (item) { return typeof item === "number" ? item : item.value; }
+        );
+
+        var max = Math.max.apply(Math, dataArr);
+        if (max > maxValue) { maxValue = max; }
+
+        var min = Math.min.apply(Math, dataArr);
+        if (min < minValue) { minValue = min; }
+
+        if (dataArr.length > maxAmount) { maxAmount = dataArr.length; }
+      });
+      if (this.max !== undefined && this.max > maxValue) { maxValue = this.max; }
+      if (this.min !== undefined && this.min < minValue) { minValue = this.min; }
+      return { maxValue: maxValue, minValue: minValue, maxAmount: maxAmount };
+    },
+    chartOverlayParams: function chartOverlayParams() {
+      var ref = this;
+      var boundary = ref.boundary;
+      var width = boundary.maxX - boundary.minX;
+      var height = boundary.maxY - boundary.minY;
+      return {
+        x: boundary.minX,
+        y: boundary.minY,
+        width: width > 0 ? width : 0,
+        height: height > 0 ? height : 0,
+        opacity: 0
+      };
+    },
+    chartAxesXCoords: function chartAxesXCoords() {
+      var axes = [];
+      var step =
+        (this.boundary.maxX - this.boundary.minX) / (this.params.maxAmount - 1);
+      for (var i = 0; i < this.params.maxAmount; i++) {
+        axes.push(step * i + this.boundary.minX);
+      }
+      return axes;
+    }
+  },
+  methods: {
+    setSize: function setSize() {
+      var params = this.$refs["chart"].getBoundingClientRect();
+      this.width = params.width;
+      this.height = params.height;
+    },
+    fitLabels: function fitLabels() {
+      var chart = this.$refs["chart"];
+      var chartLabels = this.$refs["labels"];
+      if (
+        chartLabels &&
+        ((chartLabels.xLabels && chartLabels.xLabels.length) ||
+          chartLabels.yLabels > 0)
+      ) {
+        var chartClientRect = chart.getBoundingClientRect();
+        var chartLabelsClientRect = chartLabels.$el.getBoundingClientRect();
+
+        var top =
+          chartClientRect.top -
+          chartLabelsClientRect.top +
+          this.paddingObject.top;
+        var right =
+          chartLabelsClientRect.right -
+          chartClientRect.right +
+          this.paddingObject.right;
+        var bottom =
+          chartLabelsClientRect.bottom -
+          chartClientRect.bottom +
+          this.paddingObject.bottom;
+        var left =
+          this.paddingObject.left -
+          chartLabelsClientRect.left +
+          chartClientRect.left;
+
+        this.labelsOverflowObject = {
+          top: top > 0 ? top : 0,
+          right: right > 0 ? right : 0,
+          bottom: bottom > 0 ? bottom : 0,
+          left: left > 0 ? left : 0
+        };
+      } else {
+        this.labelsOverflowObject = { top: 0, right: 0, bottom: 0, left: 0 };
+      }
+    },
+    init: function init() {
+      var this$1 = this;
+
+      this.setSize();
+      this.$nextTick(function () {
+        this$1.fitLabels();
+      });
+    },
+    getNearestCoordinate: function getNearestCoordinate(val) {
+      return (
+        this.chartAxesXCoords.reduce(
+          function (p, n) { return (Math.abs(p) > Math.abs(n - val) ? n - val : p); },
+          Infinity
+        ) + val
+      );
+    },
+    mouseMove: function mouseMove(e) {
+      var rect = this.$refs.chart.getBoundingClientRect();
+      this.activeLine = this.getNearestCoordinate(e.clientX - rect.left);
+    },
+    mouseOut: function mouseOut() {
+      this.activeLine = null;
+      this.activeLineParams = null;
+    },
+    onWindowResize: function onWindowResize() {
+      this.setSize();
+    }
+  },
+  watch: {
+    activeLine: function activeLine(val) {
+      var this$1 = this;
+
+      var data = [];
+      if (val) {
+        this.activeLineParams = {
+          index: this.chartAxesXCoords.indexOf(this.activeLine)
+        };
+        this.datasets.forEach(function (dataset) {
+          data.push(dataset.data[this$1.activeLineParams.index]);
+        });
+      }
+
+      this.$emit(
+        "mouseMove",
+        this.activeLineParams ? Object.assign({}, this.activeLineParams, {data: data}) : null
+      );
+    },
+    labels: {
+      handler: function handler() {
+        var this$1 = this;
+
+        // Reset labels rect overflow
+        this.labelsOverflowObject = { top: 0, right: 0, bottom: 0, left: 0 };
+        // Calculate new labels rect overflow
+        this.$nextTick(function () {
+          this$1.fitLabels();
+        });
+      },
+      deep: true
+    }
+  },
+  mounted: function mounted() {
+    this.init();
+    window.addEventListener("resize", this.onWindowResize);
+  },
+  destroyed: function destroyed() {
+    window.removeEventListener("resize", this.onWindowResize);
+  },
+  render: function render(h) {
+    var this$1 = this;
+
+    var children = [];
+
+    // Grid
+    if (this.grid) {
+      children.push(
+        h(TrendChartGrid, {
+          class: "grid",
+          attrs: {
+            verticalLines: this.grid.verticalLines,
+            verticalLinesNumber:
+              this.grid.verticalLinesNumber || this.params.maxAmount,
+            horizontalLines: this.grid.horizontalLines,
+            horizontalLinesNumber:
+              this.grid.horizontalLinesNumber ||
+              (this.labels && this.labels.yLabels) ||
+              0,
+            boundary: this.boundary
+          }
+        })
+      );
+    }
+
+    // Chart active line
+    if (this.interactive && this.chartOverlayParams) {
+      children.push(
+        h("line", {
+          class: "active-line",
+          ref: "active-line",
+          attrs: {
+            x1: this.activeLine || this.boundary.minX,
+            x2: this.activeLine || this.boundary.minX,
+            y1: this.boundary.minY,
+            y2: this.boundary.maxY,
+            stroke: "black",
+            visibility: this.activeLine ? "visible" : "hidden"
+          }
+        })
+      );
+    }
+
+    // Labels
+    if (this.labels) {
+      children.push(
+        h(TrendChartLabels, {
+          class: "labels",
+          ref: "labels",
+          attrs: Object.assign({}, this.labels,
+            {boundary: this.boundary,
+            minValue: this.params.minValue,
+            maxValue: this.params.maxValue})
+        })
+      );
+    }
+
+    // Curves
+    this.datasets.map(function (dataset) {
+      children.push(
+        h(TrendChartCurve, {
+          class: "curve",
+          attrs: Object.assign({}, dataset,
+            {boundary: this$1.boundary,
+            minValue: this$1.params.minValue,
+            maxValue: this$1.params.maxValue,
+            maxAmount: this$1.params.maxAmount,
+            activeLineParams: this$1.activeLineParams})
+        })
+      );
+    });
+
+    // Chart overlay
+    if (this.interactive && this.chartOverlayParams) {
+      children.push(
+        h("rect", {
+          ref: "interactive-area",
+          attrs: Object.assign({}, this.chartOverlayParams),
+          on: {
+            mousemove: function (e) { return this$1.mouseMove(e); },
+            mouseout: function () { return this$1.mouseOut(); }
+          }
+        })
+      );
+    }
+
+    // Render component
+    return h(
+      "svg",
+      {
+        class: "vtc",
+        ref: "chart",
+        attrs: {
+          xmlns: "http://www.w3.org/2000/svg",
+          width: "100%",
+          height: "100%"
+        }
+      },
+      children
+    );
+  }
+};
+
+TrendChart.install = function(Vue) {
+  Vue.component(TrendChart.name, TrendChart);
+};
+
+if (typeof window !== "undefined" && window.Vue) {
+  window.Vue.use(TrendChart);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (TrendChart);
+
+
+/***/ })
+
+}]);
