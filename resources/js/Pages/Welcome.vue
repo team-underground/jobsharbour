@@ -31,7 +31,7 @@
 			<div class="md:flex relative max-w-6xl mx-auto">
 				<div class="lg:w-3/5 md:flex mx-auto">
 					<div class="py-12 md:pt-16 mb:pb-32 text-center md:text-left">
-						<heading class="mb-1 text-blue-600 text-2xl">Struggling for jobs?</heading>
+						<heading class="mb-1 text-blue-600 text-2xl">Struggling for jobs? in North-East?</heading>
 						<heading size="display" class="mb-8">
 							<span class="block">Unveil job opportunities</span> in our harbour right now
 						</heading>

@@ -8,6 +8,7 @@
 </template>
 
 <script>
+
 export default {
 	props: {
 		to: {
@@ -19,6 +20,8 @@ export default {
 			default: "Subject goes here"
 		}
 	}
+	
+		
 };
 </script>
 

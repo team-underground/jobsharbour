@@ -15,7 +15,7 @@
 					/>
 				</svg>
 			</div>
-			<div class="flex-1">{{ list }}</div>
+			<div class="flex-1" v-html="list"></div>
 		</li>
 	</component>
 </template>

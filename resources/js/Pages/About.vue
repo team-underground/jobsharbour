@@ -5,7 +5,7 @@
 				<heading size="display" class="mb-4">About Jobs Harbour</heading>
 				<heading
 					class="mb-1 text-blue-800 md:text-xl"
-				>Jobs Harbour is an online web based job listing sites for both employers and job seekers. Our primary goal is to provide you upto date job information from all around Assam and the Northeast.</heading>
+				>Jobs Harbour is an online web based job listing site for both employers and job seekers. Our primary goal is to provide you upto date job information from all around Assam and the Northeast.</heading>
 			</div>
 
 			<div class="hidden md:block">
@@ -25,7 +25,8 @@
 					<div class="w-1/2 px-4 flex">
 						<card class="flex-1">
 							<heading size="large" class="mb-2">For Job Seekers</heading>
-							<heading>Job Seekers can find the right job for her/him no matter what it is that you do. Find job openings by job title, by location, by salary and many more...</heading>
+							<heading class="mb-6">This is all job hunters accurate point to find jobs of their preferred kind. Find job openings by job title, salary, job type and category. Provide all the details of your credentials, CV and pull employers' interest.</heading>
+							<list unordered-list-color="text-blue-600" :lists="['Subscribe to get notify','Register and apply (comming soon)','Feel free to share your credentials/CV.']"></list>
 						</card>
 					</div>
 					<div class="w-1/2 px-4 flex">
@@ -34,24 +35,24 @@
 
 							<heading
 								class="mb-4"
-							>Jobs Harbour helps employers job listing reaches to large number of potentials candidates, so that he/she can pick the best out of them.</heading>
+							>Jobs Harbour provides a convenient place for employees/consultancy to showcase their jobs in details. Here they can reach potential and deserving candidates and pick the best out of them.</heading>
 
 							<link-to to="/for-employers">View Details</link-to>
 						</card>
 					</div>
 				</div>
 
-				<heading class="text-center mt-10">
-					Questions? Drop us an email at
-					<link-to to="mailto:hello@jobsharbour.com">hello@jobsharbour.com</link-to>.
-					<br />We usually get back within 24 hours.
-				</heading>
+				<contact-us />
+
 			</div>
 		</div>
 	</layout>
 </template>
 
 <script>
+
+
+
 import Layout from "@/Shared/Layout";
 import Heading from "@/Shared/tuis/Heading";
 import Icon from "@/Shared/tuis/Icon";
@@ -59,6 +60,8 @@ import LinkTo from "@/Shared/tuis/LinkTo";
 import Card from "@/Shared/tuis/Card";
 import List from "@/Shared/tuis/List";
 import LoadingButton from "@/Shared/tuis/LoadingButton";
+import ContactUs from "@/Pages/ContactUs";
+
 
 export default {
 	components: {
@@ -68,7 +71,8 @@ export default {
 		LinkTo,
 		Card,
 		List,
-		LoadingButton
+		LoadingButton,
+		ContactUs
 	},
 	data() {
 		return {
@@ -109,6 +113,7 @@ export default {
 			}
 		};
 	}
+	
 };
 </script>
 

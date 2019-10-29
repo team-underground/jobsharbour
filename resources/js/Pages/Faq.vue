@@ -9,22 +9,22 @@
 				<tabs>
 					<tab name="About Jobs Harbour" :selected="true">
 						<accordion>
-							<div slot="title" class="text-lg text-gray-800 font-medium">Why jobs harbour?</div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore neque, dolore omnis deleniti, illo dolores unde veniam, in voluptate quasi consequuntur libero sint. Accusantium obcaecati dignissimos velit aliquam consectetur veniam consequuntur unde numquam ipsum eius? Autem cumque nesciunt, ratione vitae consectetur laborum porro nihil dolor magnam a, placeat hic illo?
+							<div slot="title" class="text-lg text-gray-800 font-medium">Why jobs harbour?</div><p>Here we come with the best platform where you can showcase your job lists, communicate with a mass of potential candidates in no time and also pick up the best out of them.</p>
 						</accordion>
 						<accordion>
-							<div slot="title" class="text-lg text-gray-800 font-medium">Who we are?</div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore neque, dolore omnis deleniti, illo dolores unde veniam, in voluptate quasi consequuntur libero sint. Accusantium obcaecati dignissimos velit aliquam consectetur veniam consequuntur unde numquam ipsum eius? Autem cumque nesciunt, ratione vitae consectetur laborum porro nihil dolor magnam a, placeat hic illo?
-						</accordion>
-						<accordion>
-							<div
-								slot="title"
-								class="text-lg text-gray-800 font-medium"
-							>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore itaque aperiam quis. Obcaecati in quas deserunt doloremque est.</div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore neque, dolore omnis deleniti, illo dolores unde veniam, in voluptate quasi consequuntur libero sint. Accusantium obcaecati dignissimos velit aliquam consectetur veniam consequuntur unde numquam ipsum eius? Autem cumque nesciunt, ratione vitae consectetur laborum porro nihil dolor magnam a, placeat hic illo?
+							<div slot="title" class="text-lg text-gray-800 font-medium">Is registration on the Jobs Harbour free?</div><p>Yes. Registration is free for job seekers and job creators. <link-to to="/register">Register here</link-to></p>
 						</accordion>
 						<accordion>
 							<div
 								slot="title"
 								class="text-lg text-gray-800 font-medium"
-							>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis, mollitia?</div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore neque, dolore omnis deleniti, illo dolores unde veniam, in voluptate quasi consequuntur libero sint. Accusantium obcaecati dignissimos velit aliquam consectetur veniam consequuntur unde numquam ipsum eius? Autem cumque nesciunt, ratione vitae consectetur laborum porro nihil dolor magnam a, placeat hic illo?
+							>Who should I get in touch with in case of any issues/clarifications?</div><p>You can contact our customer support team at <mail-to to="hello@jobsharbour.com">hello@jobsharbour.com</mail-to></p>
+						</accordion>
+						<accordion>
+							<div
+								slot="title"
+								class="text-lg text-gray-800 font-medium"
+							>What types of Profiles do you have?</div><p>At Jobs Harbour you will find a wide range of Profiles in terms of educational qualifications, functional area, years of professional experience, preferences, locations etc.</p>
 						</accordion>
 					</tab>
 					<tab name="About Job Seeker">
@@ -92,10 +92,16 @@
 					</tab>
 					<tab name="About Job Creator">
 						<accordion>
-							<div slot="title" class="text-lg text-gray-800 font-medium">How you get the best Employee?</div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore neque, dolore omnis deleniti, illo dolores unde veniam, in voluptate quasi consequuntur libero sint. Accusantium obcaecati dignissimos velit aliquam consectetur veniam consequuntur unde numquam ipsum eius? Autem cumque nesciunt, ratione vitae consectetur laborum porro nihil dolor magnam a, placeat hic illo?
+							<div slot="title" class="text-lg text-gray-800 font-medium">How to post a job?</div><p>It is easy! All you need to do is enter the job information on the Portal and it will be posted.</p>
 						</accordion>
 						<accordion>
-							<div slot="title" class="text-lg text-gray-800 font-medium">How to create Job?</div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore neque, dolore omnis deleniti, illo dolores unde veniam, in voluptate quasi consequuntur libero sint. Accusantium obcaecati dignissimos velit aliquam consectetur veniam consequuntur unde numquam ipsum eius? Autem cumque nesciunt, ratione vitae consectetur laborum porro nihil dolor magnam a, placeat hic illo?
+							<div slot="title" class="text-lg text-gray-800 font-medium">Do you charge anything for posting jobs?</div><p>No, this is not paid service for Employers but yes, for Consultancy. One consultancy can add 5 companys' at a time. If they want to add more jobs you need to buy our <link-to to="/for-employers">premium version</link-to>. Once you post the opening, you will start receiving relevant applications in your inbox.</p>
+						</accordion>
+						<accordion>
+							<div slot="title" class="text-lg text-gray-800 font-medium">How the Profiles of the candidates are listed?</div><p>You can filter for a specific category and view Profile listing corresponding to that category. The resumes are listed generally in the reverse chronological order. It means the latest addition would be on the top.</p>
+						</accordion>
+						<accordion>
+							<div slot="title" class="text-lg text-gray-800 font-medium">I am not able to sign-in into my account. What do I need to do?</div><p>Please check your user id and password , Sign-in details are case-sensitive. Delete cookies and disable JavaScript from your web browser. If issues persist, send us mail at <mail-to to="hello@jobsharbour.com">hello@jobsharbour.com</mail-to></p>
 						</accordion>
 					</tab>
 				</tabs>
@@ -112,6 +118,7 @@ import Tabs from "@/Shared/tuis/Tabs";
 import Accordion from "@/Shared/tuis/Accordion";
 import List from "@/Shared/tuis/List";
 import LinkTo from "@/Shared/tuis/LinkTo";
+import MailTo from "@/Shared/tuis/MailTo";
 import Card from "@/Shared/tuis/Card";
 
 export default {
@@ -123,7 +130,8 @@ export default {
 		Accordion,
 		List,
 		LinkTo,
-		Card
+		Card,
+		MailTo
 	}
 };
 </script>

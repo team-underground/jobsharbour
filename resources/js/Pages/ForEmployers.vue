@@ -131,11 +131,13 @@
 				</div>
 			</div>
 
-			<heading class="text-center">
+			<contact-us />
+
+			<!-- <heading class="text-center">
 				Questions? Drop us an email at
 				<link-to to="mailto:hello@jobsharbour.com">hello@jobsharbour.com</link-to>.
 				<br />We usually get back within 24 hours.
-			</heading>
+			</heading> -->
 		</div>
 	</layout>
 </template>
@@ -151,6 +153,7 @@ import Card from "@/Shared/tuis/Card";
 import List from "@/Shared/tuis/List";
 import LoadingButton from "@/Shared/tuis/LoadingButton";
 import Alert from "@/Shared/tuis/Alert";
+import ContactUs from "@/Pages/ContactUs";
 
 export default {
 	components: {
@@ -162,7 +165,8 @@ export default {
 		List,
 		ToggleSwitch,
 		LoadingButton,
-		Alert
+		Alert,
+		ContactUs
 	},
 	props: {
 		pricing: Object

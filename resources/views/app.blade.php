@@ -18,7 +18,7 @@
 <body class="bg-gray-100 antialiased text-gray-600 font-sans">
     @inertia
 
-    <!-- <script src="//code.tidio.co/9hms3zkeyei88oiswndv5qiuve4deoou.js"></script> -->
+    <script src="//code.tidio.co/9hms3zkeyei88oiswndv5qiuve4deoou.js"></script>
     @if (\Request::is('/'))
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     @endif

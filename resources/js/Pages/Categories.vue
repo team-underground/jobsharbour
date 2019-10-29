@@ -43,11 +43,13 @@
 					</template>
 				</div>
 
-				<heading class="text-center mt-10">
+				<contact-us />
+
+				<!-- <heading class="text-center mt-10">
 					Questions? Drop us an email at
 					<link-to to="mailto:hello@jobsharbour.com">hello@jobsharbour.com</link-to>.
 					<br />We usually get back within 24 hours.
-				</heading>
+				</heading> -->
 			</div>
 		</div>
 	</layout>
@@ -61,6 +63,7 @@ import LinkTo from "@/Shared/tuis/LinkTo";
 import Card from "@/Shared/tuis/Card";
 import List from "@/Shared/tuis/List";
 import LoadingButton from "@/Shared/tuis/LoadingButton";
+import ContactUs from "@/Pages/ContactUs";
 
 export default {
 	components: {
@@ -70,7 +73,8 @@ export default {
 		LinkTo,
 		Card,
 		List,
-		LoadingButton
+		LoadingButton,
+		ContactUs
 	},
 	data() {
 		return {};
