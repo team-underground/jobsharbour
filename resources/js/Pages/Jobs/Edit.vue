@@ -6,7 +6,6 @@
 					<link-to to="/admin/jobs" class="mb-2">
 						<icon name="chevron-left" class="-ml-2"></icon>Back to Jobs
 					</link-to>
-
 					<div class="md:flex items-center">
 						<div class="flex-1">
 							<heading size="heading" class="inline-flex">Edit Job Posts Details</heading>
@@ -47,6 +46,7 @@
 						</div>
 						<div class="md:w-2/3 px-4">
 							<card>
+								<text-input v-model="post.job_id" label="Job ID" class="mb-4" readonly disabled></text-input>
 								<select-input
 									v-model="job.company_id"
 									label="Select Company"
@@ -288,7 +288,10 @@ export default {
 					this.categories,
 					this.post.job_category
 				),
-				job_experience_level: this.post.job_experience_level,
+				job_experience_level: this.getKeyByValue(
+					this.experiencelevels,
+					this.post.job_experience_level
+				),
 				job_type: this.getKeyByValue(this.jobtypes, this.post.job_type),
 				job_salary: this.post.job_salary,
 				job_skills: this.post.job_skills,

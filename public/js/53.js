@@ -304,7 +304,7 @@ var MailtoUI = __webpack_require__(/*! mailtoui/dist/mailtoui-min.js */ "./node_
         job_title: this.post.job_title,
         job_location: this.post.job_location,
         job_category: this.getKeyByValue(this.categories, this.post.job_category),
-        job_experience_level: this.post.job_experience_level,
+        job_experience_level: this.getKeyByValue(this.experiencelevels, this.post.job_experience_level),
         job_type: this.getKeyByValue(this.jobtypes, this.post.job_type),
         job_salary: this.post.job_salary,
         job_skills: this.post.job_skills,
@@ -762,6 +762,18 @@ var render = function() {
                   _c(
                     "card",
                     [
+                      _c("text-input", {
+                        staticClass: "mb-4",
+                        attrs: { label: "Job ID", readonly: "", disabled: "" },
+                        model: {
+                          value: _vm.post.job_id,
+                          callback: function($$v) {
+                            _vm.$set(_vm.post, "job_id", $$v)
+                          },
+                          expression: "post.job_id"
+                        }
+                      }),
+                      _vm._v(" "),
                       _c(
                         "select-input",
                         {

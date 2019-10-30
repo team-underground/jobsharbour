@@ -31,14 +31,13 @@
 							class="focus-within:bg-gray-200 overflow-hidden"
 						>
 							<td class="border-t">
-								<!-- <span
-										:title="data.job_title"
-										class="text-gray-700 px-6 py-4 items-center block w-64 truncate pr-3"
-								>{{ data.job_title }}</span>-->
 								<link-to
 									:to="`/admin/jobs/${data.uuid}/edit`"
 									class="inline-block truncate mr-2 mx-6"
-								>{{ data.job_title }}</link-to>
+								>{{ data.job_id }}</link-to>
+							</td>
+							<td class="border-t">
+								<span class="text-gray-700 px-6 py-4 flex items-center">{{ data.job_title }}</span>
 							</td>
 							<td class="border-t">
 								<span
@@ -203,6 +202,7 @@ export default {
 				search: this.filters.search
 			},
 			headings: [
+				"Job Id",
 				"Job Title",
 				"Published at",
 				"Status",

@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use App\Enums\JobType;
 use App\Enums\UserType;
 use App\Enums\CategoryType;
+use App\Enums\ExperienceLevelType;
 use Illuminate\Support\Str;
 use App\Enums\JobStatusType;
 use JamesMills\Uuid\HasUuidTrait;
@@ -119,7 +120,12 @@ class Jobpost extends Model implements ViewableContract
 
     public function getJobStatusAttribute($value)
     {
-        return Str::title(JobStatusType::getDescription($value));
+        return JobStatusType::getDescription($value);
+    }
+
+    public function getJobExperienceLevelAttribute($value)
+    {
+        return ExperienceLevelType::getDescription($value);
     }
 
     public function getJobSkillsAttribute()
