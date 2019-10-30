@@ -1,13 +1,9 @@
 <template>
 	<main class="flex w-100 flex-col min-h-screen">
-		<div class="bg-white px-4 relative z-30">
+		<div class="bg-white px-4 relative z-30" :class="{'shadow-sm' : !isUrl('')}">
 			<div class="md:flex items-center justify-between mx-auto max-w-6xl">
 				<div class="flex justify-between md:flex-none items-center">
 					<a href="/" class="flex items-center py-2">
-						<!-- <span class="font-bold text-xl text-blue-600">
-							Jobs
-							<span class="text-gray-800">Harbour</span>
-						</span>-->
 						<img src="/jh-logo.svg" alt="jh" class="h-10" />
 					</a>
 
@@ -15,7 +11,7 @@
 						class="inline-block inline-flex items-center justify-center w-8 h-8 rounded-full mr-2 cursor-pointer md:hidden"
 						@click="showNavbar = !showNavbar"
 					>
-						<svg
+						<!-- <svg
 							class="fill-current text-gray-600"
 							xmlns="http://www.w3.org/2000/svg"
 							width="30"
@@ -23,6 +19,24 @@
 							viewBox="0 0 24 24"
 						>
 							<path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z" />
+						</svg>-->
+						<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 200 200">
+							<g stroke-width="6.5" stroke-linecap="round">
+								<path d="M72 82.286h28.75" fill="#009100" fill-rule="evenodd" stroke="#fff" />
+								<path
+									d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554"
+									fill="none"
+									stroke="#fff"
+								/>
+								<path d="M72 125.143h28.75" fill="#009100" fill-rule="evenodd" stroke="#fff" />
+								<path
+									d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554"
+									fill="none"
+									stroke="#fff"
+								/>
+								<path d="M100.75 82.286h28.75" fill="#009100" fill-rule="evenodd" stroke="#fff" />
+								<path d="M100.75 125.143h28.75" fill="#009100" fill-rule="evenodd" stroke="#fff" />
+							</g>
 						</svg>
 					</div>
 				</div>
@@ -120,81 +134,83 @@
 				</div>
 			</div>
 
-			<div class="md:hidden" v-if="showNavbar">
-				<a
-					href="/"
-					:class="isUrl('/') ? 'text-blue-600' : 'text-gray-600'"
-					class="border-t px-2 py-3 block font-medium"
-				>Home</a>
-				<a
-					v-if="$page.auth.user"
-					href="/dashboard"
-					:class="isUrl('dashboard') ? 'text-blue-600' : 'text-gray-600'"
-					class="border-t px-2 py-3 block font-medium hover:text-blue-600"
-				>Dashboard</a>
+			<transition-expand>
+				<div class="md:hidden mt-1" v-if="showNavbar">
+					<a
+						href="/"
+						:class="isUrl('/') ? 'text-blue-600' : 'text-gray-600'"
+						class="border-t px-2 py-3 block font-medium hover:text-blue-600"
+					>Home</a>
+					<a
+						v-if="$page.auth.user"
+						href="/dashboard"
+						:class="isUrl('dashboard') ? 'text-blue-600' : 'text-gray-600'"
+						class="border-t px-2 py-3 block font-medium hover:text-blue-600"
+					>Dashboard</a>
 
-				<a
-					href="/jobs"
-					:class="isUrl('jobs') ? 'text-blue-600' : 'text-gray-600'"
-					class="border-t px-2 py-3 block font-medium hover:text-blue-600"
-				>Jobs Listing</a>
+					<a
+						href="/jobs"
+						:class="isUrl('jobs') ? 'text-blue-600' : 'text-gray-600'"
+						class="border-t px-2 py-3 block font-medium hover:text-blue-600"
+					>Jobs Listing</a>
 
-				<a
-					href="/categories"
-					:class="isUrl('about') ? 'text-blue-600' : 'text-gray-600'"
-					class="border-t px-2 py-3 block font-medium hover:text-blue-600"
-				>Categories</a>
+					<a
+						href="/categories"
+						:class="isUrl('about') ? 'text-blue-600' : 'text-gray-600'"
+						class="border-t px-2 py-3 block font-medium hover:text-blue-600"
+					>Categories</a>
 
-				<a
-					href="/for-employers"
-					:class="isUrl('for-employers') ? 'text-blue-600' : 'text-gray-600'"
-					class="border-t px-2 py-3 block font-medium hover:text-blue-600"
-				>For Employers</a>
+					<a
+						href="/for-employers"
+						:class="isUrl('for-employers') ? 'text-blue-600' : 'text-gray-600'"
+						class="border-t px-2 py-3 block font-medium hover:text-blue-600"
+					>For Employers</a>
 
-				<a
-					href="/about"
-					:class="isUrl('about') ? 'text-blue-600' : 'text-gray-600'"
-					class="border-t px-2 py-3 block font-medium hover:text-blue-600"
-				>About Jobs Harbour</a>
+					<a
+						href="/about"
+						:class="isUrl('about') ? 'text-blue-600' : 'text-gray-600'"
+						class="border-t px-2 py-3 block font-medium hover:text-blue-600"
+					>About Jobs Harbour</a>
 
-				<div class="flex items-center py-2 border-t" v-if="$page.auth.user">
-					<div class="flex flex-1">
-						<div
-							class="outline-none block inline-flex items-center justify-center h-10 w-10 overflow-hidden rounded-full shadow-inner bg-blue-600 text-white font-bold text-xl"
-						>{{ $page.auth.user.name.charAt(0) }}</div>
-						<div class="text-left ml-2">
-							<span class="text-sm leading-tight block w-32 truncate">{{ $page.auth.user.name }}</span>
-							<span
-								class="leading-tight text-gray-400 block text-xs uppercase tracking-wider font-semibold"
-							>{{ $page.auth.user.type }}</span>
+					<div class="flex items-center py-2 border-t" v-if="$page.auth.user">
+						<div class="flex flex-1">
+							<div
+								class="outline-none block inline-flex items-center justify-center h-10 w-10 overflow-hidden rounded-full shadow-inner bg-blue-600 text-white font-bold text-xl"
+							>{{ $page.auth.user.name.charAt(0) }}</div>
+							<div class="text-left ml-2">
+								<span class="text-sm leading-tight block w-32 truncate">{{ $page.auth.user.name }}</span>
+								<span
+									class="leading-tight text-gray-400 block text-xs uppercase tracking-wider font-semibold"
+								>{{ $page.auth.user.type }}</span>
+							</div>
+						</div>
+						<div class="w-24 px-4">
+							<inertia-link
+								class="block px-4 py-2 text-gray-600 hover:text-blue-600"
+								:href="route('logout')"
+								method="post"
+							>Logout</inertia-link>
 						</div>
 					</div>
-					<div class="w-24 px-4">
-						<inertia-link
-							class="block px-4 py-2 text-gray-600 hover:text-blue-600"
-							:href="route('logout')"
-							method="post"
-						>Logout</inertia-link>
-					</div>
-				</div>
 
-				<div class="border-t flex" v-else>
-					<div class="flex-1 border-r text-center">
-						<a
-							href="/login"
-							:class="isUrl('login') ? 'text-blue-600' : 'text-gray-600'"
-							class="px-2 py-3 block font-medium"
-						>Login</a>
-					</div>
-					<div class="flex-1 text-center">
-						<a
-							href="/register"
-							:class="isUrl('register') ? 'text-blue-600' : 'text-gray-600'"
-							class="px-2 py-3 block font-medium"
-						>Create free account</a>
+					<div class="border-t flex" v-else>
+						<div class="flex-1 border-r text-center">
+							<a
+								href="/login"
+								:class="isUrl('login') ? 'text-blue-600' : 'text-gray-600'"
+								class="px-2 py-3 block font-medium hover:text-blue-600"
+							>Login</a>
+						</div>
+						<div class="flex-1 text-center">
+							<a
+								href="/register"
+								:class="isUrl('register') ? 'text-blue-600' : 'text-gray-600'"
+								class="px-2 py-3 block font-medium hover:text-blue-600"
+							>Create free account</a>
+						</div>
 					</div>
 				</div>
-			</div>
+			</transition-expand>
 		</div>
 
 		<article class="flex-1">
@@ -273,6 +289,7 @@ import LoadingButton from "@/Shared/tuis/LoadingButton";
 import LinkTo from "@/Shared/tuis/LinkTo";
 import TextInput from "@/Shared/tuis/TextInput";
 import Icon from "@/Shared/tuis/Icon";
+import TransitionExpand from "@/Shared/tuis/TransitionExpand";
 
 export default {
 	components: {
@@ -286,7 +303,8 @@ export default {
 		TextInput,
 		LoadingButton,
 		LinkTo,
-		Icon
+		Icon,
+		TransitionExpand
 	},
 
 	props: {

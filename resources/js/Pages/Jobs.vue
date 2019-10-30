@@ -98,8 +98,8 @@
 													<!-- <badge class="mr-1" variant="danger">New</badge> -->
 													<heading size="large" class="inline-block">{{ post.job_title }}</heading>
 												</div>
-												<heading size="small" class="mb-1">{{ post.company.company_name }}</heading>
-												<heading size="small" class="mb-1">{{post.job_category}}</heading>
+												<heading size="small" class="mb-1 font-semibold">{{ post.company.company_name }}</heading>
+												<heading size="small" class="mb-1">in {{post.job_category}}</heading>
 											</div>
 											<div class="md:w-48 flex-col justify-between mt-1">
 												<div class="md:mb-1 md:flex-1 flex items-center">
@@ -139,49 +139,6 @@
 								>We could not find any job posts. Please search again with different keywords.</heading>
 							</empty-state>
 						</template>
-
-						<!-- <card v-for="(post, idx) in jobposts.data" :key="idx" class="mb-4">
-							<div class="flex">
-								<div v-if="post.company.company_logo == null" class="mr-5 flex-shrink-0 w-16 h-16">
-									<avatar :name="post.company.company_name" color="blue" shape="rounded" size="xlarge"></avatar>
-								</div>
-								<div v-else class="flex-shrink-0 w-16 h-16 rounded-lg bg-gray-100 border block mr-5">
-									<img
-										src="/zd.png"
-										alt="company-logo"
-										class="object-fit object-center w-full h-full rounded-lg"
-									/>
-								</div>
-
-								<div class="flex-1">
-									<div class="mb-2">
-										<badge class="mr-1" variant="danger">New</badge>
-										<heading size="large" class="inline-block">{{ post.job_title }}</heading>
-									</div>
-									<heading size="small" class="mb-2">at {{ post.company.company_name }}</heading>
-
-									<div class="flex justify-between mb-4 pb-4 border-b">
-										<div class="md:flex-1 flex items-center">
-											<icon class="mr-2 text-gray-400" name="map-pin"></icon>
-											<heading size="small">{{ post.job_location }}</heading>
-										</div>
-										<div class="md:flex-1 flex items-center">
-											<icon class="mr-2 text-gray-400" name="wallet"></icon>
-											<heading size="small">Rs. {{ post.job_salary }}/m</heading>
-										</div>
-										<div class="md:flex-1 flex items-center">
-											<icon class="mr-2 text-gray-400" name="clock"></icon>
-											<heading size="small">{{ post.job_type }}</heading>
-										</div>
-									</div>
-
-									<div class="flex justify-between">
-										<heading size="small">{{ post.job_published_at }}</heading>
-										<link-to :to="`/jobs/${post.uuid}`" class="text-sm">View Details</link-to>
-									</div>
-								</div>
-							</div>
-						</card>-->
 
 						<div
 							class="flex items-center justify-between mt-8"
@@ -313,7 +270,6 @@
 			classes="rounded-lg bg-white"
 			:adaptive="true"
 		>
-				
 			<div class="px-8 pt-5 pb-8 relative" style="height: 480px; overflow-y: auto">
 				<heading size="heading" class="mb-4">Filter By</heading>
 				<div class="flex flex-wrap">
@@ -358,9 +314,10 @@
 					</div>
 				</div>
 			</div>
-			<div class="bg-gray-200 text-gray-600 px-8 py-4 font-semibold cursor-pointer text-center" @click="$modal.hide('filter-modal')">
-				Click to Close 
-			</div>
+			<div
+				class="bg-gray-200 text-gray-600 px-8 py-4 font-semibold cursor-pointer text-center"
+				@click="$modal.hide('filter-modal')"
+			>Click to Close</div>
 		</modal>
 	</layout>
 </template>
@@ -462,9 +419,9 @@ export default {
 	filters: {
 		truncate: function(value, limit) {
 			if (value.length > limit) {
-				value = value.substring(0, (limit - 3)) + '...';
+				value = value.substring(0, limit - 3) + "...";
 			}
-			return value
+			return value;
 		}
 	}
 };

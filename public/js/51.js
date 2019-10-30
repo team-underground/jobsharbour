@@ -680,11 +680,11 @@ var render = function() {
                       _vm._v(
                         "\n\t\t\t\t\t\t\tBy creating an account you agree to the\n\t\t\t\t\t\t\t"
                       ),
-                      _c("link-to", { attrs: { to: "#" } }, [
+                      _c("link-to", { attrs: { to: "/terms" } }, [
                         _vm._v("Terms of Service")
                       ]),
                       _vm._v(" and\n\t\t\t\t\t\t\t"),
-                      _c("link-to", { attrs: { to: "#" } }, [
+                      _c("link-to", { attrs: { to: "/privacy" } }, [
                         _vm._v("Privacy Policy")
                       ]),
                       _vm._v(
@@ -729,11 +729,15 @@ var staticRenderFns = [
         }),
         _vm._v(" "),
         _c("div", { staticClass: "absolute top-0 left-0 right-0 w-full p-8" }, [
-          _c("p", { staticClass: "text-white text-2xl italic mb-4" }, [
-            _vm._v(
-              "It does not matter how slowly you go as long as you do not stop."
-            )
-          ]),
+          _c(
+            "p",
+            { staticClass: "text-white text-2xl italic mb-4 tracking-tight" },
+            [
+              _vm._v(
+                "It does not matter how slowly you go as long as you do not stop."
+              )
+            ]
+          ),
           _vm._v(" "),
           _c("p", { staticClass: "text-gray-100 italic" }, [
             _vm._v("— Confucius")

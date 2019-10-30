@@ -6,7 +6,7 @@
 
 				<div class="absolute top-0 left-0 right-0 w-full p-8">
 					<p
-						class="text-white text-2xl italic mb-4"
+						class="text-white text-2xl italic mb-4 tracking-tight"
 					>It does not matter how slowly you go as long as you do not stop.</p>
 					<p class="text-gray-100 italic">&mdash; Confucius</p>
 				</div>
@@ -84,8 +84,8 @@
 
 							<alert :with-icon="false" class="my-6">
 								By creating an account you agree to the
-								<link-to to="#">Terms of Service</link-to>&nbsp;and
-								<link-to to="#">Privacy Policy</link-to>. You also agree to recieve product related emails from Jobs Harbour, which you can unsubscribe from at any time.
+								<link-to to="/terms">Terms of Service</link-to>&nbsp;and
+								<link-to to="/privacy">Privacy Policy</link-to>. You also agree to recieve product related emails from Jobs Harbour, which you can unsubscribe from at any time.
 							</alert>
 
 							<loading-button ref="submitButton" type="submit" class="w-full mb-8">Let's get started</loading-button>

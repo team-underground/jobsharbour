@@ -38,7 +38,7 @@
 
 				<div class="md:flex -mx-4" v-if="plan === 'Company'">
 					<div class="md:w-1/2 px-4 flex">
-						<card class="mb-8 shadow-lg flex-1 relative">
+						<card class="mb-8 shadow-md flex-1 relative">
 							<heading
 								size="large"
 								class="mb-2 text-blue-600 text-center"
@@ -57,7 +57,7 @@
 						</card>
 					</div>
 					<div class="md:w-1/2 px-4 flex">
-						<card class="mb-8 shadow-lg flex-1">
+						<card class="mb-8 shadow-md flex-1">
 							<heading
 								size="large"
 								class="mb-2 text-orange-600 text-center"
@@ -85,7 +85,7 @@
 
 				<div class="md:flex -mx-4" v-if="plan === 'Recruiting Firm'">
 					<div class="md:w-1/2 px-4 flex">
-						<card class="mb-8 shadow-lg flex-1 relative">
+						<card class="mb-8 shadow-md flex-1 relative">
 							<heading
 								size="large"
 								class="mb-2 text-blue-600 text-center"
@@ -104,7 +104,7 @@
 						</card>
 					</div>
 					<div class="md:w-1/2 px-4 flex">
-						<card class="mb-8 shadow-lg flex-1">
+						<card class="mb-8 shadow-md flex-1">
 							<heading
 								size="large"
 								class="mb-2 text-orange-600 text-center"
@@ -137,7 +137,7 @@
 				Questions? Drop us an email at
 				<link-to to="mailto:hello@jobsharbour.com">hello@jobsharbour.com</link-to>.
 				<br />We usually get back within 24 hours.
-			</heading> -->
+			</heading>-->
 		</div>
 	</layout>
 </template>
@@ -222,6 +222,7 @@ export default {
 	padding-left: 6px !important;
 	padding-right: 6px !important;
 	align-items: center;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
 }
 .toggle-switch,
 .toggle-switch li:first-child label,

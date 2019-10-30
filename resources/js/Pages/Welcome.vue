@@ -81,7 +81,7 @@
 		<div class="py-10 px-4">
 			<div class="max-w-6xl mx-auto">
 				<div class="md:flex -mx-4">
-					<div class="md:w-2/3 px-4 mx-auto">
+					<div class="md:w-2/3 px-4">
 						<div class="flex items-center mb-4 justify-between">
 							<heading size="heading">Latest Job Posts</heading>
 							<link-to to="/jobs">View All</link-to>
@@ -154,8 +154,8 @@
 												<!-- <badge class="mr-1" variant="danger">New</badge> -->
 												<heading size="large" class="inline-block">{{ post.job_title }}</heading>
 											</div>
-											<heading size="small" class="mb-1">{{ post.company.company_name }}</heading>
-											<heading size="small" class="mb-1">{{ post.job_category }}</heading>
+											<heading size="small" class="mb-1 font-semibold">{{ post.company.company_name }}</heading>
+											<heading size="small" class="mb-1">in {{ post.job_category }}</heading>
 										</div>
 										<div class="md:w-48 flex-col justify-between mt-1">
 											<div class="md:mb-1 md:flex-1 flex items-center">
@@ -184,6 +184,69 @@
 						<div class="text-center pt-5 pb-10">
 							<loading-button tag="a" to="/jobs" class>See More Jobs</loading-button>
 						</div>
+					</div>
+					<div class="md:w-1/3 px-4">
+						<card class="mt-12 mb-5 relative px-5 py-5" :is-padding="false">
+							<heading
+								class="mb-2 leading-tight text-gray-700 tracking-tight text-xl font-semibold"
+							>Top Categories</heading>
+
+							<heading class="mb-2">Still struggling to communicate with job seekers?</heading>
+
+							<heading class="mb-5">Your quest is over.</heading>
+
+							<loading-button
+								to="/register"
+								tag="a"
+								variant="secondary"
+								size="small"
+								class="shadow bg-white hover:shadow-md text-gray-700"
+							>Join us now!</loading-button>
+						</card>
+
+						<card class="mb-5 relative bg-orange-100 px-5 py-5" :is-padding="false">
+							<div
+								class="p-3 inline-flex justify-center items-center bg-orange-200 text-orange-800 rounded-full mb-3"
+							>
+								<icon name="briefcase" class="w-6 h-6"></icon>
+							</div>
+							<heading
+								class="mb-2 leading-tight text-gray-700 tracking-tight text-xl font-semibold"
+							>Employers?</heading>
+
+							<heading class="mb-2">Still struggling to communicate with job seekers?</heading>
+
+							<heading class="mb-5">Your quest is over.</heading>
+
+							<loading-button
+								to="/register"
+								tag="a"
+								variant="secondary"
+								size="small"
+								class="shadow bg-white hover:shadow-md text-gray-700"
+							>Join us now!</loading-button>
+						</card>
+
+						<card class="mb-5 relative bg-blue-100 px-5 py-5" :is-padding="false">
+							<div
+								class="p-3 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
+							>
+								<icon name="bulb" class="w-6 h-6"></icon>
+							</div>
+							<heading
+								class="mb-2 leading-tight text-gray-700 tracking-tight text-xl font-semibold"
+							>Advertise with us</heading>
+
+							<heading
+								class="mb-5"
+							>Connect with the largest audience of active, influencial job creators, job seekers and workaholics</heading>
+
+							<loading-button
+								variant="secondary"
+								size="small"
+								class="shadow bg-white hover:shadow-md text-gray-700"
+							>Get in touch</loading-button>
+						</card>
 					</div>
 				</div>
 			</div>

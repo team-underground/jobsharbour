@@ -21,28 +21,33 @@
 
 		<div class="px-4 py-6 md:py-16 relative">
 			<div class="max-w-4xl mx-auto">
-				<div class="flex -mx-4">
-					<div class="w-1/2 px-4 flex">
+				<div class="md:flex -mx-4">
+					<div class="md:w-1/2 px-4 flex mb-4">
 						<card class="flex-1">
 							<heading size="large" class="mb-2">For Job Seekers</heading>
 							<heading
 								class="mb-6"
 							>This is all job hunters accurate point to find jobs of their preferred kind. Find job openings by job title, salary, job type and category. Provide all the details of your credentials, CV and pull employers' interest.</heading>
 							<list
-								unordered-list-color="text-blue-600"
-								:lists="['Subscribe to get notify','Register and apply (comming soon)','Feel free to share your credentials/CV.']"
+								unordered-list-color="text-blue-500"
+								:lists="['Subscribe to get job notification','Register and apply (coming soon)','Feel free to share your credentials/CV.']"
 							></list>
 						</card>
 					</div>
-					<div class="w-1/2 px-4 flex">
+					<div class="md:w-1/2 px-4 flex mb-4">
 						<card class="flex-1">
 							<heading size="large" class="mb-2">For Employers</heading>
 
 							<heading
-								class="mb-4"
+								class="mb-6"
 							>Jobs Harbour provides a convenient place for employees/consultancy to showcase their jobs in details. Here they can reach potential and deserving candidates and pick the best out of them.</heading>
 
-							<link-to to="/for-employers">View Details</link-to>
+							<list
+								unordered-list-color="text-orange-300"
+								:lists="['Post a job','Find potential candidates', 'Search the Resume Database (on progress)']"
+							></list>
+
+							<link-to to="/for-employers" class="mt-4 text-sm">View Details</link-to>
 						</card>
 					</div>
 				</div>
@@ -123,6 +128,11 @@ export default {
 	-ms-transform: skew(0deg, -20deg);
 	-o-transform: skew(0deg, -20deg);
 	transform: skew(0deg, -20deg);
+	transform-origin: 0;
+}
+
+.rotate-20 {
+	transform: rotate(-20deg);
 	transform-origin: 0;
 }
 </style>

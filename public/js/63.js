@@ -333,6 +333,69 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var toCurrency = function toCurrency(n, curr) {
   var LanguageFormat = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : undefined;
   return Intl.NumberFormat(LanguageFormat, {
@@ -718,7 +781,7 @@ var render = function() {
         _c("div", { staticClass: "md:flex -mx-4" }, [
           _c(
             "div",
-            { staticClass: "md:w-2/3 px-4 mx-auto" },
+            { staticClass: "md:w-2/3 px-4" },
             [
               _c(
                 "div",
@@ -807,14 +870,17 @@ var render = function() {
                             _vm._v(" "),
                             _c(
                               "heading",
-                              { staticClass: "mb-1", attrs: { size: "small" } },
+                              {
+                                staticClass: "mb-1 font-semibold",
+                                attrs: { size: "small" }
+                              },
                               [_vm._v(_vm._s(post.company.company_name))]
                             ),
                             _vm._v(" "),
                             _c(
                               "heading",
                               { staticClass: "mb-1", attrs: { size: "small" } },
-                              [_vm._v(_vm._s(post.job_category))]
+                              [_vm._v("in " + _vm._s(post.job_category))]
                             )
                           ],
                           1
@@ -936,6 +1002,162 @@ var render = function() {
               )
             ],
             2
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "md:w-1/3 px-4" },
+            [
+              _c(
+                "card",
+                {
+                  staticClass: "mt-12 mb-5 relative px-5 py-5",
+                  attrs: { "is-padding": false }
+                },
+                [
+                  _c(
+                    "heading",
+                    {
+                      staticClass:
+                        "mb-2 leading-tight text-gray-700 tracking-tight text-xl font-semibold"
+                    },
+                    [_vm._v("Top Categories")]
+                  ),
+                  _vm._v(" "),
+                  _c("heading", { staticClass: "mb-2" }, [
+                    _vm._v("Still struggling to communicate with job seekers?")
+                  ]),
+                  _vm._v(" "),
+                  _c("heading", { staticClass: "mb-5" }, [
+                    _vm._v("Your quest is over.")
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "loading-button",
+                    {
+                      staticClass:
+                        "shadow bg-white hover:shadow-md text-gray-700",
+                      attrs: {
+                        to: "/register",
+                        tag: "a",
+                        variant: "secondary",
+                        size: "small"
+                      }
+                    },
+                    [_vm._v("Join us now!")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "card",
+                {
+                  staticClass: "mb-5 relative bg-orange-100 px-5 py-5",
+                  attrs: { "is-padding": false }
+                },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "p-3 inline-flex justify-center items-center bg-orange-200 text-orange-800 rounded-full mb-3"
+                    },
+                    [
+                      _c("icon", {
+                        staticClass: "w-6 h-6",
+                        attrs: { name: "briefcase" }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "heading",
+                    {
+                      staticClass:
+                        "mb-2 leading-tight text-gray-700 tracking-tight text-xl font-semibold"
+                    },
+                    [_vm._v("Employers?")]
+                  ),
+                  _vm._v(" "),
+                  _c("heading", { staticClass: "mb-2" }, [
+                    _vm._v("Still struggling to communicate with job seekers?")
+                  ]),
+                  _vm._v(" "),
+                  _c("heading", { staticClass: "mb-5" }, [
+                    _vm._v("Your quest is over.")
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "loading-button",
+                    {
+                      staticClass:
+                        "shadow bg-white hover:shadow-md text-gray-700",
+                      attrs: {
+                        to: "/register",
+                        tag: "a",
+                        variant: "secondary",
+                        size: "small"
+                      }
+                    },
+                    [_vm._v("Join us now!")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "card",
+                {
+                  staticClass: "mb-5 relative bg-blue-100 px-5 py-5",
+                  attrs: { "is-padding": false }
+                },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "p-3 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
+                    },
+                    [
+                      _c("icon", {
+                        staticClass: "w-6 h-6",
+                        attrs: { name: "bulb" }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "heading",
+                    {
+                      staticClass:
+                        "mb-2 leading-tight text-gray-700 tracking-tight text-xl font-semibold"
+                    },
+                    [_vm._v("Advertise with us")]
+                  ),
+                  _vm._v(" "),
+                  _c("heading", { staticClass: "mb-5" }, [
+                    _vm._v(
+                      "Connect with the largest audience of active, influencial job creators, job seekers and workaholics"
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "loading-button",
+                    {
+                      staticClass:
+                        "shadow bg-white hover:shadow-md text-gray-700",
+                      attrs: { variant: "secondary", size: "small" }
+                    },
+                    [_vm._v("Get in touch")]
+                  )
+                ],
+                1
+              )
+            ],
+            1
           )
         ])
       ])

@@ -72,6 +72,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -278,7 +283,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".skew_aa {\n  transform: skew(0deg, -20deg);\n  transform-origin: 0;\n}\n", ""]);
+exports.push([module.i, ".skew_aa {\n  transform: skew(0deg, -20deg);\n  transform-origin: 0;\n}\n.rotate-20 {\n  transform: rotate(-20deg);\n  transform-origin: 0;\n}\n", ""]);
 
 // exports
 
@@ -442,10 +447,10 @@ var render = function() {
         "div",
         { staticClass: "max-w-4xl mx-auto" },
         [
-          _c("div", { staticClass: "flex -mx-4" }, [
+          _c("div", { staticClass: "md:flex -mx-4" }, [
             _c(
               "div",
-              { staticClass: "w-1/2 px-4 flex" },
+              { staticClass: "md:w-1/2 px-4 flex mb-4" },
               [
                 _c(
                   "card",
@@ -465,10 +470,10 @@ var render = function() {
                     _vm._v(" "),
                     _c("list", {
                       attrs: {
-                        "unordered-list-color": "text-blue-600",
+                        "unordered-list-color": "text-blue-500",
                         lists: [
-                          "Subscribe to get notify",
-                          "Register and apply (comming soon)",
+                          "Subscribe to get job notification",
+                          "Register and apply (coming soon)",
                           "Feel free to share your credentials/CV."
                         ]
                       }
@@ -482,7 +487,7 @@ var render = function() {
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "w-1/2 px-4 flex" },
+              { staticClass: "md:w-1/2 px-4 flex mb-4" },
               [
                 _c(
                   "card",
@@ -494,15 +499,31 @@ var render = function() {
                       [_vm._v("For Employers")]
                     ),
                     _vm._v(" "),
-                    _c("heading", { staticClass: "mb-4" }, [
+                    _c("heading", { staticClass: "mb-6" }, [
                       _vm._v(
                         "Jobs Harbour provides a convenient place for employees/consultancy to showcase their jobs in details. Here they can reach potential and deserving candidates and pick the best out of them."
                       )
                     ]),
                     _vm._v(" "),
-                    _c("link-to", { attrs: { to: "/for-employers" } }, [
-                      _vm._v("View Details")
-                    ])
+                    _c("list", {
+                      attrs: {
+                        "unordered-list-color": "text-orange-300",
+                        lists: [
+                          "Post a job",
+                          "Find potential candidates",
+                          "Search the Resume Database (on progress)"
+                        ]
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "link-to",
+                      {
+                        staticClass: "mt-4 text-sm",
+                        attrs: { to: "/for-employers" }
+                      },
+                      [_vm._v("View Details")]
+                    )
                   ],
                   1
                 )
