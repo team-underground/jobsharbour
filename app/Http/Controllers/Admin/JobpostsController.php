@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Gate;
 use App\Enums\{CategoryType, JobType, IndustryType};
+use App\Mail\ThanksGiving;
+use Illuminate\Support\Facades\Mail;
 
 class JobpostsController extends Controller
 {
@@ -95,6 +97,7 @@ class JobpostsController extends Controller
 			//TODO 2. write a cronjob where the server notifies admin, before 2 days of job starting date about the unpublished job posts.
 
 			event(new JobPostEvent($jobpost_created));
+			Mail::to(auth()->user()->email)->queue(new ThanksGiving(auth()->user()->name));
 		});
 
 		session()->flash('success', 'Job Post Created.');
