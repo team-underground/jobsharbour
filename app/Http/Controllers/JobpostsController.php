@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Analytics;
 use App\Company;
 use App\Jobpost;
-use App\Enums\CategoryType;
-use App\Enums\JobType;
-use App\Enums\IndustryType;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 use Inertia\Inertia;
-use Analytics;
+use App\Enums\JobType;
+use App\Enums\CategoryType;
+use App\Enums\IndustryType;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 use Spatie\Analytics\Period;
+use Illuminate\Support\Facades\DB;
 
 class JobpostsController extends Controller
 {
@@ -37,9 +37,19 @@ class JobpostsController extends Controller
 
             return Inertia::render('Jobs', compact('jobposts', 'filters', 'jobtypes', 'categories'));
         } else {
+            $categoryWiseTotal = Jobpost::published()->closed(false)->groupBy('job_category')->select('job_category', \DB::raw('count(job_category) as `total`'))->orderBy('total', 'DESC')->get(['total', 'job_category'])->transform(function ($category) {
+                return [
+                    'category_name' => $category->job_category,
+                    'total' => $category->total
+                ];
+            });
+
             $jobposts = Jobpost::published()->closed(false)->with('company')->orderByDesc('job_published_at')->simplePaginate(8);
 
-            return Inertia::render('Welcome', compact('jobposts'));
+            return Inertia::render('Welcome', [
+                'jobposts' => $jobposts,
+                'category_wise_total' => $categoryWiseTotal
+            ]);
         }
     }
 
