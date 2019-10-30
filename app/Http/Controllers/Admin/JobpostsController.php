@@ -81,6 +81,7 @@ class JobpostsController extends Controller
 				'job_starting_date'
 			]) + [
 				'user_id' => auth()->user()->id,
+				'job_id' => 'JH-' . rand(000000, 999999),
 				'job_type' => (int) $request->job_type,
 				'job_category' => (int) $request->job_category,
 				'job_experience_level' => (int) $request->job_experience_level,
@@ -98,7 +99,7 @@ class JobpostsController extends Controller
 
 			event(new JobPostEvent($jobpost_created));
 			Mail::to(auth()->user()->email)->queue(new ThanksGiving(auth()->user()->name));
-		});
+		}, 3);
 
 		session()->flash('success', 'Job Post Created.');
 		return redirect()->route('admin.jobs.all');
