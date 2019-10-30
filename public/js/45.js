@@ -335,17 +335,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -1451,7 +1440,12 @@ var render = function() {
                       {
                         staticClass:
                           "shadow bg-white hover:shadow-md text-gray-700",
-                        attrs: { variant: "secondary", size: "small" }
+                        attrs: {
+                          tag: "a",
+                          to: "/advertise",
+                          variant: "secondary",
+                          size: "small"
+                        }
                       },
                       [_vm._v("Get in touch")]
                     )
@@ -1472,8 +1466,9 @@ var render = function() {
             name: "filter-modal",
             height: "auto",
             scrollable: true,
-            classes: "rounded-lg bg-white",
-            adaptive: true
+            classes: "rounded-t-large bg-white",
+            adaptive: true,
+            "pivot-y": 1
           }
         },
         [
@@ -1594,7 +1589,7 @@ var render = function() {
                               expression: "form.category"
                             }
                           },
-                          [_vm._v(_vm._s(_vm._f("truncate")(option, 20)))]
+                          [_vm._v(_vm._s(_vm._f("truncate")(option, 14)))]
                         )
                       }),
                       1

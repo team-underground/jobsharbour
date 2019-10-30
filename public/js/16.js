@@ -377,7 +377,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".toggle-switch {\n  background-color: #ffffff;\n  display: flex;\n  height: 3.8rem !important;\n  padding-left: 6px !important;\n  padding-right: 6px !important;\n  align-items: center;\n}\n.toggle-switch,\n.toggle-switch li:first-child label,\n.toggle-switch li:last-child label {\n  border-radius: 1000px !important;\n}\n.skew_aa {\n  transform: skew(0deg, -20deg);\n  transform-origin: 0;\n}\n", ""]);
+exports.push([module.i, ".toggle-switch {\n  background-color: #ffffff;\n  display: flex;\n  height: 3.8rem !important;\n  padding-left: 6px !important;\n  padding-right: 6px !important;\n  align-items: center;\n  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);\n}\n.toggle-switch,\n.toggle-switch li:first-child label,\n.toggle-switch li:last-child label {\n  border-radius: 1000px !important;\n}\n.skew_aa {\n  transform: skew(0deg, -20deg);\n  transform-origin: 0;\n}\n", ""]);
 
 // exports
 
@@ -647,7 +647,7 @@ var render = function() {
                     [
                       _c(
                         "card",
-                        { staticClass: "mb-8 shadow-lg flex-1 relative" },
+                        { staticClass: "mb-8 shadow-md flex-1 relative" },
                         [
                           _c(
                             "heading",
@@ -717,7 +717,7 @@ var render = function() {
                     [
                       _c(
                         "card",
-                        { staticClass: "mb-8 shadow-lg flex-1" },
+                        { staticClass: "mb-8 shadow-md flex-1" },
                         [
                           _c(
                             "heading",
@@ -793,7 +793,7 @@ var render = function() {
                     [
                       _c(
                         "card",
-                        { staticClass: "mb-8 shadow-lg flex-1 relative" },
+                        { staticClass: "mb-8 shadow-md flex-1 relative" },
                         [
                           _c(
                             "heading",
@@ -863,7 +863,7 @@ var render = function() {
                     [
                       _c(
                         "card",
-                        { staticClass: "mb-8 shadow-lg flex-1" },
+                        { staticClass: "mb-8 shadow-md flex-1" },
                         [
                           _c(
                             "heading",

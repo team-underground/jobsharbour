@@ -222,9 +222,6 @@
 								size="small"
 								class="shadow bg-white hover:shadow-md text-gray-700"
 							>Join us now!</loading-button>
-
-							<!-- <img src="/ad3.png" alt="ad" class="object-fit w-full" /> -->
-							<!-- <badge variant="warning" class="absolute top-0 right-0 mt-2 mr-4 shadow-md">Ad</badge> -->
 						</card>
 
 						<card class="mb-5 relative bg-blue-100 px-5 py-5" :is-padding="false">
@@ -242,22 +239,13 @@
 							>Connect with the largest audience of active, influencial job creators, job seekers and workaholics</heading>
 
 							<loading-button
+								tag="a"
+								to="/advertise"
 								variant="secondary"
 								size="small"
 								class="shadow bg-white hover:shadow-md text-gray-700"
 							>Get in touch</loading-button>
-
-							<!-- <img src="/ad3.png" alt="ad" class="object-fit w-full" /> -->
-							<!-- <badge variant="warning" class="absolute top-0 right-0 mt-2 mr-4 shadow-md">Ad</badge> -->
 						</card>
-
-						<!-- <card class="mb-5 relative" :is-padding="false">
-							<img src="/ad2.png" alt="ad" class="object-fit w-full" />
-							<div class="h-32 bg-blue-100 flex items-center justify-center px-4">
-								<heading class="text-blue-600 font-semibold tracking-tight text-xl">Advertise with us</heading>
-							</div>
-							<badge variant="warning" class="absolute top-0 right-0 mt-2 mr-4 shadow-md">Ad</badge>
-						</card>-->
 					</div>
 				</div>
 			</div>
@@ -267,8 +255,9 @@
 			name="filter-modal"
 			height="auto"
 			:scrollable="true"
-			classes="rounded-lg bg-white"
+			classes="rounded-t-large bg-white"
 			:adaptive="true"
+			:pivot-y="1"
 		>
 			<div class="px-8 pt-5 pb-8 relative" style="height: 480px; overflow-y: auto">
 				<heading size="heading" class="mb-4">Filter By</heading>
@@ -309,7 +298,7 @@
 								:model-value="option"
 								:value="option"
 								class="truncate"
-							>{{ option | truncate(20) }}</checkbox-input>
+							>{{ option | truncate(14) }}</checkbox-input>
 						</div>
 					</div>
 				</div>

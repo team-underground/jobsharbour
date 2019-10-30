@@ -9,22 +9,35 @@
 				<tabs>
 					<tab name="About Jobs Harbour" :selected="true">
 						<accordion>
-							<div slot="title" class="text-lg text-gray-800 font-medium">Why jobs harbour?</div><p>Here we come with the best platform where you can showcase your job lists, communicate with a mass of potential candidates in no time and also pick up the best out of them.</p>
-						</accordion>
-						<accordion>
-							<div slot="title" class="text-lg text-gray-800 font-medium">Is registration on the Jobs Harbour free?</div><p>Yes. Registration is free for job seekers and job creators. <link-to to="/register">Register here</link-to></p>
-						</accordion>
-						<accordion>
-							<div
-								slot="title"
-								class="text-lg text-gray-800 font-medium"
-							>Who should I get in touch with in case of any issues/clarifications?</div><p>You can contact our customer support team at <mail-to to="hello@jobsharbour.com">hello@jobsharbour.com</mail-to></p>
+							<div slot="title" class="text-lg text-gray-800 font-medium">Why jobs harbour?</div>
+							<p>Here we come with the best platform where you can showcase your job lists, communicate with a mass of potential candidates in no time and also pick up the best out of them.</p>
 						</accordion>
 						<accordion>
 							<div
 								slot="title"
 								class="text-lg text-gray-800 font-medium"
-							>What types of Profiles do you have?</div><p>At Jobs Harbour you will find a wide range of Profiles in terms of educational qualifications, functional area, years of professional experience, preferences, locations etc.</p>
+							>Is registration on the Jobs Harbour free?</div>
+							<p>
+								Yes. Registration is free for job seekers and job creators.
+								<link-to to="/register">Register here</link-to>
+							</p>
+						</accordion>
+						<accordion>
+							<div
+								slot="title"
+								class="text-lg text-gray-800 font-medium"
+							>Who should I get in touch with in case of any issues/clarifications?</div>
+							<p>
+								You can contact our customer support team at
+								<mail-to to="hello@jobsharbour.com">hello@jobsharbour.com</mail-to>
+							</p>
+						</accordion>
+						<accordion>
+							<div
+								slot="title"
+								class="text-lg text-gray-800 font-medium"
+							>What types of Profiles do you have?</div>
+							<p>At Jobs Harbour you will find a wide range of Profiles in terms of educational qualifications, functional area, years of professional experience, preferences, locations etc.</p>
 						</accordion>
 					</tab>
 					<tab name="About Job Seeker">
@@ -59,22 +72,7 @@
 							<div slot="title" class="text-lg text-gray-800 font-medium">What is Desired Job Details?</div>
 							<p>Desired Job Details gives you an opportunity to provide your preferred location and preferred specializations in which you are looking for a job which might differ from your current one. This will make sure that you receive only those matches which match your profile as well as the preferences.</p>
 						</accordion>
-						<accordion>
-							<div
-								slot="title"
-								class="text-lg text-gray-800 font-medium"
-							>How is Job matching different from Job Search?</div>
-							<p
-								class="mb-3"
-							>You can set your profile status under the Account Details by clicking on the "General" tab of "My Profile". You have the following two options for your profile status:</p>
-							<p
-								class="mb-3"
-							>Job matching is different from Job search because it's not based just on keyword search.</p>
-							<p
-								class="mb-3"
-							>Job Matching happens on a comprehensive matching engine built on artificial intelligence. This engine provides you with an instant and reciprocal match based on the degree of relevance between your profile and preferences on one hand and job requirements on the other hand.</p>
-							<p>Also, you get a real time updates on matched jobs as more and more jobs are posted by employers.</p>
-						</accordion>
+
 						<accordion>
 							<div slot="title" class="text-lg text-gray-800 font-medium">How can I search jobs?</div>
 							<p
@@ -92,20 +90,41 @@
 					</tab>
 					<tab name="About Job Creator">
 						<accordion>
-							<div slot="title" class="text-lg text-gray-800 font-medium">How to post a job?</div><p>It is easy! All you need to do is enter the job information on the Portal and it will be posted.</p>
+							<div slot="title" class="text-lg text-gray-800 font-medium">How to post a job?</div>
+							<p>It is easy! All you need to do is enter the job information on the Portal and it will be posted.</p>
 						</accordion>
 						<accordion>
-							<div slot="title" class="text-lg text-gray-800 font-medium">Do you charge anything for posting jobs?</div><p>No, this is not paid service for Employers but yes, for Consultancy. One consultancy can add 5 companys' at a time. If they want to add more jobs you need to buy our <link-to to="/for-employers">premium version</link-to>. Once you post the opening, you will start receiving relevant applications in your inbox.</p>
+							<div
+								slot="title"
+								class="text-lg text-gray-800 font-medium"
+							>Do you charge anything for posting jobs?</div>
+							<p>
+								No, this is not paid service for Employers but yes, for Consultancy. One consultancy can add 5 companys' at a time. If they want to add more jobs you need to buy our
+								<link-to to="/for-employers">premium version</link-to>. Once you post the opening, you will start receiving relevant applications in your inbox.
+							</p>
 						</accordion>
 						<accordion>
-							<div slot="title" class="text-lg text-gray-800 font-medium">How the Profiles of the candidates are listed?</div><p>You can filter for a specific category and view Profile listing corresponding to that category. The resumes are listed generally in the reverse chronological order. It means the latest addition would be on the top.</p>
+							<div
+								slot="title"
+								class="text-lg text-gray-800 font-medium"
+							>How the Profiles of the candidates are listed?</div>
+							<p>You can filter for a specific category and view Profile listing corresponding to that category. The resumes are listed generally in the reverse chronological order. It means the latest addition would be on the top.</p>
 						</accordion>
 						<accordion>
-							<div slot="title" class="text-lg text-gray-800 font-medium">I am not able to sign-in into my account. What do I need to do?</div><p>Please check your user id and password , Sign-in details are case-sensitive. Delete cookies and disable JavaScript from your web browser. If issues persist, send us mail at <mail-to to="hello@jobsharbour.com">hello@jobsharbour.com</mail-to></p>
+							<div
+								slot="title"
+								class="text-lg text-gray-800 font-medium"
+							>I am not able to sign-in into my account. What do I need to do?</div>
+							<p>
+								Please check your user id and password , Sign-in details are case-sensitive. Delete cookies and disable JavaScript from your web browser. If issues persist, send us mail at
+								<mail-to to="hello@jobsharbour.com">hello@jobsharbour.com</mail-to>
+							</p>
 						</accordion>
 					</tab>
 				</tabs>
 			</card>
+
+			<contact-us />
 		</div>
 	</layout>
 </template>
@@ -120,6 +139,7 @@ import List from "@/Shared/tuis/List";
 import LinkTo from "@/Shared/tuis/LinkTo";
 import MailTo from "@/Shared/tuis/MailTo";
 import Card from "@/Shared/tuis/Card";
+import ContactUs from "@/Pages/ContactUs";
 
 export default {
 	components: {
@@ -131,7 +151,8 @@ export default {
 		List,
 		LinkTo,
 		Card,
-		MailTo
+		MailTo,
+		ContactUs
 	}
 };
 </script>

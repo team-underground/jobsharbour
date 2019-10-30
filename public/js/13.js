@@ -282,6 +282,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -686,7 +702,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".menu-active {\n  position: relative;\n}\n.menu-active:after {\n  bottom: 0;\n  position: absolute;\n  left: 0;\n  right: 0;\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  content: \"\";\n  height: 3px;\n  width: 100%;\n  border-radius: 1000px;\n  border-bottom-left-radius: 0px;\n  border-bottom-right-radius: 0px;\n  background-color: #29a7c9;\n}\n.overlay-black {\n  position: relative;\n}\n.overlay-black:after {\n  position: absolute;\n  content: \"\";\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  width: 100%;\n  display: block;\n  height: 100%;\n  background-image: linear-gradient(\n\t\trgba(0, 0, 0, 0.01) 0%,\n\t\trgba(0, 0, 0, 0.1) 45%,\n\t\trgba(0, 0, 0, 0.75) 100%\n\t);\n  z-index: 1;\n}\n", ""]);
+exports.push([module.i, ".menu-active {\n  position: relative;\n}\n.menu-active:after {\n  bottom: 0;\n  position: absolute;\n  left: 0;\n  right: 0;\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  content: \"\";\n  height: 3px;\n  width: 100%;\n  border-radius: 1000px;\n  border-bottom-left-radius: 0px;\n  border-bottom-right-radius: 0px;\n  background-color: #29a7c9;\n}\n.overlay-black {\n  position: relative;\n}\n.overlay-black:after {\n  position: absolute;\n  content: \"\";\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  width: 100%;\n  display: block;\n  height: 100%;\n  background-image: linear-gradient(\n\t\trgba(0, 0, 0, 0.01) 0%,\n\t\trgba(0, 0, 0, 0.1) 45%,\n\t\trgba(0, 0, 0, 0.75) 100%\n\t);\n  z-index: 1;\n}\n.hamburger {\n  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n.hamburger-active .hamburger {\n  transform: rotate(90deg);\n}\n.hamburger path {\n  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1),\n\t\tstroke-dasharray 500ms cubic-bezier(0.4, 0, 0.2, 1),\n\t\tstroke-dashoffset 500ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n.hamburger path:nth-child(1) {\n  transform-origin: 36% 40%;\n}\n.hamburger path:nth-child(2) {\n  stroke-dasharray: 29 299;\n}\n.hamburger path:nth-child(3) {\n  transform-origin: 35% 63%;\n}\n.hamburger path:nth-child(4) {\n  stroke-dasharray: 29 299;\n}\n.hamburger path:nth-child(5) {\n  transform-origin: 61% 52%;\n}\n.hamburger path:nth-child(6) {\n  transform-origin: 62% 52%;\n}\n.hamburger-active path:nth-child(1) {\n  transform: translateX(9px) translateY(1px) rotate(45deg);\n}\n.hamburger-active path:nth-child(2) {\n  stroke-dasharray: 225 299;\n  stroke-dashoffset: -72px;\n}\n.hamburger-active path:nth-child(3) {\n  transform: translateX(9px) translateY(1px) rotate(-45deg);\n}\n.hamburger-active path:nth-child(4) {\n  stroke-dasharray: 225 299;\n  stroke-dashoffset: -72px;\n}\n.hamburger-active path:nth-child(5) {\n  transform: translateX(9px) translateY(1px) rotate(-45deg);\n}\n.hamburger-active path:nth-child(6) {\n  transform: translateX(9px) translateY(1px) rotate(45deg);\n}\n", ""]);
 
 // exports
 
@@ -940,7 +956,8 @@ var render = function() {
                   "div",
                   {
                     staticClass:
-                      "inline-block inline-flex items-center justify-center w-8 h-8 rounded-full mr-2 cursor-pointer md:hidden",
+                      "inline-block inline-flex items-center justify-center w-16 h-16 rounded-full mr-2 cursor-pointer md:hidden",
+                    class: { "hamburger-active": _vm.showNavbar == true },
                     on: {
                       click: function($event) {
                         _vm.showNavbar = !_vm.showNavbar
@@ -951,20 +968,79 @@ var render = function() {
                     _c(
                       "svg",
                       {
-                        staticClass: "fill-current text-gray-600",
+                        staticClass: "hamburger fill-current text-gray-600",
                         attrs: {
                           xmlns: "http://www.w3.org/2000/svg",
-                          width: "30",
-                          height: "30",
-                          viewBox: "0 0 24 24"
+                          width: "150",
+                          height: "150",
+                          viewBox: "0 0 200 200"
                         }
                       },
                       [
-                        _c("path", {
-                          attrs: {
-                            d: "M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z"
-                          }
-                        })
+                        _c(
+                          "g",
+                          {
+                            attrs: {
+                              "stroke-width": "6.5",
+                              "stroke-linecap": "round"
+                            }
+                          },
+                          [
+                            _c("path", {
+                              attrs: {
+                                d: "M72 82.286h28.75",
+                                fill: "#009100",
+                                "fill-rule": "evenodd",
+                                stroke: "#718096"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("path", {
+                              attrs: {
+                                d:
+                                  "M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554",
+                                fill: "none",
+                                stroke: "#718096"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("path", {
+                              attrs: {
+                                d: "M72 125.143h28.75",
+                                fill: "#009100",
+                                "fill-rule": "evenodd",
+                                stroke: "#718096"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("path", {
+                              attrs: {
+                                d:
+                                  "M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554",
+                                fill: "none",
+                                stroke: "#718096"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("path", {
+                              attrs: {
+                                d: "M100.75 82.286h28.75",
+                                fill: "#009100",
+                                "fill-rule": "evenodd",
+                                stroke: "#718096"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("path", {
+                              attrs: {
+                                d: "M100.75 125.143h28.75",
+                                fill: "#009100",
+                                "fill-rule": "evenodd",
+                                stroke: "#718096"
+                              }
+                            })
+                          ]
+                        )
                       ]
                     )
                   ]

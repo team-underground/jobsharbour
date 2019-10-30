@@ -130,6 +130,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -540,6 +557,7 @@ var render = function() {
                         },
                         [_vm._v("Why jobs harbour?")]
                       ),
+                      _vm._v(" "),
                       _c("p", [
                         _vm._v(
                           "Here we come with the best platform where you can showcase your job lists, communicate with a mass of potential candidates in no time and also pick up the best out of them."
@@ -557,11 +575,12 @@ var render = function() {
                         },
                         [_vm._v("Is registration on the Jobs Harbour free?")]
                       ),
+                      _vm._v(" "),
                       _c(
                         "p",
                         [
                           _vm._v(
-                            "Yes. Registration is free for job seekers and job creators. "
+                            "\n\t\t\t\t\t\t\tYes. Registration is free for job seekers and job creators.\n\t\t\t\t\t\t\t"
                           ),
                           _c("link-to", { attrs: { to: "/register" } }, [
                             _vm._v("Register here")
@@ -585,11 +604,12 @@ var render = function() {
                           )
                         ]
                       ),
+                      _vm._v(" "),
                       _c(
                         "p",
                         [
                           _vm._v(
-                            "You can contact our customer support team at "
+                            "\n\t\t\t\t\t\t\tYou can contact our customer support team at\n\t\t\t\t\t\t\t"
                           ),
                           _c(
                             "mail-to",
@@ -611,6 +631,7 @@ var render = function() {
                         },
                         [_vm._v("What types of Profiles do you have?")]
                       ),
+                      _vm._v(" "),
                       _c("p", [
                         _vm._v(
                           "At Jobs Harbour you will find a wide range of Profiles in terms of educational qualifications, functional area, years of professional experience, preferences, locations etc."
@@ -738,46 +759,6 @@ var render = function() {
                           attrs: { slot: "title" },
                           slot: "title"
                         },
-                        [
-                          _vm._v(
-                            "How is Job matching different from Job Search?"
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "mb-3" }, [
-                        _vm._v(
-                          'You can set your profile status under the Account Details by clicking on the "General" tab of "My Profile". You have the following two options for your profile status:'
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "mb-3" }, [
-                        _vm._v(
-                          "Job matching is different from Job search because it's not based just on keyword search."
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "mb-3" }, [
-                        _vm._v(
-                          "Job Matching happens on a comprehensive matching engine built on artificial intelligence. This engine provides you with an instant and reciprocal match based on the degree of relevance between your profile and preferences on one hand and job requirements on the other hand."
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("p", [
-                        _vm._v(
-                          "Also, you get a real time updates on matched jobs as more and more jobs are posted by employers."
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("accordion", [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "text-lg text-gray-800 font-medium",
-                          attrs: { slot: "title" },
-                          slot: "title"
-                        },
                         [_vm._v("How can I search jobs?")]
                       ),
                       _vm._v(" "),
@@ -833,6 +814,7 @@ var render = function() {
                         },
                         [_vm._v("How to post a job?")]
                       ),
+                      _vm._v(" "),
                       _c("p", [
                         _vm._v(
                           "It is easy! All you need to do is enter the job information on the Portal and it will be posted."
@@ -850,17 +832,18 @@ var render = function() {
                         },
                         [_vm._v("Do you charge anything for posting jobs?")]
                       ),
+                      _vm._v(" "),
                       _c(
                         "p",
                         [
                           _vm._v(
-                            "No, this is not paid service for Employers but yes, for Consultancy. One consultancy can add 5 companys' at a time. If they want to add more jobs you need to buy our "
+                            "\n\t\t\t\t\t\t\tNo, this is not paid service for Employers but yes, for Consultancy. One consultancy can add 5 companys' at a time. If they want to add more jobs you need to buy our\n\t\t\t\t\t\t\t"
                           ),
                           _c("link-to", { attrs: { to: "/for-employers" } }, [
                             _vm._v("premium version")
                           ]),
                           _vm._v(
-                            ". Once you post the opening, you will start receiving relevant applications in your inbox."
+                            ". Once you post the opening, you will start receiving relevant applications in your inbox.\n\t\t\t\t\t\t"
                           )
                         ],
                         1
@@ -881,6 +864,7 @@ var render = function() {
                           )
                         ]
                       ),
+                      _vm._v(" "),
                       _c("p", [
                         _vm._v(
                           "You can filter for a specific category and view Profile listing corresponding to that category. The resumes are listed generally in the reverse chronological order. It means the latest addition would be on the top."
@@ -902,11 +886,12 @@ var render = function() {
                           )
                         ]
                       ),
+                      _vm._v(" "),
                       _c(
                         "p",
                         [
                           _vm._v(
-                            "Please check your user id and password , Sign-in details are case-sensitive. Delete cookies and disable JavaScript from your web browser. If issues persist, send us mail at "
+                            "\n\t\t\t\t\t\t\tPlease check your user id and password , Sign-in details are case-sensitive. Delete cookies and disable JavaScript from your web browser. If issues persist, send us mail at\n\t\t\t\t\t\t\t"
                           ),
                           _c(
                             "mail-to",

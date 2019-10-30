@@ -170,7 +170,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -219,7 +218,7 @@ __webpack_require__.r(__webpack_exports__);
       form: {
         search: this.filters.search
       },
-      headings: ["Job Title", "Published at", "Status", "Salary", "Location", "Type", "Industry"]
+      headings: ["Job Id", "Job Title", "Published at", "Status", "Salary", "Location", "Type", "Industry"]
     };
   },
   methods: {}
@@ -438,11 +437,22 @@ var render = function() {
                                   to: "/admin/jobs/" + data.uuid + "/edit"
                                 }
                               },
-                              [_vm._v(_vm._s(data.job_title))]
+                              [_vm._v(_vm._s(data.job_id))]
                             )
                           ],
                           1
                         ),
+                        _vm._v(" "),
+                        _c("td", { staticClass: "border-t" }, [
+                          _c(
+                            "span",
+                            {
+                              staticClass:
+                                "text-gray-700 px-6 py-4 flex items-center"
+                            },
+                            [_vm._v(_vm._s(data.job_title))]
+                          )
+                        ]),
                         _vm._v(" "),
                         _c("td", { staticClass: "border-t" }, [
                           _c(

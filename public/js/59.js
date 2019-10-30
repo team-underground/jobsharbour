@@ -16,6 +16,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Shared_tuis_Card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Shared/tuis/Card */ "./resources/js/Shared/tuis/Card.vue");
 /* harmony import */ var _Shared_tuis_List__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Shared/tuis/List */ "./resources/js/Shared/tuis/List.vue");
 /* harmony import */ var _Shared_tuis_LoadingButton__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Shared/tuis/LoadingButton */ "./resources/js/Shared/tuis/LoadingButton.vue");
+/* harmony import */ var _Shared_tuis_MailTo__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Shared/tuis/MailTo */ "./resources/js/Shared/tuis/MailTo.vue");
 //
 //
 //
@@ -29,6 +30,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -44,7 +53,8 @@ __webpack_require__.r(__webpack_exports__);
     LinkTo: _Shared_tuis_LinkTo__WEBPACK_IMPORTED_MODULE_3__["default"],
     Card: _Shared_tuis_Card__WEBPACK_IMPORTED_MODULE_4__["default"],
     List: _Shared_tuis_List__WEBPACK_IMPORTED_MODULE_5__["default"],
-    LoadingButton: _Shared_tuis_LoadingButton__WEBPACK_IMPORTED_MODULE_6__["default"]
+    LoadingButton: _Shared_tuis_LoadingButton__WEBPACK_IMPORTED_MODULE_6__["default"],
+    MailTo: _Shared_tuis_MailTo__WEBPACK_IMPORTED_MODULE_7__["default"]
   }
 });
 
@@ -103,6 +113,39 @@ __webpack_require__.r(__webpack_exports__);
       return [{
         "list-none list-style-ul": this.theme === "ul"
       }];
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Shared/tuis/MailTo.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Shared/tuis/MailTo.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    to: {
+      type: String,
+      "default": "hello@jobsharbour.com"
+    },
+    subject: {
+      type: String,
+      "default": "Subject goes here"
     }
   }
 });
@@ -187,7 +230,7 @@ var render = function() {
           _vm._v(" "),
           _c("p", { staticClass: "mb-3" }, [
             _vm._v(
-              "You can cancel your payment only if it has not been posted to the the website, and your order is in pending status. Once your order is completed, and the listings are approved, you will not be able to cancel the same order  anyways.  You can cancel the same order within 24 hours, provided your listings are not approved or live."
+              "You can cancel your payment only if it has not been posted to the the website, and your order is in pending status. Once your order is completed, and the listings are approved, you will not be able to cancel the same order anyways. You can cancel the same order within 24 hours, provided your listings are not approved or live."
             )
           ]),
           _vm._v(" "),
@@ -196,19 +239,26 @@ var render = function() {
             { staticClass: "mb-3" },
             [
               _vm._v(
-                "In case, you have sent a request for a cancellation, and if your cancellation request is denied, then you will get a confirmation email from us regarding this. For cancellation of an order, you will need to send the Order Number, listing name, date or time of placing the order to "
+                "\n\t\t\t\tIn case, you have sent a request for a cancellation, and if your cancellation request is denied, then you will get a confirmation email from us regarding this. For cancellation of an order, you will need to send the Order Number, listing name, date or time of placing the order to\n\t\t\t\t"
               ),
-              _c("link-to", { attrs: { to: "mailto:hello@jobsharbour.com" } }, [
-                _vm._v("hello@jobsharbour.com")
-              ]),
-              _vm._v(".")
+              _c(
+                "mail-to",
+                {
+                  attrs: {
+                    to: "support@jobsharbour.com",
+                    subject: "Payment related query"
+                  }
+                },
+                [_vm._v("support@jobsharbour.com")]
+              ),
+              _vm._v(".\n\t\t\t")
             ],
             1
           ),
           _vm._v(" "),
           _c("p", { staticClass: "mb-3" }, [
             _vm._v(
-              "In case of a cancellation is accepted, then the refund will be credited to the users bank account electronically.  Users need to provide the mode of payments and list their bank account information in the email for cancellation."
+              "In case of a cancellation is accepted, then the refund will be credited to the users bank account electronically. Users need to provide the mode of payments and list their bank account information in the email for cancellation."
             )
           ])
         ],
@@ -281,6 +331,39 @@ var render = function() {
       )
     }),
     0
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Shared/tuis/MailTo.vue?vue&type=template&id=415b104a&":
+/*!**********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Shared/tuis/MailTo.vue?vue&type=template&id=415b104a& ***!
+  \**********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "a",
+    {
+      staticClass:
+        "mailtoui inline-flex text-blue-600 border-b-2 border-blue-200 hover:text-blue-700 hover:border-blue-400",
+      attrs: { href: "mailto:" + _vm.to + "?subject=" + (_vm.subject || "") }
+    },
+    [_vm._t("default")],
+    2
   )
 }
 var staticRenderFns = []
@@ -441,6 +524,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_List_vue_vue_type_template_id_1af63754___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_List_vue_vue_type_template_id_1af63754___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Shared/tuis/MailTo.vue":
+/*!*********************************************!*\
+  !*** ./resources/js/Shared/tuis/MailTo.vue ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _MailTo_vue_vue_type_template_id_415b104a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MailTo.vue?vue&type=template&id=415b104a& */ "./resources/js/Shared/tuis/MailTo.vue?vue&type=template&id=415b104a&");
+/* harmony import */ var _MailTo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MailTo.vue?vue&type=script&lang=js& */ "./resources/js/Shared/tuis/MailTo.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _MailTo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _MailTo_vue_vue_type_template_id_415b104a___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _MailTo_vue_vue_type_template_id_415b104a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Shared/tuis/MailTo.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Shared/tuis/MailTo.vue?vue&type=script&lang=js&":
+/*!**********************************************************************!*\
+  !*** ./resources/js/Shared/tuis/MailTo.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_MailTo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./MailTo.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Shared/tuis/MailTo.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_MailTo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Shared/tuis/MailTo.vue?vue&type=template&id=415b104a&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/Shared/tuis/MailTo.vue?vue&type=template&id=415b104a& ***!
+  \****************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MailTo_vue_vue_type_template_id_415b104a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./MailTo.vue?vue&type=template&id=415b104a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Shared/tuis/MailTo.vue?vue&type=template&id=415b104a&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MailTo_vue_vue_type_template_id_415b104a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MailTo_vue_vue_type_template_id_415b104a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

@@ -5,7 +5,7 @@
 			style="background-image:url('/duotone.png'); height:400px;"
 		>
 			<div class="text-center">
-				<h2 class="text-5xl text-white font-bold tracking-tight">Advertise With Us</h2>
+				<h2 class="text-3xl md:text-5xl text-white font-bold tracking-tight">Advertise With Us</h2>
 				<p class="text-white text-lg mb-8">connect with the largest audience of active.</p>
 				<loading-button
 					variant="white"
@@ -54,22 +54,32 @@
 			</div>
 			<div class="max-w-5xl mx-auto p-8 pb-0">
 				<heading size="heading" class="mb-2">Basic Ad</heading>
-				<p class="mb-3">This ad choice is great for businesses that don't have a web page but still want to be represented. The ad will appear under the appropriate category in the "Homepage" section.</p>
+				<p
+					class="mb-3"
+				>This ad choice is great for businesses that don't have a web page but still want to be represented. The ad will appear under the appropriate category in the "Homepage" section.</p>
 				<p class="mb-3 text-lg font-semibold">Ad Features:</p>
-				<list unordered-list-color="text-blue-600" :lists="['Your company name and contact information.','Customized text describing your company and services. 20 words limit.','&#x20b9; 299.00 monthly. Six-month minimum contract. Payable quarterly, semi annually and annually.']"></list>
+				<list
+					unordered-list-color="text-blue-600"
+					:lists="['Your company name and contact information.','Customized text describing your company and services. 20 words limit.','&#x20b9; 299.00 monthly. Six-month minimum contract. Payable quarterly, semi annually and annually.']"
+				></list>
 
 				<heading size="heading" class="mt-8 mb-2">Active Ad</heading>
 				<p class="mb-3">This ad will appear under the appropriate category in the "Homepage" section.</p>
 				<p class="mb-3 text-lg font-semibold">Ad Features:</p>
-				<list unordered-list-color="text-blue-600" :lists="['Your company name in BOLD.','Active Link to you company web page','Customized text describing your company and services. 50 word limit.','&#x20b9; 599.00 monthly. Six-month minimum contract. Payable quarterly, semi annually and annually.']"></list>
+				<list
+					unordered-list-color="text-blue-600"
+					:lists="['Your company name in BOLD.','Active Link to you company web page','Customized text describing your company and services. 50 word limit.','&#x20b9; 599.00 monthly. Six-month minimum contract. Payable quarterly, semi annually and annually.']"
+				></list>
 
-				<alert class="mt-8">If none of these options suits your needs please email us <mail-to subject="Query for advertisement details" to="hello@jobsharbour.com">hello@jobsharbour.com</mail-to> with your requests. Customized ads are subject to additional fees. Ads may be edited for clarity. We normally do not charge a set up fee. Additional fees may be charged if graphics or text requires additional time. We will contact you if that appears necessary. Ad text and graphics may be changed during the life of the contract for a nominal fee. No refunds will be given in the event of early cancellation of ads.</alert>
-				
-
+				<alert class="mt-8">
+					If none of these options suits your needs please email us
+					<mail-to
+						subject="Query for advertisement details"
+						to="hello@jobsharbour.com"
+					>hello@jobsharbour.com</mail-to>with your requests. Customized ads are subject to additional fees. Ads may be edited for clarity. We normally do not charge a set up fee. Additional fees may be charged if graphics or text requires additional time. We will contact you if that appears necessary. Ad text and graphics may be changed during the life of the contract for a nominal fee. No refunds will be given in the event of early cancellation of ads.
+				</alert>
 			</div>
 
-
-			</div>
 			<div class="max-w-2xl mx-auto py-8" id="contactform">
 				<heading size="heading" class="mb-8 text-center">Ready to reach our Audience? Get in Touch</heading>
 				<card>
@@ -99,9 +109,6 @@ import List from "@/Shared/tuis/List";
 import Alert from "@/Shared/tuis/Alert";
 import MailTo from "@/Shared/tuis/MailTo";
 
-
-
-
 export default {
 	components: {
 		Layout,
@@ -115,7 +122,7 @@ export default {
 		Alert,
 		MailTo
 	},
-	mounted(){
+	mounted() {
 		MailtoUI.run();
 	}
 };

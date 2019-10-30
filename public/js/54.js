@@ -106,6 +106,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var MailtoUI = __webpack_require__(/*! mailtoui/dist/mailtoui-min.js */ "./node_modules/mailtoui/dist/mailtoui-min.js");
 
 
@@ -312,7 +322,10 @@ var render = function() {
           [
             _c(
               "h2",
-              { staticClass: "text-5xl text-white font-bold tracking-tight" },
+              {
+                staticClass:
+                  "text-3xl md:text-5xl text-white font-bold tracking-tight"
+              },
               [_vm._v("Advertise With Us")]
             ),
             _vm._v(" "),
@@ -509,7 +522,7 @@ var render = function() {
             { staticClass: "mt-8" },
             [
               _vm._v(
-                "If none of these options suits your needs please email us "
+                "\n\t\t\t\tIf none of these options suits your needs please email us\n\t\t\t\t"
               ),
               _c(
                 "mail-to",
@@ -522,58 +535,61 @@ var render = function() {
                 [_vm._v("hello@jobsharbour.com")]
               ),
               _vm._v(
-                " with your requests. Customized ads are subject to additional fees. Ads may be edited for clarity. We normally do not charge a set up fee. Additional fees may be charged if graphics or text requires additional time. We will contact you if that appears necessary. Ad text and graphics may be changed during the life of the contract for a nominal fee. No refunds will be given in the event of early cancellation of ads."
+                "with your requests. Customized ads are subject to additional fees. Ads may be edited for clarity. We normally do not charge a set up fee. Additional fees may be charged if graphics or text requires additional time. We will contact you if that appears necessary. Ad text and graphics may be changed during the life of the contract for a nominal fee. No refunds will be given in the event of early cancellation of ads.\n\t\t\t"
               )
             ],
             1
           )
         ],
         1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "max-w-2xl mx-auto py-8", attrs: { id: "contactform" } },
+        [
+          _c(
+            "heading",
+            { staticClass: "mb-8 text-center", attrs: { size: "heading" } },
+            [_vm._v("Ready to reach our Audience? Get in Touch")]
+          ),
+          _vm._v(" "),
+          _c(
+            "card",
+            [
+              _c("text-input", {
+                staticClass: "mb-4",
+                attrs: { label: "Name" }
+              }),
+              _vm._v(" "),
+              _c("text-input", {
+                staticClass: "mb-4",
+                attrs: { label: "E-mail" }
+              }),
+              _vm._v(" "),
+              _c("text-input", {
+                staticClass: "mb-4",
+                attrs: { label: "Phone" }
+              }),
+              _vm._v(" "),
+              _c("text-input", {
+                staticClass: "mb-4",
+                attrs: { label: "Company" }
+              }),
+              _vm._v(" "),
+              _c("textarea-input", {
+                staticClass: "mb-4",
+                attrs: { label: "How can we help?" }
+              }),
+              _vm._v(" "),
+              _c("loading-button", [_vm._v("submit")])
+            ],
+            1
+          )
+        ],
+        1
       )
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "max-w-2xl mx-auto py-8", attrs: { id: "contactform" } },
-      [
-        _c(
-          "heading",
-          { staticClass: "mb-8 text-center", attrs: { size: "heading" } },
-          [_vm._v("Ready to reach our Audience? Get in Touch")]
-        ),
-        _vm._v(" "),
-        _c(
-          "card",
-          [
-            _c("text-input", { staticClass: "mb-4", attrs: { label: "Name" } }),
-            _vm._v(" "),
-            _c("text-input", {
-              staticClass: "mb-4",
-              attrs: { label: "E-mail" }
-            }),
-            _vm._v(" "),
-            _c("text-input", {
-              staticClass: "mb-4",
-              attrs: { label: "Phone" }
-            }),
-            _vm._v(" "),
-            _c("text-input", {
-              staticClass: "mb-4",
-              attrs: { label: "Company" }
-            }),
-            _vm._v(" "),
-            _c("textarea-input", {
-              staticClass: "mb-4",
-              attrs: { label: "How can we help?" }
-            }),
-            _vm._v(" "),
-            _c("loading-button", [_vm._v("submit")])
-          ],
-          1
-        )
-      ],
-      1
-    )
+    ])
   ])
 }
 var staticRenderFns = []

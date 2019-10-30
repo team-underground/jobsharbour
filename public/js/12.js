@@ -346,49 +346,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -476,7 +433,7 @@ __webpack_require__.r(__webpack_exports__);
   filters: {
     truncate: function truncate(value, limit) {
       if (value.length > limit) {
-        value = value.substring(0, limit - 3) + '...';
+        value = value.substring(0, limit - 3) + "...";
       }
 
       return value;
@@ -1082,7 +1039,7 @@ var render = function() {
                                     _c(
                                       "heading",
                                       {
-                                        staticClass: "mb-1",
+                                        staticClass: "mb-1 font-semibold",
                                         attrs: { size: "small" }
                                       },
                                       [
@@ -1098,7 +1055,11 @@ var render = function() {
                                         staticClass: "mb-1",
                                         attrs: { size: "small" }
                                       },
-                                      [_vm._v(_vm._s(post.job_category))]
+                                      [
+                                        _vm._v(
+                                          "in " + _vm._s(post.job_category)
+                                        )
+                                      ]
                                     )
                                   ],
                                   1
@@ -1657,7 +1618,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("\n\t\t\tClick to Close \n\t\t")]
+            [_vm._v("Click to Close")]
           )
         ]
       )
