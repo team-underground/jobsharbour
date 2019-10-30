@@ -175,6 +175,7 @@
 												class="w-48 mb-4"
 												placeholder="Select date"
 												v-model="job.job_starting_date"
+												:errors="errors['job_starting_date']"
 												readonly
 											></date-input>
 										</div>
@@ -184,6 +185,7 @@
 												class="w-48"
 												placeholder="Select date"
 												v-model="job.job_closing_date"
+												:errors="errors['job_closing_date']"
 												readonly
 											></date-input>
 										</div>

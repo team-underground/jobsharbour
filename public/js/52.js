@@ -249,6 +249,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -1078,6 +1080,7 @@ var render = function() {
                                   attrs: {
                                     label: "Job Opening Date",
                                     placeholder: "Select date",
+                                    errors: _vm.errors["job_starting_date"],
                                     readonly: ""
                                   },
                                   model: {
@@ -1105,6 +1108,7 @@ var render = function() {
                                   attrs: {
                                     label: "Job Closing Date",
                                     placeholder: "Select date",
+                                    errors: _vm.errors["job_closing_date"],
                                     readonly: ""
                                   },
                                   model: {

@@ -60,8 +60,8 @@ class JobpostsController extends Controller
 			'job_description' => ['required'],
 			'job_skills' => ['required'],
 			'job_email' => ['required', 'email'],
-			'job_starting_date' => ['required'],
-			'job_closing_date' => ['required'],
+			'job_starting_date' => ['required', 'date_format:d/m/Y', 'before_or_equal:job_closing_date'],
+			'job_closing_date' => ['required', 'date_format:d/m/Y', 'after_or_equal:job_starting_date'],
 			'meta_description' => ['required'],
 			'meta_keywords' => ['required'],
 			'seo_title' => ['required']
