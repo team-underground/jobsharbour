@@ -37,7 +37,7 @@ class JobpostsController extends Controller
 
             return Inertia::render('Jobs', compact('jobposts', 'filters', 'jobtypes', 'categories'));
         } else {
-            $categoryWiseTotal = Jobpost::published()->closed(false)->groupBy('job_category')->select('job_category', \DB::raw('count(job_category) as `total`'))->orderBy('total', 'DESC')->get(['total', 'job_category'])->transform(function ($category) {
+            $categoryWiseTotal = Jobpost::published()->closed(false)->groupBy('job_category')->select('job_category', \DB::raw('count(job_category) as `total`'))->orderBy('total', 'DESC')->limit(5)->get(['total', 'job_category'])->transform(function ($category) {
                 return [
                     'category_name' => $category->job_category,
                     'total' => $category->total

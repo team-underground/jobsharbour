@@ -143,7 +143,7 @@
 									<img
 										:src="post.company.company_logo_path"
 										alt="company-logo"
-										class="object-fit object-center w-full h-full rounded-lg"
+										class="object-contain p-2 object-center w-full h-full rounded-lg"
 									/>
 								</div>
 
@@ -187,27 +187,88 @@
 					</div>
 					<div class="md:w-1/3 px-4">
 						<card class="mt-12 mb-5 relative px-5 py-5" :is-padding="false">
-							<heading
-								class="mb-2 leading-tight text-gray-700 tracking-tight text-xl font-semibold"
-							>Top Categories</heading>
+							<div class="flex justify-between items-center mb-2">
+								<heading class="leading-tight text-gray-700 tracking-tight text-xl font-semibold">Categories</heading>
+
+								<link-to to="/categories">View all</link-to>
+							</div>
 
 							<template v-for="category in category_wise_total">
 								<a
 									:href="`/jobs?category=${category.category_name}`"
-									class="flex justify-between py-1 mb-1 hover:bg-blue-100"
+									class="flex rounded-full py-2 hover:bg-blue-100 trigger-icon"
 								>
-									<heading>{{ category.category_name }}</heading>
-									<badge>{{ category.total }}</badge>
+									<div
+										class="w-10 h-10 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full bg-blue-300-hover"
+									>
+										<icon name="users" class="w-5 h-5" v-if="category.category_name === 'Human Resources'"></icon>
+										<icon
+											name="edit2"
+											class="w-5 h-5"
+											v-if="category.category_name === 'Media Comm and Writing'"
+										></icon>
+										<icon name="briefcase" class="w-5 h-5" v-if="category.category_name === 'Business'"></icon>
+										<icon
+											name="paper-clip"
+											class="w-5 h-5"
+											v-if="category.category_name === 'Admin and Office'"
+										></icon>
+										<icon name="clipboard" class="w-5 h-5" v-if="category.category_name === 'Management'"></icon>
+										<icon name="heart" class="w-5 h-5" v-if="category.category_name === 'Healthcare'"></icon>
+										<icon
+											name="headphones"
+											class="w-5 h-5"
+											v-if="category.category_name === 'Customer Service'"
+										></icon>
+										<icon
+											name="trending"
+											class="w-5 h-5"
+											v-if="category.category_name === 'Accounting and Finance'"
+										></icon>
+										<icon name="monitor" class="w-5 h-5" v-if="category.category_name === 'Computer and IT'"></icon>
+										<icon
+											name="tv"
+											class="w-5 h-5"
+											v-if="category.category_name === 'Advertising and Marketing'"
+										></icon>
+										<icon name="award" class="w-5 h-5" v-if="category.category_name === 'Education'"></icon>
+										<icon
+											name="map-pin"
+											class="w-5 h-5"
+											v-if="category.category_name === 'Travel and Tourism'"
+										></icon>
+										<icon name="coffee" class="w-5 h-5" v-if="category.category_name === 'Food Services'"></icon>
+										<icon name="tag" class="w-5 h-5" v-if="category.category_name === 'Sales and Retail'"></icon>
+										<icon
+											name="settings"
+											class="w-5 h-5"
+											v-if="category.category_name === 'Science and Engg'"
+										></icon>
+										<icon name="home" class="w-5 h-5" v-if="category.category_name === 'Property'"></icon>
+										<icon name="tennis-ball" class="w-5 h-5" v-if="category.category_name === 'Sports'"></icon>
+										<icon name="palette" class="w-5 h-5" v-if="category.category_name === 'Design and UX'"></icon>
+										<icon
+											name="construction"
+											class="w-5 h-5"
+											v-if="category.category_name === 'Construction'"
+										></icon>
+										<icon name="bulb" class="w-5 h-5" v-if="category.category_name === 'Consultancy'"></icon>
+									</div>
+
+									<div class="ml-3">
+										<heading class="text-gray-700">{{ category.category_name }}</heading>
+										<heading size="small-caps">{{ category.total }} jobs</heading>
+									</div>
 								</a>
 							</template>
 						</card>
 
 						<card class="mb-5 relative bg-orange-100 px-5 py-5" :is-padding="false">
-							<div
+							<!-- <div
 								class="p-3 inline-flex justify-center items-center bg-orange-200 text-orange-800 rounded-full mb-3"
 							>
 								<icon name="briefcase" class="w-6 h-6"></icon>
-							</div>
+							</div>-->
 							<heading
 								class="mb-2 leading-tight text-gray-700 tracking-tight text-xl font-semibold"
 							>Employers?</heading>
@@ -223,27 +284,37 @@
 								size="small"
 								class="shadow bg-white hover:shadow-md text-gray-700"
 							>Join us now!</loading-button>
+
+							<div class="absolute right-0 bottom-0 -mb-4">
+								<img src="/RegisterAccountMobile.png" width="200" />
+							</div>
 						</card>
 
 						<card class="mb-5 relative bg-blue-100 px-5 py-5" :is-padding="false">
-							<div
+							<!-- <div
 								class="p-3 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
 							>
 								<icon name="bulb" class="w-6 h-6"></icon>
-							</div>
+							</div>-->
 							<heading
 								class="mb-2 leading-tight text-gray-700 tracking-tight text-xl font-semibold"
 							>Advertise with us</heading>
 
 							<heading
-								class="mb-5"
-							>Connect with the largest audience of active, influencial job creators, job seekers and workaholics</heading>
+								class="mb-5 pr-10 md:pr-6"
+							>Connect with the largest audience of active, influencial job creators, job seekers and workaholics.</heading>
 
 							<loading-button
+								tag="a"
+								to="/advertise"
 								variant="secondary"
 								size="small"
 								class="shadow bg-white hover:shadow-md text-gray-700"
 							>Get in touch</loading-button>
+
+							<div class="absolute right-0 bottom-0 -mb-4">
+								<img src="/SearchEngineMarketing.png" width="180" />
+							</div>
 						</card>
 					</div>
 				</div>
@@ -461,5 +532,10 @@ export default {
 .rotate-10 {
 	transform: rotate(10deg);
 	transform-origin: 0;
+}
+
+.trigger-icon:hover .bg-blue-300-hover {
+	background-color: #3182ce;
+	color: #ffffff;
 }
 </style>

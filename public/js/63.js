@@ -394,6 +394,77 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var toCurrency = function toCurrency(n, curr) {
   var LanguageFormat = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : undefined;
   return Intl.NumberFormat(LanguageFormat, {
@@ -530,7 +601,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".skew_aa {\n  transform: skew(0deg, -20deg);\n  transform-origin: 0;\n}\n.skew_bb {\n  transform: skew(20deg, -20deg);\n  transform-origin: 0;\n}\n.rotate-10 {\n  transform: rotate(10deg);\n  transform-origin: 0;\n}\n", ""]);
+exports.push([module.i, ".skew_aa {\n  transform: skew(0deg, -20deg);\n  transform-origin: 0;\n}\n.skew_bb {\n  transform: skew(20deg, -20deg);\n  transform-origin: 0;\n}\n.rotate-10 {\n  transform: rotate(10deg);\n  transform-origin: 0;\n}\n.trigger-icon:hover .bg-blue-300-hover {\n  background-color: #3182ce;\n  color: #ffffff;\n}\n", ""]);
 
 // exports
 
@@ -835,7 +906,7 @@ var render = function() {
                           [
                             _c("img", {
                               staticClass:
-                                "object-fit object-center w-full h-full rounded-lg",
+                                "object-contain p-2 object-center w-full h-full rounded-lg",
                               attrs: {
                                 src: post.company.company_logo_path,
                                 alt: "company-logo"
@@ -1014,12 +1085,23 @@ var render = function() {
                 },
                 [
                   _c(
-                    "heading",
-                    {
-                      staticClass:
-                        "mb-2 leading-tight text-gray-700 tracking-tight text-xl font-semibold"
-                    },
-                    [_vm._v("Top Categories")]
+                    "div",
+                    { staticClass: "flex justify-between items-center mb-2" },
+                    [
+                      _c(
+                        "heading",
+                        {
+                          staticClass:
+                            "leading-tight text-gray-700 tracking-tight text-xl font-semibold"
+                        },
+                        [_vm._v("Categories")]
+                      ),
+                      _vm._v(" "),
+                      _c("link-to", { attrs: { to: "/categories" } }, [
+                        _vm._v("View all")
+                      ])
+                    ],
+                    1
                   ),
                   _vm._v(" "),
                   _vm._l(_vm.category_wise_total, function(category) {
@@ -1028,19 +1110,180 @@ var render = function() {
                         "a",
                         {
                           staticClass:
-                            "flex justify-between py-1 mb-1 hover:bg-blue-100",
+                            "flex rounded-full py-2 hover:bg-blue-100 trigger-icon",
                           attrs: {
                             href: "/jobs?category=" + category.category_name
                           }
                         },
                         [
-                          _c("heading", [
-                            _vm._v(_vm._s(category.category_name))
-                          ]),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "w-10 h-10 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full bg-blue-300-hover"
+                            },
+                            [
+                              category.category_name === "Human Resources"
+                                ? _c("icon", {
+                                    staticClass: "w-5 h-5",
+                                    attrs: { name: "users" }
+                                  })
+                                : _vm._e(),
+                              _vm._v(" "),
+                              category.category_name ===
+                              "Media Comm and Writing"
+                                ? _c("icon", {
+                                    staticClass: "w-5 h-5",
+                                    attrs: { name: "edit2" }
+                                  })
+                                : _vm._e(),
+                              _vm._v(" "),
+                              category.category_name === "Business"
+                                ? _c("icon", {
+                                    staticClass: "w-5 h-5",
+                                    attrs: { name: "briefcase" }
+                                  })
+                                : _vm._e(),
+                              _vm._v(" "),
+                              category.category_name === "Admin and Office"
+                                ? _c("icon", {
+                                    staticClass: "w-5 h-5",
+                                    attrs: { name: "paper-clip" }
+                                  })
+                                : _vm._e(),
+                              _vm._v(" "),
+                              category.category_name === "Management"
+                                ? _c("icon", {
+                                    staticClass: "w-5 h-5",
+                                    attrs: { name: "clipboard" }
+                                  })
+                                : _vm._e(),
+                              _vm._v(" "),
+                              category.category_name === "Healthcare"
+                                ? _c("icon", {
+                                    staticClass: "w-5 h-5",
+                                    attrs: { name: "heart" }
+                                  })
+                                : _vm._e(),
+                              _vm._v(" "),
+                              category.category_name === "Customer Service"
+                                ? _c("icon", {
+                                    staticClass: "w-5 h-5",
+                                    attrs: { name: "headphones" }
+                                  })
+                                : _vm._e(),
+                              _vm._v(" "),
+                              category.category_name ===
+                              "Accounting and Finance"
+                                ? _c("icon", {
+                                    staticClass: "w-5 h-5",
+                                    attrs: { name: "trending" }
+                                  })
+                                : _vm._e(),
+                              _vm._v(" "),
+                              category.category_name === "Computer and IT"
+                                ? _c("icon", {
+                                    staticClass: "w-5 h-5",
+                                    attrs: { name: "monitor" }
+                                  })
+                                : _vm._e(),
+                              _vm._v(" "),
+                              category.category_name ===
+                              "Advertising and Marketing"
+                                ? _c("icon", {
+                                    staticClass: "w-5 h-5",
+                                    attrs: { name: "tv" }
+                                  })
+                                : _vm._e(),
+                              _vm._v(" "),
+                              category.category_name === "Education"
+                                ? _c("icon", {
+                                    staticClass: "w-5 h-5",
+                                    attrs: { name: "award" }
+                                  })
+                                : _vm._e(),
+                              _vm._v(" "),
+                              category.category_name === "Travel and Tourism"
+                                ? _c("icon", {
+                                    staticClass: "w-5 h-5",
+                                    attrs: { name: "map-pin" }
+                                  })
+                                : _vm._e(),
+                              _vm._v(" "),
+                              category.category_name === "Food Services"
+                                ? _c("icon", {
+                                    staticClass: "w-5 h-5",
+                                    attrs: { name: "coffee" }
+                                  })
+                                : _vm._e(),
+                              _vm._v(" "),
+                              category.category_name === "Sales and Retail"
+                                ? _c("icon", {
+                                    staticClass: "w-5 h-5",
+                                    attrs: { name: "tag" }
+                                  })
+                                : _vm._e(),
+                              _vm._v(" "),
+                              category.category_name === "Science and Engg"
+                                ? _c("icon", {
+                                    staticClass: "w-5 h-5",
+                                    attrs: { name: "settings" }
+                                  })
+                                : _vm._e(),
+                              _vm._v(" "),
+                              category.category_name === "Property"
+                                ? _c("icon", {
+                                    staticClass: "w-5 h-5",
+                                    attrs: { name: "home" }
+                                  })
+                                : _vm._e(),
+                              _vm._v(" "),
+                              category.category_name === "Sports"
+                                ? _c("icon", {
+                                    staticClass: "w-5 h-5",
+                                    attrs: { name: "tennis-ball" }
+                                  })
+                                : _vm._e(),
+                              _vm._v(" "),
+                              category.category_name === "Design and UX"
+                                ? _c("icon", {
+                                    staticClass: "w-5 h-5",
+                                    attrs: { name: "palette" }
+                                  })
+                                : _vm._e(),
+                              _vm._v(" "),
+                              category.category_name === "Construction"
+                                ? _c("icon", {
+                                    staticClass: "w-5 h-5",
+                                    attrs: { name: "construction" }
+                                  })
+                                : _vm._e(),
+                              _vm._v(" "),
+                              category.category_name === "Consultancy"
+                                ? _c("icon", {
+                                    staticClass: "w-5 h-5",
+                                    attrs: { name: "bulb" }
+                                  })
+                                : _vm._e()
+                            ],
+                            1
+                          ),
                           _vm._v(" "),
-                          _c("badge", [_vm._v(_vm._s(category.total))])
-                        ],
-                        1
+                          _c(
+                            "div",
+                            { staticClass: "ml-3" },
+                            [
+                              _c("heading", { staticClass: "text-gray-700" }, [
+                                _vm._v(_vm._s(category.category_name))
+                              ]),
+                              _vm._v(" "),
+                              _c("heading", { attrs: { size: "small-caps" } }, [
+                                _vm._v(_vm._s(category.total) + " jobs")
+                              ])
+                            ],
+                            1
+                          )
+                        ]
                       )
                     ]
                   })
@@ -1055,21 +1298,6 @@ var render = function() {
                   attrs: { "is-padding": false }
                 },
                 [
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "p-3 inline-flex justify-center items-center bg-orange-200 text-orange-800 rounded-full mb-3"
-                    },
-                    [
-                      _c("icon", {
-                        staticClass: "w-6 h-6",
-                        attrs: { name: "briefcase" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
                   _c(
                     "heading",
                     {
@@ -1100,6 +1328,19 @@ var render = function() {
                       }
                     },
                     [_vm._v("Join us now!")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "absolute right-0 bottom-0 -mb-4" },
+                    [
+                      _c("img", {
+                        attrs: {
+                          src: "/RegisterAccountMobile.png",
+                          width: "200"
+                        }
+                      })
+                    ]
                   )
                 ],
                 1
@@ -1113,21 +1354,6 @@ var render = function() {
                 },
                 [
                   _c(
-                    "div",
-                    {
-                      staticClass:
-                        "p-3 inline-flex justify-center items-center bg-blue-200 text-blue-800 rounded-full mb-3"
-                    },
-                    [
-                      _c("icon", {
-                        staticClass: "w-6 h-6",
-                        attrs: { name: "bulb" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
                     "heading",
                     {
                       staticClass:
@@ -1136,9 +1362,9 @@ var render = function() {
                     [_vm._v("Advertise with us")]
                   ),
                   _vm._v(" "),
-                  _c("heading", { staticClass: "mb-5" }, [
+                  _c("heading", { staticClass: "mb-5 pr-10 md:pr-6" }, [
                     _vm._v(
-                      "Connect with the largest audience of active, influencial job creators, job seekers and workaholics"
+                      "Connect with the largest audience of active, influencial job creators, job seekers and workaholics."
                     )
                   ]),
                   _vm._v(" "),
@@ -1147,9 +1373,27 @@ var render = function() {
                     {
                       staticClass:
                         "shadow bg-white hover:shadow-md text-gray-700",
-                      attrs: { variant: "secondary", size: "small" }
+                      attrs: {
+                        tag: "a",
+                        to: "/advertise",
+                        variant: "secondary",
+                        size: "small"
+                      }
                     },
                     [_vm._v("Get in touch")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "absolute right-0 bottom-0 -mb-4" },
+                    [
+                      _c("img", {
+                        attrs: {
+                          src: "/SearchEngineMarketing.png",
+                          width: "180"
+                        }
+                      })
+                    ]
                   )
                 ],
                 1

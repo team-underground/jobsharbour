@@ -275,6 +275,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 var MailtoUI = __webpack_require__(/*! mailtoui/dist/mailtoui-min.js */ "./node_modules/mailtoui/dist/mailtoui-min.js");
 
 
@@ -486,7 +488,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".bg-facebook {\n  background-color: #3b5998 !important;\n}\n.bg-twitter {\n  background-color: #38a1f3 !important;\n}\n.bg-linkedin {\n  background-color: #0e76a8 !important;\n}\n.bg-whatsapp {\n  background-color: #4fce5d !important;\n}\n", ""]);
+exports.push([module.i, ".bg-facebook {\n  background-color: #3b5998 !important;\n}\n.bg-twitter {\n  background-color: #38a1f3 !important;\n}\n.bg-linkedin {\n  background-color: #0e76a8 !important;\n}\n.bg-whatsapp {\n  background-color: #4fce5d !important;\n}\n.job-description ul {\n  list-style-type: disc;\n  margin-left: 1.5rem;\n}\n", ""]);
 
 // exports
 
@@ -1022,7 +1024,7 @@ var render = function() {
                   ),
                   _vm._v(" "),
                   _c("div", {
-                    staticClass: "mb-4",
+                    staticClass: "mb-4 job-description",
                     domProps: { innerHTML: _vm._s(_vm.longText) }
                   }),
                   _vm._v(" "),
@@ -1083,7 +1085,7 @@ var render = function() {
                         [
                           _c("img", {
                             staticClass:
-                              "object-fit object-center w-full h-full rounded-full",
+                              "object-contain p-2 object-center w-full h-full rounded-full",
                             attrs: {
                               src: _vm.post.company.company_logo_path,
                               alt: "company-logo"

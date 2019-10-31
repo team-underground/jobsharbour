@@ -994,7 +994,7 @@ var render = function() {
                                   [
                                     _c("img", {
                                       staticClass:
-                                        "object-fit object-center w-full h-full rounded-lg",
+                                        "object-contain p-2 object-center w-full h-full rounded-lg",
                                       attrs: {
                                         src: post.company.company_logo_path,
                                         alt: "company-logo"
