@@ -176,6 +176,11 @@ return [
         App\Providers\HorizonServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+        * Custom Service Providers...
+        */
+        Webup\LaravelSendinBlue\SendinBlueServiceProvider::class,
+
     ],
 
     /*
