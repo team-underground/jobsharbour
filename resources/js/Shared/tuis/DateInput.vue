@@ -71,7 +71,7 @@ export default {
 		},
 		format: {
 			type: String,
-			default: "D/M/YYYY"
+			default: "DD/MM/YYYY"
 		},
 		minYear: {
 			type: Number,

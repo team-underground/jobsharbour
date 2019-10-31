@@ -1,20 +1,809 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[40],{
 
-/***/ "./node_modules/mailtoui/dist/mailtoui-min.js":
-/*!****************************************************!*\
-  !*** ./node_modules/mailtoui/dist/mailtoui-min.js ***!
-  \****************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Jobs/Create.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Jobs/Create.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/apple/Sites/mcl/resources/js/Pages/Jobs/Create.vue: Unexpected token (249:42)\n\n\u001b[0m \u001b[90m 247 | \u001b[39m\u001b[36mconst\u001b[39m month \u001b[33m=\u001b[39m date\u001b[33m.\u001b[39mgetMonth() \u001b[33m+\u001b[39m \u001b[35m1\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 248 | \u001b[39m\u001b[36mconst\u001b[39m year \u001b[33m=\u001b[39m date\u001b[33m.\u001b[39mgetFullYear()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 249 | \u001b[39m\u001b[36mconst\u001b[39m currentDate \u001b[33m=\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mleadingZero(day)\u001b[33m.\u001b[39m\u001b[32m`/${month}/${year}`\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     | \u001b[39m                                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 250 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 251 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 252 | \u001b[39m\tcomponents\u001b[33m:\u001b[39m {\u001b[0m\n    at Parser.raise (/Users/apple/Sites/mcl/node_modules/@babel/parser/lib/index.js:6400:17)\n    at Parser.unexpected (/Users/apple/Sites/mcl/node_modules/@babel/parser/lib/index.js:7728:16)\n    at Parser.parseIdentifierName (/Users/apple/Sites/mcl/node_modules/@babel/parser/lib/index.js:9624:18)\n    at Parser.parseIdentifier (/Users/apple/Sites/mcl/node_modules/@babel/parser/lib/index.js:9598:23)\n    at Parser.parseMaybePrivateName (/Users/apple/Sites/mcl/node_modules/@babel/parser/lib/index.js:8962:19)\n    at Parser.parseSubscript (/Users/apple/Sites/mcl/node_modules/@babel/parser/lib/index.js:8575:28)\n    at Parser.parseSubscripts (/Users/apple/Sites/mcl/node_modules/@babel/parser/lib/index.js:8528:19)\n    at Parser.parseExprSubscripts (/Users/apple/Sites/mcl/node_modules/@babel/parser/lib/index.js:8517:17)\n    at Parser.parseMaybeUnary (/Users/apple/Sites/mcl/node_modules/@babel/parser/lib/index.js:8487:21)\n    at Parser.parseExprOps (/Users/apple/Sites/mcl/node_modules/@babel/parser/lib/index.js:8353:23)\n    at Parser.parseMaybeConditional (/Users/apple/Sites/mcl/node_modules/@babel/parser/lib/index.js:8326:23)\n    at Parser.parseMaybeAssign (/Users/apple/Sites/mcl/node_modules/@babel/parser/lib/index.js:8273:21)\n    at Parser.parseVar (/Users/apple/Sites/mcl/node_modules/@babel/parser/lib/index.js:10583:26)\n    at Parser.parseVarStatement (/Users/apple/Sites/mcl/node_modules/@babel/parser/lib/index.js:10402:10)\n    at Parser.parseStatementContent (/Users/apple/Sites/mcl/node_modules/@babel/parser/lib/index.js:9999:21)\n    at Parser.parseStatement (/Users/apple/Sites/mcl/node_modules/@babel/parser/lib/index.js:9932:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/apple/Sites/mcl/node_modules/@babel/parser/lib/index.js:10508:25)\n    at Parser.parseBlockBody (/Users/apple/Sites/mcl/node_modules/@babel/parser/lib/index.js:10495:10)\n    at Parser.parseTopLevel (/Users/apple/Sites/mcl/node_modules/@babel/parser/lib/index.js:9861:10)\n    at Parser.parse (/Users/apple/Sites/mcl/node_modules/@babel/parser/lib/index.js:11373:17)\n    at parse (/Users/apple/Sites/mcl/node_modules/@babel/parser/lib/index.js:11409:38)\n    at parser (/Users/apple/Sites/mcl/node_modules/@babel/core/lib/transformation/normalize-file.js:168:34)\n    at normalizeFile (/Users/apple/Sites/mcl/node_modules/@babel/core/lib/transformation/normalize-file.js:102:11)\n    at runSync (/Users/apple/Sites/mcl/node_modules/@babel/core/lib/transformation/index.js:44:43)\n    at runAsync (/Users/apple/Sites/mcl/node_modules/@babel/core/lib/transformation/index.js:35:14)\n    at process.nextTick (/Users/apple/Sites/mcl/node_modules/@babel/core/lib/transform.js:34:34)\n    at process._tickCallback (internal/process/next_tick.js:61:11)");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Jobs/Create.vue?vue&type=style&index=0&lang=css&":
+/*!************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Jobs/Create.vue?vue&type=style&index=0&lang=css& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/**
- * mailtoui - A simple way to enhance your mailto links with a convenient user interface.
- * @version v1.0.3
- * @link https://mailtoui.com
- * @author Mario Rodriguez - https://twitter.com/mariordev
- * @license MIT
- */
-var mailtouiApp=mailtouiApp||{};!function(t){var o=document.getElementsByTagName("html")[0],e=document.getElementsByTagName("body")[0],i=null,n=null,l='<svg viewBox="0 0 24 24"><g class="nc-icon-wrapper" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" fill="currentColor" stroke="currentColor"><path data-cap="butt" data-color="color-2" fill="none" stroke-miterlimit="10" d="M5.704,2.979 c0.694,0.513,1.257,1.164,1.767,2.02C7.917,5.746,8.908,7.826,8,9c-1.027,1.328-4,1.776-4,3c0,0.921,1.304,1.972,2,3 c1.047,1.546,0.571,3.044,0,4c-0.296,0.496-0.769,0.92-1.293,1.234" stroke-linecap="butt"/> <path data-cap="butt" data-color="color-2" fill="none" stroke-miterlimit="10" d="M20.668,5.227 C18.509,6.262,15.542,6.961,15,7c-1.045,0.075-1.2-0.784-2-2c-0.6-0.912-2-2.053-2-3c0-0.371,0.036-0.672,0.131-0.966" stroke-linecap="butt"/> <circle fill="none" stroke="currentColor" stroke-miterlimit="10" cx="12" cy="12" r="11"/> <path data-cap="butt" data-color="color-2" fill="none" stroke-miterlimit="10" d="M19.014,12.903 C19.056,15.987,15.042,19.833,13,19c-1.79-0.73-0.527-2.138-0.986-6.097c-0.191-1.646,1.567-3,3.5-3S18.992,11.247,19.014,12.903z" stroke-linecap="butt"/></g></svg>',a='<svg viewBox="0 0 24 24"><g class="nc-icon-wrapper" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" stroke="currentColor"><polyline fill="none" stroke="currentColor" stroke-miterlimit="10" points="20,4 22,4 22,23 2,23 2,4 4,4 "/> <path fill="none" stroke="currentColor" stroke-miterlimit="10" d="M14,3c0-1.105-0.895-2-2-2 s-2,0.895-2,2H7v4h10V3H14z"/> <line data-color="color-2" fill="none" stroke-miterlimit="10" x1="7" y1="11" x2="17" y2="11"/> <line data-color="color-2" fill="none" stroke-miterlimit="10" x1="7" y1="15" x2="17" y2="15"/> <line data-color="color-2" fill="none" stroke-miterlimit="10" x1="7" y1="19" x2="11" y2="19"/></g></svg>',r=new Object;r.linkClass="mailtoui",r.autoClose=!0,r.disableOnMobile=!0,r.title="Compose new email with",r.buttonText1="Gmail in browser",r.buttonText2="Outlook in browser",r.buttonText3="Yahoo in browser",r.buttonText4="Default email app",r.buttonIcon1=l,r.buttonIcon2=l,r.buttonIcon3=l,r.buttonIcon4='<svg viewBox="0 0 24 24"><g class="nc-icon-wrapper" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" fill="currentColor" stroke="currentColor"><line data-color="color-2" fill="none" stroke-miterlimit="10" x1="5" y1="6" x2="6" y2="6"/> <line data-color="color-2" fill="none" stroke-miterlimit="10" x1="10" y1="6" x2="11" y2="6"/> <line data-color="color-2" fill="none" stroke-miterlimit="10" x1="15" y1="6" x2="19" y2="6"/> <line fill="none" stroke="currentColor" stroke-miterlimit="10" x1="1" y1="10" x2="23" y2="10"/> <rect x="1" y="2" fill="none" stroke="currentColor" stroke-miterlimit="10" width="22" height="20"/></g></svg>',r.buttonIconCopy=a,r.buttonTextCopy="Copy",r.buttonTextCopyAction="Copied!";var c=0,s="auto";t.buildStyleTag=function(){var o=document.createElement("style"),e=".mailtoui-modal{background-color:#000;background-color:rgba(0,0,0,.4);bottom:0;color:#303131;display:none;height:100%;left:0;margin:0;padding:0;position:fixed;right:0;top:0;width:100%;z-index:1000}.mailtoui-modal-content{-webkit-animation:mailtoui-appear .4s;animation:mailtoui-appear .4s;background-color:#f1f5f8;border-radius:8px;bottom:auto;-webkit-box-shadow:0 4px 8px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);box-shadow:0 4px 8px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);left:50%;max-height:calc(100% - 100px);overflow:auto;padding:0;position:fixed;right:-45%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.mailtoui-modal-content:focus,.mailtoui-modal-content:hover{overflow-y:auto}@media only screen and (min-width:768px){.mailtoui-modal-content{right:auto}}.mailtoui-modal-head{-webkit-box-align:center;-ms-flex-align:center;align-items:center;background-color:#fff;clear:both;display:-webkit-box;display:-ms-flexbox;display:flex;min-width:0;padding:10px 20px}.mailtoui-modal-title{color:#303131;-webkit-box-flex:1;-ms-flex:1;flex:1;font-family:sans-serif;font-size:120%;font-weight:700;margin:0;overflow:hidden;padding:0;text-overflow:ellipsis;white-space:nowrap}.mailtoui-modal-close{color:#aaa;-webkit-box-flex:initial;-ms-flex:initial;flex:initial;font-size:38px;margin-left:20px;position:relative;text-align:right;text-decoration:none;top:-4px}.mailtoui-modal-close:focus,.mailtoui-modal-close:hover{color:#000;cursor:pointer;font-weight:700;outline:0}.mailtoui-modal-body{height:100%;padding:20px}.mailtoui-button{color:#333;text-decoration:none}.mailtoui-button:focus{outline:0}.mailtoui-button:focus .mailtoui-button-content{background-color:#555;color:#fff}.mailtoui-button-content{background-color:#fff;border:none;border-radius:8px;-webkit-box-shadow:0 2px 4px rgba(0,0,0,.18);box-shadow:0 2px 4px rgba(0,0,0,.18);margin-bottom:20px;overflow:hidden;padding:15px 20px;text-overflow:ellipsis;white-space:nowrap}.mailtoui-button-content:hover{background-color:#555;color:#fff}.mailtoui-button:last-child .mailtoui-button-content{margin-bottom:0}.mailtoui-button-icon{display:inline-block;font-weight:700;position:relative;top:4px}.mailtoui-button-icon svg{height:24px;width:24px}.mailtoui-button-text{display:inline-block;margin-left:5px;position:relative;top:-2px}.mailtoui-copy{border-radius:8px;-webkit-box-shadow:0 2px 4px rgba(0,0,0,.18);box-shadow:0 2px 4px rgba(0,0,0,.18);height:59px;margin-top:20px;position:relative}.mailtoui-button-copy{background-color:#fff;border:none;border-bottom-left-radius:8px;border-top-left-radius:8px;bottom:21px;color:#333;font-size:100%;height:100%;left:0;overflow:hidden;padding:15px 20px;position:absolute;text-overflow:ellipsis;top:0;white-space:nowrap;width:120px}.mailtoui-button-copy:focus,.mailtoui-button-copy:hover{background-color:#555;color:#fff;cursor:pointer;outline:0}.mailtoui-button-copy-clicked,.mailtoui-button-copy-clicked:focus,.mailtoui-button-copy-clicked:hover{background-color:#1f9d55;color:#fff}.mailtoui-button-copy-clicked .mailtoui-button-icon,.mailtoui-button-copy-clicked:focus .mailtoui-button-icon,.mailtoui-button-copy-clicked:hover .mailtoui-button-icon{display:none;visibility:hidden}.mailtoui-button-copy-clicked .mailtoui-button-text,.mailtoui-button-copy-clicked:focus .mailtoui-button-text,.mailtoui-button-copy-clicked:hover .mailtoui-button-text{color:#fff;top:2px}.mailtoui-email-address{background-color:#d8dcdf;border:none;border-radius:8px;-webkit-box-shadow:unset;box-shadow:unset;-webkit-box-sizing:border-box;box-sizing:border-box;color:#48494a;font-size:100%;height:100%;overflow:hidden;padding:20px 20px 20px 140px;text-overflow:ellipsis;white-space:nowrap;width:100%}.mailtoui-brand{color:#888;font-size:80%;margin-top:20px;text-align:center}.mailtoui-brand a{color:#888}.mailtoui-brand a:focus,.mailtoui-brand a:hover{font-weight:700;outline:0}.mailtoui-no-scroll{overflow:hidden;position:fixed;width:100%}.mailtoui-is-hidden{display:none;visibility:hidden}@-webkit-keyframes mailtoui-appear{0%{opacity:0;-webkit-transform:translate(-50%,-50%) scale(0,0);transform:translate(-50%,-50%) scale(0,0)}100%{opacity:1;-webkit-transform:translate(-50%,-50%) scale(1,1);transform:translate(-50%,-50%) scale(1,1)}}@keyframes mailtoui-appear{0%{opacity:0;-webkit-transform:translate(-50%,-50%) scale(0,0);transform:translate(-50%,-50%) scale(0,0)}100%{opacity:1;-webkit-transform:translate(-50%,-50%) scale(1,1);transform:translate(-50%,-50%) scale(1,1)}}";return e=e.replace(/mailtoui/g,t.prefix()),o.setAttribute("id",t.prefix("-styles")),o.setAttribute("type","text/css"),o.styleSheet?o.styleSheet.cssText=e:o.appendChild(document.createTextNode(e)),o},t.embedStyleTag=function(){if(!t.styleTagExists()){var o=document.head.firstChild;document.head.insertBefore(t.buildStyleTag(),o)}},t.styleTagExists=function(){return!!document.getElementById(t.prefix("-styles"))},t.buildModal=function(){var o=document.createElement("div"),e=`<div class="mailtoui-modal-content"><div class="mailtoui-modal-head"><div id="mailtoui-modal-title" class="mailtoui-modal-title">${r.title}</div><a id="mailtoui-modal-close" class="mailtoui-modal-close" href="#">&times</a></div><div class="mailtoui-modal-body"><div class="mailtoui-clients"><a id="mailtoui-button-1" class="mailtoui-button" href="#"><div class="mailtoui-button-content"><span id="mailtoui-button-icon-1" class="mailtoui-button-icon">${r.buttonIcon1}</span> <span id="mailtoui-button-text-1" class="mailtoui-button-text">${r.buttonText1}</span></div></a><a id="mailtoui-button-2" class="mailtoui-button" href="#"><div class="mailtoui-button-content"><span id="mailtoui-button-icon-2" class="mailtoui-button-icon">${r.buttonIcon2}</span> <span id="mailtoui-button-text-2" class="mailtoui-button-text">${r.buttonText2}</span></div></a><a id="mailtoui-button-3" class="mailtoui-button" href="#"><div class="mailtoui-button-content"><span id="mailtoui-button-icon-3" class="mailtoui-button-icon">${r.buttonIcon3}</span> <span id="mailtoui-button-text-3" class="mailtoui-button-text">${r.buttonText3}</span></div></a><a id="mailtoui-button-4" class="mailtoui-button" href="#"><div class="mailtoui-button-content"><span id="mailtoui-button-icon-4" class="mailtoui-button-icon">${r.buttonIcon4}</span> <span id="mailtoui-button-text-4" class="mailtoui-button-text">${r.buttonText4}</span></div></a></div><div id="mailtoui-copy" class="mailtoui-copy"><div id="mailtoui-email-address" class="mailtoui-email-address"></div><button id="mailtoui-button-copy" class="mailtoui-button-copy" data-copytargetid="mailtoui-email-address"><span id="mailtoui-button-icon-copy" class="mailtoui-button-icon">${r.buttonIconCopy}</span> <span id="mailtoui-button-text-copy" class="mailtoui-button-text">${r.buttonTextCopy}</span></button></div><div class="mailtoui-brand"><a href="https://mailtoui.com?ref=ui" target="_blank">Powered by MailtoUI</a></div></div></div>`;return e=e.replace(/mailtoui/g,t.prefix()),o.setAttribute("id",t.prefix("-modal")),o.setAttribute("class",t.prefix("-modal")),o.setAttribute("style","display: none;"),o.setAttribute("aria-hidden",!0),o.innerHTML=e,o},t.embedModal=function(){if(!t.modalExists()){var o=t.buildModal(),e=document.body.firstChild;document.body.insertBefore(o,e)}},t.modalExists=function(){return!!document.getElementById(t.prefix("-modal"))},t.getModal=function(o){return t.hydrateModal(o),document.getElementById(t.prefix("-modal"))},t.hydrateModal=function(o){var e=t.getEmail(o),i=t.getLinkField(o,"subject"),n=t.getLinkField(o,"cc"),l=t.getLinkField(o,"bcc"),a=t.getLinkField(o,"body");document.getElementById(t.prefix("-button-1")).href="https://mail.google.com/mail/?view=cm&fs=1&to="+e+"&su="+i+"&cc="+n+"&bcc="+l+"&body="+a,document.getElementById(t.prefix("-button-2")).href="https://outlook.office.com/owa/?path=/mail/action/compose&to="+e+"&subject="+i+"&body="+a,document.getElementById(t.prefix("-button-3")).href="https://compose.mail.yahoo.com/?to="+e+"&subject="+i+"&cc="+n+"&bcc="+l+"&body="+a,document.getElementById(t.prefix("-button-4")).href="mailto:"+e+"?subject="+i+"&cc="+n+"&bcc="+l+"&body="+a,document.getElementById(t.prefix("-email-address")).innerHTML=e,document.getElementById(t.prefix("-button-icon-1")).innerHTML=r.buttonIcon1,document.getElementById(t.prefix("-button-icon-2")).innerHTML=r.buttonIcon2,document.getElementById(t.prefix("-button-icon-3")).innerHTML=r.buttonIcon3,document.getElementById(t.prefix("-button-icon-4")).innerHTML=r.buttonIcon4,document.getElementById(t.prefix("-button-icon-copy")).innerHTML=r.buttonIconCopy,t.toggleHideCopyUi(e)},t.savePageScrollPosition=function(){c=window.pageYOffset,e.style.top=-c+"px"},t.restorePageScrollPosition=function(){window.scrollTo(0,c),e.style.top=0},t.saveScrollBehavior=function(){s=o.style.scrollBehavior,o.style.scrollBehavior="auto"},t.restoreScrollBehavior=function(){o.style.scrollBehavior=s},t.saveLastDocElementFocused=function(){n=document.activeElement},t.openModal=function(o){r.disableOnMobile&&t.isMobileDevice()||(o.preventDefault(),t.saveLastDocElementFocused(),t.savePageScrollPosition(),t.saveScrollBehavior(),t.displayModal(o),t.hideModalFromScreenReader(!1),t.enablePageScrolling(!1),t.modalFocus(),t.triggerEvent(i,"open"))},t.displayModal=function(o){var e=t.getParentElement(o.target,"a");(i=t.getModal(e)).style.display="block"},t.modalFocus=function(){i.focusableChildren=Array.from(i.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')),i.focusableChildren[1].focus()},t.closeModal=function(o){o.preventDefault(),t.hideModal(),t.enablePageScrolling(!0),t.restorePageScrollPosition(),t.restoreScrollBehavior(),t.docRefocus(),t.triggerEvent(i,"close")},t.hideModal=function(){t.hideModalFromScreenReader(!0),t.isDefined(i)&&(i.style.display="none")},t.hideModalFromScreenReader=function(o){t.isDefined(i)&&i.setAttribute("aria-hidden",o)},t.enablePageScrolling=function(i){i?(e.classList.remove(t.prefix("-no-scroll")),o.classList.remove(t.prefix("-no-scroll"))):(e.classList.add(t.prefix("-no-scroll")),o.classList.add(t.prefix("-no-scroll")))},t.docRefocus=function(){n.focus()},t.openClient=function(o,e){var i="_blank";t.isDefaultEmailAppButton(o)&&(i="_self"),window.open(o.href,i),t.triggerEvent(o,"compose"),r.autoClose&&t.closeModal(e)},t.isDefaultEmailAppButton=function(o){return o.id==t.prefix("-button-4")},t.getParentElement=function(t,o){for(;null!==t;){if(t.tagName.toUpperCase()==o.toUpperCase())return t;t=t.parentNode}return null},t.triggerEvent=function(t,o){var e=new Event(o);t.dispatchEvent(e)},t.isMobileDevice=function(){var t,o=!1;return t=navigator.userAgent||navigator.vendor||window.opera,(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(t)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(t.substr(0,4)))&&(o=!0),o},t.listenForEvents=function(){t.listenForClickOnLink(),t.listenForClickOnClient(),t.listenForClickOnCopy(),t.listenForClickOnClose(),t.listenForClickOnWindow(),t.listenForKeys()},t.listenForClickOnLink=function(){for(var o=document.getElementsByClassName(t.prefix()),e=0;e<o.length;e++)o[e].addEventListener("click",function(o){t.openModal(o)},!1)},t.listenForClickOnClient=function(){for(var o=document.getElementsByClassName(t.prefix("-button")),e=0;e<o.length;e++)o[e].addEventListener("click",function(o){o.preventDefault(),o.stopPropagation();var e=t.getParentElement(o.target,"a");t.openClient(e,o)},!1)},t.listenForClickOnCopy=function(){document.getElementById(t.prefix("-button-copy")).addEventListener("click",function(o){t.copy(o)},!1)},t.listenForClickOnClose=function(){document.getElementById(t.prefix("-modal-close")).addEventListener("click",function(o){t.closeModal(o)},!1)},t.listenForClickOnWindow=function(){window.addEventListener("click",function(o){var e=o.target;null!==e&&e.classList.contains(t.prefix("-modal"))&&t.closeModal(o)},!1)},t.listenForKeys=function(){document.addEventListener("keydown",function(o){t.escapeModal(o),t.trapTabWithinModal(o)},!1)},t.escapeModal=function(o){27===o.keyCode&&t.closeModal(o)},t.trapTabWithinModal=function(t){if(9===t.keyCode&&null!==i){var o=document.activeElement,e=i.focusableChildren.length,n=i.focusableChildren.indexOf(o);t.shiftKey?0===n&&(t.preventDefault(),i.focusableChildren[e-1].focus()):n==e-1&&(t.preventDefault(),i.focusableChildren[0].focus())}},t.getLinks=function(){return document.getElementsByClassName(t.prefix())},t.splitLink=function(t){var o=t.href.replace("mailto:","").trim(),e=o.split("?",1);return null!==e&&e.length>0&&(e[1]=o.replace(e[0]+"?","").trim()),e},t.getLinkField=function(o,e){var i=t.splitLink(o),n="",l=[],a=[];null!==i&&i.length>0&&(n=i[1]),null!==n&&n.length>0&&(l=(n=n.replace("%20&%20","%20%26%20")).split("&"));for(var r=0;r<l.length;r++){l[r]=l[r].replace("%20=%20","%20%3D%20"),a=l[r].split("=");for(var c=0;c<a.length;c++)if(a[0]==e)return a[1]}return""},t.getEmail=function(o){var e=t.splitLink(o),i="";return null!==e&&e.length>0&&(i=e[0]),decodeURIComponent(i)},t.getClassHideCopyUi=function(){return t.prefix("-is-hidden")},t.toggleHideCopyUi=function(o){var e=document.getElementById(t.prefix("-copy"));0==o.length?e.classList.add(t.getClassHideCopyUi()):e.classList.remove(t.getClassHideCopyUi())},t.toggleCopyButton=function(){button=document.getElementById(t.prefix("-button-copy")),buttonText=document.getElementById(t.prefix("-button-text-copy")),buttonText.innerHTML=r.buttonTextCopyAction,button.classList.add(t.prefix("-button-copy-clicked")),setTimeout(function(){buttonText.innerHTML=r.buttonTextCopy,button.classList.remove(t.prefix("-button-copy-clicked"))},600)},t.copy=function(o){o.preventDefault();var e=t.getParentElement(o.target,"button").getAttribute("data-copytargetid"),i=document.getElementById(e),n=document.createRange();n.selectNodeContents(i);var l=window.getSelection();l.removeAllRanges(),l.addRange(n),document.execCommand("copy"),t.triggerEvent(i,"copy"),t.toggleCopyButton()},t.isiOSDevice=function(){return navigator.userAgent.match(/ipad|iphone/i)},t.setOptions=function(o){if(o)var e=JSON.stringify(o);else e=t.getOptionsFromScriptTag();if(e&&e.trim().length>0)for(var i in e=JSON.parse(e),r)e.hasOwnProperty(i)&&(r[i]=t.sanitizeUserOption(i,e[i]))},t.sanitizeUserOption=function(o,e){return t.stringContains(o,"icon")?t.validateSvg(o,e):t.isString(e)?t.stripHtml(e):e},t.validateSvg=function(o,e){t.getSvg(o,e).then(function(i){if(!t.stringIsSvg(i.responseText))throw new Error(o+": "+e+" is not an SVG file.");if(t.stringHasScript(i.responseText))throw new Error(o+": "+e+" is an invalid SVG file.");r[o]=i.responseText}).catch(function(t){r[o]="buttonIconCopy"==o?a:l,console.log(t)})},t.loadSvg=function(t,o){return new Promise((t,e)=>{var i=new XMLHttpRequest;i.open("GET",o,!0),i.onload=function(o){200==i.status?t(i):e(i)},i.send()})},t.getSvg=async function(o,e){return await t.loadSvg(o,e)},t.isString=function(t){return"string"==typeof t},t.stripHtml=function(t){return t.replace(/(<([^>]+)>)/g,"")},t.stringContains=function(t,o){return-1!==t.toLowerCase().indexOf(o.toLowerCase())},t.stringIsSvg=function(t){return t.startsWith("<svg")},t.stringHasScript=function(o){return t.stringContains(o,"<script")},t.isDefined=function(t){return void 0!==t},t.getOptionsFromScriptTag=function(){var t=document.getElementsByTagName("script");return t[t.length-1].getAttribute("data-options")},t.prefix=function(t=""){return r.linkClass+t},t.run=function(o=null){t.setOptions(o),t.embedModal(),t.embedStyleTag(),t.listenForEvents()}}(mailtouiApp), true&&void 0!==module.exports?module.exports={run:mailtouiApp.run}:mailtouiApp.run();
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".vue-file-agent .file-preview-wrapper:before {\n  border-radius: 10px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  text-align: center;\n}\n#profile-pic-demo .drop-help-text {\n  display: none;\n}\n#profile-pic-demo .is-drag-over .drop-help-text {\n  display: block;\n}\n#profile-pic-demo .profile-pic-upload-block {\n  border: 2px dashed transparent;\n  padding: 20px;\n  padding-top: 0;\n}\n#profile-pic-demo .is-drag-over.profile-pic-upload-block {\n  border-color: #aaa;\n}\n#profile-pic-demo .vue-file-agent {\n  width: 180px;\n  float: left;\n  margin: 0 15px 5px 0;\n  border: 0;\n  box-shadow: none;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Jobs/Create.vue?vue&type=style&index=0&lang=css&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Jobs/Create.vue?vue&type=style&index=0&lang=css& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./Create.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Jobs/Create.vue?vue&type=style&index=0&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Jobs/Create.vue?vue&type=template&id=4fea7b5c&":
+/*!*********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Jobs/Create.vue?vue&type=template&id=4fea7b5c& ***!
+  \*********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("layout", [
+    _c(
+      "div",
+      { staticClass: "bg-white px-4 pt-6 pb-4 relative shadow-sm z-20" },
+      [
+        _c(
+          "div",
+          { staticClass: "max-w-6xl mx-auto" },
+          [
+            _c(
+              "link-to",
+              { staticClass: "mb-2", attrs: { to: "/admin/jobs" } },
+              [
+                _c("icon", {
+                  staticClass: "-ml-2",
+                  attrs: { name: "chevron-left" }
+                }),
+                _vm._v("Back to Jobs\n\t\t\t")
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "flex w-full justify-between items-center" },
+              [
+                _c(
+                  "div",
+                  { staticClass: "flex-1" },
+                  [
+                    _c("heading", { attrs: { size: "heading" } }, [
+                      _vm._v("Create New Job Posts")
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  [
+                    _vm.companies.length > 0
+                      ? _c(
+                          "loading-button",
+                          {
+                            ref: "jobSaveButton",
+                            staticClass: "mt-2 md:mt-0",
+                            attrs: { size: "small" },
+                            on: { click: _vm.saveJobPost }
+                          },
+                          [_vm._v("Save Job Post")]
+                        )
+                      : _vm._e()
+                  ],
+                  1
+                )
+              ]
+            )
+          ],
+          1
+        )
+      ]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "py-10" }, [
+      _vm.companies.length <= 0
+        ? _c(
+            "div",
+            { staticClass: "max-w-6xl mx-auto" },
+            [
+              _c(
+                "empty-state",
+                { staticClass: "lg:py-32" },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "w-24 h-24 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-center mx-auto"
+                    },
+                    [
+                      _c("icon", {
+                        staticClass: "w-8 h-8",
+                        attrs: { name: "search" }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "heading",
+                    { staticClass: "mt-5 mb-1", attrs: { size: "heading" } },
+                    [_vm._v("No Companies found")]
+                  ),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "Please create atleast one company/organization details to add a job post."
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "loading-button",
+                    {
+                      staticClass: "mt-6",
+                      attrs: {
+                        tag: "a",
+                        to: "/admin/companies/create",
+                        size: "small"
+                      }
+                    },
+                    [
+                      _c("icon", {
+                        staticClass: "mr-1",
+                        attrs: { name: "plus" }
+                      }),
+                      _vm._v("Create Company\n\t\t\t\t")
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        : _c("div", { staticClass: "max-w-6xl mx-auto" }, [
+            _c("div", { staticClass: "md:flex -mx-4" }, [
+              _c(
+                "div",
+                { staticClass: "px-4" },
+                [
+                  _c("alert", { staticClass: "mb-4" }, [
+                    _c("strong", [_vm._v("Note:")]),
+                    _vm._v(
+                      " Job postings once created will go to the admin first for moderation and then only will be published on the website. It will take 24hrs for the moderation process to get completed.\n\t\t\t\t\t"
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "md:flex mb-10 -mx-4" }, [
+                    _c(
+                      "div",
+                      { staticClass: "md:w-1/3 mb-3 px-4" },
+                      [
+                        _c(
+                          "heading",
+                          { staticClass: "mb-1", attrs: { size: "large" } },
+                          [_vm._v("Job Details")]
+                        ),
+                        _vm._v(" "),
+                        _c("heading", { staticClass: "mb-4" }, [
+                          _vm._v(
+                            "Introduce job seekers to the role by describing responsibilities, skills and technologies..."
+                          )
+                        ])
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "md:w-2/3 px-4" },
+                      [
+                        _c(
+                          "card",
+                          [
+                            _c(
+                              "select-input",
+                              {
+                                staticClass: "mb-4",
+                                attrs: {
+                                  label: "Company",
+                                  options: _vm.companies,
+                                  "select-value": "value",
+                                  errors: _vm.errors["company_id"]
+                                },
+                                on: {
+                                  keydown: function($event) {
+                                    delete _vm.errors["company_id"]
+                                  }
+                                },
+                                model: {
+                                  value: _vm.job.company_id,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.job, "company_id", $$v)
+                                  },
+                                  expression: "job.company_id"
+                                }
+                              },
+                              [
+                                _c(
+                                  "option",
+                                  { attrs: { value: "null", disabled: "" } },
+                                  [_vm._v("Select company")]
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("text-input", {
+                              staticClass: "mb-4",
+                              attrs: {
+                                label: "Title",
+                                placeholder: "eg. Senior Web Developer",
+                                errors: _vm.errors["job_title"]
+                              },
+                              on: {
+                                keydown: function($event) {
+                                  delete _vm.errors["job_title"]
+                                }
+                              },
+                              model: {
+                                value: _vm.job.job_title,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.job, "job_title", $$v)
+                                },
+                                expression: "job.job_title"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("text-input", {
+                              staticClass: "mb-4",
+                              attrs: {
+                                label: "Location",
+                                placeholder: "City or Town/Place name",
+                                errors: _vm.errors["job_location"]
+                              },
+                              on: {
+                                keydown: function($event) {
+                                  delete _vm.errors["job_location"]
+                                }
+                              },
+                              model: {
+                                value: _vm.job.job_location,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.job, "job_location", $$v)
+                                },
+                                expression: "job.job_location"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "flex -mx-4" }, [
+                              _c(
+                                "div",
+                                { staticClass: "w-1/2 px-4" },
+                                [
+                                  _c(
+                                    "select-input",
+                                    {
+                                      staticClass: "mb-4",
+                                      attrs: {
+                                        label: "Type",
+                                        options: _vm.jobtypes,
+                                        errors: _vm.errors["job_type"]
+                                      },
+                                      on: {
+                                        keydown: function($event) {
+                                          delete _vm.errors["job_type"]
+                                        }
+                                      },
+                                      model: {
+                                        value: _vm.job.job_type,
+                                        callback: function($$v) {
+                                          _vm.$set(_vm.job, "job_type", $$v)
+                                        },
+                                        expression: "job.job_type"
+                                      }
+                                    },
+                                    [
+                                      _c(
+                                        "option",
+                                        {
+                                          attrs: { value: "null", disabled: "" }
+                                        },
+                                        [_vm._v("Select job type")]
+                                      )
+                                    ]
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-1/2 px-4" },
+                                [
+                                  _c(
+                                    "select-input",
+                                    {
+                                      staticClass: "mb-4",
+                                      attrs: {
+                                        label: "Salary (monthly)",
+                                        options: _vm.salaries,
+                                        errors: _vm.errors["job_salary"]
+                                      },
+                                      on: {
+                                        keydown: function($event) {
+                                          delete _vm.errors["job_salary"]
+                                        }
+                                      },
+                                      model: {
+                                        value: _vm.job.job_salary,
+                                        callback: function($$v) {
+                                          _vm.$set(_vm.job, "job_salary", $$v)
+                                        },
+                                        expression: "job.job_salary"
+                                      }
+                                    },
+                                    [
+                                      _c(
+                                        "option",
+                                        {
+                                          attrs: { value: "null", disabled: "" }
+                                        },
+                                        [_vm._v("Select salary")]
+                                      )
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "flex flex-wrap -mx-4" }, [
+                              _c(
+                                "div",
+                                { staticClass: "w-1/2 px-4" },
+                                [
+                                  _c(
+                                    "select-input",
+                                    {
+                                      staticClass: "mb-4",
+                                      attrs: {
+                                        label: "Category",
+                                        options: _vm.categories,
+                                        errors: _vm.errors["job_category"]
+                                      },
+                                      on: {
+                                        keydown: function($event) {
+                                          delete _vm.errors["job_category"]
+                                        }
+                                      },
+                                      model: {
+                                        value: _vm.job.job_category,
+                                        callback: function($$v) {
+                                          _vm.$set(_vm.job, "job_category", $$v)
+                                        },
+                                        expression: "job.job_category"
+                                      }
+                                    },
+                                    [
+                                      _c(
+                                        "option",
+                                        {
+                                          attrs: { value: "null", disabled: "" }
+                                        },
+                                        [_vm._v("Select job category")]
+                                      )
+                                    ]
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-1/2 px-4" },
+                                [
+                                  _c(
+                                    "select-input",
+                                    {
+                                      staticClass: "mb-4",
+                                      attrs: {
+                                        label: "Experience Level",
+                                        options: _vm.experiencelevels,
+                                        errors:
+                                          _vm.errors["job_experience_level"]
+                                      },
+                                      on: {
+                                        keydown: function($event) {
+                                          delete _vm.errors[
+                                            "job_experience_level"
+                                          ]
+                                        }
+                                      },
+                                      model: {
+                                        value: _vm.job.job_experience_level,
+                                        callback: function($$v) {
+                                          _vm.$set(
+                                            _vm.job,
+                                            "job_experience_level",
+                                            $$v
+                                          )
+                                        },
+                                        expression: "job.job_experience_level"
+                                      }
+                                    },
+                                    [
+                                      _c(
+                                        "option",
+                                        {
+                                          attrs: { value: "null", disabled: "" }
+                                        },
+                                        [_vm._v("Select experience level")]
+                                      )
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("text-input", {
+                              staticClass: "mb-4",
+                              attrs: {
+                                type: "email",
+                                label: "Email for candidate",
+                                placeholder: "Email to send resume/cv",
+                                errors: _vm.errors["job_email"]
+                              },
+                              on: {
+                                keydown: function($event) {
+                                  delete _vm.errors["job_email"]
+                                }
+                              },
+                              model: {
+                                value: _vm.job.job_email,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.job, "job_email", $$v)
+                                },
+                                expression: "job.job_email"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("tags-input", {
+                              staticClass: "mb-4",
+                              attrs: { label: "Skills" },
+                              model: {
+                                value: _vm.job.job_skills,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.job, "job_skills", $$v)
+                                },
+                                expression: "job.job_skills"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("simple-editor", {
+                              staticClass: "mb-4",
+                              attrs: {
+                                label: "Description",
+                                errors: _vm.errors["job_description"]
+                              },
+                              on: {
+                                keydown: function($event) {
+                                  delete _vm.errors["job_description"]
+                                }
+                              },
+                              model: {
+                                value: _vm.job.job_description,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.job, "job_description", $$v)
+                                },
+                                expression: "job.job_description"
+                              }
+                            })
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "md:flex mb-10 -mx-4" }, [
+                    _c(
+                      "div",
+                      { staticClass: "md:w-1/3 px-4" },
+                      [
+                        _c(
+                          "heading",
+                          { staticClass: "mb-1", attrs: { size: "large" } },
+                          [_vm._v("Job Post Date")]
+                        ),
+                        _vm._v(" "),
+                        _c("heading", { staticClass: "mb-4" }, [
+                          _vm._v(
+                            "The date when the job post will start appear in the site & closed for applying."
+                          )
+                        ])
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "md:w-2/3 px-4" },
+                      [
+                        _c("card", [
+                          _c("div", { staticClass: "flex flex-wrap -mx-4" }, [
+                            _c(
+                              "div",
+                              { staticClass: "w-1/2 px-4" },
+                              [
+                                _c("date-input", {
+                                  staticClass: "w-48 mb-4",
+                                  attrs: {
+                                    label: "Job Opening Date",
+                                    placeholder: "Select date",
+                                    errors: _vm.errors["job_starting_date"],
+                                    readonly: ""
+                                  },
+                                  model: {
+                                    value: _vm.job.job_starting_date,
+                                    callback: function($$v) {
+                                      _vm.$set(
+                                        _vm.job,
+                                        "job_starting_date",
+                                        $$v
+                                      )
+                                    },
+                                    expression: "job.job_starting_date"
+                                  }
+                                })
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "w-1/2 px-4" },
+                              [
+                                _c("date-input", {
+                                  staticClass: "w-48",
+                                  attrs: {
+                                    label: "Job Closing Date",
+                                    placeholder: "Select date",
+                                    errors: _vm.errors["job_closing_date"],
+                                    readonly: ""
+                                  },
+                                  model: {
+                                    value: _vm.job.job_closing_date,
+                                    callback: function($$v) {
+                                      _vm.$set(_vm.job, "job_closing_date", $$v)
+                                    },
+                                    expression: "job.job_closing_date"
+                                  }
+                                })
+                              ],
+                              1
+                            )
+                          ])
+                        ])
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "md:flex -mx-4" }, [
+                    _c(
+                      "div",
+                      { staticClass: "md:w-1/3 px-4" },
+                      [
+                        _c(
+                          "heading",
+                          { staticClass: "mb-1", attrs: { size: "large" } },
+                          [_vm._v("SEO Content")]
+                        ),
+                        _vm._v(" "),
+                        _c("heading", { staticClass: "mb-4" }, [
+                          _vm._v("Write great content optimized for SEO")
+                        ])
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "md:w-2/3 px-4" },
+                      [
+                        _c(
+                          "card",
+                          [
+                            _c("textarea-input", {
+                              staticClass: "mb-4",
+                              attrs: {
+                                label: "Meta Description",
+                                placeholder:
+                                  "eg. Ability to write code – HTML & CSS (SCSS flavor of SASS preferred when writing CSS)Proficient in Photoshop, Illustrator, bonus points for familiarity with Sketch (Sketch is our preferred concepting)Cross-browser and platform testing as standard practiceExperience using Invision a plusExperience in video production a plus or, at a minimum, a willingness to learn"
+                              },
+                              model: {
+                                value: _vm.job.meta_description,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.job, "meta_description", $$v)
+                                },
+                                expression: "job.meta_description"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("tags-input", {
+                              staticClass: "mb-4",
+                              attrs: { label: "Meta Keywords" },
+                              model: {
+                                value: _vm.job.meta_keywords,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.job, "meta_keywords", $$v)
+                                },
+                                expression: "job.meta_keywords"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("text-input", {
+                              staticClass: "mb-4",
+                              attrs: {
+                                label: "SEO Title",
+                                placeholder:
+                                  "eg. Senior web developer in guwahati"
+                              },
+                              model: {
+                                value: _vm.job.seo_title,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.job, "seo_title", $$v)
+                                },
+                                expression: "job.seo_title"
+                              }
+                            })
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                ],
+                1
+              )
+            ])
+          ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Jobs/Create.vue":
+/*!********************************************!*\
+  !*** ./resources/js/Pages/Jobs/Create.vue ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Create_vue_vue_type_template_id_4fea7b5c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Create.vue?vue&type=template&id=4fea7b5c& */ "./resources/js/Pages/Jobs/Create.vue?vue&type=template&id=4fea7b5c&");
+/* harmony import */ var _Create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Create.vue?vue&type=script&lang=js& */ "./resources/js/Pages/Jobs/Create.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Create_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Create.vue?vue&type=style&index=0&lang=css& */ "./resources/js/Pages/Jobs/Create.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _Create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Create_vue_vue_type_template_id_4fea7b5c___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Create_vue_vue_type_template_id_4fea7b5c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Pages/Jobs/Create.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Jobs/Create.vue?vue&type=script&lang=js&":
+/*!*********************************************************************!*\
+  !*** ./resources/js/Pages/Jobs/Create.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Create.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Jobs/Create.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Jobs/Create.vue?vue&type=style&index=0&lang=css&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/Pages/Jobs/Create.vue?vue&type=style&index=0&lang=css& ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./Create.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Jobs/Create.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Jobs/Create.vue?vue&type=template&id=4fea7b5c&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/Pages/Jobs/Create.vue?vue&type=template&id=4fea7b5c& ***!
+  \***************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_template_id_4fea7b5c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./Create.vue?vue&type=template&id=4fea7b5c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Jobs/Create.vue?vue&type=template&id=4fea7b5c&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_template_id_4fea7b5c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_template_id_4fea7b5c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ })
 

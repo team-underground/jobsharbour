@@ -83,7 +83,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     format: {
       type: String,
-      "default": "D/M/YYYY"
+      "default": "DD/MM/YYYY"
     },
     minYear: {
       type: Number,
