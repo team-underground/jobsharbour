@@ -52,7 +52,13 @@
 							></list>
 
 							<div class="mt-5 md:mt-0 relative md:absolute left-0 right-0 block bottom-0 mx-8 mb-6">
-								<loading-button size="small" rounded="large" class="w-full">Try for Free, Forever</loading-button>
+								<loading-button
+									tag="a"
+									to="/register?type=1"
+									size="small"
+									rounded="large"
+									class="w-full"
+								>Try for Free, Forever</loading-button>
 							</div>
 						</card>
 					</div>
@@ -99,7 +105,13 @@
 							></list>
 
 							<div class="mt-5 md:mt-0 relative md:absolute left-0 right-0 block bottom-0 mx-8 mb-6">
-								<loading-button size="small" rounded="large" class="w-full">Try for Free, Forever</loading-button>
+								<loading-button
+									tag="a"
+									to="/register?type=2"
+									size="small"
+									rounded="large"
+									class="w-full"
+								>Try for Free, Forever</loading-button>
 							</div>
 						</card>
 					</div>

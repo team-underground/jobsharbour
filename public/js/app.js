@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"65c8f888a49878298571","1":"33da46f2cf31b02f6d45","2":"033b0206b6584aaf2334","3":"0517bb7927b26df9f196","4":"d57a7358f087df29ecbf","5":"73008ba010b8e3c11c5e","6":"2cbf693b635317cb06a7","7":"7d1a85b01ce8f59559dd","8":"5c2bfddab97662a178b8","9":"584f28a244ce83a7ae35","10":"02df5e11794e6d248e1b","11":"0e1bc70a9181272576e3","12":"2e73fd1a2a7527bf5350","13":"3d7b46066c438a1b4bde","14":"eab8fe3f92f25a0b73b5","15":"6dd34efb5120da678833","16":"58c6597c19aaed6c2c84","20":"ce4392ffd917c73b45cd","32":"08471947301abb3837e7","40":"af8359cb0454cadcdd4c","43":"d561de6ad3d14561306a","45":"c42661234e94ef8b14c0","46":"bb469c7cbbb58ca1163a","47":"a241e208f5e8c9be4094","48":"9d96151520d8b5959b67","49":"5cc01edf2858da3629e8","50":"7bcf13385eff2884d852","51":"11e8964627d3fbd317d4","54":"7cd5a391bd95db5f3792","55":"f93281229c55db9aabbd","57":"59597772f955660b28f8","58":"cd1c1508ae47b51d1658","60":"0b6d23986cd691a8f723","61":"5156c933dee07414fd47","62":"27e3dcf15acfe4fd4207","63":"1afd77728da5dcb0acf0","64":"48c2a7741c4804f6a2bd","65":"342861718435a05815b2","67":"e972f448f3b32bf2e583","68":"bb4434d39d5ba4c14e61","69":"13051430a1d7d4cb5211","70":"296be026745e849df261","71":"a3691c0d9c30c24ecb0c"}[chunkId] + ""
+/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"65c8f888a49878298571","1":"33da46f2cf31b02f6d45","2":"033b0206b6584aaf2334","4":"d57a7358f087df29ecbf","5":"73008ba010b8e3c11c5e","6":"2cbf693b635317cb06a7","7":"7d1a85b01ce8f59559dd","8":"5c2bfddab97662a178b8","9":"584f28a244ce83a7ae35","10":"02df5e11794e6d248e1b","11":"0e1bc70a9181272576e3","12":"2e73fd1a2a7527bf5350","13":"3d7b46066c438a1b4bde","14":"eab8fe3f92f25a0b73b5","15":"6dd34efb5120da678833","16":"58c6597c19aaed6c2c84","17":"136978645e4d21275a30","20":"ce4392ffd917c73b45cd","32":"08471947301abb3837e7","40":"af8359cb0454cadcdd4c","43":"d561de6ad3d14561306a","45":"c42661234e94ef8b14c0","46":"bb469c7cbbb58ca1163a","47":"8de2f5362bc76cfab698","48":"9d96151520d8b5959b67","49":"5cc01edf2858da3629e8","50":"7bcf13385eff2884d852","51":"4794dd6b03a1fe8474aa","54":"7cd5a391bd95db5f3792","55":"f93281229c55db9aabbd","57":"59597772f955660b28f8","58":"cd1c1508ae47b51d1658","60":"0b6d23986cd691a8f723","61":"5156c933dee07414fd47","62":"27e3dcf15acfe4fd4207","63":"1afd77728da5dcb0acf0","64":"48c2a7741c4804f6a2bd","65":"342861718435a05815b2","67":"e972f448f3b32bf2e583","68":"bb4434d39d5ba4c14e61","69":"13051430a1d7d4cb5211","70":"296be026745e849df261","71":"a3691c0d9c30c24ecb0c"}[chunkId] + ""
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -12511,7 +12511,7 @@ module.exports = g;
 var map = {
 	"./About": [
 		"./resources/js/Pages/About.vue",
-		3,
+		17,
 		40,
 		1,
 		13,
@@ -12519,7 +12519,7 @@ var map = {
 	],
 	"./About.vue": [
 		"./resources/js/Pages/About.vue",
-		3,
+		17,
 		40,
 		1,
 		13,
@@ -12527,7 +12527,7 @@ var map = {
 	],
 	"./Advertise": [
 		"./resources/js/Pages/Advertise.vue",
-		3,
+		17,
 		40,
 		12,
 		1,
@@ -12536,7 +12536,7 @@ var map = {
 	],
 	"./Advertise.vue": [
 		"./resources/js/Pages/Advertise.vue",
-		3,
+		17,
 		40,
 		12,
 		1,
@@ -12545,63 +12545,63 @@ var map = {
 	],
 	"./Auth/Email": [
 		"./resources/js/Pages/Auth/Email.vue",
-		3,
+		17,
 		1,
 		13,
 		68
 	],
 	"./Auth/Email.vue": [
 		"./resources/js/Pages/Auth/Email.vue",
-		3,
+		17,
 		1,
 		13,
 		68
 	],
 	"./Auth/Login": [
 		"./resources/js/Pages/Auth/Login.vue",
-		3,
+		17,
 		1,
 		13,
 		65
 	],
 	"./Auth/Login.vue": [
 		"./resources/js/Pages/Auth/Login.vue",
-		3,
+		17,
 		1,
 		13,
 		65
 	],
 	"./Auth/Register": [
 		"./resources/js/Pages/Auth/Register.vue",
-		3,
+		17,
 		1,
 		13,
 		51
 	],
 	"./Auth/Register.vue": [
 		"./resources/js/Pages/Auth/Register.vue",
-		3,
+		17,
 		1,
 		13,
 		51
 	],
 	"./Auth/Reset": [
 		"./resources/js/Pages/Auth/Reset.vue",
-		3,
+		17,
 		1,
 		13,
 		69
 	],
 	"./Auth/Reset.vue": [
 		"./resources/js/Pages/Auth/Reset.vue",
-		3,
+		17,
 		1,
 		13,
 		69
 	],
 	"./Categories": [
 		"./resources/js/Pages/Categories.vue",
-		3,
+		17,
 		40,
 		1,
 		13,
@@ -12609,7 +12609,7 @@ var map = {
 	],
 	"./Categories.vue": [
 		"./resources/js/Pages/Categories.vue",
-		3,
+		17,
 		40,
 		1,
 		13,
@@ -12617,21 +12617,21 @@ var map = {
 	],
 	"./Charts/PageViews": [
 		"./resources/js/Pages/Charts/PageViews.vue",
-		3,
+		17,
 		2,
 		9,
 		32
 	],
 	"./Charts/PageViews.vue": [
 		"./resources/js/Pages/Charts/PageViews.vue",
-		3,
+		17,
 		2,
 		9,
 		32
 	],
 	"./Companies/Create": [
 		"./resources/js/Pages/Companies/Create.vue",
-		3,
+		17,
 		2,
 		6,
 		0,
@@ -12643,7 +12643,7 @@ var map = {
 	],
 	"./Companies/Create.vue": [
 		"./resources/js/Pages/Companies/Create.vue",
-		3,
+		17,
 		2,
 		6,
 		0,
@@ -12655,7 +12655,7 @@ var map = {
 	],
 	"./Companies/Edit": [
 		"./resources/js/Pages/Companies/Edit.vue",
-		3,
+		17,
 		2,
 		6,
 		0,
@@ -12667,7 +12667,7 @@ var map = {
 	],
 	"./Companies/Edit.vue": [
 		"./resources/js/Pages/Companies/Edit.vue",
-		3,
+		17,
 		2,
 		6,
 		0,
@@ -12679,7 +12679,7 @@ var map = {
 	],
 	"./Companies/Index": [
 		"./resources/js/Pages/Companies/Index.vue",
-		3,
+		17,
 		2,
 		6,
 		43,
@@ -12690,7 +12690,7 @@ var map = {
 	],
 	"./Companies/Index.vue": [
 		"./resources/js/Pages/Companies/Index.vue",
-		3,
+		17,
 		2,
 		6,
 		43,
@@ -12711,7 +12711,7 @@ var map = {
 	],
 	"./Dashboard": [
 		"./resources/js/Pages/Dashboard.vue",
-		3,
+		17,
 		2,
 		9,
 		1,
@@ -12721,7 +12721,7 @@ var map = {
 	],
 	"./Dashboard.vue": [
 		"./resources/js/Pages/Dashboard.vue",
-		3,
+		17,
 		2,
 		9,
 		1,
@@ -12731,7 +12731,7 @@ var map = {
 	],
 	"./Faq": [
 		"./resources/js/Pages/Faq.vue",
-		3,
+		17,
 		40,
 		1,
 		13,
@@ -12739,7 +12739,7 @@ var map = {
 	],
 	"./Faq.vue": [
 		"./resources/js/Pages/Faq.vue",
-		3,
+		17,
 		40,
 		1,
 		13,
@@ -12747,7 +12747,7 @@ var map = {
 	],
 	"./ForEmployers": [
 		"./resources/js/Pages/ForEmployers.vue",
-		3,
+		17,
 		40,
 		16,
 		1,
@@ -12756,7 +12756,7 @@ var map = {
 	],
 	"./ForEmployers.vue": [
 		"./resources/js/Pages/ForEmployers.vue",
-		3,
+		17,
 		40,
 		16,
 		1,
@@ -12765,7 +12765,7 @@ var map = {
 	],
 	"./JobDetails": [
 		"./resources/js/Pages/JobDetails.vue",
-		3,
+		17,
 		40,
 		1,
 		13,
@@ -12773,7 +12773,7 @@ var map = {
 	],
 	"./JobDetails.vue": [
 		"./resources/js/Pages/JobDetails.vue",
-		3,
+		17,
 		40,
 		1,
 		13,
@@ -12781,7 +12781,7 @@ var map = {
 	],
 	"./Jobs": [
 		"./resources/js/Pages/Jobs.vue",
-		3,
+		17,
 		43,
 		1,
 		13,
@@ -12789,7 +12789,7 @@ var map = {
 	],
 	"./Jobs.vue": [
 		"./resources/js/Pages/Jobs.vue",
-		3,
+		17,
 		43,
 		1,
 		13,
@@ -12797,7 +12797,7 @@ var map = {
 	],
 	"./Jobs/Create": [
 		"./resources/js/Pages/Jobs/Create.vue",
-		3,
+		17,
 		2,
 		6,
 		0,
@@ -12809,7 +12809,7 @@ var map = {
 	],
 	"./Jobs/Create.vue": [
 		"./resources/js/Pages/Jobs/Create.vue",
-		3,
+		17,
 		2,
 		6,
 		0,
@@ -12821,7 +12821,7 @@ var map = {
 	],
 	"./Jobs/Edit": [
 		"./resources/js/Pages/Jobs/Edit.vue",
-		3,
+		17,
 		2,
 		40,
 		6,
@@ -12834,7 +12834,7 @@ var map = {
 	],
 	"./Jobs/Edit.vue": [
 		"./resources/js/Pages/Jobs/Edit.vue",
-		3,
+		17,
 		2,
 		40,
 		6,
@@ -12847,7 +12847,7 @@ var map = {
 	],
 	"./Jobs/Index": [
 		"./resources/js/Pages/Jobs/Index.vue",
-		3,
+		17,
 		2,
 		6,
 		43,
@@ -12858,7 +12858,7 @@ var map = {
 	],
 	"./Jobs/Index.vue": [
 		"./resources/js/Pages/Jobs/Index.vue",
-		3,
+		17,
 		2,
 		6,
 		43,
@@ -12869,21 +12869,21 @@ var map = {
 	],
 	"./Privacy": [
 		"./resources/js/Pages/Privacy.vue",
-		3,
+		17,
 		1,
 		13,
 		58
 	],
 	"./Privacy.vue": [
 		"./resources/js/Pages/Privacy.vue",
-		3,
+		17,
 		1,
 		13,
 		58
 	],
 	"./Refund": [
 		"./resources/js/Pages/Refund.vue",
-		3,
+		17,
 		40,
 		1,
 		13,
@@ -12891,7 +12891,7 @@ var map = {
 	],
 	"./Refund.vue": [
 		"./resources/js/Pages/Refund.vue",
-		3,
+		17,
 		40,
 		1,
 		13,
@@ -12899,91 +12899,91 @@ var map = {
 	],
 	"./ResumeBuilder": [
 		"./resources/js/Pages/ResumeBuilder.vue",
-		3,
+		17,
 		0,
 		1,
 		60
 	],
 	"./ResumeBuilder.vue": [
 		"./resources/js/Pages/ResumeBuilder.vue",
-		3,
+		17,
 		0,
 		1,
 		60
 	],
 	"./ResumeGenerated": [
 		"./resources/js/Pages/ResumeGenerated.vue",
-		3,
+		17,
 		0,
 		1,
 		61
 	],
 	"./ResumeGenerated.vue": [
 		"./resources/js/Pages/ResumeGenerated.vue",
-		3,
+		17,
 		0,
 		1,
 		61
 	],
 	"./Samples/SubHeader": [
 		"./resources/js/Pages/Samples/SubHeader.vue",
-		3,
+		17,
 		1,
 		13,
 		70
 	],
 	"./Samples/SubHeader.vue": [
 		"./resources/js/Pages/Samples/SubHeader.vue",
-		3,
+		17,
 		1,
 		13,
 		70
 	],
 	"./Settings": [
 		"./resources/js/Pages/Settings.vue",
-		3,
+		17,
 		1,
 		13,
 		49
 	],
 	"./Settings.vue": [
 		"./resources/js/Pages/Settings.vue",
-		3,
+		17,
 		1,
 		13,
 		49
 	],
 	"./Terms": [
 		"./resources/js/Pages/Terms.vue",
-		3,
+		17,
 		1,
 		13,
 		62
 	],
 	"./Terms.vue": [
 		"./resources/js/Pages/Terms.vue",
-		3,
+		17,
 		1,
 		13,
 		62
 	],
 	"./Unsubscribe": [
 		"./resources/js/Pages/Unsubscribe.vue",
-		3,
+		17,
 		1,
 		13,
 		71
 	],
 	"./Unsubscribe.vue": [
 		"./resources/js/Pages/Unsubscribe.vue",
-		3,
+		17,
 		1,
 		13,
 		71
 	],
 	"./Users/Index": [
 		"./resources/js/Pages/Users/Index.vue",
-		3,
+		17,
 		2,
 		6,
 		43,
@@ -12994,7 +12994,7 @@ var map = {
 	],
 	"./Users/Index.vue": [
 		"./resources/js/Pages/Users/Index.vue",
-		3,
+		17,
 		2,
 		6,
 		43,
@@ -13005,14 +13005,14 @@ var map = {
 	],
 	"./Welcome": [
 		"./resources/js/Pages/Welcome.vue",
-		3,
+		17,
 		1,
 		13,
 		63
 	],
 	"./Welcome.vue": [
 		"./resources/js/Pages/Welcome.vue",
-		3,
+		17,
 		1,
 		13,
 		63

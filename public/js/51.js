@@ -156,11 +156,30 @@ __webpack_require__.r(__webpack_exports__);
         email: null,
         password: null,
         password_confirmation: null,
-        type: 1
+        type: this.getTypeParam() ? this.getTypeParam() : 1
       }
     };
   },
   methods: {
+    getTypeParam: function getTypeParam() {
+      var params = window.location.search;
+
+      if (params) {
+        var searchParams = new URLSearchParams(params);
+
+        if (searchParams.has("type")) {
+          var num = parseInt(searchParams.get("type"));
+
+          if ([1, 2].includes(num)) {
+            return num;
+          }
+
+          return null;
+        }
+      } else {
+        return null;
+      }
+    },
     submit: function submit() {
       var _this = this;
 

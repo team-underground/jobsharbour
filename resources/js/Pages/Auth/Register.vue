@@ -136,12 +136,27 @@ export default {
 				email: null,
 				password: null,
 				password_confirmation: null,
-				type: 1
+				type: this.getTypeParam() ? this.getTypeParam() : 1
 			}
 		};
 	},
 
 	methods: {
+		getTypeParam() {
+			let params = window.location.search;
+			if (params) {
+				let searchParams = new URLSearchParams(params);
+				if (searchParams.has("type")) {
+					let num = parseInt(searchParams.get("type"));
+					if ([1, 2].includes(num)) {
+						return num;
+					}
+					return null;
+				}
+			} else {
+				return null;
+			}
+		},
 		submit() {
 			this.$refs.submitButton.startLoading();
 

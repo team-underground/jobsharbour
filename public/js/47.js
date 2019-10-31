@@ -204,6 +204,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -693,7 +705,12 @@ var render = function() {
                                 "loading-button",
                                 {
                                   staticClass: "w-full",
-                                  attrs: { size: "small", rounded: "large" }
+                                  attrs: {
+                                    tag: "a",
+                                    to: "/register?type=1",
+                                    size: "small",
+                                    rounded: "large"
+                                  }
                                 },
                                 [_vm._v("Try for Free, Forever")]
                               )
@@ -839,7 +856,12 @@ var render = function() {
                                 "loading-button",
                                 {
                                   staticClass: "w-full",
-                                  attrs: { size: "small", rounded: "large" }
+                                  attrs: {
+                                    tag: "a",
+                                    to: "/register?type=2",
+                                    size: "small",
+                                    rounded: "large"
+                                  }
                                 },
                                 [_vm._v("Try for Free, Forever")]
                               )
