@@ -182,7 +182,7 @@
 						</card>
 
 						<div class="text-center pt-5 pb-10">
-							<loading-button tag="a" to="/jobs" class>See More Jobs</loading-button>
+							<loading-button tag="a" to="/jobs">See More Jobs</loading-button>
 						</div>
 					</div>
 					<div class="md:w-1/3 px-4">
@@ -191,17 +191,15 @@
 								class="mb-2 leading-tight text-gray-700 tracking-tight text-xl font-semibold"
 							>Top Categories</heading>
 
-							<heading class="mb-2">Still struggling to communicate with job seekers?</heading>
-
-							<heading class="mb-5">Your quest is over.</heading>
-
-							<loading-button
-								to="/register"
-								tag="a"
-								variant="secondary"
-								size="small"
-								class="shadow bg-white hover:shadow-md text-gray-700"
-							>Join us now!</loading-button>
+							<template v-for="category in category_wise_total">
+								<a
+									:href="`/jobs?category=${category.category_name}`"
+									class="flex justify-between py-1 mb-1 hover:bg-blue-100"
+								>
+									<heading>{{ category.category_name }}</heading>
+									<badge>{{ category.total }}</badge>
+								</a>
+							</template>
 						</card>
 
 						<card class="mb-5 relative bg-orange-100 px-5 py-5" :is-padding="false">
@@ -414,7 +412,7 @@ export default {
 			isSubscribed: false
 		};
 	},
-	props: ["jobposts", "pages", "errors"],
+	props: ["jobposts", "pages", "errors", "category_wise_total"],
 
 	methods: {
 		subscribe() {

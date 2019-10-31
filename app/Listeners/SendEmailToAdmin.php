@@ -20,7 +20,7 @@ class SendEmailToAdmin
     public function handle($event)
     {
         $data = [
-            'admin_email' => 'test@test.test',
+            'admin_email' => 'hello@jobsharbour.com',
         ];
         Mail::to($data['admin_email'])
             ->queue(new AdminJobalert($event));

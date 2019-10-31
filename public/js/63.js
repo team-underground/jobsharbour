@@ -394,8 +394,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 var toCurrency = function toCurrency(n, curr) {
   var LanguageFormat = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : undefined;
   return Intl.NumberFormat(LanguageFormat, {
@@ -436,7 +434,7 @@ var toCurrency = function toCurrency(n, curr) {
       isSubscribed: false
     };
   },
-  props: ["jobposts", "pages", "errors"],
+  props: ["jobposts", "pages", "errors", "category_wise_total"],
   methods: {
     subscribe: function subscribe() {
       var _this = this;
@@ -1024,30 +1022,30 @@ var render = function() {
                     [_vm._v("Top Categories")]
                   ),
                   _vm._v(" "),
-                  _c("heading", { staticClass: "mb-2" }, [
-                    _vm._v("Still struggling to communicate with job seekers?")
-                  ]),
-                  _vm._v(" "),
-                  _c("heading", { staticClass: "mb-5" }, [
-                    _vm._v("Your quest is over.")
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "loading-button",
-                    {
-                      staticClass:
-                        "shadow bg-white hover:shadow-md text-gray-700",
-                      attrs: {
-                        to: "/register",
-                        tag: "a",
-                        variant: "secondary",
-                        size: "small"
-                      }
-                    },
-                    [_vm._v("Join us now!")]
-                  )
+                  _vm._l(_vm.category_wise_total, function(category) {
+                    return [
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "flex justify-between py-1 mb-1 hover:bg-blue-100",
+                          attrs: {
+                            href: "/jobs?category=" + category.category_name
+                          }
+                        },
+                        [
+                          _c("heading", [
+                            _vm._v(_vm._s(category.category_name))
+                          ]),
+                          _vm._v(" "),
+                          _c("badge", [_vm._v(_vm._s(category.total))])
+                        ],
+                        1
+                      )
+                    ]
+                  })
                 ],
-                1
+                2
               ),
               _vm._v(" "),
               _c(

@@ -349,6 +349,10 @@ export default {
 </script>
 
 <style>
+body {
+	-webkit-tap-highlight-color: transparent;
+}
+
 .menu-active {
 	position: relative;
 }
