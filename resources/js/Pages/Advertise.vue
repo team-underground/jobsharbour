@@ -18,6 +18,7 @@
 		</div>
 		<div class="py-10">
 			<div class="max-w-5xl mx-auto flex flex-wrap">
+				<flash-message class="w-full mx-4"></flash-message>
 				<div class="w-full md:w-1/3">
 					<div class="p-2 md:p-6 m-2">
 						<div
@@ -83,12 +84,61 @@
 			<div class="max-w-2xl mx-auto py-8" id="contactform">
 				<heading size="heading" class="mb-8 text-center">Ready to reach our Audience? Get in Touch</heading>
 				<card>
-					<text-input class="mb-4" label="Name"></text-input>
-					<text-input class="mb-4" label="E-mail"></text-input>
-					<text-input class="mb-4" label="Phone"></text-input>
-					<text-input class="mb-4" label="Company"></text-input>
-					<textarea-input class="mb-4" label="How can we help?"></textarea-input>
-					<loading-button>submit</loading-button>
+					<text-input
+						class="mb-4"
+						label="Name"
+						v-model="query.name"
+						:errors="errors['name']"
+						@keydown="delete errors['name']"
+					></text-input>
+					<text-input
+						class="mb-4"
+						label="E-mail"
+						v-model="query.email"
+						:errors="errors['email']"
+						@keydown="delete errors['email']"
+					></text-input>
+					<text-input
+						class="mb-4"
+						label="Phone"
+						v-model="query.phone"
+						:errors="errors['phone']"
+						@keydown="delete errors['phone']"
+					></text-input>
+					<text-input
+						class="mb-4"
+						label="Company"
+						v-model="query.company"
+						:errors="errors['company']"
+						@keydown="delete errors['company']"
+					></text-input>
+					<textarea-input
+						class="mb-6"
+						label="How can we help?"
+						v-model="query.how_can_we_help"
+						:errors="errors['how_can_we_help']"
+						@keydown="delete errors['how_can_we_help']"
+					></textarea-input>
+					<div class="mb-4">
+						<vue-recaptcha
+							:sitekey="sitekey"
+							:loadRecaptchaScript="true"
+							ref="recaptcha"
+							@verify="onVerify"
+							@expired="onExpired"
+						></vue-recaptcha>
+						<div
+							v-if="!verified"
+							class="text-gray-600 mt-1 text-sm"
+						>Before sending query, please verify that you are a human</div>
+					</div>
+
+					<loading-button
+						size="small"
+						ref="advertiseRequestButton"
+						class="mt-2 md:mt-0"
+						@click="saveAdvertiseRequest"
+					>Send Query</loading-button>
 				</card>
 			</div>
 		</div>
@@ -108,8 +158,11 @@ import Icon from "@/Shared/tuis/Icon";
 import List from "@/Shared/tuis/List";
 import Alert from "@/Shared/tuis/Alert";
 import MailTo from "@/Shared/tuis/MailTo";
+import FlashMessage from "@/Shared/tuis/FlashMessage";
+import VueRecaptcha from "vue-recaptcha";
 
 export default {
+	props: ["errors"],
 	components: {
 		Layout,
 		Heading,
@@ -120,10 +173,48 @@ export default {
 		Icon,
 		List,
 		Alert,
-		MailTo
+		MailTo,
+		FlashMessage,
+		VueRecaptcha
+	},
+	data() {
+		return {
+			verified: false,
+			query: {},
+			sitekey: "6LcsZMAUAAAAAGCFWIRru-E4gq8s23vp1o5HHZSX"
+		};
 	},
 	mounted() {
 		MailtoUI.run();
+	},
+	methods: {
+		onVerify: function(response) {
+			this.verified = true;
+		},
+		onExpired: function() {
+			this.verified = false;
+		},
+		resetRecaptcha() {
+			this.$refs.recaptcha.reset(); // Direct call reset method
+		},
+		saveAdvertiseRequest() {
+			if (!this.verified) {
+				return;
+			}
+			this.$refs.advertiseRequestButton.startLoading();
+
+			this.$inertia
+				.post(this.route("advertise.query"), this.query)
+				.then(() => {
+					this.$refs.advertiseRequestButton.stopLoading();
+					if (Object.keys(this.$page.errors).length === 0) {
+						this.query = {};
+					}
+				})
+				.catch(() => {
+					this.$refs.advertiseRequestButton.stopLoading();
+				});
+		}
 	}
 };
 </script>

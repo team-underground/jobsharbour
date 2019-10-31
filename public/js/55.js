@@ -817,7 +817,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm.$page.flash.success && _vm.show
+    _vm.$page.flash["flash-success"] && _vm.show
       ? _c(
           "div",
           {
@@ -851,7 +851,7 @@ var render = function() {
               _c(
                 "div",
                 { staticClass: "py-4 text-white text-sm font-medium" },
-                [_vm._v(_vm._s(_vm.$page.flash.success))]
+                [_vm._v(_vm._s(_vm.$page.flash["flash-success"]))]
               )
             ]),
             _vm._v(" "),

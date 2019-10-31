@@ -2,7 +2,7 @@
 	<div>
 		<div
 			class="mb-8 flex items-center justify-between bg-green-400 rounded-lg"
-			v-if="$page.flash.success && show"
+			v-if="$page.flash['flash-success'] && show"
 		>
 			<div class="flex items-center">
 				<svg
@@ -16,7 +16,7 @@
 						d="M12,2C6.486,2,2,6.486,2,12c0,5.514,4.486,10,10,10s10-4.486,10-10C22,6.486,17.514,2,12,2z M10.001,16.413l-3.713-3.705 L7.7,11.292l2.299,2.295l5.294-5.294l1.414,1.414L10.001,16.413z"
 					/>
 				</svg>
-				<div class="py-4 text-white text-sm font-medium">{{ $page.flash.success }}</div>
+				<div class="py-4 text-white text-sm font-medium">{{ $page.flash['flash-success'] }}</div>
 			</div>
 			<button type="button" class="group mr-2 p-2" @click="show = false">
 				<svg

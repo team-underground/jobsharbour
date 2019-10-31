@@ -149,6 +149,7 @@ Route::get('/subscriber/cancel', 'SubscriberController@cancelSubscription');
 Route::get('/subscriber/cancel-page', function () {
     return  Inertia::render('Unsubscribe');
 });
+Route::post('/advertise/query', 'AdvertiseQueryController')->name('advertise.query');
 
 
 
