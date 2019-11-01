@@ -151,7 +151,7 @@ return [
         ],
 
         'staging' => [
-            'supervisor-1' => [
+            'supervisor-2' => [
                 'connection' => 'redis',
                 'queue' => ['default'],
                 'balance' => 'simple',
