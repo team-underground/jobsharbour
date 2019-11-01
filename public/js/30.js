@@ -518,12 +518,13 @@ var toCurrency = function toCurrency(n, curr) {
         name: this.name,
         email: this.email
       }).then(function () {
-        _this.$refs.subscribeButton.stopLoading(); // if (Object.keys(this.$page.errors).length === 0) {
-        // 	this.name = "";
-        // 	this.email = "";
-        // 	this.isSubscribed = true;
-        // }
+        _this.$refs.subscribeButton.stopLoading();
 
+        if (Object.keys(_this.$page.errors).length === 0) {
+          _this.name = "";
+          _this.email = "";
+          _this.isSubscribed = true;
+        }
       });
     },
     formatCurrency: function formatCurrency(amount) {
