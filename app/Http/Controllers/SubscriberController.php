@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\JobAlert;
-use App\Subscriber;
-use Illuminate\Http\Request;
 use Carbon\Carbon;
-use Illuminate\Foundation\Auth\VerifiesEmails;
+use App\Subscriber;
+use App\Mail\JobAlert;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Foundation\Auth\VerifiesEmails;
 
 
 class SubscriberController extends Controller
@@ -43,15 +44,20 @@ class SubscriberController extends Controller
             'name' => ['required'],
             'email' => ['required', 'email'],
         ]);
-        $subscriber =  Subscriber::create([
-            'name' => $request->name,
-            'email' => $request->email
-        ]);
-        $plan = app('rinvex.subscriptions.plan')->find(1);
-        $subscriber->newSubscription('Pro', $plan);
-        $when = Carbon::now()->addMinutes(10);
-        $subscriber->unsubscribeUrl = url('subscriber/cancel?email=') . $subscriber->email;
-        Mail::to($subscriber->email)->later($when, new JobAlert($subscriber));
+
+        DB::transaction(function () use ($request) {
+            $subscriber =  Subscriber::create([
+                'name' => $request->name,
+                'email' => $request->email
+            ]);
+            $plan = app('rinvex.subscriptions.plan')->find(1);
+            $subscriber->newSubscription('Pro', $plan);
+            $when = Carbon::now()->addMinutes(10);
+            $subscriber->unsubscribeUrl = url('subscriber/cancel?email=') . $subscriber->email;
+            // dd($subscriber);
+            Mail::to($subscriber->email)->later($when, new JobAlert($subscriber));
+        });
+
         session()->flash('success', 'You are subscribed to our job alert');
         return redirect()->back();
     }
