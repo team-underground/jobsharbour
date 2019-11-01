@@ -232,7 +232,10 @@
 
 					<div class="w-1/2 md:w-1/5 px-4 mb-6">
 						<heading class="mb-3" size="small-caps">Resources</heading>
-						<a href="/faq" class="block text-sm mb-2 hover:text-blue-600">Support</a>
+						<a
+							href="mailto:support@jobsharbour.com?subject=I am inquiring about "
+							class="mailtoui block text-sm mb-2 hover:text-blue-600"
+						>Support</a>
 						<a href="/privacy" class="block text-sm mb-2 hover:text-blue-600">Privacy</a>
 						<a href="/terms" class="block text-sm mb-2 hover:text-blue-600">Terms of Service</a>
 						<a href="/refund" class="block text-sm mb-2 hover:text-blue-600">Refund & Cancellation</a>

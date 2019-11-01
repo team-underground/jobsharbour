@@ -310,6 +310,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 
@@ -1565,8 +1568,12 @@ var render = function() {
                 _c(
                   "a",
                   {
-                    staticClass: "block text-sm mb-2 hover:text-blue-600",
-                    attrs: { href: "/faq" }
+                    staticClass:
+                      "mailtoui block text-sm mb-2 hover:text-blue-600",
+                    attrs: {
+                      href:
+                        "mailto:support@jobsharbour.com?subject=I am inquiring about "
+                    }
                   },
                   [_vm._v("Support")]
                 ),
