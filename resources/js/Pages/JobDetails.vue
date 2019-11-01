@@ -36,7 +36,7 @@
 						<div class="flex-1 mr-4 md:mr-0">
 							<loading-button
 								tag="a"
-								:to="`mailto:hello@jobsharbour.com?subject=Apply for the post of ${post.job_title}&bcc=${post.job_email}`"
+								:to="`mailto:${post.job_email}?subject=Apply for the post of ${post.job_title}&bcc=hello@jobsharbour.com`"
 								class="mailtoui w-full md:w-64 mb-2"
 								rounded="large"
 								size="small"

@@ -709,10 +709,11 @@ var render = function() {
                             attrs: {
                               tag: "a",
                               to:
-                                "mailto:hello@jobsharbour.com?subject=Apply for the post of " +
+                                "mailto:" +
+                                _vm.post.job_email +
+                                "?subject=Apply for the post of " +
                                 _vm.post.job_title +
-                                "&bcc=" +
-                                _vm.post.job_email,
+                                "&bcc=hello@jobsharbour.com",
                               rounded: "large",
                               size: "small"
                             }
