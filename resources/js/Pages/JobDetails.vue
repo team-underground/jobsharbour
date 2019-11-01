@@ -1,5 +1,5 @@
 <template>
-	<layout>
+	<layout :title="post.seo_title" :description="post.meta_description">
 		<div class="bg-white px-4 pt-6 pb-4 shadow-sm z-20 relative">
 			<div class="max-w-6xl mx-auto">
 				<link-to to="/jobs" class="mb-4">
@@ -10,16 +10,17 @@
 					<div class="md:w-2/3 px-4">
 						<heading size="heading2" class="inline-block mb-2">{{ post.job_title}}</heading>
 						<heading class="mb-4">
-							{{ post.company.company_name }} /
+							{{ post.company.company_name }}
+							<span class="mx-2 text-gray-400">&bull;</span>
 							<link-to :to="`/jobs?category=${post.job_category}`">{{ post.job_category }}</link-to>
 						</heading>
 
-						<div class="flex justify-between mb-4">
-							<div class="md:flex-1 flex items-center">
+						<div class="md:flex justify-between mb-4">
+							<div class="md:flex-1 flex items-center mb-2 md:mb-0">
 								<icon class="mr-2 text-gray-400" name="map-pin"></icon>
 								<heading>{{ post.job_location }}</heading>
 							</div>
-							<div class="md:flex-1 flex items-center">
+							<div class="md:flex-1 flex items-center mb-2 md:mb-0">
 								<icon class="mr-2 text-gray-400" name="wallet"></icon>
 								<heading>Rs. {{ post.job_salary }} /m</heading>
 							</div>
@@ -35,7 +36,7 @@
 						<div class="flex-1 mr-4 md:mr-0">
 							<loading-button
 								tag="a"
-								:to="`mailto:hello@jobsharbour.com?subject=Apply for the post of ${post.job_title}`"
+								:to="`mailto:hello@jobsharbour.com?subject=Apply for the post of ${post.job_title}&bcc=${post.job_email}`"
 								class="mailtoui w-full md:w-64 mb-2"
 								rounded="large"
 								size="small"
@@ -69,10 +70,9 @@
 								<social-sharing
 									:url="route('jobs.show', post.job_slug)"
 									:title="`${post.job_title}`"
-									description="Intuitive, Fast and Composable MVVM for building interactive interfaces."
-									quote="Vue is a progressive framework for building user interfaces."
-									:hashtags="post.job_skills.join(',')"
-									twitter-user="vuejs"
+									:description="post.meta_description"
+									:hashtags="post.meta_keywords.join(',')"
+									twitter-user="jobs_harbour"
 									inline-template
 								>
 									<div class="flex justify-between">
@@ -184,36 +184,18 @@
 							</div>
 							<div
 								v-else
-								class="mb-4 flex-shrink-0 w-20 h-20 rounded-full bg-gray-100 border block mx-auto"
+								class="mb-4 flex-shrink-0 flex items-center w-24 h-24 p-2 rounded-full bg-gray-100 border-2 block mx-auto overflow-hidden"
 							>
 								<img
 									:src="post.company.company_logo_path"
 									alt="company-logo"
-									class="object-contain p-2 object-center w-full h-full rounded-full"
+									class="object-contain w-full h-full"
 								/>
 							</div>
 
 							<heading>{{ post.company.company_description }}</heading>
 
 							<div class="my-5">
-								<!-- <div class="md:flex-1 flex items-center border-b justify-between mb-2">
-									<div class="p-4 rounded-full mr-2 flex-shrink-0 bg-gray-100">
-										<icon class="text-blue-500" name="users"></icon>
-									</div>
-									<div>
-										<heading size="small-caps">No. of Employees</heading>
-										<heading size="small">{{ post.company.company_no_of_employees }}</heading>
-									</div>
-								</div>
-								<div class="md:flex-1 flex items-center border-b justify-between">
-									<div class="p-4 rounded-full mr-2 flex-shrink-0 bg-gray-100">
-										<icon class="text-blue-500" name="globe"></icon>
-									</div>
-									<div>
-										<heading size="small-caps">Website</heading>
-										<heading size="small">{{ post.company.company_website }}</heading>
-									</div>
-								</div>-->
 								<div class="py-2 md:flex-1 flex items-center border-b justify-between">
 									<heading size="small-caps">Industry</heading>
 									<heading size="small">{{ post.company.company_industry }}</heading>
@@ -226,8 +208,8 @@
 									<heading size="small-caps">Website</heading>
 									<a
 										class="small text-blue-500 hover:text-blue-800"
-										:href="`http://${post.company.company_website}`"
-									>http://{{ post.company.company_website }}</a>
+										:href="post.company.company_website"
+									>{{ post.company.company_website }}</a>
 								</div>
 							</div>
 
@@ -239,15 +221,6 @@
 								:lists="['Free Lunch', 'Health Care', 'Laptop', 'Career Growth', 'Flexible Holidays']"
 							></list>-->
 						</card>
-						<!-- <card class="mb-5 relative" :is-padding="false">
-							<img src="/ad3.png" alt="ad" class="object-fit w-full" />
-							<badge variant="warning" class="absolute top-0 right-0 mt-2 mr-4 shadow-md">Ad</badge>
-						</card>
-
-						<card class="mb-5 relative" :is-padding="false">
-							<img src="/ad2.png" alt="ad" class="object-fit w-full" />
-							<badge variant="warning" class="absolute top-0 right-0 mt-2 mr-4 shadow-md">Ad</badge>
-						</card>-->
 					</div>
 				</div>
 			</div>

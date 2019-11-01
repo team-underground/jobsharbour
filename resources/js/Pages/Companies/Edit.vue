@@ -45,12 +45,12 @@
 									<label class="block mb-1 font-semibold text-gray-700">Company Logo</label>
 									<div class="flex items-center">
 										<div
-											class="w-24 h-24 items-center justify-center rounded-full inline-flex bg-gray-100 mr-5 text-gray-400 shadow-inner"
+											class="w-24 h-24 p-2 items-center justify-center rounded-full inline-flex bg-gray-100 mr-5 text-gray-400 shadow-inner"
 										>
 											<img
 												:src="company.company_logo_path"
 												:alt="company.company_name"
-												class="w-24 h-24 object-fit rounded-full border border-gray-100"
+												class="w-24 h-24 object-contain rounded-full border border-gray-100"
 											/>
 										</div>
 										<div>

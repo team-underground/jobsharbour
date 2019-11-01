@@ -139,11 +139,14 @@
 								<div v-if="post.company.company_logo == null" class="mr-5 flex-shrink-0 w-16 h-16">
 									<avatar :name="post.company.company_name" color="blue" shape="rounded" size="xlarge"></avatar>
 								</div>
-								<div v-else class="flex-shrink-0 w-16 h-16 rounded-lg bg-gray-100 border block mr-5">
+								<div
+									v-else
+									class="flex-shrink-0 w-16 h-16 p-1 rounded-lg bg-gray-100 block mr-5 overflow-hidden border-2"
+								>
 									<img
 										:src="post.company.company_logo_path"
 										alt="company-logo"
-										class="object-contain p-2 object-center w-full h-full rounded-lg"
+										class="object-contain w-full h-full rounded-lg"
 									/>
 								</div>
 
@@ -275,7 +278,7 @@
 
 							<heading class="mb-2">Still struggling to communicate with job seekers?</heading>
 
-							<heading class="mb-5">Your quest is over.</heading>
+							<heading class="mb-10">Your quest is over.</heading>
 
 							<loading-button
 								to="/register"
@@ -301,7 +304,7 @@
 							>Advertise with us</heading>
 
 							<heading
-								class="mb-5 pr-10 md:pr-6"
+								class="mb-10 pr-10 md:pr-8"
 							>Connect with the largest audience of active, influencial job creators, job seekers and workaholics.</heading>
 
 							<loading-button

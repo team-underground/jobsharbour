@@ -18,7 +18,7 @@
 <body class="bg-gray-100 antialiased text-gray-600 font-sans">
     @inertia
 
-    @if(env('APP_ENV') == 'production' || env('APP_ENV') == 'staging')
+    @if((env('APP_ENV') == 'production' || env('APP_ENV') == 'staging') && ! request()->is('login') && ! request()->is('register') )
     <script src="//code.tidio.co/9hms3zkeyei88oiswndv5qiuve4deoou.js"></script>
     @endif
 

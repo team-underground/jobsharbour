@@ -83,11 +83,14 @@
 									<div v-if="post.company.company_logo == null" class="mr-5 flex-shrink-0 w-16 h-16">
 										<avatar :name="post.company.company_name" color="blue" shape="rounded" size="xlarge"></avatar>
 									</div>
-									<div v-else class="flex-shrink-0 w-16 h-16 rounded-lg bg-gray-100 border block mr-5">
+									<div
+										v-else
+										class="flex-shrink-0 w-16 h-16 p-1 rounded-lg bg-gray-100 border-2 block mr-5 overflow-hidden"
+									>
 										<img
 											:src="post.company.company_logo_path"
 											alt="company-logo"
-											class="object-contain p-2 object-center w-full h-full rounded-lg"
+											class="object-contain w-full h-full rounded-lg"
 										/>
 									</div>
 

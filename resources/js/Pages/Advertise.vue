@@ -77,7 +77,7 @@
 					<mail-to
 						subject="Query for advertisement details"
 						to="hello@jobsharbour.com"
-					>hello@jobsharbour.com</mail-to>with your requests. Customized ads are subject to additional fees. Ads may be edited for clarity. We normally do not charge a set up fee. Additional fees may be charged if graphics or text requires additional time. We will contact you if that appears necessary. Ad text and graphics may be changed during the life of the contract for a nominal fee. No refunds will be given in the event of early cancellation of ads.
+					>hello@jobsharbour.com</mail-to>&nbsp;with your requests. Customized ads are subject to additional fees. Ads may be edited for clarity. We normally do not charge a set up fee. Additional fees may be charged if graphics or text requires additional time. We will contact you if that appears necessary. Ad text and graphics may be changed during the life of the contract for a nominal fee. No refunds will be given in the event of early cancellation of ads.
 				</alert>
 			</div>
 

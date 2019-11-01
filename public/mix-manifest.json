@@ -1,4 +1,8 @@
 {
+<<<<<<< HEAD
     "/js/app.js": "/js/app.js?id=45993a6fea0c192721b1",
+=======
+    "/js/app.js": "/js/app.js?id=86514dbd1dc676f51d63",
+>>>>>>> f82ac60... company images responsive css added
     "/css/app.css": "/css/app.css?id=455b6c67f55bb7fc6d65"
 }

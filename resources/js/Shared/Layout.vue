@@ -240,22 +240,34 @@
 
 					<div class="w-1/2 md:w-1/5 px-4 mb-6">
 						<heading class="mb-3" size="small-caps">Get Connected</heading>
-						<a href="#" class="block text-sm mb-2 hover:text-blue-600 flex">
+						<a
+							href="https://www.facebook.com/Jobs-Harbour-108378050599646"
+							class="block text-sm mb-2 hover:text-blue-600 flex"
+						>
 							<div class="p-1 rounded-full bg-gray-400 hover:bg-blue-600 text-white mr-2">
 								<icon name="facebook" class="w-4 h-4"></icon>
 							</div>Facebook
 						</a>
-						<a href="#" class="block text-sm mb-2 hover:text-blue-600 flex">
+						<a
+							href="https://www.linkedin.com/company/jobs-harbour"
+							class="block text-sm mb-2 hover:text-blue-600 flex"
+						>
 							<div class="p-1 rounded-full bg-gray-400 hover:bg-blue-600 text-white mr-2">
 								<icon name="linkedin" class="w-4 h-4"></icon>
 							</div>LinkedIn
 						</a>
-						<a href="#" class="block text-sm mb-2 hover:text-blue-600 flex">
+						<a
+							href="https://www.instagram.com/jobsharbour"
+							class="block text-sm mb-2 hover:text-blue-600 flex"
+						>
 							<div class="p-1 rounded-full bg-gray-400 hover:bg-blue-600 text-white mr-2">
 								<icon name="instagram" class="w-4 h-4"></icon>
 							</div>Instagram
 						</a>
-						<a href="#" class="block text-sm mb-2 hover:text-blue-600 flex">
+						<a
+							href="https://twitter.com/jobs_harbour"
+							class="block text-sm mb-2 hover:text-blue-600 flex"
+						>
 							<div class="p-1 rounded-full bg-gray-400 hover:bg-blue-600 text-white mr-2">
 								<icon name="twitter" class="w-4 h-4"></icon>
 							</div>Twitter
@@ -306,7 +318,9 @@ export default {
 	},
 
 	props: {
-		title: String
+		title: String,
+		description: String,
+		keywords: String
 	},
 
 	data() {
@@ -331,6 +345,18 @@ export default {
 					? `${title} - Jobs Harbour`
 					: "Jobs harbour";
 			}
+		},
+
+		description: {
+			immediate: true,
+			handler(description) {
+				var link = document.createElement("meta");
+				link.setAttribute("name", "description");
+				link.content = description
+					? description
+					: "Jobs Harbour is an online web based job listing site for both employers and job seekers. Our primary goal is to provide you upto date job information from all around Assam and the Northeast.";
+				document.getElementsByTagName("head")[0].appendChild(link);
+			}
 		}
 	},
 
@@ -340,8 +366,10 @@ export default {
 				return location.pathname.substr(1) === "";
 			}
 
-			return urls.filter(url =>
-				location.pathname.substr(1).startsWith(url)
+			return urls.filter(
+				url =>
+					// location.pathname.substr(1).startsWith(url)
+					location.pathname.substr(1) == url
 			).length;
 		}
 	}
