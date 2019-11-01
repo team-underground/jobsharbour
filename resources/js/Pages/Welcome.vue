@@ -499,11 +499,11 @@ export default {
 				.then(() => {
 					this.$refs.subscribeButton.stopLoading();
 
-					// if (Object.keys(this.$page.errors).length === 0) {
-					// 	this.name = "";
-					// 	this.email = "";
-					// 	this.isSubscribed = true;
-					// }
+					if (Object.keys(this.$page.errors).length === 0) {
+						this.name = "";
+						this.email = "";
+						this.isSubscribed = true;
+					}
 				});
 		},
 		formatCurrency(amount) {

@@ -42,7 +42,7 @@ class SubscriberController extends Controller
     {
         $this->validate($request, [
             'name' => ['required'],
-            'email' => ['required', 'email'],
+            'email' => ['required', 'email', 'unique:subscribers'],
         ]);
 
         DB::transaction(function () use ($request) {
@@ -52,7 +52,7 @@ class SubscriberController extends Controller
             ]);
             $plan = app('rinvex.subscriptions.plan')->find(1);
             $subscriber->newSubscription('Pro', $plan);
-            $when = Carbon::now()->addMinutes(10);
+            $when = Carbon::now()->addMinutes(1);
             $subscriber->unsubscribeUrl = url('subscriber/cancel?email=') . $subscriber->email;
             // dd($subscriber);
             Mail::to($subscriber->email)->later($when, new JobAlert($subscriber));
