@@ -12,7 +12,7 @@ class AdminUserSeeder extends Seeder
      */
     public function run()
     {
-        factory(User::class)->create([
+        User::create([
             'name' => 'Jobsharbour Admin',
             'email' => 'admin@jobsharbour.com',
             'type' => 0

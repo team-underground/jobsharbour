@@ -151,11 +151,11 @@ return [
         ],
 
         'staging' => [
-            'supervisor-2' => [
+            'supervisor-1' => [
                 'connection' => 'redis',
-                'queue' => ['default'],
+                'queue' => ['staging-default'],
                 'balance' => 'simple',
-                'processes' => 10,
+                'processes' => 5,
                 'tries' => 3,
             ],
         ],

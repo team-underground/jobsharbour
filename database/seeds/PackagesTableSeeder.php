@@ -37,7 +37,7 @@ class PackagesTableSeeder extends Seeder
         ];
 
         foreach ($packages as $key => $package) {
-            factory(Package::class)->create([
+            Package::create([
                 'package_name' => $package['package_name'],
                 'display_name' => $package['display_name'],
                 'package_price' => $package['package_price']
