@@ -21,7 +21,9 @@
         "rinvex/laravel-subscriptions": "^3.0",
         "spatie/laravel-analytics": "^3.8",
         "sumatoglobal/inertia-tailwind-preset": "dev-master",
-        "tightenco/ziggy": "^0.8.0"
+        "tightenco/ziggy": "^0.8.0",
+        "laravel/horizon": "^3.4",
+        "webup/laravel-sendinblue": "^2.0"
     },
     "require-dev": {
         "facade/ignition": "^1.4",
