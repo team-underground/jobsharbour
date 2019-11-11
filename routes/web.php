@@ -3,7 +3,7 @@
 use App\Package;
 use Inertia\Inertia;
 use App\Enums\CategoryType;
-
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -146,8 +146,11 @@ Route::post('/resume/generated', function () {
 Route::post('/subscriber-plan/create', 'SubscriberController@createSubscriptionPlane');
 Route::post('/subscriber', 'SubscriberController@store');
 Route::get('/subscriber/cancel', 'SubscriberController@cancelSubscription');
-Route::get('/subscriber/cancel-page', function () {
-    return  Inertia::render('Unsubscribe');
+Route::get('/subscriber/cancel-page', function (Request $request) {
+    if ($request->session()->has('success')) {
+        return  Inertia::render('Unsubscribe');
+    }
+    return redirect()->route('welcome');
 });
 Route::post('/advertise/query', 'AdvertiseQueryController')->name('advertise.query');
 

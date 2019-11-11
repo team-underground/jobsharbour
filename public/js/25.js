@@ -77,6 +77,15 @@ __webpack_require__.r(__webpack_exports__);
     Heading: _Shared_tuis_Heading__WEBPACK_IMPORTED_MODULE_1__["default"],
     Alert: _Shared_tuis_Alert__WEBPACK_IMPORTED_MODULE_2__["default"],
     ContactUs: _Pages_ContactUs__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
+  mounted: function mounted() {
+    console.log(this.$page);
+
+    if (!this.$page.flash.success) {
+      this.$inertia.replace("/", {
+        method: "get"
+      });
+    }
   }
 });
 

@@ -78,7 +78,7 @@
                                             <tr>
                                                 <td class="esd-block-text es-p15t es-p10b" align="center">
                                                     
-													<p style="letter-spacing: .025rem; margin-bottom: 15px; margin-top: 15px; font-size: 0.95rem; color: #4a5568;">If our emails aren't sparking joy, we'll understand if you <a href="#" style="color: #4a5568;">unsubscribe</a>.</p>
+                                                <p style="letter-spacing: .025rem; margin-bottom: 15px; margin-top: 15px; font-size: 0.7rem; color: #4a5568;">If our emails aren't sparking joy, we'll understand if you <a href="{{$unsubscribeUrl}}" style="color: #4a5568;">unsubscribe</a>.</p>
                                        
                                                 </td>
                                             </tr>
@@ -92,7 +92,7 @@
                                     <tbody>
                                         <tr>
                                             <td width="50%" align="left">
-                                                <a href="http://jobsharbour.com" target="_blank"><img src="http://jobsharbour.com/jh-logo.svg" alt="" width="150"></a>
+                                                <a href="http://jobsharbour.com" target="_blank"><img src="{{url('jh-logo.svg')}}" alt="" width="150"></a>
                                             </td>
                                             <td width="50%" class="esd-block-text es-p15t es-p10b" align="right">
                                                 <p style="margin: 0; color: #4a5568; font-weight: 400; letter-spacing: .025em; font-size: 0.75rem; line-height: 1.325rem;">&copy; jobsharbour.com</p>
