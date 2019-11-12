@@ -38,6 +38,7 @@ class SubscriberController extends Controller
     {
         $this->validate($request, [
             'name' => ['required'],
+            'email' => ['required']
         ]);
         $subscriber = Subscriber::where('email', $request->email)->first();
         if ($subscriber === null) {
