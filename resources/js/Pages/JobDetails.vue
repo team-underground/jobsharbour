@@ -180,11 +180,11 @@
 							<heading size="large" class="mb-4">About {{ post.company.company_name }}</heading>
 
 							<div v-if="post.company.company_logo == null" class="mb-4 flex-shrink-0 w-20 h-20 mx-auto">
-								<avatar :name="post.company.company_name" color="blue" shape="circle" size="xlarge"></avatar>
+								<avatar :name="post.company.company_name" color="blue" shape="rounded" size="xlarge"></avatar>
 							</div>
 							<div
 								v-else
-								class="mb-4 flex-shrink-0 flex items-center w-24 h-24 p-2 rounded-full bg-gray-100 border-2 block mx-auto overflow-hidden"
+								class="mb-4 flex-shrink-0 flex items-center w-24 h-24 p-2 rounded-lg bg-gray-100 border-2 block mx-auto overflow-hidden"
 							>
 								<img
 									:src="post.company.company_logo_path"

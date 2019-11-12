@@ -22,7 +22,7 @@
 			</div>
 		</div>
 
-		<div class="py-10">
+		<div class="py-10 px-4">
 			<div class="max-w-6xl mx-auto" v-if="companies.length <= 0">
 				<empty-state class="lg:py-32">
 					<div
@@ -43,7 +43,7 @@
 				<div class="md:flex -mx-4">
 					<div class="px-4">
 						<alert class="mb-4">
-							<strong>Note:</strong> Job postings once created will go to the admin first for moderation and then only will be published on the website. It will take 24hrs for the moderation process to get completed.
+							<strong>Note:</strong> Job postings once created will go to the admin first for moderation and then only will be published on the website. It will take less than 24hrs for the moderation process to get completed.
 						</alert>
 						<div class="md:flex mb-10 -mx-4">
 							<div class="md:w-1/3 mb-3 px-4">

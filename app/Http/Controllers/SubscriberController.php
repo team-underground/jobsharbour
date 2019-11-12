@@ -58,13 +58,13 @@ class SubscriberController extends Controller
             Mail::to($subscriber->email)->later($when, new JobAlert($subscriber));
         });
 
-        session()->flash('success', 'You are subscribed to our job alert');
+        // session()->flash('success', 'You are subscribed to our job alert');
+
         return redirect()->back();
     }
 
     public function cancelSubscription(Request $request)
     {
-
         $this->validate($request, [
             'email' => 'required'
         ]);

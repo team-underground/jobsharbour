@@ -27,8 +27,7 @@
     <link rel="dns-prefetch" href="//unpkg.com">
     <link rel="dns-prefetch" href="//loremflickr.com">
 
-    <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
-    <script src="{{ mix('/js/app.js') }}" defer></script>
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
     @routes
 </head>
@@ -43,6 +42,8 @@
     @if (\Request::is('/'))
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     @endif
+
+    <script src="{{ mix('js/app.js') }}"></script>
 </body>
 
 </html>

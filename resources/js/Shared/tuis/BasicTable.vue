@@ -33,35 +33,35 @@
 </template>
 
 <script>
-	export default {
-		props: {
-			datas: {
-				type: Array,
-				default: () => []
-			},
-
-			headings: {
-				type: Array,
-				default: () => []
-			},
-
-			theme: {
-				type: String,
-				default: "normal"
-			}
+export default {
+	props: {
+		datas: {
+			type: Array,
+			default: () => []
 		},
 
-		computed: {
-			classes() {
-				return {
-					"table-striped": this.theme === "striped"
-				};
-			}
+		headings: {
+			type: Array,
+			default: () => []
+		},
+
+		theme: {
+			type: String,
+			default: "normal"
 		}
-	};
+	},
+
+	computed: {
+		classes() {
+			return {
+				"table-striped": this.theme === "striped"
+			};
+		}
+	}
+};
 </script>
 
-<style>
+<style scoped>
 .table-striped tbody tr:nth-child(even) {
 	background-color: #f7fafc;
 }

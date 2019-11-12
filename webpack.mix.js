@@ -1,12 +1,15 @@
 const mix = require("laravel-mix");
 const path = require("path");
 const tailwindcss = require("tailwindcss");
+require("laravel-mix-purgecss");
 const MomentLocalesPlugin = require("moment-locales-webpack-plugin");
+
+// mix.setPublicPath('public/dist/');
 
 mix.js("resources/js/app.js", "public/js")
     .sass("resources/sass/app.scss", "public/css")
     .options({
-        processCssUrls: false,
+        // processCssUrls: false,
         postCss: [tailwindcss("./tailwind.config.js")]
     })
     .webpackConfig({
@@ -14,7 +17,8 @@ mix.js("resources/js/app.js", "public/js")
         resolve: {
             alias: {
                 vue$: "vue/dist/vue.runtime.esm.js",
-                "@": path.resolve("resources/js")
+                "@": path.resolve("resources/js"),
+                "~": path.resolve("./")
             }
         },
         plugins: [new MomentLocalesPlugin()]
@@ -22,7 +26,14 @@ mix.js("resources/js/app.js", "public/js")
     .babelConfig({
         plugins: ["@babel/plugin-syntax-dynamic-import"]
     })
-    .version();
+    .purgeCss()
+    .version()
+    .sourceMaps(true);
+
+// .extract();
 // if (mix.inProduction()) {
 //     mix.version();
 // }
+// entry: {
+//     main: ["./resources/sass/app.scss"]
+// },

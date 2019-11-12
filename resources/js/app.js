@@ -4,9 +4,7 @@ import VueSnackbar from "vue-snack";
 import VModal from "vue-js-modal";
 import SocialSharing from "vue-social-sharing";
 import VueClipboard from "vue-clipboard2";
-
-// import VueFileAgent from "vue-file-agent";
-// import VueFileAgentStyles from "vue-file-agent/dist/vue-file-agent.css";
+import VueSweetalert2 from "vue-sweetalert2";
 
 Vue.mixin({ methods: { route: window.route } });
 Vue.use(InertiaApp);
@@ -17,7 +15,13 @@ Vue.use(VueScrollTo);
 Vue.use(SocialSharing);
 Vue.use(VueClipboard);
 
-// Vue.use(VueFileAgent);
+const options = {
+    confirmButtonColor: "#20859f",
+    cancelButtonColor: "#ff7674",
+    showCloseButton: true
+};
+import "sweetalert2/dist/sweetalert2.min.css";
+Vue.use(VueSweetalert2, options);
 
 const app = document.getElementById("app");
 

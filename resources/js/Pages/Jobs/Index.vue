@@ -22,6 +22,10 @@
 
 		<div class="py-10">
 			<div class="max-w-6xl mx-auto">
+				<alert class="mb-4" v-if="jobposts.data.length">
+					<strong>Note:</strong> It will take less than 24 hours for the moderation process to get completed and then only will be published on the website.
+				</alert>
+
 				<div class="relative">
 					<div class="absolute fixed top-0 bottom-0 right-0 w-6 bg-white-linear rounded-r-lg opacity-75"></div>
 					<basic-table :headings="headings" v-if="jobposts.data.length">
@@ -35,6 +39,9 @@
 									:to="`/admin/jobs/${data.uuid}/edit`"
 									class="inline-block truncate mr-2 mx-6"
 								>{{ data.job_id }}</link-to>
+							</td>
+							<td class="border-t">
+								<span class="text-gray-700 px-6 py-4 flex items-center">{{ data.created_at }}</span>
 							</td>
 							<td class="border-t">
 								<span class="text-gray-700 px-6 py-4 flex items-center">{{ data.job_title }}</span>
@@ -203,6 +210,7 @@ export default {
 			},
 			headings: [
 				"Job Id",
+				"Created On",
 				"Job Title",
 				"Published at",
 				"Status",

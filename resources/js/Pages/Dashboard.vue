@@ -30,7 +30,7 @@
 
 					<a
 						class="w-1/3 md:w-1/6 md:border-transparent py-5 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
-						href="/admin/users"
+						href="#"
 					>
 						<icon name="bell"></icon>
 						<div class="mt-2 text-sm">Notifications</div>
@@ -38,7 +38,7 @@
 
 					<a
 						class="w-1/3 md:w-1/6 border-l md:border-transparent py-5 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
-						href="/admin/users"
+						href="#"
 					>
 						<icon name="message"></icon>
 						<div class="mt-2 text-sm">Feedback</div>

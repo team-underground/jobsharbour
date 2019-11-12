@@ -5,7 +5,7 @@
 				<heading size="display" class="mb-4">Hello Employers</heading>
 				<heading
 					class="mb-1 text-blue-800 md:text-xl"
-				>Still struggling to communicate with job seekers? Your quest is over. Here we come with the best platform where you can showcase your job lists, communicate with a mass of potential candidates in no time and also pick up the best out of them.</heading>
+				>Still struggling to communicate with job seekers? Your quest is over! Here we come with the best platform where you can showcase your job lists, communicate with a mass of potential candidates in no time and also pick up the best out of them.</heading>
 			</div>
 
 			<div class="hidden md:block">

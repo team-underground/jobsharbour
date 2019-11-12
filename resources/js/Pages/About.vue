@@ -27,7 +27,7 @@
 							<heading size="large" class="mb-2">For Job Seekers</heading>
 							<heading
 								class="mb-6"
-							>This is all job hunters accurate point to find jobs of their preferred kind. Find job openings by job title, salary, job type and category. Provide all the details of your credentials, CV and pull employers' interest.</heading>
+							>This is all job hunters' accurate zone to find jobs of their preferred kind. Find job openings by job title, salary, job type and category. Simply provide your detailed credentials and CV and grasp employer's attention.</heading>
 							<list
 								unordered-list-color="text-blue-500"
 								:lists="['Subscribe to get job notification','Register and apply (coming soon)','Feel free to share your credentials/CV.']"
@@ -40,7 +40,7 @@
 
 							<heading
 								class="mb-6"
-							>Jobs Harbour provides a convenient place for employees/consultancy to showcase their jobs in details. Here they can reach potential and deserving candidates and pick the best out of them.</heading>
+							>Jobs Harbour provides a convenient place for employers/consultancies to showcase their jobs in details. Here they can reach potential and deserving candidates and pick the best out of them.</heading>
 
 							<list
 								unordered-list-color="text-orange-300"

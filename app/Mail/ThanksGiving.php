@@ -20,6 +20,6 @@ class ThanksGiving extends Mailable
 
     public function build()
     {
-        return $this->view('email.thanksforposting');
+        return $this->subject('Job Post Created')->view('email.thanksforposting');
     }
 }
