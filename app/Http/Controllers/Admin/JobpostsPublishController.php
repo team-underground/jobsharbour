@@ -36,6 +36,17 @@ class JobpostsPublishController extends Controller
             }
         });
 
+        DB::transaction(function () use ($jobpost) {
+            $jobpost->job_published_at = (string) Carbon::now();
+            $jobpost->job_status = JobStatusType::getInstance(JobStatusType::Published)->value;
+            $jobpublised = $jobpost->save();
+            $jobPoster = User::find($jobpost->user_id, ['email', 'name']);
+            $jobpost->jobPosterName = $jobPoster['name'];
+            if ($jobpublised) {
+                Mail::to($jobPoster['email'])->queue(new JobPublished($jobpost));
+            }
+        });
+
         session()->flash('success', 'Job Post Published.');
 
         return back();

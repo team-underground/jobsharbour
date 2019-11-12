@@ -8,6 +8,7 @@
 </template>
 
 <script>
+const MailtoUI = require("mailtoui/dist/mailtoui-min.js");
 
 export default {
 	props: {
@@ -19,9 +20,11 @@ export default {
 			type: String,
 			default: "Subject goes here"
 		}
+	},
+
+	mounted() {
+		MailtoUI.run();
 	}
-	
-		
 };
 </script>
 

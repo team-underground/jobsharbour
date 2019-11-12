@@ -14,15 +14,15 @@ class JobAlert extends Mailable
 
     public $name;
     public $unsubscribeUrl;
+
     public function __construct($subscriber)
     {
         $this->name = $subscriber->name;
         $this->unsubscribeUrl = $subscriber->unsubscribeUrl;
     }
 
-
     public function build()
     {
-        return $this->view('email.jobalert');
+        return $this->subject('Thanks for subscribing!')->view('email.jobalert');
     }
 }

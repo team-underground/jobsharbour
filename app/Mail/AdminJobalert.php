@@ -40,6 +40,6 @@ class AdminJobalert extends Mailable
      */
     public function build()
     {
-        return $this->view('email.jobpost');
+        return $this->subject('Job Post for Moderation')->view('email.jobpost');
     }
 }

@@ -27,6 +27,7 @@
     <link rel="dns-prefetch" href="//unpkg.com">
     <link rel="dns-prefetch" href="//loremflickr.com">
 
+
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
     <script src="{{ mix('/js/app.js') }}" defer></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -38,7 +39,6 @@
 
     gtag('config', 'UA-151880965-1');
     </script>
-
     @routes
 </head>
 
@@ -52,6 +52,8 @@
     @if (\Request::is('/'))
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     @endif
+
+    <script src="{{ mix('js/app.js') }}"></script>
 </body>
 
 </html>

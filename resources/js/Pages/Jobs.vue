@@ -216,7 +216,7 @@
 
 							<heading class="mb-2">Still struggling to communicate with job seekers?</heading>
 
-							<heading class="mb-5">Your quest is over.</heading>
+							<heading class="mb-5">Your quest is over!</heading>
 
 							<loading-button
 								to="/register"

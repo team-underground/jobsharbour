@@ -103,15 +103,8 @@
 										class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600"
 										href="/settings"
 									>Settings</a>
-									<!-- <a
-										class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600"
-										href="/faq"
-									>Help & Feedback</a>-->
+
 									<div class="border-t my-1 border-gray-200"></div>
-									<!-- <a
-										class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600"
-										href="#"
-									>Admin Panel</a>-->
 
 									<inertia-link
 										class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600"
@@ -154,7 +147,7 @@
 
 					<a
 						href="/categories"
-						:class="isUrl('about') ? 'text-blue-600' : 'text-gray-600'"
+						:class="isUrl('categories') ? 'text-blue-600' : 'text-gray-600'"
 						class="border-t px-2 py-3 block font-medium hover:text-blue-600"
 					>Categories</a>
 
@@ -280,8 +273,9 @@
 
 				<div class="pt-8 border-t border-gray-200 text-sm md:flex md:justify-between">
 					<div>
-						&copy; 2019 Jobs Harbour. All rights reserved. Made with
+						Made with
 						<span class="text-red-600">&hearts;</span> in Guwahati
+						<br />&copy; 2019 Jobs Harbour. All rights reserved.
 					</div>
 				</div>
 			</div>

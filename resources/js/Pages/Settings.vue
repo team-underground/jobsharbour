@@ -32,7 +32,7 @@
 								<text-input label="Email" disabled v-model="user.email" :bordered="false"></text-input>
 								<p class="text-sm mb-0 mt-2">
 									Please
-									<link-to to="#">contact admin</link-to>&nbsp;to change/update
+									<mail-to subject="I want to change my email address">contact admin</mail-to>&nbsp;to change/update
 									your email address
 								</p>
 							</div>
@@ -84,7 +84,7 @@
 					</div>
 				</div>
 
-				<div class="md:flex md:flex-wrap mb-10 -mx-4">
+				<!-- <div class="md:flex md:flex-wrap mb-10 -mx-4">
 					<div class="md:w-1/3 px-4">
 						<heading size="large" class="mb-1">Notifications</heading>
 						<heading class="mb-4">
@@ -139,7 +139,7 @@
 							</template>
 						</card>
 					</div>
-				</div>
+				</div>-->
 			</div>
 		</div>
 	</layout>
@@ -154,6 +154,7 @@ import SwitchInput from "@/Shared/tuis/SwitchInput.vue";
 import TextInput from "@/Shared/tuis/TextInput.vue";
 import LoadingButton from "@/Shared/tuis/LoadingButton.vue";
 import LinkTo from "@/Shared/tuis/LinkTo.vue";
+import MailTo from "@/Shared/tuis/MailTo.vue";
 import Icon from "@/Shared/tuis/Icon.vue";
 import Alert from "@/Shared/tuis/Alert.vue";
 import FlashMessage from "@/Shared/tuis/FlashMessage.vue";
@@ -168,6 +169,7 @@ export default {
 		TextInput,
 		LoadingButton,
 		LinkTo,
+		MailTo,
 		Icon,
 		Alert,
 		FlashMessage

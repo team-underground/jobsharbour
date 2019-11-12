@@ -10,12 +10,10 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 
-
 class SubscriberController extends Controller
 {
     use VerifiesEmails;
     protected $redirectTo = '/';
-
     public function __construct()
     {
         $this->middleware('signed')->only('verify');
@@ -36,12 +34,11 @@ class SubscriberController extends Controller
             'currency' => 'USD',
         ]);
     }
-
-
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => ['required'],
+            'name' => ['required'], 
+            'email' => ['required']
         ]);
         $subscriber = Subscriber::where('email', $request->email)->first();
         if ($subscriber === null) {
@@ -68,7 +65,6 @@ class SubscriberController extends Controller
         session()->flash('success', 'You are subscribed to our job alert');
         return redirect()->back();
     }
-
     public function cancelSubscription(Request $request)
     {
         $this->validate($request, [
@@ -90,14 +86,12 @@ class SubscriberController extends Controller
         session()->flash('success', 'You are unsubscribed to our Job Alert');
         return redirect('/subscriber/cancel-page');
     }
-
     public function show(Request $request)
     {
         return $request->user()->hasVerifiedEmail()
             ? redirect($this->redirectPath())
             : view('auth.verify');
     }
-
     /**
      * Mark the authenticated user's email address as verified.
      *
@@ -121,9 +115,7 @@ class SubscriberController extends Controller
         }
         return redirect($this->redirectPath())->with('verified', true);
     }
-
-
-    /**
+  
      * Resend the email verification notification.
      *
      * @param  \Illuminate\Http\Request  $request
