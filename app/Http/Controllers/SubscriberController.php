@@ -37,7 +37,7 @@ class SubscriberController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => ['required'],
+            'name' => ['required'], 
             'email' => ['required']
         ]);
         $subscriber = Subscriber::where('email', $request->email)->first();
@@ -115,7 +115,7 @@ class SubscriberController extends Controller
         }
         return redirect($this->redirectPath())->with('verified', true);
     }
-    /**
+  
      * Resend the email verification notification.
      *
      * @param  \Illuminate\Http\Request  $request

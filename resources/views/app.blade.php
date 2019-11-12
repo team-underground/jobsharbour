@@ -27,17 +27,17 @@
     <link rel="dns-prefetch" href="//unpkg.com">
     <link rel="dns-prefetch" href="//loremflickr.com">
 
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+
+    <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
+    <script src="{{ mix('/js/app.js') }}" defer></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151880965-1"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-151880965-1');
+    gtag('config', 'UA-151880965-1');
     </script>
     @routes
 </head>

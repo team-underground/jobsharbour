@@ -27,5 +27,5 @@ class AddUuidToSubscribers extends Migration
 		Schema::table('subscribers', function (Blueprint $table) {
 			//
 		});
-	}
+	} 
 }

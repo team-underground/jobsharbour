@@ -16,6 +16,7 @@ class JobPublished extends Mailable
     public $job_closing_date;
     public $jobPosterName;
     public $jobId;
+
     public function __construct($jobpost)
     {
         // dd($jobpost);
@@ -25,6 +26,7 @@ class JobPublished extends Mailable
         $this->job_closing_date = Carbon::parse($jobpost->job_closing_date)->format('M d, Y');
         $this->jobPosterName = $jobpost->jobPosterName;
     }
+
     /**
      * Build the message.
      *

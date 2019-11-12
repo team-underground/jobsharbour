@@ -114,6 +114,7 @@
 
 
                             <table class="es-footer-body" width="600" cellspacing="0" cellpadding="0" align="center">
+
                                 <tbody>
                                     <tr>
                                         <td class="esd-block-text es-p15t es-p10b" align="center">
@@ -151,6 +152,7 @@
             </td>
         </tr>
     </table>
+
 </body>
 
 </html>
