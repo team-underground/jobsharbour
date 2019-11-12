@@ -51,7 +51,8 @@ return [
 
         // Code and composer vendors are ready but nothing is built.
         'build' => [
-            //
+            'npm:install',
+            'npm:production'
         ],
 
         // Deployment is done but not live yet (before symlink)
@@ -60,7 +61,7 @@ return [
             'artisan:view:clear',
             'artisan:cache:clear',
             'artisan:config:cache',
-            'artisan:migrate',
+            'artisan:migrate'
         ],
 
         // Deployment is done and live
