@@ -10,12 +10,10 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 
-
 class SubscriberController extends Controller
 {
     use VerifiesEmails;
     protected $redirectTo = '/';
-
     public function __construct()
     {
         $this->middleware('signed')->only('verify');
@@ -36,33 +34,36 @@ class SubscriberController extends Controller
             'currency' => 'USD',
         ]);
     }
-
-
     public function store(Request $request)
     {
         $this->validate($request, [
             'name' => ['required'],
-            'email' => ['required', 'email', 'unique:subscribers'],
         ]);
-
-        DB::transaction(function () use ($request) {
+        $subscriber = Subscriber::where('email', $request->email)->first();
+        if ($subscriber === null) {
             $subscriber =  Subscriber::create([
                 'name' => $request->name,
                 'email' => $request->email
             ]);
-            $plan = app('rinvex.subscriptions.plan')->find(1);
-            $subscriber->newSubscription('Pro', $plan);
-            $when = Carbon::now()->addMinutes(1);
-            $subscriber->unsubscribeUrl = url('subscriber/cancel?email=') . $subscriber->email;
-            // dd($subscriber);
-            Mail::to($subscriber->email)->later($when, new JobAlert($subscriber));
-        });
-
-        // session()->flash('success', 'You are subscribed to our job alert');
-
+        } else {
+            if ($subscriber->subscribe == 'cancel') {
+                $subscriber->name = $request->name;
+                $subscriber->subscribe = 'verify';
+                $subscriber->save();
+            } else {
+                $this->validate($request, [
+                    'email' => 'required|email| unique:subscribers',
+                ]);
+            }
+        }
+        $plan = app('rinvex.subscriptions.plan')->find(1);
+        $subscriber->newSubscription('Pro', $plan);
+        $when = Carbon::now()->addMinutes(1);
+        $subscriber->unsubscribeUrl = url('subscriber/cancel?email=') . $subscriber->email . "&unique=" . $subscriber->uuid;
+        Mail::to($subscriber->email)->later($when, new JobAlert($subscriber));
+        session()->flash('success', 'You are subscribed to our job alert');
         return redirect()->back();
     }
-
     public function cancelSubscription(Request $request)
     {
         $this->validate($request, [
@@ -70,19 +71,26 @@ class SubscriberController extends Controller
         ]);
         $plan = app('rinvex.subscriptions.plan')->find(1);
         $subscriber = Subscriber::where('email', $request->email)->first();
-        $plan = $plan->subscriptions()->where('user_id', $subscriber->id)->first();
-        $plan->cancel();
+        // dd($subscriber->uuid, $request->unique);
+        if ($request->unique == $subscriber->uuid && $request->unique != null && $subscriber->uuid != null) {
+            $plan = $plan->subscriptions()->where('user_id', $subscriber->id)->first();
+            $plan->cancel();
+            $subscriber->subscribe = 'cancel';
+            $subscriber->save();
+        } else {
+            return response([
+                'message' => 'You have not provided correct information'
+            ]);
+        }
         session()->flash('success', 'You are unsubscribed to our Job Alert');
         return redirect('/subscriber/cancel-page');
     }
-
     public function show(Request $request)
     {
         return $request->user()->hasVerifiedEmail()
             ? redirect($this->redirectPath())
             : view('auth.verify');
     }
-
     /**
      * Mark the authenticated user's email address as verified.
      *
@@ -95,22 +103,17 @@ class SubscriberController extends Controller
         if (!hash_equals((string) $request->route('id'), (string) $request->user()->getKey())) {
             throw new AuthorizationException;
         }
-
         if (!hash_equals((string) $request->route('hash'), sha1($request->user()->getEmailForVerification()))) {
             throw new AuthorizationException;
         }
-
         if ($request->user()->hasVerifiedEmail()) {
             return redirect($this->redirectPath());
         }
-
         if ($request->user()->markEmailAsVerified()) {
             event(new Verified($request->user()));
         }
-
         return redirect($this->redirectPath())->with('verified', true);
     }
-
     /**
      * Resend the email verification notification.
      *
@@ -122,9 +125,7 @@ class SubscriberController extends Controller
         if ($request->user()->hasVerifiedEmail()) {
             return redirect($this->redirectPath());
         }
-
         $request->user()->sendEmailVerificationNotification();
-
         return back()->with('resent', true);
     }
 }

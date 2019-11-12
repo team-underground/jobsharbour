@@ -28,7 +28,17 @@
     <link rel="dns-prefetch" href="//loremflickr.com">
 
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151880965-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-151880965-1');
+    </script>
     @routes
 </head>
 

@@ -7,7 +7,6 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            line-height: 1.5;
         }
     </style>
 </head>
@@ -100,7 +99,7 @@
                                         </table>
                                         ​
                                         <p>Regards, <br />
-                                            <strong>Team Jobs Harbour</strong>
+                                            <strong>Job Harbour's Team</strong>
                                         </p>
                                     </td>
                                 </tr>
@@ -112,7 +111,7 @@
                                             <tbody>
                                                 <tr>
                                                     <td width="50%" align="left">
-                                                        <a href="http://jobsharbour.com" target="_blank"><img src="http://jobsharbour.com/jh-logo.svg" alt="" width="150"></a>
+                                                        <a href="http://jobsharbour.com" target="_blank"><img src="{{url('jh-logo.svg')}}" alt="" width="150"></a>
                                                     </td>
                                                     <td width="50%" class="esd-block-text es-p15t es-p10b" align="right">
                                                         <p style="margin: 0; color: #4a5568; font-weight: 400; letter-spacing: .025em; font-size: 0.75rem; line-height: 1.325rem;">&copy; jobsharbour.com</p>
