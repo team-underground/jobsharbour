@@ -24,7 +24,7 @@ class JobPublished extends Mailable
         $this->jobId = $jobpost->job_id;
         $this->job_starting_date =  Carbon::parse($jobpost->job_starting_date)->format('M d, Y');
         $this->job_closing_date = Carbon::parse($jobpost->job_closing_date)->format('M d, Y');
-        $this->jobPosterName = $jobpost->jobPosterName;
+        $this->jobPosterName = $jobpost->user->name;
     }
 
     /**
