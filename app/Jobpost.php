@@ -59,6 +59,8 @@ class Jobpost extends Model implements ViewableContract
         }
 
         $array = $this->toArray();
+
+        $array['job_published_at_timestamp'] = $this->job_published_at->timestamp;
         $array['company'] = [
             'company_name' => $this->company->company_name,
             'company_logo_path' => $this->company->company_logo_path

@@ -52,7 +52,7 @@ class JobpostsController extends Controller
 
 	public function store(Request $request)
 	{
-		$input = $this->validate($request, [
+		$rules =  [
 			'company_id' => ['required'],
 			'job_title' => ['required'],
 			'job_location' => ['required'],
@@ -61,14 +61,19 @@ class JobpostsController extends Controller
 			'job_experience_level' => ['required'],
 			'job_salary' => ['required'],
 			'job_description' => ['required'],
-			'job_skills' => ['required'],
-			'job_email' => ['required', 'email'],
+			// 'job_skills' => ['required'],
 			'job_starting_date' => ['required', 'date_format:d/m/Y', 'before_or_equal:job_closing_date'],
 			'job_closing_date' => ['required', 'date_format:d/m/Y', 'after_or_equal:job_starting_date'],
 			'meta_description' => ['required'],
 			'meta_keywords' => ['required'],
 			'seo_title' => ['required']
-		], [
+		];
+
+		if (!auth()->user()->isAdmin()) {
+			$rules['job_email'] = ['required', 'email'];
+		}
+
+		$input = $this->validate($request, $rules, [
 			'company_id.required' => 'Please select a company',
 		]);
 
@@ -90,7 +95,7 @@ class JobpostsController extends Controller
 				'job_starting_date' => Carbon::createFromFormat('d/m/Y', $request->job_starting_date)->format('Y-m-d')
 			]);
 
-			if ($jobpost_created) {
+			if ($jobpost_created && count($request->job_skills) > 0) {
 				$jobpost_created->attachTags($request->job_skills);
 			}
 			//sync to algolia
@@ -154,11 +159,14 @@ class JobpostsController extends Controller
 			'job_experience_level' => ['required'],
 			'job_salary' => ['required'],
 			'job_description' => ['required'],
-			'job_skills' => ['required'],
-			'job_email' => ['required', 'email'],
+			// 'job_skills' => ['required'],
 			'job_starting_date' => ['required'],
 			'job_closing_date' => ['required']
 		];
+
+		if (!auth()->user()->isAdmin()) {
+			$rules['job_email'] = ['required', 'email'];
+		}
 
 		if (Gate::allows('update-job-seo', $jobpost)) {
 			$rules['organisation_type'] = ['required'];
@@ -193,8 +201,8 @@ class JobpostsController extends Controller
 				'job_starting_date' => $input['job_starting_date']
 			]);
 
-			if ($jobpost) {
-				$jobpost->attachTags($input['job_skills']);
+			if ($jobpost && count($request->job_skills) > 0) {
+				$jobpost->attachTags($request->job_skills);
 			}
 			//sync to algolia
 			$jobpost->searchable();

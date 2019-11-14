@@ -29,10 +29,9 @@
 								<heading>{{ post.job_type }}</heading>
 							</div>
 						</div>
-
 						<heading size="small">{{ post.job_published_at_formatted }}</heading>
 					</div>
-					<div class="md:w-1/3 px-4 px-4 flex md:flex-col mt-4 md:mt-0">
+					<div class="md:w-1/3 px-4 px-4 flex md:flex-col mt-4 md:mt-0" :class="{'hidden':post.organisation_type=='Government'}">
 						<div class="flex-1 mr-4 md:mr-0">
 							<loading-button
 								tag="a"
@@ -152,7 +151,7 @@
 		<div class="py-10 px-4">
 			<div class="max-w-6xl mx-auto">
 				<div class="md:flex -mx-4">
-					<div class="md:w-2/3 px-4 flex flex-col">
+					<div class="px-4 flex flex-col" :class="{'w-full':post.organisation_type=='Government', 'md:w-2/3':post.organisation_type=='Private'}">
 						<card class="mb-10 pb-5 flex-1">
 							<!-- <heading size="large" class="mb-1">Experience</heading>
 							<heading class="mb-4">Freshers/1-2 Years Experience</heading>-->
@@ -175,7 +174,7 @@
 						</card>
 					</div>
 
-					<div class="md:w-1/3 px-4 flex flex-col">
+					<div class="md:w-1/3 px-4 flex flex-col" :class="{'hidden':post.organisation_type=='Government'}">
 						<card class="mb-10 flex-1">
 							<heading size="large" class="mb-4">About {{ post.company.company_name }}</heading>
 
