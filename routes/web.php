@@ -1,5 +1,6 @@
 <?php
 
+use App\Jobpost;
 use App\Package;
 use Inertia\Inertia;
 use App\Enums\CategoryType;
@@ -99,7 +100,12 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 
 
 // Jobs
-Route::get('/jobs', 'JobpostsController@index')->name('jobs');
+// Route::get('/jobs', 'JobpostsController@index')->name('jobs');
+Route::get('/jobs', function () {
+    return Inertia::render('AlgoliaJobs', [
+        'scout_prefix' => config('scout.prefix')
+    ]);
+});
 Route::get('/jobs/{job_slug}', 'JobpostsController@show')->name('jobs.show');
 
 Route::middleware(['auth'])->group(function () {

@@ -7,17 +7,19 @@ use Carbon\Carbon;
 use App\Enums\JobType;
 use App\Enums\UserType;
 use App\Enums\CategoryType;
-use App\Enums\ExperienceLevelType;
 use Illuminate\Support\Str;
 use App\Enums\JobStatusType;
+use Laravel\Scout\Searchable;
 use JamesMills\Uuid\HasUuidTrait;
+use App\Enums\ExperienceLevelType;
+use App\Enums\OrganisationType;
 use Illuminate\Database\Eloquent\Model;
 use CyrildeWit\EloquentViewable\Viewable;
 use CyrildeWit\EloquentViewable\Contracts\Viewable as ViewableContract;
 
 class Jobpost extends Model implements ViewableContract
 {
-    use HasUuidTrait, Viewable;
+    use HasUuidTrait, Viewable, Searchable;
 
     protected $guarded = [];
 
@@ -33,6 +35,36 @@ class Jobpost extends Model implements ViewableContract
     protected $casts = [
         'meta_keywords' => 'array'
     ];
+
+    // public function shouldBeSearchable()
+    // {
+    //     return $this->isPublishedAndNotClosed();
+    // }
+
+    public function searchableAs()
+    {
+        return config('scout.prefix') . '_jobposts';
+    }
+
+    /**
+     * Get the indexable data array for the model.
+     *
+     * @return array
+     */
+    public function toSearchableArray()
+    {
+        if (!$this->isPublishedAndNotClosed()) {
+            $this->unsearchable();
+            return [];
+        }
+
+        $array = $this->toArray();
+        $array['company'] = [
+            'company_name' => $this->company->company_name,
+            'company_logo_path' => $this->company->company_logo_path
+        ];
+        return $array;
+    }
 
     public function attachTags($tags)
     {
@@ -126,6 +158,11 @@ class Jobpost extends Model implements ViewableContract
     public function getJobExperienceLevelAttribute($value)
     {
         return ExperienceLevelType::getDescription($value);
+    }
+
+    public function getOrganisationTypeAttribute($value)
+    {
+        return OrganisationType::getDescription($value);
     }
 
     public function getJobSkillsAttribute()
@@ -256,5 +293,10 @@ class Jobpost extends Model implements ViewableContract
     public function scopePublished($query)
     {
         $query->whereNotNull('job_published_at');
+    }
+
+    public function isPublishedAndNotClosed()
+    {
+        return $this->job_status == JobStatusType::getInstance(JobStatusType::Published)->key && Carbon::parse($this->job_closing_date)->format('Y-m-d') >= Carbon::now()->format('Y-m-d');
     }
 }

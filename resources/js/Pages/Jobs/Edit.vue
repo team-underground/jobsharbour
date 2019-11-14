@@ -54,6 +54,25 @@
 									disabled
 									:bordered="false"
 								></text-input>
+								<div class="mb-4" v-if="can['update-job-seo']">
+									<radio-input
+										classes="border-2 p-3 rounded-lg"
+										label="Organization Type"
+										v-model="job.organisation_type"
+										:options="organisationtypes"
+										name="organization"
+										:stacked="false"
+										size="large"
+									>
+										<template slot-scope="option">
+											<div class="flex">
+												<div class="pl-2 w-32">
+													<h5 class="text-gray-700">{{ option.row.label }}</h5>
+												</div>
+											</div>
+										</template>
+									</radio-input>
+								</div>
 								<select-input
 									v-model="job.company_id"
 									label="Select Company"
@@ -249,6 +268,7 @@ import TextareaInput from "@/Shared/tuis/TextareaInput";
 import FileInput from "@/Shared/tuis/FileInput";
 import TagsInput from "@/Shared/tuis/TagsInput";
 import Badge from "@/Shared/tuis/Badge";
+import RadioInput from "@/Shared/tuis/RadioInput";
 
 export default {
 	components: {
@@ -268,7 +288,8 @@ export default {
 		FileInput,
 		TagsInput,
 		Badge,
-		MailTo
+		MailTo,
+		RadioInput
 	},
 	props: [
 		"jobtypes",
@@ -278,7 +299,8 @@ export default {
 		"post",
 		"companies",
 		"can",
-		"experiencelevels"
+		"experiencelevels",
+		"organisationtypes"
 	],
 
 	mounted() {
@@ -288,6 +310,10 @@ export default {
 	data() {
 		return {
 			job: {
+				organisation_type: this.getKeyByNestedValue(
+					this.organisationtypes,
+					this.post.organisation_type
+				),
 				company_id: this.post.company_id,
 				job_title: this.post.job_title,
 				job_location: this.post.job_location,
@@ -319,6 +345,11 @@ export default {
 		};
 	},
 	methods: {
+		getKeyByNestedValue(obj, value) {
+			return parseInt(
+				Object.keys(obj).find(key => obj[key].label == value)
+			);
+		},
 		getKeyByValue(obj, value) {
 			return Object.keys(obj).find(key => obj[key] == value);
 		},

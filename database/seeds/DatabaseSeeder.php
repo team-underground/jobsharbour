@@ -1,5 +1,6 @@
 <?php
 
+use App\Jobpost;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,8 +15,11 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UsersTableSeeder::class,
             CompaniesTableSeeder::class,
-            JobpostsTableSeeder::class,
-
         ]);
+
+        Jobpost::disableSearchSyncing();
+        $this->call(JobpostsTableSeeder::class);
+        Jobpost::all()->searchable();
+        Jobpost::enableSearchSyncing();
     }
 }

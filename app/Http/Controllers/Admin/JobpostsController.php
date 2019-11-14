@@ -5,17 +5,18 @@ namespace App\Http\Controllers\Admin;
 use App\Jobpost;
 use Carbon\Carbon;
 use Inertia\Inertia;
+use App\Mail\ThanksGiving;
 use Illuminate\Support\Str;
 use App\Enums\JobStatusType;
 use App\Events\JobPostEvent;
 use Illuminate\Http\Request;
+use App\Enums\OrganisationType;
 use App\Enums\ExperienceLevelType;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Gate;
-use App\Enums\{CategoryType, JobType, IndustryType};
-use App\Mail\ThanksGiving;
 use Illuminate\Support\Facades\Mail;
+use App\Enums\{CategoryType, JobType, IndustryType};
 
 class JobpostsController extends Controller
 {
@@ -92,6 +93,8 @@ class JobpostsController extends Controller
 			if ($jobpost_created) {
 				$jobpost_created->attachTags($request->job_skills);
 			}
+			//sync to algolia
+			$jobpost_created->searchable();
 
 			$jobpost_created['user_name'] = auth()->user()->name;
 			// TODO 1. when a job is posted notify admin about it, and send a mail to the job publisher saying a thank you mail and inform him that post will be published within 24 hours after verification.
@@ -115,6 +118,13 @@ class JobpostsController extends Controller
 		$jobtypes = JobType::toSelectArray();
 		$industries = IndustryType::toSelectArray();
 		$experiencelevels = ExperienceLevelType::toSelectArray();
+		$organisationtypes = collect(OrganisationType::toSelectArray())->map(function ($organisation, $index) {
+			return [
+				"label" => $organisation,
+				"value" => $index
+			];
+		});
+
 
 		$companies = auth()->user()->getAllCompanies()->map(function ($company) {
 			return [
@@ -128,7 +138,7 @@ class JobpostsController extends Controller
 			'update-job-seo' => Gate::allows('update-job-seo', $jobpost),
 		];
 
-		return Inertia::render('Jobs/Edit', compact('post', 'categories', 'jobtypes', 'industries', 'companies', 'can', 'experiencelevels'));
+		return Inertia::render('Jobs/Edit', compact('post', 'categories', 'jobtypes', 'industries', 'companies', 'can', 'experiencelevels', 'organisationtypes'));
 	}
 
 	public function update($uuid, Request $request)
@@ -151,6 +161,8 @@ class JobpostsController extends Controller
 		];
 
 		if (Gate::allows('update-job-seo', $jobpost)) {
+			$rules['organisation_type'] = ['required'];
+
 			$rules['meta_description'] = ['required'];
 			$rules['meta_keywords'] = ['required'];
 			$rules['seo_title'] = ['required'];
@@ -165,6 +177,7 @@ class JobpostsController extends Controller
 
 		DB::transaction(function () use ($jobpost, $input, $request) {
 			$jobpost->update($request->except([
+				'organisation_type',
 				'job_type',
 				'job_category',
 				'job_experience_level',
@@ -172,6 +185,7 @@ class JobpostsController extends Controller
 				'job_starting_date',
 				'job_closing_date'
 			]) + [
+				'organisation_type' => (int) $input['organisation_type'],
 				'job_type' => (int) $input['job_type'],
 				'job_category' => (int) $input['job_category'],
 				'job_experience_level' => (int) $input['job_experience_level'],
@@ -182,7 +196,9 @@ class JobpostsController extends Controller
 			if ($jobpost) {
 				$jobpost->attachTags($input['job_skills']);
 			}
-		});
+			//sync to algolia
+			$jobpost->searchable();
+		}, 3);
 
 
 		session()->flash('success', 'Job Post Updated.');

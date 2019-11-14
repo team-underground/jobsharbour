@@ -5,7 +5,9 @@ import VModal from "vue-js-modal";
 import SocialSharing from "vue-social-sharing";
 import VueClipboard from "vue-clipboard2";
 import VueSweetalert2 from "vue-sweetalert2";
+import InstantSearch from "vue-instantsearch";
 
+Vue.use(InstantSearch);
 Vue.mixin({ methods: { route: window.route } });
 Vue.use(InertiaApp);
 Vue.use(VueSnackbar, { close: true, position: "bottom-left" });
