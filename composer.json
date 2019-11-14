@@ -13,6 +13,7 @@
         "algolia/scout-extended": "^1.8",
         "bensampo/laravel-enum": "^1.26",
         "cyrildewit/eloquent-viewable": "^4.1",
+        "doctrine/dbal": "^2.10",
         "fideloper/proxy": "^4.0",
         "fzaninotto/faker": "^1.4",
         "jamesmills/eloquent-uuid": "^1.2",

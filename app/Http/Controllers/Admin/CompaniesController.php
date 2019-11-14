@@ -45,15 +45,20 @@ class CompaniesController extends Controller
 
     public function store(Request $request)
     {
-        $input = $this->validate($request, [
+        $rules = [
             'company_logo' => 'required|image|mimes:jpeg,png,jpg|max:1024',
-            'company_name' => ['required'],
-            'company_website' => ['required', 'url'],
-            'company_description' => ['required'],
-            'company_industry' => ['required'],
-            'company_no_of_employees' => ['required'],
-            'company_benefits' => ['required']
-        ], [
+            'company_name' => ['required']
+        ];
+
+        if (!auth()->user()->isAdmin()) {
+            $rules['company_website'] = ['required', 'url'];
+            $rules['company_description'] = ['required'];
+            $rules['company_industry'] = ['required'];
+            $rules['company_no_of_employees'] = ['required'];
+            $rules['company_benefits'] = ['required'];
+        }
+
+        $input = $this->validate($request, $rules, [
             'company_logo.max' => 'Image size must me less than 1 MB',
             'company_logo.dimensions' => 'Image must be atleast 200x200px as a png or jpeg file'
         ]);
@@ -93,15 +98,20 @@ class CompaniesController extends Controller
     {
         $company = Company::findByUuidOrFail($uuid);
 
-        $input = $this->validate($request, [
-            'company_logo' => 'nullable|image|mimes:jpeg,png,jpg|max:1024',
-            'company_name' => ['required'],
-            'company_website' => ['required', 'url'],
-            'company_description' => ['required'],
-            'company_industry' => ['required'],
-            'company_no_of_employees' => ['required'],
-            'company_benefits' => ['required']
-        ], [
+        $rules = [
+            'company_logo' => 'required|image|mimes:jpeg,png,jpg|max:1024',
+            'company_name' => ['required']
+        ];
+
+        if (!auth()->user()->isAdmin()) {
+            $rules['company_website'] = ['required', 'url'];
+            $rules['company_description'] = ['required'];
+            $rules['company_industry'] = ['required'];
+            $rules['company_no_of_employees'] = ['required'];
+            $rules['company_benefits'] = ['required'];
+        }
+
+        $input = $this->validate($request, $rules, [
             'company_logo.max' => 'Image size must me less than 1 MB',
             'company_logo.dimensions' => 'Image must be atleast 200x200px as a png or jpeg file'
         ]);
