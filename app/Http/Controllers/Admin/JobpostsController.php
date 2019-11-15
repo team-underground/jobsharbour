@@ -71,6 +71,7 @@ class JobpostsController extends Controller
 
 		if (!auth()->user()->isAdmin()) {
 			$rules['job_email'] = ['required', 'email'];
+			$rules['job_skills'] = ['required'];
 		}
 
 		$input = $this->validate($request, $rules, [
@@ -166,6 +167,7 @@ class JobpostsController extends Controller
 
 		if (!auth()->user()->isAdmin()) {
 			$rules['job_email'] = ['required', 'email'];
+			$rules['job_skills'] = ['required'];
 		}
 
 		if (Gate::allows('update-job-seo', $jobpost)) {

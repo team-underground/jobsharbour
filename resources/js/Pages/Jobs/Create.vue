@@ -146,7 +146,7 @@
 										@keydown="delete errors['job_email']"
 									></text-input>
 
-									<tags-input label="Skills" v-model="job.job_skills" class="mb-4"></tags-input>
+									<tags-input label="Skills" v-model="job.job_skills" class="mb-4" placeholder="Add a skill and press enter" :errors="errors['job_skills']"></tags-input>
 
 									<simple-editor
 										label="Description"
@@ -206,13 +206,15 @@
 										class="mb-4"
 										placeholder="eg. Ability to write code – HTML & CSS (SCSS flavor of SASS preferred when writing CSS)Proficient in Photoshop, Illustrator, bonus points for familiarity with Sketch (Sketch is our preferred concepting)Cross-browser and platform testing as standard practiceExperience using Invision a plusExperience in video production a plus or, at a minimum, a willingness to learn"
 										v-model="job.meta_description"
+										:errors="errors['meta_description']"
 									></textarea-input>
-									<tags-input label="Meta Keywords" v-model="job.meta_keywords" class="mb-4"></tags-input>
+									<tags-input label="Meta Keywords" v-model="job.meta_keywords" class="mb-4" :errors="errors['meta_keywords']"></tags-input>
 									<text-input
 										label="SEO Title"
 										class="mb-4"
 										placeholder="eg. Senior web developer in guwahati"
 										v-model="job.seo_title"
+										:errors="errors['seo_title']"
 									></text-input>
 								</card>
 							</div>
@@ -284,9 +286,9 @@ export default {
 				job_experience_level: null,
 				job_type: null,
 				job_salary: null,
-				job_skills: ["Laravel", "React"],
+				job_skills: [],
 				job_email: null,
-				job_description: `<p><strong>Required Knowledge, Skills, and Abilities</strong></p><p>Ability to write code – HTML & CSS (SCSS flavor of SASS preferred when writing CSS)Proficient in Photoshop, Illustrator, bonus points for familiarity with Sketch (Sketch is our preferred concepting)Cross-browser and platform testing as standard practiceExperience using Invision a plusExperience in video production a plus or, at a minimum, a willingness to learn</p><br> <p><strong>Education + Experience</strong></p><p>Advanced degree or equivalent experience in graphic and web design3 or more years of professional design experience</p>`,
+				job_description: ``,
 				job_starting_date: currentDate,
 				job_closing_date: currentDate,
 				company_id: null,
