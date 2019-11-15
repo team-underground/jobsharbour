@@ -24,15 +24,16 @@ class DashboardController extends Controller
         $query = View::with('viewable')->whereHasMorph('viewable', [Jobpost::class], function ($query) {
             $query->published()->closed(false)->role();
         });
+
         $uniqueCounts = $query->select([
             \DB::raw('count(DISTINCT visitor, viewable_id) as `total`'),
-            \DB::raw("DATE_FORMAT(viewed_at, '%Y-%m-%e') as day")
-        ])->groupBy('day')->pluck('total', 'day')->all();
+            \DB::raw("DATE_FORMAT(viewed_at, '%Y-%m-%d') as day")
+        ])->groupBy('day')->orderBy('day')->pluck('total', 'day')->all();
 
         $totalCounts = $query->select([
             \DB::raw('count(id) as `total`'),
-            \DB::raw("DATE_FORMAT(viewed_at, '%Y-%m-%e') as day")
-        ])->groupBy('day')->pluck('total', 'day')->all();
+            \DB::raw("DATE_FORMAT(viewed_at, '%Y-%m-%d') as day")
+        ])->groupBy('day')->orderBy('day')->pluck('total', 'day')->all();
 
         return Inertia::render('Dashboard', [
             'posts' => $posts,
