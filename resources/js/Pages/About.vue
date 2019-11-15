@@ -5,7 +5,7 @@
 				<heading size="display" class="mb-4">About Jobs Harbour</heading>
 				<heading
 					class="mb-1 text-blue-800 md:text-xl"
-				>Jobs Harbour is an online web based job listing site for both employers and job seekers. Our primary goal is to provide you upto date job information from all around Assam and the Northeast.</heading>
+				>Jobs Harbour is an online web based job listing site for both employers and job seekers. Its primary goal is to provide you upto date job information from all around Assam and the Northeast.</heading>
 			</div>
 
 			<div class="hidden md:block">

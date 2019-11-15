@@ -20,7 +20,7 @@
 		</div>
 
 		<div class="py-10 px-4">
-			<div class="max-w-2xl mx-auto">
+			<div class="max-w-3xl mx-auto">
 				<div class="mb-8 text-center">
 					<heading size="heading2" class="mb-4">Simple. Fair Pricing</heading>
 					<toggle-switch :options="myOptions" v-model="plan" />
@@ -36,22 +36,135 @@
 					<strong>Recruiting Firm</strong> we refer to a consultancy HR/Representative registering in our portal for job posting for the concerned company.
 				</alert>
 
-				<div class="md:flex -mx-4" v-if="plan === 'Company'">
-					<div class="md:w-1/2 px-4 flex">
-						<card class="mb-8 shadow-md flex-1 relative">
+				<div class="md:flex md:shadow md:rounded-lg md:overflow-hidden" v-if="plan === 'Company'">
+					<div class="md:w-1/2 flex">
+						<card
+							class="mb-8 md:mb-0 shadow-md md:shadow-none flex-1 md:rounded-none md:border-r md:border-gray-200"
+							:is-padding="false"
+						>
 							<heading
 								size="large"
-								class="mb-2 text-blue-600 text-center"
+								class="mb-2 text-blue-600 text-center border-b border-gray-200 py-2"
 							>{{pricing['company-basic'].display_name}}</heading>
 
-							<heading size="heading" class="mb-5 text-center">Free Forever</heading>
+							<!-- <heading size="heading" class="mb-5 text-center">Free Forever</heading> -->
 
-							<list
-								:lists="['Add 1 company', 'Unlimited job posts', 'Email Support', 'Analytics', 'Basic Promotion']"
-								unorderedListColor="text-blue-400"
-							></list>
+							<div class="py-5">
+								<heading size="heading2" class="text-center">&#8377; 0</heading>
+								<div class="text-sm text-gray-500 text-center">per month</div>
+							</div>
+							<div class="px-8 md:px-12 py-5">
+								<list :lists="[]" unorderedListColor="text-blue-400">
+									<li class="flex list-none mb-3">
+										<div class="w-10">
+											<svg
+												class="fill-current text-blue-600"
+												xmlns="http://www.w3.org/2000/svg"
+												width="24"
+												height="24"
+												viewBox="0 0 24 24"
+											>
+												<path
+													d="M12,2C6.486,2,2,6.486,2,12c0,5.514,4.486,10,10,10s10-4.486,10-10C22,6.486,17.514,2,12,2z M10.001,16.413l-3.713-3.705 L7.7,11.292l2.299,2.295l5.294-5.294l1.414,1.414L10.001,16.413z"
+												/>
+											</svg>
+										</div>
+										<div class="flex-1">Add 1 company</div>
+									</li>
+									<li class="flex list-none mb-3">
+										<div class="w-10">
+											<svg
+												class="fill-current text-blue-600"
+												xmlns="http://www.w3.org/2000/svg"
+												width="24"
+												height="24"
+												viewBox="0 0 24 24"
+											>
+												<path
+													d="M12,2C6.486,2,2,6.486,2,12c0,5.514,4.486,10,10,10s10-4.486,10-10C22,6.486,17.514,2,12,2z M10.001,16.413l-3.713-3.705 L7.7,11.292l2.299,2.295l5.294-5.294l1.414,1.414L10.001,16.413z"
+												/>
+											</svg>
+										</div>
+										<div class="flex-1">Unlimited job posts</div>
+									</li>
+									<li class="flex list-none mb-3">
+										<div class="w-10">
+											<svg
+												class="fill-current text-blue-600"
+												xmlns="http://www.w3.org/2000/svg"
+												width="24"
+												height="24"
+												viewBox="0 0 24 24"
+											>
+												<path
+													d="M12,2C6.486,2,2,6.486,2,12c0,5.514,4.486,10,10,10s10-4.486,10-10C22,6.486,17.514,2,12,2z M10.001,16.413l-3.713-3.705 L7.7,11.292l2.299,2.295l5.294-5.294l1.414,1.414L10.001,16.413z"
+												/>
+											</svg>
+										</div>
+										<div class="flex-1">Basic Email Support</div>
+									</li>
+									<li class="flex list-none mb-3">
+										<div class="w-10">
+											<svg
+												class="fill-current text-blue-600"
+												xmlns="http://www.w3.org/2000/svg"
+												width="24"
+												height="24"
+												viewBox="0 0 24 24"
+											>
+												<path
+													d="M12,2C6.486,2,2,6.486,2,12c0,5.514,4.486,10,10,10s10-4.486,10-10C22,6.486,17.514,2,12,2z M10.001,16.413l-3.713-3.705 L7.7,11.292l2.299,2.295l5.294-5.294l1.414,1.414L10.001,16.413z"
+												/>
+											</svg>
+										</div>
+										<div class="flex-1">Basic Analytics</div>
+									</li>
 
-							<div class="mt-5 md:mt-0 relative md:absolute left-0 right-0 block bottom-0 mx-8 mb-6">
+									<li class="flex list-none line-through mb-3">
+										<div class="w-10">
+											<svg
+												class="fill-current text-blue-300"
+												xmlns="http://www.w3.org/2000/svg"
+												width="24"
+												height="24"
+												viewBox="0 0 24 24"
+											>
+												<path
+													d="M12,2C6.486,2,2,6.486,2,12c0,5.514,4.486,10,10,10s10-4.486,10-10C22,6.486,17.514,2,12,2z M10.001,16.413l-3.713-3.705 L7.7,11.292l2.299,2.295l5.294-5.294l1.414,1.414L10.001,16.413z"
+												/>
+											</svg>
+										</div>
+										<div class="flex-1">Promotion</div>
+									</li>
+
+									<li class="flex list-none line-through">
+										<div class="w-10">
+											<svg
+												class="fill-current text-blue-300"
+												xmlns="http://www.w3.org/2000/svg"
+												width="24"
+												height="24"
+												viewBox="0 0 24 24"
+											>
+												<path
+													d="M12,2C6.486,2,2,6.486,2,12c0,5.514,4.486,10,10,10s10-4.486,10-10C22,6.486,17.514,2,12,2z M10.001,16.413l-3.713-3.705 L7.7,11.292l2.299,2.295l5.294-5.294l1.414,1.414L10.001,16.413z"
+												/>
+											</svg>
+										</div>
+										<div class="flex-1">Ads on Social Sites</div>
+									</li>
+								</list>
+
+								<loading-button
+									tag="a"
+									to="/register?type=1"
+									size="small"
+									rounded="large"
+									class="mt-8 w-full"
+								>Try for Free, Forever</loading-button>
+							</div>
+
+							<!-- <div class="mt-5 md:mt-0 relative md:absolute left-0 right-0 block bottom-0 mx-8 mb-6">
 								<loading-button
 									tag="a"
 									to="/register?type=1"
@@ -59,85 +172,211 @@
 									rounded="large"
 									class="w-full"
 								>Try for Free, Forever</loading-button>
-							</div>
+							</div>-->
 						</card>
 					</div>
-					<div class="md:w-1/2 px-4 flex">
-						<card class="mb-8 shadow-md flex-1">
+					<div class="md:w-1/2 flex">
+						<card
+							class="mb-8 md:mb-0 shadow-md md:shadow-none flex-1 md:rounded-none"
+							:is-padding="false"
+						>
 							<heading
 								size="large"
-								class="mb-2 text-orange-600 text-center"
+								class="mb-2 text-orange-600 text-center border-b border-gray-200 py-2"
 							>{{pricing['company-pro'].display_name}}</heading>
 
-							<heading
+							<!-- <heading
 								size="heading"
 								class="mb-5 text-center"
-							>Rs. {{pricing['company-pro'].package_price}} /month</heading>
+							>Rs. {{pricing['company-pro'].package_price}} /month</heading>-->
 
-							<list
-								:lists="['Add 1 company', 'Unlimited job posts', 'Email Support', 'Analytics', 'Advance Promotion', 'Ads on Social Sites', 'Many more...']"
-								unorderedListColor="text-orange-400"
-							></list>
+							<div class="py-5">
+								<heading size="heading2" class="text-center">&#8377; 299</heading>
+								<div class="text-sm text-gray-500 text-center">per month</div>
+							</div>
 
-							<loading-button
-								variant="warning"
-								size="small"
-								rounded="large"
-								class="mt-5 w-full opacity-50"
-							>Coming Soon</loading-button>
+							<div class="px-8 md:px-12 py-5">
+								<list
+									:lists="['Add 1 company', 'Unlimited job posts', 'Email Support', 'Advance Analytics', 'Promotion', 'Ads on Social Sites']"
+									unorderedListColor="text-orange-400"
+								></list>
+
+								<loading-button
+									variant="warning"
+									size="small"
+									rounded="large"
+									class="mt-8 w-full opacity-50"
+								>Coming Soon</loading-button>
+							</div>
 						</card>
 					</div>
 				</div>
 
-				<div class="md:flex -mx-4" v-if="plan === 'Recruiting Firm'">
-					<div class="md:w-1/2 px-4 flex">
-						<card class="mb-8 shadow-md flex-1 relative">
+				<div
+					class="md:flex md:flex md:shadow md:rounded-lg md:overflow-hidden"
+					v-if="plan === 'Recruiting Firm'"
+				>
+					<div class="md:w-1/2 flex">
+						<card
+							class="mb-8 md:mb-0 shadow-md md:shadow-none flex-1 md:rounded-none md:border-r md:border-gray-200"
+							:is-padding="false"
+						>
 							<heading
 								size="large"
-								class="mb-2 text-blue-600 text-center"
+								class="mb-2 text-blue-600 text-center border-b border-gray-200 py-2"
 							>{{pricing['consultancy-basic'].display_name}}</heading>
 
-							<heading size="heading" class="mb-5 text-center">Free Forever</heading>
+							<!-- <heading size="heading" class="mb-5 text-center">Free Forever</heading> -->
 
-							<list
-								:lists="['Add 5 company', 'Unlimited job posts', 'Email Support', 'Analytics', 'Basic Promotion']"
-								unorderedListColor="text-blue-400"
-							></list>
+							<div class="py-5">
+								<heading size="heading2" class="text-center">&#8377; 0</heading>
+								<div class="text-sm text-gray-500 text-center">per month</div>
+							</div>
 
-							<div class="mt-5 md:mt-0 relative md:absolute left-0 right-0 block bottom-0 mx-8 mb-6">
+							<div class="px-8 md:px-12 py-5">
+								<list :lists="[]" unorderedListColor="text-blue-400">
+									<li class="flex list-none mb-3">
+										<div class="w-10">
+											<svg
+												class="fill-current text-blue-600"
+												xmlns="http://www.w3.org/2000/svg"
+												width="24"
+												height="24"
+												viewBox="0 0 24 24"
+											>
+												<path
+													d="M12,2C6.486,2,2,6.486,2,12c0,5.514,4.486,10,10,10s10-4.486,10-10C22,6.486,17.514,2,12,2z M10.001,16.413l-3.713-3.705 L7.7,11.292l2.299,2.295l5.294-5.294l1.414,1.414L10.001,16.413z"
+												/>
+											</svg>
+										</div>
+										<div class="flex-1">Add 5 company</div>
+									</li>
+									<li class="flex list-none mb-3">
+										<div class="w-10">
+											<svg
+												class="fill-current text-blue-600"
+												xmlns="http://www.w3.org/2000/svg"
+												width="24"
+												height="24"
+												viewBox="0 0 24 24"
+											>
+												<path
+													d="M12,2C6.486,2,2,6.486,2,12c0,5.514,4.486,10,10,10s10-4.486,10-10C22,6.486,17.514,2,12,2z M10.001,16.413l-3.713-3.705 L7.7,11.292l2.299,2.295l5.294-5.294l1.414,1.414L10.001,16.413z"
+												/>
+											</svg>
+										</div>
+										<div class="flex-1">Unlimited job posts</div>
+									</li>
+									<li class="flex list-none mb-3">
+										<div class="w-10">
+											<svg
+												class="fill-current text-blue-600"
+												xmlns="http://www.w3.org/2000/svg"
+												width="24"
+												height="24"
+												viewBox="0 0 24 24"
+											>
+												<path
+													d="M12,2C6.486,2,2,6.486,2,12c0,5.514,4.486,10,10,10s10-4.486,10-10C22,6.486,17.514,2,12,2z M10.001,16.413l-3.713-3.705 L7.7,11.292l2.299,2.295l5.294-5.294l1.414,1.414L10.001,16.413z"
+												/>
+											</svg>
+										</div>
+										<div class="flex-1">Basic Email Support</div>
+									</li>
+									<li class="flex list-none mb-3">
+										<div class="w-10">
+											<svg
+												class="fill-current text-blue-600"
+												xmlns="http://www.w3.org/2000/svg"
+												width="24"
+												height="24"
+												viewBox="0 0 24 24"
+											>
+												<path
+													d="M12,2C6.486,2,2,6.486,2,12c0,5.514,4.486,10,10,10s10-4.486,10-10C22,6.486,17.514,2,12,2z M10.001,16.413l-3.713-3.705 L7.7,11.292l2.299,2.295l5.294-5.294l1.414,1.414L10.001,16.413z"
+												/>
+											</svg>
+										</div>
+										<div class="flex-1">Basic Analytics</div>
+									</li>
+
+									<li class="flex list-none line-through mb-3">
+										<div class="w-10">
+											<svg
+												class="fill-current text-blue-300"
+												xmlns="http://www.w3.org/2000/svg"
+												width="24"
+												height="24"
+												viewBox="0 0 24 24"
+											>
+												<path
+													d="M12,2C6.486,2,2,6.486,2,12c0,5.514,4.486,10,10,10s10-4.486,10-10C22,6.486,17.514,2,12,2z M10.001,16.413l-3.713-3.705 L7.7,11.292l2.299,2.295l5.294-5.294l1.414,1.414L10.001,16.413z"
+												/>
+											</svg>
+										</div>
+										<div class="flex-1">Promotion</div>
+									</li>
+
+									<li class="flex list-none line-through">
+										<div class="w-10">
+											<svg
+												class="fill-current text-blue-300"
+												xmlns="http://www.w3.org/2000/svg"
+												width="24"
+												height="24"
+												viewBox="0 0 24 24"
+											>
+												<path
+													d="M12,2C6.486,2,2,6.486,2,12c0,5.514,4.486,10,10,10s10-4.486,10-10C22,6.486,17.514,2,12,2z M10.001,16.413l-3.713-3.705 L7.7,11.292l2.299,2.295l5.294-5.294l1.414,1.414L10.001,16.413z"
+												/>
+											</svg>
+										</div>
+										<div class="flex-1">Ads on Social Sites</div>
+									</li>
+								</list>
+
 								<loading-button
 									tag="a"
-									to="/register?type=2"
+									to="/register?type=1"
 									size="small"
 									rounded="large"
-									class="w-full"
+									class="mt-8 w-full"
 								>Try for Free, Forever</loading-button>
 							</div>
 						</card>
 					</div>
-					<div class="md:w-1/2 px-4 flex">
-						<card class="mb-8 shadow-md flex-1">
+					<div class="md:w-1/2 flex">
+						<card
+							class="mb-8 md:mb-0 shadow-md md:shadow-none flex-1 md:rounded-none"
+							:is-padding="false"
+						>
 							<heading
 								size="large"
-								class="mb-2 text-orange-600 text-center"
+								class="mb-2 text-orange-600 text-center border-b border-gray-200 py-2"
 							>{{pricing['consultancy-pro'].display_name}}</heading>
 
-							<heading
+							<!-- <heading
 								size="heading"
 								class="mb-5 text-center"
-							>Rs. {{pricing['consultancy-pro'].package_price}} /month</heading>
+							>Rs. {{pricing['consultancy-pro'].package_price}} /month</heading>-->
+							<div class="py-5">
+								<heading size="heading2" class="text-center">&#8377; 399</heading>
+								<div class="text-sm text-gray-500 text-center">per month</div>
+							</div>
 
-							<list
-								:lists="['Add unlimited company', 'Unlimited job posts', 'Email Support', 'Analytics', 'Advance Promotion', 'Ads on Social Sites', 'Many more...']"
-								unorderedListColor="text-orange-400"
-							></list>
+							<div class="px-8 md:px-12 py-5">
+								<list
+									:lists="['Add unlimited company', 'Unlimited job posts', 'Email Support', 'Analytics', 'Advance Promotion', 'Ads on Social Sites']"
+									unorderedListColor="text-orange-400"
+								></list>
 
-							<loading-button
-								variant="warning"
-								size="small"
-								rounded="large"
-								class="mt-5 w-full opacity-50"
-							>Coming Soon</loading-button>
+								<loading-button
+									variant="warning"
+									size="small"
+									rounded="large"
+									class="mt-8 w-full opacity-50"
+								>Coming Soon</loading-button>
+							</div>
 						</card>
 					</div>
 				</div>

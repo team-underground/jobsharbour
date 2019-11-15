@@ -340,7 +340,7 @@ export default {
 			handler(title) {
 				document.title = title
 					? `${title} - Jobs Harbour`
-					: "Jobs harbour";
+					: "Jobs Harbour";
 			}
 		},
 
@@ -351,7 +351,7 @@ export default {
 				link.setAttribute("name", "description");
 				link.content = description
 					? description
-					: "Jobs Harbour is an online web based job listing site for both employers and job seekers. Our primary goal is to provide you upto date job information from all around Assam and the Northeast.";
+					: "Jobs Harbour is an online web based job listing site for both employers and job seekers. Its primary goal is to provide you upto date job information from all around Assam and the Northeast.";
 				document.getElementsByTagName("head")[0].appendChild(link);
 			}
 		}
