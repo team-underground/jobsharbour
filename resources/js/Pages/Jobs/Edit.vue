@@ -231,6 +231,7 @@
 									v-model="job.meta_keywords"
 									class="mb-4"
 									:disabled="!can['update-job-seo']"
+									placeholder="Add a tag and hit enter"
 								></tags-input>
 								<text-input
 									label="SEO Title"

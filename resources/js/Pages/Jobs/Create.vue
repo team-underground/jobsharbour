@@ -146,7 +146,13 @@
 										@keydown="delete errors['job_email']"
 									></text-input>
 
-									<tags-input label="Skills" v-model="job.job_skills" class="mb-4" placeholder="Add a skill and press enter" :errors="errors['job_skills']"></tags-input>
+									<tags-input
+										label="Skills"
+										v-model="job.job_skills"
+										class="mb-4"
+										placeholder="Add a skill and press enter"
+										:errors="errors['job_skills']"
+									></tags-input>
 
 									<simple-editor
 										label="Description"
@@ -208,7 +214,13 @@
 										v-model="job.meta_description"
 										:errors="errors['meta_description']"
 									></textarea-input>
-									<tags-input label="Meta Keywords" v-model="job.meta_keywords" class="mb-4" :errors="errors['meta_keywords']"></tags-input>
+									<tags-input
+										label="Meta Keywords"
+										v-model="job.meta_keywords"
+										class="mb-4"
+										:errors="errors['meta_keywords']"
+										placeholder="Add a tag and hit enter"
+									></tags-input>
 									<text-input
 										label="SEO Title"
 										class="mb-4"

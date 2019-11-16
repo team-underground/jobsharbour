@@ -17,8 +17,8 @@
 										<span slot="resetLabel">Clear Filters</span>
 									</ais-clear-refinements>
 								</div>
-								<hr class="mt-2 mb-4" />
-								<div class="mb-4" v-for="(refinement,key) in refinements" :key="key">
+								<hr class="mt-2 mb-5" />
+								<div class="mb-5" v-for="(refinement,key) in refinements" :key="key">
 									<heading class="mb-2 text-gray-700" size="small-caps">{{ refinement.label }}</heading>
 									<ais-refinement-list :limit="6" show-more :attribute="refinement.value">
 										<div
@@ -37,40 +37,30 @@
 												:key="item.value"
 												:model-value="item.isRefined"
 												:value="item.value"
-												class
 												@change="refine(item.value)"
 											>
-												<ais-highlight attribute="item" :hit="item" class="truncate text-sm flex-fill" />
-												<span class="text-muted ml-2">
+												<ais-highlight
+													attribute="item"
+													:hit="item"
+													class="truncate text-sm text-left flex-1 w-10"
+												/>
+
+												<span class="text-gray-600 ml-2">
 													({{
 													item.count
 													}})
 												</span>
 											</checkbox-input>
 											<a
-												class="cursor-pointer text-xs uppercase tracking-wide text-link flex items-center inline-flex text-blue-600 border-b-2 border-blue-200 hover:text-blue-700 hover:border-blue-400"
+												class="mt-4 cursor-pointer text-xs uppercase tracking-wide text-link flex items-center inline-flex text-blue-600 border-b-2 border-blue-200 hover:text-blue-700 hover:border-blue-400"
 												@click.prevent="toggleShowMore"
 												v-if="canToggleShowMore"
 											>
 												<template v-if="!isShowingMore">
-													<!-- <eva-icon
-                                                name="plus"
-                                                fill="currentColor"
-                                                height="16"
-                                                width="16"
-                                                class="mr-1"
-													></eva-icon-->
-													Show more
+													<icon class="w-4 h-4 mr-1" name="plus"></icon>Show more
 												</template>
 												<template v-else>
-													<!-- <eva-icon
-                                                name="minus"
-                                                fill="currentColor"
-                                                height="16"
-                                                width="16"
-                                                class="mr-1"
-													></eva-icon-->
-													Show less
+													<icon class="w-4 h-4 mr-1" name="minus"></icon>Show less
 												</template>
 											</a>
 										</div>
@@ -105,70 +95,96 @@
 									</div>
 								</ais-search-box>
 							</div>
-							<ais-hits>
-								<div slot-scope="{ items }">
-									<card v-for="(post, idx) in items" :key="idx" class="mb-4 relative">
-										<div
-											v-if="post.job_new === 'yes'"
-											class="bg-red-500 text-white uppercase tracking-wide text-xs font-semibold rounded-bl-full absolute top-0 right-0 pl-4 pr-2 py-2"
-										>New</div>
-										<div class="flex">
-											<div v-if="post.company.company_logo_path == null" class="mr-5 flex-shrink-0 w-16 h-16">
-												<avatar :name="post.company.company_name" color="blue" shape="rounded" size="xlarge"></avatar>
-											</div>
-											<div
-												v-else
-												class="flex-shrink-0 w-16 h-16 p-1 rounded-lg bg-gray-100 border-2 block mr-5 overflow-hidden"
-											>
-												<img
-													:src="post.company.company_logo_path"
-													alt="company-logo"
-													class="object-contain w-full h-full rounded-lg"
-												/>
-											</div>
 
-											<div class="flex-1">
-												<div class="flex mb-4">
-													<div class="flex-1">
-														<div class="mb-1 pr-3">
-															<!-- <badge class="mr-1" variant="danger">New</badge> -->
-															<heading size="large" class="inline-block">{{ post.job_title }}</heading>
+							<ais-state-results>
+								<template slot-scope="{ hits }">
+									<div v-if="hits.length > 0">
+										<ais-hits>
+											<div slot-scope="{ items }">
+												<card v-for="(post, idx) in items" :key="idx" class="mb-4 relative">
+													<div
+														v-if="post.job_new === 'yes'"
+														class="bg-red-500 text-white uppercase tracking-wide text-xs font-semibold rounded-bl-full absolute top-0 right-0 pl-4 pr-2 py-2"
+													>New</div>
+													<div class="flex">
+														<div
+															v-if="post.company.company_logo_path == null"
+															class="mr-5 flex-shrink-0 w-16 h-16"
+														>
+															<avatar :name="post.company.company_name" color="blue" shape="rounded" size="xlarge"></avatar>
 														</div>
-														<heading size="small" class="mb-1 font-semibold">{{ post.company.company_name }}</heading>
-														<heading size="small" class="mb-1">in {{post.job_category}}</heading>
-													</div>
-													<div class="md:w-48 flex-col justify-between mt-1">
-														<div class="md:mb-1 md:flex-1 flex items-center">
-															<icon class="mr-2 text-gray-400" :width="20" :height="20" name="map-pin"></icon>
-															<heading size="small">{{ post.job_location }}</heading>
+														<div
+															v-else
+															class="flex-shrink-0 w-16 h-16 p-1 rounded-lg bg-gray-100 border-2 block mr-5 overflow-hidden"
+														>
+															<img
+																:src="post.company.company_logo_path"
+																alt="company-logo"
+																class="object-contain w-full h-full rounded-lg"
+															/>
 														</div>
-														<div class="md:mb-1 md:flex-1 flex items-center">
-															<icon class="mr-2 text-gray-400" name="wallet" :width="20" :height="20"></icon>
-															<heading size="small">Rs. {{ post.job_salary }}/m</heading>
-														</div>
-														<div class="md:mb-1 md:flex-1 flex items-center">
-															<icon class="mr-2 text-gray-400" name="clock" :width="20" :height="20"></icon>
-															<heading size="small">{{ post.job_type }}</heading>
-														</div>
-													</div>
-												</div>
 
-												<div class="flex justify-between">
-													<heading size="small">{{ post.job_published_at_formatted }}</heading>
-													<link-to :to="`/jobs/${post.job_slug}`" class="text-sm">View Details</link-to>
-												</div>
+														<div class="flex-1">
+															<div class="flex mb-4">
+																<div class="flex-1">
+																	<div class="mb-1 pr-3">
+																		<!-- <badge class="mr-1" variant="danger">New</badge> -->
+																		<heading size="large" class="inline-block">{{ post.job_title }}</heading>
+																	</div>
+																	<heading size="small" class="mb-1 font-semibold">{{ post.company.company_name }}</heading>
+																	<heading size="small" class="mb-1">in {{post.job_category}}</heading>
+																</div>
+																<div class="md:w-48 flex-col justify-between mt-1">
+																	<div class="md:mb-1 md:flex-1 flex items-center">
+																		<icon class="mr-2 text-gray-400" :width="20" :height="20" name="map-pin"></icon>
+																		<heading size="small">{{ post.job_location }}</heading>
+																	</div>
+																	<div class="md:mb-1 md:flex-1 flex items-center">
+																		<icon class="mr-2 text-gray-400" name="wallet" :width="20" :height="20"></icon>
+																		<heading size="small">Rs. {{ post.job_salary }}/m</heading>
+																	</div>
+																	<div class="md:mb-1 md:flex-1 flex items-center">
+																		<icon class="mr-2 text-gray-400" name="clock" :width="20" :height="20"></icon>
+																		<heading size="small">{{ post.job_type }}</heading>
+																	</div>
+																</div>
+															</div>
+
+															<div class="flex justify-between">
+																<heading size="small">{{ post.job_published_at_formatted }}</heading>
+																<link-to :to="`/jobs/${post.job_slug}`" class="text-sm">View Details</link-to>
+															</div>
+														</div>
+													</div>
+												</card>
 											</div>
-										</div>
-									</card>
-								</div>
-							</ais-hits>
-							<ais-pagination
-								:class-names="{
+										</ais-hits>
+
+										<ais-pagination
+											:class-names="{
                             'ais-Pagination-item--selected': 'text-white',
                             'ais-Pagination-link':
-                                'icon-32 text-center rounded-full py-0 inline-flex items-center justify-center'
+                                'text-center mt-5 rounded-full py-0 inline-flex items-center justify-center'
                         }"
-							></ais-pagination>
+										></ais-pagination>
+									</div>
+									<div v-else>
+										<card class="text-center py-5">
+											<empty-state height="330px">
+												<div
+													class="p-4 inline-flex justify-center items-center bg-blue-100 text-blue-600 rounded-full mb-3"
+												>
+													<icon name="search" class="w-6 h-6"></icon>
+												</div>
+												<heading size="large" class="mb-1">No job posts found.</heading>
+												<heading
+													class="md:w-2/3 mx-auto"
+												>We could not find any job posts. Please search again with different keywords.</heading>
+											</empty-state>
+										</card>
+									</div>
+								</template>
+							</ais-state-results>
 						</div>
 						<div class="md:w-1/5 px-4 pt-5 md:pt-16">
 							<card class="mb-5 relative bg-orange-100 px-5 py-5" :is-padding="false">
@@ -277,6 +293,7 @@ export default {
 	}
 };
 </script>
+
 <style lang="scss">
 .ais-RefinementList-labelText,
 .ais-RefinementList-labelText span {
@@ -298,14 +315,23 @@ export default {
 	color: white !important;
 }
 .ais-Pagination-link {
-	height: 1rem;
-	width: 1rem;
+	height: 1.5rem;
+	width: 1.5rem;
 	line-height: 1rem;
-	padding: 1rem 1rem;
+	padding: 1.2rem;
 	display: inline-flex;
-	border-radius: 50%;
+	border-radius: 10px;
 }
 .ais-ClearRefinements-button {
+	background-color: #cae9f1 !important;
+	color: #20859f !important;
 	border-radius: 9999px;
+	font-weight: 500;
+	cursor: pointer !important;
+
+	&:hover,
+	&:focus {
+		background-color: #87cfe0 !important;
+	}
 }
 </style>

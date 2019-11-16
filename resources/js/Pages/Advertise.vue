@@ -7,17 +7,17 @@
 			<div class="text-center">
 				<h2 class="text-3xl md:text-5xl text-white font-bold tracking-tight">Advertise With Us</h2>
 				<p class="text-white text-lg mb-8">connect with the largest audience of active.</p>
-				<loading-button
+				<!-- <loading-button
 					variant="white"
 					class="shadow-md"
 					tag="a"
 					to="#"
 					v-scroll-to="'#contactform'"
-				>Get Started</loading-button>
+				>Get Started</loading-button>-->
 			</div>
 		</div>
 		<div class="py-10">
-			<div class="max-w-5xl mx-auto flex flex-wrap">
+			<!-- <div class="max-w-5xl mx-auto flex flex-wrap">
 				<flash-message class="w-full mx-4"></flash-message>
 				<div class="w-full md:w-1/3">
 					<div class="p-2 md:p-6 m-2">
@@ -79,10 +79,10 @@
 						to="hello@jobsharbour.com"
 					>hello@jobsharbour.com</mail-to>&nbsp;with your requests. Customized ads are subject to additional fees. Ads may be edited for clarity. We normally do not charge a set up fee. Additional fees may be charged if graphics or text requires additional time. We will contact you if that appears necessary. Ad text and graphics may be changed during the life of the contract for a nominal fee. No refunds will be given in the event of early cancellation of ads.
 				</alert>
-			</div>
+			</div>-->
 
-			<div class="max-w-2xl mx-auto py-8" id="contactform">
-				<heading size="heading" class="mb-8 text-center">Ready to reach our Audience? Get in Touch</heading>
+			<div class="max-w-2xl mx-auto pb-8 -mt-32" id="contactform">
+				<!-- <heading size="heading" class="mb-8 text-center">Get in Touch</heading> -->
 				<card>
 					<text-input
 						class="mb-4"

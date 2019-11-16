@@ -99,7 +99,7 @@
                                         </table>
                                         ​
                                         <p>Regards, <br />
-                                            <strong>Job Harbour's Team</strong>
+                                            Team Jobs Harbour
                                         </p>
                                     </td>
                                 </tr>

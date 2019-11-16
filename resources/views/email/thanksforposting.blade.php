@@ -16,6 +16,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            line-height: 1.5;
         }
     </style>
 </head>
@@ -72,20 +73,20 @@
                                     </td>
                                 </tr>
                             </table>
-                            <table style="background-color: #ffffff; padding: 40px 10px; margin-top: 15px; margin-bottom: 15px;" width="600" align="center">
+                            <table style="background-color: #ffffff; padding: 40px; margin-top: 15px; margin-bottom: 15px;" width="600" align="center">
                                 <tr>
                                     <td class="esd-stripe" align="center">
                                         <table class="es-footer-body" width="600" cellspacing="0" cellpadding="0" align="center">
                                             <tbody>
                                                 <tr>
                                                     <td class="esd-block-text es-p15t es-p10b" align="center">
-                                                        <h3 style="font-size: 2.125rem; margin:0; font-weight: 400; color: #4a5568;">Thank You</h3>
+                                                        <h3 style="font-size: 2.125rem; margin:0; font-weight: 400; color: #4a5568;">Thank You!</h3>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td class="esd-block-text es-p15t es-p10b" align="left">
-                                                        <p style="margin-top: 20px; font-size: 1.05rem; color: #4a5568;">Hi <strong>{{ $name }}</strong>,</p>
-                                                        <p style="margin-top: 20px; font-size: 1.05rem; color: #4a5568;">You have successfully submitted a job post. Your job post will go to the admin for moderation purpose and then only will be published on the website. We will notify you via email once the moderation process is completed. Our moderation process typically takes less than 24 hours.</p>
+                                                        <p style="margin-top: 20px; color: #4a5568;">Hi <strong>{{ $name }}</strong>,</p>
+                                                        <p style="margin-top: 20px; color: #4a5568;">You have successfully submitted a job post. Your job post will go to the admin for moderation purpose and then only will be published on the website. We will notify you via email once the moderation process is completed. Our moderation process typically takes less than 24 hours.</p>
                                                         <p style="color: #4a5568;">For any help, drop us an email at hello@jobsharbour.com</p>
 
                                                         <p style="matgin-top: 20px; color: #4a5568;">
@@ -110,9 +111,9 @@
                                                         <a href="http://jobsharbour.com" target="_blank"><img src="{{url('jh-logo.svg')}}" alt="" width="150"></a>
                                                     </td>
                                                     <td width="50%" class="esd-block-text es-p15t es-p10b" align="right">
-                                                        <p style="margin: 0; color: #4a5568; font-weight: 400; letter-spacing: .025em; font-size: 0.75rem; line-height: 1.325rem;">&copy; jobsharbour.com</p>
-                                                        <p style="margin: 0; color: #4a5568; letter-spacing: .025em; font-size: 0.75rem; line-height: 1.325rem;">Guwahati, Assam</p>
-                                                        <p style="margin: 0; color: #4a5568; letter-spacing: .025em; font-size: 0.75rem; line-height: 1.325rem;"><a href="https://www.facebook.com/Jobs-Harbour-108378050599646/" target="_blank" style="color: #4a5568; text-decoration: none;">Facebook</a> | <a href="https://twitter.com/jobs_harbour" target="_blank" style="color: #4a5568; text-decoration: none;">Twitter</a> | <a href="https://www.linkedin.com/company/30247298" target="_blank" style="color: #4a5568; text-decoration: none;">LinkedIn</a> | <a href="https://www.instagram.com/jobsharbour/" target="_blank" style="color: #4a5568; text-decoration: none;">Instagram</a></p>
+                                                        <p style="margin: 0; color: #4a5568; font-weight: 400; font-size: 0.75rem; line-height: 1.325rem;">Copyrights &copy; jobsharbour.com</p>
+                                                        <p style="margin: 0; color: #4a5568; font-size: 0.75rem; line-height: 1.325rem;">Guwahati, Assam</p>
+                                                        <p style="margin: 0; color: #4a5568; font-size: 0.75rem; line-height: 1.325rem;"><a href="https://www.facebook.com/Jobs-Harbour-108378050599646/" target="_blank" style="color: #4a5568; text-decoration: none;">Facebook</a> | <a href="https://twitter.com/jobs_harbour" target="_blank" style="color: #4a5568; text-decoration: none;">Twitter</a> | <a href="https://www.linkedin.com/company/30247298" target="_blank" style="color: #4a5568; text-decoration: none;">LinkedIn</a> | <a href="https://www.instagram.com/jobsharbour/" target="_blank" style="color: #4a5568; text-decoration: none;">Instagram</a></p>
                                                     </td>
                                                 </tr>
 

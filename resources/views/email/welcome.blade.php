@@ -109,6 +109,15 @@
                                         </table>
                                     </td>
                                 </tr>
+
+                                <tr>
+                                    <td align="left" style="word-break:break-word;">
+                                        <div style="margin-top: 40px;text-align:left;color:#2d3748;">
+                                            Regards, <br>
+                                            Team Jobs Harbour
+                                        </div>
+                                    </td>
+                                </tr>
                             </table>
 
 

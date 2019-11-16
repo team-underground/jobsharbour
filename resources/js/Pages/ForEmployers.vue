@@ -191,7 +191,7 @@
 							>Rs. {{pricing['company-pro'].package_price}} /month</heading>-->
 
 							<div class="py-5">
-								<heading size="heading2" class="text-center">&#8377; 299</heading>
+								<heading size="heading2" class="text-center">&#8377; ***</heading>
 								<div class="text-sm text-gray-500 text-center">per month</div>
 							</div>
 
@@ -202,11 +202,13 @@
 								></list>
 
 								<loading-button
+									tag="a"
+									to="mailto:hello@jobsharbour.com"
 									variant="warning"
 									size="small"
 									rounded="large"
-									class="mt-8 w-full opacity-50"
-								>Coming Soon</loading-button>
+									class="mt-8 w-full opacity-50 mailtoui"
+								>Contact Us</loading-button>
 							</div>
 						</card>
 					</div>
@@ -360,7 +362,7 @@
 								class="mb-5 text-center"
 							>Rs. {{pricing['consultancy-pro'].package_price}} /month</heading>-->
 							<div class="py-5">
-								<heading size="heading2" class="text-center">&#8377; 399</heading>
+								<heading size="heading2" class="text-center">&#8377; ***</heading>
 								<div class="text-sm text-gray-500 text-center">per month</div>
 							</div>
 
@@ -371,11 +373,13 @@
 								></list>
 
 								<loading-button
+									tag="a"
+									to="mailto:hello@jobsharbour.com"
 									variant="warning"
 									size="small"
 									rounded="large"
-									class="mt-8 w-full opacity-50"
-								>Coming Soon</loading-button>
+									class="mt-8 w-full opacity-50 mailtoui"
+								>Contact Us</loading-button>
 							</div>
 						</card>
 					</div>
