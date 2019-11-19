@@ -327,8 +327,6 @@
 </template>
 
 <script>
-import "quill/dist/quill.snow.css";
-
 const MailtoUI = require("mailtoui/dist/mailtoui-min.js");
 
 import Layout from "@/Shared/Layout";
@@ -417,12 +415,14 @@ export default {
 }
 
 .job-description a {
+    text-decoration: none;
     display: inline-block;
     color: #29a9c9;
     border-bottom: 2px solid #cae9f1;
 }
 .job-description a:hover,
 .job-description a:focus {
+    text-decoration: none;
     border-color: #87cfe0;
     color: #2598b5;
 }
