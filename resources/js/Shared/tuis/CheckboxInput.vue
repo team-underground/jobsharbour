@@ -88,7 +88,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 /* Styles for hiding the native checkbox */
 input[type="checkbox"].check-custom {
 	position: absolute;
@@ -107,7 +107,6 @@ input[type="checkbox"].check-custom ~ .check-toggle {
 	display: inline-block;
 	vertical-align: middle;
 	border: 2px solid #969696;
-	// border-radius: 50%;
 	border-radius: 4px;
 	cursor: pointer;
 	box-sizing: border-box;

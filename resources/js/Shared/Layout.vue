@@ -382,7 +382,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 body {
 	-webkit-tap-highlight-color: transparent;
 }

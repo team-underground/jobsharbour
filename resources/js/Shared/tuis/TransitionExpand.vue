@@ -74,7 +74,7 @@ export default {
 }
 </style>
 
-<style>
+<style scoped>
 .expand-enter-active,
 .expand-leave-active {
 	transition: height 0.4s ease-in-out;

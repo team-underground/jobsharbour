@@ -133,7 +133,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 /* Styles for hiding the native radio button */
 input[type="radio"].check-custom {
 	position: absolute;
