@@ -25,9 +25,10 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="dns-prefetch" href="//unpkg.com">
-    <link rel="dns-prefetch" href="//loremflickr.com">
+    <link rel="dns-prefetch" href="//cdn.quilljs.com">
 
-    <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
+    <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.snow.css">
     <script src="{{ mix('/js/app.js') }}" defer></script>
 
 
