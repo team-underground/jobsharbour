@@ -101,7 +101,13 @@
 									<div v-if="hits.length > 0">
 										<ais-hits>
 											<div slot-scope="{ items }">
-												<card v-for="(post, idx) in items" :key="idx" class="mb-4 relative">
+												<card
+													tag="a"
+													:to="`/jobs/${post.job_slug}`"
+													v-for="(post, idx) in items"
+													:key="idx"
+													class="mb-4 relative"
+												>
 													<div
 														v-if="post.job_new === 'yes'"
 														class="bg-red-500 text-white uppercase tracking-wide text-xs font-semibold rounded-bl-full absolute top-0 right-0 pl-4 pr-2 py-2"
@@ -313,6 +319,8 @@ export default {
 }
 .ais-Pagination-item--selected .ais-Pagination-link {
 	color: white !important;
+	background-color: #5ebed6 !important;
+	border-color: #5ebed6 !important;
 }
 .ais-Pagination-link {
 	height: 1.5rem;

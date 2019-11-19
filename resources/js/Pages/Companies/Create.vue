@@ -21,7 +21,7 @@
 			</div>
 		</div>
 
-		<div class="py-10">
+		<div class="py-10 px-4">
 			<div class="max-w-6xl mx-auto">
 				<div class="md:flex -mx-4">
 					<div class="md:w-1/3 px-4">
