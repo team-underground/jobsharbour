@@ -30,8 +30,10 @@
                                 ></icon>
                                 <heading>{{ post.job_location }}</heading>
                             </div>
+
                             <div
                                 class="md:flex-1 flex items-center mb-2 md:mb-0"
+                                v-if="post.organisation_type == 'Private'"
                             >
                                 <icon
                                     class="mr-2 text-gray-400"
@@ -39,6 +41,7 @@
                                 ></icon>
                                 <heading>Rs. {{ post.job_salary }} /m</heading>
                             </div>
+
                             <div class="md:flex-1 flex items-center">
                                 <icon
                                     class="mr-2 text-gray-400"
@@ -223,17 +226,21 @@
 							>{{ readMoreActivated == false ? '+ Read more' : '- Read less'}}</a>-->
 
                             <div
-                                class="mb-4 job-description"
+                                class="mb-4 job-description ql-editor"
                                 v-html="longText"
                             ></div>
 
-                            <heading size="large" class="mb-1">Skills</heading>
-                            <badge
-                                v-for="(skill, idx) in post.job_skills"
-                                :key="idx"
-                                class="mr-2"
-                                >{{ skill }}</badge
-                            >
+                            <template v-if="post.job_skills.length">
+                                <heading size="large" class="mb-1"
+                                    >Skills</heading
+                                >
+                                <badge
+                                    v-for="(skill, idx) in post.job_skills"
+                                    :key="idx"
+                                    class="mr-2"
+                                    >{{ skill }}</badge
+                                >
+                            </template>
                         </card>
                     </div>
 

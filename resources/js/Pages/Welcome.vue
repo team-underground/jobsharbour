@@ -129,7 +129,7 @@
 												<icon class="mr-2 text-gray-400" :width="20" :height="20" name="map-pin"></icon>
 												<heading size="small">{{ post.job_location }}</heading>
 											</div>
-											<div class="mb-1 md:flex-1 flex items-center">
+											<div class="mb-1 md:flex-1 flex items-center" v-if="post.organisation_type == 'Private'">
 												<icon class="mr-2 text-gray-400" name="wallet" :width="20" :height="20"></icon>
 												<heading size="small">Rs. {{ post.job_salary }}/m</heading>
 											</div>
