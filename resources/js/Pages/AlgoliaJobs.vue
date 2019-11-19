@@ -134,7 +134,7 @@
 															<div class="flex mb-4">
 																<div class="flex-1">
 																	<div class="mb-1 pr-3">
-																		<!-- <badge class="mr-1" variant="danger">New</badge> -->
+																		 
 																		<heading size="large" class="inline-block">{{ post.job_title }}</heading>
 																	</div>
 																	<heading size="small" class="mb-1 font-semibold">{{ post.company.company_name }}</heading>
@@ -145,7 +145,7 @@
 																		<icon class="mr-2 text-gray-400" :width="20" :height="20" name="map-pin"></icon>
 																		<heading size="small">{{ post.job_location }}</heading>
 																	</div>
-																	<div class="md:mb-1 md:flex-1 flex items-center">
+																	<div class="md:mb-1 md:flex-1 flex items-center" v-if="post.organisation_type == 'Private'">
 																		<icon class="mr-2 text-gray-400" name="wallet" :width="20" :height="20"></icon>
 																		<heading size="small">Rs. {{ post.job_salary }}/m</heading>
 																	</div>
