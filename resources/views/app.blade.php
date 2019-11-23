@@ -33,6 +33,7 @@
 
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
+    @if(env('APP_ENV') == 'production' )
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151880965-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -44,6 +45,7 @@
 
         gtag('config', 'UA-151880965-1');
     </script>
+    @endif
     @routes
 </head>
 
