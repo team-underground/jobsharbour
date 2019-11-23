@@ -8,7 +8,11 @@
 
 				<div class="md:flex -mx-4">
 					<div class="md:w-2/3 px-4">
-						<heading size="heading2" class="inline-block mb-2">{{ post.job_title}}</heading>
+						<heading size="heading2" class="inline-block mb-2">
+							{{
+							post.job_title
+							}}
+						</heading>
 						<heading class="mb-4">
 							{{ post.company.company_name }}
 							<span class="mx-2 text-gray-400">&bull;</span>
@@ -20,22 +24,38 @@
 								<icon class="mr-2 text-gray-400" name="map-pin"></icon>
 								<heading>{{ post.job_location }}</heading>
 							</div>
-							<div class="md:flex-1 flex items-center mb-2 md:mb-0">
+
+							<div
+								class="md:flex-1 flex items-center mb-2 md:mb-0"
+								v-if="post.organisation_type == 'Private'"
+							>
 								<icon class="mr-2 text-gray-400" name="wallet"></icon>
 								<heading>Rs. {{ post.job_salary }} /m</heading>
 							</div>
+
 							<div class="md:flex-1 flex items-center">
 								<icon class="mr-2 text-gray-400" name="clock"></icon>
 								<heading>{{ post.job_type }}</heading>
 							</div>
 						</div>
-						<heading size="small">{{ post.job_published_at_formatted }}</heading>
+						<heading size="small">
+							{{
+							post.job_published_at_formatted
+							}}
+						</heading>
 					</div>
-					<div class="md:w-1/3 px-4 px-4 flex md:flex-col mt-4 md:mt-0" :class="{'hidden':post.organisation_type=='Government'}">
+					<div
+						class="md:w-1/3 px-4 px-4 flex md:flex-col mt-4 md:mt-0"
+						:class="{
+                            hidden: post.organisation_type == 'Government'
+                        }"
+					>
 						<div class="flex-1 mr-4 md:mr-0">
 							<loading-button
 								tag="a"
-								:to="`mailto:${post.job_email}?subject=Apply for the post of ${post.job_title}&bcc=hello@jobsharbour.com`"
+								:to="
+                                    `mailto:${post.job_email}?subject=Apply for the post of ${post.job_title}&bcc=hello@jobsharbour.com`
+                                "
 								class="mailtoui w-full md:w-64 mb-2"
 								rounded="large"
 								size="small"
@@ -49,7 +69,9 @@
 									variant-type="outline"
 									type="button"
 									rounded="large"
-									v-clipboard:copy="route('jobs.show', post.job_slug)"
+									v-clipboard:copy="
+                                        route('jobs.show', post.job_slug)
+                                    "
 									v-clipboard:success="onCopy"
 									v-clipboard:error="onError"
 								>Copy URL</loading-button>
@@ -151,30 +173,31 @@
 		<div class="py-10 px-4">
 			<div class="max-w-6xl mx-auto">
 				<div class="md:flex -mx-4">
-					<div class="px-4 flex flex-col" :class="{'w-full':post.organisation_type=='Government', 'md:w-2/3':post.organisation_type=='Private'}">
+					<div
+						class="px-4 flex flex-col"
+						:class="{
+                            'w-full': post.organisation_type == 'Government',
+                            'md:w-2/3': post.organisation_type == 'Private'
+                        }"
+					>
 						<card class="mb-10 pb-5 flex-1">
-							<!-- <heading size="large" class="mb-1">Experience</heading>
-							<heading class="mb-4">Freshers/1-2 Years Experience</heading>-->
-
 							<heading size="large" class="mb-1">Job Description</heading>
 
-							<!-- <div class="mb-4" v-if="!readMoreActivated" v-html="longText.slice(0, 150) + ' [...]'"></div>
-							<div class="mb-4" v-if="readMoreActivated" v-html="longText"></div>-->
+							<div class="mb-4 job-description ql-editor" v-html="longText"></div>
 
-							<!-- <a
-								class="mb-4 text-sm inline-flex text-blue-600 border-b-2 border-blue-200 hover:text-blue-700 hover:border-blue-400"
-								href="#"
-								@click="readMoreActivated = !readMoreActivated"
-							>{{ readMoreActivated == false ? '+ Read more' : '- Read less'}}</a>-->
-
-							<div class="mb-4 job-description" v-html="longText"></div>
-
-							<heading size="large" class="mb-1">Skills</heading>
-							<badge v-for="(skill, idx) in post.job_skills" :key="idx" class="mr-2">{{ skill }}</badge>
+							<template v-if="post.job_skills.length">
+								<heading size="large" class="mb-1">Skills</heading>
+								<badge v-for="(skill, idx) in post.job_skills" :key="idx" class="mr-2">{{ skill }}</badge>
+							</template>
 						</card>
 					</div>
 
-					<div class="md:w-1/3 px-4 flex flex-col" :class="{'hidden':post.organisation_type=='Government'}">
+					<div
+						class="md:w-1/3 px-4 flex flex-col"
+						:class="{
+                            hidden: post.organisation_type == 'Government'
+                        }"
+					>
 						<card class="mb-10 flex-1">
 							<heading size="large" class="mb-4">About {{ post.company.company_name }}</heading>
 
@@ -192,16 +215,28 @@
 								/>
 							</div>
 
-							<heading>{{ post.company.company_description }}</heading>
+							<heading>
+								{{
+								post.company.company_description
+								}}
+							</heading>
 
 							<div class="my-5">
 								<div class="py-2 md:flex-1 flex items-center border-b justify-between">
 									<heading size="small-caps">Industry</heading>
-									<heading size="small">{{ post.company.company_industry }}</heading>
+									<heading size="small">
+										{{
+										post.company.company_industry
+										}}
+									</heading>
 								</div>
 								<div class="py-2 md:flex-1 flex items-center border-b justify-between">
 									<heading size="small-caps">Company Size</heading>
-									<heading size="small">{{ post.company.company_no_of_employees }}</heading>
+									<heading size="small">
+										{{
+										post.company.company_no_of_employees
+										}}
+									</heading>
 								</div>
 								<div class="py-2 md:flex-1 flex items-center border-b justify-between">
 									<heading size="small-caps">Website</heading>
@@ -213,12 +248,11 @@
 							</div>
 
 							<heading size="large" class="mb-1">Working Benefits</heading>
-							<heading>{{ post.company.company_benefits }}</heading>
-							<!-- <list
-								class="mb-4"
-								unordered-list-color="text-blue-400"
-								:lists="['Free Lunch', 'Health Care', 'Laptop', 'Career Growth', 'Flexible Holidays']"
-							></list>-->
+							<heading>
+								{{
+								post.company.company_benefits
+								}}
+							</heading>
 						</card>
 					</div>
 				</div>
@@ -310,8 +344,41 @@ export default {
 .bg-whatsapp {
 	background-color: #4fce5d !important;
 }
-.job-description ul {
-	list-style-type: disc;
-	margin-left: 1.5rem;
+.job-description a {
+	text-decoration: none;
+	display: inline-block;
+	color: #29a9c9;
+	border-bottom: 2px solid #cae9f1;
+}
+.job-description a:hover,
+.job-description a:focus {
+	text-decoration: none;
+	border-color: #87cfe0;
+	color: #2598b5;
+}
+
+.ql-editor {
+	line-height: 1.5;
+	padding: 0;
+}
+
+.ql-editor ol,
+.ql-editor ul {
+	padding-left: 0 !important;
+}
+.ql-editor ol > li,
+.ql-editor ul > li {
+	list-style-type: none;
+	margin-bottom: 0.5rem !important;
+}
+
+.ql-editor .ql-indent-1:not(.ql-direction-rtl),
+.ql-editor li.ql-indent-1:not(.ql-direction-rtl) {
+	padding-left: 4rem !important;
+}
+
+.ql-editor .ql-indent-2:not(.ql-direction-rtl),
+.ql-editor li.ql-indent-2:not(.ql-direction-rtl) {
+	padding-left: 6.5rem !important;
 }
 </style>

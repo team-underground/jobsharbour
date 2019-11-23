@@ -24,11 +24,11 @@
 			</div>
 		</div>
 
-		<div class="py-10">
+		<div class="py-10 px-4">
 			<div class="max-w-6xl mx-auto">
 				<alert class="my-6" v-if="$page.auth.user.type == 'Consultancy'">
 					You could list upto maximum of 5 companies in your free period. For further information contact our
-					<link-to to="#">sales team</link-to>&nbsp;.
+					<link-to to="mailto:hello@jobsharbour.com">sales team</link-to>&nbsp;.
 				</alert>
 				<div class="relative">
 					<div class="absolute fixed top-0 bottom-0 right-0 w-6 bg-white-linear rounded-r-lg opacity-75"></div>

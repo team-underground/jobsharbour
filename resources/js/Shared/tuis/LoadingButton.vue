@@ -113,12 +113,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .base-button + .base-button {
 	margin-left: 1em;
 }
 
-// Spinner
 @keyframes spinner {
 	to {
 		transform: rotate(360deg);

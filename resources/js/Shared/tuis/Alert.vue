@@ -82,10 +82,9 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .alert-custom {
 	border-radius: 10px;
-	// border: 0;
 }
 .fill-current {
 	fill: currentColor;

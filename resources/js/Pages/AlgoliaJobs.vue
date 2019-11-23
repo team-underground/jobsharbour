@@ -101,7 +101,13 @@
 									<div v-if="hits.length > 0">
 										<ais-hits>
 											<div slot-scope="{ items }">
-												<card v-for="(post, idx) in items" :key="idx" class="mb-4 relative">
+												<card
+													tag="a"
+													:to="`/jobs/${post.job_slug}`"
+													v-for="(post, idx) in items"
+													:key="idx"
+													class="mb-4 relative"
+												>
 													<div
 														v-if="post.job_new === 'yes'"
 														class="bg-red-500 text-white uppercase tracking-wide text-xs font-semibold rounded-bl-full absolute top-0 right-0 pl-4 pr-2 py-2"
@@ -128,7 +134,7 @@
 															<div class="flex mb-4">
 																<div class="flex-1">
 																	<div class="mb-1 pr-3">
-																		<!-- <badge class="mr-1" variant="danger">New</badge> -->
+																		 
 																		<heading size="large" class="inline-block">{{ post.job_title }}</heading>
 																	</div>
 																	<heading size="small" class="mb-1 font-semibold">{{ post.company.company_name }}</heading>
@@ -139,7 +145,7 @@
 																		<icon class="mr-2 text-gray-400" :width="20" :height="20" name="map-pin"></icon>
 																		<heading size="small">{{ post.job_location }}</heading>
 																	</div>
-																	<div class="md:mb-1 md:flex-1 flex items-center">
+																	<div class="md:mb-1 md:flex-1 flex items-center" v-if="post.organisation_type == 'Private'">
 																		<icon class="mr-2 text-gray-400" name="wallet" :width="20" :height="20"></icon>
 																		<heading size="small">Rs. {{ post.job_salary }}/m</heading>
 																	</div>
@@ -313,6 +319,8 @@ export default {
 }
 .ais-Pagination-item--selected .ais-Pagination-link {
 	color: white !important;
+	background-color: #5ebed6 !important;
+	border-color: #5ebed6 !important;
 }
 .ais-Pagination-link {
 	height: 1.5rem;

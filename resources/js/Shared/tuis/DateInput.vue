@@ -152,7 +152,7 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
 .date-input {
 	background-color: #fff;
 	border-radius: 10px;

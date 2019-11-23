@@ -2,7 +2,7 @@
 	<div>
 		<label v-if="label" class="form-label block mb-1 font-semibold text-gray-700">{{ label }}</label>
 		<div class="relative">
-			<div class="simple-editor" :class="{'error' : errors.length}">
+			<div class="simple-editor" :class="{ error: errors.length }">
 				<div class="editor-node rounded-b-lg" ref="editorNode"></div>
 			</div>
 
@@ -62,9 +62,9 @@ export default {
 							{ list: "bullet" },
 							{ align: [] }
 						],
-
-						["clean"],
-						["link"]
+						[{ indent: "-1" }, { indent: "+1" }],
+						["link"],
+						["clean"]
 					]
 				},
 				theme: "snow"
@@ -123,7 +123,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .ql-toolbar.ql-snow {
 	border-top-left-radius: 0.5rem;
 	border-top-right-radius: 0.5rem;

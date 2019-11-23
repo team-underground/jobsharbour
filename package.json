@@ -26,6 +26,8 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "@ckeditor/ckeditor5-build-classic": "^15.0.0",
+        "@ckeditor/ckeditor5-vue": "^1.0.0",
         "algoliasearch": "^3.35.1",
         "autosize": "^4.0.2",
         "instantsearch.css": "^7.3.1",

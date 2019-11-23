@@ -25,19 +25,24 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="dns-prefetch" href="//unpkg.com">
-    <link rel="dns-prefetch" href="//loremflickr.com">
+    <link rel="dns-prefetch" href="//cdn.quilljs.com">
 
-
-    <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
+    <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.snow.css">
     <script src="{{ mix('/js/app.js') }}" defer></script>
+
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151880965-1"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-    gtag('config', 'UA-151880965-1');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-151880965-1');
     </script>
     @routes
 </head>
@@ -49,11 +54,20 @@
     <script>
         function initFreshChat() {
             window.fcWidget.init({
-            token: "9ca3fe40-9986-40dc-942f-6038ae919d08",
-            host: "https://wchat.freshchat.com"
+                token: "9ca3fe40-9986-40dc-942f-6038ae919d08",
+                host: "https://wchat.freshchat.com"
             });
         }
-        function initialize(i,t){var e;i.getElementById(t)?initFreshChat():((e=i.createElement("script")).id=t,e.async=!0,e.src="https://wchat.freshchat.com/js/widget.js",e.onload=initFreshChat,i.head.appendChild(e))}function initiateCall(){initialize(document,"freshchat-js-sdk")}window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
+
+        function initialize(i, t) {
+            var e;
+            i.getElementById(t) ? initFreshChat() : ((e = i.createElement("script")).id = t, e.async = !0, e.src = "https://wchat.freshchat.com/js/widget.js", e.onload = initFreshChat, i.head.appendChild(e))
+        }
+
+        function initiateCall() {
+            initialize(document, "freshchat-js-sdk")
+        }
+        window.addEventListener ? window.addEventListener("load", initiateCall, !1) : window.attachEvent("load", initiateCall, !1);
     </script>
     @endif
 

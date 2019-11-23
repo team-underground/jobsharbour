@@ -12,10 +12,15 @@
 				</div>
 			</div>
 			<div class="flex-1">
-				<div class="text-right py-4 pr-8">
-					<link-to to="/">
-						<icon name="chevron-left" class="-ml-2"></icon>Back to Website
-					</link-to>
+				<div class="flex justify-between md:justify-end items-center py-4 px-8 md:pr-8">
+					<inertia-link href="/" class="md:hidden">
+						<img src="/jh-logo.svg" alt="jh" width="140" />
+					</inertia-link>
+					<div>
+						<link-to to="/">
+							<icon name="chevron-left" class="-ml-2"></icon>Back to Website
+						</link-to>
+					</div>
 				</div>
 				<div class="max-w-xl mx-auto w-full pt-2 pb-8">
 					<div class="px-8">

@@ -3,9 +3,9 @@
 		<div class="bg-white px-4 relative z-30" :class="{'shadow-sm' : !isUrl('')}">
 			<div class="md:flex items-center justify-between mx-auto max-w-6xl">
 				<div class="flex justify-between md:flex-none items-center">
-					<a href="/" class="flex items-center py-2">
+					<inertia-link href="/" class="flex items-center py-2">
 						<img src="/jh-logo.svg" alt="jh" class="h-10" />
-					</a>
+					</inertia-link>
 
 					<div
 						class="inline-block inline-flex items-center justify-center w-16 h-16 rounded-full mr-2 cursor-pointer md:hidden"
@@ -40,34 +40,34 @@
 				</div>
 
 				<div class="hidden md:block">
-					<a
+					<inertia-link
 						v-if="$page.auth.user"
 						href="/dashboard"
 						:class="isUrl('dashboard') ? 'menu-active text-blue-600' : 'text-gray-600'"
 						class="mr-6 py-6 inline-block font-medium hover:text-blue-600"
-					>Dashboard</a>
-					<a
+					>Dashboard</inertia-link>
+					<inertia-link
 						href="/jobs"
 						:class="isUrl('jobs') ? 'menu-active text-blue-600' : 'text-gray-600'"
 						class="mr-6 py-6 inline-block font-medium hover:text-blue-600"
-					>Job Listings</a>
-					<a
+					>Job Listings</inertia-link>
+					<inertia-link
 						href="/categories"
 						:class="isUrl('categories') ? 'menu-active text-blue-600' : 'text-gray-600'"
 						class="mr-6 py-6 inline-block font-medium hover:text-blue-600"
-					>Categories</a>
+					>Categories</inertia-link>
 
-					<a
+					<inertia-link
 						href="/for-employers"
 						:class="isUrl('for-employers') ? 'menu-active text-blue-600' : 'text-gray-600'"
 						class="py-6 mr-6 inline-block font-medium hover:text-blue-600"
-					>For Employers</a>
+					>For Employers</inertia-link>
 
-					<a
+					<inertia-link
 						href="/about"
 						:class="isUrl('about') ? 'menu-active text-blue-600' : 'text-gray-600'"
 						class="py-6 inline-block font-medium hover:text-blue-600"
-					>About</a>
+					>About</inertia-link>
 				</div>
 
 				<div class="hidden md:block">
@@ -90,19 +90,19 @@
 								<div
 									class="mt-2 bg-white rounded-lg border-t border-gray-100 w-48 py-1 shadow-lg overflow-hidden"
 								>
-									<a
+									<inertia-link
 										class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600"
 										href="/admin/jobs"
-									>Job Posts</a>
+									>Job Posts</inertia-link>
 
-									<a
+									<inertia-link
 										class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600"
 										href="#"
-									>Notifications</a>
-									<a
+									>Notifications</inertia-link>
+									<inertia-link
 										class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600"
 										href="/settings"
-									>Settings</a>
+									>Settings</inertia-link>
 
 									<div class="border-t my-1 border-gray-200"></div>
 
@@ -116,10 +116,10 @@
 						</dropdown>
 					</template>
 					<template v-else>
-						<a
+						<inertia-link
 							href="/login"
 							class="px-4 py-5 mr-3 inline-block font-medium text-gray-600 hover:text-blue-600"
-						>Login</a>
+						>Login</inertia-link>
 						<loading-button tag="a" to="/register" size="small" rounded="large">Post a Job</loading-button>
 					</template>
 				</div>
@@ -127,41 +127,41 @@
 
 			<transition-expand>
 				<div class="md:hidden mt-1" v-if="showNavbar">
-					<a
+					<inertia-link
 						href="/"
 						:class="isUrl('/') ? 'text-blue-600' : 'text-gray-600'"
 						class="border-t px-2 py-3 block font-medium hover:text-blue-600"
-					>Home</a>
-					<a
+					>Home</inertia-link>
+					<inertia-link
 						v-if="$page.auth.user"
 						href="/dashboard"
 						:class="isUrl('dashboard') ? 'text-blue-600' : 'text-gray-600'"
 						class="border-t px-2 py-3 block font-medium hover:text-blue-600"
-					>Dashboard</a>
+					>Dashboard</inertia-link>
 
-					<a
+					<inertia-link
 						href="/jobs"
 						:class="isUrl('jobs') ? 'text-blue-600' : 'text-gray-600'"
 						class="border-t px-2 py-3 block font-medium hover:text-blue-600"
-					>Jobs Listing</a>
+					>Jobs Listing</inertia-link>
 
-					<a
+					<inertia-link
 						href="/categories"
 						:class="isUrl('categories') ? 'text-blue-600' : 'text-gray-600'"
 						class="border-t px-2 py-3 block font-medium hover:text-blue-600"
-					>Categories</a>
+					>Categories</inertia-link>
 
-					<a
+					<inertia-link
 						href="/for-employers"
 						:class="isUrl('for-employers') ? 'text-blue-600' : 'text-gray-600'"
 						class="border-t px-2 py-3 block font-medium hover:text-blue-600"
-					>For Employers</a>
+					>For Employers</inertia-link>
 
-					<a
+					<inertia-link
 						href="/about"
 						:class="isUrl('about') ? 'text-blue-600' : 'text-gray-600'"
 						class="border-t px-2 py-3 block font-medium hover:text-blue-600"
-					>About Jobs Harbour</a>
+					>About Jobs Harbour</inertia-link>
 
 					<div class="flex items-center py-2 border-t" v-if="$page.auth.user">
 						<div class="flex flex-1">
@@ -186,18 +186,18 @@
 
 					<div class="border-t flex" v-else>
 						<div class="flex-1 border-r text-center">
-							<a
+							<inertia-link
 								href="/login"
 								:class="isUrl('login') ? 'text-blue-600' : 'text-gray-600'"
 								class="px-2 py-3 block font-medium hover:text-blue-600"
-							>Login</a>
+							>Login</inertia-link>
 						</div>
 						<div class="flex-1 text-center">
-							<a
+							<inertia-link
 								href="/register"
 								:class="isUrl('register') ? 'text-blue-600' : 'text-gray-600'"
 								class="px-2 py-3 block font-medium hover:text-blue-600"
-							>Create free account</a>
+							>Create free account</inertia-link>
 						</div>
 					</div>
 				</div>
@@ -217,21 +217,30 @@
 
 					<div class="w-1/2 md:w-1/5 px-4 mb-6">
 						<heading class="mb-3" size="small-caps">About</heading>
-						<a href="/about" class="block text-sm mb-2 hover:text-blue-600">About us</a>
-						<a href="/for-employers" class="block text-sm mb-2 hover:text-blue-600">For Employers</a>
-						<a href="/advertise" class="block text-sm mb-2 hover:text-blue-600">Advertise with us</a>
-						<a href="/faq" class="block text-sm mb-2 hover:text-blue-600">FAQ</a>
+						<inertia-link href="/about" class="block text-sm mb-2 hover:text-blue-600">About us</inertia-link>
+						<inertia-link
+							href="/for-employers"
+							class="block text-sm mb-2 hover:text-blue-600"
+						>For Employers</inertia-link>
+						<inertia-link
+							href="/advertise"
+							class="block text-sm mb-2 hover:text-blue-600"
+						>Advertise with us</inertia-link>
+						<inertia-link href="/faq" class="block text-sm mb-2 hover:text-blue-600">FAQ</inertia-link>
 					</div>
 
 					<div class="w-1/2 md:w-1/5 px-4 mb-6">
 						<heading class="mb-3" size="small-caps">Resources</heading>
-						<a
+						<inertia-link
 							href="mailto:support@jobsharbour.com?subject=I am inquiring about "
 							class="mailtoui block text-sm mb-2 hover:text-blue-600"
-						>Support</a>
-						<a href="/privacy" class="block text-sm mb-2 hover:text-blue-600">Privacy</a>
-						<a href="/terms" class="block text-sm mb-2 hover:text-blue-600">Terms of Service</a>
-						<a href="/refund" class="block text-sm mb-2 hover:text-blue-600">Refund & Cancellation</a>
+						>Support</inertia-link>
+						<inertia-link href="/privacy" class="block text-sm mb-2 hover:text-blue-600">Privacy</inertia-link>
+						<inertia-link href="/terms" class="block text-sm mb-2 hover:text-blue-600">Terms of Service</inertia-link>
+						<inertia-link
+							href="/refund"
+							class="block text-sm mb-2 hover:text-blue-600"
+						>Refund & Cancellation</inertia-link>
 					</div>
 
 					<div class="w-1/2 md:w-1/5 px-4 mb-6">
@@ -373,7 +382,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 body {
 	-webkit-tap-highlight-color: transparent;
 }

@@ -19,7 +19,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .list-group li:last-child {
 	border-bottom: 0;
 }

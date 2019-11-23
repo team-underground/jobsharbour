@@ -20,7 +20,7 @@
 			</div>
 		</div>
 
-		<div class="py-10">
+		<div class="py-10 px-4">
 			<div class="max-w-6xl mx-auto">
 				<alert class="mb-4" v-if="jobposts.data.length">
 					<strong>Note:</strong> It will take less than 24 hours for the moderation process to get completed and then only will be published on the website.
