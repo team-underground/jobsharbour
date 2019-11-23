@@ -56,18 +56,21 @@
 					<div class="md:w-2/3 px-4">
 						<card with-footer>
 							<text-input
+								type="password"
 								class="mb-4"
 								label="Current Password"
 								v-model="resetform.current_password"
 								:errors="errors.current_password"
 							></text-input>
 							<text-input
+								type="password"
 								class="mb-4"
 								label="New Password"
 								v-model="resetform.password"
 								:errors="errors.password"
 							></text-input>
 							<text-input
+								type="password"
 								label="Confirm New Password"
 								v-model="resetform.password_confirmation"
 								:errors="errors.password_confirmation"

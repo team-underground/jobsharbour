@@ -14,8 +14,14 @@
 				<div class="tooltip-container" v-if="tooltipData">
 					<strong>{{labels.xLabels[tooltipData.index]}}</strong>
 					<div class="tooltip-data">
-						<div class="tooltip-data-item tooltip-data-item--1">Total views:&nbsp;<strong>{{tooltipData.data[0]}}</strong></div>
-						<div class="tooltip-data-item tooltip-data-item--2">Unique views:&nbsp;<strong>{{tooltipData.data[1]}}</strong></div>
+						<div class="tooltip-data-item tooltip-data-item--1">
+							Total views:&nbsp;
+							<strong>{{tooltipData.data[0]}}</strong>
+						</div>
+						<div class="tooltip-data-item tooltip-data-item--2">
+							Unique views:&nbsp;
+							<strong>{{tooltipData.data[1]}}</strong>
+						</div>
 					</div>
 				</div>
 			</div>

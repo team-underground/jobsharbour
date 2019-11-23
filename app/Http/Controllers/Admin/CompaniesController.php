@@ -47,13 +47,13 @@ class CompaniesController extends Controller
     {
         $rules = [
             'company_logo' => 'required|image|mimes:jpeg,png,jpg|max:1024',
-            'company_name' => ['required']
+            'company_name' => ['required'],
+            'company_industry' => ['required']
         ];
 
         if (!auth()->user()->isAdmin()) {
             $rules['company_website'] = ['required', 'url'];
             $rules['company_description'] = ['required'];
-            $rules['company_industry'] = ['required'];
             $rules['company_no_of_employees'] = ['required'];
             $rules['company_benefits'] = ['required'];
         }
@@ -100,13 +100,13 @@ class CompaniesController extends Controller
 
         $rules = [
             'company_logo' => 'required|image|mimes:jpeg,png,jpg|max:1024',
-            'company_name' => ['required']
+            'company_name' => ['required'],
+            'company_industry' => ['required']
         ];
 
         if (!auth()->user()->isAdmin()) {
             $rules['company_website'] = ['required', 'url'];
             $rules['company_description'] = ['required'];
-            $rules['company_industry'] = ['required'];
             $rules['company_no_of_employees'] = ['required'];
             $rules['company_benefits'] = ['required'];
         }
@@ -118,24 +118,26 @@ class CompaniesController extends Controller
 
         // dd($input);
 
-        if ($input['company_industry'] != null && $request->file('company_logo')) {
+        if ($request->file('company_logo')) {
             $company->update([
                 'company_logo' => $request->file('company_logo')->store('company', 'public')
             ]);
         }
-
-        $company->update($request->only([
+        $data = $request->only([
             'company_name',
             'company_website',
             'company_description',
             'company_no_of_employees',
             'company_benefits'
-        ]) + [
-            'company_industry' => (int) $input['company_industry']
         ]);
 
-        session()->flash('success', 'Company Details Updated.');
+        if ($request->has('company_industry')) {
+            $data['company_industry'] = (int) $request->company_industry;
+        }
 
+        $company->update($data);
+
+        session()->flash('success', 'Company Details Updated.');
         return back();
     }
 
@@ -152,7 +154,7 @@ class CompaniesController extends Controller
         $company->company_logo = null;
         $company->save();
 
-        session()->flash('success', 'Job Post successfully deleted.');
+        session()->flash('success', 'Company logo successfully deleted.');
 
         return back();
     }
