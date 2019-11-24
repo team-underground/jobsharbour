@@ -2,7 +2,7 @@
 	<layout>
 		<div class="px-4 py-6 md:py-16 relative">
 			<div class="max-w-5xl mx-auto">
-				<heading size="display" class="mb-8 text-center">Find Jobs by Category</heading>
+				<heading size="display" class="mb-8 text-center" tag="h1">Find Jobs by Category</heading>
 
 				<div class="flex flex-wrap -mx-2 md:-mx-4 text-center">
 					<template v-for="category in categories">
@@ -49,7 +49,7 @@
 					Questions? Drop us an email at
 					<link-to to="mailto:hello@jobsharbour.com">hello@jobsharbour.com</link-to>.
 					<br />We usually get back within 24 hours.
-				</heading> -->
+				</heading>-->
 			</div>
 		</div>
 	</layout>

@@ -3,54 +3,54 @@
 		<div class="bg-white px-4 relative shadow-sm z-20">
 			<div class="md:max-w-6xl mx-auto">
 				<div class="flex flex-wrap md:justify-center">
-					<a
+					<inertia-link
 						class="w-1/3 md:w-1/6 border-b md:border-transparent py-5 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
 						href="/admin/companies"
 					>
 						<icon name="briefcase"></icon>
 						<div class="mt-2 text-sm">Companies</div>
-					</a>
+					</inertia-link>
 
-					<a
+					<inertia-link
 						class="w-1/3 md:w-1/6 border-l border-b md:border-transparent py-5 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
 						href="/admin/jobs"
 					>
 						<icon name="edit2"></icon>
 						<div class="mt-2 text-sm">Job Posts</div>
-					</a>
+					</inertia-link>
 
-					<a
+					<inertia-link
 						class="w-1/3 md:w-1/6 border-l border-b md:border-transparent py-5 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
 						href="/admin/users"
 						v-if="can['modify-user']"
 					>
 						<icon name="users"></icon>
 						<div class="mt-2 text-sm">Users</div>
-					</a>
+					</inertia-link>
 
-					<a
+					<inertia-link
 						class="w-1/3 md:w-1/6 md:border-transparent py-5 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
 						href="#"
 					>
 						<icon name="bell"></icon>
 						<div class="mt-2 text-sm">Notifications</div>
-					</a>
+					</inertia-link>
 
-					<a
+					<inertia-link
 						class="w-1/3 md:w-1/6 border-l md:border-transparent py-5 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
 						href="#"
 					>
 						<icon name="message"></icon>
 						<div class="mt-2 text-sm">Feedback</div>
-					</a>
+					</inertia-link>
 
-					<a
+					<inertia-link
 						class="w-1/3 md:w-1/6 border-l md:border-transparent py-5 text-center px-4 flex flex-col hover:text-blue-600 items-center justify-center"
 						href="/settings"
 					>
 						<icon name="settings"></icon>
 						<div class="mt-2 text-sm">Settings</div>
-					</a>
+					</inertia-link>
 				</div>
 			</div>
 		</div>

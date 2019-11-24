@@ -11,7 +11,7 @@
 					<div class="flex">
 						<search-input v-model="form.search" placeholder="Search by job title..." class="mr-2"></search-input>
 
-						<loading-button size="small" to="/admin/jobs/create" tag="a">
+						<loading-button size="small" to="/admin/jobs/create" tag="inertia-link">
 							<icon name="plus"></icon>
 							<span class="hidden md:block">Create Job</span>
 						</loading-button>

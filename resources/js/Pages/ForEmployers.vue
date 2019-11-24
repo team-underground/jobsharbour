@@ -2,7 +2,7 @@
 	<layout>
 		<div class="bg-blue-200 px-4 py-10 md:py-20 relative overflow-hidden">
 			<div class="max-w-2xl mx-auto text-center relative z-10">
-				<heading size="display" class="mb-4">Hello Employers</heading>
+				<heading size="display" class="mb-4" tag="h1">Hello Employers</heading>
 				<heading
 					class="mb-1 text-blue-800 md:text-xl"
 				>Still struggling to communicate with job seekers? Your quest is over! Here we come with the best platform where you can showcase your job lists, communicate with a mass of potential candidates in no time and also pick up the best out of them.</heading>

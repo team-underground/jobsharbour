@@ -29,7 +29,7 @@
 				<div class="lg:w-3/5 md:flex mx-auto">
 					<div class="py-10 md:pt-16 mb:pb-32 text-center md:text-left">
 						<heading class="mb-1 text-blue-600 text-xl md:text-2xl">Struggling for jobs in North-East?</heading>
-						<heading size="display" class="mb-8">
+						<heading size="display" class="mb-8" tag="h1">
 							<span class="block">Unveil job opportunities</span> in our harbour right now!
 						</heading>
 						<div class="mt-4 md:mt-0 w-64 md:w-auto mx-auto">

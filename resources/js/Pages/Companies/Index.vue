@@ -15,7 +15,12 @@
 							class="mr-2"
 						></search-input>
 
-						<loading-button size="small" to="/admin/companies/create" tag="a" v-if="can.create">
+						<loading-button
+							size="small"
+							to="/admin/companies/create"
+							tag="inertia-link"
+							v-if="can.create"
+						>
 							<icon name="plus"></icon>
 							<span class="hidden md:block">New Company</span>
 						</loading-button>
