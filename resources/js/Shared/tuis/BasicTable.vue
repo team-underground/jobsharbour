@@ -60,9 +60,3 @@ export default {
 	}
 };
 </script>
-
-<style scoped>
-.table-striped tbody tr:nth-child(even) {
-	background-color: #f7fafc;
-}
-</style>

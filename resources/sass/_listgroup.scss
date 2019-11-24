@@ -1,0 +1,7 @@
+.list-style-ul:not(:last-child) {
+    margin-bottom: 0.75rem;
+}
+
+.list-group li:last-child {
+    border-bottom: 0;
+}

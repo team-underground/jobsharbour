@@ -50,9 +50,10 @@
 											<img
 												:src="company.company_logo_path"
 												:alt="company.company_name"
-												class="w-24 h-24 object-contain rounded-full border border-gray-100"
+												class="object-cover w-full h-full rounded-full border border-gray-100"
 											/>
 										</div>
+
 										<div>
 											<button
 												type="button"
@@ -234,36 +235,3 @@ export default {
 	}
 };
 </script>
-
-<style>
-.vue-file-agent .file-preview-wrapper:before {
-	border-radius: 10px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-}
-
-#profile-pic-demo .drop-help-text {
-	display: none;
-}
-#profile-pic-demo .is-drag-over .drop-help-text {
-	display: block;
-}
-#profile-pic-demo .profile-pic-upload-block {
-	border: 2px dashed transparent;
-	padding: 20px;
-	padding-top: 0;
-}
-
-#profile-pic-demo .is-drag-over.profile-pic-upload-block {
-	border-color: #aaa;
-}
-#profile-pic-demo .vue-file-agent {
-	width: 180px;
-	float: left;
-	margin: 0 15px 5px 0;
-	border: 0;
-	box-shadow: none;
-}
-</style>

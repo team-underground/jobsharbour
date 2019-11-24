@@ -87,7 +87,7 @@
 						</div>
 
 						<card
-							tag="a"
+							tag="inertia-link"
 							:to="`/jobs/${post.job_slug}`"
 							v-for="(post, idx) in jobposts.data"
 							:key="idx"
@@ -149,7 +149,7 @@
 						</card>
 
 						<div class="text-center pt-5 pb-10">
-							<loading-button tag="a" to="/jobs">See More Jobs</loading-button>
+							<loading-button tag="inertia-link" to="/jobs">See More Jobs</loading-button>
 						</div>
 					</div>
 					<div class="md:w-1/3 px-4">
@@ -157,11 +157,14 @@
 							<div class="flex justify-between items-center mb-2">
 								<heading class="leading-tight text-gray-700 tracking-tight text-xl font-semibold">Categories</heading>
 
-								<link-to to="/categories">View all</link-to>
+								<inertia-link
+									href="/categories"
+									class="inline-flex text-blue-600 border-b-2 border-blue-200 hover:text-blue-700 hover:border-blue-400"
+								>View all</inertia-link>
 							</div>
 
 							<template v-for="category in category_wise_total">
-								<a
+								<inertia-link
 									:href="`/jobs?category=${category.category_name}`"
 									class="flex rounded-full py-2 hover:bg-blue-100 trigger-icon"
 								>
@@ -226,7 +229,7 @@
 										<heading class="text-gray-700">{{ category.category_name }}</heading>
 										<heading size="small-caps">{{ category.total }} jobs</heading>
 									</div>
-								</a>
+								</inertia-link>
 							</template>
 						</card>
 

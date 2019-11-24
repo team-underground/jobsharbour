@@ -96,9 +96,3 @@ export default {
 	}
 };
 </script>
-
-<style scoped>
-.form-date svg {
-	right: 50px !important;
-}
-</style>

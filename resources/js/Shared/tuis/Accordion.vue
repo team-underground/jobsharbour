@@ -43,9 +43,3 @@ export default {
 	}
 };
 </script>
-
-<style scoped>
-.border-b.last {
-	border-bottom: 0 !important;
-}
-</style>

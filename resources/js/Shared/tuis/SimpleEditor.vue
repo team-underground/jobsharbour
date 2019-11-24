@@ -27,7 +27,6 @@
 
 <script>
 import Quill from "quill";
-import "quill/dist/quill.snow.css";
 
 export default {
 	props: {
@@ -122,28 +121,3 @@ export default {
 	}
 };
 </script>
-
-<style scoped>
-.ql-toolbar.ql-snow {
-	border-top-left-radius: 0.5rem;
-	border-top-right-radius: 0.5rem;
-	background-color: #e2e8f0;
-	padding-top: 2px;
-	padding-bottom: 2px;
-}
-.ql-toolbar.ql-snow,
-.ql-container.ql-snow {
-	border: 2px solid #e2e8f0;
-}
-
-.ql-container,
-.ql-editor {
-	font-size: 1rem;
-	font-family: inherit;
-}
-
-.simple-editor.error .ql-toolbar.ql-snow,
-.simple-editor.error .ql-container.ql-snow {
-	border-color: #fc8181;
-}
-</style>

@@ -26,7 +26,9 @@ mix.js("resources/js/app.js", "public/js")
     .babelConfig({
         plugins: ["@babel/plugin-syntax-dynamic-import"]
     })
-    .purgeCss()
+    .purgeCss({
+        /* My options */
+    })
     .version()
     .sourceMaps(true);
 

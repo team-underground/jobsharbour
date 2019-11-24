@@ -52,9 +52,3 @@ export default {
 	}
 };
 </script>
-
-<style scoped>
-.list-style-ul:not(:last-child) {
-	margin-bottom: 0.75rem;
-}
-</style>
