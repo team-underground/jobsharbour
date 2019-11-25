@@ -281,7 +281,7 @@
 			</div>
 		</div>
 
-		<div class="bg-blue-800 px-4 pt-10 md:pt-16 border-b border-gray-200 relative">
+		<div class="bg-blue-800 px-4 pt-10 md:pt-16 border-b border-gray-200 relative" id="subscribe">
 			<div class="max-w-3xl mx-auto mb-10">
 				<h2
 					class="md:text-center mb-4 text-3xl md:text-4xl font-bold tracking-tight text-white leading-tight"
