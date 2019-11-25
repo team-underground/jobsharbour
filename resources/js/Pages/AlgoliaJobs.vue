@@ -159,7 +159,7 @@
 															</div>
 
 															<div class="flex justify-between">
-																<heading size="small">{{ post.job_published_at_formatted }}</heading>
+																<heading size="small">{{getJobPublishedAtFormatted(post.job_published_at_timestamp)}}</heading> 
 																<link-to :to="`/jobs/${post.job_slug}`" class="text-sm">View Details</link-to>
 															</div>
 														</div>
@@ -260,6 +260,7 @@ import LinkTo from "@/Shared/tuis/LinkTo";
 import Avatar from "@/Shared/tuis/Avatar";
 import CheckboxInput from "@/Shared/tuis/CheckboxInput";
 import LoadingButton from "@/Shared/tuis/LoadingButton";
+import moment from "moment";
 
 export default {
 	props: ["scout_prefix"],
@@ -299,6 +300,25 @@ export default {
 				"e571c9fdb5e10a920ed1dbcc05434e34"
 			)
 		};
+	},
+	methods: {
+		getJobPublishedAtFormatted(previousTime)
+		{ 
+			let previousUnixTime = moment.unix(previousTime);
+			let diffrence = moment().diff( previousUnixTime, 'days') 
+			
+			if (diffrence <= 1) {
+				return previousUnixTime.fromNow();  
+			}
+			if (diffrence < 2) {
+				return 'Yesterday';
+			}
+			if ([3, 4, 5, 6, 7].includes(diffrence)) {
+				return `${diffrence} days ago`;
+			} else {
+				return previousUnixTime.format('ll');
+			} 
+		}
 	}
 };
 </script>

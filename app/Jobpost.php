@@ -58,7 +58,14 @@ class Jobpost extends Model implements ViewableContract
             return [];
         }
 
-        $array = $this->toArray();
+        $array['job_title'] = $this->job_title;
+        $array['job_slug'] = $this->job_slug;
+        $array['job_new'] = $this->job_new;
+        $array['job_category'] = $this->job_category;
+        $array['job_location'] = $this->job_location;
+        $array['organisation_type'] = $this->organisation_type;
+        $array['job_salary'] = $this->job_salary;
+        $array['job_type'] = $this->job_type;
 
         $array['job_published_at_timestamp'] = $this->job_published_at->timestamp;
         $array['company'] = [
