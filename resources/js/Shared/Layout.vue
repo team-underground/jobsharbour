@@ -231,10 +231,7 @@
 
 					<div class="w-1/2 md:w-1/5 px-4 mb-6">
 						<heading class="mb-3" size="small-caps">Resources</heading>
-						<inertia-link
-							href="mailto:support@jobsharbour.com?subject=I am inquiring about "
-							class="mailtoui block text-sm mb-2 hover:text-blue-600"
-						>Support</inertia-link>
+						<mail-to to="support@jobsharbour.com" subject="I am inquiring about" class="block text-sm mb-2 hover:text-blue-600" :styled="false">Support</mail-to>
 						<inertia-link href="/privacy" class="block text-sm mb-2 hover:text-blue-600">Privacy</inertia-link>
 						<inertia-link href="/terms" class="block text-sm mb-2 hover:text-blue-600">Terms of Service</inertia-link>
 						<inertia-link
@@ -303,6 +300,7 @@ import Alert from "@/Shared/tuis/Alert";
 import SearchInput from "@/Shared/tuis/SearchInput";
 import LoadingButton from "@/Shared/tuis/LoadingButton";
 import LinkTo from "@/Shared/tuis/LinkTo";
+import MailTo from "@/Shared/tuis/MailTo";
 import TextInput from "@/Shared/tuis/TextInput";
 import Icon from "@/Shared/tuis/Icon";
 import TransitionExpand from "@/Shared/tuis/TransitionExpand";
@@ -319,6 +317,7 @@ export default {
 		TextInput,
 		LoadingButton,
 		LinkTo,
+		MailTo,
 		Icon,
 		TransitionExpand
 	},

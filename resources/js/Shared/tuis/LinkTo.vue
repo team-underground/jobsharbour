@@ -1,5 +1,4 @@
 <template>
-	<!-- @click.prevent="$emit('click', $event.target.value)" -->
 	<inertia-link
 		:href="to"
 		class="inline-flex text-blue-600 border-b-2 border-blue-200 hover:text-blue-700 hover:border-blue-400"
@@ -14,6 +13,15 @@ export default {
 		to: {
 			type: String
 		}
+
+		// tag: {
+		//     type: String,
+		//     default: "a"
+		// },
+		// display: {
+		//     type: String,
+		//     default: "inline-flex"
+		// }
 	}
 };
 </script>
