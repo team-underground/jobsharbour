@@ -1,5 +1,5 @@
 <template>
-	<layout>
+	<layout title="Settings">
 		<div class="bg-white px-4 pt-6 pb-4 relative shadow-sm z-20">
 			<div class="max-w-6xl mx-auto">
 				<link-to to="/dashboard" class="mb-4">

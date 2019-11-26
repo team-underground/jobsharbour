@@ -1,5 +1,5 @@
 <template>
-	<layout>
+	<layout title="FAQ">
 		<div class="py-10 md:py-16">
 			<div class="mb-8 text-center">
 				<heading size="heading2">Frequently Asked Questions</heading>

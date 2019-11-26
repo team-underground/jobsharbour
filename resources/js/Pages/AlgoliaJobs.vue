@@ -1,5 +1,5 @@
 <template>
-	<layout>
+	<layout title="Jobs">
 		<ais-instant-search :index-name="`${scout_prefix}_jobposts`" :search-client="searchClient">
 			<div class="py-10 px-4">
 				<div class="max-w-6xl mx-auto">
@@ -159,7 +159,9 @@
 															</div>
 
 															<div class="flex justify-between">
-																<heading size="small">{{getJobPublishedAtFormatted(post.job_published_at_timestamp)}}</heading> 
+																<heading
+																	size="small"
+																>{{getJobPublishedAtFormatted(post.job_published_at_timestamp)}}</heading>
 																<link-to :to="`/jobs/${post.job_slug}`" class="text-sm">View Details</link-to>
 															</div>
 														</div>
@@ -302,22 +304,21 @@ export default {
 		};
 	},
 	methods: {
-		getJobPublishedAtFormatted(previousTime)
-		{ 
+		getJobPublishedAtFormatted(previousTime) {
 			let previousUnixTime = moment.unix(previousTime);
-			let diffrence = moment().diff( previousUnixTime, 'days') 
-			
+			let diffrence = moment().diff(previousUnixTime, "days");
+
 			if (diffrence <= 1) {
-				return previousUnixTime.fromNow();  
+				return previousUnixTime.fromNow();
 			}
 			if (diffrence < 2) {
-				return 'Yesterday';
+				return "Yesterday";
 			}
 			if ([3, 4, 5, 6, 7].includes(diffrence)) {
 				return `${diffrence} days ago`;
 			} else {
-				return previousUnixTime.format('ll');
-			} 
+				return previousUnixTime.format("ll");
+			}
 		}
 	}
 };

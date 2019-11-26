@@ -231,7 +231,12 @@
 
 					<div class="w-1/2 md:w-1/5 px-4 mb-6">
 						<heading class="mb-3" size="small-caps">Resources</heading>
-						<mail-to to="support@jobsharbour.com" subject="I am inquiring about" class="block text-sm mb-2 hover:text-blue-600" :styled="false">Support</mail-to>
+						<mail-to
+							to="support@jobsharbour.com"
+							subject="I am inquiring about"
+							class="block text-sm mb-2 hover:text-blue-600"
+							:styled="false"
+						>Support</mail-to>
 						<inertia-link href="/privacy" class="block text-sm mb-2 hover:text-blue-600">Privacy</inertia-link>
 						<inertia-link href="/terms" class="block text-sm mb-2 hover:text-blue-600">Terms of Service</inertia-link>
 						<inertia-link
@@ -350,19 +355,19 @@ export default {
 					? `${title} - Jobs Harbour`
 					: "Jobs Harbour";
 			}
-		},
-
-		description: {
-			immediate: true,
-			handler(description) {
-				var link = document.createElement("meta");
-				link.setAttribute("name", "description");
-				link.content = description
-					? description
-					: "Jobs Harbour is an online web based job listing site for both employers and job seekers. Its primary goal is to provide you upto date job information from all around Assam and the Northeast.";
-				document.getElementsByTagName("head")[0].appendChild(link);
-			}
 		}
+
+		// description: {
+		// 	immediate: true,
+		// 	handler(description) {
+		// 		var link = document.createElement("meta");
+		// 		link.setAttribute("name", "description");
+		// 		link.content = description
+		// 			? description
+		// 			: "Jobs Harbour is an online web based job listing site for both employers and job seekers. Its primary goal is to provide you upto date job information from all around Assam and the Northeast.";
+		// 		document.getElementsByTagName("head")[0].appendChild(link);
+		// 	}
+		// }
 	},
 
 	methods: {

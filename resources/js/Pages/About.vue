@@ -1,5 +1,5 @@
 <template>
-	<layout>
+	<layout title="About">
 		<div class="bg-blue-200 px-4 py-10 md:py-20 relative overflow-hidden">
 			<div class="max-w-2xl mx-auto text-center relative z-10">
 				<heading size="display" class="mb-4">About Jobs Harbour</heading>

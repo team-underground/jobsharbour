@@ -1,5 +1,5 @@
 <template>
-	<layout>
+	<layout title="Advertise with us">
 		<div
 			class="bg-blue-600 flex items-center justify-center bg-cover bg-center"
 			style="background-image:url('/duotone.png'); height:400px;"

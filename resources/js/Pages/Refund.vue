@@ -1,5 +1,5 @@
 <template>
-	<layout>
+	<layout title="Refund">
 		<div class="px-4 py-6 md:py-16 relative">
 			<div class="max-w-5xl mx-auto">
 				<heading size="display" class="mb-12 text-center">Cancellation & Refund Policy</heading>

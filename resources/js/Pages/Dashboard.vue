@@ -1,5 +1,5 @@
 <template>
-	<layout>
+	<layout title="Dashboard">
 		<div class="bg-white px-4 relative shadow-sm z-20">
 			<div class="md:max-w-6xl mx-auto">
 				<div class="flex flex-wrap md:justify-center">

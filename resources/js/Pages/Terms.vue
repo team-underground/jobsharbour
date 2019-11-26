@@ -1,5 +1,5 @@
 <template>
-	<layout>
+	<layout title="Terms">
 		<div class="px-4 py-6 md:py-16 relative">
 			<div class="max-w-5xl mx-auto">
 				<heading size="heading2" class="mb-10 text-center">Terms of Service</heading>

@@ -74,8 +74,6 @@
 						<link-to to="/register">Create Account</link-to>
 					</div>
 				</card>
-
-			 
 			</div>
 		</div>
 	</div>

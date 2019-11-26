@@ -5,6 +5,7 @@ use App\Package;
 use Inertia\Inertia;
 use App\Enums\CategoryType;
 use Illuminate\Http\Request;
+use Artesaos\SEOTools\Facades\SEOMeta;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,8 @@ Route::get('/about', function () {
     return Inertia::render('About');
 });
 Route::get('/categories', function () {
+    SEOMeta::setTitle('Categories');
+
     $categories = CategoryType::toSelectArray();
 
     return Inertia::render('Categories', [
@@ -31,6 +34,8 @@ Route::get('/categories', function () {
 });
 
 Route::get('/for-employers', function () {
+    SEOMeta::setTitle('For Employers');
+
     $pricings = Package::select('package_name', 'display_name', 'package_price')->get()->groupBy('package_name')->transform(function ($package) {
         return $package->first();
     })->toArray();
@@ -66,6 +71,8 @@ Route::get('/home', function () {
 })->middleware('auth');
 
 Route::get('login', function () {
+    SEOMeta::setTitle('Login');
+
     return Inertia::render('Auth/Login');
 })->middleware('guest')->name('login');
 Route::post('login')->name('login.attempt')->uses('Auth\LoginController@login')->middleware('guest');
@@ -73,6 +80,8 @@ Route::post('login')->name('login.attempt')->uses('Auth\LoginController@login')-
 Route::post('logout')->name('logout')->uses('Auth\LoginController@logout');
 
 Route::get('register', function () {
+    SEOMeta::setTitle('Register');
+
     return Inertia::render('Auth/Register');
 })->middleware('guest');
 Route::post('register')->name('register')->uses('Auth\RegisterController@register')->middleware('guest');
@@ -102,6 +111,8 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 // Jobs
 // Route::get('/jobs', 'JobpostsController@index')->name('jobs');
 Route::get('/jobs', function () {
+    SEOMeta::setTitle('Jobs');
+
     return Inertia::render('AlgoliaJobs', [
         'scout_prefix' => config('scout.prefix')
     ]);

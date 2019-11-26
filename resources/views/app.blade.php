@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    {!! SEO::generate() !!}
 
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
@@ -25,12 +27,8 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="dns-prefetch" href="//unpkg.com">
-    <!-- <link rel="dns-prefetch" href="//cdn.quilljs.com"> -->
-
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
-    <!-- <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.snow.css"> -->
     <script src="{{ mix('/js/app.js') }}" defer></script>
-
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     @if(env('APP_ENV') == 'production' )

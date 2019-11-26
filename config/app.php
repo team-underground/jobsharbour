@@ -180,6 +180,7 @@ return [
         * Custom Service Providers...
         */
         Webup\LaravelSendinBlue\SendinBlueServiceProvider::class,
+        Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
 
     ],
 

@@ -1,5 +1,5 @@
 <template>
-	<layout :title="post.seo_title" :description="post.meta_description">
+	<layout :title="post.seo_title">
 		<div class="bg-white px-4 pt-6 pb-4 shadow-sm z-20 relative">
 			<div class="max-w-6xl mx-auto">
 				<link-to to="/jobs" class="mb-4">
