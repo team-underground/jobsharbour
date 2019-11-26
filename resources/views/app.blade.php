@@ -5,8 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    @if(env('APP_ENV') == 'production' )
+    <!-- enable seo only for production -->
     {!! SEO::generate() !!}
+    @endif
 
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
@@ -30,8 +32,8 @@
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     <script src="{{ mix('/js/app.js') }}" defer></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     @if(env('APP_ENV') == 'production' )
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151880965-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
