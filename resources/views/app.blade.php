@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @if(env('APP_ENV') == 'production' )
     <!-- enable seo only for production -->
-    {!! SEO::generate() !!}
+    {!! SEO::generate(true) !!}
     @endif
 
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -45,6 +45,8 @@
 
         gtag('config', 'UA-151880965-1');
     </script>
+    <!-- Google Adsense Code -->
+    <script data-ad-client="ca-pub-5267383771293379" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     @endif
     @routes
 </head>

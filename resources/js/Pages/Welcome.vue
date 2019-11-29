@@ -103,7 +103,7 @@
 								</div>
 								<div v-else>
 									<div
-										class="flex-shrink-0 w-16 h-16 md:w-24 md:h-24 rounded-lg bg-gray-100 block mr-5 overflow-hidden border"
+										class="flex-shrink-0 w-16 h-16 md:w-24 md:h-24 rounded-lg bg-gray-100 block mr-5 overflow-hidden border p-1"
 									>
 										<img
 											:src="post.company.company_logo_path"
