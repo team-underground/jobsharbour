@@ -121,7 +121,7 @@
 														</div>
 														<div
 															v-else
-															class="flex-shrink-0 w-16 h-16 p-1 rounded-lg bg-gray-100 border-2 block mr-5 overflow-hidden"
+															class="flex-shrink-0 w-16 h-16 md:w-24 md:h-24 p-1 rounded-lg bg-gray-100 border block mr-5 overflow-hidden"
 														>
 															<img
 																:src="post.company.company_logo_path"

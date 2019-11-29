@@ -101,22 +101,23 @@
 								<div v-if="post.company.company_logo == null" class="mr-5 flex-shrink-0 w-16 h-16">
 									<avatar :name="post.company.company_name" color="blue" shape="rounded" size="xlarge"></avatar>
 								</div>
-								<div
-									v-else
-									class="flex-shrink-0 w-16 h-16 p-1 rounded-lg bg-gray-100 block mr-5 overflow-hidden border-2"
-								>
-									<img
-										:src="post.company.company_logo_path"
-										alt="company-logo"
-										class="object-contain w-full h-full rounded-lg"
-									/>
+								<div v-else>
+									<div
+										class="flex-shrink-0 w-16 h-16 md:w-24 md:h-24 rounded-lg bg-gray-100 block mr-5 overflow-hidden border"
+									>
+										<img
+											:src="post.company.company_logo_path"
+											alt="company-logo"
+											class="object-fit w-full h-full rounded-lg"
+										/>
+									</div>
 								</div>
 
 								<div class="flex-1">
 									<div class="md:flex mb-4">
 										<div class="flex-1">
 											<div class="mb-1 pr-3">
-												<heading size="large" class="inline-block">{{ post.job_title }}</heading>
+												<heading size="large" class="inline-block" tag="h2">{{ post.job_title }}</heading>
 											</div>
 											<heading
 												size="small"
