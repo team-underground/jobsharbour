@@ -134,7 +134,7 @@
 															<div class="flex mb-4">
 																<div class="flex-1">
 																	<div class="mb-1 pr-3">
-																		<heading size="large" class="inline-block">{{ post.job_title }}</heading>
+																		<heading tag="h2" size="large" class="inline-block">{{ post.job_title }}</heading>
 																	</div>
 																	<heading size="small" class="mb-1 font-semibold">{{ post.company.company_name }}</heading>
 																	<heading size="small" class="mb-1">in {{post.job_category}}</heading>

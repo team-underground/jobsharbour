@@ -108,7 +108,7 @@
 										<img
 											:src="post.company.company_logo_path"
 											alt="company-logo"
-											class="object-fit w-full h-full rounded-lg"
+											class="object-contain w-full h-full rounded-lg"
 										/>
 									</div>
 								</div>
