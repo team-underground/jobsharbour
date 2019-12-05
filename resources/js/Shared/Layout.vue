@@ -95,10 +95,10 @@
 										href="/admin/jobs"
 									>Job Posts</inertia-link>
 
-									<inertia-link
+									<!-- <inertia-link
 										class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600"
 										href="#"
-									>Notifications</inertia-link>
+									>Notifications</inertia-link>-->
 									<inertia-link
 										class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600"
 										href="/settings"

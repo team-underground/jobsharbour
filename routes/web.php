@@ -62,14 +62,6 @@ Route::get('/refund', function () {
     return Inertia::render('Refund');
 });
 
-
-// Route::get('/home', 'HomeController@index')->name('home');
-
-
-Route::get('/home', function () {
-    return redirect('/dashboard');
-})->middleware('auth');
-
 Route::get('login', function () {
     SEOMeta::setTitle('Login');
 
@@ -120,44 +112,57 @@ Route::get('/jobs', function () {
 Route::get('/jobs/{job_slug}', 'JobpostsController@show')->name('jobs.show');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', 'DashboardController');
 
-    Route::get('/settings', function () {
-        return Inertia::render('Settings');
+    Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
+    Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
+    Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+
+    Route::middleware(['verified'])->group(function () {
+        Route::get('/home', function () {
+            return redirect('/dashboard');
+        });
+        Route::get('/dashboard', 'DashboardController');
+
+        Route::get('/settings', function () {
+            return Inertia::render('Settings');
+        });
+
+        // Users
+        Route::get('/admin/users', 'Admin\UsersController@index')->name('admin.users.all')->middleware('can:modify-user');
+
+        // Admin / Employer Job
+        Route::get('/admin/jobs', 'Admin\JobpostsController@index')->name('admin.jobs.all');
+        Route::get('/admin/jobs/create', 'Admin\JobpostsController@create')->name('admin.jobs.create');
+        Route::post('/admin/jobs/create', 'Admin\JobpostsController@store')->name('admin.jobs.store');
+        Route::get('/admin/jobs/{uuid}/edit', 'Admin\JobpostsController@edit')->name('admin.jobs.edit');
+        Route::put('/admin/jobs/{uuid}/update', 'Admin\JobpostsController@update')->name('admin.jobs.update');
+
+        Route::post('/admin/jobs/{uuid}/publish', 'Admin\JobpostsPublishController@store')->name('admin.jobs.publish');
+
+
+        // Admin / Employer Company
+        Route::get('/admin/companies', 'Admin\CompaniesController@index')->name('admin.companies.all');
+        Route::get('/admin/companies/create', 'Admin\CompaniesController@create')->name('admin.companies.create')->middleware('can:create-company');
+        Route::post('/admin/companies/create', 'Admin\CompaniesController@store')->name('admin.companies.store')->middleware('can:create-company');
+        Route::get('/admin/companies/{uuid}/edit', 'Admin\CompaniesController@edit')->name('admin.companies.edit');
+        Route::put('/admin/companies/{uuid}/update', 'Admin\CompaniesController@update')->name('admin.companies.update');
+        Route::delete('/admin/companies/{uuid}/delete', 'Admin\CompaniesController@deleteLogo')->name('admin.companies.deletelogo');
+
+        Route::post('/change-password', 'SettingsController@changePassword')->name('settings.changePassword');
+        Route::post('/update-profile', 'SettingsController@updateProfile')->name('settings.updateProfile');
     });
-
-    // Users
-    Route::get('/admin/users', 'Admin\UsersController@index')->name('admin.users.all')->middleware('can:modify-user');
-
-    // Admin / Employer Job
-    Route::get('/admin/jobs', 'Admin\JobpostsController@index')->name('admin.jobs.all');
-    Route::get('/admin/jobs/create', 'Admin\JobpostsController@create')->name('admin.jobs.create');
-    Route::post('/admin/jobs/create', 'Admin\JobpostsController@store')->name('admin.jobs.store');
-    Route::get('/admin/jobs/{uuid}/edit', 'Admin\JobpostsController@edit')->name('admin.jobs.edit');
-    Route::put('/admin/jobs/{uuid}/update', 'Admin\JobpostsController@update')->name('admin.jobs.update');
-
-    Route::post('/admin/jobs/{uuid}/publish', 'Admin\JobpostsPublishController@store')->name('admin.jobs.publish');
-
-
-    // Admin / Employer Company
-    Route::get('/admin/companies', 'Admin\CompaniesController@index')->name('admin.companies.all');
-    Route::get('/admin/companies/create', 'Admin\CompaniesController@create')->name('admin.companies.create')->middleware('can:create-company');
-    Route::post('/admin/companies/create', 'Admin\CompaniesController@store')->name('admin.companies.store')->middleware('can:create-company');
-    Route::get('/admin/companies/{uuid}/edit', 'Admin\CompaniesController@edit')->name('admin.companies.edit');
-    Route::put('/admin/companies/{uuid}/update', 'Admin\CompaniesController@update')->name('admin.companies.update');
-    Route::delete('/admin/companies/{uuid}/delete', 'Admin\CompaniesController@deleteLogo')->name('admin.companies.deletelogo');
 });
 
 
-// Resume Builder (Beta)
-Route::get('/resume/builder', function () {
-    return Inertia::render('ResumeBuilder');
-});
+// // Resume Builder (Beta)
+// Route::get('/resume/builder', function () {
+//     return Inertia::render('ResumeBuilder');
+// });
 
-Route::post('/resume/generated', function () {
-    $resumedata = request('resumedata');
-    return Inertia::render('ResumeGenerated', compact('resumedata'));
-});
+// Route::post('/resume/generated', function () {
+//     $resumedata = request('resumedata');
+//     return Inertia::render('ResumeGenerated', compact('resumedata'));
+// });
 
 // Subscriber 
 Route::post('/subscriber-plan/create', 'SubscriberController@createSubscriptionPlane');
@@ -175,8 +180,5 @@ Route::post('/advertise/query', 'AdvertiseQueryController')->name('advertise.que
 
 // Route::get('login/LinkedIn', 'Auth\LoginController@redirectToProvider');
 // Route::get('login/linkedIn/callback', 'Auth\LoginController@handleProviderCallback');
-
-Route::post('/change-password', 'SettingsController@changePassword')->name('settings.changePassword');
-Route::post('/update-profile', 'SettingsController@updateProfile')->name('settings.updateProfile');
 
 // Auth::routes(['verify' => true]);
