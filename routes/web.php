@@ -17,6 +17,7 @@ use Artesaos\SEOTools\Facades\SEOMeta;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes(['verify' => true]);
 
 Route::get('/', 'JobpostsController@index')->name('welcome');
 
@@ -181,4 +182,3 @@ Route::post('/advertise/query', 'AdvertiseQueryController')->name('advertise.que
 // Route::get('login/LinkedIn', 'Auth\LoginController@redirectToProvider');
 // Route::get('login/linkedIn/callback', 'Auth\LoginController@handleProviderCallback');
 
-// Auth::routes(['verify' => true]);

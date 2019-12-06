@@ -164,6 +164,7 @@ export default {
 		},
 		submit() {
 			this.$refs.submitButton.startLoading();
+			
 
 			this.$inertia
 				.post("/register", this.form)

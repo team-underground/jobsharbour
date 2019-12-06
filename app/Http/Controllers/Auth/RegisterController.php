@@ -89,8 +89,24 @@ class RegisterController extends Controller
                 ]);
             }
             Mail::to($user->email)->queue(new WelcomeMail($user));
+
+             if ($user->hasVerifiedEmail()) {
+                return redirect($this->redirectPath());
+            }
+
+            $user->sendEmailVerificationNotification();
+
             return $user;
         });
         return $user;
+    }
+
+    public function redirectPath()
+    {
+        if (method_exists($this, 'redirectTo')) {
+            return $this->redirectTo();
+        }
+
+        return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
     }
 }
