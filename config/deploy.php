@@ -95,7 +95,7 @@ return [
 
     'options' => [
         'application' => env('APP_NAME', 'Laravel'),
-        'repository' => 'git@github.com:mithicher/mcl.git',
+        'repository' => 'git@github.com:team-underground/jobsharbour.git',
         'php_fpm_service' => 'php7.2-fpm',
     ],
 
@@ -111,11 +111,11 @@ return [
     */
 
     'hosts' => [
-        'staging.jobsharbour.com' => [
-            'stage' => 'staging',
-            'deploy_path' => '/var/www/staging.jobsharbour.com',
-            'user' => 'root'
-        ],
+        // 'staging.jobsharbour.com' => [
+        //     'stage' => 'staging',
+        //     'deploy_path' => '/var/www/staging.jobsharbour.com',
+        //     'user' => 'root'
+        // ],
         'jobsharbour.com' => [
             'stage' => 'production',
             'deploy_path' => '/var/www/jobsharbour.com',

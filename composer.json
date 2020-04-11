@@ -25,7 +25,7 @@
         "lorisleiva/laravel-deployer": "^0.2.13",
         "rinvex/laravel-subscriptions": "^3.0",
         "spatie/laravel-analytics": "^3.8",
-        "sumatoglobal/inertia-tailwind-preset": "dev-master",
+        "team-underground/inertia-tailwind-preset": "0.0.1",
         "tightenco/ziggy": "^0.8.0",
         "webup/laravel-sendinblue": "^2.0"
     },
